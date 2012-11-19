@@ -13,10 +13,10 @@
 	NSData * modulus = [key subdataWithRange:NSMakeRange(29, keySize / 8)];
 	NSData * exponent = [key subdataWithRange:NSMakeRange(29 + modulus.length + 2, 1)];
 	
-	return [self sk_asummetricEncryptWithModulus:modulus exponent:exponent];
+	return [self sk_asymmetricEncryptWithModulus:modulus exponent:exponent];
 }
 
-- (NSData *) sk_asummetricEncryptWithModulus:(NSData *)modulus exponent:(NSData *)exponent {
+- (NSData *) sk_asymmetricEncryptWithModulus:(NSData *)modulus exponent:(NSData *)exponent {
     
 	RSA * key;
 	
