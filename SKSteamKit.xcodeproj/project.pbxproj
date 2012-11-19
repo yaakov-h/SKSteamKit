@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		11CE043103064EE2A3ECB65F /* libPods-SteamKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ACE8B7CDBFE4993B27795B5 /* libPods-SteamKitTests.a */; };
 		C7C2897B72CC429EA4662B9C /* libPods-SteamKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 430E9EC2A7ED4B04B3AFEDD4 /* libPods-SteamKit.a */; };
-		D7252DF51659073F00906F78 /* libzipzap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7252DF21659073200906F78 /* libzipzap.a */; };
 		D7252DF71659095100906F78 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7252DF61659095100906F78 /* libz.dylib */; };
 		D75CEA661659AE290047BE0F /* SKSteamClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA651659AE290047BE0F /* SKSteamClient.m */; };
 		D75CEA691659B15E0047BE0F /* SKClientMsgHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA681659B15E0047BE0F /* SKClientMsgHandler.m */; };
@@ -39,7 +38,6 @@
 		D7ACAEF31658B693009DC581 /* NSData+RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEF21658B693009DC581 /* NSData+RSA.m */; };
 		D7ACAEF61658C30F009DC581 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ACAEF41658C30F009DC581 /* libcrypto.a */; };
 		D7ACAEF71658C30F009DC581 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ACAEF51658C30F009DC581 /* libssl.a */; };
-		D7ACAEF91658DCA7009DC581 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ACAEF81658DCA3009DC581 /* libstdc++.dylib */; };
 		D7ACAEFB1658DD38009DC581 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ACAEFA1658DD37009DC581 /* libc++.dylib */; };
 		D7ACAEFE1658DE47009DC581 /* _SKClientMsgProtobuf.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEFD1658DE46009DC581 /* _SKClientMsgProtobuf.m */; };
 		D7ACAF021658E6A7009DC581 /* NSData+Multi.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAF011658E6A7009DC581 /* NSData+Multi.m */; };
@@ -54,27 +52,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D7252DEF1659073200906F78 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7252DE61659073200906F78 /* zipzap.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D899CF82162C5EC100112F49;
-			remoteInfo = "zipzap (OS X)";
-		};
-		D7252DF11659073200906F78 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7252DE61659073200906F78 /* zipzap.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D899CFB0162C5EEB00112F49;
-			remoteInfo = "zipzap (iOS)";
-		};
-		D7252DF31659073200906F78 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7252DE61659073200906F78 /* zipzap.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D899CF96162C5EC100112F49;
-			remoteInfo = zipzapTests;
-		};
 		D7EF3A001655141A0090A8F4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D7EF39E01655141A0090A8F4 /* Project object */;
@@ -98,14 +75,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		16ABF082C53F4E1DA8A3A5B4 /* Pods-SteamKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamKit.xcconfig"; path = "Pods/Pods-SteamKit.xcconfig"; sourceTree = SOURCE_ROOT; };
 		26D82D9E0EA24D618B10AA80 /* libPods-SKSteamKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SKSteamKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ACE8B7CDBFE4993B27795B5 /* libPods-SteamKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SteamKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		430E9EC2A7ED4B04B3AFEDD4 /* libPods-SteamKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SteamKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A2AC1A72F9405D8DD71EE9 /* Pods-SteamKitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamKitTests.xcconfig"; path = "Pods/Pods-SteamKitTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		9EAB68B889E045F683D76BA3 /* Pods-SteamKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamKit.xcconfig"; path = "Pods/Pods-SteamKit.xcconfig"; sourceTree = SOURCE_ROOT; };
-		B0B235E9BE7646CEB30EB7F0 /* Pods-SteamKitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamKitTests.xcconfig"; path = "Pods/Pods-SteamKitTests.xcconfig"; sourceTree = SOURCE_ROOT; };
-		D7252DE61659073200906F78 /* zipzap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = zipzap.xcodeproj; path = External/zipzap/zipzap.xcodeproj; sourceTree = SOURCE_ROOT; };
 		D7252DF61659095100906F78 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D75CEA621659ADA50047BE0F /* _SKCMClientDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _SKCMClientDelegate.h; sourceTree = "<group>"; };
 		D75CEA641659AE290047BE0F /* SKSteamClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamClient.h; sourceTree = "<group>"; };
@@ -198,9 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7252DF71659095100906F78 /* libz.dylib in Frameworks */,
-				D7252DF51659073F00906F78 /* libzipzap.a in Frameworks */,
 				D7ACAEFB1658DD38009DC581 /* libc++.dylib in Frameworks */,
-				D7ACAEF91658DCA7009DC581 /* libstdc++.dylib in Frameworks */,
 				D7ACAED71658A2B4009DC581 /* Security.framework in Frameworks */,
 				D7ACAED51658A263009DC581 /* CoreGraphics.framework in Frameworks */,
 				D7ACAED31658A25F009DC581 /* CFNetwork.framework in Frameworks */,
@@ -215,16 +187,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D7252DE71659073200906F78 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D7252DF01659073200906F78 /* libzipzap.a */,
-				D7252DF21659073200906F78 /* libzipzap.a */,
-				D7252DF41659073200906F78 /* zipzapTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		D75CEA631659ADFD0047BE0F /* SteamClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,8 +326,6 @@
 				D7EF39EA1655141A0090A8F4 /* Products */,
 				60A2AC1A72F9405D8DD71EE9 /* Pods-SteamKitTests.xcconfig */,
 				9EAB68B889E045F683D76BA3 /* Pods-SteamKit.xcconfig */,
-				B0B235E9BE7646CEB30EB7F0 /* Pods-SteamKitTests.xcconfig */,
-				16ABF082C53F4E1DA8A3A5B4 /* Pods-SteamKit.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -402,7 +362,6 @@
 		D7EF39EE1655141A0090A8F4 /* SteamKit */ = {
 			isa = PBXGroup;
 			children = (
-				D7252DE61659073200906F78 /* zipzap.xcodeproj */,
 				D7ACAEFF1658E664009DC581 /* Util */,
 				D7ACAEB716588BB2009DC581 /* Messages */,
 				D7ACAE9D16586FA5009DC581 /* Crypto */,
@@ -503,12 +462,6 @@
 			mainGroup = D7EF39DE1655141A0090A8F4;
 			productRefGroup = D7EF39EA1655141A0090A8F4 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D7252DE71659073200906F78 /* Products */;
-					ProjectRef = D7252DE61659073200906F78 /* zipzap.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D7EF39E81655141A0090A8F4 /* SteamKit */,
@@ -516,30 +469,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		D7252DF01659073200906F78 /* libzipzap.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libzipzap.a;
-			remoteRef = D7252DEF1659073200906F78 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D7252DF21659073200906F78 /* libzipzap.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libzipzap.a;
-			remoteRef = D7252DF11659073200906F78 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D7252DF41659073200906F78 /* zipzapTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = zipzapTests.octest;
-			remoteRef = D7252DF31659073200906F78 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D7EF39F71655141A0090A8F4 /* Resources */ = {
@@ -689,8 +618,9 @@
 /* Begin XCBuildConfiguration section */
 		D7EF3A0C1655141A0090A8F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EAB68B889E045F683D76BA3 /* Pods-SteamKit.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -716,8 +646,9 @@
 		};
 		D7EF3A0D1655141A0090A8F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60A2AC1A72F9405D8DD71EE9 /* Pods-SteamKitTests.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -736,20 +667,11 @@
 		};
 		D7EF3A0F1655141A0090A8F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16ABF082C53F4E1DA8A3A5B4 /* Pods-SteamKit.xcconfig */;
+			baseConfigurationReference = 9EAB68B889E045F683D76BA3 /* Pods-SteamKit.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/SKSteamKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SteamKit/SteamKit-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"${PODS_HEADERS_SEARCH_PATHS}",
-					"\"$(SRCROOT)/External/OpenSSL/include\"",
-					"\"$(SRCROOT)/External/zipzap\"",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/External/OpenSSL\"",
-				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -758,20 +680,10 @@
 		};
 		D7EF3A101655141A0090A8F4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16ABF082C53F4E1DA8A3A5B4 /* Pods-SteamKit.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/SKSteamKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SteamKit/SteamKit-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"${PODS_HEADERS_SEARCH_PATHS}",
-					"\"$(SRCROOT)/External/OpenSSL/include\"",
-					"\"$(SRCROOT)/External/zipzap\"",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/External/OpenSSL\"",
-				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -780,17 +692,14 @@
 		};
 		D7EF3A121655141A0090A8F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0B235E9BE7646CEB30EB7F0 /* Pods-SteamKitTests.xcconfig */;
+			baseConfigurationReference = 60A2AC1A72F9405D8DD71EE9 /* Pods-SteamKitTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				HEADER_SEARCH_PATHS = (
-					"${PODS_HEADERS_SEARCH_PATHS}",
-					External/OpenSSL/include/,
-				);
+				HEADER_SEARCH_PATHS = "${PODS_HEADERS_SEARCH_PATHS}";
 				INFOPLIST_FILE = "SteamKitTests/SKSteamKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
@@ -799,17 +708,13 @@
 		};
 		D7EF3A131655141A0090A8F4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0B235E9BE7646CEB30EB7F0 /* Pods-SteamKitTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				HEADER_SEARCH_PATHS = (
-					"${PODS_HEADERS_SEARCH_PATHS}",
-					External/OpenSSL/include/,
-				);
+				HEADER_SEARCH_PATHS = "${PODS_HEADERS_SEARCH_PATHS}";
 				INFOPLIST_FILE = "SteamKitTests/SKSteamKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;

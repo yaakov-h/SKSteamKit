@@ -4,7 +4,7 @@
 //
 
 #import "NSData+RSA.h"
-#import <openssl/rsa.h>
+#import <OpenSSL/rsa.h>
 
 @implementation NSData (RSA)
 

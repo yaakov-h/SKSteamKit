@@ -1,12 +1,12 @@
 platform :ios, '6.0'
 
 target :SteamKit do
-	pod 'ProtocolBuffers',	'~> 0.1.0'
+	pod 'ProtocolBuffers',	:podspec => 'podspecs/ProtocolBuffers.podspec'
 	pod 'CocoaAsyncSocket',	'~> 0.0.1'
-	pod 'CRBoilerplate',	'~> 0.1.3'
+	pod 'CRBoilerplate',	:podspec => 'podspecs/CRBoilerplate.podspec'
+	pod 'OpenSSL',          :podspec => 'podspecs/OpenSSL.podspec'
+   	pod 'zipzap',           :podspec => 'podspecs/zipzap.podspec'
 end
 
 target :SteamKitTests do
-	pod 'Kiwi',	'~> 1.1.1'
-	pod 'OCMock',	'~> 2.0.1'
 end
