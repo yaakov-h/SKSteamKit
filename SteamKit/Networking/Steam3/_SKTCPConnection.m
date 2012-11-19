@@ -6,7 +6,6 @@
 #import "_SKTCPConnection.h"
 #import <CocoaAsyncSocket/GCDAsyncSocket.h>
 #import <CRBoilerplate/CRBoilerplate.h>
-#import <CRBoilerplate/NSMutableData+CRBoilerplate.h>
 #import <netinet/in.h>
 #import "_SKNetFilterEncryption.h"
 
@@ -82,13 +81,12 @@ static const uint32_t _SKTCPHeaderAndMagicSize = 2 * sizeof(uint32_t);
 {
     [self.delegate connectionDidConnect:self];
     
-    
     [sock readDataToLength:_SKTCPHeaderAndMagicSize withTimeout:-1 tag:_SKTCPConnectionTagReadHeaderAndMagic];
 }
 
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
 {
-    [self.delegate connectionDidDisconnect:self];
+    [self.delegate connection:self didDisconnectWithError:err];
 }
 
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag

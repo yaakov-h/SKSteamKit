@@ -24,4 +24,9 @@
     return NO;
 }
 
+- (void) disconnect
+{
+    [NSException raise:@"Invalid operation" format:@"Unimplemented abstract method -[%@ %@] was called", NSStringFromClass([self class]), NSStringFromSelector(_cmd)];
+}
+
 @end

@@ -18,5 +18,6 @@
 
 - (uint32_t) localIPAddress;
 - (BOOL) connectToAddress:(uint32_t)address port:(uint16_t)port error:(NSError *__autoreleasing*)error;
+- (void) disconnect;
 
 @end

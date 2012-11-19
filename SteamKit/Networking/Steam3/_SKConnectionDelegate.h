@@ -10,7 +10,7 @@
 @protocol _SKConnectionDelegate <NSObject>
 
 - (void) connectionDidConnect:(_SKConnection *)connection;
-- (void) connectionDidDisconnect:(_SKConnection *)connection;
+- (void) connection:(_SKConnection *)connection didDisconnectWithError:(NSError *)error;
 - (void) connection:(_SKConnection *)connection didReceiveMessageData:(NSData *)data;
 
 @end

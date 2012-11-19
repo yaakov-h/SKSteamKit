@@ -7,7 +7,6 @@
 #import "_SKConnection.h"
 #import "_SKTCPConnection.h"
 #import <CRBoilerplate/CRBoilerplate.h>
-#import <CRBoilerplate/NSMutableData+CRBoilerplate.h>
 #import "SteamLanguage.h"
 #import "_SKMsgUtil.h"
 #import "_SKPacketMsg.h"
@@ -27,8 +26,8 @@ typedef enum
     _SKCMClientPortPublic = 27014,
     _SKCMClientPortPublicEncrypted = 27017,
     
-    //_SKCMClientPortDefault = _SKCMClientPortPublicEncrypted,
-    _SKCMClientPortDefault = _SKCMClientPortPublic,
+    _SKCMClientPortDefault = _SKCMClientPortPublicEncrypted,
+    //_SKCMClientPortDefault = _SKCMClientPortPublic,
 } _SKCMClientPort;
 
 @implementation _SKCMClient
@@ -63,6 +62,11 @@ typedef enum
 - (BOOL) connectToServer:(NSNumber *)server error:(NSError *__autoreleasing *)error
 {
     return [_connection connectToAddress:[server unsignedIntegerValue] port:_SKCMClientPortDefault error:error];
+}
+
+- (void) disconnect
+{
+    [_connection disconnect];
 }
 
 #pragma mark -
@@ -128,12 +132,22 @@ typedef enum
 - (void) connectionDidConnect:(_SKConnection *)connection
 {
     CRLog(@"%@ connected", NSStringFromClass([self class]));
-    [self doLoginThing];
+
+    BOOL isUnencryptedChannel = (_SKCMClientPortDefault == _SKCMClientPortPublic);
+    if (isUnencryptedChannel && [self.delegate respondsToSelector:@selector(clientDidConnect:)])
+    {
+        [self.delegate clientDidConnect:self];
+    }
 }
 
-- (void) connectionDidDisconnect:(_SKConnection *)connection
+- (void) connection:(_SKConnection *)connection didDisconnectWithError:(NSError *)error
 {
     CRLog(@"%@ disconnected", NSStringFromClass([self class]));
+    
+    if ([self.delegate respondsToSelector:@selector(client:didDisconnectWithError:)])
+    {
+        [self.delegate client:self didDisconnectWithError:error];
+    }
 }
 
 - (void) connection:(_SKConnection *)connection didReceiveMessageData:(NSData *)data
@@ -219,6 +233,11 @@ typedef enum
             
         default: break;
     }
+    
+    if ([self.delegate respondsToSelector:@selector(client:didRecieveMessage:)])
+    {
+        [self.delegate client:self didRecieveMessage:packetMessage];
+    }
 }
 
 - (void) handleEncryptRequest:(_SKPacketMsg *)packetMessage
@@ -260,9 +279,13 @@ typedef enum
     {
         _connection.netFilter = [[_SKNetFilterEncryption alloc] initWithSessionKey:_temporarySessionKey];
         _temporarySessionKey = nil;
+        
+        
+        if ([self.delegate respondsToSelector:@selector(clientDidConnect:)])
+        {
+            [self.delegate clientDidConnect:self];
+        }
     }
-    
-//    [self doLoginThing];
 }
 
 - (void) handleLogOnResponse:(_SKPacketMsg *)packetMessage
@@ -310,10 +333,6 @@ typedef enum
     
     if ([msgMulti.body sizeUnzipped] > 0)
     {
-        [payload writeToFile:@"/Users/yaakov/Desktop/multi.dat" atomically:YES];
-        
-//        // TODO: Handle compressed CMsgMulti
-//        return;
         payload = [payload sk_decompressedPayload];
     }
     
@@ -325,31 +344,6 @@ typedef enum
         
         [self connection:nil didReceiveMessageData:messageData];
     }
-}
-
-- (void) doLoginThing
-{
-    
-    // DO NOT CHECK IN
-    
-    _SKClientMsgProtobuf * loginMessage = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientLogon class] messageType:EMsgClientLogon];
-    
-    
-    loginMessage.sessionID = 0;
-    loginMessage.steamID = 76561197960265728LU;
-    
-    CMsgClientLogon_Builder * builder = [[CMsgClientLogon_Builder alloc] init];
-    
-    [builder setAccountName:@"[REDACTED]"];
-    [builder setPassword:@"[REDACTED]"];
-    [builder setProtocolVersion:65575];
-    [builder setClientOsType:EOSTypeUnknown];
-    [builder setClientPackageVersion:1771];
-    [builder setClientLanguage:@"english"];
-    
-    loginMessage.body = [builder build];
-    
-    [self sendMessage:loginMessage];
 }
 
 @end

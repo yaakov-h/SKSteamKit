@@ -11,8 +11,11 @@
 		C7C2897B72CC429EA4662B9C /* libPods-SteamKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 430E9EC2A7ED4B04B3AFEDD4 /* libPods-SteamKit.a */; };
 		D7252DF51659073F00906F78 /* libzipzap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7252DF21659073200906F78 /* libzipzap.a */; };
 		D7252DF71659095100906F78 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7252DF61659095100906F78 /* libz.dylib */; };
+		D75CEA661659AE290047BE0F /* SKSteamClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA651659AE290047BE0F /* SKSteamClient.m */; };
+		D75CEA691659B15E0047BE0F /* SKClientMsgHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA681659B15E0047BE0F /* SKClientMsgHandler.m */; };
+		D75CEA6D1659B33A0047BE0F /* SKSteamUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA6C1659B33A0047BE0F /* SKSteamUser.m */; };
 		D7ACAE9C16586F3D009DC581 /* _SKNetFilterEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAE9B16586F3D009DC581 /* _SKNetFilterEncryption.m */; };
-		D7ACAEA016586FE8009DC581 /* NSData+AES.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAE9F16586FE8009DC581 /* NSData+AES.mm */; };
+		D7ACAEA016586FE8009DC581 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAE9F16586FE8009DC581 /* NSData+AES.m */; };
 		D7ACAEA316587041009DC581 /* _SKConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEA216587041009DC581 /* _SKConnection.m */; };
 		D7ACAEA91658725F009DC581 /* _SKTCPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEA81658725F009DC581 /* _SKTCPConnection.m */; };
 		D7ACAEB516587A9A009DC581 /* _SKCMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEB416587A9A009DC581 /* _SKCMClient.m */; };
@@ -26,8 +29,6 @@
 		D7ACAED31658A25F009DC581 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ACAED21658A25E009DC581 /* CFNetwork.framework */; };
 		D7ACAED51658A263009DC581 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ACAED41658A262009DC581 /* CoreGraphics.framework */; };
 		D7ACAED71658A2B4009DC581 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ACAED61658A2B4009DC581 /* Security.framework */; };
-		D7ACAEDA1658A2E2009DC581 /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAED81658A2E2009DC581 /* crc32.c */; };
-		D7ACAEDB1658A2E2009DC581 /* lookup2.c in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAED91658A2E2009DC581 /* lookup2.c */; };
 		D7ACAEDF1658A968009DC581 /* _SKPlainPacketMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEDE1658A967009DC581 /* _SKPlainPacketMsg.m */; };
 		D7ACAEE21658AB7A009DC581 /* _SKProtobufPacketMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEE11658AB7A009DC581 /* _SKProtobufPacketMsg.m */; };
 		D7ACAEE51658AC63009DC581 /* _SKClientPacketMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEE41658AC62009DC581 /* _SKClientPacketMsg.m */; };
@@ -106,10 +107,17 @@
 		B0B235E9BE7646CEB30EB7F0 /* Pods-SteamKitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamKitTests.xcconfig"; path = "Pods/Pods-SteamKitTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		D7252DE61659073200906F78 /* zipzap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = zipzap.xcodeproj; path = External/zipzap/zipzap.xcodeproj; sourceTree = SOURCE_ROOT; };
 		D7252DF61659095100906F78 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D75CEA621659ADA50047BE0F /* _SKCMClientDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _SKCMClientDelegate.h; sourceTree = "<group>"; };
+		D75CEA641659AE290047BE0F /* SKSteamClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamClient.h; sourceTree = "<group>"; };
+		D75CEA651659AE290047BE0F /* SKSteamClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamClient.m; sourceTree = "<group>"; };
+		D75CEA671659B15E0047BE0F /* SKClientMsgHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKClientMsgHandler.h; sourceTree = "<group>"; };
+		D75CEA681659B15E0047BE0F /* SKClientMsgHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKClientMsgHandler.m; sourceTree = "<group>"; };
+		D75CEA6B1659B33A0047BE0F /* SKSteamUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamUser.h; sourceTree = "<group>"; };
+		D75CEA6C1659B33A0047BE0F /* SKSteamUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamUser.m; sourceTree = "<group>"; };
 		D7ACAE9A16586F3D009DC581 /* _SKNetFilterEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _SKNetFilterEncryption.h; path = SteamKit/Networking/Steam3/_SKNetFilterEncryption.h; sourceTree = SOURCE_ROOT; };
 		D7ACAE9B16586F3D009DC581 /* _SKNetFilterEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _SKNetFilterEncryption.m; path = SteamKit/Networking/Steam3/_SKNetFilterEncryption.m; sourceTree = SOURCE_ROOT; };
 		D7ACAE9E16586FE8009DC581 /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
-		D7ACAE9F16586FE8009DC581 /* NSData+AES.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSData+AES.mm"; sourceTree = "<group>"; };
+		D7ACAE9F16586FE8009DC581 /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
 		D7ACAEA116587041009DC581 /* _SKConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SKConnection.h; sourceTree = "<group>"; };
 		D7ACAEA216587041009DC581 /* _SKConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SKConnection.m; sourceTree = "<group>"; };
 		D7ACAEA416587056009DC581 /* _SKConnectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _SKConnectionDelegate.h; sourceTree = "<group>"; };
@@ -135,8 +143,6 @@
 		D7ACAED21658A25E009DC581 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D7ACAED41658A262009DC581 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D7ACAED61658A2B4009DC581 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		D7ACAED81658A2E2009DC581 /* crc32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = crc32.c; path = ../../CRBoilerplate/CRBoilerplate/Foundation/crc32.c; sourceTree = "<group>"; };
-		D7ACAED91658A2E2009DC581 /* lookup2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lookup2.c; path = ../../CRBoilerplate/CRBoilerplate/Foundation/lookup2.c; sourceTree = "<group>"; };
 		D7ACAEDC1658A900009DC581 /* _SKPacketMsg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _SKPacketMsg.h; sourceTree = "<group>"; };
 		D7ACAEDD1658A967009DC581 /* _SKPlainPacketMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SKPlainPacketMsg.h; sourceTree = "<group>"; };
 		D7ACAEDE1658A967009DC581 /* _SKPlainPacketMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SKPlainPacketMsg.m; sourceTree = "<group>"; };
@@ -219,6 +225,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D75CEA631659ADFD0047BE0F /* SteamClient */ = {
+			isa = PBXGroup;
+			children = (
+				D75CEA641659AE290047BE0F /* SKSteamClient.h */,
+				D75CEA651659AE290047BE0F /* SKSteamClient.m */,
+				D75CEA671659B15E0047BE0F /* SKClientMsgHandler.h */,
+				D75CEA681659B15E0047BE0F /* SKClientMsgHandler.m */,
+			);
+			path = SteamClient;
+			sourceTree = "<group>";
+		};
+		D75CEA6A1659B3250047BE0F /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				D75CEA6B1659B33A0047BE0F /* SKSteamUser.h */,
+				D75CEA6C1659B33A0047BE0F /* SKSteamUser.m */,
+			);
+			path = Handlers;
+			sourceTree = "<group>";
+		};
 		D7ACAE9716586EDF009DC581 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,8 +270,11 @@
 		D7ACAE9916586EEF009DC581 /* Steam3 */ = {
 			isa = PBXGroup;
 			children = (
+				D75CEA6A1659B3250047BE0F /* Handlers */,
+				D75CEA631659ADFD0047BE0F /* SteamClient */,
 				D7ACAEB316587A9A009DC581 /* _SKCMClient.h */,
 				D7ACAEB416587A9A009DC581 /* _SKCMClient.m */,
+				D75CEA621659ADA50047BE0F /* _SKCMClientDelegate.h */,
 			);
 			path = Steam3;
 			sourceTree = "<group>";
@@ -254,7 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				D7ACAE9E16586FE8009DC581 /* NSData+AES.h */,
-				D7ACAE9F16586FE8009DC581 /* NSData+AES.mm */,
+				D7ACAE9F16586FE8009DC581 /* NSData+AES.m */,
 				D7ACAEEE1658B555009DC581 /* _SKKeyDictionary.h */,
 				D7ACAEEF1658B555009DC581 /* _SKKeyDictionary.m */,
 				D7ACAEF11658B693009DC581 /* NSData+RSA.h */,
@@ -406,8 +435,6 @@
 		D7EF3A041655141A0090A8F4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D7ACAED81658A2E2009DC581 /* crc32.c */,
-				D7ACAED91658A2E2009DC581 /* lookup2.c */,
 				D7EF3A051655141A0090A8F4 /* SKSteamKitTests-Info.plist */,
 				D7EF3A061655141A0090A8F4 /* InfoPlist.strings */,
 			);
@@ -603,7 +630,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7ACAE9C16586F3D009DC581 /* _SKNetFilterEncryption.m in Sources */,
-				D7ACAEA016586FE8009DC581 /* NSData+AES.mm in Sources */,
+				D7ACAEA016586FE8009DC581 /* NSData+AES.m in Sources */,
 				D7ACAEA316587041009DC581 /* _SKConnection.m in Sources */,
 				D7ACAEA91658725F009DC581 /* _SKTCPConnection.m in Sources */,
 				D7ACAEB516587A9A009DC581 /* _SKCMClient.m in Sources */,
@@ -624,6 +651,9 @@
 				D7ACAEF31658B693009DC581 /* NSData+RSA.m in Sources */,
 				D7ACAEFE1658DE47009DC581 /* _SKClientMsgProtobuf.m in Sources */,
 				D7ACAF021658E6A7009DC581 /* NSData+Multi.m in Sources */,
+				D75CEA661659AE290047BE0F /* SKSteamClient.m in Sources */,
+				D75CEA691659B15E0047BE0F /* SKClientMsgHandler.m in Sources */,
+				D75CEA6D1659B33A0047BE0F /* SKSteamUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,8 +662,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7EF3A0B1655141A0090A8F4 /* SKSteamKitTests.m in Sources */,
-				D7ACAEDA1658A2E2009DC581 /* crc32.c in Sources */,
-				D7ACAEDB1658A2E2009DC581 /* lookup2.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,7 +4,9 @@
 //
 
 #import "SKSteamKitTests.h"
-#import "_SKCMClient.h"
+#import "SKSteamClient.h"
+#import "SKSteamUser.h"
+#import <CRBoilerplate/CRBoilerplate.h>
 
 @implementation SKSteamKitTests
 
@@ -26,11 +28,21 @@
 {
 //    STFail(@"Unit tests are not implemented yet in SteamKitTests");
     
-    NSArray * servers = [_SKCMClient serverList];
-    _SKCMClient * client = [[_SKCMClient alloc] init];
-    NSError * error = nil;
-    BOOL result = [client connectToServer:servers[0] error:&error];
-    STAssertTrue(result, @"Should have started connecting");
+    SKSteamClient * steamClient = [[SKSteamClient alloc] init];
+    
+    [[[steamClient connect] addFailureHandler:^(NSError *error) {
+        NSLog(@"Error: %@", error);
+    }] addSuccessHandler:^(id data) {
+        NSLog(@"Connected to Steam3: %@", data);
+        
+        NSDictionary * details = @{SKLogonDetailUsername: @"[REDACTED]", SKLogonDetailPassword:@"[REDACTED]"};
+        
+        [[[steamClient.steamUser logOnWithDetails:details] addFailureHandler:^(NSError *error) {
+            NSLog(@"Failed to log in: %@", error);
+        }] addSuccessHandler:^(id data) {
+            NSLog(@"Logged in to Steam: %@", data);
+        }];
+    }];
     
     for(int i = 0; i < (60 * 2); i++)
     {

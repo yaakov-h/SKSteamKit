@@ -1,7 +1,6 @@
 #import "SteamLanguageInternal.h"
 #import "_SKMsgUtil.h"
 #import <CRBoilerplate/CRBoilerplate.h>
-#import <CRBoilerplate/NSMutableData+CRBoilerplate.h>
 
 @implementation _SKUdpHeader
 

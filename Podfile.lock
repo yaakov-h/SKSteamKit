@@ -1,23 +1,23 @@
 
+SPEC CHECKSUMS: 
+  Kiwi: 06407ae4d33a33310aed1202113d002eda1d56eb
+  CocoaAsyncSocket: 70f5de3c1ba13526c23df75fc98a0ea3049aa19c
+  CRBoilerplate: 74581dd86409f6c1cb04a4bbab4b0d337700f8d4
+  OCMock: 77a9c4c57af6bf258a537d34cf09abf422affede
+  ProtocolBuffers: 4cfc0be30608c699905cdd3e0b82664a24d71d59
+
 PODS: 
-- CRBoilerplate (0.1.1)
+- CRBoilerplate (0.1.3)
 - CocoaAsyncSocket (0.0.1)
 - Kiwi (1.1.1)
 - OCMock (2.0.1)
 - ProtocolBuffers (0.1.0)
 
-SPEC CHECKSUMS: 
-  CocoaAsyncSocket: 70f5de3c1ba13526c23df75fc98a0ea3049aa19c
-  ProtocolBuffers: 4cfc0be30608c699905cdd3e0b82664a24d71d59
-  OCMock: 77a9c4c57af6bf258a537d34cf09abf422affede
-  Kiwi: 06407ae4d33a33310aed1202113d002eda1d56eb
-  CRBoilerplate: 6bfce44fcc7bd98c372ac958538c033abc3c33ce
+COCOAPODS: 0.15.2
 
 DEPENDENCIES: 
-- CRBoilerplate (~> 0.1.1)
+- CRBoilerplate (~> 0.1.3)
 - CocoaAsyncSocket (~> 0.0.1)
 - Kiwi (~> 1.1.1)
 - OCMock (~> 2.0.1)
 - ProtocolBuffers (~> 0.1.0)
-
-COCOAPODS: 0.15.2
