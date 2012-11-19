@@ -30,16 +30,22 @@
     
     SKSteamClient * steamClient = [[SKSteamClient alloc] init];
     
-    [[[steamClient connect] addFailureHandler:^(NSError *error) {
+    [[[steamClient connect] addFailureHandler:^(NSError *error)
+    {
         NSLog(@"Error: %@", error);
-    }] addSuccessHandler:^(id data) {
+        
+    }] addSuccessHandler:^(id data)
+    {
         NSLog(@"Connected to Steam3: %@", data);
         
         NSDictionary * details = @{SKLogonDetailUsername: @"[REDACTED]", SKLogonDetailPassword:@"[REDACTED]"};
         
-        [[[steamClient.steamUser logOnWithDetails:details] addFailureHandler:^(NSError *error) {
+        [[[steamClient.steamUser logOnWithDetails:details] addFailureHandler:^(NSError *error)
+        {
             NSLog(@"Failed to log in: %@", error);
-        }] addSuccessHandler:^(id data) {
+            
+        }] addSuccessHandler:^(id data)
+        {
             NSLog(@"Logged in to Steam: %@", data);
         }];
     }];

@@ -8,7 +8,8 @@
 
 @implementation NSData (RSA)
 
-- (NSData *) sk_asymmetricEncryptWithSteamUniversePublicKey:(NSData *)key {
+- (NSData *) sk_asymmetricEncryptWithSteamUniversePublicKey:(NSData *)key
+{
 	static const NSUInteger keySize = 1024;
 	NSData * modulus = [key subdataWithRange:NSMakeRange(29, keySize / 8)];
 	NSData * exponent = [key subdataWithRange:NSMakeRange(29 + modulus.length + 2, 1)];
@@ -16,8 +17,8 @@
 	return [self sk_asymmetricEncryptWithModulus:modulus exponent:exponent];
 }
 
-- (NSData *) sk_asymmetricEncryptWithModulus:(NSData *)modulus exponent:(NSData *)exponent {
-    
+- (NSData *) sk_asymmetricEncryptWithModulus:(NSData *)modulus exponent:(NSData *)exponent
+{    
 	RSA * key;
 	
 	unsigned char *_modulus;

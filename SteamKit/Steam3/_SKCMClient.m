@@ -178,7 +178,9 @@ typedef enum
     if (isProtobuf)
     {
         return [[_SKProtobufPacketMsg alloc] initWithEMsg:msg data:data];
-    } else {
+    }
+    else
+    {
         return [[_SKClientPacketMsg alloc] initWithEMsg:msg data:data];
     }
 }

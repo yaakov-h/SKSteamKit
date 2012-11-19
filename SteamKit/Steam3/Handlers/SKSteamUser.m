@@ -89,7 +89,9 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
     if (result == EResultOK)
     {
         [_loginDeferred resolveWithResult:logonResponse.body];
-    } else {
+    }
+    else
+    {
         NSError * error = [[NSError alloc] initWithDomain:@"SteamKit" code:result userInfo:@{@"Response": logonResponse.body}];
         [_loginDeferred rejectWithError:error];
     }
