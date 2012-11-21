@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
-  s.name         = "SteamKit"
-  s.version      = "0.1.0"
-  s.summary      = "SteamKit port for Objective-C"
+  s.name         = 'SKSteamKit'
+  s.version      = '0.1.0'
+  s.summary      = 'SteamKit port for Objective-C'
   s.description  = <<-DESC
 	Objective-C library for connecting to the Steam network. Based on SteamKit/SteamRE by OpenSteamWorks.
                     DESC
-  s.homepage     = "https://github.com/yaakov-h/SKSteamKit"
+  s.homepage     = 'https://github.com/yaakov-h/SKSteamKit'
 
   s.author       = 'Yaakov'
-  s.source       = { :git => "https://github.com/yaakov-h/SKSteamKit.git" }
+  s.source       = { :git => 'https://github.com/yaakov-h/SKSteamKit.git' }
 
   s.platform     = :ios, '6.0'
   s.public_header_files = 'SteamKit/**/{SK,SteamKit}*.h'
@@ -25,9 +25,9 @@ Pod::Spec.new do |s|
   na.requires_arc	= false
  end
 
- s.dependency 'ProtocolBuffers',	:podspec => 'podspecs/ProtocolBuffers.podspec'
+ s.dependency 'ProtocolBuffers',	:podspec => 'https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/ProtocolBuffers.podspec'
  s.dependency 'CocoaAsyncSocket',	'~> 0.0.1'
- s.dependency 'CRBoilerplate',	:podspec => 'podspecs/CRBoilerplate.podspec'
- s.dependency 'OpenSSL',          :podspec => 'podspecs/OpenSSL.podspec'
- s.dependency 'zipzap',           :podspec => 'podspecs/zipzap.podspec'
+ s.dependency 'CRBoilerplate',		:podspec => 'https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/CRBoilerplate.podspec'
+ s.dependency 'OpenSSL',		:podspec => 'https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/OpenSSL.podspec'
+ s.dependency 'zipzap',			:podspec => 'https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/zipzap.podspec'
 end
