@@ -3,8 +3,5 @@
 // the file 'LICENCE.txt' included in this source code package.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface SKSteamKit : NSObject
-
-@end
+#import <SKSteamKit/SKSteamClient.h>
+#import <SKSteamKit/SKSteamUser.h>
