@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "SKSteamKit"
+  s.name         = "SteamKit"
   s.version      = "0.1.0"
   s.summary      = "SteamKit port for Objective-C"
   s.description  = <<-DESC
