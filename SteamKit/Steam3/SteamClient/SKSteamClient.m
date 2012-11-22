@@ -8,6 +8,7 @@
 #import "_SKCMClientDelegate.h"
 #import "_SKCMCLient.h"
 #import "SKSteamUser.h"
+#import "SKSteamFriends.h"
 #import <CRBoilerplate/CRBoilerplate.h>
 
 @interface SKSteamClient () <_SKCMClientDelegate>
@@ -17,6 +18,7 @@
 {
     NSMutableArray * _handlers;
     CRDeferred * _connectDeferred;
+	NSNotificationCenter * _notificationCenter;
 }
 
 - (id) init
@@ -29,6 +31,9 @@
         _client.delegate = self;
         
         [self addHandler:[[SKSteamUser alloc] init]];
+        [self addHandler:[[SKSteamFriends alloc] init]];
+		
+		_notificationCenter = [NSNotificationCenter defaultCenter];
     }
     return self;
 }
@@ -44,17 +49,27 @@
     [_handlers removeObject:handler];
 }
 
-- (SKSteamUser *) steamUser
+- (id) handlerOfClass:(Class)class
 {
     for (id handler in _handlers)
     {
-        if ([handler isKindOfClass:[SKSteamUser class]])
+        if ([handler isKindOfClass:class])
         {
             return handler;
         }
     }
     
     return nil;
+}
+
+- (SKSteamUser *) steamUser
+{
+    return [self handlerOfClass:[SKSteamUser class]];
+}
+
+- (SKSteamFriends *) steamFriends
+{
+    return [self handlerOfClass:[SKSteamFriends class]];
 }
 
 - (NSArray *) handlers
@@ -122,6 +137,11 @@
      {
          [obj handleMessage:packetMessage];
      }];
+}
+
+- (void) postNotification:(NSString *)notificationName withInfo:(NSObject *)info
+{
+	[_notificationCenter postNotificationName:notificationName object:self userInfo:@{@"SKNotificationInfo":info}];
 }
 
 @end

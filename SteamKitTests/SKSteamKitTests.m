@@ -7,6 +7,9 @@
 #import "SKSteamClient.h"
 #import "SKSteamUser.h"
 #import <CRBoilerplate/CRBoilerplate.h>
+#import "SKSteamFriends.h"
+#import "SKSteamChatMessageInfo.h"
+#import "SKNSNotificationExtensions.h"
 
 @implementation SKSteamKitTests
 
@@ -27,8 +30,10 @@
 - (void)testExample
 {
 //    STFail(@"Unit tests are not implemented yet in SteamKitTests");
-    
+	
     SKSteamClient * steamClient = [[SKSteamClient alloc] init];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRecieveChatMessage:) name:SKSteamChatMessageInfoNotification object:steamClient];
     
     [[[steamClient connect] addFailureHandler:^(NSError *error)
     {
@@ -47,16 +52,32 @@
         }] addSuccessHandler:^(id data)
         {
             NSLog(@"Logged in to Steam: %@", data);
+			steamClient.steamFriends.personaState = EPersonaStateOnline;
         }];
     }];
     
-    for(int i = 0; i < (60 * 2); i++)
+    for(int i = 0; i < (60 * 3); i++)
     {
         @autoreleasepool
         {
             [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:1]];
         }
     }
+}
+
+- (void) didRecieveChatMessage:(NSNotification *)notification
+{
+	SKSteamChatMessageInfo * info = [notification steamInfo];
+	
+	SKSteamFriend * friend = info.steamFriendFrom;
+	NSString * message = info.message;
+	
+	if (info.chatEntryType == EChatEntryTypeChatMsg && info.chatRoomClan == nil)
+	{
+		SKSteamClient * client = notification.object;
+		NSString * reply = [NSString stringWithFormat:@"Echo: %@", message];
+		[client.steamFriends sendChatMessageToFriend:friend type:EChatEntryTypeChatMsg text:reply];
+	}
 }
 
 @end

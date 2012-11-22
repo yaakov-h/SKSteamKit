@@ -63,7 +63,7 @@
     self = [self initWithBodyClass:bodyClass messageType:msg];
     if (self)
     {
-        self.targetJobID = [sourceJobMessage.header proto].jobidSource;
+        self.targetJobID = sourceJobMessage.sourceJobID;
     }
     return self;
 }
@@ -72,7 +72,7 @@
 {
     if (!packetMsg.isProtobuf)
     {
-        CRLog(@"ERROR: _SKClientMsgProtobuf used for non-protobuf message!");
+		[NSException raise:@"Incorrect message processor" format:@"%@ used for non-protobuf message", NSStringFromClass([self class])];
     }
     
     self = [super initWithHeaderClass:[_SKMsgHdrProtoBuf class]];

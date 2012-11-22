@@ -10,6 +10,9 @@
 #import "SteamLanguageInternal.h"
 #import "_SKCMClient.h"
 #import <CRBoilerplate/CRBoilerplate.h>
+#import "SKSteamWalletInfo.h"
+#import "SKSteamAccountInfo.h"
+#import "SKSteamLoggedOffInfo.h"
 
 NSString * const SKLogonDetailUsername = @"SKLogonDetailUsername";
 NSString * const SKLogonDetailPassword = @"SKLogonDetailPassword";
@@ -18,6 +21,15 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
 @implementation SKSteamUser
 {
     CRDeferred * _loginDeferred;
+}
+
+- (id) init
+{
+	self = [super init];
+	if (self)
+	{
+	}
+	return self;
 }
 
 - (void) handleMessage:(_SKPacketMsg *)packetMessage
@@ -30,6 +42,18 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
             
 		case EMsgClientUpdateMachineAuth:
 			[self handleClientUpdateMachineAuth:packetMessage];
+			break;
+			
+		case EMsgClientAccountInfo:
+			[self handleClientAccountInfo:packetMessage];
+			break;
+			
+		case EMsgClientLoggedOff:
+			[self handleClientLoggedOff:packetMessage];
+			break;
+			
+		case EMsgClientWalletInfoUpdate:
+			[self handleClientWalletInfo:packetMessage];
 			break;
             
         default: break;
@@ -185,6 +209,33 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
 	
 	response.body = [builder build];
 	[self.steamClient sendMessage:response];
+}
+
+- (void) handleClientWalletInfo:(_SKPacketMsg *)packetMessage
+{
+	_SKClientMsgProtobuf * walletInfoMessage = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientWalletInfoUpdate class] packetMessage:packetMessage];
+	CMsgClientWalletInfoUpdate * walletInfo = walletInfoMessage.body;
+	
+	SKSteamWalletInfo * info = [[SKSteamWalletInfo alloc] initWithMessage:walletInfo];
+	[self.steamClient postNotification:SKSteamWalletInfoUpdateNotification withInfo:info];
+}
+
+- (void) handleClientAccountInfo:(_SKPacketMsg *)packetMessage
+{
+	_SKClientMsgProtobuf * accountInfoMessage = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientAccountInfo class] packetMessage:packetMessage];
+	CMsgClientAccountInfo * accountInfo = accountInfoMessage.body;
+	
+	SKSteamAccountInfo * info = [[SKSteamAccountInfo alloc] initWithMessage:accountInfo];
+	[self.steamClient postNotification:SKSteamAccountInfoUpdateNotification withInfo:info];
+}
+
+- (void) handleClientLoggedOff:(_SKPacketMsg *)packetMessage
+{
+	_SKClientMsgProtobuf * loggedOffMessage = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientLoggedOff class] packetMessage:packetMessage];
+	CMsgClientLoggedOff * loggedOff = loggedOffMessage.body;
+	
+	SKSteamLoggedOffInfo * info = [[SKSteamLoggedOffInfo alloc] initWithMessage:loggedOff];
+	[self.steamClient postNotification:SKSteamLoggedOffNotification withInfo:info];
 }
 
 @end

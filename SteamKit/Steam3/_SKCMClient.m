@@ -201,6 +201,12 @@ typedef enum
     [_connection sendMessage:message];
 }
 
+- (void) beatHeart
+{
+	_SKClientMsgProtobuf * heartbeatMessage = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientHeartBeat class] messageType:EMsgClientHeartBeat];
+	[self sendMessage:heartbeatMessage];
+}
+
 #pragma mark -
 #pragma mark Handle Incoming Messages
 
@@ -307,8 +313,7 @@ typedef enum
         
         int heartbeatDelay = [logonResponse.body outOfGameHeartbeatSeconds];
         
-        // TODO: Start Heartbeating
-        CRLog(@"ERROR: Haven't set up heartbeating yet. Heartbeat Delay: %u", heartbeatDelay);
+		_heartbeatTimer = [NSTimer scheduledTimerWithTimeInterval:heartbeatDelay target:self selector:@selector(beatHeart) userInfo:nil repeats:YES];
     }
 }
 
@@ -317,8 +322,8 @@ typedef enum
     _sessionId = nil;
     _steamId = nil;
     
-    // TODO: Stop Heartbeating
-    CRLog(@"ERROR: Haven't set up heartbeating yet.");
+	[_heartbeatTimer invalidate];
+	_heartbeatTimer = nil;
 }
 
 - (void) handleMulti:(_SKPacketMsg *)packetMessage

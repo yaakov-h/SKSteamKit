@@ -15,6 +15,8 @@ extern NSString * const SKLogonDetailSteamGuardCode;
 
 @property (nonatomic, readonly) uint64_t steamID;
 
+- (id) init;
+
 - (CRPromise *) logOnWithDetails:(NSDictionary *)logonDetails;
 
 @end

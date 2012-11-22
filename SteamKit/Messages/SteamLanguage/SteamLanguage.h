@@ -7,8 +7,6 @@
 
 #import <Foundation/Foundation.h>
 #import <CRBoilerplate/CRBoilerplate.h>
-#import "Steammessages_base.pb.h"
-#import "Steammessages_clientserver.pb.h"
 
 typedef uint32_t EGCMsg; // Temp hack, not yet defined
 

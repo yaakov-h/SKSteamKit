@@ -6,12 +6,12 @@
 #import "_SKMsgBase.h"
 
 @class _SKPacketMsg;
-@class CMsgProtoBufHeader;
+@class _SKExtendedClientMsgHdr;
 
-@interface _SKClientMsgProtobuf : _SKMsgBase
+@interface _SKClientMsg : _SKMsgBase
 
 @property (nonatomic, strong, readwrite) id body;
-@property (nonatomic, strong, readonly) CMsgProtoBufHeader * protoHeader;
+@property (nonatomic, strong, readonly) _SKExtendedClientMsgHdr * extendedHeader;
 
 - (id) initWithBodyClass:(Class)bodyClass messageType:(EMsg)msg;
 - (id) initWithBodyClass:(Class)bodyClass messageType:(EMsg)msg sourceJobMessage:(_SKMsgBase *)sourceJobMessage;
