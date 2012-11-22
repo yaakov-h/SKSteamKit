@@ -28,6 +28,9 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
             [self handleClientLogOnResponse:packetMessage];
             break;
             
+		case EMsgClientUpdateMachineAuth:
+			[self handleClientUpdateMachineAuth:packetMessage];
+			break;
             
         default: break;
     }
@@ -62,6 +65,22 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
     {
         [builder setAuthCode:steamGuardCode];
     }
+	
+	NSData * sentryFileData = [self readSentryFile];
+	if (sentryFileData != nil)
+	{
+		NSData * sentryFileHash = [sentryFileData cr_sha1HashValue];
+		[builder setShaSentryfile:sentryFileHash];
+		[builder setEresultSentryfile:EResultOK];
+	} else {
+		[builder setEresultSentryfile:EResultFileNotFound];
+	}
+	
+	NSUUID * uniqueId = [[UIDevice currentDevice] identifierForVendor];
+	NSString * uniqueIdString = [uniqueId UUIDString];
+	NSData * uniqueIdData = [uniqueIdString dataUsingEncoding:NSUTF8StringEncoding];
+	NSData * uniqueIdHash = [uniqueIdData cr_sha1HashValue];
+	[builder setMachineId:uniqueIdHash];
     
     loginMessage.body = [builder build];
     
@@ -70,6 +89,46 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
     [self.steamClient sendMessage:loginMessage];
     
     return [_loginDeferred promise];
+}
+
+#pragma mark -
+#pragma mark Steam Guard
+
+- (void) writeData:(NSData *)data toSentryFile:(NSString *)sentryFileName
+{
+	NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+	[userDefaults setObject:sentryFileName forKey:@"SKSteamSentryFileName"];
+	[userDefaults synchronize];
+	
+	NSURL * sentryFileUrl = [self sentryFileURLForFileName:sentryFileName];
+	[data writeToURL:sentryFileUrl atomically:YES];
+}
+
+- (NSURL *) sentryFileURLForFileName:(NSString *)fileName
+{	NSArray * cacheDirectories = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+	NSString * cacheDir = cacheDirectories[0];
+	NSURL * cacheDirUrl = [[NSURL fileURLWithPath:cacheDir] URLByAppendingPathComponent:@"com.opensteamworks.steamchat"];
+	NSURL * sentryFileUrl = [cacheDirUrl URLByAppendingPathComponent:fileName];
+	
+	NSFileManager * fileManager = [NSFileManager defaultManager];
+	BOOL isDirectory = NO;
+	BOOL exists = [fileManager fileExistsAtPath:[cacheDirUrl path] isDirectory:&isDirectory];
+	
+	if (!exists)
+	{
+		[fileManager createDirectoryAtURL:cacheDirUrl withIntermediateDirectories:YES attributes:nil error:nil];
+	}
+	
+	return sentryFileUrl;
+}
+
+- (NSData *) readSentryFile
+{
+	NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+	NSString * sentryFileName = [userDefaults objectForKey:@"SKSteamSentryFileName"];
+	
+	NSURL * sentryFileUrl = [self sentryFileURLForFileName:sentryFileName];
+	return [NSData dataWithContentsOfURL:sentryFileUrl];
 }
 
 #pragma mark -
@@ -97,6 +156,31 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
     }
     
     _loginDeferred = nil;
+}
+
+- (void) handleClientUpdateMachineAuth:(_SKPacketMsg *)packetMessage
+{
+	_SKClientMsgProtobuf * machineAuthMessage = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientUpdateMachineAuth class] packetMessage:packetMessage];
+	CMsgClientUpdateMachineAuth * machineAuth = machineAuthMessage.body;
+	
+    _SKClientMsgProtobuf * response = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientUpdateMachineAuthResponse class] messageType:EMsgClientUpdateMachineAuthResponse sourceJobMessage:machineAuthMessage];
+	
+	CMsgClientUpdateMachineAuthResponse_Builder * builder = [[CMsgClientUpdateMachineAuthResponse_Builder alloc] init];
+	
+	NSData * dataToWrite = machineAuth.data;
+	[self writeData:dataToWrite toSentryFile:machineAuth.filename];
+	
+	[builder setCubwrote:machineAuth.cubtowrite];
+	[builder setOffset:machineAuth.offset];
+	[builder setOtpIdentifier:machineAuth.otpIdentifier];
+	[builder setOtpType:machineAuth.otpType];
+	[builder setFilename:machineAuth.filename];
+	[builder setFilesize:machineAuth.cubtowrite];
+	[builder setShaFile:[dataToWrite cr_sha1HashValue]];
+	[builder setEresult:EResultOK];
+	
+	response.body = [builder build];
+	[self.steamClient sendMessage:response];
 }
 
 @end
