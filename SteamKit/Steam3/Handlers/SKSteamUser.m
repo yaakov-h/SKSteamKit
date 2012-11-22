@@ -105,7 +105,8 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
 }
 
 - (NSURL *) sentryFileURLForFileName:(NSString *)fileName
-{	NSArray * cacheDirectories = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+{
+	NSArray * cacheDirectories = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	NSString * cacheDir = cacheDirectories[0];
 	NSURL * cacheDirUrl = [[NSURL fileURLWithPath:cacheDir] URLByAppendingPathComponent:@"com.opensteamworks.steamchat"];
 	NSURL * sentryFileUrl = [cacheDirUrl URLByAppendingPathComponent:fileName];
@@ -126,6 +127,11 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
 {
 	NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
 	NSString * sentryFileName = [userDefaults objectForKey:@"SKSteamSentryFileName"];
+	
+	if (sentryFileName == nil)
+	{
+		return nil;
+	}
 	
 	NSURL * sentryFileUrl = [self sentryFileURLForFileName:sentryFileName];
 	return [NSData dataWithContentsOfURL:sentryFileUrl];
@@ -172,8 +178,6 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
 	
 	[builder setCubwrote:machineAuth.cubtowrite];
 	[builder setOffset:machineAuth.offset];
-	[builder setOtpIdentifier:machineAuth.otpIdentifier];
-	[builder setOtpType:machineAuth.otpType];
 	[builder setFilename:machineAuth.filename];
 	[builder setFilesize:machineAuth.cubtowrite];
 	[builder setShaFile:[dataToWrite cr_sha1HashValue]];
