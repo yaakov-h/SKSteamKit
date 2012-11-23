@@ -6,6 +6,8 @@
 #import "SKClientMsgHandler.h"
 
 @class CRPromise;
+@class SKSteamWalletInfo;
+@class SKSteamAccountInfo;
 
 extern NSString * const SKLogonDetailUsername;
 extern NSString * const SKLogonDetailPassword;
@@ -14,6 +16,8 @@ extern NSString * const SKLogonDetailSteamGuardCode;
 @interface SKSteamUser : SKClientMsgHandler
 
 @property (nonatomic, readonly) uint64_t steamID;
+@property (nonatomic, readonly) SKSteamWalletInfo * walletInfo;
+@property (nonatomic, readonly) SKSteamAccountInfo * accountInfo;
 
 - (id) init;
 

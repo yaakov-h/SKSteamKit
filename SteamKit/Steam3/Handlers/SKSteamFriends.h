@@ -27,4 +27,6 @@ extern EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest;
 - (SKSteamFriend *) friendWithSteamID:(uint64_t)steamId;
 - (SKSteamClan *) clanWithSteamID:(uint64_t)steamId;
 
+- (NSArray *) chatMessageHistoryForFriendWithSteamID:(uint64_t)steamId;
+
 @end

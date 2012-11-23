@@ -7,6 +7,7 @@
 
 @class SKSteamFriend;
 @class SKSteamClan;
+@class SKSteamChatMessageInfo;
 
 @interface _SKFriendsCache : NSObject
 
@@ -23,5 +24,8 @@
 
 - (void) removeFriend:(SKSteamFriend *)steamFriend;
 - (void) removeClan:(SKSteamFriend *)clan;
+
+- (void) addChatMessageInfo:(SKSteamChatMessageInfo *)info;
+- (NSArray *) messagesForFriend:(SKSteamFriend *)steamFriend;
 
 @end

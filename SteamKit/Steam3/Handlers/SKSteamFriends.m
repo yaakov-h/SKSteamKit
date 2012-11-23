@@ -193,6 +193,11 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	return nil;
 }
 
+- (NSArray *) chatMessageHistoryForFriendWithSteamID:(uint64_t)steamId
+{
+	return [_cache messagesForFriend:[self friendWithSteamID:steamId]];
+}
+
 #pragma mark -
 #pragma mark Handlers
 
@@ -321,6 +326,7 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	CMsgClientFriendMsgIncoming * chatMsg = msg.body;
 	
 	SKSteamChatMessageInfo * info = [[SKSteamChatMessageInfo alloc] initWithMessage:chatMsg steamFriends:self];
+	[_cache addChatMessageInfo:info];
 	[self.steamClient postNotification:SKSteamChatMessageInfoNotification withInfo:info];
 }
 

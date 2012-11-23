@@ -13,9 +13,19 @@ NSString * const SKSteamChatMessageInfoNotification = @"SKSteamChatMessageInfoNo
 
 @implementation SKSteamChatMessageInfo
 
-- (id) initWithMessage:(CMsgClientFriendMsgIncoming *)message steamFriends:(SKSteamFriends *)friends
+- (id) init
 {
 	self = [super init];
+	if (self)
+	{
+		_timestamp = [NSDate date];
+	}
+	return self;
+}
+
+- (id) initWithMessage:(CMsgClientFriendMsgIncoming *)message steamFriends:(SKSteamFriends *)friends
+{
+	self = [self init];
 	if (self)
 	{
 		_steamFriendFrom = [friends friendWithSteamID:message.steamidFrom];
@@ -28,7 +38,7 @@ NSString * const SKSteamChatMessageInfoNotification = @"SKSteamChatMessageInfoNo
 
 - (id) initWithClanMessage:(_SKMsgClientChatMsg *)message textData:(NSData *)textData steamFriends:(SKSteamFriends *)friends
 {
-	self = [super init];
+	self = [self init];
 	if (self)
 	{
 		_steamFriendFrom = [friends friendWithSteamID:message.steamIdChatter];

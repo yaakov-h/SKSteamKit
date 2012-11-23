@@ -10,6 +10,7 @@
 #import "SKSteamFriends.h"
 #import "SKSteamChatMessageInfo.h"
 #import "SKNSNotificationExtensions.h"
+#import "SKSteamFriend.h"
 
 @implementation SKSteamKitTests
 
@@ -77,6 +78,8 @@
 		SKSteamClient * client = notification.object;
 		NSString * reply = [NSString stringWithFormat:@"Echo: %@", message];
 		[client.steamFriends sendChatMessageToFriend:friend type:EChatEntryTypeChatMsg text:reply];
+		
+		NSLog(@"All messages from %@ so far: %@", friend.personaName, [[client.steamFriends chatMessageHistoryForFriendWithSteamID:friend.steamId] valueForKey:@"message"]);
 	}
 }
 

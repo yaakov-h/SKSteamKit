@@ -9,7 +9,10 @@
 #import "_SKCMCLient.h"
 #import "SKSteamUser.h"
 #import "SKSteamFriends.h"
+#import "SKSteamApps.h"
 #import <CRBoilerplate/CRBoilerplate.h>
+
+NSString * SKSteamClientDisconnectedNotification = @"SKSteamClientDisconnectedNotification";
 
 @interface SKSteamClient () <_SKCMClientDelegate>
 @end
@@ -32,6 +35,7 @@
         
         [self addHandler:[[SKSteamUser alloc] init]];
         [self addHandler:[[SKSteamFriends alloc] init]];
+        [self addHandler:[[SKSteamApps alloc] init]];
 		
 		_notificationCenter = [NSNotificationCenter defaultCenter];
     }
@@ -72,6 +76,11 @@
     return [self handlerOfClass:[SKSteamFriends class]];
 }
 
+- (SKSteamApps *) steamApps
+{
+    return [self handlerOfClass:[SKSteamApps class]];
+}
+
 - (NSArray *) handlers
 {
     return _handlers;
@@ -110,25 +119,11 @@
 {
     [_connectDeferred resolveWithResult:self];
     _connectDeferred = nil;
-    
-//    [self.handlers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
-//     {
-//         if ([obj respondsToSelector:@selector(clientDidConnect:)])
-//         {
-//             [obj clientDidConnect:client];
-//         }
-//     }];
 }
 
 - (void) client:(_SKCMClient *)client didDisconnectWithError:(NSError *)error
 {
-//    [self.handlers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
-//    {
-//        if ([obj respondsToSelector:@selector(client:didDisconnectWithError:)])
-//        {
-//            [obj client:client didDisconnectWithError:error];
-//        }
-//    }];
+	[self postNotification:SKSteamClientDisconnectedNotification withInfo:error];
 }
 
 - (void) client:(_SKCMClient *)client didRecieveMessage:(_SKPacketMsg *)packetMessage

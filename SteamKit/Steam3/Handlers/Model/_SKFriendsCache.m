@@ -6,6 +6,7 @@
 #import "_SKFriendsCache.h"
 #import "SKSteamFriend.h"
 #import "SKSteamClan.h"
+#import "SKSteamChatMessageInfo.h"
 
 @interface SKSteamFriend()
 - (void) setSteamId:(uint64_t)steamId;
@@ -16,6 +17,7 @@
 	NSMutableArray * _friends;
 	NSMutableArray * _clans;
 	SKSteamFriend * _localUser;
+	NSMutableDictionary * _messagesCache;
 }
 
 - (id) init
@@ -26,6 +28,7 @@
 		_localUser = [[SKSteamFriend alloc] init];
 		_friends = [@[] mutableCopy];
 		_clans = [@[] mutableCopy];
+		_messagesCache = [@{} mutableCopy];
 	}
 	return self;
 }
@@ -56,6 +59,7 @@
 	
 	SKSteamFriend * friend = [[SKSteamFriend alloc] initWithSteamID:steamId];
 	[_friends addObject:friend];
+	[_messagesCache setObject:[@[] mutableCopy] forKey:@(friend.steamId)];
 	return friend;
 }
 
@@ -75,6 +79,7 @@
 
 - (void) clear
 {
+	[_messagesCache removeAllObjects];
 	[_friends removeAllObjects];
 	[_clans removeAllObjects];
 }
@@ -92,6 +97,23 @@
 - (void) removeClan:(SKSteamFriend *)clan
 {
 	[_clans removeObject:clan];
+}
+
+- (NSArray *) messagesForFriend:(SKSteamFriend *)steamFriend
+{
+	return [_messagesCache objectForKey:@(steamFriend.steamId)];
+}
+
+- (void) addChatMessageInfo:(SKSteamChatMessageInfo *)info
+{
+	if (info.chatEntryType == EChatEntryTypeChatMsg)
+	{
+		if (info.chatRoomClan == nil)
+		{
+			SKSteamFriend * friend = info.steamFriendFrom;
+			[[_messagesCache objectForKey:@(friend.steamId)] addObject:info];
+		}
+	}
 }
 
 @end

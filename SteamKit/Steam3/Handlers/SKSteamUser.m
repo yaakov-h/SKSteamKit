@@ -217,6 +217,7 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
 	CMsgClientWalletInfoUpdate * walletInfo = walletInfoMessage.body;
 	
 	SKSteamWalletInfo * info = [[SKSteamWalletInfo alloc] initWithMessage:walletInfo];
+	_walletInfo = info;
 	[self.steamClient postNotification:SKSteamWalletInfoUpdateNotification withInfo:info];
 }
 
@@ -226,6 +227,7 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
 	CMsgClientAccountInfo * accountInfo = accountInfoMessage.body;
 	
 	SKSteamAccountInfo * info = [[SKSteamAccountInfo alloc] initWithMessage:accountInfo];
+	_accountInfo = info;
 	[self.steamClient postNotification:SKSteamAccountInfoUpdateNotification withInfo:info];
 }
 
