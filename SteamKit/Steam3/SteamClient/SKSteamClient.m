@@ -42,6 +42,11 @@ NSString * SKSteamClientDisconnectedNotification = @"SKSteamClientDisconnectedNo
     return self;
 }
 
+- (uint64_t) steamID
+{
+	return _client.steamID;
+}
+
 - (void) addHandler:(SKClientMsgHandler *)handler
 {
     [_handlers addObject:handler];

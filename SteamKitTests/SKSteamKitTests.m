@@ -11,6 +11,8 @@
 #import "SKSteamChatMessageInfo.h"
 #import "SKNSNotificationExtensions.h"
 #import "SKSteamFriend.h"
+#import "SKSteamClan.h"
+#import "SKSteamChatRoom.h"
 
 @implementation SKSteamKitTests
 
@@ -27,6 +29,8 @@
     
     [super tearDown];
 }
+
+static uint64_t steamClanSteamID = 0LLU; // Replace with Steam Group SteamID
 
 - (void)testExample
 {
@@ -54,6 +58,8 @@
         {
             NSLog(@"Logged in to Steam: %@", data);
 			steamClient.steamFriends.personaState = EPersonaStateOnline;
+			
+			[steamClient.steamFriends enterChatRoomForClanID:steamClanSteamID];
         }];
     }];
     
@@ -73,14 +79,19 @@
 	SKSteamFriend * friend = info.steamFriendFrom;
 	NSString * message = info.message;
 	
-	if (info.chatEntryType == EChatEntryTypeChatMsg && info.chatRoomClan == nil)
+	if (info.chatEntryType == EChatEntryTypeChatMsg && info.chatRoomClan.steamId == steamClanSteamID)
 	{
 		SKSteamClient * client = notification.object;
 		NSString * reply = [NSString stringWithFormat:@"Echo: %@", message];
-		[client.steamFriends sendChatMessageToFriend:friend type:EChatEntryTypeChatMsg text:reply];
+		//[client.steamFriends sendChatMessageToFriend:friend type:EChatEntryTypeChatMsg text:reply];
 		
-		NSLog(@"All messages from %@ so far: %@", friend.personaName, [[client.steamFriends chatMessageHistoryForFriendWithSteamID:friend.steamId] valueForKey:@"message"]);
+		NSLog(@"All messages from %@ so far: %@", info.chatRoomClan.name, [[client.steamFriends chatMessageHistoryForClanWithSteamID:info.chatRoomClan.steamId] valueForKey:@"message"]);
+		NSLog(@"Chat room members: %@", [info.chatRoom.members valueForKey:@"personaName"]);
+		
+		// Chat room echo bot
+		[client.steamFriends sendChatMessageToChatRoom:info.chatRoom type:EChatEntryTypeChatMsg text:reply];
 	}
 }
+
 
 @end

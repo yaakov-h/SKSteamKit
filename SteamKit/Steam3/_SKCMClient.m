@@ -69,6 +69,11 @@ typedef enum
     [_connection disconnect];
 }
 
+- (uint64_t) steamID
+{
+	return [_steamId unsignedLongLongValue];
+}
+
 #pragma mark -
 #pragma mark Hardcoded Server List
 

@@ -11,6 +11,7 @@ extern NSString * const SKSteamChatMessageInfoNotification;
 @class SKSteamFriend;
 @class SKSteamClan;
 @class SKSteamFriends;
+@class SKSteamChatRoom;
 @class CMsgClientFriendMsgIncoming;
 @class _SKMsgClientChatMsg;
 
@@ -19,6 +20,7 @@ extern NSString * const SKSteamChatMessageInfoNotification;
 @property (nonatomic, readonly) SKSteamFriend * steamFriendFrom;
 @property (nonatomic, readonly) SKSteamClan * chatRoomClan;
 @property (nonatomic, readonly) EChatEntryType chatEntryType;
+@property (nonatomic, readonly) SKSteamChatRoom * chatRoom;
 @property (nonatomic, readonly) NSString * message;
 @property (nonatomic, readonly) NSDate * timestamp;
 

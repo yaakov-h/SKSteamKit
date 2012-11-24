@@ -32,6 +32,7 @@ NSString * const SKSteamChatMessageInfoNotification = @"SKSteamChatMessageInfoNo
 		_chatEntryType = message.chatEntryType;
 		_message = message.message == nil ? nil : [[NSString alloc] initWithData:message.message encoding:NSUTF8StringEncoding];
 		_chatRoomClan = nil;
+		_chatRoom = nil;
 	}
 	return self;
 }
@@ -52,6 +53,7 @@ NSString * const SKSteamChatMessageInfoNotification = @"SKSteamChatMessageInfoNo
 		}
 		
 		_chatRoomClan = [friends clanWithSteamID:steamID.unsignedLongLongValue];
+		_chatRoom = [friends chatWithSteamID:message.steamIdChatRoom];
 	}
 	return self;
 }

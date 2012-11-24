@@ -7,6 +7,7 @@
 #import "SKSteamFriend.h"
 #import "SKSteamClan.h"
 #import "SKSteamChatMessageInfo.h"
+#import "SKSteamChatRoom.h"
 
 @interface SKSteamFriend()
 - (void) setSteamId:(uint64_t)steamId;
@@ -16,6 +17,7 @@
 {
 	NSMutableArray * _friends;
 	NSMutableArray * _clans;
+	NSMutableArray * _chats;
 	SKSteamFriend * _localUser;
 	NSMutableDictionary * _messagesCache;
 }
@@ -27,6 +29,7 @@
 	{
 		_localUser = [[SKSteamFriend alloc] init];
 		_friends = [@[] mutableCopy];
+		_chats = [@[] mutableCopy];
 		_clans = [@[] mutableCopy];
 		_messagesCache = [@{} mutableCopy];
 	}
@@ -46,6 +49,11 @@
 - (NSArray *) clans
 {
 	return [_clans copy];
+}
+
+- (NSArray *) chats
+{
+	return [_chats copy];
 }
 
 - (SKSteamFriend *) getFriendWithSteamID:(uint64_t)steamId
@@ -73,13 +81,27 @@
 	}
 	
 	SKSteamClan * clan = [[SKSteamClan alloc] initWithSteamID:steamId];
-	[_friends addObject:clan];
+	[_clans addObject:clan];
+	[_messagesCache setObject:[@[] mutableCopy] forKey:@(clan.steamId)];
 	return clan;
+}
+
+- (SKSteamChatRoom *) getChatWithSteamID:(uint64_t)steamId
+{
+	for (SKSteamChatRoom * chat in _chats) {
+		if (chat.steamId == steamId)
+		{
+			return chat;
+		}
+	}
+	
+	SKSteamChatRoom * chat = [[SKSteamChatRoom alloc] initWithSteamID:steamId];
+	[_chats addObject:chat];
+	return chat;
 }
 
 - (void) clear
 {
-	[_messagesCache removeAllObjects];
 	[_friends removeAllObjects];
 	[_clans removeAllObjects];
 }
@@ -99,9 +121,19 @@
 	[_clans removeObject:clan];
 }
 
+- (void) removeChat:(SKSteamChatRoom *)chat
+{
+	[_chats removeObject:chat];
+}
+
 - (NSArray *) messagesForFriend:(SKSteamFriend *)steamFriend
 {
 	return [_messagesCache objectForKey:@(steamFriend.steamId)];
+}
+
+- (NSArray *) messagesForClan:(SKSteamClan *)clan
+{
+	return [_messagesCache objectForKey:@(clan.steamId)];
 }
 
 - (void) addChatMessageInfo:(SKSteamChatMessageInfo *)info
@@ -112,6 +144,9 @@
 		{
 			SKSteamFriend * friend = info.steamFriendFrom;
 			[[_messagesCache objectForKey:@(friend.steamId)] addObject:info];
+		} else {
+			SKSteamClan * clan = info.chatRoomClan;
+			[[_messagesCache objectForKey:@(clan.steamId)] addObject:info];
 		}
 	}
 }

@@ -44,6 +44,8 @@
 		case EMsgClientPackageInfoResponse:
 			[self handleClientPackageInfoResponse:packetMessage];
 			break;
+			
+		default: break;
 	}
 }
 

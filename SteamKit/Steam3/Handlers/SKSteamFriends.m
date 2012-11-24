@@ -15,6 +15,7 @@
 #import "_SKPacketMsg.h"
 #import "SKSteamID.h"
 #import "SKSteamChatMessageInfo.h"
+#import "SKSteamChatRoom.h"
 
 EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	EClientPersonaStateFlagPlayerName	|
@@ -76,6 +77,8 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 		case EMsgClientChatInvite:
 			[self handleClientChatInvite:packetMessage];
 			break;
+			
+		default: break;
 	}
 }
 
@@ -128,6 +131,11 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	return _cache.clans;
 }
 
+- (NSArray *) chats
+{
+	return _cache.chats;
+}
+
 - (void) sendChatMessageToFriend:(SKSteamFriend *)steamFriend type:(EChatEntryType)type text:(NSString *)message
 {
 	_SKClientMsgProtobuf * clientFriendMessage = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientFriendMsg class] messageType:EMsgClientFriendMsg];
@@ -139,6 +147,19 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	
 	clientFriendMessage.body = [builder build];
 	[self.steamClient sendMessage:clientFriendMessage];
+}
+
+- (void) sendChatMessageToChatRoom:(SKSteamChatRoom *)chatRoom type:(EChatEntryType)type text:(NSString *)message
+{
+	_SKClientMsg * clientChatMessage = [[_SKClientMsg alloc] initWithBodyClass:[_SKMsgClientChatMsg class] messageType:EMsgClientChatMsg];
+	_SKMsgClientChatMsg * msg = clientChatMessage.body;
+	msg.steamIdChatRoom = chatRoom.steamId;
+	msg.steamIdChatter = self.steamClient.steamID;
+	msg.chatMsgType = type;
+	
+	[clientChatMessage.payload appendData:[message dataUsingEncoding:NSUTF8StringEncoding]];
+	
+	[self.steamClient sendMessage:clientChatMessage];
 }
 
 - (void) removeFriend:(SKSteamFriend *)steamFriend
@@ -158,6 +179,18 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	
 	CMsgClientRequestFriendData_Builder * builder = [[CMsgClientRequestFriendData_Builder alloc] init];
 	[builder setFriendsArray:[friends valueForKey:@"steamId"]];
+	[builder setPersonaStateRequested:requestedInfo];
+	
+	request.body = [builder build];
+	[self.steamClient sendMessage:request];
+}
+
+- (void) requestFriendInfoForClans:(NSArray *)clans requestedInfo:(EClientPersonaStateFlag)requestedInfo
+{
+	_SKClientMsgProtobuf * request = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientRequestFriendData class] messageType:EMsgClientRequestFriendData];
+	
+	CMsgClientRequestFriendData_Builder * builder = [[CMsgClientRequestFriendData_Builder alloc] init];
+	[builder setFriendsArray:[clans valueForKey:@"steamId"]];
 	[builder setPersonaStateRequested:requestedInfo];
 	
 	request.body = [builder build];
@@ -193,9 +226,41 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	return nil;
 }
 
+- (SKSteamChatRoom *) chatWithSteamID:(uint64_t)steamId
+{
+	for (SKSteamChatRoom * chat in _cache.chats)
+	{
+		if (chat.steamId == steamId)
+		{
+			return chat;
+		}
+	}
+	return nil;
+}
+
 - (NSArray *) chatMessageHistoryForFriendWithSteamID:(uint64_t)steamId
 {
 	return [_cache messagesForFriend:[self friendWithSteamID:steamId]];
+}
+
+- (NSArray *) chatMessageHistoryForClanWithSteamID:(uint64_t)steamId
+{
+	return [_cache messagesForClan:[self clanWithSteamID:steamId]];
+}
+
+- (void) enterChatRoomForClanID:(uint64_t)clanId
+{
+	_SKClientMsg * msg = [[_SKClientMsg alloc] initWithBodyClass:[_SKMsgClientJoinChat class] messageType:EMsgClientJoinChat];
+	SKSteamID * steamId = [SKSteamID steamIDWithUnsignedLongLong:clanId];
+	if (steamId.isClanAccount)
+	{
+		steamId = [[SKSteamID alloc] initWithUniverse:steamId.universe accountType:EAccountTypeChat instance:SKSteamIDChatInstanceFlagClan accountID:steamId.accountID];
+	}
+	
+	_SKMsgClientJoinChat * body = msg.body;
+	body.steamIdChat = steamId.unsignedLongLongValue;
+	
+	[self.steamClient sendMessage:msg];
 }
 
 #pragma mark -
@@ -211,7 +276,6 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	for(CMsgClientPersonaState_Friend * friend in perState.friends)
 	{
 		uint64_t friendId = friend.friendid;
-//		uint64_t sourceId = friend.steamidSource;
 		SKSteamID * friendSteamId = [SKSteamID steamIDWithUnsignedLongLong:friendId];
 		
 		if (friendSteamId.isIndividualAccount)
@@ -234,6 +298,17 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 				localFriend.gameName = friend.gameName;
 				localFriend.gameId = friend.gameid;
 				localFriend.gameAppId = friend.gamePlayedAppId;
+			}
+			
+			if ((flags & EClientPersonaStateFlagSourceID) == EClientPersonaStateFlagSourceID)
+			{
+				uint64_t sourceId = friend.steamidSource;
+				if (sourceId != 0)
+				{
+					SKSteamChatRoom * chatRoom = [_cache getChatWithSteamID:sourceId];
+					[chatRoom handlePersonaStateChange:friend steamFriends:self];
+					[self.steamClient postNotification:SKSteamChatRoomMembersChangedNotification withInfo:chatRoom];
+				}
 			}
 		}
 		else if (friendSteamId.isClanAccount)
@@ -340,6 +415,17 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 
 - (void) handleClientChatEnter:(_SKPacketMsg *)packetMessage
 {
+	_SKClientMsg * chatEnterMessage = [[_SKClientMsg alloc] initWithBodyClass:[_SKMsgClientChatEnter class] packetMessage:packetMessage];
+	_SKMsgClientChatEnter * enter = chatEnterMessage.body;
+	
+	uint64_t steamIdChat = enter.steamIdChat;
+	uint64_t friendId = enter.steamIdFriend;
+	uint64_t clanId = enter.steamIdClan;
+	EChatRoomType type = enter.chatRoomType;
+	uint8_t chatFlags = enter.chatFlags;
+	EChatRoomEnterResponse response = enter.enterResponse;
+	
+	// TODO: Post notification
 }
 
 - (void) handleClientChatMsg:(_SKPacketMsg *)packetMessage
@@ -348,11 +434,33 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	_SKMsgClientChatMsg * msg = chatMessage.body;
 	
 	SKSteamChatMessageInfo * info = [[SKSteamChatMessageInfo alloc] initWithClanMessage:msg textData:chatMessage.payload steamFriends:self];
+	[_cache addChatMessageInfo:info];
 	[self.steamClient postNotification:SKSteamChatMessageInfoNotification withInfo:info];
 }
 
 - (void) handleClientChatMemberInfo:(_SKPacketMsg *)packetMessage
 {
+	_SKClientMsg * memberInfoMessage = [[_SKClientMsg alloc] initWithBodyClass:[_SKMsgClientChatMemberInfo class] packetMessage:packetMessage];
+	_SKMsgClientChatMemberInfo * msg = memberInfoMessage.body;
+	
+	uint64_t chatId = msg.steamIdChat;
+	
+	switch (msg.type)
+	{
+		case EChatInfoTypeStateChange:
+		{
+			CRDataReader * reader = [[CRDataReader alloc] initWithData:memberInfoMessage.payload];
+			uint64_t chatterActedOn = [reader readUInt64];
+			EChatMemberStateChange stateChange = [reader readUInt32];
+//			uint64_t chatterActedBy = [reader readUInt64];
+			
+			SKSteamChatRoom * chatRoom = [self chatWithSteamID:chatId];
+			[chatRoom handleChatMemberStateChange:stateChange forFriend:[self friendWithSteamID:chatterActedOn] steamFriends:self];
+			[self.steamClient postNotification:SKSteamChatRoomMembersChangedNotification withInfo:chatRoom];
+		}
+			
+		default: break;
+	}
 }
 
 - (void) handleClientChatActionResult:(_SKPacketMsg *)packetMessage
