@@ -17,7 +17,7 @@ NSString * const SKSteamPersonaStateInfoNotification = @"SKSteamPersonaStateInfo
 	self = [super init];
 	if (self)
 	{
-		SKSteamID * steamId = [SKSteamID steamIDWithUnsignedLongLong:statefriend.steamidSource];
+		SKSteamID * steamId = [SKSteamID steamIDWithUnsignedLongLong:statefriend.friendid];
 		if (steamId.isIndividualAccount)
 		{
 			_steamFriend = [friends friendWithSteamID:steamId.unsignedLongLongValue];
