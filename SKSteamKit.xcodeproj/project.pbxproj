@@ -17,6 +17,7 @@
 		D79BDC91165F082C005171EA /* SKLicence.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BDC90165F082C005171EA /* SKLicence.m */; };
 		D79BDC94165F0981005171EA /* SKLicenceListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BDC93165F0981005171EA /* SKLicenceListInfo.m */; };
 		D79BDC9D165F4F26005171EA /* SKSteamChatRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BDC9C165F4F26005171EA /* SKSteamChatRoom.m */; };
+		D79BF3721661091F003E06BB /* SKSteamPersonaStateInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BF3711661091F003E06BB /* SKSteamPersonaStateInfo.m */; };
 		D7A4D2D0165DE5E800DBFBE6 /* SKSteamWalletInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A4D2CF165DE5E800DBFBE6 /* SKSteamWalletInfo.m */; };
 		D7A4D2D3165DE69700DBFBE6 /* SKSteamAccountInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A4D2D2165DE69700DBFBE6 /* SKSteamAccountInfo.m */; };
 		D7A4D2D6165DE92200DBFBE6 /* SKNSNotificationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A4D2D5165DE92200DBFBE6 /* SKNSNotificationExtensions.m */; };
@@ -111,6 +112,8 @@
 		D79BDC93165F0981005171EA /* SKLicenceListInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKLicenceListInfo.m; sourceTree = "<group>"; };
 		D79BDC9B165F4F26005171EA /* SKSteamChatRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamChatRoom.h; sourceTree = "<group>"; };
 		D79BDC9C165F4F26005171EA /* SKSteamChatRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamChatRoom.m; sourceTree = "<group>"; };
+		D79BF3701661091F003E06BB /* SKSteamPersonaStateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamPersonaStateInfo.h; sourceTree = "<group>"; };
+		D79BF3711661091F003E06BB /* SKSteamPersonaStateInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamPersonaStateInfo.m; sourceTree = "<group>"; };
 		D7A4D2CE165DE5E800DBFBE6 /* SKSteamWalletInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamWalletInfo.h; sourceTree = "<group>"; };
 		D7A4D2CF165DE5E800DBFBE6 /* SKSteamWalletInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamWalletInfo.m; sourceTree = "<group>"; };
 		D7A4D2D1165DE69700DBFBE6 /* SKSteamAccountInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamAccountInfo.h; sourceTree = "<group>"; };
@@ -282,6 +285,8 @@
 				D79BDC93165F0981005171EA /* SKLicenceListInfo.m */,
 				D79BDC9B165F4F26005171EA /* SKSteamChatRoom.h */,
 				D79BDC9C165F4F26005171EA /* SKSteamChatRoom.m */,
+				D79BF3701661091F003E06BB /* SKSteamPersonaStateInfo.h */,
+				D79BF3711661091F003E06BB /* SKSteamPersonaStateInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -681,6 +686,7 @@
 				D79BDC91165F082C005171EA /* SKLicence.m in Sources */,
 				D79BDC94165F0981005171EA /* SKLicenceListInfo.m in Sources */,
 				D79BDC9D165F4F26005171EA /* SKSteamChatRoom.m in Sources */,
+				D79BF3721661091F003E06BB /* SKSteamPersonaStateInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

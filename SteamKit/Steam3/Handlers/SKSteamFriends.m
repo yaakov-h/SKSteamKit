@@ -16,6 +16,7 @@
 #import "SKSteamID.h"
 #import "SKSteamChatMessageInfo.h"
 #import "SKSteamChatRoom.h"
+#import "SKSteamPersonaStateInfo.h"
 
 EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	EClientPersonaStateFlagPlayerName	|
@@ -320,6 +321,9 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 				clan.name = friend.playerName;
 			}
 		}
+		
+		SKSteamPersonaStateInfo * info = [[SKSteamPersonaStateInfo alloc] initWithMessage:friend steamFriends:self];
+		[self.steamClient postNotification:SKSteamPersonaStateInfoNotification withInfo:info];
 	}
 }
 
