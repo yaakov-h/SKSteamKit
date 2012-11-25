@@ -148,6 +148,10 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	
 	clientFriendMessage.body = [builder build];
 	[self.steamClient sendMessage:clientFriendMessage];
+	
+	SKSteamChatMessageInfo * info = [[SKSteamChatMessageInfo alloc] initWithFriend:_cache.localUser type:type message:message];
+	[_cache addChatMessageInfo:info];
+	[self.steamClient postNotification:SKSteamChatMessageInfoNotification withInfo:info];
 }
 
 - (void) sendChatMessageToChatRoom:(SKSteamChatRoom *)chatRoom type:(EChatEntryType)type text:(NSString *)message
@@ -161,6 +165,22 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	[clientChatMessage.payload appendData:[message dataUsingEncoding:NSUTF8StringEncoding]];
 	
 	[self.steamClient sendMessage:clientChatMessage];
+	
+	SKSteamClan * clan = nil;
+	SKSteamID * roomID = [SKSteamID steamIDWithUnsignedLongLong:chatRoom.steamId];
+	for (SKSteamClan * innerClan in self.clans)
+	{
+		SKSteamID * clanID = [SKSteamID steamIDWithUnsignedLongLong:innerClan.steamId];
+		if (clanID.universe == roomID.universe && clanID.accountID == roomID.accountID && roomID.instance == SKSteamIDChatInstanceFlagClan)
+		{
+			clan = innerClan;
+			break;
+		}
+	}
+	
+	SKSteamChatMessageInfo * info = [[SKSteamChatMessageInfo alloc] initWithFriend:_cache.localUser clan:clan chatRoom:chatRoom type:type message:message];
+	[_cache addChatMessageInfo:info];
+	[self.steamClient postNotification:SKSteamChatMessageInfoNotification withInfo:info];
 }
 
 - (void) removeFriend:(SKSteamFriend *)steamFriend

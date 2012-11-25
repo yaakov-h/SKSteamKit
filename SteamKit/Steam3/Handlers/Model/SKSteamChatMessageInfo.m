@@ -58,4 +58,32 @@ NSString * const SKSteamChatMessageInfoNotification = @"SKSteamChatMessageInfoNo
 	return self;
 }
 
+- (id) initWithFriend:(SKSteamFriend *)steamFriend type:(EChatEntryType)type message:(NSString *)message
+{
+	self = [self init];
+	if (self)
+	{
+		_steamFriendFrom = steamFriend;
+		_chatEntryType = type;
+		_message = message;
+		_chatRoom = nil;
+		_chatRoomClan = nil;
+	}
+	return self;
+}
+
+- (id) initWithFriend:(SKSteamFriend *)steamFriend clan:(SKSteamClan *)clan chatRoom:(SKSteamChatRoom *)room type:(EChatEntryType)type message:(NSString *)message
+{
+	self = [self init];
+	if (self)
+	{
+		_steamFriendFrom = steamFriend;
+		_chatRoomClan = clan;
+		_chatRoom = room;
+		_chatEntryType = type;
+		_message = message;
+	}
+	return self;
+}
+
 @end

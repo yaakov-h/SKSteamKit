@@ -26,5 +26,7 @@ extern NSString * const SKSteamChatMessageInfoNotification;
 
 - (id) initWithMessage:(CMsgClientFriendMsgIncoming *)message steamFriends:(SKSteamFriends *)friends;
 - (id) initWithClanMessage:(_SKMsgClientChatMsg *)message textData:(NSData *)textData steamFriends:(SKSteamFriends *)friends;
+- (id) initWithFriend:(SKSteamFriend *)steamFriend type:(EChatEntryType)type message:(NSString *)message;
+- (id) initWithFriend:(SKSteamFriend *)steamFriend clan:(SKSteamClan *)clan chatRoom:(SKSteamChatRoom *)room type:(EChatEntryType)type message:(NSString *)message;
 
 @end
