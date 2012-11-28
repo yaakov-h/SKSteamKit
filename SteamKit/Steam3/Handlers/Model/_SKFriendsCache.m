@@ -8,6 +8,7 @@
 #import "SKSteamClan.h"
 #import "SKSteamChatMessageInfo.h"
 #import "SKSteamChatRoom.h"
+#import "SKSteamID.h"
 
 @interface SKSteamFriend()
 - (void) setSteamId:(uint64_t)steamId;
@@ -165,6 +166,13 @@
 	if (chatRoom != nil)
 	{
 		[_chats removeObject:chatRoom];
+		
+		SKSteamID * chatId = [SKSteamID steamIDWithUnsignedLongLong:chatRoomId];
+		if (chatId.instance == SKSteamIDChatInstanceFlagClan)
+		{
+			SKSteamID * clanId = [[SKSteamID alloc] initWithUniverse:chatId.universe accountType:EAccountTypeClan instance:0 accountID:chatId.accountID];
+			[_messagesCache removeObjectForKey:@(clanId.unsignedLongLongValue)];
+		}
 	}
 }
 
