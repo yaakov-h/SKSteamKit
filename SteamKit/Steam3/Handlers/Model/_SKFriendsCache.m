@@ -151,4 +151,21 @@
 	}
 }
 
+- (void) clearChatRoom:(uint64_t)chatRoomId
+{
+	SKSteamChatRoom * chatRoom = nil;
+	for (SKSteamChatRoom * chat in _chats) {
+		if (chat.steamId == chatRoomId)
+		{
+			chatRoom = chat;
+			break;
+		}
+	}
+	
+	if (chatRoom != nil)
+	{
+		[_chats removeObject:chatRoom];
+	}
+}
+
 @end

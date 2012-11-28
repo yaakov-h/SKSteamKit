@@ -299,6 +299,8 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	[msg.payload cr_appendUInt64:self.steamClient.steamID]; // ChatterActedBy
 	
 	[self.steamClient sendMessage:msg];
+	
+	[_cache clearChatRoom:chatRoomId];
 }
 
 #pragma mark -

@@ -32,5 +32,6 @@
 - (void) addChatMessageInfo:(SKSteamChatMessageInfo *)info;
 - (NSArray *) messagesForFriend:(SKSteamFriend *)steamFriend;
 - (NSArray *) messagesForClan:(SKSteamClan *)clan;
+- (void) clearChatRoom:(uint64_t)chatRoomId;
 
 @end
