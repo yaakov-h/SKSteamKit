@@ -287,6 +287,20 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	[self.steamClient sendMessage:msg];
 }
 
+- (void) leaveChatRoomWithID:(uint64_t)chatRoomId
+{
+	_SKClientMsg * msg = [[_SKClientMsg alloc] initWithBodyClass:[_SKMsgClientChatMemberInfo class] messageType:EMsgClientChatMemberInfo];
+	_SKMsgClientChatMemberInfo * body = msg.body;
+	body.steamIdChat = chatRoomId;
+	body.type = EChatInfoTypeStateChange;
+	
+	[msg.payload cr_appendUInt64:self.steamClient.steamID]; // ChatterActedOn
+	[msg.payload cr_appendUInt32:EChatMemberStateChangeLeft]; // StateChange
+	[msg.payload cr_appendUInt64:self.steamClient.steamID]; // ChatterActedBy
+	
+	[self.steamClient sendMessage:msg];
+}
+
 #pragma mark -
 #pragma mark Handlers
 
@@ -331,7 +345,6 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 				{
 					SKSteamChatRoom * chatRoom = [_cache getChatWithSteamID:sourceId];
 					[chatRoom handlePersonaStateChange:friend steamFriends:self];
-					[self.steamClient postNotification:SKSteamChatRoomMembersChangedNotification withInfo:chatRoom];
 				}
 			}
 		}
@@ -444,6 +457,9 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 {
 	_SKClientMsg * chatEnterMessage = [[_SKClientMsg alloc] initWithBodyClass:[_SKMsgClientChatEnter class] packetMessage:packetMessage];
 	_SKMsgClientChatEnter * enter = chatEnterMessage.body;
+	
+	// Make sure it exists
+	[_cache getChatWithSteamID:enter.steamIdChat];
 	
 	SKEnterChatRoomInfo * info = [[SKEnterChatRoomInfo alloc] initWithMessage:enter friends:self];
 	[self.steamClient postNotification:SKEnterChatRoomInfoNotification withInfo:info];
