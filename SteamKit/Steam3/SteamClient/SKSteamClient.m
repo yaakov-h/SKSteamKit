@@ -141,7 +141,8 @@ NSString * SKSteamClientDisconnectedNotification = @"SKSteamClientDisconnectedNo
 
 - (void) postNotification:(NSString *)notificationName withInfo:(NSObject *)info
 {
-	[_notificationCenter postNotificationName:notificationName object:self userInfo:@{@"SKNotificationInfo":info}];
+	NSDictionary * infoDict = info == nil ? nil : @{@"SKNotificationInfo":info};
+	[_notificationCenter postNotificationName:notificationName object:self userInfo:infoDict];
 }
 
 @end
