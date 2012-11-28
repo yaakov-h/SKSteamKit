@@ -18,6 +18,7 @@
 		D79BDC94165F0981005171EA /* SKLicenceListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BDC93165F0981005171EA /* SKLicenceListInfo.m */; };
 		D79BDC9D165F4F26005171EA /* SKSteamChatRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BDC9C165F4F26005171EA /* SKSteamChatRoom.m */; };
 		D79BF3721661091F003E06BB /* SKSteamPersonaStateInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BF3711661091F003E06BB /* SKSteamPersonaStateInfo.m */; };
+		D79F19E11665D36F001865D0 /* SKEnterChatRoomInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D79F19E01665D36F001865D0 /* SKEnterChatRoomInfo.m */; };
 		D7A4D2D0165DE5E800DBFBE6 /* SKSteamWalletInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A4D2CF165DE5E800DBFBE6 /* SKSteamWalletInfo.m */; };
 		D7A4D2D3165DE69700DBFBE6 /* SKSteamAccountInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A4D2D2165DE69700DBFBE6 /* SKSteamAccountInfo.m */; };
 		D7A4D2D6165DE92200DBFBE6 /* SKNSNotificationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A4D2D5165DE92200DBFBE6 /* SKNSNotificationExtensions.m */; };
@@ -58,7 +59,7 @@
 		D7ACAEFE1658DE47009DC581 /* _SKClientMsgProtobuf.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEFD1658DE46009DC581 /* _SKClientMsgProtobuf.m */; };
 		D7ACAF021658E6A7009DC581 /* NSData+Multi.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAF011658E6A7009DC581 /* NSData+Multi.m */; };
 		D7EF39ED1655141A0090A8F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7EF39EC1655141A0090A8F4 /* Foundation.framework */; };
-		D7EF39F21655141A0090A8F4 /* SteamKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7EF39F11655141A0090A8F4 /* SteamKit.h */; };
+		D7EF39F21655141A0090A8F4 /* SKSteamKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7EF39F11655141A0090A8F4 /* SKSteamKit.h */; };
 		D7EF39FC1655141A0090A8F4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7EF39FB1655141A0090A8F4 /* SenTestingKit.framework */; };
 		D7EF39FE1655141A0090A8F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7EF39FD1655141A0090A8F4 /* UIKit.framework */; };
 		D7EF39FF1655141A0090A8F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7EF39EC1655141A0090A8F4 /* Foundation.framework */; };
@@ -84,7 +85,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				D7EF39F21655141A0090A8F4 /* SteamKit.h in CopyFiles */,
+				D7EF39F21655141A0090A8F4 /* SKSteamKit.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +115,8 @@
 		D79BDC9C165F4F26005171EA /* SKSteamChatRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamChatRoom.m; sourceTree = "<group>"; };
 		D79BF3701661091F003E06BB /* SKSteamPersonaStateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamPersonaStateInfo.h; sourceTree = "<group>"; };
 		D79BF3711661091F003E06BB /* SKSteamPersonaStateInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamPersonaStateInfo.m; sourceTree = "<group>"; };
+		D79F19DF1665D36F001865D0 /* SKEnterChatRoomInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEnterChatRoomInfo.h; sourceTree = "<group>"; };
+		D79F19E01665D36F001865D0 /* SKEnterChatRoomInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEnterChatRoomInfo.m; sourceTree = "<group>"; };
 		D7A4D2CE165DE5E800DBFBE6 /* SKSteamWalletInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamWalletInfo.h; sourceTree = "<group>"; };
 		D7A4D2CF165DE5E800DBFBE6 /* SKSteamWalletInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamWalletInfo.m; sourceTree = "<group>"; };
 		D7A4D2D1165DE69700DBFBE6 /* SKSteamAccountInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamAccountInfo.h; sourceTree = "<group>"; };
@@ -192,7 +195,7 @@
 		D7EF39E91655141A0090A8F4 /* libSteamKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSteamKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7EF39EC1655141A0090A8F4 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D7EF39F01655141A0090A8F4 /* SteamKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SteamKit-Prefix.pch"; sourceTree = "<group>"; };
-		D7EF39F11655141A0090A8F4 /* SteamKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SteamKit.h; sourceTree = "<group>"; };
+		D7EF39F11655141A0090A8F4 /* SKSteamKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKSteamKit.h; sourceTree = "<group>"; };
 		D7EF39FA1655141A0090A8F4 /* SteamKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SteamKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7EF39FB1655141A0090A8F4 /* SenTestingKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D7EF39FD1655141A0090A8F4 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -287,6 +290,8 @@
 				D79BDC9C165F4F26005171EA /* SKSteamChatRoom.m */,
 				D79BF3701661091F003E06BB /* SKSteamPersonaStateInfo.h */,
 				D79BF3711661091F003E06BB /* SKSteamPersonaStateInfo.m */,
+				D79F19DF1665D36F001865D0 /* SKEnterChatRoomInfo.h */,
+				D79F19E01665D36F001865D0 /* SKEnterChatRoomInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -455,7 +460,7 @@
 				D7ACAE9D16586FA5009DC581 /* Crypto */,
 				D7ACAE9916586EEF009DC581 /* Steam3 */,
 				D7ACAE9716586EDF009DC581 /* Networking */,
-				D7EF39F11655141A0090A8F4 /* SteamKit.h */,
+				D7EF39F11655141A0090A8F4 /* SKSteamKit.h */,
 				D7EF39EF1655141A0090A8F4 /* Supporting Files */,
 			);
 			path = SteamKit;
@@ -687,6 +692,7 @@
 				D79BDC94165F0981005171EA /* SKLicenceListInfo.m in Sources */,
 				D79BDC9D165F4F26005171EA /* SKSteamChatRoom.m in Sources */,
 				D79BF3721661091F003E06BB /* SKSteamPersonaStateInfo.m in Sources */,
+				D79F19E11665D36F001865D0 /* SKEnterChatRoomInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

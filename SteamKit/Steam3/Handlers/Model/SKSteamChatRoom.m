@@ -9,6 +9,11 @@
 
 NSString * const SKSteamChatRoomMembersChangedNotification = @"SKSteamChatRoomMembersChangedNotification";
 
+NSString * const SKChatRoomChatterActedOnKey = @"SKChatRoomChatterActedOn";
+NSString * const SKChatRoomChaterActedByKey = @"SKChatRoomChaterActedBy";
+NSString * const SKChatRoomChatterStateChangeKey = @"SKChatRoomChatterStateChange";
+NSString * const SKChatRoomKey = @"SKChatRoomKey";
+
 @implementation SKSteamChatRoom
 {
 	NSMutableArray * _members;

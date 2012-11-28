@@ -17,6 +17,7 @@
 #import "SKSteamChatMessageInfo.h"
 #import "SKSteamChatRoom.h"
 #import "SKSteamPersonaStateInfo.h"
+#import "SKEnterChatRoomInfo.h"
 
 EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	EClientPersonaStateFlagPlayerName	|
@@ -92,7 +93,7 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 
 - (void) setPersonaName:(NSString *)personaName
 {
-	// Cache right away, so taht early class to SetPersonaState don't reset the set name.
+	// Cache right away, so that early class to SetPersonaState don't reset the set name.
 	_cache.localUser.personaName = personaName;
 	
 	_SKClientMsgProtobuf * clientChangeStatusMessage = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientChangeStatus class] messageType:EMsgClientChangeStatus];
@@ -111,7 +112,9 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 }
 
 - (void) setPersonaState:(EPersonaState)personaState
-{	
+{
+	_cache.localUser.personaState = personaState;
+	
 	_SKClientMsgProtobuf * clientChangeStatusMessage = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientChangeStatus class] messageType:EMsgClientChangeStatus];
 	
 	CMsgClientChangeStatus_Builder * builder = [[CMsgClientChangeStatus_Builder alloc] init];
@@ -442,14 +445,8 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	_SKClientMsg * chatEnterMessage = [[_SKClientMsg alloc] initWithBodyClass:[_SKMsgClientChatEnter class] packetMessage:packetMessage];
 	_SKMsgClientChatEnter * enter = chatEnterMessage.body;
 	
-	uint64_t steamIdChat = enter.steamIdChat;
-	uint64_t friendId = enter.steamIdFriend;
-	uint64_t clanId = enter.steamIdClan;
-	EChatRoomType type = enter.chatRoomType;
-	uint8_t chatFlags = enter.chatFlags;
-	EChatRoomEnterResponse response = enter.enterResponse;
-	
-	// TODO: Post notification
+	SKEnterChatRoomInfo * info = [[SKEnterChatRoomInfo alloc] initWithMessage:enter friends:self];
+	[self.steamClient postNotification:SKEnterChatRoomInfoNotification withInfo:info];
 }
 
 - (void) handleClientChatMsg:(_SKPacketMsg *)packetMessage
@@ -476,11 +473,18 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 			CRDataReader * reader = [[CRDataReader alloc] initWithData:memberInfoMessage.payload];
 			uint64_t chatterActedOn = [reader readUInt64];
 			EChatMemberStateChange stateChange = [reader readUInt32];
-//			uint64_t chatterActedBy = [reader readUInt64];
+			uint64_t chatterActedBy = [reader readUInt64];
 			
 			SKSteamChatRoom * chatRoom = [self chatWithSteamID:chatId];
 			[chatRoom handleChatMemberStateChange:stateChange forFriend:[self friendWithSteamID:chatterActedOn] steamFriends:self];
-			[self.steamClient postNotification:SKSteamChatRoomMembersChangedNotification withInfo:chatRoom];
+			
+			NSMutableDictionary * dictInfo = [@{} mutableCopy];
+			[dictInfo setObject:[_cache getFriendWithSteamID:chatterActedOn] forKey:SKChatRoomChatterActedOnKey];
+			[dictInfo setObject:[_cache getFriendWithSteamID:chatterActedBy] forKey:SKChatRoomChaterActedByKey];
+			[dictInfo setObject:@(stateChange) forKey:SKChatRoomChatterStateChangeKey];
+			[dictInfo setObject:chatRoom forKey:SKChatRoomKey];
+			
+			[self.steamClient postNotification:SKSteamChatRoomMembersChangedNotification withInfo:[dictInfo copy]];
 		}
 			
 		default: break;

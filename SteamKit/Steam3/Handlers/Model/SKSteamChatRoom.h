@@ -12,6 +12,11 @@
 
 extern NSString * const SKSteamChatRoomMembersChangedNotification;
 
+extern NSString * const SKChatRoomChatterActedOnKey;
+extern NSString * const SKChatRoomChaterActedByKey;
+extern NSString * const SKChatRoomChatterStateChangeKey;
+extern NSString * const SKChatRoomKey;
+
 @interface SKSteamChatRoom : NSObject
 
 @property (nonatomic, readonly) uint64_t steamId;
