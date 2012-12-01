@@ -13,6 +13,7 @@
 		D75CEA661659AE290047BE0F /* SKSteamClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA651659AE290047BE0F /* SKSteamClient.m */; };
 		D75CEA691659B15E0047BE0F /* SKClientMsgHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA681659B15E0047BE0F /* SKClientMsgHandler.m */; };
 		D75CEA6D1659B33A0047BE0F /* SKSteamUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA6C1659B33A0047BE0F /* SKSteamUser.m */; };
+		D7959072166A474200334646 /* _SKKeyValueParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D7959071166A474200334646 /* _SKKeyValueParser.m */; };
 		D79BDC8D165F072E005171EA /* SKSteamApps.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BDC8C165F072E005171EA /* SKSteamApps.m */; };
 		D79BDC91165F082C005171EA /* SKLicence.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BDC90165F082C005171EA /* SKLicence.m */; };
 		D79BDC94165F0981005171EA /* SKLicenceListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BDC93165F0981005171EA /* SKLicenceListInfo.m */; };
@@ -95,7 +96,6 @@
 		26D82D9E0EA24D618B10AA80 /* libPods-SKSteamKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SKSteamKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ACE8B7CDBFE4993B27795B5 /* libPods-SteamKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SteamKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		430E9EC2A7ED4B04B3AFEDD4 /* libPods-SteamKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SteamKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		60A2AC1A72F9405D8DD71EE9 /* Pods-SteamKitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamKitTests.xcconfig"; path = "Pods/Pods-SteamKitTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		9EAB68B889E045F683D76BA3 /* Pods-SteamKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamKit.xcconfig"; path = "Pods/Pods-SteamKit.xcconfig"; sourceTree = SOURCE_ROOT; };
 		D7252DF61659095100906F78 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D75CEA621659ADA50047BE0F /* _SKCMClientDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _SKCMClientDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +105,8 @@
 		D75CEA681659B15E0047BE0F /* SKClientMsgHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKClientMsgHandler.m; sourceTree = "<group>"; };
 		D75CEA6B1659B33A0047BE0F /* SKSteamUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamUser.h; sourceTree = "<group>"; };
 		D75CEA6C1659B33A0047BE0F /* SKSteamUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamUser.m; sourceTree = "<group>"; };
+		D7959070166A474200334646 /* _SKKeyValueParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SKKeyValueParser.h; sourceTree = "<group>"; };
+		D7959071166A474200334646 /* _SKKeyValueParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SKKeyValueParser.m; sourceTree = "<group>"; };
 		D79BDC8B165F072E005171EA /* SKSteamApps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamApps.h; sourceTree = "<group>"; };
 		D79BDC8C165F072E005171EA /* SKSteamApps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamApps.m; sourceTree = "<group>"; };
 		D79BDC8F165F082C005171EA /* SKLicence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKLicence.h; sourceTree = "<group>"; };
@@ -265,6 +267,15 @@
 			path = Handlers;
 			sourceTree = "<group>";
 		};
+		D795906E166A473300334646 /* KeyValues */ = {
+			isa = PBXGroup;
+			children = (
+				D7959070166A474200334646 /* _SKKeyValueParser.h */,
+				D7959071166A474200334646 /* _SKKeyValueParser.m */,
+			);
+			name = KeyValues;
+			sourceTree = "<group>";
+		};
 		D7A4D2CC165DE5B900DBFBE6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,7 +428,6 @@
 				D7EF3A031655141A0090A8F4 /* SteamKitTests */,
 				D7EF39EB1655141A0090A8F4 /* Frameworks */,
 				D7EF39EA1655141A0090A8F4 /* Products */,
-				60A2AC1A72F9405D8DD71EE9 /* Pods-SteamKitTests.xcconfig */,
 				9EAB68B889E045F683D76BA3 /* Pods-SteamKit.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -455,6 +465,7 @@
 		D7EF39EE1655141A0090A8F4 /* SteamKit */ = {
 			isa = PBXGroup;
 			children = (
+				D795906E166A473300334646 /* KeyValues */,
 				D7ACAEFF1658E664009DC581 /* Util */,
 				D7ACAEB716588BB2009DC581 /* Messages */,
 				D7ACAE9D16586FA5009DC581 /* Crypto */,
@@ -523,8 +534,6 @@
 				D7EF39F61655141A0090A8F4 /* Frameworks */,
 				D7EF39F71655141A0090A8F4 /* Resources */,
 				D7EF39F81655141A0090A8F4 /* ShellScript */,
-				BF996BF9F0764B5494D5A44C /* Copy Pods Resources */,
-				B64F274A634D4436B309AE84 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -588,34 +597,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-SteamKit-resources.sh\"\n";
-		};
-		B64F274A634D4436B309AE84 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-SteamKitTests-resources.sh\"\n";
-		};
-		BF996BF9F0764B5494D5A44C /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-SteamKitTests-resources.sh\"\n";
 		};
 		CA7F071C7FA64BD3A0B122B9 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -693,6 +674,7 @@
 				D79BDC9D165F4F26005171EA /* SKSteamChatRoom.m in Sources */,
 				D79BF3721661091F003E06BB /* SKSteamPersonaStateInfo.m in Sources */,
 				D79F19E11665D36F001865D0 /* SKEnterChatRoomInfo.m in Sources */,
+				D7959072166A474200334646 /* _SKKeyValueParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -756,7 +738,6 @@
 		};
 		D7EF3A0D1655141A0090A8F4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60A2AC1A72F9405D8DD71EE9 /* Pods-SteamKitTests.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -802,7 +783,6 @@
 		};
 		D7EF3A121655141A0090A8F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60A2AC1A72F9405D8DD71EE9 /* Pods-SteamKitTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",

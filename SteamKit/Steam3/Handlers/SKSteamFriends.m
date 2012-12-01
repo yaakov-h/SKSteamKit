@@ -18,6 +18,7 @@
 #import "SKSteamChatRoom.h"
 #import "SKSteamPersonaStateInfo.h"
 #import "SKEnterChatRoomInfo.h"
+#import "_SKKeyValueParser.h"
 
 EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	EClientPersonaStateFlagPlayerName	|
@@ -78,6 +79,10 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 			
 		case EMsgClientChatInvite:
 			[self handleClientChatInvite:packetMessage];
+			break;
+			
+		case EMsgClientP2PIntroducerMessage:
+			[self handleClientP2PIntroducerMessage:packetMessage];
 			break;
 			
 		default: break;
@@ -460,8 +465,19 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	_SKClientMsg * chatEnterMessage = [[_SKClientMsg alloc] initWithBodyClass:[_SKMsgClientChatEnter class] packetMessage:packetMessage];
 	_SKMsgClientChatEnter * enter = chatEnterMessage.body;
 	
+	CRDataReader * reader = [[CRDataReader alloc] initWithData:chatEnterMessage.payload];
+	uint8_t numKeyValueObjects = [reader readUInt32];
+	NSString * chatRoomName = [reader readUTF8String];
+	NSMutableArray * kvObjects = [@[] mutableCopy];
+	for (uint i = 0; i < numKeyValueObjects; i++)
+	{
+		[kvObjects addObject:[_SKKeyValueParser readKeyValues:reader]];
+	}
+	NSUInteger maxMembers = [reader readUInt32];
+	
 	// Make sure it exists
-	[_cache getChatWithSteamID:enter.steamIdChat];
+	SKSteamChatRoom * room = [_cache getChatWithSteamID:enter.steamIdChat];
+	[room setChatRoomName:chatRoomName withMessageObjects:[kvObjects copy] maxMembers:maxMembers];
 	
 	SKEnterChatRoomInfo * info = [[SKEnterChatRoomInfo alloc] initWithMessage:enter friends:self];
 	[self.steamClient postNotification:SKEnterChatRoomInfoNotification withInfo:info];
@@ -492,8 +508,16 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 			uint64_t chatterActedOn = [reader readUInt64];
 			EChatMemberStateChange stateChange = [reader readUInt32];
 			uint64_t chatterActedBy = [reader readUInt64];
+			NSDictionary * messageKv = nil;
 			
 			SKSteamChatRoom * chatRoom = [self chatWithSteamID:chatId];
+			
+			if (stateChange == EChatMemberStateChangeEntered)
+			{
+				messageKv = [_SKKeyValueParser readKeyValues:reader];
+				[chatRoom handleMessageKeyValuesObject:messageKv];
+			}
+			
 			[chatRoom handleChatMemberStateChange:stateChange forFriend:[self friendWithSteamID:chatterActedOn] steamFriends:self];
 			
 			NSMutableDictionary * dictInfo = [@{} mutableCopy];

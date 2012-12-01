@@ -17,6 +17,7 @@ NSString * const SKChatRoomKey = @"SKChatRoomKey";
 @implementation SKSteamChatRoom
 {
 	NSMutableArray * _members;
+	NSMutableDictionary * _messageObjects;
 }
 
 - (id) initWithSteamID:(uint64_t)steamId
@@ -26,6 +27,7 @@ NSString * const SKChatRoomKey = @"SKChatRoomKey";
 	{
 		_steamId = steamId;
 		_members = [@[] mutableCopy];
+		_messageObjects = [@{} mutableCopy];
 	}
 	return self;
 }
@@ -70,6 +72,28 @@ NSString * const SKChatRoomKey = @"SKChatRoomKey";
 			[_members addObject:friend];
 		}
 	}
+}
+
+- (void) setChatRoomName:(NSString *)name withMessageObjects:(NSArray *)messageObjects maxMembers:(NSUInteger)maxMembers
+{
+	_name = [name copy];
+	_maxMembers = maxMembers;
+	
+	[messageObjects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+		[self handleMessageKeyValuesObject:obj];
+	}];
+}
+
+- (void) handleMessageKeyValuesObject:(NSDictionary *)kv
+{
+	NSDictionary * mo = kv[@"MessageObject"];
+	NSNumber * steamid = mo[@"steamid"];
+	_messageObjects[steamid] = mo;
+}
+
+- (SKSteamChatRoomPermission) permissionsForMemberSteamID:(uint64_t)steamId
+{
+	return [_messageObjects[@(steamId)][@"Permissions"] unsignedIntValue];
 }
 
 @end

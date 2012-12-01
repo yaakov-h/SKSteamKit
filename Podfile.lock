@@ -1,33 +1,33 @@
 
-COCOAPODS: 0.15.2
-
-EXTERNAL SOURCES: 
-  ProtocolBuffers: 
-    :podspec: podspecs/ProtocolBuffers.podspec
-  OpenSSL: 
-    :podspec: podspecs/OpenSSL.podspec
-  zipzap: 
-    :podspec: podspecs/zipzap.podspec
-  CRBoilerplate: 
-    :podspec: podspecs/CRBoilerplate.podspec
-
 DEPENDENCIES: 
-- CRBoilerplate (from `podspecs/CRBoilerplate.podspec')
+- CRBoilerplate (from `https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/CRBoilerplate.podspec')
 - CocoaAsyncSocket (~> 0.0.1)
-- OpenSSL (from `podspecs/OpenSSL.podspec')
-- ProtocolBuffers (from `podspecs/ProtocolBuffers.podspec')
-- zipzap (from `podspecs/zipzap.podspec')
-
-SPEC CHECKSUMS: 
-  ProtocolBuffers: 4cfc0be30608c699905cdd3e0b82664a24d71d59
-  OpenSSL: ac77929c993cfd0c436027f51e5c4d52c8be296a
-  zipzap: 765e2b4777fc50b96b442ed1d9bb2684c0a41ca0
-  CocoaAsyncSocket: 70f5de3c1ba13526c23df75fc98a0ea3049aa19c
-  CRBoilerplate: 74581dd86409f6c1cb04a4bbab4b0d337700f8d4
+- OpenSSL (from `https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/OpenSSL.podspec')
+- ProtocolBuffers (from `https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/ProtocolBuffers.podspec')
+- zipzap (from `https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/zipzap.podspec')
 
 PODS: 
-- CRBoilerplate (0.1.3)
+- CRBoilerplate (0.1.4)
 - CocoaAsyncSocket (0.0.1)
 - OpenSSL (1.0.1c)
 - ProtocolBuffers (0.1.0)
 - zipzap (3.1.0)
+
+SPEC CHECKSUMS: 
+  CocoaAsyncSocket: 70f5de3c1ba13526c23df75fc98a0ea3049aa19c
+  CRBoilerplate: f90c29aa7323994213fe7e1a85e47956ae4c3b15
+  zipzap: 765e2b4777fc50b96b442ed1d9bb2684c0a41ca0
+  OpenSSL: ac77929c993cfd0c436027f51e5c4d52c8be296a
+  ProtocolBuffers: 4cfc0be30608c699905cdd3e0b82664a24d71d59
+
+COCOAPODS: 0.15.2
+
+EXTERNAL SOURCES: 
+  CRBoilerplate: 
+    :podspec: https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/CRBoilerplate.podspec
+  zipzap: 
+    :podspec: https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/zipzap.podspec
+  OpenSSL: 
+    :podspec: https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/OpenSSL.podspec
+  ProtocolBuffers: 
+    :podspec: https://raw.github.com/yaakov-h/SKSteamKit/master/podspecs/ProtocolBuffers.podspec
