@@ -91,7 +91,7 @@ NSString * const SKChatRoomKey = @"SKChatRoomKey";
 	_messageObjects[steamid] = mo;
 }
 
-- (SKSteamChatRoomPermission) permissionsForMemberSteamID:(uint64_t)steamId
+- (EClanPermission) permissionsForMemberSteamID:(uint64_t)steamId
 {
 	return [_messageObjects[@(steamId)][@"Permissions"] unsignedIntValue];
 }

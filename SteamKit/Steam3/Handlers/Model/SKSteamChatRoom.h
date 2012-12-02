@@ -17,15 +17,6 @@ extern NSString * const SKChatRoomChaterActedByKey;
 extern NSString * const SKChatRoomChatterStateChangeKey;
 extern NSString * const SKChatRoomKey;
 
-typedef NS_OPTIONS(uint32_t, SKSteamChatRoomPermission)
-{
-	SKSteamChatRoomPermissionOwner = 1,
-	SKSteamChatRoomPermissionOfficer = 2,
-	SKSteamChatRoomPermissionNormalUser = 4, // "Normal User" according to dinosaur. Guest?
-	SKSteamChatRoomPermissionModerator = 8,
-	// There's more but I don't know what they are
-};
-
 @interface SKSteamChatRoom : NSObject
 
 @property (nonatomic, readonly) uint64_t steamId;
@@ -34,7 +25,7 @@ typedef NS_OPTIONS(uint32_t, SKSteamChatRoomPermission)
 @property (nonatomic, readonly) NSUInteger maxMembers;
 
 - (id) initWithSteamID:(uint64_t)steamId;
-- (SKSteamChatRoomPermission) permissionsForMemberSteamID:(uint64_t)steamId;
+- (EClanPermission) permissionsForMemberSteamID:(uint64_t)steamId;
 
 //
 // PRIVATE METHODS - SKSteamKit INTERNAL ONLY

@@ -3,6 +3,10 @@
 // the file 'LICENCE.txt' included in this source code package.
 //
 
+#import <stdio.h>
+#import <stdlib.h>
+#import <string.h>
+
 #import "SKSteamKitTests.h"
 #import "SKSteamClient.h"
 #import "SKSteamUser.h"
@@ -13,6 +17,7 @@
 #import "SKSteamFriend.h"
 #import "SKSteamClan.h"
 #import "SKSteamChatRoom.h"
+#import "_SKKeyValueParser.h"
 
 @implementation SKSteamKitTests
 
@@ -30,7 +35,7 @@
     [super tearDown];
 }
 
-static uint64_t steamClanSteamID = 0LLU; // Replace with Steam Group SteamID
+static uint64_t steamClanSteamID = 103582791430973316LLU; // Replace with Steam Group SteamID
 
 - (void)testExample
 {
@@ -48,7 +53,7 @@ static uint64_t steamClanSteamID = 0LLU; // Replace with Steam Group SteamID
     {
         NSLog(@"Connected to Steam3: %@", data);
         
-        NSDictionary * details = @{SKLogonDetailUsername: @"[REDACTED]", SKLogonDetailPassword:@"[REDACTED]"};
+        NSDictionary * details = @{SKLogonDetailUsername: @"netshroud_test", SKLogonDetailPassword:@"netshroud"};
         
         [[[steamClient.steamUser logOnWithDetails:details] addFailureHandler:^(NSError *error)
         {

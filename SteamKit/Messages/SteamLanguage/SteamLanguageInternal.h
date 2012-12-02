@@ -5,8 +5,6 @@
 // This file was automatically generated. Do not edit it.
 //
 
-#import <Foundation/Foundation.h>
-#import <CRBoilerplate/CRBoilerplate.h>
 #import "SteamLanguage.h"
 #import "Steammessages_base.pb.h"
 #import "Steammessages_clientserver.pb.h"
