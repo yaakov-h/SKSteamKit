@@ -1078,6 +1078,8 @@ typedef enum {
 	EMsgClientCommentNotifications = 5582,
 	EMsgClientRequestCommentNotifications = 5583,
 	EMsgClientPersonaChangeResponse = 5584,
+	EMsgClientRequestWebAPIAuthenticateUserNonce = 5585,
+	EMsgClientRequestWebAPIAuthenticateUserNonceResponse = 5586,
 	EMsgClientPlayerNicknameList = 5587,
 	EMsgAMClientSetPlayerNickname = 5588,
 	EMsgAMClientSetPlayerNicknameResponse = 5589,
@@ -1280,7 +1282,14 @@ typedef enum {
 	EMsgCREGetUserPublishedItemVoteDetailsResponse = 8510,
 	EMsgCREEnumeratePublishedFiles = 8511,
 	EMsgCREEnumeratePublishedFilesResponse = 8512,
-	EMsgMax = 8513,
+	EMsgPICSBase = 8900,
+	EMsgPICSChangesSinceRequest = 8901,
+	EMsgPICSChangesSinceResponse = 8902,
+	EMsgPICSProductInfoRequest = 8903,
+	EMsgPICSProductInfoResponse = 8904,
+	EMsgPICSAccessTokenRequest = 8905,
+	EMsgPICSAccessTokenResponse = 8906,
+	EMsgMax = 8907,
 } EMsg;
 
 typedef enum {
@@ -1388,7 +1397,9 @@ typedef enum {
 	EPersonaStateBusy = 2,
 	EPersonaStateAway = 3,
 	EPersonaStateSnooze = 4,
-	EPersonaStateMax = 5,
+	EPersonaStateLookingToTrade = 5,
+	EPersonaStateLookingToPlay = 6,
+	EPersonaStateMax = 7,
 } EPersonaState;
 
 typedef enum {
@@ -1447,12 +1458,23 @@ typedef enum {
 } EAccountFlags;
 
 typedef enum {
+	EClanPermissionNobody = 0,
+	EClanPermissionOwner = 1,
+	EClanPermissionOfficer = 2,
+	EClanPermissionOwnerAndOfficer = 3,
+	EClanPermissionMember = 4,
+	EClanPermissionModerator = 8,
+	EClanPermissionMax = 9,
+} EClanPermission;
+
+typedef enum {
 	EFriendFlagsNone = 0,
 	EFriendFlagsBlocked = 1,
 	EFriendFlagsFriendshipRequested = 2,
 	EFriendFlagsImmediate = 4,
 	EFriendFlagsClanMember = 8,
 	EFriendFlagsGameServer = 16,
+	EFriendFlagsOnGameServer = 16,
 	EFriendFlagsRequestingFriendship = 128,
 	EFriendFlagsRequestingInfo = 256,
 	EFriendFlagsIgnored = 512,
@@ -1901,6 +1923,134 @@ typedef enum {
 	EEconTradeResponseTimeout = 13,
 	EEconTradeResponseMax = 14,
 } EEconTradeResponse;
+
+typedef enum {
+	EMarketingMessageFlagsNone = 0,
+	EMarketingMessageFlagsHighPriority = 1,
+	EMarketingMessageFlagsPlatformWindows = 2,
+	EMarketingMessageFlagsPlatformMac = 4,
+	EMarketingMessageFlagsPlatformRestrictions = 6,
+	EMarketingMessageFlagsMax = 7,
+} EMarketingMessageFlags;
+
+typedef enum {
+	ENewsUpdateTypeAppNews = 0,
+	ENewsUpdateTypeSteamAds = 1,
+	ENewsUpdateTypeSteamNews = 2,
+	ENewsUpdateTypeCDDBUpdate = 3,
+	ENewsUpdateTypeClientUpdate = 4,
+	ENewsUpdateTypeMax = 5,
+} ENewsUpdateType;
+
+typedef enum {
+	ESystemIMTypeRawText = 0,
+	ESystemIMTypeInvalidCard = 1,
+	ESystemIMTypeRecurringPurchaseFailed = 2,
+	ESystemIMTypeCardWillExpire = 3,
+	ESystemIMTypeSubscriptionExpired = 4,
+	ESystemIMTypeGuestPassReceived = 5,
+	ESystemIMTypeGuestPassGranted = 6,
+	ESystemIMTypeGiftRevoked = 7,
+	ESystemIMTypeMax = 8,
+} ESystemIMType;
+
+typedef enum {
+	EChatFlagsLocked = 1,
+	EChatFlagsInvisibleToFriends = 2,
+	EChatFlagsModerated = 4,
+	EChatFlagsUnjoinable = 8,
+	EChatFlagsMax = 9,
+} EChatFlags;
+
+typedef enum {
+	ERemoteStoragePlatformNone = 0,
+	ERemoteStoragePlatformWindows = 1,
+	ERemoteStoragePlatformOSX = 2,
+	ERemoteStoragePlatformPS3 = 4,
+	ERemoteStoragePlatformReserved1 = 8,
+	ERemoteStoragePlatformReserved2 = 16,
+	ERemoteStoragePlatformAll = 4294967295,
+	ERemoteStoragePlatformMax = 4294967296,
+} ERemoteStoragePlatform;
+
+typedef enum {
+	EDRMBlobDownloadTypeError = 0,
+	EDRMBlobDownloadTypeFile = 1,
+	EDRMBlobDownloadTypeParts = 2,
+	EDRMBlobDownloadTypeCompressed = 4,
+	EDRMBlobDownloadTypeAllMask = 7,
+	EDRMBlobDownloadTypeIsJob = 8,
+	EDRMBlobDownloadTypeHighPriority = 16,
+	EDRMBlobDownloadTypeAddTimestamp = 32,
+	EDRMBlobDownloadTypeLowPriority = 64,
+	EDRMBlobDownloadTypeMax = 65,
+} EDRMBlobDownloadType;
+
+typedef enum {
+	EDRMBlobDownloadErrorDetailNone = 0,
+	EDRMBlobDownloadErrorDetailDownloadFailed = 1,
+	EDRMBlobDownloadErrorDetailTargetLocked = 2,
+	EDRMBlobDownloadErrorDetailOpenZip = 3,
+	EDRMBlobDownloadErrorDetailReadZipDirectory = 4,
+	EDRMBlobDownloadErrorDetailUnexpectedZipEntry = 5,
+	EDRMBlobDownloadErrorDetailUnzipFullFile = 6,
+	EDRMBlobDownloadErrorDetailUnknownBlobType = 7,
+	EDRMBlobDownloadErrorDetailUnzipStrips = 8,
+	EDRMBlobDownloadErrorDetailUnzipMergeGuid = 9,
+	EDRMBlobDownloadErrorDetailUnzipSignature = 10,
+	EDRMBlobDownloadErrorDetailApplyStrips = 11,
+	EDRMBlobDownloadErrorDetailApplyMergeGuid = 12,
+	EDRMBlobDownloadErrorDetailApplySignature = 13,
+	EDRMBlobDownloadErrorDetailAppIdMismatch = 14,
+	EDRMBlobDownloadErrorDetailAppIdUnexpected = 15,
+	EDRMBlobDownloadErrorDetailAppliedSignatureCorrupt = 16,
+	EDRMBlobDownloadErrorDetailApplyValveSignatureHeader = 17,
+	EDRMBlobDownloadErrorDetailUnzipValveSignatureHeader = 18,
+	EDRMBlobDownloadErrorDetailPathManipulationError = 19,
+	EDRMBlobDownloadErrorDetailTargetLocked_Base = 65536,
+	EDRMBlobDownloadErrorDetailTargetLocked_Max = 131071,
+	EDRMBlobDownloadErrorDetailNextBase = 131072,
+	EDRMBlobDownloadErrorDetailMax = 131073,
+} EDRMBlobDownloadErrorDetail;
+
+typedef enum {
+	EClientStatP2PConnectionsUDP = 0,
+	EClientStatP2PConnectionsRelay = 1,
+	EClientStatP2PGameConnections = 2,
+	EClientStatP2PVoiceConnections = 3,
+	EClientStatBytesDownloaded = 4,
+	EClientStatMax = 5,
+} EClientStat;
+
+typedef enum {
+	EClientStatAggregateMethodLatestOnly = 0,
+	EClientStatAggregateMethodSum = 1,
+	EClientStatAggregateMethodEvent = 2,
+	EClientStatAggregateMethodScalar = 3,
+	EClientStatAggregateMethodMax = 4,
+} EClientStatAggregateMethod;
+
+typedef enum {
+	ELeaderboardDataRequestGlobal = 0,
+	ELeaderboardDataRequestGlobalAroundUser = 1,
+	ELeaderboardDataRequestFriends = 2,
+	ELeaderboardDataRequestUsers = 3,
+	ELeaderboardDataRequestMax = 4,
+} ELeaderboardDataRequest;
+
+typedef enum {
+	ELeaderboardSortMethodNone = 0,
+	ELeaderboardSortMethodAscending = 1,
+	ELeaderboardSortMethodDescending = 2,
+	ELeaderboardSortMethodMax = 3,
+} ELeaderboardSortMethod;
+
+typedef enum {
+	ELeaderboardUploadScoreMethodNone = 0,
+	ELeaderboardUploadScoreMethodKeepBest = 1,
+	ELeaderboardUploadScoreMethodForceUpdate = 2,
+	ELeaderboardUploadScoreMethodMax = 3,
+} ELeaderboardUploadScoreMethod;
 
 typedef enum {
 	EUdpPacketTypeInvalid = 0,

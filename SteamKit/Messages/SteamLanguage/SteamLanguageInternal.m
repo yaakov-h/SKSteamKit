@@ -441,7 +441,7 @@
 		self.msg = [reader readUInt32];
 		self.headerLength = [reader readInt32];
 		NSData * protoData = [reader readDataOfLength:headerLength];
-		self.proto = [CMsgProtoBufHeader parseFromData:[protoData bytes]];
+		self.proto = [CMsgProtoBufHeader parseFromData:protoData];
 	}
 @end
 

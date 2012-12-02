@@ -3,6 +3,10 @@
 // the file 'LICENCE.txt' included in this source code package.
 //
 
+#import <stdio.h>
+#import <stdlib.h>
+#import <string.h>
+
 #import "SKSteamKitTests.h"
 #import "SKSteamClient.h"
 #import "SKSteamUser.h"
@@ -13,6 +17,7 @@
 #import "SKSteamFriend.h"
 #import "SKSteamClan.h"
 #import "SKSteamChatRoom.h"
+#import "_SKKeyValueParser.h"
 
 @implementation SKSteamKitTests
 
