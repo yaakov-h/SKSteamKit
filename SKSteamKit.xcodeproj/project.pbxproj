@@ -10,6 +10,7 @@
 		11CE043103064EE2A3ECB65F /* libPods-SteamKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ACE8B7CDBFE4993B27795B5 /* libPods-SteamKitTests.a */; };
 		C7C2897B72CC429EA4662B9C /* libPods-SteamKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 430E9EC2A7ED4B04B3AFEDD4 /* libPods-SteamKit.a */; };
 		D7252DF71659095100906F78 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7252DF61659095100906F78 /* libz.dylib */; };
+		D755B104166B23EB0098F0DD /* SKCRDataReaderExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D755B103166B23EB0098F0DD /* SKCRDataReaderExtensions.m */; };
 		D75CEA661659AE290047BE0F /* SKSteamClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA651659AE290047BE0F /* SKSteamClient.m */; };
 		D75CEA691659B15E0047BE0F /* SKClientMsgHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA681659B15E0047BE0F /* SKClientMsgHandler.m */; };
 		D75CEA6D1659B33A0047BE0F /* SKSteamUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA6C1659B33A0047BE0F /* SKSteamUser.m */; };
@@ -98,6 +99,8 @@
 		430E9EC2A7ED4B04B3AFEDD4 /* libPods-SteamKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SteamKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EAB68B889E045F683D76BA3 /* Pods-SteamKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteamKit.xcconfig"; path = "Pods/Pods-SteamKit.xcconfig"; sourceTree = SOURCE_ROOT; };
 		D7252DF61659095100906F78 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D755B102166B23EB0098F0DD /* SKCRDataReaderExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKCRDataReaderExtensions.h; sourceTree = "<group>"; };
+		D755B103166B23EB0098F0DD /* SKCRDataReaderExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKCRDataReaderExtensions.m; sourceTree = "<group>"; };
 		D75CEA621659ADA50047BE0F /* _SKCMClientDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _SKCMClientDelegate.h; sourceTree = "<group>"; };
 		D75CEA641659AE290047BE0F /* SKSteamClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamClient.h; sourceTree = "<group>"; };
 		D75CEA651659AE290047BE0F /* SKSteamClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamClient.m; sourceTree = "<group>"; };
@@ -272,8 +275,10 @@
 			children = (
 				D7959070166A474200334646 /* _SKKeyValueParser.h */,
 				D7959071166A474200334646 /* _SKKeyValueParser.m */,
+				D755B102166B23EB0098F0DD /* SKCRDataReaderExtensions.h */,
+				D755B103166B23EB0098F0DD /* SKCRDataReaderExtensions.m */,
 			);
-			name = KeyValues;
+			path = KeyValues;
 			sourceTree = "<group>";
 		};
 		D7A4D2CC165DE5B900DBFBE6 /* Model */ = {
@@ -675,6 +680,7 @@
 				D79BF3721661091F003E06BB /* SKSteamPersonaStateInfo.m in Sources */,
 				D79F19E11665D36F001865D0 /* SKEnterChatRoomInfo.m in Sources */,
 				D7959072166A474200334646 /* _SKKeyValueParser.m in Sources */,
+				D755B104166B23EB0098F0DD /* SKCRDataReaderExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

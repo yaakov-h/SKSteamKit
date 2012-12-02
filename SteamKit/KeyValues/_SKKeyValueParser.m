@@ -21,7 +21,7 @@ typedef enum
 
 @implementation _SKKeyValueParser
 
-+ (id) readKeyValues:(CRDataReader *)reader
++ (NSDictionary *) readKeyValues:(CRDataReader *)reader
 {
 	NSMutableDictionary * dict = [@{} mutableCopy];
 	
