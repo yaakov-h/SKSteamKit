@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'SKSteamKit'
-  s.version      = '0.1.4'
+  s.version      = '0.1.5'
   s.summary      = 'SteamKit port for Objective-C'
   s.description  = <<-DESC
 	Objective-C library for connecting to the Steam network. Based on SteamKit/SteamRE by OpenSteamWorks.
