@@ -18,7 +18,7 @@
 #import "SKSteamChatRoom.h"
 #import "SKSteamPersonaStateInfo.h"
 #import "SKEnterChatRoomInfo.h"
-#import "_SKKeyValueParser.h"
+#import "SKCRDataReaderExtensions.h"
 
 EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	EClientPersonaStateFlagPlayerName	|
@@ -471,7 +471,7 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	NSMutableArray * kvObjects = [@[] mutableCopy];
 	for (uint i = 0; i < numKeyValueObjects; i++)
 	{
-		[kvObjects addObject:[_SKKeyValueParser readKeyValues:reader]];
+		[kvObjects addObject:[reader sk_readKeyValues]];
 	}
 	NSUInteger maxMembers = [reader readUInt32];
 	
@@ -514,7 +514,7 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 			
 			if (stateChange == EChatMemberStateChangeEntered)
 			{
-				messageKv = [_SKKeyValueParser readKeyValues:reader];
+				messageKv = [reader sk_readKeyValues];
 				[chatRoom handleMessageKeyValuesObject:messageKv];
 			}
 			
@@ -549,6 +549,8 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	_SKMsgClientP2PIntroducerMessage * introducer = msg.body;
 	
 	NSData * data = [[introducer data] subdataWithRange:NSMakeRange(0, [introducer dataLen])];
+	
+	// TODO
 }
 
 @end

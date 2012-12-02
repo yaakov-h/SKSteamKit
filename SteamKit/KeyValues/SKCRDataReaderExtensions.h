@@ -3,12 +3,10 @@
 // the file 'LICENCE.txt' included in this source code package.
 //
 
-#import <Foundation/Foundation.h>
+#import <CRBoilerplate/CRBoilerplate.h>
 
-@class CRDataReader;
+@interface CRDataReader (SKCRDataReaderExtensions)
 
-@interface _SKKeyValueParser : NSObject
-
-+ (id) readKeyValues:(CRDataReader *)reader;
+- (NSDictionary *) sk_readKeyValues;
 
 @end
