@@ -541,4 +541,14 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 {
 }
 
+#pragma mark Voice Chat
+
+- (void) handleClientP2PIntroducerMessage:(_SKPacketMsg *)packetMessage
+{
+	_SKClientMsg * msg = [[_SKClientMsg alloc] initWithBodyClass:[_SKMsgClientP2PIntroducerMessage class] packetMessage:packetMessage];
+	_SKMsgClientP2PIntroducerMessage * introducer = msg.body;
+	
+	NSData * data = [[introducer data] subdataWithRange:NSMakeRange(0, [introducer dataLen])];
+}
+
 @end
