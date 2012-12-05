@@ -14,6 +14,8 @@
 		D75CEA661659AE290047BE0F /* SKSteamClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA651659AE290047BE0F /* SKSteamClient.m */; };
 		D75CEA691659B15E0047BE0F /* SKClientMsgHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA681659B15E0047BE0F /* SKClientMsgHandler.m */; };
 		D75CEA6D1659B33A0047BE0F /* SKSteamUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA6C1659B33A0047BE0F /* SKSteamUser.m */; };
+		D78D601C166F77AE0039C8D1 /* SKPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = D78D601B166F77AE0039C8D1 /* SKPackage.m */; };
+		D78D6020166F7CE10039C8D1 /* SKApp.m in Sources */ = {isa = PBXBuildFile; fileRef = D78D601F166F7CE00039C8D1 /* SKApp.m */; };
 		D7959072166A474200334646 /* _SKKeyValueParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D7959071166A474200334646 /* _SKKeyValueParser.m */; };
 		D79BDC8D165F072E005171EA /* SKSteamApps.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BDC8C165F072E005171EA /* SKSteamApps.m */; };
 		D79BDC91165F082C005171EA /* SKLicence.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BDC90165F082C005171EA /* SKLicence.m */; };
@@ -108,6 +110,10 @@
 		D75CEA681659B15E0047BE0F /* SKClientMsgHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKClientMsgHandler.m; sourceTree = "<group>"; };
 		D75CEA6B1659B33A0047BE0F /* SKSteamUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamUser.h; sourceTree = "<group>"; };
 		D75CEA6C1659B33A0047BE0F /* SKSteamUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamUser.m; sourceTree = "<group>"; };
+		D78D601A166F77AE0039C8D1 /* SKPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPackage.h; sourceTree = "<group>"; };
+		D78D601B166F77AE0039C8D1 /* SKPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPackage.m; sourceTree = "<group>"; };
+		D78D601E166F7CE00039C8D1 /* SKApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKApp.h; sourceTree = "<group>"; };
+		D78D601F166F7CE00039C8D1 /* SKApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKApp.m; sourceTree = "<group>"; };
 		D7959070166A474200334646 /* _SKKeyValueParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SKKeyValueParser.h; sourceTree = "<group>"; };
 		D7959071166A474200334646 /* _SKKeyValueParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SKKeyValueParser.m; sourceTree = "<group>"; };
 		D79BDC8B165F072E005171EA /* SKSteamApps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamApps.h; sourceTree = "<group>"; };
@@ -308,6 +314,10 @@
 				D79BF3711661091F003E06BB /* SKSteamPersonaStateInfo.m */,
 				D79F19DF1665D36F001865D0 /* SKEnterChatRoomInfo.h */,
 				D79F19E01665D36F001865D0 /* SKEnterChatRoomInfo.m */,
+				D78D601A166F77AE0039C8D1 /* SKPackage.h */,
+				D78D601B166F77AE0039C8D1 /* SKPackage.m */,
+				D78D601E166F7CE00039C8D1 /* SKApp.h */,
+				D78D601F166F7CE00039C8D1 /* SKApp.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -681,6 +691,8 @@
 				D79F19E11665D36F001865D0 /* SKEnterChatRoomInfo.m in Sources */,
 				D7959072166A474200334646 /* _SKKeyValueParser.m in Sources */,
 				D755B104166B23EB0098F0DD /* SKCRDataReaderExtensions.m in Sources */,
+				D78D601C166F77AE0039C8D1 /* SKPackage.m in Sources */,
+				D78D6020166F7CE10039C8D1 /* SKApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

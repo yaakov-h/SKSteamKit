@@ -42,6 +42,7 @@ typedef enum
 		}
 		
 		NSString * name = [reader readUTF8String];
+		
 		NSMutableDictionary * innerChildren = [@{} mutableCopy];
 		id value = nil;
 		

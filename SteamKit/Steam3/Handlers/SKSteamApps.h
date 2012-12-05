@@ -9,4 +9,7 @@
 
 - (id) init;
 
+- (void) requestPackageInfoForPackagesWithIDs:(NSArray *)packageIDs;
+- (void) requestAppInfoForAppsWithIDs:(NSArray *)appIDs;
+
 @end
