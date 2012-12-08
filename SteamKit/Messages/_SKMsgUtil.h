@@ -12,4 +12,7 @@
 + (EMsg) getMsg:(uint32_t)msg;
 + (BOOL) isProtobuf:(uint32_t)msg;
 
++ (uint32_t) makeGCMsg:(uint32_t)msg isProtobuf:(BOOL)isProtobuf;
++ (uint32_t) getGCMsg:(uint32_t)msg;
+
 @end

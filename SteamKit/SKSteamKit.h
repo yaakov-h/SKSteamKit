@@ -19,3 +19,4 @@
 #import <SKSteamKit/SKLicenceListInfo.h>
 #import <SKSteamKit/SKSteamChatRoom.h>
 #import <SKSteamKit/SKSteamPersonaStateInfo.h>
+#import <SKSteamKit/SKSteamGameCoordinator.h>

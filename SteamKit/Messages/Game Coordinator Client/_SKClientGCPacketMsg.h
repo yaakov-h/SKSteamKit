@@ -3,9 +3,8 @@
 // the file 'LICENCE.txt' included in this source code package.
 //
 
-#import <Foundation/Foundation.h>
-#import "_SKPacketMsg.h"
+#import "_SKGCPacketMsg.h"
 
-@interface _SKClientPacketMsg : _SKPacketMsg
+@interface _SKClientGCPacketMsg : _SKGCPacketMsg
 
 @end

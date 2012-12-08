@@ -17,6 +17,13 @@
 		D78D601C166F77AE0039C8D1 /* SKPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = D78D601B166F77AE0039C8D1 /* SKPackage.m */; };
 		D78D6020166F7CE10039C8D1 /* SKApp.m in Sources */ = {isa = PBXBuildFile; fileRef = D78D601F166F7CE00039C8D1 /* SKApp.m */; };
 		D7959072166A474200334646 /* _SKKeyValueParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D7959071166A474200334646 /* _SKKeyValueParser.m */; };
+		D79ABEE316735B7D003A8885 /* SKSteamGameCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = D79ABEE216735B7D003A8885 /* SKSteamGameCoordinator.m */; };
+		D79ABEE716735CB2003A8885 /* _SKClientGCMsgProtobuf.m in Sources */ = {isa = PBXBuildFile; fileRef = D79ABEE616735CB2003A8885 /* _SKClientGCMsgProtobuf.m */; };
+		D79ABEEC16735F38003A8885 /* _SKGCMsgBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D79ABEEB16735F38003A8885 /* _SKGCMsgBase.m */; };
+		D79ABEEF167361C7003A8885 /* _SKClientGCMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = D79ABEEE167361C7003A8885 /* _SKClientGCMsg.m */; };
+		D79ABEF21673628B003A8885 /* _SKGCPacketMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = D79ABEF11673628B003A8885 /* _SKGCPacketMsg.m */; };
+		D79ABEF516736345003A8885 /* _SKProtobufGCPacketMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = D79ABEF416736345003A8885 /* _SKProtobufGCPacketMsg.m */; };
+		D79ABEF8167363A7003A8885 /* _SKClientGCPacketMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = D79ABEF7167363A6003A8885 /* _SKClientGCPacketMsg.m */; };
 		D79BDC8D165F072E005171EA /* SKSteamApps.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BDC8C165F072E005171EA /* SKSteamApps.m */; };
 		D79BDC91165F082C005171EA /* SKLicence.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BDC90165F082C005171EA /* SKLicence.m */; };
 		D79BDC94165F0981005171EA /* SKLicenceListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BDC93165F0981005171EA /* SKLicenceListInfo.m */; };
@@ -116,6 +123,20 @@
 		D78D601F166F7CE00039C8D1 /* SKApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKApp.m; sourceTree = "<group>"; };
 		D7959070166A474200334646 /* _SKKeyValueParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SKKeyValueParser.h; sourceTree = "<group>"; };
 		D7959071166A474200334646 /* _SKKeyValueParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SKKeyValueParser.m; sourceTree = "<group>"; };
+		D79ABEE116735B7D003A8885 /* SKSteamGameCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamGameCoordinator.h; sourceTree = "<group>"; };
+		D79ABEE216735B7D003A8885 /* SKSteamGameCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamGameCoordinator.m; sourceTree = "<group>"; };
+		D79ABEE516735CB2003A8885 /* _SKClientGCMsgProtobuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SKClientGCMsgProtobuf.h; sourceTree = "<group>"; };
+		D79ABEE616735CB2003A8885 /* _SKClientGCMsgProtobuf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SKClientGCMsgProtobuf.m; sourceTree = "<group>"; };
+		D79ABEEA16735F38003A8885 /* _SKGCMsgBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SKGCMsgBase.h; sourceTree = "<group>"; };
+		D79ABEEB16735F38003A8885 /* _SKGCMsgBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SKGCMsgBase.m; sourceTree = "<group>"; };
+		D79ABEED167361C7003A8885 /* _SKClientGCMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SKClientGCMsg.h; sourceTree = "<group>"; };
+		D79ABEEE167361C7003A8885 /* _SKClientGCMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SKClientGCMsg.m; sourceTree = "<group>"; };
+		D79ABEF01673628A003A8885 /* _SKGCPacketMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SKGCPacketMsg.h; sourceTree = "<group>"; };
+		D79ABEF11673628B003A8885 /* _SKGCPacketMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SKGCPacketMsg.m; sourceTree = "<group>"; };
+		D79ABEF316736345003A8885 /* _SKProtobufGCPacketMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SKProtobufGCPacketMsg.h; sourceTree = "<group>"; };
+		D79ABEF416736345003A8885 /* _SKProtobufGCPacketMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SKProtobufGCPacketMsg.m; sourceTree = "<group>"; };
+		D79ABEF6167363A6003A8885 /* _SKClientGCPacketMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SKClientGCPacketMsg.h; sourceTree = "<group>"; };
+		D79ABEF7167363A6003A8885 /* _SKClientGCPacketMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SKClientGCPacketMsg.m; sourceTree = "<group>"; };
 		D79BDC8B165F072E005171EA /* SKSteamApps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamApps.h; sourceTree = "<group>"; };
 		D79BDC8C165F072E005171EA /* SKSteamApps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamApps.m; sourceTree = "<group>"; };
 		D79BDC8F165F082C005171EA /* SKLicence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKLicence.h; sourceTree = "<group>"; };
@@ -272,6 +293,8 @@
 				D7A4D2DB165DEB7C00DBFBE6 /* SKSteamFriends.m */,
 				D79BDC8B165F072E005171EA /* SKSteamApps.h */,
 				D79BDC8C165F072E005171EA /* SKSteamApps.m */,
+				D79ABEE116735B7D003A8885 /* SKSteamGameCoordinator.h */,
+				D79ABEE216735B7D003A8885 /* SKSteamGameCoordinator.m */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -285,6 +308,48 @@
 				D755B103166B23EB0098F0DD /* SKCRDataReaderExtensions.m */,
 			);
 			path = KeyValues;
+			sourceTree = "<group>";
+		};
+		D79ABEE816735E74003A8885 /* Steam Client */ = {
+			isa = PBXGroup;
+			children = (
+				D7ACAEDC1658A900009DC581 /* _SKPacketMsg.h */,
+				D7ACAEE61658AED3009DC581 /* _SKPacketMsg.m */,
+				D7ACAEDD1658A967009DC581 /* _SKPlainPacketMsg.h */,
+				D7ACAEDE1658A967009DC581 /* _SKPlainPacketMsg.m */,
+				D7ACAEE01658AB79009DC581 /* _SKProtobufPacketMsg.h */,
+				D7ACAEE11658AB7A009DC581 /* _SKProtobufPacketMsg.m */,
+				D7ACAEE31658AC62009DC581 /* _SKClientPacketMsg.h */,
+				D7ACAEE41658AC62009DC581 /* _SKClientPacketMsg.m */,
+				D7ACAEE81658B08A009DC581 /* _SKMsg.h */,
+				D7ACAEE91658B08A009DC581 /* _SKMsg.m */,
+				D7ACAEEB1658B0AE009DC581 /* _SKMsgBase.h */,
+				D7ACAEEC1658B0AE009DC581 /* _SKMsgBase.m */,
+				D7ACAEFC1658DE45009DC581 /* _SKClientMsgProtobuf.h */,
+				D7ACAEFD1658DE46009DC581 /* _SKClientMsgProtobuf.m */,
+				D7A4D2E9165DFF8800DBFBE6 /* _SKClientMsg.h */,
+				D7A4D2EA165DFF8900DBFBE6 /* _SKClientMsg.m */,
+			);
+			path = "Steam Client";
+			sourceTree = "<group>";
+		};
+		D79ABEE916735E78003A8885 /* Game Coordinator Client */ = {
+			isa = PBXGroup;
+			children = (
+				D79ABEE516735CB2003A8885 /* _SKClientGCMsgProtobuf.h */,
+				D79ABEE616735CB2003A8885 /* _SKClientGCMsgProtobuf.m */,
+				D79ABEEA16735F38003A8885 /* _SKGCMsgBase.h */,
+				D79ABEEB16735F38003A8885 /* _SKGCMsgBase.m */,
+				D79ABEED167361C7003A8885 /* _SKClientGCMsg.h */,
+				D79ABEEE167361C7003A8885 /* _SKClientGCMsg.m */,
+				D79ABEF01673628A003A8885 /* _SKGCPacketMsg.h */,
+				D79ABEF11673628B003A8885 /* _SKGCPacketMsg.m */,
+				D79ABEF316736345003A8885 /* _SKProtobufGCPacketMsg.h */,
+				D79ABEF416736345003A8885 /* _SKProtobufGCPacketMsg.m */,
+				D79ABEF6167363A6003A8885 /* _SKClientGCPacketMsg.h */,
+				D79ABEF7167363A6003A8885 /* _SKClientGCPacketMsg.m */,
+			);
+			path = "Game Coordinator Client";
 			sourceTree = "<group>";
 		};
 		D7A4D2CC165DE5B900DBFBE6 /* Model */ = {
@@ -372,31 +437,17 @@
 		D7ACAEB716588BB2009DC581 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				D79ABEE916735E78003A8885 /* Game Coordinator Client */,
+				D79ABEE816735E74003A8885 /* Steam Client */,
 				D7ACAEC816588BFE009DC581 /* SteamLanguage */,
-				D7ACAEB816588BC8009DC581 /* Steamclient */,
+				D7ACAEB816588BC8009DC581 /* Steam Protobufs */,
 				D7ACAECF16588EFF009DC581 /* _SKMsgUtil.h */,
 				D7ACAED016588EFF009DC581 /* _SKMsgUtil.m */,
-				D7ACAEDC1658A900009DC581 /* _SKPacketMsg.h */,
-				D7ACAEE61658AED3009DC581 /* _SKPacketMsg.m */,
-				D7ACAEDD1658A967009DC581 /* _SKPlainPacketMsg.h */,
-				D7ACAEDE1658A967009DC581 /* _SKPlainPacketMsg.m */,
-				D7ACAEE01658AB79009DC581 /* _SKProtobufPacketMsg.h */,
-				D7ACAEE11658AB7A009DC581 /* _SKProtobufPacketMsg.m */,
-				D7ACAEE31658AC62009DC581 /* _SKClientPacketMsg.h */,
-				D7ACAEE41658AC62009DC581 /* _SKClientPacketMsg.m */,
-				D7ACAEE81658B08A009DC581 /* _SKMsg.h */,
-				D7ACAEE91658B08A009DC581 /* _SKMsg.m */,
-				D7ACAEEB1658B0AE009DC581 /* _SKMsgBase.h */,
-				D7ACAEEC1658B0AE009DC581 /* _SKMsgBase.m */,
-				D7ACAEFC1658DE45009DC581 /* _SKClientMsgProtobuf.h */,
-				D7ACAEFD1658DE46009DC581 /* _SKClientMsgProtobuf.m */,
-				D7A4D2E9165DFF8800DBFBE6 /* _SKClientMsg.h */,
-				D7A4D2EA165DFF8900DBFBE6 /* _SKClientMsg.m */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
 		};
-		D7ACAEB816588BC8009DC581 /* Steamclient */ = {
+		D7ACAEB816588BC8009DC581 /* Steam Protobufs */ = {
 			isa = PBXGroup;
 			children = (
 				D7ACAEB916588BF3009DC581 /* Content_manifest.pb.h */,
@@ -410,8 +461,7 @@
 				D7ACAEC116588BF3009DC581 /* Steammessages_clientserver.pb.h */,
 				D7ACAEC216588BF3009DC581 /* Steammessages_clientserver.pb.m */,
 			);
-			name = Steamclient;
-			path = SteamClient;
+			path = "Steam Protobufs";
 			sourceTree = "<group>";
 		};
 		D7ACAEC816588BFE009DC581 /* SteamLanguage */ = {
@@ -693,6 +743,13 @@
 				D755B104166B23EB0098F0DD /* SKCRDataReaderExtensions.m in Sources */,
 				D78D601C166F77AE0039C8D1 /* SKPackage.m in Sources */,
 				D78D6020166F7CE10039C8D1 /* SKApp.m in Sources */,
+				D79ABEE316735B7D003A8885 /* SKSteamGameCoordinator.m in Sources */,
+				D79ABEE716735CB2003A8885 /* _SKClientGCMsgProtobuf.m in Sources */,
+				D79ABEEC16735F38003A8885 /* _SKGCMsgBase.m in Sources */,
+				D79ABEEF167361C7003A8885 /* _SKClientGCMsg.m in Sources */,
+				D79ABEF21673628B003A8885 /* _SKGCPacketMsg.m in Sources */,
+				D79ABEF516736345003A8885 /* _SKProtobufGCPacketMsg.m in Sources */,
+				D79ABEF8167363A7003A8885 /* _SKClientGCPacketMsg.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

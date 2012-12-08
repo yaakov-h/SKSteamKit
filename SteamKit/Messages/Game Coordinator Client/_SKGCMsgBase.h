@@ -4,24 +4,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SteamLanguage.h"
 
-@interface _SKMsgBase : NSObject
+@interface _SKGCMsgBase : NSObject
 
 @property (nonatomic, readonly) BOOL isProtobuf;
-@property (nonatomic, readonly) EMsg messageType;
-@property (nonatomic, readwrite) int32_t sessionID;
-@property (nonatomic, readwrite) uint64_t steamID;
+@property (nonatomic, readonly) uint32_t messageType;
 @property (nonatomic, readwrite) uint64_t targetJobID;
 @property (nonatomic, readwrite) uint64_t sourceJobID;
 
-@property (nonatomic, retain, strong) id header;
-@property (nonatomic, retain) NSMutableData * payload;
+@property (nonatomic, strong) id header;
+@property (nonatomic, strong) NSMutableData * payload;
 
 - (id) initWithHeaderClass:(Class)headerClass;
 
 - (NSData *)serialize;
 - (void) deserialize:(NSData *)data;
-
 
 @end

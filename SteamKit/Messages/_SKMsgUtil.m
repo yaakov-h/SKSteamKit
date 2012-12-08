@@ -30,4 +30,21 @@ static const uint32_t _SKMsgEMsgMask = ~_SKMsgProtoMask;
     return ( msg & _SKMsgProtoMask ) == _SKMsgProtoMask;
 }
 
++ (uint32_t) makeGCMsg:(uint32_t)msg isProtobuf:(BOOL)isProtobuf
+{
+	if (isProtobuf)
+	{
+		return msg | _SKMsgProtoMask;
+	}
+	else
+	{
+		return msg;
+	}
+}
+
++ (uint32_t) getGCMsg:(uint32_t)msg
+{
+	return msg & _SKMsgEMsgMask;
+}
+
 @end

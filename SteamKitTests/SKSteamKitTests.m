@@ -18,6 +18,7 @@
 #import "SKSteamClan.h"
 #import "SKSteamChatRoom.h"
 #import "_SKKeyValueParser.h"
+#import "SKSteamApps.h"
 
 @implementation SKSteamKitTests
 
@@ -64,7 +65,12 @@ static uint64_t steamClanSteamID = 0LLU; // Replace with Steam Group SteamID
             NSLog(@"Logged in to Steam: %@", data);
 			steamClient.steamFriends.personaState = EPersonaStateOnline;
 			
-			[steamClient.steamFriends enterChatRoomForClanID:steamClanSteamID];
+			[steamClient.steamApps setGameBeingPlayed:@570];
+			
+			if (steamClanSteamID > 0)
+			{
+				[steamClient.steamFriends enterChatRoomForClanID:steamClanSteamID];
+			}
         }];
     }];
     

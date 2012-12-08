@@ -12,6 +12,7 @@
 @class SKSteamFriends;
 @class SKSteamApps;
 @class CRPromise;
+@class SKSteamGameCoordinator;
 
 extern NSString * SKSteamClientDisconnectedNotification;
 
@@ -25,6 +26,7 @@ extern NSString * SKSteamClientDisconnectedNotification;
 @property (nonatomic, readonly) SKSteamUser * steamUser;
 @property (nonatomic, readonly) SKSteamFriends * steamFriends;
 @property (nonatomic, readonly) SKSteamApps * steamApps;
+@property (nonatomic, readonly) SKSteamGameCoordinator * steamGameCoordinator;
 
 - (void) addHandler:(SKClientMsgHandler *)handler;
 - (void) removeHandler:(SKClientMsgHandler *)handler;

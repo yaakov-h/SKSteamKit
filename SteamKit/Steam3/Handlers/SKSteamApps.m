@@ -79,6 +79,33 @@
 	[self.steamClient sendMessage:msgOut];
 }
 
+- (void) setGameBeingPlayed:(NSNumber *)gameID
+{
+	if (gameID != nil)
+	{
+		[self setGamesBeingPlayed:@[ gameID ]];
+	} else {
+		[self setGamesBeingPlayed:nil];
+	}
+}
+
+- (void) setGamesBeingPlayed:(NSArray *)gameIDs
+{
+	_SKClientMsgProtobuf * message = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientGamesPlayed class] messageType:EMsgClientGamesPlayed];
+	
+	CMsgClientGamesPlayed_Builder * builder = [[CMsgClientGamesPlayed_Builder alloc] init];
+	
+	for(NSNumber * gameID in gameIDs)
+	{
+		CMsgClientGamesPlayed_GamePlayed_Builder * gamebuilder = [[CMsgClientGamesPlayed_GamePlayed_Builder alloc] init];
+		gamebuilder.gameId = [gameID unsignedLongLongValue];
+		[builder addGamesPlayed:[gamebuilder build]];
+	}
+	
+	message.body = [builder build];
+	[self.steamClient sendMessage:message];
+}
+
 #pragma mark -
 #pragma mark Handlers
 
