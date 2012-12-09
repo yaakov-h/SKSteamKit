@@ -13,6 +13,8 @@
 #import "_SKGCPacketMsg.h"
 #import "_SKClientGCPacketMsg.h"
 #import "_SKProtobufGCPacketMsg.h"
+#import "base_gcmessages.pb.h"
+#import "_SKClientGCMsgProtobuf.h"
 
 @implementation SKSteamGameCoordinator
 
@@ -37,7 +39,7 @@
 	}
 }
 
-- (void) sendGCMessage:(_SKClientGCMsg *)message forApp:(uint32_t) appID
+- (void) sendGCMessage:(_SKGCMsgBase *)message forApp:(uint32_t) appID
 {
 	_SKClientMsgProtobuf * steamMessage = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgGCClient class] messageType:EMsgClientToGC];
 	
@@ -62,6 +64,16 @@
 	{
 		return [[_SKClientGCPacketMsg alloc] initWithEGCMsg:realMessageType data:data];
 	}
+}
+
+- (void) sendClientHelloWithVersion:(uint32_t)version forApp:(uint32_t) appID
+{
+	CMsgClientHello_Builder * qb = [[CMsgClientHello_Builder alloc] init];
+	[qb setVersion:version];
+	_SKClientGCMsgProtobuf * msg = [[_SKClientGCMsgProtobuf alloc] initWithBodyClass:[CMsgClientHello class] messageType:EGCBaseMsgk_EMsgGCClientHello];
+	msg.body = [qb build];
+	
+	[self sendGCMessage:msg forApp:appID];
 }
 
 #pragma mark -

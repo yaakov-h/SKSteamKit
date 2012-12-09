@@ -79,11 +79,11 @@
 	[self.steamClient sendMessage:msgOut];
 }
 
-- (void) setGameBeingPlayed:(NSNumber *)gameID
+- (void) setGameBeingPlayed:(uint32_t)gameID
 {
-	if (gameID != nil)
+	if (gameID > 0)
 	{
-		[self setGamesBeingPlayed:@[ gameID ]];
+		[self setGamesBeingPlayed:@[ @(gameID) ]];
 	} else {
 		[self setGamesBeingPlayed:nil];
 	}
@@ -91,7 +91,7 @@
 
 - (void) setGamesBeingPlayed:(NSArray *)gameIDs
 {
-	_SKClientMsgProtobuf * message = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientGamesPlayed class] messageType:EMsgClientGamesPlayed];
+	_SKClientMsgProtobuf * message = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientGamesPlayed class] messageType:EMsgClientGamesPlayedWithDataBlob];
 	
 	CMsgClientGamesPlayed_Builder * builder = [[CMsgClientGamesPlayed_Builder alloc] init];
 	

@@ -30,6 +30,13 @@
 		D79BDC9D165F4F26005171EA /* SKSteamChatRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BDC9C165F4F26005171EA /* SKSteamChatRoom.m */; };
 		D79BF3721661091F003E06BB /* SKSteamPersonaStateInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D79BF3711661091F003E06BB /* SKSteamPersonaStateInfo.m */; };
 		D79F19E11665D36F001865D0 /* SKEnterChatRoomInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D79F19E01665D36F001865D0 /* SKEnterChatRoomInfo.m */; };
+		D7A1C1E916742C1A00923C32 /* base_gcmessages.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A1C1DC16742C1A00923C32 /* base_gcmessages.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D7A1C1EA16742C1A00923C32 /* dota_gcmessages.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A1C1DE16742C1A00923C32 /* dota_gcmessages.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D7A1C1EB16742C1A00923C32 /* econ_gcmessages.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A1C1E016742C1A00923C32 /* econ_gcmessages.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D7A1C1EC16742C1A00923C32 /* gcsdk_gcmessages.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A1C1E216742C1A00923C32 /* gcsdk_gcmessages.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D7A1C1ED16742C1A00923C32 /* gcsystemmsgs.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A1C1E416742C1A00923C32 /* gcsystemmsgs.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D7A1C1EE16742C1A00923C32 /* matchmaker_common.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A1C1E616742C1A00923C32 /* matchmaker_common.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D7A1C1EF16742C1A00923C32 /* steammessages.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A1C1E816742C1A00923C32 /* steammessages.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D7A4D2D0165DE5E800DBFBE6 /* SKSteamWalletInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A4D2CF165DE5E800DBFBE6 /* SKSteamWalletInfo.m */; };
 		D7A4D2D3165DE69700DBFBE6 /* SKSteamAccountInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A4D2D2165DE69700DBFBE6 /* SKSteamAccountInfo.m */; };
 		D7A4D2D6165DE92200DBFBE6 /* SKNSNotificationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A4D2D5165DE92200DBFBE6 /* SKNSNotificationExtensions.m */; };
@@ -149,6 +156,20 @@
 		D79BF3711661091F003E06BB /* SKSteamPersonaStateInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamPersonaStateInfo.m; sourceTree = "<group>"; };
 		D79F19DF1665D36F001865D0 /* SKEnterChatRoomInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEnterChatRoomInfo.h; sourceTree = "<group>"; };
 		D79F19E01665D36F001865D0 /* SKEnterChatRoomInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEnterChatRoomInfo.m; sourceTree = "<group>"; };
+		D7A1C1DB16742C1A00923C32 /* base_gcmessages.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base_gcmessages.pb.h; sourceTree = "<group>"; };
+		D7A1C1DC16742C1A00923C32 /* base_gcmessages.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = base_gcmessages.pb.m; sourceTree = "<group>"; };
+		D7A1C1DD16742C1A00923C32 /* dota_gcmessages.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dota_gcmessages.pb.h; sourceTree = "<group>"; };
+		D7A1C1DE16742C1A00923C32 /* dota_gcmessages.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dota_gcmessages.pb.m; sourceTree = "<group>"; };
+		D7A1C1DF16742C1A00923C32 /* econ_gcmessages.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = econ_gcmessages.pb.h; sourceTree = "<group>"; };
+		D7A1C1E016742C1A00923C32 /* econ_gcmessages.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = econ_gcmessages.pb.m; sourceTree = "<group>"; };
+		D7A1C1E116742C1A00923C32 /* gcsdk_gcmessages.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcsdk_gcmessages.pb.h; sourceTree = "<group>"; };
+		D7A1C1E216742C1A00923C32 /* gcsdk_gcmessages.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcsdk_gcmessages.pb.m; sourceTree = "<group>"; };
+		D7A1C1E316742C1A00923C32 /* gcsystemmsgs.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gcsystemmsgs.pb.h; sourceTree = "<group>"; };
+		D7A1C1E416742C1A00923C32 /* gcsystemmsgs.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gcsystemmsgs.pb.m; sourceTree = "<group>"; };
+		D7A1C1E516742C1A00923C32 /* matchmaker_common.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matchmaker_common.pb.h; sourceTree = "<group>"; };
+		D7A1C1E616742C1A00923C32 /* matchmaker_common.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = matchmaker_common.pb.m; sourceTree = "<group>"; };
+		D7A1C1E716742C1A00923C32 /* steammessages.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = steammessages.pb.h; sourceTree = "<group>"; };
+		D7A1C1E816742C1A00923C32 /* steammessages.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = steammessages.pb.m; sourceTree = "<group>"; };
 		D7A4D2CE165DE5E800DBFBE6 /* SKSteamWalletInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamWalletInfo.h; sourceTree = "<group>"; };
 		D7A4D2CF165DE5E800DBFBE6 /* SKSteamWalletInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamWalletInfo.m; sourceTree = "<group>"; };
 		D7A4D2D1165DE69700DBFBE6 /* SKSteamAccountInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamAccountInfo.h; sourceTree = "<group>"; };
@@ -352,6 +373,27 @@
 			path = "Game Coordinator Client";
 			sourceTree = "<group>";
 		};
+		D7A1C1DA16742C0400923C32 /* GC Protobufs */ = {
+			isa = PBXGroup;
+			children = (
+				D7A1C1DB16742C1A00923C32 /* base_gcmessages.pb.h */,
+				D7A1C1DC16742C1A00923C32 /* base_gcmessages.pb.m */,
+				D7A1C1DD16742C1A00923C32 /* dota_gcmessages.pb.h */,
+				D7A1C1DE16742C1A00923C32 /* dota_gcmessages.pb.m */,
+				D7A1C1DF16742C1A00923C32 /* econ_gcmessages.pb.h */,
+				D7A1C1E016742C1A00923C32 /* econ_gcmessages.pb.m */,
+				D7A1C1E116742C1A00923C32 /* gcsdk_gcmessages.pb.h */,
+				D7A1C1E216742C1A00923C32 /* gcsdk_gcmessages.pb.m */,
+				D7A1C1E316742C1A00923C32 /* gcsystemmsgs.pb.h */,
+				D7A1C1E416742C1A00923C32 /* gcsystemmsgs.pb.m */,
+				D7A1C1E516742C1A00923C32 /* matchmaker_common.pb.h */,
+				D7A1C1E616742C1A00923C32 /* matchmaker_common.pb.m */,
+				D7A1C1E716742C1A00923C32 /* steammessages.pb.h */,
+				D7A1C1E816742C1A00923C32 /* steammessages.pb.m */,
+			);
+			path = "GC Protobufs";
+			sourceTree = "<group>";
+		};
 		D7A4D2CC165DE5B900DBFBE6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -437,6 +479,7 @@
 		D7ACAEB716588BB2009DC581 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				D7A1C1DA16742C0400923C32 /* GC Protobufs */,
 				D79ABEE916735E78003A8885 /* Game Coordinator Client */,
 				D79ABEE816735E74003A8885 /* Steam Client */,
 				D7ACAEC816588BFE009DC581 /* SteamLanguage */,
@@ -750,6 +793,13 @@
 				D79ABEF21673628B003A8885 /* _SKGCPacketMsg.m in Sources */,
 				D79ABEF516736345003A8885 /* _SKProtobufGCPacketMsg.m in Sources */,
 				D79ABEF8167363A7003A8885 /* _SKClientGCPacketMsg.m in Sources */,
+				D7A1C1E916742C1A00923C32 /* base_gcmessages.pb.m in Sources */,
+				D7A1C1EA16742C1A00923C32 /* dota_gcmessages.pb.m in Sources */,
+				D7A1C1EB16742C1A00923C32 /* econ_gcmessages.pb.m in Sources */,
+				D7A1C1EC16742C1A00923C32 /* gcsdk_gcmessages.pb.m in Sources */,
+				D7A1C1ED16742C1A00923C32 /* gcsystemmsgs.pb.m in Sources */,
+				D7A1C1EE16742C1A00923C32 /* matchmaker_common.pb.m in Sources */,
+				D7A1C1EF16742C1A00923C32 /* steammessages.pb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

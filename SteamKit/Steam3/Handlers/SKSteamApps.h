@@ -12,7 +12,7 @@
 - (void) requestPackageInfoForPackagesWithIDs:(NSArray *)packageIDs;
 - (void) requestAppInfoForAppsWithIDs:(NSArray *)appIDs;
 
-- (void) setGameBeingPlayed:(NSNumber *)gameID;
+- (void) setGameBeingPlayed:(uint32_t)gameID;
 - (void) setGamesBeingPlayed:(NSArray *)gameIDs;
 
 @end

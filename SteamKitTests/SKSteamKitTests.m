@@ -19,6 +19,10 @@
 #import "SKSteamChatRoom.h"
 #import "_SKKeyValueParser.h"
 #import "SKSteamApps.h"
+#import "_SKClientGCMsgProtobuf.h"
+#import "dota_gcmessages.pb.h"
+#import "SKSteamGameCoordinator.h"
+#import "Base_gcmessages.pb.h"
 
 @implementation SKSteamKitTests
 
@@ -65,7 +69,8 @@ static uint64_t steamClanSteamID = 0LLU; // Replace with Steam Group SteamID
             NSLog(@"Logged in to Steam: %@", data);
 			steamClient.steamFriends.personaState = EPersonaStateOnline;
 			
-			[steamClient.steamApps setGameBeingPlayed:@570];
+			[steamClient.steamApps setGameBeingPlayed:570];
+			[steamClient.steamGameCoordinator sendClientHelloWithVersion:212 forApp:570];
 			
 			if (steamClanSteamID > 0)
 			{

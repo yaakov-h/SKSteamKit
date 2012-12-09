@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   
  s.subspec 'arc' do |a|
-  a.source_files = 'SteamKit/Messages/SteamLanguage/**/*.{h,m}', 'SteamKit/Messages/_*.{h,m}', 'SteamKit/{Crypto,KeyValues,Networking,Steam3,Util}/**/*.{h,m}'
+  a.source_files = 'SteamKit/Messages/SteamLanguage/**/*.{h,m}', 'SteamKit/Messages/**/_*.{h,m}', 'SteamKit/{Crypto,KeyValues,Networking,Steam3,Util}/**/*.{h,m}'
   a.requires_arc	= true
  end
  

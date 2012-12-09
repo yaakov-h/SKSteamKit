@@ -5,11 +5,13 @@
 
 #import "SKClientMsgHandler.h"
 
-@class _SKClientGCMsg;
+@class _SKGCMsgBase;
 
 @interface SKSteamGameCoordinator : SKClientMsgHandler
 
 - (id) init;
-- (void) sendGCMessage:(_SKClientGCMsg *)message forApp:(uint32_t) appID;
+- (void) sendGCMessage:(_SKGCMsgBase *)message forApp:(uint32_t) appID;
+
+- (void) sendClientHelloWithVersion:(uint32_t)version forApp:(uint32_t) appID;
 
 @end
