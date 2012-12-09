@@ -1468,6 +1468,25 @@ typedef enum {
 } EClanPermission;
 
 typedef enum {
+	EChatPermissionClose = 1,
+	EChatPermissionInvite = 2,
+	EChatPermissionTalk = 8,
+	EChatPermissionKick = 16,
+	EChatPermissionMute = 32,
+	EChatPermissionSetMetadata = 64,
+	EChatPermissionChangePermissions = 128,
+	EChatPermissionBan = 256,
+	EChatPermissionChangeAccess = 512,
+	EChatPermissionEveryoneNotInClanDefault = 8,
+	EChatPermissionEveryoneDefault = 10,
+	EChatPermissionMemberDefault = 282,
+	EChatPermissionOfficerDefault = 282,
+	EChatPermissionOwnerDefault = 891,
+	EChatPermissionMask = 1019,
+	EChatPermissionMax = 1020,
+} EChatPermission;
+
+typedef enum {
 	EFriendFlagsNone = 0,
 	EFriendFlagsBlocked = 1,
 	EFriendFlagsFriendshipRequested = 2,

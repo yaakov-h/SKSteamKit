@@ -68,7 +68,7 @@ enum EFriendRelationship
 	SuggestedFriend = 7;
 };
 
-enum EAccountFlags
+enum EAccountFlags flags
 {
 	NormalUser = 0;
 	
@@ -95,7 +95,7 @@ enum EAccountFlags
 	LogonExtraSecurityDisabled = 1048576;
 };
 
-enum EClanPermission
+enum EClanPermission flags
 {
 	Nobody = 0;
 	
@@ -104,9 +104,31 @@ enum EClanPermission
 	OwnerAndOfficer = 3;
 	Member = 4;
 	Moderator = 8;
-}
+};
 
-enum EFriendFlags
+enum EChatPermission flags
+{
+	Close = 1;
+	Invite = 2;
+	Talk = 8;
+	Kick = 16;
+	Mute = 32;
+	SetMetadata = 64;
+	ChangePermissions = 128;
+	Ban = 256;
+	ChangeAccess = 512;
+
+	EveryoneNotInClanDefault = 8;
+	EveryoneDefault = 10;
+
+	MemberDefault = 282;
+	OfficerDefault = 282;
+	OwnerDefault = 891;
+
+	Mask = 1019;
+};
+
+enum EFriendFlags flags
 {
 	None = 0;
 	Blocked = 1;
@@ -122,7 +144,7 @@ enum EFriendFlags
 	FlagAll = 65535;
 };
 
-enum EClientPersonaStateFlag
+enum EClientPersonaStateFlag flags
 {
 	Status = 1;
 	PlayerName = 2;
@@ -149,7 +171,7 @@ enum EAppUsageEvent
 	GameLaunchFreeWeekend = 8;
 };
 
-enum ELicenseFlags
+enum ELicenseFlags flags
 {
 	None = 0;
 	Renew = 0x01;
@@ -199,7 +221,7 @@ enum EIntroducerRouting
 	P2PNetworking = 2;
 };
 
-enum EServerFlags
+enum EServerFlags flags
 {
 	None = 0;
 	Active = 1;
@@ -486,7 +508,7 @@ enum EActivationCodeClass<uint>
 	Invalid = 4294967295;
 };
 
-enum EChatMemberStateChange
+enum EChatMemberStateChange flags
 {
 	Entered = 0x01;
 	Left = 0x02;
@@ -520,7 +542,7 @@ enum ECurrencyCode
 	BRL = 7;
 };
 
-enum EDepotFileFlag
+enum EDepotFileFlag flags
 {
 	UserConfig = 1;
 	VersionedUserConfig = 2;
@@ -573,7 +595,7 @@ enum EEconTradeResponse
 	Timeout = 13;
 };
 
-enum EMarketingMessageFlags
+enum EMarketingMessageFlags flags
 {
 	None = 0;
 	
@@ -606,7 +628,7 @@ enum ESystemIMType
 	Max = 8;
 };
 
-enum EChatFlags
+enum EChatFlags flags
 {
 	Locked = 1;
 	InvisibleToFriends = 2;
@@ -614,7 +636,7 @@ enum EChatFlags
 	Unjoinable = 8;
 };
 
-enum ERemoteStoragePlatform<uint>
+enum ERemoteStoragePlatform<uint> flags
 {
 	None = 0;
 	
@@ -626,7 +648,7 @@ enum ERemoteStoragePlatform<uint>
 	All = 4294967295;
 };
 
-enum EDRMBlobDownloadType
+enum EDRMBlobDownloadType flags
 {
 	Error = 0;
 	
