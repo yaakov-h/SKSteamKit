@@ -53,11 +53,11 @@
 		D7ACAEA316587041009DC581 /* _SKConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEA216587041009DC581 /* _SKConnection.m */; };
 		D7ACAEA91658725F009DC581 /* _SKTCPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEA81658725F009DC581 /* _SKTCPConnection.m */; };
 		D7ACAEB516587A9A009DC581 /* _SKCMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEB416587A9A009DC581 /* _SKCMClient.m */; };
-		D7ACAEC316588BF3009DC581 /* Content_manifest.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEBA16588BF3009DC581 /* Content_manifest.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D7ACAEC416588BF3009DC581 /* Encrypted_app_ticket.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEBC16588BF3009DC581 /* Encrypted_app_ticket.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D7ACAEC516588BF3009DC581 /* Iclient_objects.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEBE16588BF3009DC581 /* Iclient_objects.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D7ACAEC616588BF3009DC581 /* Steammessages_base.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEC016588BF3009DC581 /* Steammessages_base.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D7ACAEC716588BF3009DC581 /* Steammessages_clientserver.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEC216588BF3009DC581 /* Steammessages_clientserver.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D7ACAEC316588BF3009DC581 /* content_manifest.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEBA16588BF3009DC581 /* content_manifest.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D7ACAEC416588BF3009DC581 /* encrypted_app_ticket.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEBC16588BF3009DC581 /* encrypted_app_ticket.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D7ACAEC516588BF3009DC581 /* iclient_objects.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEBE16588BF3009DC581 /* iclient_objects.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D7ACAEC616588BF3009DC581 /* steammessages_base.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEC016588BF3009DC581 /* steammessages_base.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D7ACAEC716588BF3009DC581 /* steammessages_clientserver.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAEC216588BF3009DC581 /* steammessages_clientserver.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D7ACAECE16588E57009DC581 /* SteamLanguageInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAECC16588E56009DC581 /* SteamLanguageInternal.m */; };
 		D7ACAED116588EFF009DC581 /* _SKMsgUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ACAED016588EFF009DC581 /* _SKMsgUtil.m */; };
 		D7ACAED31658A25F009DC581 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7ACAED21658A25E009DC581 /* CFNetwork.framework */; };
@@ -203,16 +203,16 @@
 		D7ACAEA81658725F009DC581 /* _SKTCPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SKTCPConnection.m; sourceTree = "<group>"; };
 		D7ACAEB316587A9A009DC581 /* _SKCMClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SKCMClient.h; sourceTree = "<group>"; };
 		D7ACAEB416587A9A009DC581 /* _SKCMClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SKCMClient.m; sourceTree = "<group>"; };
-		D7ACAEB916588BF3009DC581 /* Content_manifest.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Content_manifest.pb.h; sourceTree = "<group>"; };
-		D7ACAEBA16588BF3009DC581 /* Content_manifest.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Content_manifest.pb.m; sourceTree = "<group>"; };
-		D7ACAEBB16588BF3009DC581 /* Encrypted_app_ticket.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encrypted_app_ticket.pb.h; sourceTree = "<group>"; };
-		D7ACAEBC16588BF3009DC581 /* Encrypted_app_ticket.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encrypted_app_ticket.pb.m; sourceTree = "<group>"; };
-		D7ACAEBD16588BF3009DC581 /* Iclient_objects.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Iclient_objects.pb.h; sourceTree = "<group>"; };
-		D7ACAEBE16588BF3009DC581 /* Iclient_objects.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Iclient_objects.pb.m; sourceTree = "<group>"; };
-		D7ACAEBF16588BF3009DC581 /* Steammessages_base.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Steammessages_base.pb.h; sourceTree = "<group>"; };
-		D7ACAEC016588BF3009DC581 /* Steammessages_base.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Steammessages_base.pb.m; sourceTree = "<group>"; };
-		D7ACAEC116588BF3009DC581 /* Steammessages_clientserver.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Steammessages_clientserver.pb.h; sourceTree = "<group>"; };
-		D7ACAEC216588BF3009DC581 /* Steammessages_clientserver.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Steammessages_clientserver.pb.m; sourceTree = "<group>"; };
+		D7ACAEB916588BF3009DC581 /* content_manifest.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = content_manifest.pb.h; sourceTree = "<group>"; };
+		D7ACAEBA16588BF3009DC581 /* content_manifest.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = content_manifest.pb.m; sourceTree = "<group>"; };
+		D7ACAEBB16588BF3009DC581 /* encrypted_app_ticket.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = encrypted_app_ticket.pb.h; sourceTree = "<group>"; };
+		D7ACAEBC16588BF3009DC581 /* encrypted_app_ticket.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = encrypted_app_ticket.pb.m; sourceTree = "<group>"; };
+		D7ACAEBD16588BF3009DC581 /* iclient_objects.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iclient_objects.pb.h; sourceTree = "<group>"; };
+		D7ACAEBE16588BF3009DC581 /* iclient_objects.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iclient_objects.pb.m; sourceTree = "<group>"; };
+		D7ACAEBF16588BF3009DC581 /* steammessages_base.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = steammessages_base.pb.h; sourceTree = "<group>"; };
+		D7ACAEC016588BF3009DC581 /* steammessages_base.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = steammessages_base.pb.m; sourceTree = "<group>"; };
+		D7ACAEC116588BF3009DC581 /* steammessages_clientserver.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = steammessages_clientserver.pb.h; sourceTree = "<group>"; };
+		D7ACAEC216588BF3009DC581 /* steammessages_clientserver.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = steammessages_clientserver.pb.m; sourceTree = "<group>"; };
 		D7ACAEC916588E56009DC581 /* SteamLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SteamLanguage.h; sourceTree = "<group>"; };
 		D7ACAECB16588E56009DC581 /* SteamLanguageInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SteamLanguageInternal.h; sourceTree = "<group>"; };
 		D7ACAECC16588E56009DC581 /* SteamLanguageInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SteamLanguageInternal.m; sourceTree = "<group>"; };
@@ -493,16 +493,16 @@
 		D7ACAEB816588BC8009DC581 /* Steam Protobufs */ = {
 			isa = PBXGroup;
 			children = (
-				D7ACAEB916588BF3009DC581 /* Content_manifest.pb.h */,
-				D7ACAEBA16588BF3009DC581 /* Content_manifest.pb.m */,
-				D7ACAEBB16588BF3009DC581 /* Encrypted_app_ticket.pb.h */,
-				D7ACAEBC16588BF3009DC581 /* Encrypted_app_ticket.pb.m */,
-				D7ACAEBD16588BF3009DC581 /* Iclient_objects.pb.h */,
-				D7ACAEBE16588BF3009DC581 /* Iclient_objects.pb.m */,
-				D7ACAEBF16588BF3009DC581 /* Steammessages_base.pb.h */,
-				D7ACAEC016588BF3009DC581 /* Steammessages_base.pb.m */,
-				D7ACAEC116588BF3009DC581 /* Steammessages_clientserver.pb.h */,
-				D7ACAEC216588BF3009DC581 /* Steammessages_clientserver.pb.m */,
+				D7ACAEB916588BF3009DC581 /* content_manifest.pb.h */,
+				D7ACAEBA16588BF3009DC581 /* content_manifest.pb.m */,
+				D7ACAEBB16588BF3009DC581 /* encrypted_app_ticket.pb.h */,
+				D7ACAEBC16588BF3009DC581 /* encrypted_app_ticket.pb.m */,
+				D7ACAEBD16588BF3009DC581 /* iclient_objects.pb.h */,
+				D7ACAEBE16588BF3009DC581 /* iclient_objects.pb.m */,
+				D7ACAEBF16588BF3009DC581 /* steammessages_base.pb.h */,
+				D7ACAEC016588BF3009DC581 /* steammessages_base.pb.m */,
+				D7ACAEC116588BF3009DC581 /* steammessages_clientserver.pb.h */,
+				D7ACAEC216588BF3009DC581 /* steammessages_clientserver.pb.m */,
 			);
 			path = "Steam Protobufs";
 			sourceTree = "<group>";
@@ -745,11 +745,11 @@
 				D7ACAEA316587041009DC581 /* _SKConnection.m in Sources */,
 				D7ACAEA91658725F009DC581 /* _SKTCPConnection.m in Sources */,
 				D7ACAEB516587A9A009DC581 /* _SKCMClient.m in Sources */,
-				D7ACAEC316588BF3009DC581 /* Content_manifest.pb.m in Sources */,
-				D7ACAEC416588BF3009DC581 /* Encrypted_app_ticket.pb.m in Sources */,
-				D7ACAEC516588BF3009DC581 /* Iclient_objects.pb.m in Sources */,
-				D7ACAEC616588BF3009DC581 /* Steammessages_base.pb.m in Sources */,
-				D7ACAEC716588BF3009DC581 /* Steammessages_clientserver.pb.m in Sources */,
+				D7ACAEC316588BF3009DC581 /* content_manifest.pb.m in Sources */,
+				D7ACAEC416588BF3009DC581 /* encrypted_app_ticket.pb.m in Sources */,
+				D7ACAEC516588BF3009DC581 /* iclient_objects.pb.m in Sources */,
+				D7ACAEC616588BF3009DC581 /* steammessages_base.pb.m in Sources */,
+				D7ACAEC716588BF3009DC581 /* steammessages_clientserver.pb.m in Sources */,
 				D7ACAECE16588E57009DC581 /* SteamLanguageInternal.m in Sources */,
 				D7ACAED116588EFF009DC581 /* _SKMsgUtil.m in Sources */,
 				D7ACAEDF1658A968009DC581 /* _SKPlainPacketMsg.m in Sources */,
