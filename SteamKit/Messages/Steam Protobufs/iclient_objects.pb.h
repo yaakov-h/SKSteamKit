@@ -99,7 +99,7 @@
 
 @interface ClientAppInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  ClientAppInfo* result;
+  ClientAppInfo* _builderResult;
 }
 
 - (ClientAppInfo*) defaultInstance;

@@ -14,7 +14,6 @@
 		D75CEA661659AE290047BE0F /* SKSteamClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA651659AE290047BE0F /* SKSteamClient.m */; };
 		D75CEA691659B15E0047BE0F /* SKClientMsgHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA681659B15E0047BE0F /* SKClientMsgHandler.m */; };
 		D75CEA6D1659B33A0047BE0F /* SKSteamUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA6C1659B33A0047BE0F /* SKSteamUser.m */; };
-		D77C3932167441B700BDB995 /* tf_gcmessages.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D77C3931167441B700BDB995 /* tf_gcmessages.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D78D601C166F77AE0039C8D1 /* SKPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = D78D601B166F77AE0039C8D1 /* SKPackage.m */; };
 		D78D6020166F7CE10039C8D1 /* SKApp.m in Sources */ = {isa = PBXBuildFile; fileRef = D78D601F166F7CE00039C8D1 /* SKApp.m */; };
 		D7959072166A474200334646 /* _SKKeyValueParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D7959071166A474200334646 /* _SKKeyValueParser.m */; };
@@ -323,6 +322,22 @@
 			path = Handlers;
 			sourceTree = "<group>";
 		};
+		D77C393316744CCD00BDB995 /* Dota 2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Dota 2";
+			sourceTree = "<group>";
+		};
+		D77C393416744CD100BDB995 /* Team Fortress 2 */ = {
+			isa = PBXGroup;
+			children = (
+				D77C3930167441B700BDB995 /* tf_gcmessages.pb.h */,
+				D77C3931167441B700BDB995 /* tf_gcmessages.pb.m */,
+			);
+			name = "Team Fortress 2";
+			sourceTree = "<group>";
+		};
 		D795906E166A473300334646 /* KeyValues */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,8 +394,8 @@
 		D7A1C1DA16742C0400923C32 /* GC Protobufs */ = {
 			isa = PBXGroup;
 			children = (
-				D77C3930167441B700BDB995 /* tf_gcmessages.pb.h */,
-				D77C3931167441B700BDB995 /* tf_gcmessages.pb.m */,
+				D77C393416744CD100BDB995 /* Team Fortress 2 */,
+				D77C393316744CCD00BDB995 /* Dota 2 */,
 				D7A1C1DB16742C1A00923C32 /* base_gcmessages.pb.h */,
 				D7A1C1DC16742C1A00923C32 /* base_gcmessages.pb.m */,
 				D7A1C1DD16742C1A00923C32 /* dota_gcmessages.pb.h */,
@@ -805,7 +820,6 @@
 				D7A1C1ED16742C1A00923C32 /* gcsystemmsgs.pb.m in Sources */,
 				D7A1C1EE16742C1A00923C32 /* matchmaker_common.pb.m in Sources */,
 				D7A1C1EF16742C1A00923C32 /* steammessages.pb.m in Sources */,
-				D77C3932167441B700BDB995 /* tf_gcmessages.pb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

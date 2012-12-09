@@ -151,7 +151,7 @@
 
 @interface CMsgProtoBufHeader_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgProtoBufHeader* result;
+  CMsgProtoBufHeader* _builderResult;
 }
 
 - (CMsgProtoBufHeader*) defaultInstance;
@@ -264,7 +264,7 @@
 
 @interface CMsgMulti_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMulti* result;
+  CMsgMulti* _builderResult;
 }
 
 - (CMsgMulti*) defaultInstance;
@@ -342,7 +342,7 @@
 
 @interface CMsgAuthTicket_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAuthTicket* result;
+  CMsgAuthTicket* _builderResult;
 }
 
 - (CMsgAuthTicket*) defaultInstance;
@@ -461,7 +461,7 @@
 
 @interface CCDDBAppDetailCommon_Builder : PBGeneratedMessage_Builder {
 @private
-  CCDDBAppDetailCommon* result;
+  CCDDBAppDetailCommon* _builderResult;
 }
 
 - (CCDDBAppDetailCommon*) defaultInstance;
@@ -608,7 +608,7 @@
 
 @interface CMsgAppRights_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAppRights* result;
+  CMsgAppRights* _builderResult;
 }
 
 - (CMsgAppRights*) defaultInstance;

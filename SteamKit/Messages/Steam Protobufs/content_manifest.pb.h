@@ -145,7 +145,7 @@
 
 @interface ContentManifestPayload_FileMapping_ChunkData_Builder : PBGeneratedMessage_Builder {
 @private
-  ContentManifestPayload_FileMapping_ChunkData* result;
+  ContentManifestPayload_FileMapping_ChunkData* _builderResult;
 }
 
 - (ContentManifestPayload_FileMapping_ChunkData*) defaultInstance;
@@ -188,7 +188,7 @@
 
 @interface ContentManifestPayload_FileMapping_Builder : PBGeneratedMessage_Builder {
 @private
-  ContentManifestPayload_FileMapping* result;
+  ContentManifestPayload_FileMapping* _builderResult;
 }
 
 - (ContentManifestPayload_FileMapping*) defaultInstance;
@@ -238,7 +238,7 @@
 
 @interface ContentManifestPayload_Builder : PBGeneratedMessage_Builder {
 @private
-  ContentManifestPayload* result;
+  ContentManifestPayload* _builderResult;
 }
 
 - (ContentManifestPayload*) defaultInstance;
@@ -321,7 +321,7 @@
 
 @interface ContentManifestMetadata_Builder : PBGeneratedMessage_Builder {
 @private
-  ContentManifestMetadata* result;
+  ContentManifestMetadata* _builderResult;
 }
 
 - (ContentManifestMetadata*) defaultInstance;
@@ -410,7 +410,7 @@
 
 @interface ContentManifestSignature_Builder : PBGeneratedMessage_Builder {
 @private
-  ContentManifestSignature* result;
+  ContentManifestSignature* _builderResult;
 }
 
 - (ContentManifestSignature*) defaultInstance;

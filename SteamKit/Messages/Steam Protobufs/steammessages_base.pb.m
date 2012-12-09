@@ -600,211 +600,211 @@ static CMsgProtoBufHeader* defaultCMsgProtoBufHeaderInstance = nil;
   }
 }
 - (BOOL) hasSteamid {
-  return result.hasSteamid;
+  return _builderResult.hasSteamid;
 }
 - (uint64_t) steamid {
-  return result.steamid;
+  return _builderResult.steamid;
 }
 - (CMsgProtoBufHeader_Builder*) setSteamid:(uint64_t) value {
-  result.hasSteamid = YES;
-  result.steamid = value;
+  _builderResult.hasSteamid = YES;
+  _builderResult.steamid = value;
   return self;
 }
 - (CMsgProtoBufHeader_Builder*) clearSteamid {
-  result.hasSteamid = NO;
-  result.steamid = 0L;
+  _builderResult.hasSteamid = NO;
+  _builderResult.steamid = 0L;
   return self;
 }
 - (BOOL) hasClientSessionid {
-  return result.hasClientSessionid;
+  return _builderResult.hasClientSessionid;
 }
 - (int32_t) clientSessionid {
-  return result.clientSessionid;
+  return _builderResult.clientSessionid;
 }
 - (CMsgProtoBufHeader_Builder*) setClientSessionid:(int32_t) value {
-  result.hasClientSessionid = YES;
-  result.clientSessionid = value;
+  _builderResult.hasClientSessionid = YES;
+  _builderResult.clientSessionid = value;
   return self;
 }
 - (CMsgProtoBufHeader_Builder*) clearClientSessionid {
-  result.hasClientSessionid = NO;
-  result.clientSessionid = 0;
+  _builderResult.hasClientSessionid = NO;
+  _builderResult.clientSessionid = 0;
   return self;
 }
 - (BOOL) hasRoutingAppid {
-  return result.hasRoutingAppid;
+  return _builderResult.hasRoutingAppid;
 }
 - (uint32_t) routingAppid {
-  return result.routingAppid;
+  return _builderResult.routingAppid;
 }
 - (CMsgProtoBufHeader_Builder*) setRoutingAppid:(uint32_t) value {
-  result.hasRoutingAppid = YES;
-  result.routingAppid = value;
+  _builderResult.hasRoutingAppid = YES;
+  _builderResult.routingAppid = value;
   return self;
 }
 - (CMsgProtoBufHeader_Builder*) clearRoutingAppid {
-  result.hasRoutingAppid = NO;
-  result.routingAppid = 0;
+  _builderResult.hasRoutingAppid = NO;
+  _builderResult.routingAppid = 0;
   return self;
 }
 - (BOOL) hasJobidSource {
-  return result.hasJobidSource;
+  return _builderResult.hasJobidSource;
 }
 - (uint64_t) jobidSource {
-  return result.jobidSource;
+  return _builderResult.jobidSource;
 }
 - (CMsgProtoBufHeader_Builder*) setJobidSource:(uint64_t) value {
-  result.hasJobidSource = YES;
-  result.jobidSource = value;
+  _builderResult.hasJobidSource = YES;
+  _builderResult.jobidSource = value;
   return self;
 }
 - (CMsgProtoBufHeader_Builder*) clearJobidSource {
-  result.hasJobidSource = NO;
-  result.jobidSource = -1L;
+  _builderResult.hasJobidSource = NO;
+  _builderResult.jobidSource = -1L;
   return self;
 }
 - (BOOL) hasJobidTarget {
-  return result.hasJobidTarget;
+  return _builderResult.hasJobidTarget;
 }
 - (uint64_t) jobidTarget {
-  return result.jobidTarget;
+  return _builderResult.jobidTarget;
 }
 - (CMsgProtoBufHeader_Builder*) setJobidTarget:(uint64_t) value {
-  result.hasJobidTarget = YES;
-  result.jobidTarget = value;
+  _builderResult.hasJobidTarget = YES;
+  _builderResult.jobidTarget = value;
   return self;
 }
 - (CMsgProtoBufHeader_Builder*) clearJobidTarget {
-  result.hasJobidTarget = NO;
-  result.jobidTarget = -1L;
+  _builderResult.hasJobidTarget = NO;
+  _builderResult.jobidTarget = -1L;
   return self;
 }
 - (BOOL) hasTargetJobName {
-  return result.hasTargetJobName;
+  return _builderResult.hasTargetJobName;
 }
 - (NSString*) targetJobName {
-  return result.targetJobName;
+  return _builderResult.targetJobName;
 }
 - (CMsgProtoBufHeader_Builder*) setTargetJobName:(NSString*) value {
-  result.hasTargetJobName = YES;
-  result.targetJobName = value;
+  _builderResult.hasTargetJobName = YES;
+  _builderResult.targetJobName = value;
   return self;
 }
 - (CMsgProtoBufHeader_Builder*) clearTargetJobName {
-  result.hasTargetJobName = NO;
-  result.targetJobName = @"";
+  _builderResult.hasTargetJobName = NO;
+  _builderResult.targetJobName = @"";
   return self;
 }
 - (BOOL) hasEresult {
-  return result.hasEresult;
+  return _builderResult.hasEresult;
 }
 - (int32_t) eresult {
-  return result.eresult;
+  return _builderResult.eresult;
 }
 - (CMsgProtoBufHeader_Builder*) setEresult:(int32_t) value {
-  result.hasEresult = YES;
-  result.eresult = value;
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
   return self;
 }
 - (CMsgProtoBufHeader_Builder*) clearEresult {
-  result.hasEresult = NO;
-  result.eresult = 2;
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
   return self;
 }
 - (BOOL) hasErrorMessage {
-  return result.hasErrorMessage;
+  return _builderResult.hasErrorMessage;
 }
 - (NSString*) errorMessage {
-  return result.errorMessage;
+  return _builderResult.errorMessage;
 }
 - (CMsgProtoBufHeader_Builder*) setErrorMessage:(NSString*) value {
-  result.hasErrorMessage = YES;
-  result.errorMessage = value;
+  _builderResult.hasErrorMessage = YES;
+  _builderResult.errorMessage = value;
   return self;
 }
 - (CMsgProtoBufHeader_Builder*) clearErrorMessage {
-  result.hasErrorMessage = NO;
-  result.errorMessage = @"";
+  _builderResult.hasErrorMessage = NO;
+  _builderResult.errorMessage = @"";
   return self;
 }
 - (BOOL) hasIp {
-  return result.hasIp;
+  return _builderResult.hasIp;
 }
 - (uint32_t) ip {
-  return result.ip;
+  return _builderResult.ip;
 }
 - (CMsgProtoBufHeader_Builder*) setIp:(uint32_t) value {
-  result.hasIp = YES;
-  result.ip = value;
+  _builderResult.hasIp = YES;
+  _builderResult.ip = value;
   return self;
 }
 - (CMsgProtoBufHeader_Builder*) clearIp {
-  result.hasIp = NO;
-  result.ip = 0;
+  _builderResult.hasIp = NO;
+  _builderResult.ip = 0;
   return self;
 }
 - (BOOL) hasAuthAccountFlags {
-  return result.hasAuthAccountFlags;
+  return _builderResult.hasAuthAccountFlags;
 }
 - (uint32_t) authAccountFlags {
-  return result.authAccountFlags;
+  return _builderResult.authAccountFlags;
 }
 - (CMsgProtoBufHeader_Builder*) setAuthAccountFlags:(uint32_t) value {
-  result.hasAuthAccountFlags = YES;
-  result.authAccountFlags = value;
+  _builderResult.hasAuthAccountFlags = YES;
+  _builderResult.authAccountFlags = value;
   return self;
 }
 - (CMsgProtoBufHeader_Builder*) clearAuthAccountFlags {
-  result.hasAuthAccountFlags = NO;
-  result.authAccountFlags = 0;
+  _builderResult.hasAuthAccountFlags = NO;
+  _builderResult.authAccountFlags = 0;
   return self;
 }
 - (BOOL) hasTransportError {
-  return result.hasTransportError;
+  return _builderResult.hasTransportError;
 }
 - (int32_t) transportError {
-  return result.transportError;
+  return _builderResult.transportError;
 }
 - (CMsgProtoBufHeader_Builder*) setTransportError:(int32_t) value {
-  result.hasTransportError = YES;
-  result.transportError = value;
+  _builderResult.hasTransportError = YES;
+  _builderResult.transportError = value;
   return self;
 }
 - (CMsgProtoBufHeader_Builder*) clearTransportError {
-  result.hasTransportError = NO;
-  result.transportError = 1;
+  _builderResult.hasTransportError = NO;
+  _builderResult.transportError = 1;
   return self;
 }
 - (BOOL) hasMessageid {
-  return result.hasMessageid;
+  return _builderResult.hasMessageid;
 }
 - (uint64_t) messageid {
-  return result.messageid;
+  return _builderResult.messageid;
 }
 - (CMsgProtoBufHeader_Builder*) setMessageid:(uint64_t) value {
-  result.hasMessageid = YES;
-  result.messageid = value;
+  _builderResult.hasMessageid = YES;
+  _builderResult.messageid = value;
   return self;
 }
 - (CMsgProtoBufHeader_Builder*) clearMessageid {
-  result.hasMessageid = NO;
-  result.messageid = -1L;
+  _builderResult.hasMessageid = NO;
+  _builderResult.messageid = -1L;
   return self;
 }
 - (BOOL) hasPublisherid {
-  return result.hasPublisherid;
+  return _builderResult.hasPublisherid;
 }
 - (uint32_t) publisherid {
-  return result.publisherid;
+  return _builderResult.publisherid;
 }
 - (CMsgProtoBufHeader_Builder*) setPublisherid:(uint32_t) value {
-  result.hasPublisherid = YES;
-  result.publisherid = value;
+  _builderResult.hasPublisherid = YES;
+  _builderResult.publisherid = value;
   return self;
 }
 - (CMsgProtoBufHeader_Builder*) clearPublisherid {
-  result.hasPublisherid = NO;
-  result.publisherid = 0;
+  _builderResult.hasPublisherid = NO;
+  _builderResult.publisherid = 0;
   return self;
 }
 @end
@@ -1030,35 +1030,35 @@ static CMsgMulti* defaultCMsgMultiInstance = nil;
   }
 }
 - (BOOL) hasSizeUnzipped {
-  return result.hasSizeUnzipped;
+  return _builderResult.hasSizeUnzipped;
 }
 - (uint32_t) sizeUnzipped {
-  return result.sizeUnzipped;
+  return _builderResult.sizeUnzipped;
 }
 - (CMsgMulti_Builder*) setSizeUnzipped:(uint32_t) value {
-  result.hasSizeUnzipped = YES;
-  result.sizeUnzipped = value;
+  _builderResult.hasSizeUnzipped = YES;
+  _builderResult.sizeUnzipped = value;
   return self;
 }
 - (CMsgMulti_Builder*) clearSizeUnzipped {
-  result.hasSizeUnzipped = NO;
-  result.sizeUnzipped = 0;
+  _builderResult.hasSizeUnzipped = NO;
+  _builderResult.sizeUnzipped = 0;
   return self;
 }
 - (BOOL) hasMessageBody {
-  return result.hasMessageBody;
+  return _builderResult.hasMessageBody;
 }
 - (NSData*) messageBody {
-  return result.messageBody;
+  return _builderResult.messageBody;
 }
 - (CMsgMulti_Builder*) setMessageBody:(NSData*) value {
-  result.hasMessageBody = YES;
-  result.messageBody = value;
+  _builderResult.hasMessageBody = YES;
+  _builderResult.messageBody = value;
   return self;
 }
 - (CMsgMulti_Builder*) clearMessageBody {
-  result.hasMessageBody = NO;
-  result.messageBody = [NSData data];
+  _builderResult.hasMessageBody = NO;
+  _builderResult.messageBody = [NSData data];
   return self;
 }
 @end
@@ -1434,115 +1434,115 @@ static CMsgAuthTicket* defaultCMsgAuthTicketInstance = nil;
   }
 }
 - (BOOL) hasEstate {
-  return result.hasEstate;
+  return _builderResult.hasEstate;
 }
 - (uint32_t) estate {
-  return result.estate;
+  return _builderResult.estate;
 }
 - (CMsgAuthTicket_Builder*) setEstate:(uint32_t) value {
-  result.hasEstate = YES;
-  result.estate = value;
+  _builderResult.hasEstate = YES;
+  _builderResult.estate = value;
   return self;
 }
 - (CMsgAuthTicket_Builder*) clearEstate {
-  result.hasEstate = NO;
-  result.estate = 0;
+  _builderResult.hasEstate = NO;
+  _builderResult.estate = 0;
   return self;
 }
 - (BOOL) hasEresult {
-  return result.hasEresult;
+  return _builderResult.hasEresult;
 }
 - (uint32_t) eresult {
-  return result.eresult;
+  return _builderResult.eresult;
 }
 - (CMsgAuthTicket_Builder*) setEresult:(uint32_t) value {
-  result.hasEresult = YES;
-  result.eresult = value;
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
   return self;
 }
 - (CMsgAuthTicket_Builder*) clearEresult {
-  result.hasEresult = NO;
-  result.eresult = 2;
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
   return self;
 }
 - (BOOL) hasSteamid {
-  return result.hasSteamid;
+  return _builderResult.hasSteamid;
 }
 - (uint64_t) steamid {
-  return result.steamid;
+  return _builderResult.steamid;
 }
 - (CMsgAuthTicket_Builder*) setSteamid:(uint64_t) value {
-  result.hasSteamid = YES;
-  result.steamid = value;
+  _builderResult.hasSteamid = YES;
+  _builderResult.steamid = value;
   return self;
 }
 - (CMsgAuthTicket_Builder*) clearSteamid {
-  result.hasSteamid = NO;
-  result.steamid = 0L;
+  _builderResult.hasSteamid = NO;
+  _builderResult.steamid = 0L;
   return self;
 }
 - (BOOL) hasGameid {
-  return result.hasGameid;
+  return _builderResult.hasGameid;
 }
 - (uint64_t) gameid {
-  return result.gameid;
+  return _builderResult.gameid;
 }
 - (CMsgAuthTicket_Builder*) setGameid:(uint64_t) value {
-  result.hasGameid = YES;
-  result.gameid = value;
+  _builderResult.hasGameid = YES;
+  _builderResult.gameid = value;
   return self;
 }
 - (CMsgAuthTicket_Builder*) clearGameid {
-  result.hasGameid = NO;
-  result.gameid = 0L;
+  _builderResult.hasGameid = NO;
+  _builderResult.gameid = 0L;
   return self;
 }
 - (BOOL) hasHSteamPipe {
-  return result.hasHSteamPipe;
+  return _builderResult.hasHSteamPipe;
 }
 - (uint32_t) hSteamPipe {
-  return result.hSteamPipe;
+  return _builderResult.hSteamPipe;
 }
 - (CMsgAuthTicket_Builder*) setHSteamPipe:(uint32_t) value {
-  result.hasHSteamPipe = YES;
-  result.hSteamPipe = value;
+  _builderResult.hasHSteamPipe = YES;
+  _builderResult.hSteamPipe = value;
   return self;
 }
 - (CMsgAuthTicket_Builder*) clearHSteamPipe {
-  result.hasHSteamPipe = NO;
-  result.hSteamPipe = 0;
+  _builderResult.hasHSteamPipe = NO;
+  _builderResult.hSteamPipe = 0;
   return self;
 }
 - (BOOL) hasTicketCrc {
-  return result.hasTicketCrc;
+  return _builderResult.hasTicketCrc;
 }
 - (uint32_t) ticketCrc {
-  return result.ticketCrc;
+  return _builderResult.ticketCrc;
 }
 - (CMsgAuthTicket_Builder*) setTicketCrc:(uint32_t) value {
-  result.hasTicketCrc = YES;
-  result.ticketCrc = value;
+  _builderResult.hasTicketCrc = YES;
+  _builderResult.ticketCrc = value;
   return self;
 }
 - (CMsgAuthTicket_Builder*) clearTicketCrc {
-  result.hasTicketCrc = NO;
-  result.ticketCrc = 0;
+  _builderResult.hasTicketCrc = NO;
+  _builderResult.ticketCrc = 0;
   return self;
 }
 - (BOOL) hasTicket {
-  return result.hasTicket;
+  return _builderResult.hasTicket;
 }
 - (NSData*) ticket {
-  return result.ticket;
+  return _builderResult.ticket;
 }
 - (CMsgAuthTicket_Builder*) setTicket:(NSData*) value {
-  result.hasTicket = YES;
-  result.ticket = value;
+  _builderResult.hasTicket = YES;
+  _builderResult.ticket = value;
   return self;
 }
 - (CMsgAuthTicket_Builder*) clearTicket {
-  result.hasTicket = NO;
-  result.ticket = [NSData data];
+  _builderResult.hasTicket = NO;
+  _builderResult.ticket = [NSData data];
   return self;
 }
 @end
@@ -2063,179 +2063,179 @@ static CCDDBAppDetailCommon* defaultCCDDBAppDetailCommonInstance = nil;
   }
 }
 - (BOOL) hasAppid {
-  return result.hasAppid;
+  return _builderResult.hasAppid;
 }
 - (uint32_t) appid {
-  return result.appid;
+  return _builderResult.appid;
 }
 - (CCDDBAppDetailCommon_Builder*) setAppid:(uint32_t) value {
-  result.hasAppid = YES;
-  result.appid = value;
+  _builderResult.hasAppid = YES;
+  _builderResult.appid = value;
   return self;
 }
 - (CCDDBAppDetailCommon_Builder*) clearAppid {
-  result.hasAppid = NO;
-  result.appid = 0;
+  _builderResult.hasAppid = NO;
+  _builderResult.appid = 0;
   return self;
 }
 - (BOOL) hasName {
-  return result.hasName;
+  return _builderResult.hasName;
 }
 - (NSString*) name {
-  return result.name;
+  return _builderResult.name;
 }
 - (CCDDBAppDetailCommon_Builder*) setName:(NSString*) value {
-  result.hasName = YES;
-  result.name = value;
+  _builderResult.hasName = YES;
+  _builderResult.name = value;
   return self;
 }
 - (CCDDBAppDetailCommon_Builder*) clearName {
-  result.hasName = NO;
-  result.name = @"";
+  _builderResult.hasName = NO;
+  _builderResult.name = @"";
   return self;
 }
 - (BOOL) hasIcon {
-  return result.hasIcon;
+  return _builderResult.hasIcon;
 }
 - (NSString*) icon {
-  return result.icon;
+  return _builderResult.icon;
 }
 - (CCDDBAppDetailCommon_Builder*) setIcon:(NSString*) value {
-  result.hasIcon = YES;
-  result.icon = value;
+  _builderResult.hasIcon = YES;
+  _builderResult.icon = value;
   return self;
 }
 - (CCDDBAppDetailCommon_Builder*) clearIcon {
-  result.hasIcon = NO;
-  result.icon = @"";
+  _builderResult.hasIcon = NO;
+  _builderResult.icon = @"";
   return self;
 }
 - (BOOL) hasLogo {
-  return result.hasLogo;
+  return _builderResult.hasLogo;
 }
 - (NSString*) logo {
-  return result.logo;
+  return _builderResult.logo;
 }
 - (CCDDBAppDetailCommon_Builder*) setLogo:(NSString*) value {
-  result.hasLogo = YES;
-  result.logo = value;
+  _builderResult.hasLogo = YES;
+  _builderResult.logo = value;
   return self;
 }
 - (CCDDBAppDetailCommon_Builder*) clearLogo {
-  result.hasLogo = NO;
-  result.logo = @"";
+  _builderResult.hasLogo = NO;
+  _builderResult.logo = @"";
   return self;
 }
 - (BOOL) hasLogoSmall {
-  return result.hasLogoSmall;
+  return _builderResult.hasLogoSmall;
 }
 - (NSString*) logoSmall {
-  return result.logoSmall;
+  return _builderResult.logoSmall;
 }
 - (CCDDBAppDetailCommon_Builder*) setLogoSmall:(NSString*) value {
-  result.hasLogoSmall = YES;
-  result.logoSmall = value;
+  _builderResult.hasLogoSmall = YES;
+  _builderResult.logoSmall = value;
   return self;
 }
 - (CCDDBAppDetailCommon_Builder*) clearLogoSmall {
-  result.hasLogoSmall = NO;
-  result.logoSmall = @"";
+  _builderResult.hasLogoSmall = NO;
+  _builderResult.logoSmall = @"";
   return self;
 }
 - (BOOL) hasTool {
-  return result.hasTool;
+  return _builderResult.hasTool;
 }
 - (BOOL) tool {
-  return result.tool;
+  return _builderResult.tool;
 }
 - (CCDDBAppDetailCommon_Builder*) setTool:(BOOL) value {
-  result.hasTool = YES;
-  result.tool = value;
+  _builderResult.hasTool = YES;
+  _builderResult.tool = value;
   return self;
 }
 - (CCDDBAppDetailCommon_Builder*) clearTool {
-  result.hasTool = NO;
-  result.tool = NO;
+  _builderResult.hasTool = NO;
+  _builderResult.tool = NO;
   return self;
 }
 - (BOOL) hasDemo {
-  return result.hasDemo;
+  return _builderResult.hasDemo;
 }
 - (BOOL) demo {
-  return result.demo;
+  return _builderResult.demo;
 }
 - (CCDDBAppDetailCommon_Builder*) setDemo:(BOOL) value {
-  result.hasDemo = YES;
-  result.demo = value;
+  _builderResult.hasDemo = YES;
+  _builderResult.demo = value;
   return self;
 }
 - (CCDDBAppDetailCommon_Builder*) clearDemo {
-  result.hasDemo = NO;
-  result.demo = NO;
+  _builderResult.hasDemo = NO;
+  _builderResult.demo = NO;
   return self;
 }
 - (BOOL) hasMedia {
-  return result.hasMedia;
+  return _builderResult.hasMedia;
 }
 - (BOOL) media {
-  return result.media;
+  return _builderResult.media;
 }
 - (CCDDBAppDetailCommon_Builder*) setMedia:(BOOL) value {
-  result.hasMedia = YES;
-  result.media = value;
+  _builderResult.hasMedia = YES;
+  _builderResult.media = value;
   return self;
 }
 - (CCDDBAppDetailCommon_Builder*) clearMedia {
-  result.hasMedia = NO;
-  result.media = NO;
+  _builderResult.hasMedia = NO;
+  _builderResult.media = NO;
   return self;
 }
 - (BOOL) hasCommunityVisibleStats {
-  return result.hasCommunityVisibleStats;
+  return _builderResult.hasCommunityVisibleStats;
 }
 - (BOOL) communityVisibleStats {
-  return result.communityVisibleStats;
+  return _builderResult.communityVisibleStats;
 }
 - (CCDDBAppDetailCommon_Builder*) setCommunityVisibleStats:(BOOL) value {
-  result.hasCommunityVisibleStats = YES;
-  result.communityVisibleStats = value;
+  _builderResult.hasCommunityVisibleStats = YES;
+  _builderResult.communityVisibleStats = value;
   return self;
 }
 - (CCDDBAppDetailCommon_Builder*) clearCommunityVisibleStats {
-  result.hasCommunityVisibleStats = NO;
-  result.communityVisibleStats = NO;
+  _builderResult.hasCommunityVisibleStats = NO;
+  _builderResult.communityVisibleStats = NO;
   return self;
 }
 - (BOOL) hasFriendlyName {
-  return result.hasFriendlyName;
+  return _builderResult.hasFriendlyName;
 }
 - (NSString*) friendlyName {
-  return result.friendlyName;
+  return _builderResult.friendlyName;
 }
 - (CCDDBAppDetailCommon_Builder*) setFriendlyName:(NSString*) value {
-  result.hasFriendlyName = YES;
-  result.friendlyName = value;
+  _builderResult.hasFriendlyName = YES;
+  _builderResult.friendlyName = value;
   return self;
 }
 - (CCDDBAppDetailCommon_Builder*) clearFriendlyName {
-  result.hasFriendlyName = NO;
-  result.friendlyName = @"";
+  _builderResult.hasFriendlyName = NO;
+  _builderResult.friendlyName = @"";
   return self;
 }
 - (BOOL) hasPropagation {
-  return result.hasPropagation;
+  return _builderResult.hasPropagation;
 }
 - (NSString*) propagation {
-  return result.propagation;
+  return _builderResult.propagation;
 }
 - (CCDDBAppDetailCommon_Builder*) setPropagation:(NSString*) value {
-  result.hasPropagation = YES;
-  result.propagation = value;
+  _builderResult.hasPropagation = YES;
+  _builderResult.propagation = value;
   return self;
 }
 - (CCDDBAppDetailCommon_Builder*) clearPropagation {
-  result.hasPropagation = NO;
-  result.propagation = @"";
+  _builderResult.hasPropagation = NO;
+  _builderResult.propagation = @"";
   return self;
 }
 @end
@@ -2855,211 +2855,211 @@ static CMsgAppRights* defaultCMsgAppRightsInstance = nil;
   }
 }
 - (BOOL) hasEditInfo {
-  return result.hasEditInfo;
+  return _builderResult.hasEditInfo;
 }
 - (BOOL) editInfo {
-  return result.editInfo;
+  return _builderResult.editInfo;
 }
 - (CMsgAppRights_Builder*) setEditInfo:(BOOL) value {
-  result.hasEditInfo = YES;
-  result.editInfo = value;
+  _builderResult.hasEditInfo = YES;
+  _builderResult.editInfo = value;
   return self;
 }
 - (CMsgAppRights_Builder*) clearEditInfo {
-  result.hasEditInfo = NO;
-  result.editInfo = NO;
+  _builderResult.hasEditInfo = NO;
+  _builderResult.editInfo = NO;
   return self;
 }
 - (BOOL) hasPublish {
-  return result.hasPublish;
+  return _builderResult.hasPublish;
 }
 - (BOOL) publish {
-  return result.publish;
+  return _builderResult.publish;
 }
 - (CMsgAppRights_Builder*) setPublish:(BOOL) value {
-  result.hasPublish = YES;
-  result.publish = value;
+  _builderResult.hasPublish = YES;
+  _builderResult.publish = value;
   return self;
 }
 - (CMsgAppRights_Builder*) clearPublish {
-  result.hasPublish = NO;
-  result.publish = NO;
+  _builderResult.hasPublish = NO;
+  _builderResult.publish = NO;
   return self;
 }
 - (BOOL) hasViewErrorData {
-  return result.hasViewErrorData;
+  return _builderResult.hasViewErrorData;
 }
 - (BOOL) viewErrorData {
-  return result.viewErrorData;
+  return _builderResult.viewErrorData;
 }
 - (CMsgAppRights_Builder*) setViewErrorData:(BOOL) value {
-  result.hasViewErrorData = YES;
-  result.viewErrorData = value;
+  _builderResult.hasViewErrorData = YES;
+  _builderResult.viewErrorData = value;
   return self;
 }
 - (CMsgAppRights_Builder*) clearViewErrorData {
-  result.hasViewErrorData = NO;
-  result.viewErrorData = NO;
+  _builderResult.hasViewErrorData = NO;
+  _builderResult.viewErrorData = NO;
   return self;
 }
 - (BOOL) hasDownload {
-  return result.hasDownload;
+  return _builderResult.hasDownload;
 }
 - (BOOL) download {
-  return result.download;
+  return _builderResult.download;
 }
 - (CMsgAppRights_Builder*) setDownload:(BOOL) value {
-  result.hasDownload = YES;
-  result.download = value;
+  _builderResult.hasDownload = YES;
+  _builderResult.download = value;
   return self;
 }
 - (CMsgAppRights_Builder*) clearDownload {
-  result.hasDownload = NO;
-  result.download = NO;
+  _builderResult.hasDownload = NO;
+  _builderResult.download = NO;
   return self;
 }
 - (BOOL) hasUploadCdkeys {
-  return result.hasUploadCdkeys;
+  return _builderResult.hasUploadCdkeys;
 }
 - (BOOL) uploadCdkeys {
-  return result.uploadCdkeys;
+  return _builderResult.uploadCdkeys;
 }
 - (CMsgAppRights_Builder*) setUploadCdkeys:(BOOL) value {
-  result.hasUploadCdkeys = YES;
-  result.uploadCdkeys = value;
+  _builderResult.hasUploadCdkeys = YES;
+  _builderResult.uploadCdkeys = value;
   return self;
 }
 - (CMsgAppRights_Builder*) clearUploadCdkeys {
-  result.hasUploadCdkeys = NO;
-  result.uploadCdkeys = NO;
+  _builderResult.hasUploadCdkeys = NO;
+  _builderResult.uploadCdkeys = NO;
   return self;
 }
 - (BOOL) hasGenerateCdkeys {
-  return result.hasGenerateCdkeys;
+  return _builderResult.hasGenerateCdkeys;
 }
 - (BOOL) generateCdkeys {
-  return result.generateCdkeys;
+  return _builderResult.generateCdkeys;
 }
 - (CMsgAppRights_Builder*) setGenerateCdkeys:(BOOL) value {
-  result.hasGenerateCdkeys = YES;
-  result.generateCdkeys = value;
+  _builderResult.hasGenerateCdkeys = YES;
+  _builderResult.generateCdkeys = value;
   return self;
 }
 - (CMsgAppRights_Builder*) clearGenerateCdkeys {
-  result.hasGenerateCdkeys = NO;
-  result.generateCdkeys = NO;
+  _builderResult.hasGenerateCdkeys = NO;
+  _builderResult.generateCdkeys = NO;
   return self;
 }
 - (BOOL) hasViewFinancials {
-  return result.hasViewFinancials;
+  return _builderResult.hasViewFinancials;
 }
 - (BOOL) viewFinancials {
-  return result.viewFinancials;
+  return _builderResult.viewFinancials;
 }
 - (CMsgAppRights_Builder*) setViewFinancials:(BOOL) value {
-  result.hasViewFinancials = YES;
-  result.viewFinancials = value;
+  _builderResult.hasViewFinancials = YES;
+  _builderResult.viewFinancials = value;
   return self;
 }
 - (CMsgAppRights_Builder*) clearViewFinancials {
-  result.hasViewFinancials = NO;
-  result.viewFinancials = NO;
+  _builderResult.hasViewFinancials = NO;
+  _builderResult.viewFinancials = NO;
   return self;
 }
 - (BOOL) hasManageCeg {
-  return result.hasManageCeg;
+  return _builderResult.hasManageCeg;
 }
 - (BOOL) manageCeg {
-  return result.manageCeg;
+  return _builderResult.manageCeg;
 }
 - (CMsgAppRights_Builder*) setManageCeg:(BOOL) value {
-  result.hasManageCeg = YES;
-  result.manageCeg = value;
+  _builderResult.hasManageCeg = YES;
+  _builderResult.manageCeg = value;
   return self;
 }
 - (CMsgAppRights_Builder*) clearManageCeg {
-  result.hasManageCeg = NO;
-  result.manageCeg = NO;
+  _builderResult.hasManageCeg = NO;
+  _builderResult.manageCeg = NO;
   return self;
 }
 - (BOOL) hasManageSigning {
-  return result.hasManageSigning;
+  return _builderResult.hasManageSigning;
 }
 - (BOOL) manageSigning {
-  return result.manageSigning;
+  return _builderResult.manageSigning;
 }
 - (CMsgAppRights_Builder*) setManageSigning:(BOOL) value {
-  result.hasManageSigning = YES;
-  result.manageSigning = value;
+  _builderResult.hasManageSigning = YES;
+  _builderResult.manageSigning = value;
   return self;
 }
 - (CMsgAppRights_Builder*) clearManageSigning {
-  result.hasManageSigning = NO;
-  result.manageSigning = NO;
+  _builderResult.hasManageSigning = NO;
+  _builderResult.manageSigning = NO;
   return self;
 }
 - (BOOL) hasManageCdkeys {
-  return result.hasManageCdkeys;
+  return _builderResult.hasManageCdkeys;
 }
 - (BOOL) manageCdkeys {
-  return result.manageCdkeys;
+  return _builderResult.manageCdkeys;
 }
 - (CMsgAppRights_Builder*) setManageCdkeys:(BOOL) value {
-  result.hasManageCdkeys = YES;
-  result.manageCdkeys = value;
+  _builderResult.hasManageCdkeys = YES;
+  _builderResult.manageCdkeys = value;
   return self;
 }
 - (CMsgAppRights_Builder*) clearManageCdkeys {
-  result.hasManageCdkeys = NO;
-  result.manageCdkeys = NO;
+  _builderResult.hasManageCdkeys = NO;
+  _builderResult.manageCdkeys = NO;
   return self;
 }
 - (BOOL) hasEditMarketing {
-  return result.hasEditMarketing;
+  return _builderResult.hasEditMarketing;
 }
 - (BOOL) editMarketing {
-  return result.editMarketing;
+  return _builderResult.editMarketing;
 }
 - (CMsgAppRights_Builder*) setEditMarketing:(BOOL) value {
-  result.hasEditMarketing = YES;
-  result.editMarketing = value;
+  _builderResult.hasEditMarketing = YES;
+  _builderResult.editMarketing = value;
   return self;
 }
 - (CMsgAppRights_Builder*) clearEditMarketing {
-  result.hasEditMarketing = NO;
-  result.editMarketing = NO;
+  _builderResult.hasEditMarketing = NO;
+  _builderResult.editMarketing = NO;
   return self;
 }
 - (BOOL) hasEconomySupport {
-  return result.hasEconomySupport;
+  return _builderResult.hasEconomySupport;
 }
 - (BOOL) economySupport {
-  return result.economySupport;
+  return _builderResult.economySupport;
 }
 - (CMsgAppRights_Builder*) setEconomySupport:(BOOL) value {
-  result.hasEconomySupport = YES;
-  result.economySupport = value;
+  _builderResult.hasEconomySupport = YES;
+  _builderResult.economySupport = value;
   return self;
 }
 - (CMsgAppRights_Builder*) clearEconomySupport {
-  result.hasEconomySupport = NO;
-  result.economySupport = NO;
+  _builderResult.hasEconomySupport = NO;
+  _builderResult.economySupport = NO;
   return self;
 }
 - (BOOL) hasEconomySupportSupervisor {
-  return result.hasEconomySupportSupervisor;
+  return _builderResult.hasEconomySupportSupervisor;
 }
 - (BOOL) economySupportSupervisor {
-  return result.economySupportSupervisor;
+  return _builderResult.economySupportSupervisor;
 }
 - (CMsgAppRights_Builder*) setEconomySupportSupervisor:(BOOL) value {
-  result.hasEconomySupportSupervisor = YES;
-  result.economySupportSupervisor = value;
+  _builderResult.hasEconomySupportSupervisor = YES;
+  _builderResult.economySupportSupervisor = value;
   return self;
 }
 - (CMsgAppRights_Builder*) clearEconomySupportSupervisor {
-  result.hasEconomySupportSupervisor = NO;
-  result.economySupportSupervisor = NO;
+  _builderResult.hasEconomySupportSupervisor = NO;
+  _builderResult.economySupportSupervisor = NO;
   return self;
 }
 @end

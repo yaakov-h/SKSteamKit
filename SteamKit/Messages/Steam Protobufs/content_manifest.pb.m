@@ -686,83 +686,83 @@ static ContentManifestPayload_FileMapping_ChunkData* defaultContentManifestPaylo
   }
 }
 - (BOOL) hasSha {
-  return result.hasSha;
+  return _builderResult.hasSha;
 }
 - (NSData*) sha {
-  return result.sha;
+  return _builderResult.sha;
 }
 - (ContentManifestPayload_FileMapping_ChunkData_Builder*) setSha:(NSData*) value {
-  result.hasSha = YES;
-  result.sha = value;
+  _builderResult.hasSha = YES;
+  _builderResult.sha = value;
   return self;
 }
 - (ContentManifestPayload_FileMapping_ChunkData_Builder*) clearSha {
-  result.hasSha = NO;
-  result.sha = [NSData data];
+  _builderResult.hasSha = NO;
+  _builderResult.sha = [NSData data];
   return self;
 }
 - (BOOL) hasCrc {
-  return result.hasCrc;
+  return _builderResult.hasCrc;
 }
 - (uint32_t) crc {
-  return result.crc;
+  return _builderResult.crc;
 }
 - (ContentManifestPayload_FileMapping_ChunkData_Builder*) setCrc:(uint32_t) value {
-  result.hasCrc = YES;
-  result.crc = value;
+  _builderResult.hasCrc = YES;
+  _builderResult.crc = value;
   return self;
 }
 - (ContentManifestPayload_FileMapping_ChunkData_Builder*) clearCrc {
-  result.hasCrc = NO;
-  result.crc = 0;
+  _builderResult.hasCrc = NO;
+  _builderResult.crc = 0;
   return self;
 }
 - (BOOL) hasOffset {
-  return result.hasOffset;
+  return _builderResult.hasOffset;
 }
 - (uint64_t) offset {
-  return result.offset;
+  return _builderResult.offset;
 }
 - (ContentManifestPayload_FileMapping_ChunkData_Builder*) setOffset:(uint64_t) value {
-  result.hasOffset = YES;
-  result.offset = value;
+  _builderResult.hasOffset = YES;
+  _builderResult.offset = value;
   return self;
 }
 - (ContentManifestPayload_FileMapping_ChunkData_Builder*) clearOffset {
-  result.hasOffset = NO;
-  result.offset = 0L;
+  _builderResult.hasOffset = NO;
+  _builderResult.offset = 0L;
   return self;
 }
 - (BOOL) hasCbOriginal {
-  return result.hasCbOriginal;
+  return _builderResult.hasCbOriginal;
 }
 - (uint32_t) cbOriginal {
-  return result.cbOriginal;
+  return _builderResult.cbOriginal;
 }
 - (ContentManifestPayload_FileMapping_ChunkData_Builder*) setCbOriginal:(uint32_t) value {
-  result.hasCbOriginal = YES;
-  result.cbOriginal = value;
+  _builderResult.hasCbOriginal = YES;
+  _builderResult.cbOriginal = value;
   return self;
 }
 - (ContentManifestPayload_FileMapping_ChunkData_Builder*) clearCbOriginal {
-  result.hasCbOriginal = NO;
-  result.cbOriginal = 0;
+  _builderResult.hasCbOriginal = NO;
+  _builderResult.cbOriginal = 0;
   return self;
 }
 - (BOOL) hasCbCompressed {
-  return result.hasCbCompressed;
+  return _builderResult.hasCbCompressed;
 }
 - (uint32_t) cbCompressed {
-  return result.cbCompressed;
+  return _builderResult.cbCompressed;
 }
 - (ContentManifestPayload_FileMapping_ChunkData_Builder*) setCbCompressed:(uint32_t) value {
-  result.hasCbCompressed = YES;
-  result.cbCompressed = value;
+  _builderResult.hasCbCompressed = YES;
+  _builderResult.cbCompressed = value;
   return self;
 }
 - (ContentManifestPayload_FileMapping_ChunkData_Builder*) clearCbCompressed {
-  result.hasCbCompressed = NO;
-  result.cbCompressed = 0;
+  _builderResult.hasCbCompressed = NO;
+  _builderResult.cbCompressed = 0;
   return self;
 }
 @end
@@ -825,10 +825,10 @@ static ContentManifestPayload_FileMapping_ChunkData* defaultContentManifestPaylo
     [self setShaContent:other.shaContent];
   }
   if (other.chunksArray.count > 0) {
-    if (result.chunksArray == nil) {
-      result.chunksArray = [[other.chunksArray copyWithZone:[other.chunksArray zone]] autorelease];
+    if (_builderResult.chunksArray == nil) {
+      _builderResult.chunksArray = [[other.chunksArray copyWithZone:[other.chunksArray zone]] autorelease];
     } else {
-      [result.chunksArray appendArray:other.chunksArray];
+      [_builderResult.chunksArray appendArray:other.chunksArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -882,108 +882,108 @@ static ContentManifestPayload_FileMapping_ChunkData* defaultContentManifestPaylo
   }
 }
 - (BOOL) hasFilename {
-  return result.hasFilename;
+  return _builderResult.hasFilename;
 }
 - (NSString*) filename {
-  return result.filename;
+  return _builderResult.filename;
 }
 - (ContentManifestPayload_FileMapping_Builder*) setFilename:(NSString*) value {
-  result.hasFilename = YES;
-  result.filename = value;
+  _builderResult.hasFilename = YES;
+  _builderResult.filename = value;
   return self;
 }
 - (ContentManifestPayload_FileMapping_Builder*) clearFilename {
-  result.hasFilename = NO;
-  result.filename = @"";
+  _builderResult.hasFilename = NO;
+  _builderResult.filename = @"";
   return self;
 }
 - (BOOL) hasSize {
-  return result.hasSize;
+  return _builderResult.hasSize;
 }
 - (uint64_t) size {
-  return result.size;
+  return _builderResult.size;
 }
 - (ContentManifestPayload_FileMapping_Builder*) setSize:(uint64_t) value {
-  result.hasSize = YES;
-  result.size = value;
+  _builderResult.hasSize = YES;
+  _builderResult.size = value;
   return self;
 }
 - (ContentManifestPayload_FileMapping_Builder*) clearSize {
-  result.hasSize = NO;
-  result.size = 0L;
+  _builderResult.hasSize = NO;
+  _builderResult.size = 0L;
   return self;
 }
 - (BOOL) hasFlags {
-  return result.hasFlags;
+  return _builderResult.hasFlags;
 }
 - (uint32_t) flags {
-  return result.flags;
+  return _builderResult.flags;
 }
 - (ContentManifestPayload_FileMapping_Builder*) setFlags:(uint32_t) value {
-  result.hasFlags = YES;
-  result.flags = value;
+  _builderResult.hasFlags = YES;
+  _builderResult.flags = value;
   return self;
 }
 - (ContentManifestPayload_FileMapping_Builder*) clearFlags {
-  result.hasFlags = NO;
-  result.flags = 0;
+  _builderResult.hasFlags = NO;
+  _builderResult.flags = 0;
   return self;
 }
 - (BOOL) hasShaFilename {
-  return result.hasShaFilename;
+  return _builderResult.hasShaFilename;
 }
 - (NSData*) shaFilename {
-  return result.shaFilename;
+  return _builderResult.shaFilename;
 }
 - (ContentManifestPayload_FileMapping_Builder*) setShaFilename:(NSData*) value {
-  result.hasShaFilename = YES;
-  result.shaFilename = value;
+  _builderResult.hasShaFilename = YES;
+  _builderResult.shaFilename = value;
   return self;
 }
 - (ContentManifestPayload_FileMapping_Builder*) clearShaFilename {
-  result.hasShaFilename = NO;
-  result.shaFilename = [NSData data];
+  _builderResult.hasShaFilename = NO;
+  _builderResult.shaFilename = [NSData data];
   return self;
 }
 - (BOOL) hasShaContent {
-  return result.hasShaContent;
+  return _builderResult.hasShaContent;
 }
 - (NSData*) shaContent {
-  return result.shaContent;
+  return _builderResult.shaContent;
 }
 - (ContentManifestPayload_FileMapping_Builder*) setShaContent:(NSData*) value {
-  result.hasShaContent = YES;
-  result.shaContent = value;
+  _builderResult.hasShaContent = YES;
+  _builderResult.shaContent = value;
   return self;
 }
 - (ContentManifestPayload_FileMapping_Builder*) clearShaContent {
-  result.hasShaContent = NO;
-  result.shaContent = [NSData data];
+  _builderResult.hasShaContent = NO;
+  _builderResult.shaContent = [NSData data];
   return self;
 }
 - (PBAppendableArray *)chunks {
-  return result.chunksArray;
+  return _builderResult.chunksArray;
 }
 - (ContentManifestPayload_FileMapping_ChunkData*)chunksAtIndex:(NSUInteger)index {
-  return [result chunksAtIndex:index];
+  return [_builderResult chunksAtIndex:index];
 }
 - (ContentManifestPayload_FileMapping_Builder *)addChunks:(ContentManifestPayload_FileMapping_ChunkData*)value {
-  if (result.chunksArray == nil) {
-    result.chunksArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.chunksArray == nil) {
+    _builderResult.chunksArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.chunksArray addObject:value];
+  [_builderResult.chunksArray addObject:value];
   return self;
 }
 - (ContentManifestPayload_FileMapping_Builder *)setChunksArray:(NSArray *)array {
-  result.chunksArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.chunksArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (ContentManifestPayload_FileMapping_Builder *)setChunksValues:(const ContentManifestPayload_FileMapping_ChunkData* *)values count:(NSUInteger)count {
-  result.chunksArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.chunksArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (ContentManifestPayload_FileMapping_Builder *)clearChunks {
-  result.chunksArray = nil;
+  _builderResult.chunksArray = nil;
   return self;
 }
 @end
@@ -1031,10 +1031,10 @@ static ContentManifestPayload_FileMapping_ChunkData* defaultContentManifestPaylo
     return self;
   }
   if (other.mappingsArray.count > 0) {
-    if (result.mappingsArray == nil) {
-      result.mappingsArray = [[other.mappingsArray copyWithZone:[other.mappingsArray zone]] autorelease];
+    if (_builderResult.mappingsArray == nil) {
+      _builderResult.mappingsArray = [[other.mappingsArray copyWithZone:[other.mappingsArray zone]] autorelease];
     } else {
-      [result.mappingsArray appendArray:other.mappingsArray];
+      [_builderResult.mappingsArray appendArray:other.mappingsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -1068,28 +1068,28 @@ static ContentManifestPayload_FileMapping_ChunkData* defaultContentManifestPaylo
   }
 }
 - (PBAppendableArray *)mappings {
-  return result.mappingsArray;
+  return _builderResult.mappingsArray;
 }
 - (ContentManifestPayload_FileMapping*)mappingsAtIndex:(NSUInteger)index {
-  return [result mappingsAtIndex:index];
+  return [_builderResult mappingsAtIndex:index];
 }
 - (ContentManifestPayload_Builder *)addMappings:(ContentManifestPayload_FileMapping*)value {
-  if (result.mappingsArray == nil) {
-    result.mappingsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.mappingsArray == nil) {
+    _builderResult.mappingsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.mappingsArray addObject:value];
+  [_builderResult.mappingsArray addObject:value];
   return self;
 }
 - (ContentManifestPayload_Builder *)setMappingsArray:(NSArray *)array {
-  result.mappingsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.mappingsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (ContentManifestPayload_Builder *)setMappingsValues:(const ContentManifestPayload_FileMapping* *)values count:(NSUInteger)count {
-  result.mappingsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.mappingsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (ContentManifestPayload_Builder *)clearMappings {
-  result.mappingsArray = nil;
+  _builderResult.mappingsArray = nil;
   return self;
 }
 @end
@@ -1529,147 +1529,147 @@ static ContentManifestMetadata* defaultContentManifestMetadataInstance = nil;
   }
 }
 - (BOOL) hasDepotId {
-  return result.hasDepotId;
+  return _builderResult.hasDepotId;
 }
 - (uint32_t) depotId {
-  return result.depotId;
+  return _builderResult.depotId;
 }
 - (ContentManifestMetadata_Builder*) setDepotId:(uint32_t) value {
-  result.hasDepotId = YES;
-  result.depotId = value;
+  _builderResult.hasDepotId = YES;
+  _builderResult.depotId = value;
   return self;
 }
 - (ContentManifestMetadata_Builder*) clearDepotId {
-  result.hasDepotId = NO;
-  result.depotId = 0;
+  _builderResult.hasDepotId = NO;
+  _builderResult.depotId = 0;
   return self;
 }
 - (BOOL) hasGidManifest {
-  return result.hasGidManifest;
+  return _builderResult.hasGidManifest;
 }
 - (uint64_t) gidManifest {
-  return result.gidManifest;
+  return _builderResult.gidManifest;
 }
 - (ContentManifestMetadata_Builder*) setGidManifest:(uint64_t) value {
-  result.hasGidManifest = YES;
-  result.gidManifest = value;
+  _builderResult.hasGidManifest = YES;
+  _builderResult.gidManifest = value;
   return self;
 }
 - (ContentManifestMetadata_Builder*) clearGidManifest {
-  result.hasGidManifest = NO;
-  result.gidManifest = 0L;
+  _builderResult.hasGidManifest = NO;
+  _builderResult.gidManifest = 0L;
   return self;
 }
 - (BOOL) hasCreationTime {
-  return result.hasCreationTime;
+  return _builderResult.hasCreationTime;
 }
 - (uint32_t) creationTime {
-  return result.creationTime;
+  return _builderResult.creationTime;
 }
 - (ContentManifestMetadata_Builder*) setCreationTime:(uint32_t) value {
-  result.hasCreationTime = YES;
-  result.creationTime = value;
+  _builderResult.hasCreationTime = YES;
+  _builderResult.creationTime = value;
   return self;
 }
 - (ContentManifestMetadata_Builder*) clearCreationTime {
-  result.hasCreationTime = NO;
-  result.creationTime = 0;
+  _builderResult.hasCreationTime = NO;
+  _builderResult.creationTime = 0;
   return self;
 }
 - (BOOL) hasFilenamesEncrypted {
-  return result.hasFilenamesEncrypted;
+  return _builderResult.hasFilenamesEncrypted;
 }
 - (BOOL) filenamesEncrypted {
-  return result.filenamesEncrypted;
+  return _builderResult.filenamesEncrypted;
 }
 - (ContentManifestMetadata_Builder*) setFilenamesEncrypted:(BOOL) value {
-  result.hasFilenamesEncrypted = YES;
-  result.filenamesEncrypted = value;
+  _builderResult.hasFilenamesEncrypted = YES;
+  _builderResult.filenamesEncrypted = value;
   return self;
 }
 - (ContentManifestMetadata_Builder*) clearFilenamesEncrypted {
-  result.hasFilenamesEncrypted = NO;
-  result.filenamesEncrypted = NO;
+  _builderResult.hasFilenamesEncrypted = NO;
+  _builderResult.filenamesEncrypted = NO;
   return self;
 }
 - (BOOL) hasCbDiskOriginal {
-  return result.hasCbDiskOriginal;
+  return _builderResult.hasCbDiskOriginal;
 }
 - (uint64_t) cbDiskOriginal {
-  return result.cbDiskOriginal;
+  return _builderResult.cbDiskOriginal;
 }
 - (ContentManifestMetadata_Builder*) setCbDiskOriginal:(uint64_t) value {
-  result.hasCbDiskOriginal = YES;
-  result.cbDiskOriginal = value;
+  _builderResult.hasCbDiskOriginal = YES;
+  _builderResult.cbDiskOriginal = value;
   return self;
 }
 - (ContentManifestMetadata_Builder*) clearCbDiskOriginal {
-  result.hasCbDiskOriginal = NO;
-  result.cbDiskOriginal = 0L;
+  _builderResult.hasCbDiskOriginal = NO;
+  _builderResult.cbDiskOriginal = 0L;
   return self;
 }
 - (BOOL) hasCbDiskCompressed {
-  return result.hasCbDiskCompressed;
+  return _builderResult.hasCbDiskCompressed;
 }
 - (uint64_t) cbDiskCompressed {
-  return result.cbDiskCompressed;
+  return _builderResult.cbDiskCompressed;
 }
 - (ContentManifestMetadata_Builder*) setCbDiskCompressed:(uint64_t) value {
-  result.hasCbDiskCompressed = YES;
-  result.cbDiskCompressed = value;
+  _builderResult.hasCbDiskCompressed = YES;
+  _builderResult.cbDiskCompressed = value;
   return self;
 }
 - (ContentManifestMetadata_Builder*) clearCbDiskCompressed {
-  result.hasCbDiskCompressed = NO;
-  result.cbDiskCompressed = 0L;
+  _builderResult.hasCbDiskCompressed = NO;
+  _builderResult.cbDiskCompressed = 0L;
   return self;
 }
 - (BOOL) hasUniqueChunks {
-  return result.hasUniqueChunks;
+  return _builderResult.hasUniqueChunks;
 }
 - (uint32_t) uniqueChunks {
-  return result.uniqueChunks;
+  return _builderResult.uniqueChunks;
 }
 - (ContentManifestMetadata_Builder*) setUniqueChunks:(uint32_t) value {
-  result.hasUniqueChunks = YES;
-  result.uniqueChunks = value;
+  _builderResult.hasUniqueChunks = YES;
+  _builderResult.uniqueChunks = value;
   return self;
 }
 - (ContentManifestMetadata_Builder*) clearUniqueChunks {
-  result.hasUniqueChunks = NO;
-  result.uniqueChunks = 0;
+  _builderResult.hasUniqueChunks = NO;
+  _builderResult.uniqueChunks = 0;
   return self;
 }
 - (BOOL) hasCrcEncrypted {
-  return result.hasCrcEncrypted;
+  return _builderResult.hasCrcEncrypted;
 }
 - (uint32_t) crcEncrypted {
-  return result.crcEncrypted;
+  return _builderResult.crcEncrypted;
 }
 - (ContentManifestMetadata_Builder*) setCrcEncrypted:(uint32_t) value {
-  result.hasCrcEncrypted = YES;
-  result.crcEncrypted = value;
+  _builderResult.hasCrcEncrypted = YES;
+  _builderResult.crcEncrypted = value;
   return self;
 }
 - (ContentManifestMetadata_Builder*) clearCrcEncrypted {
-  result.hasCrcEncrypted = NO;
-  result.crcEncrypted = 0;
+  _builderResult.hasCrcEncrypted = NO;
+  _builderResult.crcEncrypted = 0;
   return self;
 }
 - (BOOL) hasCrcClear {
-  return result.hasCrcClear;
+  return _builderResult.hasCrcClear;
 }
 - (uint32_t) crcClear {
-  return result.crcClear;
+  return _builderResult.crcClear;
 }
 - (ContentManifestMetadata_Builder*) setCrcClear:(uint32_t) value {
-  result.hasCrcClear = YES;
-  result.crcClear = value;
+  _builderResult.hasCrcClear = YES;
+  _builderResult.crcClear = value;
   return self;
 }
 - (ContentManifestMetadata_Builder*) clearCrcClear {
-  result.hasCrcClear = NO;
-  result.crcClear = 0;
+  _builderResult.hasCrcClear = NO;
+  _builderResult.crcClear = 0;
   return self;
 }
 @end
@@ -1865,19 +1865,19 @@ static ContentManifestSignature* defaultContentManifestSignatureInstance = nil;
   }
 }
 - (BOOL) hasSignature {
-  return result.hasSignature;
+  return _builderResult.hasSignature;
 }
 - (NSData*) signature {
-  return result.signature;
+  return _builderResult.signature;
 }
 - (ContentManifestSignature_Builder*) setSignature:(NSData*) value {
-  result.hasSignature = YES;
-  result.signature = value;
+  _builderResult.hasSignature = YES;
+  _builderResult.signature = value;
   return self;
 }
 - (ContentManifestSignature_Builder*) clearSignature {
-  result.hasSignature = NO;
-  result.signature = [NSData data];
+  _builderResult.hasSignature = NO;
+  _builderResult.signature = [NSData data];
   return self;
 }
 @end

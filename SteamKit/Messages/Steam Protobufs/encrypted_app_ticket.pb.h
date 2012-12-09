@@ -67,7 +67,7 @@
 
 @interface EncryptedAppTicket_Builder : PBGeneratedMessage_Builder {
 @private
-  EncryptedAppTicket* result;
+  EncryptedAppTicket* _builderResult;
 }
 
 - (EncryptedAppTicket*) defaultInstance;

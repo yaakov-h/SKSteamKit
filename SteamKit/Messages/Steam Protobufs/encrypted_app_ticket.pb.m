@@ -330,83 +330,83 @@ static EncryptedAppTicket* defaultEncryptedAppTicketInstance = nil;
   }
 }
 - (BOOL) hasTicketVersionNo {
-  return result.hasTicketVersionNo;
+  return _builderResult.hasTicketVersionNo;
 }
 - (uint32_t) ticketVersionNo {
-  return result.ticketVersionNo;
+  return _builderResult.ticketVersionNo;
 }
 - (EncryptedAppTicket_Builder*) setTicketVersionNo:(uint32_t) value {
-  result.hasTicketVersionNo = YES;
-  result.ticketVersionNo = value;
+  _builderResult.hasTicketVersionNo = YES;
+  _builderResult.ticketVersionNo = value;
   return self;
 }
 - (EncryptedAppTicket_Builder*) clearTicketVersionNo {
-  result.hasTicketVersionNo = NO;
-  result.ticketVersionNo = 0;
+  _builderResult.hasTicketVersionNo = NO;
+  _builderResult.ticketVersionNo = 0;
   return self;
 }
 - (BOOL) hasCrcEncryptedticket {
-  return result.hasCrcEncryptedticket;
+  return _builderResult.hasCrcEncryptedticket;
 }
 - (uint32_t) crcEncryptedticket {
-  return result.crcEncryptedticket;
+  return _builderResult.crcEncryptedticket;
 }
 - (EncryptedAppTicket_Builder*) setCrcEncryptedticket:(uint32_t) value {
-  result.hasCrcEncryptedticket = YES;
-  result.crcEncryptedticket = value;
+  _builderResult.hasCrcEncryptedticket = YES;
+  _builderResult.crcEncryptedticket = value;
   return self;
 }
 - (EncryptedAppTicket_Builder*) clearCrcEncryptedticket {
-  result.hasCrcEncryptedticket = NO;
-  result.crcEncryptedticket = 0;
+  _builderResult.hasCrcEncryptedticket = NO;
+  _builderResult.crcEncryptedticket = 0;
   return self;
 }
 - (BOOL) hasCbEncrypteduserdata {
-  return result.hasCbEncrypteduserdata;
+  return _builderResult.hasCbEncrypteduserdata;
 }
 - (uint32_t) cbEncrypteduserdata {
-  return result.cbEncrypteduserdata;
+  return _builderResult.cbEncrypteduserdata;
 }
 - (EncryptedAppTicket_Builder*) setCbEncrypteduserdata:(uint32_t) value {
-  result.hasCbEncrypteduserdata = YES;
-  result.cbEncrypteduserdata = value;
+  _builderResult.hasCbEncrypteduserdata = YES;
+  _builderResult.cbEncrypteduserdata = value;
   return self;
 }
 - (EncryptedAppTicket_Builder*) clearCbEncrypteduserdata {
-  result.hasCbEncrypteduserdata = NO;
-  result.cbEncrypteduserdata = 0;
+  _builderResult.hasCbEncrypteduserdata = NO;
+  _builderResult.cbEncrypteduserdata = 0;
   return self;
 }
 - (BOOL) hasCbEncryptedAppownershipticket {
-  return result.hasCbEncryptedAppownershipticket;
+  return _builderResult.hasCbEncryptedAppownershipticket;
 }
 - (uint32_t) cbEncryptedAppownershipticket {
-  return result.cbEncryptedAppownershipticket;
+  return _builderResult.cbEncryptedAppownershipticket;
 }
 - (EncryptedAppTicket_Builder*) setCbEncryptedAppownershipticket:(uint32_t) value {
-  result.hasCbEncryptedAppownershipticket = YES;
-  result.cbEncryptedAppownershipticket = value;
+  _builderResult.hasCbEncryptedAppownershipticket = YES;
+  _builderResult.cbEncryptedAppownershipticket = value;
   return self;
 }
 - (EncryptedAppTicket_Builder*) clearCbEncryptedAppownershipticket {
-  result.hasCbEncryptedAppownershipticket = NO;
-  result.cbEncryptedAppownershipticket = 0;
+  _builderResult.hasCbEncryptedAppownershipticket = NO;
+  _builderResult.cbEncryptedAppownershipticket = 0;
   return self;
 }
 - (BOOL) hasEncryptedTicket {
-  return result.hasEncryptedTicket;
+  return _builderResult.hasEncryptedTicket;
 }
 - (NSData*) encryptedTicket {
-  return result.encryptedTicket;
+  return _builderResult.encryptedTicket;
 }
 - (EncryptedAppTicket_Builder*) setEncryptedTicket:(NSData*) value {
-  result.hasEncryptedTicket = YES;
-  result.encryptedTicket = value;
+  _builderResult.hasEncryptedTicket = YES;
+  _builderResult.encryptedTicket = value;
   return self;
 }
 - (EncryptedAppTicket_Builder*) clearEncryptedTicket {
-  result.hasEncryptedTicket = NO;
-  result.encryptedTicket = [NSData data];
+  _builderResult.hasEncryptedTicket = NO;
+  _builderResult.encryptedTicket = [NSData data];
   return self;
 }
 @end

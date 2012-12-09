@@ -850,7 +850,7 @@
 
 @interface CMsgClientHeartBeat_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientHeartBeat* result;
+  CMsgClientHeartBeat* _builderResult;
 }
 
 - (CMsgClientHeartBeat*) defaultInstance;
@@ -923,7 +923,7 @@
 
 @interface CMsgClientSubscribeToPersonaFeed_PersonaFeed_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientSubscribeToPersonaFeed_PersonaFeed* result;
+  CMsgClientSubscribeToPersonaFeed_PersonaFeed* _builderResult;
 }
 
 - (CMsgClientSubscribeToPersonaFeed_PersonaFeed*) defaultInstance;
@@ -951,7 +951,7 @@
 
 @interface CMsgClientSubscribeToPersonaFeed_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientSubscribeToPersonaFeed* result;
+  CMsgClientSubscribeToPersonaFeed* _builderResult;
 }
 
 - (CMsgClientSubscribeToPersonaFeed*) defaultInstance;
@@ -1006,7 +1006,7 @@
 
 @interface CMsgClientUDSP2PSessionStarted_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUDSP2PSessionStarted* result;
+  CMsgClientUDSP2PSessionStarted* _builderResult;
 }
 
 - (CMsgClientUDSP2PSessionStarted*) defaultInstance;
@@ -1096,7 +1096,7 @@
 
 @interface CMsgClientUDSP2PSessionEnded_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUDSP2PSessionEnded* result;
+  CMsgClientUDSP2PSessionEnded* _builderResult;
 }
 
 - (CMsgClientUDSP2PSessionEnded*) defaultInstance;
@@ -1194,7 +1194,7 @@
 
 @interface CMsgClientRegisterAuthTicketWithCM_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRegisterAuthTicketWithCM* result;
+  CMsgClientRegisterAuthTicketWithCM* _builderResult;
 }
 
 - (CMsgClientRegisterAuthTicketWithCM*) defaultInstance;
@@ -1272,7 +1272,7 @@
 
 @interface CMsgClientTicketAuthComplete_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientTicketAuthComplete* result;
+  CMsgClientTicketAuthComplete* _builderResult;
 }
 
 - (CMsgClientTicketAuthComplete*) defaultInstance;
@@ -1495,7 +1495,7 @@
 
 @interface CMsgClientLogon_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientLogon* result;
+  CMsgClientLogon* _builderResult;
 }
 
 - (CMsgClientLogon*) defaultInstance;
@@ -1776,7 +1776,7 @@
 
 @interface CMsgClientLogonResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientLogonResponse* result;
+  CMsgClientLogonResponse* _builderResult;
 }
 
 - (CMsgClientLogonResponse*) defaultInstance;
@@ -1886,7 +1886,7 @@
 
 @interface CMsgClientRequestWebAPIAuthenticateUserNonce_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestWebAPIAuthenticateUserNonce* result;
+  CMsgClientRequestWebAPIAuthenticateUserNonce* _builderResult;
 }
 
 - (CMsgClientRequestWebAPIAuthenticateUserNonce*) defaultInstance;
@@ -1934,7 +1934,7 @@
 
 @interface CMsgClientRequestWebAPIAuthenticateUserNonceResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestWebAPIAuthenticateUserNonceResponse* result;
+  CMsgClientRequestWebAPIAuthenticateUserNonceResponse* _builderResult;
 }
 
 - (CMsgClientRequestWebAPIAuthenticateUserNonceResponse*) defaultInstance;
@@ -1984,7 +1984,7 @@
 
 @interface CMsgClientLogOff_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientLogOff* result;
+  CMsgClientLogOff* _builderResult;
 }
 
 - (CMsgClientLogOff*) defaultInstance;
@@ -2028,7 +2028,7 @@
 
 @interface CMsgClientLoggedOff_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientLoggedOff* result;
+  CMsgClientLoggedOff* _builderResult;
 }
 
 - (CMsgClientLoggedOff*) defaultInstance;
@@ -2079,7 +2079,7 @@
 
 @interface CMsgClientCMList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientCMList* result;
+  CMsgClientCMList* _builderResult;
 }
 
 - (CMsgClientCMList*) defaultInstance;
@@ -2149,7 +2149,7 @@
 
 @interface CMsgClientP2PConnectionInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientP2PConnectionInfo* result;
+  CMsgClientP2PConnectionInfo* _builderResult;
 }
 
 - (CMsgClientP2PConnectionInfo*) defaultInstance;
@@ -2225,7 +2225,7 @@
 
 @interface CMsgClientP2PConnectionFailInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientP2PConnectionFailInfo* result;
+  CMsgClientP2PConnectionFailInfo* _builderResult;
 }
 
 - (CMsgClientP2PConnectionFailInfo*) defaultInstance;
@@ -2289,7 +2289,7 @@
 
 @interface CMsgClientGetAppOwnershipTicket_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetAppOwnershipTicket* result;
+  CMsgClientGetAppOwnershipTicket* _builderResult;
 }
 
 - (CMsgClientGetAppOwnershipTicket*) defaultInstance;
@@ -2346,7 +2346,7 @@
 
 @interface CMsgClientGetAppOwnershipTicketResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetAppOwnershipTicketResponse* result;
+  CMsgClientGetAppOwnershipTicketResponse* _builderResult;
 }
 
 - (CMsgClientGetAppOwnershipTicketResponse*) defaultInstance;
@@ -2405,7 +2405,7 @@
 
 @interface CMsgClientSessionToken_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientSessionToken* result;
+  CMsgClientSessionToken* _builderResult;
 }
 
 - (CMsgClientSessionToken*) defaultInstance;
@@ -2457,7 +2457,7 @@
 
 @interface CMsgClientGameConnectTokens_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGameConnectTokens* result;
+  CMsgClientGameConnectTokens* _builderResult;
 }
 
 - (CMsgClientGameConnectTokens*) defaultInstance;
@@ -2537,7 +2537,7 @@
 
 @interface CMsgGSServerType_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGSServerType* result;
+  CMsgGSServerType* _builderResult;
 }
 
 - (CMsgGSServerType*) defaultInstance;
@@ -2616,7 +2616,7 @@
 
 @interface CMsgGSStatusReply_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGSStatusReply* result;
+  CMsgGSStatusReply* _builderResult;
 }
 
 - (CMsgGSStatusReply*) defaultInstance;
@@ -2698,7 +2698,7 @@
 
 @interface CMsgGSPlayerList_Player_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGSPlayerList_Player* result;
+  CMsgGSPlayerList_Player* _builderResult;
 }
 
 - (CMsgGSPlayerList_Player*) defaultInstance;
@@ -2731,7 +2731,7 @@
 
 @interface CMsgGSPlayerList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGSPlayerList* result;
+  CMsgGSPlayerList* _builderResult;
 }
 
 - (CMsgGSPlayerList*) defaultInstance;
@@ -2790,7 +2790,7 @@
 
 @interface CMsgGSUserPlaying_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGSUserPlaying* result;
+  CMsgGSUserPlaying* _builderResult;
 }
 
 - (CMsgGSUserPlaying*) defaultInstance;
@@ -2849,7 +2849,7 @@
 
 @interface CMsgGSDisconnectNotice_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGSDisconnectNotice* result;
+  CMsgGSDisconnectNotice* _builderResult;
 }
 
 - (CMsgGSDisconnectNotice*) defaultInstance;
@@ -2955,7 +2955,7 @@
 
 @interface CMsgClientGamesPlayed_GamePlayed_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGamesPlayed_GamePlayed* result;
+  CMsgClientGamesPlayed_GamePlayed* _builderResult;
 }
 
 - (CMsgClientGamesPlayed_GamePlayed*) defaultInstance;
@@ -3018,7 +3018,7 @@
 
 @interface CMsgClientGamesPlayed_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGamesPlayed* result;
+  CMsgClientGamesPlayed* _builderResult;
 }
 
 - (CMsgClientGamesPlayed*) defaultInstance;
@@ -3069,7 +3069,7 @@
 
 @interface CMsgGSApprove_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGSApprove* result;
+  CMsgGSApprove* _builderResult;
 }
 
 - (CMsgGSApprove*) defaultInstance;
@@ -3126,7 +3126,7 @@
 
 @interface CMsgGSDeny_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGSDeny* result;
+  CMsgGSDeny* _builderResult;
 }
 
 - (CMsgGSDeny*) defaultInstance;
@@ -3189,7 +3189,7 @@
 
 @interface CMsgGSKick_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGSKick* result;
+  CMsgGSKick* _builderResult;
 }
 
 - (CMsgGSKick*) defaultInstance;
@@ -3261,7 +3261,7 @@
 
 @interface CMsgClientAuthList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAuthList* result;
+  CMsgClientAuthList* _builderResult;
 }
 
 - (CMsgClientAuthList*) defaultInstance;
@@ -3345,7 +3345,7 @@
 
 @interface CMsgClientAuthListAck_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAuthListAck* result;
+  CMsgClientAuthListAck* _builderResult;
 }
 
 - (CMsgClientAuthListAck*) defaultInstance;
@@ -3441,7 +3441,7 @@
 
 @interface CMsgClientFriendsList_Friend_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientFriendsList_Friend* result;
+  CMsgClientFriendsList_Friend* _builderResult;
 }
 
 - (CMsgClientFriendsList_Friend*) defaultInstance;
@@ -3469,7 +3469,7 @@
 
 @interface CMsgClientFriendsList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientFriendsList* result;
+  CMsgClientFriendsList* _builderResult;
 }
 
 - (CMsgClientFriendsList*) defaultInstance;
@@ -3565,7 +3565,7 @@
 
 @interface CMsgClientFriendsGroupsList_FriendGroup_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientFriendsGroupsList_FriendGroup* result;
+  CMsgClientFriendsGroupsList_FriendGroup* _builderResult;
 }
 
 - (CMsgClientFriendsGroupsList_FriendGroup*) defaultInstance;
@@ -3623,7 +3623,7 @@
 
 @interface CMsgClientFriendsGroupsList_FriendGroupsMembership_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientFriendsGroupsList_FriendGroupsMembership* result;
+  CMsgClientFriendsGroupsList_FriendGroupsMembership* _builderResult;
 }
 
 - (CMsgClientFriendsGroupsList_FriendGroupsMembership*) defaultInstance;
@@ -3651,7 +3651,7 @@
 
 @interface CMsgClientFriendsGroupsList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientFriendsGroupsList* result;
+  CMsgClientFriendsGroupsList* _builderResult;
 }
 
 - (CMsgClientFriendsGroupsList*) defaultInstance;
@@ -3756,7 +3756,7 @@
 
 @interface CMsgClientPlayerNicknameList_PlayerNickname_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientPlayerNicknameList_PlayerNickname* result;
+  CMsgClientPlayerNicknameList_PlayerNickname* _builderResult;
 }
 
 - (CMsgClientPlayerNicknameList_PlayerNickname*) defaultInstance;
@@ -3784,7 +3784,7 @@
 
 @interface CMsgClientPlayerNicknameList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientPlayerNicknameList* result;
+  CMsgClientPlayerNicknameList* _builderResult;
 }
 
 - (CMsgClientPlayerNicknameList*) defaultInstance;
@@ -3849,7 +3849,7 @@
 
 @interface CMsgClientSetPlayerNickname_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientSetPlayerNickname* result;
+  CMsgClientSetPlayerNickname* _builderResult;
 }
 
 - (CMsgClientSetPlayerNickname*) defaultInstance;
@@ -3903,7 +3903,7 @@
 
 @interface CMsgClientSetPlayerNicknameResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientSetPlayerNicknameResponse* result;
+  CMsgClientSetPlayerNicknameResponse* _builderResult;
 }
 
 - (CMsgClientSetPlayerNicknameResponse*) defaultInstance;
@@ -4021,7 +4021,7 @@
 
 @interface CMsgClientLicenseList_License_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientLicenseList_License* result;
+  CMsgClientLicenseList_License* _builderResult;
 }
 
 - (CMsgClientLicenseList_License*) defaultInstance;
@@ -4094,7 +4094,7 @@
 
 @interface CMsgClientLicenseList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientLicenseList* result;
+  CMsgClientLicenseList* _builderResult;
 }
 
 - (CMsgClientLicenseList*) defaultInstance;
@@ -4166,7 +4166,7 @@
 
 @interface CMsgClientLBSSetScore_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientLBSSetScore* result;
+  CMsgClientLBSSetScore* _builderResult;
 }
 
 - (CMsgClientLBSSetScore*) defaultInstance;
@@ -4251,7 +4251,7 @@
 
 @interface CMsgClientLBSSetScoreResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientLBSSetScoreResponse* result;
+  CMsgClientLBSSetScoreResponse* _builderResult;
 }
 
 - (CMsgClientLBSSetScoreResponse*) defaultInstance;
@@ -4328,7 +4328,7 @@
 
 @interface CMsgClientLBSSetUGC_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientLBSSetUGC* result;
+  CMsgClientLBSSetUGC* _builderResult;
 }
 
 - (CMsgClientLBSSetUGC*) defaultInstance;
@@ -4387,7 +4387,7 @@
 
 @interface CMsgClientLBSSetUGCResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientLBSSetUGCResponse* result;
+  CMsgClientLBSSetUGCResponse* _builderResult;
 }
 
 - (CMsgClientLBSSetUGCResponse*) defaultInstance;
@@ -4452,7 +4452,7 @@
 
 @interface CMsgClientLBSFindOrCreateLB_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientLBSFindOrCreateLB* result;
+  CMsgClientLBSFindOrCreateLB* _builderResult;
 }
 
 - (CMsgClientLBSFindOrCreateLB*) defaultInstance;
@@ -4541,7 +4541,7 @@
 
 @interface CMsgClientLBSFindOrCreateLBResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientLBSFindOrCreateLBResponse* result;
+  CMsgClientLBSFindOrCreateLBResponse* _builderResult;
 }
 
 - (CMsgClientLBSFindOrCreateLBResponse*) defaultInstance;
@@ -4634,7 +4634,7 @@
 
 @interface CMsgClientLBSGetLBEntries_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientLBSGetLBEntries* result;
+  CMsgClientLBSGetLBEntries* _builderResult;
 }
 
 - (CMsgClientLBSGetLBEntries*) defaultInstance;
@@ -4759,7 +4759,7 @@
 
 @interface CMsgClientLBSGetLBEntriesResponse_Entry_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientLBSGetLBEntriesResponse_Entry* result;
+  CMsgClientLBSGetLBEntriesResponse_Entry* _builderResult;
 }
 
 - (CMsgClientLBSGetLBEntriesResponse_Entry*) defaultInstance;
@@ -4802,7 +4802,7 @@
 
 @interface CMsgClientLBSGetLBEntriesResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientLBSGetLBEntriesResponse* result;
+  CMsgClientLBSGetLBEntriesResponse* _builderResult;
 }
 
 - (CMsgClientLBSGetLBEntriesResponse*) defaultInstance;
@@ -4911,7 +4911,7 @@
 
 @interface CMsgClientAccountInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAccountInfo* result;
+  CMsgClientAccountInfo* _builderResult;
 }
 
 - (CMsgClientAccountInfo*) defaultInstance;
@@ -5053,7 +5053,7 @@
 
 @interface CMsgClientAppMinutesPlayedData_AppMinutesPlayedData_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAppMinutesPlayedData_AppMinutesPlayedData* result;
+  CMsgClientAppMinutesPlayedData_AppMinutesPlayedData* _builderResult;
 }
 
 - (CMsgClientAppMinutesPlayedData_AppMinutesPlayedData*) defaultInstance;
@@ -5086,7 +5086,7 @@
 
 @interface CMsgClientAppMinutesPlayedData_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAppMinutesPlayedData* result;
+  CMsgClientAppMinutesPlayedData* _builderResult;
 }
 
 - (CMsgClientAppMinutesPlayedData*) defaultInstance;
@@ -5145,7 +5145,7 @@
 
 @interface CMsgClientIsLimitedAccount_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientIsLimitedAccount* result;
+  CMsgClientIsLimitedAccount* _builderResult;
 }
 
 - (CMsgClientIsLimitedAccount*) defaultInstance;
@@ -5207,7 +5207,7 @@
 
 @interface CMsgClientRequestFriendData_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestFriendData* result;
+  CMsgClientRequestFriendData* _builderResult;
 }
 
 - (CMsgClientRequestFriendData*) defaultInstance;
@@ -5275,7 +5275,7 @@
 
 @interface CMsgClientChangeStatus_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientChangeStatus* result;
+  CMsgClientChangeStatus* _builderResult;
 }
 
 - (CMsgClientChangeStatus*) defaultInstance;
@@ -5343,7 +5343,7 @@
 
 @interface CMsgPersonaChangeResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPersonaChangeResponse* result;
+  CMsgPersonaChangeResponse* _builderResult;
 }
 
 - (CMsgPersonaChangeResponse*) defaultInstance;
@@ -5506,7 +5506,7 @@
 
 @interface CMsgClientPersonaState_Friend_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientPersonaState_Friend* result;
+  CMsgClientPersonaState_Friend* _builderResult;
 }
 
 - (CMsgClientPersonaState_Friend*) defaultInstance;
@@ -5629,7 +5629,7 @@
 
 @interface CMsgClientPersonaState_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientPersonaState* result;
+  CMsgClientPersonaState* _builderResult;
 }
 
 - (CMsgClientPersonaState*) defaultInstance;
@@ -5685,7 +5685,7 @@
 
 @interface CMsgClientFriendProfileInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientFriendProfileInfo* result;
+  CMsgClientFriendProfileInfo* _builderResult;
 }
 
 - (CMsgClientFriendProfileInfo*) defaultInstance;
@@ -5770,7 +5770,7 @@
 
 @interface CMsgClientFriendProfileInfoResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientFriendProfileInfoResponse* result;
+  CMsgClientFriendProfileInfoResponse* _builderResult;
 }
 
 - (CMsgClientFriendProfileInfoResponse*) defaultInstance;
@@ -5897,7 +5897,7 @@
 
 @interface CMsgClientServerList_Server_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientServerList_Server* result;
+  CMsgClientServerList_Server* _builderResult;
 }
 
 - (CMsgClientServerList_Server*) defaultInstance;
@@ -5930,7 +5930,7 @@
 
 @interface CMsgClientServerList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientServerList* result;
+  CMsgClientServerList* _builderResult;
 }
 
 - (CMsgClientServerList*) defaultInstance;
@@ -6010,7 +6010,7 @@
 
 @interface CMsgClientRequestedClientStats_StatsToSend_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestedClientStats_StatsToSend* result;
+  CMsgClientRequestedClientStats_StatsToSend* _builderResult;
 }
 
 - (CMsgClientRequestedClientStats_StatsToSend*) defaultInstance;
@@ -6038,7 +6038,7 @@
 
 @interface CMsgClientRequestedClientStats_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestedClientStats* result;
+  CMsgClientRequestedClientStats* _builderResult;
 }
 
 - (CMsgClientRequestedClientStats*) defaultInstance;
@@ -6134,7 +6134,7 @@
 
 @interface CMsgClientStat2_StatDetail_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientStat2_StatDetail* result;
+  CMsgClientStat2_StatDetail* _builderResult;
 }
 
 - (CMsgClientStat2_StatDetail*) defaultInstance;
@@ -6182,7 +6182,7 @@
 
 @interface CMsgClientStat2_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientStat2* result;
+  CMsgClientStat2* _builderResult;
 }
 
 - (CMsgClientStat2*) defaultInstance;
@@ -6261,7 +6261,7 @@
 
 @interface CMsgClientMMSCreateLobby_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSCreateLobby* result;
+  CMsgClientMMSCreateLobby* _builderResult;
 }
 
 - (CMsgClientMMSCreateLobby*) defaultInstance;
@@ -6353,7 +6353,7 @@
 
 @interface CMsgClientMMSCreateLobbyResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSCreateLobbyResponse* result;
+  CMsgClientMMSCreateLobbyResponse* _builderResult;
 }
 
 - (CMsgClientMMSCreateLobbyResponse*) defaultInstance;
@@ -6420,7 +6420,7 @@
 
 @interface CMsgClientMMSJoinLobby_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSJoinLobby* result;
+  CMsgClientMMSJoinLobby* _builderResult;
 }
 
 - (CMsgClientMMSJoinLobby*) defaultInstance;
@@ -6544,7 +6544,7 @@
 
 @interface CMsgClientMMSJoinLobbyResponse_Member_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSJoinLobbyResponse_Member* result;
+  CMsgClientMMSJoinLobbyResponse_Member* _builderResult;
 }
 
 - (CMsgClientMMSJoinLobbyResponse_Member*) defaultInstance;
@@ -6577,7 +6577,7 @@
 
 @interface CMsgClientMMSJoinLobbyResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSJoinLobbyResponse* result;
+  CMsgClientMMSJoinLobbyResponse* _builderResult;
 }
 
 - (CMsgClientMMSJoinLobbyResponse*) defaultInstance;
@@ -6672,7 +6672,7 @@
 
 @interface CMsgClientMMSLeaveLobby_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSLeaveLobby* result;
+  CMsgClientMMSLeaveLobby* _builderResult;
 }
 
 - (CMsgClientMMSLeaveLobby*) defaultInstance;
@@ -6734,7 +6734,7 @@
 
 @interface CMsgClientMMSLeaveLobbyResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSLeaveLobbyResponse* result;
+  CMsgClientMMSLeaveLobbyResponse* _builderResult;
 }
 
 - (CMsgClientMMSLeaveLobbyResponse*) defaultInstance;
@@ -6846,7 +6846,7 @@
 
 @interface CMsgClientMMSGetLobbyList_Filter_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSGetLobbyList_Filter* result;
+  CMsgClientMMSGetLobbyList_Filter* _builderResult;
 }
 
 - (CMsgClientMMSGetLobbyList_Filter*) defaultInstance;
@@ -6884,7 +6884,7 @@
 
 @interface CMsgClientMMSGetLobbyList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSGetLobbyList* result;
+  CMsgClientMMSGetLobbyList* _builderResult;
 }
 
 - (CMsgClientMMSGetLobbyList*) defaultInstance;
@@ -7016,7 +7016,7 @@
 
 @interface CMsgClientMMSGetLobbyListResponse_Lobby_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSGetLobbyListResponse_Lobby* result;
+  CMsgClientMMSGetLobbyListResponse_Lobby* _builderResult;
 }
 
 - (CMsgClientMMSGetLobbyListResponse_Lobby*) defaultInstance;
@@ -7074,7 +7074,7 @@
 
 @interface CMsgClientMMSGetLobbyListResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSGetLobbyListResponse* result;
+  CMsgClientMMSGetLobbyListResponse* _builderResult;
 }
 
 - (CMsgClientMMSGetLobbyListResponse*) defaultInstance;
@@ -7159,7 +7159,7 @@
 
 @interface CMsgClientMMSSetLobbyData_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSSetLobbyData* result;
+  CMsgClientMMSSetLobbyData* _builderResult;
 }
 
 - (CMsgClientMMSSetLobbyData*) defaultInstance;
@@ -7246,7 +7246,7 @@
 
 @interface CMsgClientMMSSetLobbyDataResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSSetLobbyDataResponse* result;
+  CMsgClientMMSSetLobbyDataResponse* _builderResult;
 }
 
 - (CMsgClientMMSSetLobbyDataResponse*) defaultInstance;
@@ -7309,7 +7309,7 @@
 
 @interface CMsgClientMMSGetLobbyData_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSGetLobbyData* result;
+  CMsgClientMMSGetLobbyData* _builderResult;
 }
 
 - (CMsgClientMMSGetLobbyData*) defaultInstance;
@@ -7432,7 +7432,7 @@
 
 @interface CMsgClientMMSLobbyData_Member_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSLobbyData_Member* result;
+  CMsgClientMMSLobbyData_Member* _builderResult;
 }
 
 - (CMsgClientMMSLobbyData_Member*) defaultInstance;
@@ -7465,7 +7465,7 @@
 
 @interface CMsgClientMMSLobbyData_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSLobbyData* result;
+  CMsgClientMMSLobbyData* _builderResult;
 }
 
 - (CMsgClientMMSLobbyData*) defaultInstance;
@@ -7573,7 +7573,7 @@
 
 @interface CMsgClientMMSSendLobbyChatMsg_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSSendLobbyChatMsg* result;
+  CMsgClientMMSSendLobbyChatMsg* _builderResult;
 }
 
 - (CMsgClientMMSSendLobbyChatMsg*) defaultInstance;
@@ -7649,7 +7649,7 @@
 
 @interface CMsgClientMMSLobbyChatMsg_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSLobbyChatMsg* result;
+  CMsgClientMMSLobbyChatMsg* _builderResult;
 }
 
 - (CMsgClientMMSLobbyChatMsg*) defaultInstance;
@@ -7721,7 +7721,7 @@
 
 @interface CMsgClientMMSSetLobbyOwner_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSSetLobbyOwner* result;
+  CMsgClientMMSSetLobbyOwner* _builderResult;
 }
 
 - (CMsgClientMMSSetLobbyOwner*) defaultInstance;
@@ -7788,7 +7788,7 @@
 
 @interface CMsgClientMMSSetLobbyOwnerResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSSetLobbyOwnerResponse* result;
+  CMsgClientMMSSetLobbyOwnerResponse* _builderResult;
 }
 
 - (CMsgClientMMSSetLobbyOwnerResponse*) defaultInstance;
@@ -7855,7 +7855,7 @@
 
 @interface CMsgClientMMSSetLobbyLinked_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSSetLobbyLinked* result;
+  CMsgClientMMSSetLobbyLinked* _builderResult;
 }
 
 - (CMsgClientMMSSetLobbyLinked*) defaultInstance;
@@ -7930,7 +7930,7 @@
 
 @interface CMsgClientMMSSetLobbyGameServer_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSSetLobbyGameServer* result;
+  CMsgClientMMSSetLobbyGameServer* _builderResult;
 }
 
 - (CMsgClientMMSSetLobbyGameServer*) defaultInstance;
@@ -8015,7 +8015,7 @@
 
 @interface CMsgClientMMSLobbyGameServerSet_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSLobbyGameServerSet* result;
+  CMsgClientMMSLobbyGameServerSet* _builderResult;
 }
 
 - (CMsgClientMMSLobbyGameServerSet*) defaultInstance;
@@ -8096,7 +8096,7 @@
 
 @interface CMsgClientMMSUserJoinedLobby_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSUserJoinedLobby* result;
+  CMsgClientMMSUserJoinedLobby* _builderResult;
 }
 
 - (CMsgClientMMSUserJoinedLobby*) defaultInstance;
@@ -8172,7 +8172,7 @@
 
 @interface CMsgClientMMSUserLeftLobby_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSUserLeftLobby* result;
+  CMsgClientMMSUserLeftLobby* _builderResult;
 }
 
 - (CMsgClientMMSUserLeftLobby*) defaultInstance;
@@ -8244,7 +8244,7 @@
 
 @interface CMsgClientMMSInviteToLobby_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMMSInviteToLobby* result;
+  CMsgClientMMSInviteToLobby* _builderResult;
 }
 
 - (CMsgClientMMSInviteToLobby*) defaultInstance;
@@ -8311,7 +8311,7 @@
 
 @interface CMsgClientUDSInviteToGame_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUDSInviteToGame* result;
+  CMsgClientUDSInviteToGame* _builderResult;
 }
 
 - (CMsgClientUDSInviteToGame*) defaultInstance;
@@ -8394,7 +8394,7 @@
 
 @interface CMsgClientChatInvite_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientChatInvite* result;
+  CMsgClientChatInvite* _builderResult;
 }
 
 - (CMsgClientChatInvite*) defaultInstance;
@@ -8515,7 +8515,7 @@
 
 @interface CMsgClientConnectionStats_Stats_Logon_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientConnectionStats_Stats_Logon* result;
+  CMsgClientConnectionStats_Stats_Logon* _builderResult;
 }
 
 - (CMsgClientConnectionStats_Stats_Logon*) defaultInstance;
@@ -8595,7 +8595,7 @@
 
 @interface CMsgClientConnectionStats_Stats_UDP_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientConnectionStats_Stats_UDP* result;
+  CMsgClientConnectionStats_Stats_UDP* _builderResult;
 }
 
 - (CMsgClientConnectionStats_Stats_UDP*) defaultInstance;
@@ -8740,7 +8740,7 @@
 
 @interface CMsgClientConnectionStats_Stats_VConn_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientConnectionStats_Stats_VConn* result;
+  CMsgClientConnectionStats_Stats_VConn* _builderResult;
 }
 
 - (CMsgClientConnectionStats_Stats_VConn*) defaultInstance;
@@ -8860,7 +8860,7 @@
 
 @interface CMsgClientConnectionStats_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientConnectionStats* result;
+  CMsgClientConnectionStats* _builderResult;
 }
 
 - (CMsgClientConnectionStats*) defaultInstance;
@@ -8951,7 +8951,7 @@
 
 @interface CMsgClientServersAvailable_Server_Types_Available_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientServersAvailable_Server_Types_Available* result;
+  CMsgClientServersAvailable_Server_Types_Available* _builderResult;
 }
 
 - (CMsgClientServersAvailable_Server_Types_Available*) defaultInstance;
@@ -8979,7 +8979,7 @@
 
 @interface CMsgClientServersAvailable_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientServersAvailable* result;
+  CMsgClientServersAvailable* _builderResult;
 }
 
 - (CMsgClientServersAvailable*) defaultInstance;
@@ -9047,7 +9047,7 @@
 
 @interface CMsgClientGetUserStats_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetUserStats* result;
+  CMsgClientGetUserStats* _builderResult;
 }
 
 - (CMsgClientGetUserStats*) defaultInstance;
@@ -9159,7 +9159,7 @@
 
 @interface CMsgClientGetUserStatsResponse_Stats_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetUserStatsResponse_Stats* result;
+  CMsgClientGetUserStatsResponse_Stats* _builderResult;
 }
 
 - (CMsgClientGetUserStatsResponse_Stats*) defaultInstance;
@@ -9216,7 +9216,7 @@
 
 @interface CMsgClientGetUserStatsResponse_Achievement_Blocks_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetUserStatsResponse_Achievement_Blocks* result;
+  CMsgClientGetUserStatsResponse_Achievement_Blocks* _builderResult;
 }
 
 - (CMsgClientGetUserStatsResponse_Achievement_Blocks*) defaultInstance;
@@ -9246,7 +9246,7 @@
 
 @interface CMsgClientGetUserStatsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetUserStatsResponse* result;
+  CMsgClientGetUserStatsResponse* _builderResult;
 }
 
 - (CMsgClientGetUserStatsResponse*) defaultInstance;
@@ -9369,7 +9369,7 @@
 
 @interface CMsgClientStoreUserStatsResponse_Stats_Failed_Validation_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientStoreUserStatsResponse_Stats_Failed_Validation* result;
+  CMsgClientStoreUserStatsResponse_Stats_Failed_Validation* _builderResult;
 }
 
 - (CMsgClientStoreUserStatsResponse_Stats_Failed_Validation*) defaultInstance;
@@ -9397,7 +9397,7 @@
 
 @interface CMsgClientStoreUserStatsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientStoreUserStatsResponse* result;
+  CMsgClientStoreUserStatsResponse* _builderResult;
 }
 
 - (CMsgClientStoreUserStatsResponse*) defaultInstance;
@@ -9517,7 +9517,7 @@
 
 @interface CMsgClientStoreUserStats2_Stats_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientStoreUserStats2_Stats* result;
+  CMsgClientStoreUserStats2_Stats* _builderResult;
 }
 
 - (CMsgClientStoreUserStats2_Stats*) defaultInstance;
@@ -9545,7 +9545,7 @@
 
 @interface CMsgClientStoreUserStats2_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientStoreUserStats2* result;
+  CMsgClientStoreUserStats2* _builderResult;
 }
 
 - (CMsgClientStoreUserStats2*) defaultInstance;
@@ -9662,7 +9662,7 @@
 
 @interface CMsgClientStatsUpdated_Updated_Stats_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientStatsUpdated_Updated_Stats* result;
+  CMsgClientStatsUpdated_Updated_Stats* _builderResult;
 }
 
 - (CMsgClientStatsUpdated_Updated_Stats*) defaultInstance;
@@ -9690,7 +9690,7 @@
 
 @interface CMsgClientStatsUpdated_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientStatsUpdated* result;
+  CMsgClientStatsUpdated* _builderResult;
 }
 
 - (CMsgClientStatsUpdated*) defaultInstance;
@@ -9793,7 +9793,7 @@
 
 @interface CMsgClientStoreUserStats_Stats_To_Store_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientStoreUserStats_Stats_To_Store* result;
+  CMsgClientStoreUserStats_Stats_To_Store* _builderResult;
 }
 
 - (CMsgClientStoreUserStats_Stats_To_Store*) defaultInstance;
@@ -9821,7 +9821,7 @@
 
 @interface CMsgClientStoreUserStats_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientStoreUserStats* result;
+  CMsgClientStoreUserStats* _builderResult;
 }
 
 - (CMsgClientStoreUserStats*) defaultInstance;
@@ -9878,7 +9878,7 @@
 
 @interface CMsgClientGetClientDetails_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetClientDetails* result;
+  CMsgClientGetClientDetails* _builderResult;
 }
 
 - (CMsgClientGetClientDetails*) defaultInstance;
@@ -9921,7 +9921,7 @@
 
 @interface CMsgClientReportOverlayDetourFailure_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientReportOverlayDetourFailure* result;
+  CMsgClientReportOverlayDetourFailure* _builderResult;
 }
 
 - (CMsgClientReportOverlayDetourFailure*) defaultInstance;
@@ -10033,7 +10033,7 @@
 
 @interface CMsgClientGetClientDetailsResponse_Game_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetClientDetailsResponse_Game* result;
+  CMsgClientGetClientDetailsResponse_Game* _builderResult;
 }
 
 - (CMsgClientGetClientDetailsResponse_Game*) defaultInstance;
@@ -10066,7 +10066,7 @@
 
 @interface CMsgClientGetClientDetailsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetClientDetailsResponse* result;
+  CMsgClientGetClientDetailsResponse* _builderResult;
 }
 
 - (CMsgClientGetClientDetailsResponse*) defaultInstance;
@@ -10168,7 +10168,7 @@
 
 @interface CMsgClientGetClientAppList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetClientAppList* result;
+  CMsgClientGetClientAppList* _builderResult;
 }
 
 - (CMsgClientGetClientAppList*) defaultInstance;
@@ -10351,7 +10351,7 @@
 
 @interface CMsgClientGetClientAppListResponse_App_DLC_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetClientAppListResponse_App_DLC* result;
+  CMsgClientGetClientAppListResponse_App_DLC* _builderResult;
 }
 
 - (CMsgClientGetClientAppListResponse_App_DLC*) defaultInstance;
@@ -10379,7 +10379,7 @@
 
 @interface CMsgClientGetClientAppListResponse_App_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetClientAppListResponse_App* result;
+  CMsgClientGetClientAppListResponse_App* _builderResult;
 }
 
 - (CMsgClientGetClientAppListResponse_App*) defaultInstance;
@@ -10474,7 +10474,7 @@
 
 @interface CMsgClientGetClientAppListResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetClientAppListResponse* result;
+  CMsgClientGetClientAppListResponse* _builderResult;
 }
 
 - (CMsgClientGetClientAppListResponse*) defaultInstance;
@@ -10530,7 +10530,7 @@
 
 @interface CMsgClientInstallClientApp_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientInstallClientApp* result;
+  CMsgClientInstallClientApp* _builderResult;
 }
 
 - (CMsgClientInstallClientApp*) defaultInstance;
@@ -10579,7 +10579,7 @@
 
 @interface CMsgClientInstallClientAppResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientInstallClientAppResponse* result;
+  CMsgClientInstallClientAppResponse* _builderResult;
 }
 
 - (CMsgClientInstallClientAppResponse*) defaultInstance;
@@ -10628,7 +10628,7 @@
 
 @interface CMsgClientUninstallClientApp_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUninstallClientApp* result;
+  CMsgClientUninstallClientApp* _builderResult;
 }
 
 - (CMsgClientUninstallClientApp*) defaultInstance;
@@ -10677,7 +10677,7 @@
 
 @interface CMsgClientUninstallClientAppResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUninstallClientAppResponse* result;
+  CMsgClientUninstallClientAppResponse* _builderResult;
 }
 
 - (CMsgClientUninstallClientAppResponse*) defaultInstance;
@@ -10730,7 +10730,7 @@
 
 @interface CMsgClientSetClientAppUpdateState_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientSetClientAppUpdateState* result;
+  CMsgClientSetClientAppUpdateState* _builderResult;
 }
 
 - (CMsgClientSetClientAppUpdateState*) defaultInstance;
@@ -10784,7 +10784,7 @@
 
 @interface CMsgClientSetClientAppUpdateStateResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientSetClientAppUpdateStateResponse* result;
+  CMsgClientSetClientAppUpdateStateResponse* _builderResult;
 }
 
 - (CMsgClientSetClientAppUpdateStateResponse*) defaultInstance;
@@ -10861,7 +10861,7 @@
 
 @interface CMsgClientUFSUploadFileRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSUploadFileRequest* result;
+  CMsgClientUFSUploadFileRequest* _builderResult;
 }
 
 - (CMsgClientUFSUploadFileRequest*) defaultInstance;
@@ -10949,7 +10949,7 @@
 
 @interface CMsgClientUFSUploadFileResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSUploadFileResponse* result;
+  CMsgClientUFSUploadFileResponse* _builderResult;
 }
 
 - (CMsgClientUFSUploadFileResponse*) defaultInstance;
@@ -11011,7 +11011,7 @@
 
 @interface CMsgClientUFSFileChunk_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSFileChunk* result;
+  CMsgClientUFSFileChunk* _builderResult;
 }
 
 - (CMsgClientUFSFileChunk*) defaultInstance;
@@ -11066,7 +11066,7 @@
 
 @interface CMsgClientUFSTransferHeartbeat_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSTransferHeartbeat* result;
+  CMsgClientUFSTransferHeartbeat* _builderResult;
 }
 
 - (CMsgClientUFSTransferHeartbeat*) defaultInstance;
@@ -11114,7 +11114,7 @@
 
 @interface CMsgClientUFSUploadFileFinished_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSUploadFileFinished* result;
+  CMsgClientUFSUploadFileFinished* _builderResult;
 }
 
 - (CMsgClientUFSUploadFileFinished*) defaultInstance;
@@ -11176,7 +11176,7 @@
 
 @interface CMsgClientUFSDeleteFileRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSDeleteFileRequest* result;
+  CMsgClientUFSDeleteFileRequest* _builderResult;
 }
 
 - (CMsgClientUFSDeleteFileRequest*) defaultInstance;
@@ -11239,7 +11239,7 @@
 
 @interface CMsgClientUFSDeleteFileResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSDeleteFileResponse* result;
+  CMsgClientUFSDeleteFileResponse* _builderResult;
 }
 
 - (CMsgClientUFSDeleteFileResponse*) defaultInstance;
@@ -11292,7 +11292,7 @@
 
 @interface CMsgClientUFSGetFileListForApp_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSGetFileListForApp* result;
+  CMsgClientUFSGetFileListForApp* _builderResult;
 }
 
 - (CMsgClientUFSGetFileListForApp*) defaultInstance;
@@ -11392,7 +11392,7 @@
 
 @interface CMsgClientUFSGetFileListForAppResponse_File_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSGetFileListForAppResponse_File* result;
+  CMsgClientUFSGetFileListForAppResponse_File* _builderResult;
 }
 
 - (CMsgClientUFSGetFileListForAppResponse_File*) defaultInstance;
@@ -11445,7 +11445,7 @@
 
 @interface CMsgClientUFSGetFileListForAppResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSGetFileListForAppResponse* result;
+  CMsgClientUFSGetFileListForAppResponse* _builderResult;
 }
 
 - (CMsgClientUFSGetFileListForAppResponse*) defaultInstance;
@@ -11500,7 +11500,7 @@
 
 @interface CMsgClientUFSDownloadRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSDownloadRequest* result;
+  CMsgClientUFSDownloadRequest* _builderResult;
 }
 
 - (CMsgClientUFSDownloadRequest*) defaultInstance;
@@ -11578,7 +11578,7 @@
 
 @interface CMsgClientUFSDownloadResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSDownloadResponse* result;
+  CMsgClientUFSDownloadResponse* _builderResult;
 }
 
 - (CMsgClientUFSDownloadResponse*) defaultInstance;
@@ -11664,7 +11664,7 @@
 
 @interface CMsgClientUFSLoginRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSLoginRequest* result;
+  CMsgClientUFSLoginRequest* _builderResult;
 }
 
 - (CMsgClientUFSLoginRequest*) defaultInstance;
@@ -11725,7 +11725,7 @@
 
 @interface CMsgClientUFSLoginResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSLoginResponse* result;
+  CMsgClientUFSLoginResponse* _builderResult;
 }
 
 - (CMsgClientUFSLoginResponse*) defaultInstance;
@@ -11778,7 +11778,7 @@
 
 @interface CMsgClientRequestEncryptedAppTicket_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestEncryptedAppTicket* result;
+  CMsgClientRequestEncryptedAppTicket* _builderResult;
 }
 
 - (CMsgClientRequestEncryptedAppTicket*) defaultInstance;
@@ -11840,7 +11840,7 @@
 
 @interface CMsgClientRequestEncryptedAppTicketResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestEncryptedAppTicketResponse* result;
+  CMsgClientRequestEncryptedAppTicketResponse* _builderResult;
 }
 
 - (CMsgClientRequestEncryptedAppTicketResponse*) defaultInstance;
@@ -11905,7 +11905,7 @@
 
 @interface CMsgClientRequestOAuthTokenForApp_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestOAuthTokenForApp* result;
+  CMsgClientRequestOAuthTokenForApp* _builderResult;
 }
 
 - (CMsgClientRequestOAuthTokenForApp*) defaultInstance;
@@ -11967,7 +11967,7 @@
 
 @interface CMsgClientRequestOAuthTokenForAppResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestOAuthTokenForAppResponse* result;
+  CMsgClientRequestOAuthTokenForAppResponse* _builderResult;
 }
 
 - (CMsgClientRequestOAuthTokenForAppResponse*) defaultInstance;
@@ -12034,7 +12034,7 @@
 
 @interface CMsgClientWalletInfoUpdate_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientWalletInfoUpdate* result;
+  CMsgClientWalletInfoUpdate* _builderResult;
 }
 
 - (CMsgClientWalletInfoUpdate*) defaultInstance;
@@ -12097,7 +12097,7 @@
 
 @interface CMsgClientAppInfoUpdate_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAppInfoUpdate* result;
+  CMsgClientAppInfoUpdate* _builderResult;
 }
 
 - (CMsgClientAppInfoUpdate*) defaultInstance;
@@ -12158,7 +12158,7 @@
 
 @interface CMsgClientAppInfoChanges_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAppInfoChanges* result;
+  CMsgClientAppInfoChanges* _builderResult;
 }
 
 - (CMsgClientAppInfoChanges*) defaultInstance;
@@ -12255,7 +12255,7 @@
 
 @interface CMsgClientAppInfoRequest_App_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAppInfoRequest_App* result;
+  CMsgClientAppInfoRequest_App* _builderResult;
 }
 
 - (CMsgClientAppInfoRequest_App*) defaultInstance;
@@ -12290,7 +12290,7 @@
 
 @interface CMsgClientAppInfoRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAppInfoRequest* result;
+  CMsgClientAppInfoRequest* _builderResult;
 }
 
 - (CMsgClientAppInfoRequest*) defaultInstance;
@@ -12415,7 +12415,7 @@
 
 @interface CMsgClientAppInfoResponse_App_Section_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAppInfoResponse_App_Section* result;
+  CMsgClientAppInfoResponse_App_Section* _builderResult;
 }
 
 - (CMsgClientAppInfoResponse_App_Section*) defaultInstance;
@@ -12443,7 +12443,7 @@
 
 @interface CMsgClientAppInfoResponse_App_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAppInfoResponse_App* result;
+  CMsgClientAppInfoResponse_App* _builderResult;
 }
 
 - (CMsgClientAppInfoResponse_App*) defaultInstance;
@@ -12478,7 +12478,7 @@
 
 @interface CMsgClientAppInfoResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAppInfoResponse* result;
+  CMsgClientAppInfoResponse* _builderResult;
 }
 
 - (CMsgClientAppInfoResponse*) defaultInstance;
@@ -12544,7 +12544,7 @@
 
 @interface CMsgClientPackageInfoRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientPackageInfoRequest* result;
+  CMsgClientPackageInfoRequest* _builderResult;
 }
 
 - (CMsgClientPackageInfoRequest*) defaultInstance;
@@ -12644,7 +12644,7 @@
 
 @interface CMsgClientPackageInfoResponse_Package_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientPackageInfoResponse_Package* result;
+  CMsgClientPackageInfoResponse_Package* _builderResult;
 }
 
 - (CMsgClientPackageInfoResponse_Package*) defaultInstance;
@@ -12682,7 +12682,7 @@
 
 @interface CMsgClientPackageInfoResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientPackageInfoResponse* result;
+  CMsgClientPackageInfoResponse* _builderResult;
 }
 
 - (CMsgClientPackageInfoResponse*) defaultInstance;
@@ -12753,7 +12753,7 @@
 
 @interface CMsgPICSChangesSinceRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPICSChangesSinceRequest* result;
+  CMsgPICSChangesSinceRequest* _builderResult;
 }
 
 - (CMsgPICSChangesSinceRequest*) defaultInstance;
@@ -12860,7 +12860,7 @@
 
 @interface CMsgPICSChangesSinceResponse_PackageChange_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPICSChangesSinceResponse_PackageChange* result;
+  CMsgPICSChangesSinceResponse_PackageChange* _builderResult;
 }
 
 - (CMsgPICSChangesSinceResponse_PackageChange*) defaultInstance;
@@ -12927,7 +12927,7 @@
 
 @interface CMsgPICSChangesSinceResponse_AppChange_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPICSChangesSinceResponse_AppChange* result;
+  CMsgPICSChangesSinceResponse_AppChange* _builderResult;
 }
 
 - (CMsgPICSChangesSinceResponse_AppChange*) defaultInstance;
@@ -12960,7 +12960,7 @@
 
 @interface CMsgPICSChangesSinceResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPICSChangesSinceResponse* result;
+  CMsgPICSChangesSinceResponse* _builderResult;
 }
 
 - (CMsgPICSChangesSinceResponse*) defaultInstance;
@@ -13073,7 +13073,7 @@
 
 @interface CMsgPICSProductInfoRequest_AppInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPICSProductInfoRequest_AppInfo* result;
+  CMsgPICSProductInfoRequest_AppInfo* _builderResult;
 }
 
 - (CMsgPICSProductInfoRequest_AppInfo*) defaultInstance;
@@ -13136,7 +13136,7 @@
 
 @interface CMsgPICSProductInfoRequest_PackageInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPICSProductInfoRequest_PackageInfo* result;
+  CMsgPICSProductInfoRequest_PackageInfo* _builderResult;
 }
 
 - (CMsgPICSProductInfoRequest_PackageInfo*) defaultInstance;
@@ -13164,7 +13164,7 @@
 
 @interface CMsgPICSProductInfoRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPICSProductInfoRequest* result;
+  CMsgPICSProductInfoRequest* _builderResult;
 }
 
 - (CMsgPICSProductInfoRequest*) defaultInstance;
@@ -13289,7 +13289,7 @@
 
 @interface CMsgPICSProductInfoResponse_AppInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPICSProductInfoResponse_AppInfo* result;
+  CMsgPICSProductInfoResponse_AppInfo* _builderResult;
 }
 
 - (CMsgPICSProductInfoResponse_AppInfo*) defaultInstance;
@@ -13379,7 +13379,7 @@
 
 @interface CMsgPICSProductInfoResponse_PackageInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPICSProductInfoResponse_PackageInfo* result;
+  CMsgPICSProductInfoResponse_PackageInfo* _builderResult;
 }
 
 - (CMsgPICSProductInfoResponse_PackageInfo*) defaultInstance;
@@ -13422,7 +13422,7 @@
 
 @interface CMsgPICSProductInfoResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPICSProductInfoResponse* result;
+  CMsgPICSProductInfoResponse* _builderResult;
 }
 
 - (CMsgPICSProductInfoResponse*) defaultInstance;
@@ -13506,7 +13506,7 @@
 
 @interface CMsgPICSAccessTokenRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPICSAccessTokenRequest* result;
+  CMsgPICSAccessTokenRequest* _builderResult;
 }
 
 - (CMsgPICSAccessTokenRequest*) defaultInstance;
@@ -13602,7 +13602,7 @@
 
 @interface CMsgPICSAccessTokenResponse_PackageToken_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPICSAccessTokenResponse_PackageToken* result;
+  CMsgPICSAccessTokenResponse_PackageToken* _builderResult;
 }
 
 - (CMsgPICSAccessTokenResponse_PackageToken*) defaultInstance;
@@ -13660,7 +13660,7 @@
 
 @interface CMsgPICSAccessTokenResponse_AppToken_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPICSAccessTokenResponse_AppToken* result;
+  CMsgPICSAccessTokenResponse_AppToken* _builderResult;
 }
 
 - (CMsgPICSAccessTokenResponse_AppToken*) defaultInstance;
@@ -13688,7 +13688,7 @@
 
 @interface CMsgPICSAccessTokenResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPICSAccessTokenResponse* result;
+  CMsgPICSAccessTokenResponse* _builderResult;
 }
 
 - (CMsgPICSAccessTokenResponse*) defaultInstance;
@@ -13760,7 +13760,7 @@
 
 @interface CMsgClientUFSGetUGCDetails_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSGetUGCDetails* result;
+  CMsgClientUFSGetUGCDetails* _builderResult;
 }
 
 - (CMsgClientUFSGetUGCDetails*) defaultInstance;
@@ -13829,7 +13829,7 @@
 
 @interface CMsgClientUFSGetUGCDetailsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSGetUGCDetailsResponse* result;
+  CMsgClientUFSGetUGCDetailsResponse* _builderResult;
 }
 
 - (CMsgClientUFSGetUGCDetailsResponse*) defaultInstance;
@@ -13907,7 +13907,7 @@
 
 @interface CMsgClientUFSGetSingleFileInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSGetSingleFileInfo* result;
+  CMsgClientUFSGetSingleFileInfo* _builderResult;
 }
 
 - (CMsgClientUFSGetSingleFileInfo*) defaultInstance;
@@ -13985,7 +13985,7 @@
 
 @interface CMsgClientUFSGetSingleFileInfoResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSGetSingleFileInfoResponse* result;
+  CMsgClientUFSGetSingleFileInfoResponse* _builderResult;
 }
 
 - (CMsgClientUFSGetSingleFileInfoResponse*) defaultInstance;
@@ -14068,7 +14068,7 @@
 
 @interface CMsgClientUFSShareFile_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSShareFile* result;
+  CMsgClientUFSShareFile* _builderResult;
 }
 
 - (CMsgClientUFSShareFile*) defaultInstance;
@@ -14126,7 +14126,7 @@
 
 @interface CMsgClientUFSShareFileResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUFSShareFileResponse* result;
+  CMsgClientUFSShareFileResponse* _builderResult;
 }
 
 - (CMsgClientUFSShareFileResponse*) defaultInstance;
@@ -14184,7 +14184,7 @@
 
 @interface CMsgClientNewLoginKey_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientNewLoginKey* result;
+  CMsgClientNewLoginKey* _builderResult;
 }
 
 - (CMsgClientNewLoginKey*) defaultInstance;
@@ -14238,7 +14238,7 @@
 
 @interface CMsgClientNewLoginKeyAccepted_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientNewLoginKeyAccepted* result;
+  CMsgClientNewLoginKeyAccepted* _builderResult;
 }
 
 - (CMsgClientNewLoginKeyAccepted*) defaultInstance;
@@ -14287,7 +14287,7 @@
 
 @interface CMsgClientAMGetClanOfficers_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAMGetClanOfficers* result;
+  CMsgClientAMGetClanOfficers* _builderResult;
 }
 
 - (CMsgClientAMGetClanOfficers*) defaultInstance;
@@ -14344,7 +14344,7 @@
 
 @interface CMsgClientAMGetClanOfficersResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAMGetClanOfficersResponse* result;
+  CMsgClientAMGetClanOfficersResponse* _builderResult;
 }
 
 - (CMsgClientAMGetClanOfficersResponse*) defaultInstance;
@@ -14432,7 +14432,7 @@
 
 @interface CMsgClientAMGetPersonaNameHistory_IdInstance_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAMGetPersonaNameHistory_IdInstance* result;
+  CMsgClientAMGetPersonaNameHistory_IdInstance* _builderResult;
 }
 
 - (CMsgClientAMGetPersonaNameHistory_IdInstance*) defaultInstance;
@@ -14455,7 +14455,7 @@
 
 @interface CMsgClientAMGetPersonaNameHistory_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAMGetPersonaNameHistory* result;
+  CMsgClientAMGetPersonaNameHistory* _builderResult;
 }
 
 - (CMsgClientAMGetPersonaNameHistory*) defaultInstance;
@@ -14573,7 +14573,7 @@
 
 @interface CMsgClientAMGetPersonaNameHistoryResponse_NameTableInstance_NameInstance_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAMGetPersonaNameHistoryResponse_NameTableInstance_NameInstance* result;
+  CMsgClientAMGetPersonaNameHistoryResponse_NameTableInstance_NameInstance* _builderResult;
 }
 
 - (CMsgClientAMGetPersonaNameHistoryResponse_NameTableInstance_NameInstance*) defaultInstance;
@@ -14601,7 +14601,7 @@
 
 @interface CMsgClientAMGetPersonaNameHistoryResponse_NameTableInstance_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAMGetPersonaNameHistoryResponse_NameTableInstance* result;
+  CMsgClientAMGetPersonaNameHistoryResponse_NameTableInstance* _builderResult;
 }
 
 - (CMsgClientAMGetPersonaNameHistoryResponse_NameTableInstance*) defaultInstance;
@@ -14636,7 +14636,7 @@
 
 @interface CMsgClientAMGetPersonaNameHistoryResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAMGetPersonaNameHistoryResponse* result;
+  CMsgClientAMGetPersonaNameHistoryResponse* _builderResult;
 }
 
 - (CMsgClientAMGetPersonaNameHistoryResponse*) defaultInstance;
@@ -14691,7 +14691,7 @@
 
 @interface CMsgClientDeregisterWithServer_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientDeregisterWithServer* result;
+  CMsgClientDeregisterWithServer* _builderResult;
 }
 
 - (CMsgClientDeregisterWithServer*) defaultInstance;
@@ -14797,7 +14797,7 @@
 
 @interface CMsgClientClanState_NameInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientClanState_NameInfo* result;
+  CMsgClientClanState_NameInfo* _builderResult;
 }
 
 - (CMsgClientClanState_NameInfo*) defaultInstance;
@@ -14863,7 +14863,7 @@
 
 @interface CMsgClientClanState_UserCounts_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientClanState_UserCounts* result;
+  CMsgClientClanState_UserCounts* _builderResult;
 }
 
 - (CMsgClientClanState_UserCounts*) defaultInstance;
@@ -14943,7 +14943,7 @@
 
 @interface CMsgClientClanState_Event_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientClanState_Event* result;
+  CMsgClientClanState_Event* _builderResult;
 }
 
 - (CMsgClientClanState_Event*) defaultInstance;
@@ -14986,7 +14986,7 @@
 
 @interface CMsgClientClanState_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientClanState* result;
+  CMsgClientClanState* _builderResult;
 }
 
 - (CMsgClientClanState*) defaultInstance;
@@ -15081,7 +15081,7 @@
 
 @interface CMsgClientFriendMsg_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientFriendMsg* result;
+  CMsgClientFriendMsg* _builderResult;
 }
 
 - (CMsgClientFriendMsg*) defaultInstance;
@@ -15152,7 +15152,7 @@
 
 @interface CMsgClientFriendMsgIncoming_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientFriendMsgIncoming* result;
+  CMsgClientFriendMsgIncoming* _builderResult;
 }
 
 - (CMsgClientFriendMsgIncoming*) defaultInstance;
@@ -15220,7 +15220,7 @@
 
 @interface CMsgClientAddFriend_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAddFriend* result;
+  CMsgClientAddFriend* _builderResult;
 }
 
 - (CMsgClientAddFriend*) defaultInstance;
@@ -15282,7 +15282,7 @@
 
 @interface CMsgClientAddFriendResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAddFriendResponse* result;
+  CMsgClientAddFriendResponse* _builderResult;
 }
 
 - (CMsgClientAddFriendResponse*) defaultInstance;
@@ -15341,7 +15341,7 @@
 
 @interface CMsgClientRemoveFriend_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRemoveFriend* result;
+  CMsgClientRemoveFriend* _builderResult;
 }
 
 - (CMsgClientRemoveFriend*) defaultInstance;
@@ -15394,7 +15394,7 @@
 
 @interface CMsgClientHideFriend_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientHideFriend* result;
+  CMsgClientHideFriend* _builderResult;
 }
 
 - (CMsgClientHideFriend*) defaultInstance;
@@ -15520,7 +15520,7 @@
 
 @interface CMsgClientUCMAddScreenshot_Tag_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMAddScreenshot_Tag* result;
+  CMsgClientUCMAddScreenshot_Tag* _builderResult;
 }
 
 - (CMsgClientUCMAddScreenshot_Tag*) defaultInstance;
@@ -15548,7 +15548,7 @@
 
 @interface CMsgClientUCMAddScreenshot_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMAddScreenshot* result;
+  CMsgClientUCMAddScreenshot* _builderResult;
 }
 
 - (CMsgClientUCMAddScreenshot*) defaultInstance;
@@ -15660,7 +15660,7 @@
 
 @interface CMsgClientUCMAddScreenshotResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMAddScreenshotResponse* result;
+  CMsgClientUCMAddScreenshotResponse* _builderResult;
 }
 
 - (CMsgClientUCMAddScreenshotResponse*) defaultInstance;
@@ -15714,7 +15714,7 @@
 
 @interface CMsgClientUCMDeleteScreenshot_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMDeleteScreenshot* result;
+  CMsgClientUCMDeleteScreenshot* _builderResult;
 }
 
 - (CMsgClientUCMDeleteScreenshot*) defaultInstance;
@@ -15763,7 +15763,7 @@
 
 @interface CMsgClientUCMDeleteScreenshotResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMDeleteScreenshotResponse* result;
+  CMsgClientUCMDeleteScreenshotResponse* _builderResult;
 }
 
 - (CMsgClientUCMDeleteScreenshotResponse*) defaultInstance;
@@ -15863,7 +15863,7 @@
 
 @interface CMsgClientUCMPublishFile_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMPublishFile* result;
+  CMsgClientUCMPublishFile* _builderResult;
 }
 
 - (CMsgClientUCMPublishFile*) defaultInstance;
@@ -15983,7 +15983,7 @@
 
 @interface CMsgClientUCMPublishFileResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMPublishFileResponse* result;
+  CMsgClientUCMPublishFileResponse* _builderResult;
 }
 
 - (CMsgClientUCMPublishFileResponse*) defaultInstance;
@@ -16100,7 +16100,7 @@
 
 @interface CMsgClientUCMUpdatePublishedFile_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMUpdatePublishedFile* result;
+  CMsgClientUCMUpdatePublishedFile* _builderResult;
 }
 
 - (CMsgClientUCMUpdatePublishedFile*) defaultInstance;
@@ -16231,7 +16231,7 @@
 
 @interface CMsgClientUCMUpdatePublishedFileResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMUpdatePublishedFileResponse* result;
+  CMsgClientUCMUpdatePublishedFileResponse* _builderResult;
 }
 
 - (CMsgClientUCMUpdatePublishedFileResponse*) defaultInstance;
@@ -16280,7 +16280,7 @@
 
 @interface CMsgClientUCMGetPublishedFileDetails_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMGetPublishedFileDetails* result;
+  CMsgClientUCMGetPublishedFileDetails* _builderResult;
 }
 
 - (CMsgClientUCMGetPublishedFileDetails*) defaultInstance;
@@ -16400,7 +16400,7 @@
 
 @interface CMsgClientUCMGetPublishedFileDetailsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMGetPublishedFileDetailsResponse* result;
+  CMsgClientUCMGetPublishedFileDetailsResponse* _builderResult;
 }
 
 - (CMsgClientUCMGetPublishedFileDetailsResponse*) defaultInstance;
@@ -16541,7 +16541,7 @@
 
 @interface CMsgClientUCMDeletePublishedFile_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMDeletePublishedFile* result;
+  CMsgClientUCMDeletePublishedFile* _builderResult;
 }
 
 - (CMsgClientUCMDeletePublishedFile*) defaultInstance;
@@ -16590,7 +16590,7 @@
 
 @interface CMsgClientUCMDeletePublishedFileResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMDeletePublishedFileResponse* result;
+  CMsgClientUCMDeletePublishedFileResponse* _builderResult;
 }
 
 - (CMsgClientUCMDeletePublishedFileResponse*) defaultInstance;
@@ -16647,7 +16647,7 @@
 
 @interface CMsgClientUCMEnumerateUserPublishedFiles_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMEnumerateUserPublishedFiles* result;
+  CMsgClientUCMEnumerateUserPublishedFiles* _builderResult;
 }
 
 - (CMsgClientUCMEnumerateUserPublishedFiles*) defaultInstance;
@@ -16739,7 +16739,7 @@
 
 @interface CMsgClientUCMEnumerateUserPublishedFilesResponse_PublishedFileId_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMEnumerateUserPublishedFilesResponse_PublishedFileId* result;
+  CMsgClientUCMEnumerateUserPublishedFilesResponse_PublishedFileId* _builderResult;
 }
 
 - (CMsgClientUCMEnumerateUserPublishedFilesResponse_PublishedFileId*) defaultInstance;
@@ -16762,7 +16762,7 @@
 
 @interface CMsgClientUCMEnumerateUserPublishedFilesResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMEnumerateUserPublishedFilesResponse* result;
+  CMsgClientUCMEnumerateUserPublishedFilesResponse* _builderResult;
 }
 
 - (CMsgClientUCMEnumerateUserPublishedFilesResponse*) defaultInstance;
@@ -16827,7 +16827,7 @@
 
 @interface CMsgClientUCMSubscribePublishedFile_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMSubscribePublishedFile* result;
+  CMsgClientUCMSubscribePublishedFile* _builderResult;
 }
 
 - (CMsgClientUCMSubscribePublishedFile*) defaultInstance;
@@ -16881,7 +16881,7 @@
 
 @interface CMsgClientUCMSubscribePublishedFileResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMSubscribePublishedFileResponse* result;
+  CMsgClientUCMSubscribePublishedFileResponse* _builderResult;
 }
 
 - (CMsgClientUCMSubscribePublishedFileResponse*) defaultInstance;
@@ -16934,7 +16934,7 @@
 
 @interface CMsgClientUCMEnumerateUserSubscribedFiles_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMEnumerateUserSubscribedFiles* result;
+  CMsgClientUCMEnumerateUserSubscribedFiles* _builderResult;
 }
 
 - (CMsgClientUCMEnumerateUserSubscribedFiles*) defaultInstance;
@@ -17025,7 +17025,7 @@
 
 @interface CMsgClientUCMEnumerateUserSubscribedFilesResponse_PublishedFileId_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMEnumerateUserSubscribedFilesResponse_PublishedFileId* result;
+  CMsgClientUCMEnumerateUserSubscribedFilesResponse_PublishedFileId* _builderResult;
 }
 
 - (CMsgClientUCMEnumerateUserSubscribedFilesResponse_PublishedFileId*) defaultInstance;
@@ -17053,7 +17053,7 @@
 
 @interface CMsgClientUCMEnumerateUserSubscribedFilesResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMEnumerateUserSubscribedFilesResponse* result;
+  CMsgClientUCMEnumerateUserSubscribedFilesResponse* _builderResult;
 }
 
 - (CMsgClientUCMEnumerateUserSubscribedFilesResponse*) defaultInstance;
@@ -17122,7 +17122,7 @@
 
 @interface CMsgClientUCMEnumerateUserSubscribedFilesWithUpdates_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMEnumerateUserSubscribedFilesWithUpdates* result;
+  CMsgClientUCMEnumerateUserSubscribedFilesWithUpdates* _builderResult;
 }
 
 - (CMsgClientUCMEnumerateUserSubscribedFilesWithUpdates*) defaultInstance;
@@ -17234,7 +17234,7 @@
 
 @interface CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse_PublishedFileId_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse_PublishedFileId* result;
+  CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse_PublishedFileId* _builderResult;
 }
 
 - (CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse_PublishedFileId*) defaultInstance;
@@ -17282,7 +17282,7 @@
 
 @interface CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse* result;
+  CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse* _builderResult;
 }
 
 - (CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse*) defaultInstance;
@@ -17347,7 +17347,7 @@
 
 @interface CMsgClientUCMUnsubscribePublishedFile_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMUnsubscribePublishedFile* result;
+  CMsgClientUCMUnsubscribePublishedFile* _builderResult;
 }
 
 - (CMsgClientUCMUnsubscribePublishedFile*) defaultInstance;
@@ -17401,7 +17401,7 @@
 
 @interface CMsgClientUCMUnsubscribePublishedFileResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMUnsubscribePublishedFileResponse* result;
+  CMsgClientUCMUnsubscribePublishedFileResponse* _builderResult;
 }
 
 - (CMsgClientUCMUnsubscribePublishedFileResponse*) defaultInstance;
@@ -17462,7 +17462,7 @@
 
 @interface CMsgClientUCMPublishedFileSubscribed_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMPublishedFileSubscribed* result;
+  CMsgClientUCMPublishedFileSubscribed* _builderResult;
 }
 
 - (CMsgClientUCMPublishedFileSubscribed*) defaultInstance;
@@ -17530,7 +17530,7 @@
 
 @interface CMsgClientUCMPublishedFileUnsubscribed_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMPublishedFileUnsubscribed* result;
+  CMsgClientUCMPublishedFileUnsubscribed* _builderResult;
 }
 
 - (CMsgClientUCMPublishedFileUnsubscribed*) defaultInstance;
@@ -17588,7 +17588,7 @@
 
 @interface CMsgClientUCMPublishedFileDeleted_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMPublishedFileDeleted* result;
+  CMsgClientUCMPublishedFileDeleted* _builderResult;
 }
 
 - (CMsgClientUCMPublishedFileDeleted*) defaultInstance;
@@ -17656,7 +17656,7 @@
 
 @interface CMsgClientUCMGetPublishedFilesForUser_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMGetPublishedFilesForUser* result;
+  CMsgClientUCMGetPublishedFilesForUser* _builderResult;
 }
 
 - (CMsgClientUCMGetPublishedFilesForUser*) defaultInstance;
@@ -17762,7 +17762,7 @@
 
 @interface CMsgClientUCMGetPublishedFilesForUserResponse_PublishedFileId_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMGetPublishedFilesForUserResponse_PublishedFileId* result;
+  CMsgClientUCMGetPublishedFilesForUserResponse_PublishedFileId* _builderResult;
 }
 
 - (CMsgClientUCMGetPublishedFilesForUserResponse_PublishedFileId*) defaultInstance;
@@ -17785,7 +17785,7 @@
 
 @interface CMsgClientUCMGetPublishedFilesForUserResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMGetPublishedFilesForUserResponse* result;
+  CMsgClientUCMGetPublishedFilesForUserResponse* _builderResult;
 }
 
 - (CMsgClientUCMGetPublishedFilesForUserResponse*) defaultInstance;
@@ -17854,7 +17854,7 @@
 
 @interface CMsgClientUCMSetUserPublishedFileAction_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMSetUserPublishedFileAction* result;
+  CMsgClientUCMSetUserPublishedFileAction* _builderResult;
 }
 
 - (CMsgClientUCMSetUserPublishedFileAction*) defaultInstance;
@@ -17913,7 +17913,7 @@
 
 @interface CMsgClientUCMSetUserPublishedFileActionResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMSetUserPublishedFileActionResponse* result;
+  CMsgClientUCMSetUserPublishedFileActionResponse* _builderResult;
 }
 
 - (CMsgClientUCMSetUserPublishedFileActionResponse*) defaultInstance;
@@ -17970,7 +17970,7 @@
 
 @interface CMsgClientUCMEnumeratePublishedFilesByUserAction_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMEnumeratePublishedFilesByUserAction* result;
+  CMsgClientUCMEnumeratePublishedFilesByUserAction* _builderResult;
 }
 
 - (CMsgClientUCMEnumeratePublishedFilesByUserAction*) defaultInstance;
@@ -18066,7 +18066,7 @@
 
 @interface CMsgClientUCMEnumeratePublishedFilesByUserActionResponse_PublishedFileId_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMEnumeratePublishedFilesByUserActionResponse_PublishedFileId* result;
+  CMsgClientUCMEnumeratePublishedFilesByUserActionResponse_PublishedFileId* _builderResult;
 }
 
 - (CMsgClientUCMEnumeratePublishedFilesByUserActionResponse_PublishedFileId*) defaultInstance;
@@ -18094,7 +18094,7 @@
 
 @interface CMsgClientUCMEnumeratePublishedFilesByUserActionResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUCMEnumeratePublishedFilesByUserActionResponse* result;
+  CMsgClientUCMEnumeratePublishedFilesByUserActionResponse* _builderResult;
 }
 
 - (CMsgClientUCMEnumeratePublishedFilesByUserActionResponse*) defaultInstance;
@@ -18151,7 +18151,7 @@
 
 @interface CMsgClientScreenshotsChanged_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientScreenshotsChanged* result;
+  CMsgClientScreenshotsChanged* _builderResult;
 }
 
 - (CMsgClientScreenshotsChanged*) defaultInstance;
@@ -18211,7 +18211,7 @@
 
 @interface CMsgClientUpdateUserGameInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUpdateUserGameInfo* result;
+  CMsgClientUpdateUserGameInfo* _builderResult;
 }
 
 - (CMsgClientUpdateUserGameInfo*) defaultInstance;
@@ -18283,7 +18283,7 @@
 
 @interface CMsgClientRichPresenceUpload_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRichPresenceUpload* result;
+  CMsgClientRichPresenceUpload* _builderResult;
 }
 
 - (CMsgClientRichPresenceUpload*) defaultInstance;
@@ -18338,7 +18338,7 @@
 
 @interface CMsgClientRichPresenceRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRichPresenceRequest* result;
+  CMsgClientRichPresenceRequest* _builderResult;
 }
 
 - (CMsgClientRichPresenceRequest*) defaultInstance;
@@ -18418,7 +18418,7 @@
 
 @interface CMsgClientRichPresenceInfo_RichPresence_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRichPresenceInfo_RichPresence* result;
+  CMsgClientRichPresenceInfo_RichPresence* _builderResult;
 }
 
 - (CMsgClientRichPresenceInfo_RichPresence*) defaultInstance;
@@ -18446,7 +18446,7 @@
 
 @interface CMsgClientRichPresenceInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRichPresenceInfo* result;
+  CMsgClientRichPresenceInfo* _builderResult;
 }
 
 - (CMsgClientRichPresenceInfo*) defaultInstance;
@@ -18497,7 +18497,7 @@
 
 @interface CMsgClientCheckFileSignature_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientCheckFileSignature* result;
+  CMsgClientCheckFileSignature* _builderResult;
 }
 
 - (CMsgClientCheckFileSignature*) defaultInstance;
@@ -18582,7 +18582,7 @@
 
 @interface CMsgClientCheckFileSignatureResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientCheckFileSignatureResponse* result;
+  CMsgClientCheckFileSignatureResponse* _builderResult;
 }
 
 - (CMsgClientCheckFileSignatureResponse*) defaultInstance;
@@ -18684,7 +18684,7 @@
 
 @interface CMsgClientReadMachineAuth_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientReadMachineAuth* result;
+  CMsgClientReadMachineAuth* _builderResult;
 }
 
 - (CMsgClientReadMachineAuth*) defaultInstance;
@@ -18775,7 +18775,7 @@
 
 @interface CMsgClientReadMachineAuthResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientReadMachineAuthResponse* result;
+  CMsgClientReadMachineAuthResponse* _builderResult;
 }
 
 - (CMsgClientReadMachineAuthResponse*) defaultInstance;
@@ -18892,7 +18892,7 @@
 
 @interface CMsgClientUpdateMachineAuth_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUpdateMachineAuth* result;
+  CMsgClientUpdateMachineAuth* _builderResult;
 }
 
 - (CMsgClientUpdateMachineAuth*) defaultInstance;
@@ -19012,7 +19012,7 @@
 
 @interface CMsgClientUpdateMachineAuthResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUpdateMachineAuthResponse* result;
+  CMsgClientUpdateMachineAuthResponse* _builderResult;
 }
 
 - (CMsgClientUpdateMachineAuthResponse*) defaultInstance;
@@ -19138,7 +19138,7 @@
 
 @interface CMsgClientRequestMachineAuth_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestMachineAuth* result;
+  CMsgClientRequestMachineAuth* _builderResult;
 }
 
 - (CMsgClientRequestMachineAuth*) defaultInstance;
@@ -19227,7 +19227,7 @@
 
 @interface CMsgClientRequestMachineAuthResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestMachineAuthResponse* result;
+  CMsgClientRequestMachineAuthResponse* _builderResult;
 }
 
 - (CMsgClientRequestMachineAuthResponse*) defaultInstance;
@@ -19280,7 +19280,7 @@
 
 @interface CMsgClientChangeSteamGuardOptions_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientChangeSteamGuardOptions* result;
+  CMsgClientChangeSteamGuardOptions* _builderResult;
 }
 
 - (CMsgClientChangeSteamGuardOptions*) defaultInstance;
@@ -19334,7 +19334,7 @@
 
 @interface CMsgClientChangeSteamGuardOptionsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientChangeSteamGuardOptionsResponse* result;
+  CMsgClientChangeSteamGuardOptionsResponse* _builderResult;
 }
 
 - (CMsgClientChangeSteamGuardOptionsResponse*) defaultInstance;
@@ -19387,7 +19387,7 @@
 
 @interface CMsgClientCreateFriendsGroup_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientCreateFriendsGroup* result;
+  CMsgClientCreateFriendsGroup* _builderResult;
 }
 
 - (CMsgClientCreateFriendsGroup*) defaultInstance;
@@ -19445,7 +19445,7 @@
 
 @interface CMsgClientCreateFriendsGroupResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientCreateFriendsGroupResponse* result;
+  CMsgClientCreateFriendsGroupResponse* _builderResult;
 }
 
 - (CMsgClientCreateFriendsGroupResponse*) defaultInstance;
@@ -19503,7 +19503,7 @@
 
 @interface CMsgClientDeleteFriendsGroup_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientDeleteFriendsGroup* result;
+  CMsgClientDeleteFriendsGroup* _builderResult;
 }
 
 - (CMsgClientDeleteFriendsGroup*) defaultInstance;
@@ -19557,7 +19557,7 @@
 
 @interface CMsgClientDeleteFriendsGroupResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientDeleteFriendsGroupResponse* result;
+  CMsgClientDeleteFriendsGroupResponse* _builderResult;
 }
 
 - (CMsgClientDeleteFriendsGroupResponse*) defaultInstance;
@@ -19610,7 +19610,7 @@
 
 @interface CMsgClientRenameFriendsGroup_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRenameFriendsGroup* result;
+  CMsgClientRenameFriendsGroup* _builderResult;
 }
 
 - (CMsgClientRenameFriendsGroup*) defaultInstance;
@@ -19664,7 +19664,7 @@
 
 @interface CMsgClientRenameFriendsGroupResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRenameFriendsGroupResponse* result;
+  CMsgClientRenameFriendsGroupResponse* _builderResult;
 }
 
 - (CMsgClientRenameFriendsGroupResponse*) defaultInstance;
@@ -19717,7 +19717,7 @@
 
 @interface CMsgClientAddFriendToGroup_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAddFriendToGroup* result;
+  CMsgClientAddFriendToGroup* _builderResult;
 }
 
 - (CMsgClientAddFriendToGroup*) defaultInstance;
@@ -19771,7 +19771,7 @@
 
 @interface CMsgClientAddFriendToGroupResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientAddFriendToGroupResponse* result;
+  CMsgClientAddFriendToGroupResponse* _builderResult;
 }
 
 - (CMsgClientAddFriendToGroupResponse*) defaultInstance;
@@ -19824,7 +19824,7 @@
 
 @interface CMsgClientRemoveFriendFromGroup_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRemoveFriendFromGroup* result;
+  CMsgClientRemoveFriendFromGroup* _builderResult;
 }
 
 - (CMsgClientRemoveFriendFromGroup*) defaultInstance;
@@ -19878,7 +19878,7 @@
 
 @interface CMsgClientRemoveFriendFromGroupResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRemoveFriendFromGroupResponse* result;
+  CMsgClientRemoveFriendFromGroupResponse* _builderResult;
 }
 
 - (CMsgClientRemoveFriendFromGroupResponse*) defaultInstance;
@@ -19927,7 +19927,7 @@
 
 @interface CMsgClientRegisterKey_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRegisterKey* result;
+  CMsgClientRegisterKey* _builderResult;
 }
 
 - (CMsgClientRegisterKey*) defaultInstance;
@@ -19984,7 +19984,7 @@
 
 @interface CMsgClientPurchaseResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientPurchaseResponse* result;
+  CMsgClientPurchaseResponse* _builderResult;
 }
 
 - (CMsgClientPurchaseResponse*) defaultInstance;
@@ -20063,7 +20063,7 @@
 
 @interface CMsgClientActivateOEMLicense_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientActivateOEMLicense* result;
+  CMsgClientActivateOEMLicense* _builderResult;
 }
 
 - (CMsgClientActivateOEMLicense*) defaultInstance;
@@ -20141,7 +20141,7 @@
 
 @interface CMsgClientPurchaseWithMachineID_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientPurchaseWithMachineID* result;
+  CMsgClientPurchaseWithMachineID* _builderResult;
 }
 
 - (CMsgClientPurchaseWithMachineID*) defaultInstance;
@@ -20203,7 +20203,7 @@
 
 @interface CMsgTrading_InitiateTradeRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTrading_InitiateTradeRequest* result;
+  CMsgTrading_InitiateTradeRequest* _builderResult;
 }
 
 - (CMsgTrading_InitiateTradeRequest*) defaultInstance;
@@ -20274,7 +20274,7 @@
 
 @interface CMsgTrading_InitiateTradeResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTrading_InitiateTradeResponse* result;
+  CMsgTrading_InitiateTradeResponse* _builderResult;
 }
 
 - (CMsgTrading_InitiateTradeResponse*) defaultInstance;
@@ -20338,7 +20338,7 @@
 
 @interface CMsgTrading_CancelTradeRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTrading_CancelTradeRequest* result;
+  CMsgTrading_CancelTradeRequest* _builderResult;
 }
 
 - (CMsgTrading_CancelTradeRequest*) defaultInstance;
@@ -20387,7 +20387,7 @@
 
 @interface CMsgTrading_StartSession_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTrading_StartSession* result;
+  CMsgTrading_StartSession* _builderResult;
 }
 
 - (CMsgTrading_StartSession*) defaultInstance;
@@ -20452,7 +20452,7 @@
 
 @interface CMsgClientMDSInitDepotBuildRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSInitDepotBuildRequest* result;
+  CMsgClientMDSInitDepotBuildRequest* _builderResult;
 }
 
 - (CMsgClientMDSInitDepotBuildRequest*) defaultInstance;
@@ -20533,7 +20533,7 @@
 
 @interface CMsgClientMDSInitDepotBuildResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSInitDepotBuildResponse* result;
+  CMsgClientMDSInitDepotBuildResponse* _builderResult;
 }
 
 - (CMsgClientMDSInitDepotBuildResponse*) defaultInstance;
@@ -20597,7 +20597,7 @@
 
 @interface CMsgClientMDSLoginRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSLoginRequest* result;
+  CMsgClientMDSLoginRequest* _builderResult;
 }
 
 - (CMsgClientMDSLoginRequest*) defaultInstance;
@@ -20646,7 +20646,7 @@
 
 @interface CMsgClientMDSLoginResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSLoginResponse* result;
+  CMsgClientMDSLoginResponse* _builderResult;
 }
 
 - (CMsgClientMDSLoginResponse*) defaultInstance;
@@ -20748,7 +20748,7 @@
 
 @interface CMsgClientMDSUploadDepotChunks_ChunkUploadData_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSUploadDepotChunks_ChunkUploadData* result;
+  CMsgClientMDSUploadDepotChunks_ChunkUploadData* _builderResult;
 }
 
 - (CMsgClientMDSUploadDepotChunks_ChunkUploadData*) defaultInstance;
@@ -20796,7 +20796,7 @@
 
 @interface CMsgClientMDSUploadDepotChunks_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSUploadDepotChunks* result;
+  CMsgClientMDSUploadDepotChunks* _builderResult;
 }
 
 - (CMsgClientMDSUploadDepotChunks*) defaultInstance;
@@ -20857,7 +20857,7 @@
 
 @interface CMsgClientMDSUploadDepotChunksResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSUploadDepotChunksResponse* result;
+  CMsgClientMDSUploadDepotChunksResponse* _builderResult;
 }
 
 - (CMsgClientMDSUploadDepotChunksResponse*) defaultInstance;
@@ -20918,7 +20918,7 @@
 
 @interface CMsgClientMDSUploadRateTest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSUploadRateTest* result;
+  CMsgClientMDSUploadRateTest* _builderResult;
 }
 
 - (CMsgClientMDSUploadRateTest*) defaultInstance;
@@ -20986,7 +20986,7 @@
 
 @interface CMsgClientMDSUploadRateTestResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSUploadRateTestResponse* result;
+  CMsgClientMDSUploadRateTestResponse* _builderResult;
 }
 
 - (CMsgClientMDSUploadRateTestResponse*) defaultInstance;
@@ -21044,7 +21044,7 @@
 
 @interface CMsgClientMDSTransmitManifestDataChunk_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSTransmitManifestDataChunk* result;
+  CMsgClientMDSTransmitManifestDataChunk* _builderResult;
 }
 
 - (CMsgClientMDSTransmitManifestDataChunk*) defaultInstance;
@@ -21118,7 +21118,7 @@
 
 @interface CMsgClientMDSUploadManifestRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSUploadManifestRequest* result;
+  CMsgClientMDSUploadManifestRequest* _builderResult;
 }
 
 - (CMsgClientMDSUploadManifestRequest*) defaultInstance;
@@ -21216,7 +21216,7 @@
 
 @interface CMsgClientMDSUploadManifestResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSUploadManifestResponse* result;
+  CMsgClientMDSUploadManifestResponse* _builderResult;
 }
 
 - (CMsgClientMDSUploadManifestResponse*) defaultInstance;
@@ -21303,7 +21303,7 @@
 
 @interface CMsgClientMDSGetDepotManifest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSGetDepotManifest* result;
+  CMsgClientMDSGetDepotManifest* _builderResult;
 }
 
 - (CMsgClientMDSGetDepotManifest*) defaultInstance;
@@ -21366,7 +21366,7 @@
 
 @interface CMsgClientMDSGetDepotManifestResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSGetDepotManifestResponse* result;
+  CMsgClientMDSGetDepotManifestResponse* _builderResult;
 }
 
 - (CMsgClientMDSGetDepotManifestResponse*) defaultInstance;
@@ -21424,7 +21424,7 @@
 
 @interface CMsgClientMDSGetDepotManifestChunk_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSGetDepotManifestChunk* result;
+  CMsgClientMDSGetDepotManifestChunk* _builderResult;
 }
 
 - (CMsgClientMDSGetDepotManifestChunk*) defaultInstance;
@@ -21486,7 +21486,7 @@
 
 @interface CMsgClientMDSRegisterAppBuild_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSRegisterAppBuild* result;
+  CMsgClientMDSRegisterAppBuild* _builderResult;
 }
 
 - (CMsgClientMDSRegisterAppBuild*) defaultInstance;
@@ -21549,7 +21549,7 @@
 
 @interface CMsgClientMDSRegisterAppBuildResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientMDSRegisterAppBuildResponse* result;
+  CMsgClientMDSRegisterAppBuildResponse* _builderResult;
 }
 
 - (CMsgClientMDSRegisterAppBuildResponse*) defaultInstance;
@@ -21623,7 +21623,7 @@
 
 @interface CMsgMDSSetAppBuildLive_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMDSSetAppBuildLive* result;
+  CMsgMDSSetAppBuildLive* _builderResult;
 }
 
 - (CMsgMDSSetAppBuildLive*) defaultInstance;
@@ -21701,7 +21701,7 @@
 
 @interface CMsgMDSSetAppBuildLiveResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMDSSetAppBuildLiveResponse* result;
+  CMsgMDSSetAppBuildLiveResponse* _builderResult;
 }
 
 - (CMsgMDSSetAppBuildLiveResponse*) defaultInstance;
@@ -21771,7 +21771,7 @@
 
 @interface CMsgClientEmailChange_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientEmailChange* result;
+  CMsgClientEmailChange* _builderResult;
 }
 
 - (CMsgClientEmailChange*) defaultInstance;
@@ -21840,7 +21840,7 @@
 
 @interface CMsgClientEmailChangeResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientEmailChangeResponse* result;
+  CMsgClientEmailChangeResponse* _builderResult;
 }
 
 - (CMsgClientEmailChangeResponse*) defaultInstance;
@@ -21893,7 +21893,7 @@
 
 @interface CMsgClientGetCDNAuthToken_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetCDNAuthToken* result;
+  CMsgClientGetCDNAuthToken* _builderResult;
 }
 
 - (CMsgClientGetCDNAuthToken*) defaultInstance;
@@ -21951,7 +21951,7 @@
 
 @interface CMsgClientGetDepotDecryptionKey_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetDepotDecryptionKey* result;
+  CMsgClientGetDepotDecryptionKey* _builderResult;
 }
 
 - (CMsgClientGetDepotDecryptionKey*) defaultInstance;
@@ -22013,7 +22013,7 @@
 
 @interface CMsgClientGetDepotDecryptionKeyResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetDepotDecryptionKeyResponse* result;
+  CMsgClientGetDepotDecryptionKeyResponse* _builderResult;
 }
 
 - (CMsgClientGetDepotDecryptionKeyResponse*) defaultInstance;
@@ -22072,7 +22072,7 @@
 
 @interface CMsgClientGetAppBetaPasswords_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetAppBetaPasswords* result;
+  CMsgClientGetAppBetaPasswords* _builderResult;
 }
 
 - (CMsgClientGetAppBetaPasswords*) defaultInstance;
@@ -22158,7 +22158,7 @@
 
 @interface CMsgClientGetAppBetaPasswordsResponse_BetaPassword_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetAppBetaPasswordsResponse_BetaPassword* result;
+  CMsgClientGetAppBetaPasswordsResponse_BetaPassword* _builderResult;
 }
 
 - (CMsgClientGetAppBetaPasswordsResponse_BetaPassword*) defaultInstance;
@@ -22186,7 +22186,7 @@
 
 @interface CMsgClientGetAppBetaPasswordsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetAppBetaPasswordsResponse* result;
+  CMsgClientGetAppBetaPasswordsResponse* _builderResult;
 }
 
 - (CMsgClientGetAppBetaPasswordsResponse*) defaultInstance;
@@ -22286,7 +22286,7 @@
 
 @interface CMsgClientUpdateAppJobReport_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUpdateAppJobReport* result;
+  CMsgClientUpdateAppJobReport* _builderResult;
 }
 
 - (CMsgClientUpdateAppJobReport*) defaultInstance;
@@ -22395,7 +22395,7 @@
 
 @interface CMsgClientGetCDNAuthTokenResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetCDNAuthTokenResponse* result;
+  CMsgClientGetCDNAuthTokenResponse* _builderResult;
 }
 
 - (CMsgClientGetCDNAuthTokenResponse*) defaultInstance;
@@ -22495,7 +22495,7 @@
 
 @interface CMsgDownloadRateStatistics_StatsInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDownloadRateStatistics_StatsInfo* result;
+  CMsgDownloadRateStatistics_StatsInfo* _builderResult;
 }
 
 - (CMsgDownloadRateStatistics_StatsInfo*) defaultInstance;
@@ -22533,7 +22533,7 @@
 
 @interface CMsgDownloadRateStatistics_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDownloadRateStatistics* result;
+  CMsgDownloadRateStatistics* _builderResult;
 }
 
 - (CMsgDownloadRateStatistics*) defaultInstance;
@@ -22593,7 +22593,7 @@
 
 @interface CMsgClientRequestAccountData_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestAccountData* result;
+  CMsgClientRequestAccountData* _builderResult;
 }
 
 - (CMsgClientRequestAccountData*) defaultInstance;
@@ -22671,7 +22671,7 @@
 
 @interface CMsgClientRequestAccountDataResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestAccountDataResponse* result;
+  CMsgClientRequestAccountDataResponse* _builderResult;
 }
 
 - (CMsgClientRequestAccountDataResponse*) defaultInstance;
@@ -22766,7 +22766,7 @@
 
 @interface CMsgClientUGSGetGlobalStats_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUGSGetGlobalStats* result;
+  CMsgClientUGSGetGlobalStats* _builderResult;
 }
 
 - (CMsgClientUGSGetGlobalStats*) defaultInstance;
@@ -22905,7 +22905,7 @@
 
 @interface CMsgClientUGSGetGlobalStatsResponse_Day_Stat_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUGSGetGlobalStatsResponse_Day_Stat* result;
+  CMsgClientUGSGetGlobalStatsResponse_Day_Stat* _builderResult;
 }
 
 - (CMsgClientUGSGetGlobalStatsResponse_Day_Stat*) defaultInstance;
@@ -22933,7 +22933,7 @@
 
 @interface CMsgClientUGSGetGlobalStatsResponse_Day_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUGSGetGlobalStatsResponse_Day* result;
+  CMsgClientUGSGetGlobalStatsResponse_Day* _builderResult;
 }
 
 - (CMsgClientUGSGetGlobalStatsResponse_Day*) defaultInstance;
@@ -22963,7 +22963,7 @@
 
 @interface CMsgClientUGSGetGlobalStatsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUGSGetGlobalStatsResponse* result;
+  CMsgClientUGSGetGlobalStatsResponse* _builderResult;
 }
 
 - (CMsgClientUGSGetGlobalStatsResponse*) defaultInstance;
@@ -23138,7 +23138,7 @@
 
 @interface CMsgGameServerData_Player_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameServerData_Player* result;
+  CMsgGameServerData_Player* _builderResult;
 }
 
 - (CMsgGameServerData_Player*) defaultInstance;
@@ -23161,7 +23161,7 @@
 
 @interface CMsgGameServerData_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameServerData* result;
+  CMsgGameServerData* _builderResult;
 }
 
 - (CMsgGameServerData*) defaultInstance;
@@ -23325,7 +23325,7 @@
 
 @interface CMsgGameServerRemove_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameServerRemove* result;
+  CMsgGameServerRemove* _builderResult;
 }
 
 - (CMsgGameServerRemove*) defaultInstance;
@@ -23400,7 +23400,7 @@
 
 @interface CMsgClientGMSServerQuery_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGMSServerQuery* result;
+  CMsgClientGMSServerQuery* _builderResult;
 }
 
 - (CMsgClientGMSServerQuery*) defaultInstance;
@@ -23502,7 +23502,7 @@
 
 @interface CMsgGMSClientServerQueryResponse_Server_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGMSClientServerQueryResponse_Server* result;
+  CMsgGMSClientServerQueryResponse_Server* _builderResult;
 }
 
 - (CMsgGMSClientServerQueryResponse_Server*) defaultInstance;
@@ -23535,7 +23535,7 @@
 
 @interface CMsgGMSClientServerQueryResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGMSClientServerQueryResponse* result;
+  CMsgGMSClientServerQueryResponse* _builderResult;
 }
 
 - (CMsgGMSClientServerQueryResponse*) defaultInstance;
@@ -23594,7 +23594,7 @@
 
 @interface CMsgGameServerOutOfDate_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameServerOutOfDate* result;
+  CMsgGameServerOutOfDate* _builderResult;
 }
 
 - (CMsgGameServerOutOfDate*) defaultInstance;
@@ -23653,7 +23653,7 @@
 
 @interface CMsgClientRedeemGuestPass_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRedeemGuestPass* result;
+  CMsgClientRedeemGuestPass* _builderResult;
 }
 
 - (CMsgClientRedeemGuestPass*) defaultInstance;
@@ -23710,7 +23710,7 @@
 
 @interface CMsgClientRedeemGuestPassResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRedeemGuestPassResponse* result;
+  CMsgClientRedeemGuestPassResponse* _builderResult;
 }
 
 - (CMsgClientRedeemGuestPassResponse*) defaultInstance;
@@ -23768,7 +23768,7 @@
 
 @interface CMsgClientGetClanActivityCounts_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetClanActivityCounts* result;
+  CMsgClientGetClanActivityCounts* _builderResult;
 }
 
 - (CMsgClientGetClanActivityCounts*) defaultInstance;
@@ -23819,7 +23819,7 @@
 
 @interface CMsgClientGetClanActivityCountsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGetClanActivityCountsResponse* result;
+  CMsgClientGetClanActivityCountsResponse* _builderResult;
 }
 
 - (CMsgClientGetClanActivityCountsResponse*) defaultInstance;
@@ -23884,7 +23884,7 @@
 
 @interface CMsgClientOGSReportString_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientOGSReportString* result;
+  CMsgClientOGSReportString* _builderResult;
 }
 
 - (CMsgClientOGSReportString*) defaultInstance;
@@ -23961,7 +23961,7 @@
 
 @interface CMsgClientOGSReportBug_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientOGSReportBug* result;
+  CMsgClientOGSReportBug* _builderResult;
 }
 
 - (CMsgClientOGSReportBug*) defaultInstance;
@@ -24020,7 +24020,7 @@
 
 @interface CMsgGSAssociateWithClan_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGSAssociateWithClan* result;
+  CMsgGSAssociateWithClan* _builderResult;
 }
 
 - (CMsgGSAssociateWithClan*) defaultInstance;
@@ -24073,7 +24073,7 @@
 
 @interface CMsgGSAssociateWithClanResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGSAssociateWithClanResponse* result;
+  CMsgGSAssociateWithClanResponse* _builderResult;
 }
 
 - (CMsgGSAssociateWithClanResponse*) defaultInstance;
@@ -24127,7 +24127,7 @@
 
 @interface CMsgGSComputeNewPlayerCompatibility_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGSComputeNewPlayerCompatibility* result;
+  CMsgGSComputeNewPlayerCompatibility* _builderResult;
 }
 
 - (CMsgGSComputeNewPlayerCompatibility*) defaultInstance;
@@ -24196,7 +24196,7 @@
 
 @interface CMsgGSComputeNewPlayerCompatibilityResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGSComputeNewPlayerCompatibilityResponse* result;
+  CMsgGSComputeNewPlayerCompatibilityResponse* _builderResult;
 }
 
 - (CMsgGSComputeNewPlayerCompatibilityResponse*) defaultInstance;
@@ -24266,7 +24266,7 @@
 
 @interface CMsgClientSentLogs_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientSentLogs* result;
+  CMsgClientSentLogs* _builderResult;
 }
 
 - (CMsgClientSentLogs*) defaultInstance;
@@ -24326,7 +24326,7 @@
 
 @interface CMsgGCClient_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCClient* result;
+  CMsgGCClient* _builderResult;
 }
 
 - (CMsgGCClient*) defaultInstance;
@@ -24395,7 +24395,7 @@
 
 @interface CMsgClientRequestFreeLicense_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestFreeLicense* result;
+  CMsgClientRequestFreeLicense* _builderResult;
 }
 
 - (CMsgClientRequestFreeLicense*) defaultInstance;
@@ -24448,7 +24448,7 @@
 
 @interface CMsgClientRequestFreeLicenseResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestFreeLicenseResponse* result;
+  CMsgClientRequestFreeLicenseResponse* _builderResult;
 }
 
 - (CMsgClientRequestFreeLicenseResponse*) defaultInstance;
@@ -24530,7 +24530,7 @@
 
 @interface CMsgDRMDownloadRequestWithCrashData_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDRMDownloadRequestWithCrashData* result;
+  CMsgDRMDownloadRequestWithCrashData* _builderResult;
 }
 
 - (CMsgDRMDownloadRequestWithCrashData*) defaultInstance;
@@ -24642,7 +24642,7 @@
 
 @interface CMsgDRMDownloadResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDRMDownloadResponse* result;
+  CMsgDRMDownloadResponse* _builderResult;
 }
 
 - (CMsgDRMDownloadResponse*) defaultInstance;
@@ -24754,7 +24754,7 @@
 
 @interface CMsgDRMFinalResult_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDRMFinalResult* result;
+  CMsgDRMFinalResult* _builderResult;
 }
 
 - (CMsgDRMFinalResult*) defaultInstance;
@@ -24838,7 +24838,7 @@
 
 @interface CMsgClientDPCheckSpecialSurvey_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientDPCheckSpecialSurvey* result;
+  CMsgClientDPCheckSpecialSurvey* _builderResult;
 }
 
 - (CMsgClientDPCheckSpecialSurvey*) defaultInstance;
@@ -24907,7 +24907,7 @@
 
 @interface CMsgClientDPCheckSpecialSurveyResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientDPCheckSpecialSurveyResponse* result;
+  CMsgClientDPCheckSpecialSurveyResponse* _builderResult;
 }
 
 - (CMsgClientDPCheckSpecialSurveyResponse*) defaultInstance;
@@ -24985,7 +24985,7 @@
 
 @interface CMsgClientDPSendSpecialSurveyResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientDPSendSpecialSurveyResponse* result;
+  CMsgClientDPSendSpecialSurveyResponse* _builderResult;
 }
 
 - (CMsgClientDPSendSpecialSurveyResponse*) defaultInstance;
@@ -25043,7 +25043,7 @@
 
 @interface CMsgClientDPSendSpecialSurveyResponseReply_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientDPSendSpecialSurveyResponseReply* result;
+  CMsgClientDPSendSpecialSurveyResponseReply* _builderResult;
 }
 
 - (CMsgClientDPSendSpecialSurveyResponseReply*) defaultInstance;
@@ -25101,7 +25101,7 @@
 
 @interface CMsgClientRequestForgottenPasswordEmail_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestForgottenPasswordEmail* result;
+  CMsgClientRequestForgottenPasswordEmail* _builderResult;
 }
 
 - (CMsgClientRequestForgottenPasswordEmail*) defaultInstance;
@@ -25159,7 +25159,7 @@
 
 @interface CMsgClientRequestForgottenPasswordEmailResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestForgottenPasswordEmailResponse* result;
+  CMsgClientRequestForgottenPasswordEmailResponse* _builderResult;
 }
 
 - (CMsgClientRequestForgottenPasswordEmailResponse*) defaultInstance;
@@ -25213,7 +25213,7 @@
 
 @interface CMsgClientItemAnnouncements_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientItemAnnouncements* result;
+  CMsgClientItemAnnouncements* _builderResult;
 }
 
 - (CMsgClientItemAnnouncements*) defaultInstance;
@@ -25258,7 +25258,7 @@
 
 @interface CMsgClientRequestItemAnnouncements_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestItemAnnouncements* result;
+  CMsgClientRequestItemAnnouncements* _builderResult;
 }
 
 - (CMsgClientRequestItemAnnouncements*) defaultInstance;
@@ -25310,7 +25310,7 @@
 
 @interface CMsgClientCommentNotifications_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientCommentNotifications* result;
+  CMsgClientCommentNotifications* _builderResult;
 }
 
 - (CMsgClientCommentNotifications*) defaultInstance;
@@ -25365,7 +25365,7 @@
 
 @interface CMsgClientRequestCommentNotifications_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientRequestCommentNotifications* result;
+  CMsgClientRequestCommentNotifications* _builderResult;
 }
 
 - (CMsgClientRequestCommentNotifications*) defaultInstance;
@@ -25429,7 +25429,7 @@
 
 @interface CMsgClientEmailAddrInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientEmailAddrInfo* result;
+  CMsgClientEmailAddrInfo* _builderResult;
 }
 
 - (CMsgClientEmailAddrInfo*) defaultInstance;
@@ -25525,7 +25525,7 @@
 
 @interface CMsgCREEnumeratePublishedFiles_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCREEnumeratePublishedFiles* result;
+  CMsgCREEnumeratePublishedFiles* _builderResult;
 }
 
 - (CMsgCREEnumeratePublishedFiles*) defaultInstance;
@@ -25657,7 +25657,7 @@
 
 @interface CMsgCREEnumeratePublishedFilesResponse_PublishedFileId_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCREEnumeratePublishedFilesResponse_PublishedFileId* result;
+  CMsgCREEnumeratePublishedFilesResponse_PublishedFileId* _builderResult;
 }
 
 - (CMsgCREEnumeratePublishedFilesResponse_PublishedFileId*) defaultInstance;
@@ -25700,7 +25700,7 @@
 
 @interface CMsgCREEnumeratePublishedFilesResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCREEnumeratePublishedFilesResponse* result;
+  CMsgCREEnumeratePublishedFilesResponse* _builderResult;
 }
 
 - (CMsgCREEnumeratePublishedFilesResponse*) defaultInstance;
@@ -25775,7 +25775,7 @@
 
 @interface CMsgCRERankByVote_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCRERankByVote* result;
+  CMsgCRERankByVote* _builderResult;
 }
 
 - (CMsgCRERankByVote*) defaultInstance;
@@ -25897,7 +25897,7 @@
 
 @interface CMsgCRERankByVoteResponse_PublishedFileId_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCRERankByVoteResponse_PublishedFileId* result;
+  CMsgCRERankByVoteResponse_PublishedFileId* _builderResult;
 }
 
 - (CMsgCRERankByVoteResponse_PublishedFileId*) defaultInstance;
@@ -25940,7 +25940,7 @@
 
 @interface CMsgCRERankByVoteResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCRERankByVoteResponse* result;
+  CMsgCRERankByVoteResponse* _builderResult;
 }
 
 - (CMsgCRERankByVoteResponse*) defaultInstance;
@@ -26019,7 +26019,7 @@
 
 @interface CMsgCRERankByTrend_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCRERankByTrend* result;
+  CMsgCRERankByTrend* _builderResult;
 }
 
 - (CMsgCRERankByTrend*) defaultInstance;
@@ -26146,7 +26146,7 @@
 
 @interface CMsgCRERankByTrendResponse_PublishedFileId_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCRERankByTrendResponse_PublishedFileId* result;
+  CMsgCRERankByTrendResponse_PublishedFileId* _builderResult;
 }
 
 - (CMsgCRERankByTrendResponse_PublishedFileId*) defaultInstance;
@@ -26189,7 +26189,7 @@
 
 @interface CMsgCRERankByTrendResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCRERankByTrendResponse* result;
+  CMsgCRERankByTrendResponse* _builderResult;
 }
 
 - (CMsgCRERankByTrendResponse*) defaultInstance;
@@ -26275,7 +26275,7 @@
 
 @interface CMsgCREItemVoteSummary_PublishedFileId_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCREItemVoteSummary_PublishedFileId* result;
+  CMsgCREItemVoteSummary_PublishedFileId* _builderResult;
 }
 
 - (CMsgCREItemVoteSummary_PublishedFileId*) defaultInstance;
@@ -26298,7 +26298,7 @@
 
 @interface CMsgCREItemVoteSummary_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCREItemVoteSummary* result;
+  CMsgCREItemVoteSummary* _builderResult;
 }
 
 - (CMsgCREItemVoteSummary*) defaultInstance;
@@ -26394,7 +26394,7 @@
 
 @interface CMsgCREItemVoteSummaryResponse_ItemVoteSummary_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCREItemVoteSummaryResponse_ItemVoteSummary* result;
+  CMsgCREItemVoteSummaryResponse_ItemVoteSummary* _builderResult;
 }
 
 - (CMsgCREItemVoteSummaryResponse_ItemVoteSummary*) defaultInstance;
@@ -26437,7 +26437,7 @@
 
 @interface CMsgCREItemVoteSummaryResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCREItemVoteSummaryResponse* result;
+  CMsgCREItemVoteSummaryResponse* _builderResult;
 }
 
 - (CMsgCREItemVoteSummaryResponse*) defaultInstance;
@@ -26497,7 +26497,7 @@
 
 @interface CMsgCREUpdateUserPublishedItemVote_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCREUpdateUserPublishedItemVote* result;
+  CMsgCREUpdateUserPublishedItemVote* _builderResult;
 }
 
 - (CMsgCREUpdateUserPublishedItemVote*) defaultInstance;
@@ -26551,7 +26551,7 @@
 
 @interface CMsgCREUpdateUserPublishedItemVoteResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCREUpdateUserPublishedItemVoteResponse* result;
+  CMsgCREUpdateUserPublishedItemVoteResponse* _builderResult;
 }
 
 - (CMsgCREUpdateUserPublishedItemVoteResponse*) defaultInstance;
@@ -26625,7 +26625,7 @@
 
 @interface CMsgCREGetUserPublishedItemVoteDetails_PublishedFileId_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCREGetUserPublishedItemVoteDetails_PublishedFileId* result;
+  CMsgCREGetUserPublishedItemVoteDetails_PublishedFileId* _builderResult;
 }
 
 - (CMsgCREGetUserPublishedItemVoteDetails_PublishedFileId*) defaultInstance;
@@ -26648,7 +26648,7 @@
 
 @interface CMsgCREGetUserPublishedItemVoteDetails_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCREGetUserPublishedItemVoteDetails* result;
+  CMsgCREGetUserPublishedItemVoteDetails* _builderResult;
 }
 
 - (CMsgCREGetUserPublishedItemVoteDetails*) defaultInstance;
@@ -26732,7 +26732,7 @@
 
 @interface CMsgCREGetUserPublishedItemVoteDetailsResponse_UserItemVoteDetail_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCREGetUserPublishedItemVoteDetailsResponse_UserItemVoteDetail* result;
+  CMsgCREGetUserPublishedItemVoteDetailsResponse_UserItemVoteDetail* _builderResult;
 }
 
 - (CMsgCREGetUserPublishedItemVoteDetailsResponse_UserItemVoteDetail*) defaultInstance;
@@ -26760,7 +26760,7 @@
 
 @interface CMsgCREGetUserPublishedItemVoteDetailsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCREGetUserPublishedItemVoteDetailsResponse* result;
+  CMsgCREGetUserPublishedItemVoteDetailsResponse* _builderResult;
 }
 
 - (CMsgCREGetUserPublishedItemVoteDetailsResponse*) defaultInstance;
@@ -26857,7 +26857,7 @@
 
 @interface CMsgGameServerPingSample_Sample_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameServerPingSample_Sample* result;
+  CMsgGameServerPingSample_Sample* _builderResult;
 }
 
 - (CMsgGameServerPingSample_Sample*) defaultInstance;
@@ -26890,7 +26890,7 @@
 
 @interface CMsgGameServerPingSample_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameServerPingSample* result;
+  CMsgGameServerPingSample* _builderResult;
 }
 
 - (CMsgGameServerPingSample*) defaultInstance;
@@ -26951,7 +26951,7 @@
 
 @interface CMsgFSGetFollowerCount_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgFSGetFollowerCount* result;
+  CMsgFSGetFollowerCount* _builderResult;
 }
 
 - (CMsgFSGetFollowerCount*) defaultInstance;
@@ -27004,7 +27004,7 @@
 
 @interface CMsgFSGetFollowerCountResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgFSGetFollowerCountResponse* result;
+  CMsgFSGetFollowerCountResponse* _builderResult;
 }
 
 - (CMsgFSGetFollowerCountResponse*) defaultInstance;
@@ -27058,7 +27058,7 @@
 
 @interface CMsgFSGetIsFollowing_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgFSGetIsFollowing* result;
+  CMsgFSGetIsFollowing* _builderResult;
 }
 
 - (CMsgFSGetIsFollowing*) defaultInstance;
@@ -27111,7 +27111,7 @@
 
 @interface CMsgFSGetIsFollowingResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgFSGetIsFollowingResponse* result;
+  CMsgFSGetIsFollowingResponse* _builderResult;
 }
 
 - (CMsgFSGetIsFollowingResponse*) defaultInstance;
@@ -27165,7 +27165,7 @@
 
 @interface CMsgFSEnumerateFollowingList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgFSEnumerateFollowingList* result;
+  CMsgFSEnumerateFollowingList* _builderResult;
 }
 
 - (CMsgFSEnumerateFollowingList*) defaultInstance;
@@ -27221,7 +27221,7 @@
 
 @interface CMsgFSEnumerateFollowingListResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgFSEnumerateFollowingListResponse* result;
+  CMsgFSEnumerateFollowingListResponse* _builderResult;
 }
 
 - (CMsgFSEnumerateFollowingListResponse*) defaultInstance;
@@ -27282,7 +27282,7 @@
 
 @interface CMsgDPGetNumberOfCurrentPlayers_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDPGetNumberOfCurrentPlayers* result;
+  CMsgDPGetNumberOfCurrentPlayers* _builderResult;
 }
 
 - (CMsgDPGetNumberOfCurrentPlayers*) defaultInstance;
@@ -27335,7 +27335,7 @@
 
 @interface CMsgDPGetNumberOfCurrentPlayersResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDPGetNumberOfCurrentPlayersResponse* result;
+  CMsgDPGetNumberOfCurrentPlayersResponse* _builderResult;
 }
 
 - (CMsgDPGetNumberOfCurrentPlayersResponse*) defaultInstance;
@@ -27397,7 +27397,7 @@
 
 @interface CMsgClientFriendUserStatusPublished_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientFriendUserStatusPublished* result;
+  CMsgClientFriendUserStatusPublished* _builderResult;
 }
 
 - (CMsgClientFriendUserStatusPublished*) defaultInstance;
@@ -27464,7 +27464,7 @@
 
 @interface CMsgClientServiceMethod_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientServiceMethod* result;
+  CMsgClientServiceMethod* _builderResult;
 }
 
 - (CMsgClientServiceMethod*) defaultInstance;
@@ -27527,7 +27527,7 @@
 
 @interface CMsgClientServiceMethodResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientServiceMethodResponse* result;
+  CMsgClientServiceMethodResponse* _builderResult;
 }
 
 - (CMsgClientServiceMethodResponse*) defaultInstance;
@@ -27581,7 +27581,7 @@
 
 @interface CMsgClientUIMode_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientUIMode* result;
+  CMsgClientUIMode* _builderResult;
 }
 
 - (CMsgClientUIMode*) defaultInstance;

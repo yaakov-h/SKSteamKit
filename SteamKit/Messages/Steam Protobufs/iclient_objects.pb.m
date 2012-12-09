@@ -606,211 +606,211 @@ static ClientAppInfo* defaultClientAppInfoInstance = nil;
   }
 }
 - (BOOL) hasAppid {
-  return result.hasAppid;
+  return _builderResult.hasAppid;
 }
 - (uint32_t) appid {
-  return result.appid;
+  return _builderResult.appid;
 }
 - (ClientAppInfo_Builder*) setAppid:(uint32_t) value {
-  result.hasAppid = YES;
-  result.appid = value;
+  _builderResult.hasAppid = YES;
+  _builderResult.appid = value;
   return self;
 }
 - (ClientAppInfo_Builder*) clearAppid {
-  result.hasAppid = NO;
-  result.appid = 0;
+  _builderResult.hasAppid = NO;
+  _builderResult.appid = 0;
   return self;
 }
 - (BOOL) hasFavorite {
-  return result.hasFavorite;
+  return _builderResult.hasFavorite;
 }
 - (BOOL) favorite {
-  return result.favorite;
+  return _builderResult.favorite;
 }
 - (ClientAppInfo_Builder*) setFavorite:(BOOL) value {
-  result.hasFavorite = YES;
-  result.favorite = value;
+  _builderResult.hasFavorite = YES;
+  _builderResult.favorite = value;
   return self;
 }
 - (ClientAppInfo_Builder*) clearFavorite {
-  result.hasFavorite = NO;
-  result.favorite = NO;
+  _builderResult.hasFavorite = NO;
+  _builderResult.favorite = NO;
   return self;
 }
 - (BOOL) hasInstalled {
-  return result.hasInstalled;
+  return _builderResult.hasInstalled;
 }
 - (BOOL) installed {
-  return result.installed;
+  return _builderResult.installed;
 }
 - (ClientAppInfo_Builder*) setInstalled:(BOOL) value {
-  result.hasInstalled = YES;
-  result.installed = value;
+  _builderResult.hasInstalled = YES;
+  _builderResult.installed = value;
   return self;
 }
 - (ClientAppInfo_Builder*) clearInstalled {
-  result.hasInstalled = NO;
-  result.installed = NO;
+  _builderResult.hasInstalled = NO;
+  _builderResult.installed = NO;
   return self;
 }
 - (BOOL) hasAutoUpdate {
-  return result.hasAutoUpdate;
+  return _builderResult.hasAutoUpdate;
 }
 - (BOOL) autoUpdate {
-  return result.autoUpdate;
+  return _builderResult.autoUpdate;
 }
 - (ClientAppInfo_Builder*) setAutoUpdate:(BOOL) value {
-  result.hasAutoUpdate = YES;
-  result.autoUpdate = value;
+  _builderResult.hasAutoUpdate = YES;
+  _builderResult.autoUpdate = value;
   return self;
 }
 - (ClientAppInfo_Builder*) clearAutoUpdate {
-  result.hasAutoUpdate = NO;
-  result.autoUpdate = NO;
+  _builderResult.hasAutoUpdate = NO;
+  _builderResult.autoUpdate = NO;
   return self;
 }
 - (BOOL) hasCategory {
-  return result.hasCategory;
+  return _builderResult.hasCategory;
 }
 - (NSString*) category {
-  return result.category;
+  return _builderResult.category;
 }
 - (ClientAppInfo_Builder*) setCategory:(NSString*) value {
-  result.hasCategory = YES;
-  result.category = value;
+  _builderResult.hasCategory = YES;
+  _builderResult.category = value;
   return self;
 }
 - (ClientAppInfo_Builder*) clearCategory {
-  result.hasCategory = NO;
-  result.category = @"";
+  _builderResult.hasCategory = NO;
+  _builderResult.category = @"";
   return self;
 }
 - (BOOL) hasAppType {
-  return result.hasAppType;
+  return _builderResult.hasAppType;
 }
 - (NSString*) appType {
-  return result.appType;
+  return _builderResult.appType;
 }
 - (ClientAppInfo_Builder*) setAppType:(NSString*) value {
-  result.hasAppType = YES;
-  result.appType = value;
+  _builderResult.hasAppType = YES;
+  _builderResult.appType = value;
   return self;
 }
 - (ClientAppInfo_Builder*) clearAppType {
-  result.hasAppType = NO;
-  result.appType = @"";
+  _builderResult.hasAppType = NO;
+  _builderResult.appType = @"";
   return self;
 }
 - (BOOL) hasDownloading {
-  return result.hasDownloading;
+  return _builderResult.hasDownloading;
 }
 - (BOOL) downloading {
-  return result.downloading;
+  return _builderResult.downloading;
 }
 - (ClientAppInfo_Builder*) setDownloading:(BOOL) value {
-  result.hasDownloading = YES;
-  result.downloading = value;
+  _builderResult.hasDownloading = YES;
+  _builderResult.downloading = value;
   return self;
 }
 - (ClientAppInfo_Builder*) clearDownloading {
-  result.hasDownloading = NO;
-  result.downloading = NO;
+  _builderResult.hasDownloading = NO;
+  _builderResult.downloading = NO;
   return self;
 }
 - (BOOL) hasDownloadPaused {
-  return result.hasDownloadPaused;
+  return _builderResult.hasDownloadPaused;
 }
 - (BOOL) downloadPaused {
-  return result.downloadPaused;
+  return _builderResult.downloadPaused;
 }
 - (ClientAppInfo_Builder*) setDownloadPaused:(BOOL) value {
-  result.hasDownloadPaused = YES;
-  result.downloadPaused = value;
+  _builderResult.hasDownloadPaused = YES;
+  _builderResult.downloadPaused = value;
   return self;
 }
 - (ClientAppInfo_Builder*) clearDownloadPaused {
-  result.hasDownloadPaused = NO;
-  result.downloadPaused = NO;
+  _builderResult.hasDownloadPaused = NO;
+  _builderResult.downloadPaused = NO;
   return self;
 }
 - (BOOL) hasBytesDownloadRate {
-  return result.hasBytesDownloadRate;
+  return _builderResult.hasBytesDownloadRate;
 }
 - (uint32_t) bytesDownloadRate {
-  return result.bytesDownloadRate;
+  return _builderResult.bytesDownloadRate;
 }
 - (ClientAppInfo_Builder*) setBytesDownloadRate:(uint32_t) value {
-  result.hasBytesDownloadRate = YES;
-  result.bytesDownloadRate = value;
+  _builderResult.hasBytesDownloadRate = YES;
+  _builderResult.bytesDownloadRate = value;
   return self;
 }
 - (ClientAppInfo_Builder*) clearBytesDownloadRate {
-  result.hasBytesDownloadRate = NO;
-  result.bytesDownloadRate = 0;
+  _builderResult.hasBytesDownloadRate = NO;
+  _builderResult.bytesDownloadRate = 0;
   return self;
 }
 - (BOOL) hasBytesDownloaded {
-  return result.hasBytesDownloaded;
+  return _builderResult.hasBytesDownloaded;
 }
 - (uint64_t) bytesDownloaded {
-  return result.bytesDownloaded;
+  return _builderResult.bytesDownloaded;
 }
 - (ClientAppInfo_Builder*) setBytesDownloaded:(uint64_t) value {
-  result.hasBytesDownloaded = YES;
-  result.bytesDownloaded = value;
+  _builderResult.hasBytesDownloaded = YES;
+  _builderResult.bytesDownloaded = value;
   return self;
 }
 - (ClientAppInfo_Builder*) clearBytesDownloaded {
-  result.hasBytesDownloaded = NO;
-  result.bytesDownloaded = 0L;
+  _builderResult.hasBytesDownloaded = NO;
+  _builderResult.bytesDownloaded = 0L;
   return self;
 }
 - (BOOL) hasBytesNeeded {
-  return result.hasBytesNeeded;
+  return _builderResult.hasBytesNeeded;
 }
 - (uint64_t) bytesNeeded {
-  return result.bytesNeeded;
+  return _builderResult.bytesNeeded;
 }
 - (ClientAppInfo_Builder*) setBytesNeeded:(uint64_t) value {
-  result.hasBytesNeeded = YES;
-  result.bytesNeeded = value;
+  _builderResult.hasBytesNeeded = YES;
+  _builderResult.bytesNeeded = value;
   return self;
 }
 - (ClientAppInfo_Builder*) clearBytesNeeded {
-  result.hasBytesNeeded = NO;
-  result.bytesNeeded = 0L;
+  _builderResult.hasBytesNeeded = NO;
+  _builderResult.bytesNeeded = 0L;
   return self;
 }
 - (BOOL) hasChanging {
-  return result.hasChanging;
+  return _builderResult.hasChanging;
 }
 - (BOOL) changing {
-  return result.changing;
+  return _builderResult.changing;
 }
 - (ClientAppInfo_Builder*) setChanging:(BOOL) value {
-  result.hasChanging = YES;
-  result.changing = value;
+  _builderResult.hasChanging = YES;
+  _builderResult.changing = value;
   return self;
 }
 - (ClientAppInfo_Builder*) clearChanging {
-  result.hasChanging = NO;
-  result.changing = NO;
+  _builderResult.hasChanging = NO;
+  _builderResult.changing = NO;
   return self;
 }
 - (BOOL) hasAvailableOnPlatform {
-  return result.hasAvailableOnPlatform;
+  return _builderResult.hasAvailableOnPlatform;
 }
 - (BOOL) availableOnPlatform {
-  return result.availableOnPlatform;
+  return _builderResult.availableOnPlatform;
 }
 - (ClientAppInfo_Builder*) setAvailableOnPlatform:(BOOL) value {
-  result.hasAvailableOnPlatform = YES;
-  result.availableOnPlatform = value;
+  _builderResult.hasAvailableOnPlatform = YES;
+  _builderResult.availableOnPlatform = value;
   return self;
 }
 - (ClientAppInfo_Builder*) clearAvailableOnPlatform {
-  result.hasAvailableOnPlatform = NO;
-  result.availableOnPlatform = NO;
+  _builderResult.hasAvailableOnPlatform = NO;
+  _builderResult.availableOnPlatform = NO;
   return self;
 }
 @end
