@@ -14,6 +14,7 @@
 		D75CEA661659AE290047BE0F /* SKSteamClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA651659AE290047BE0F /* SKSteamClient.m */; };
 		D75CEA691659B15E0047BE0F /* SKClientMsgHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA681659B15E0047BE0F /* SKClientMsgHandler.m */; };
 		D75CEA6D1659B33A0047BE0F /* SKSteamUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D75CEA6C1659B33A0047BE0F /* SKSteamUser.m */; };
+		D77C3932167441B700BDB995 /* tf_gcmessages.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = D77C3931167441B700BDB995 /* tf_gcmessages.pb.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D78D601C166F77AE0039C8D1 /* SKPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = D78D601B166F77AE0039C8D1 /* SKPackage.m */; };
 		D78D6020166F7CE10039C8D1 /* SKApp.m in Sources */ = {isa = PBXBuildFile; fileRef = D78D601F166F7CE00039C8D1 /* SKApp.m */; };
 		D7959072166A474200334646 /* _SKKeyValueParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D7959071166A474200334646 /* _SKKeyValueParser.m */; };
@@ -124,6 +125,8 @@
 		D75CEA681659B15E0047BE0F /* SKClientMsgHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKClientMsgHandler.m; sourceTree = "<group>"; };
 		D75CEA6B1659B33A0047BE0F /* SKSteamUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamUser.h; sourceTree = "<group>"; };
 		D75CEA6C1659B33A0047BE0F /* SKSteamUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamUser.m; sourceTree = "<group>"; };
+		D77C3930167441B700BDB995 /* tf_gcmessages.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tf_gcmessages.pb.h; sourceTree = "<group>"; };
+		D77C3931167441B700BDB995 /* tf_gcmessages.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tf_gcmessages.pb.m; sourceTree = "<group>"; };
 		D78D601A166F77AE0039C8D1 /* SKPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPackage.h; sourceTree = "<group>"; };
 		D78D601B166F77AE0039C8D1 /* SKPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPackage.m; sourceTree = "<group>"; };
 		D78D601E166F7CE00039C8D1 /* SKApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKApp.h; sourceTree = "<group>"; };
@@ -376,6 +379,8 @@
 		D7A1C1DA16742C0400923C32 /* GC Protobufs */ = {
 			isa = PBXGroup;
 			children = (
+				D77C3930167441B700BDB995 /* tf_gcmessages.pb.h */,
+				D77C3931167441B700BDB995 /* tf_gcmessages.pb.m */,
 				D7A1C1DB16742C1A00923C32 /* base_gcmessages.pb.h */,
 				D7A1C1DC16742C1A00923C32 /* base_gcmessages.pb.m */,
 				D7A1C1DD16742C1A00923C32 /* dota_gcmessages.pb.h */,
@@ -800,6 +805,7 @@
 				D7A1C1ED16742C1A00923C32 /* gcsystemmsgs.pb.m in Sources */,
 				D7A1C1EE16742C1A00923C32 /* matchmaker_common.pb.m in Sources */,
 				D7A1C1EF16742C1A00923C32 /* steammessages.pb.m in Sources */,
+				D77C3932167441B700BDB995 /* tf_gcmessages.pb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

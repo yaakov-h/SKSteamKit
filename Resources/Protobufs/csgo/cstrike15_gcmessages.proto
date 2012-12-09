@@ -1,0 +1,272 @@
+import "steammessages.proto";
+
+message CMsgCStrike15StartMatchmaking {
+	optional uint32 account_id = 1;
+	optional int32 game_type = 2;
+	optional int32 input_device = 3;
+}
+
+message CMsgCStrike15StartMatchmakingResponse {
+	optional bool success = 1;
+}
+
+message CMsgCStrike15ReportRoundEnd {
+	message Player {
+		optional bool is_bot = 1;
+		optional uint32 elo_flags = 2;
+		optional uint32 elo_team = 3;
+		optional int32 input_device = 4;
+		optional uint32 account_id = 5;
+		optional int32 elo_value = 6;
+	}
+
+	message PlayerStats {
+		optional int32 reason = 1;
+		optional int32 count = 2;
+	}
+
+	optional int32 elo_game_mode = 1;
+	optional int32 elo_calc_type = 2;
+	optional float elo_calc_exp_base = 3;
+	optional float elo_calc_exp_denom = 4;
+	optional float elo_calc_k_scalar = 5;
+	optional int32 winning_team = 6;
+	repeated .CMsgCStrike15ReportRoundEnd.Player elo_players = 7;
+	optional bool request_log = 8;
+	optional string elo_map_name = 9;
+	optional int32 elo_lock_in_result = 10;
+	optional int32 elo_final_result = 11;
+	repeated .CMsgCStrike15ReportRoundEnd.PlayerStats player_stats = 12;
+}
+
+message CMsgCStrike15ReportRoundEndLog {
+	optional string log = 1;
+}
+
+message CMsgGCCStrike15ClientRequestEloBracket {
+	optional int32 game_mode = 1;
+	optional int32 input_device = 2;
+}
+
+message CMsgGCCStrike15ClientRequestEloBracketResponse {
+	optional int32 bracket = 1;
+}
+
+message CMsgGCCStrike15RequestEloBrackets {
+	message Player {
+		optional uint32 account_id = 1;
+		optional int32 input_device = 2;
+	}
+
+	optional int32 game_mode = 1;
+	repeated .CMsgGCCStrike15RequestEloBrackets.Player players = 2;
+}
+
+message CMsgGCCStrike15RequestEloBracketsResponse {
+	message PlayerBracket {
+		optional int32 bracket = 1;
+		optional uint32 account_id = 2;
+	}
+
+	repeated .CMsgGCCStrike15RequestEloBracketsResponse.PlayerBracket player_brackets = 1;
+}
+
+message CMsgCStrike15StartMatchmakingDeprecated {
+	optional uint32 account_id = 1;
+	optional uint32 game_type = 2;
+	optional uint32 input_device = 3;
+}
+
+message CMsgCStrike15StartMatchmakingResponseDeprecated {
+	optional bool success = 1;
+}
+
+message CMsgCStrike15ReportRoundEndDeprecated {
+	message Player {
+		optional uint32 account_id = 1;
+		optional uint32 bot_difficulty = 2;
+		optional uint32 input_device = 3;
+		optional uint32 contribution_score = 4;
+	}
+
+	optional uint32 game_type = 1;
+	repeated .CMsgCStrike15ReportRoundEndDeprecated.Player winners = 2;
+	repeated .CMsgCStrike15ReportRoundEndDeprecated.Player losers = 3;
+}
+
+message GameServerPing {
+	optional uint64 gameserver_id = 1;
+	optional int32 ping = 2;
+	optional uint32 ip = 3;
+	optional uint32 port = 4;
+	optional uint32 instances = 5;
+}
+
+message DetailedSearchStatistic {
+	optional uint32 game_type = 1;
+	optional uint32 search_time_avg = 2;
+	optional uint32 players_searching = 3;
+}
+
+message GlobalStatistics {
+	optional uint32 players_online = 1;
+	optional uint32 servers_online = 2;
+	optional uint32 players_searching = 3;
+	optional uint32 servers_available = 4;
+	optional uint32 ongoing_matches = 5;
+	optional uint32 search_time_avg = 6;
+	repeated .DetailedSearchStatistic search_statistics = 7;
+	optional string main_post_url = 8;
+}
+
+message OperationalStatisticDescription {
+	optional string name = 1;
+	optional uint32 idkey = 2;
+}
+
+message OperationalStatisticElement {
+	optional uint32 idkey = 1;
+	repeated int32 values = 2;
+}
+
+message OperationalStatisticsPacket {
+	optional int32 packetid = 1;
+	optional int32 mstimestamp = 2;
+	repeated .OperationalStatisticElement values = 3;
+}
+
+message PlayerRankingInfo {
+	optional uint32 account_id = 1;
+	optional uint32 rank_id = 2;
+	optional uint32 wins = 3;
+	optional float rank_change = 4;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingGCOperationalStats {
+	optional int32 packetid = 1;
+	repeated .OperationalStatisticDescription namekeys = 2;
+	repeated .OperationalStatisticsPacket packets = 3;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm {
+	optional uint32 token = 1;
+	optional uint32 stamp = 2;
+	optional uint64 exchange = 3;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingStart {
+	repeated uint32 account_ids = 1;
+	optional uint32 game_type = 2;
+	optional string ticket_data = 3;
+	optional uint32 client_version = 4;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingStop {
+	optional int32 abandon = 1;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingClient2ServerPing {
+	repeated .GameServerPing gameserverpings = 1;
+	optional int32 offset_index = 2;
+	optional int32 final_batch = 3;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate {
+	optional int32 matchmaking = 1;
+	repeated uint32 waiting_account_id_sessions = 2;
+	optional string error = 3;
+	repeated uint32 ongoingmatch_account_id_sessions = 6;
+	optional .GlobalStatistics global_stats = 7;
+	repeated uint32 failping_account_id_sessions = 8;
+	repeated uint32 penalty_account_id_sessions = 9;
+	repeated uint32 failready_account_id_sessions = 10;
+	repeated uint32 vacbanned_account_id_sessions = 11;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve {
+	repeated uint32 account_ids = 1;
+	optional uint32 game_type = 2;
+	optional uint64 match_id = 3;
+	optional uint32 server_version = 4;
+	repeated .PlayerRankingInfo rankings = 5;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingServerReservationResponse {
+	optional uint64 reservationid = 1;
+	optional .CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve reservation = 2;
+	optional string map = 3;
+	optional uint64 gc_reservation_sent = 4;
+	optional uint32 server_version = 5;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve {
+	optional uint64 serverid = 1;
+	optional uint32 serverip = 2;
+	optional uint32 serverport = 3;
+	optional uint64 reservationid = 4;
+	optional .CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve reservation = 5;
+	optional string map = 6;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingServerRoundStats {
+	optional uint64 reservationid = 1;
+	optional .CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve reservation = 2;
+	optional string map = 3;
+	optional int32 round = 4;
+	repeated int32 kills = 5;
+	repeated int32 assists = 6;
+	repeated int32 deaths = 7;
+	repeated int32 scores = 8;
+	repeated int32 pings = 9;
+	optional int32 round_result = 10;
+	optional int32 match_result = 11;
+	repeated int32 team_scores = 12;
+	optional .CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm confirm = 13;
+	optional int32 reservation_stage = 14;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingServerMatchEnd {
+	optional .CMsgGCCStrike15_v2_MatchmakingServerRoundStats stats = 1;
+	optional .CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm confirm = 3;
+	optional uint64 rematch = 4;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingClient2GCHello {
+}
+
+message CMsgGCCStrike15_v2_MatchmakingGC2ClientHello {
+	optional uint32 account_id = 1;
+	optional .CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve ongoingmatch = 2;
+	optional .GlobalStatistics global_stats = 3;
+	optional uint32 penalty_seconds = 4;
+	optional uint32 penalty_reason = 5;
+	optional int32 vac_banned = 6;
+	optional .PlayerRankingInfo ranking = 7;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon {
+	optional uint32 account_id = 1;
+	optional .CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve abandoned_match = 2;
+	optional uint32 penalty_seconds = 3;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingServer2GCKick {
+	optional uint32 account_id = 1;
+	optional .CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve reservation = 2;
+	optional uint32 reason = 3;
+}
+
+message CDataGCCStrike15_v2_MatchmakingLockedInMatch {
+	optional .CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve client_reservation = 1;
+	optional .CMsgGCCStrike15_v2_MatchmakingServerRoundStats server_stats = 2;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingGC2ServerRankUpdate {
+	repeated .PlayerRankingInfo rankings = 1;
+	optional uint64 match_id = 2;
+}
+
+message CMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate {
+	optional string main_post_url = 1;
+}
+
