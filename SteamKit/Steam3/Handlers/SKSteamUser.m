@@ -17,10 +17,13 @@
 NSString * const SKLogonDetailUsername = @"SKLogonDetailUsername";
 NSString * const SKLogonDetailPassword = @"SKLogonDetailPassword";
 NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
+NSString * const SKLogonDetailRememberMe = @"SKLogonDetailRememberMe";
+NSString * const SKLogonDetailLoginKey = @"SKLogonDetailLoginKey";
 
 @implementation SKSteamUser
 {
     CRDeferred * _loginDeferred;
+	NSString * _userName;
 }
 
 - (id) init
@@ -55,6 +58,10 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
 		case EMsgClientWalletInfoUpdate:
 			[self handleClientWalletInfo:packetMessage];
 			break;
+			
+		case EMsgClientNewLoginKey:
+			[self handleClientNewLoginKey:packetMessage];
+			break;
             
         default: break;
     }
@@ -70,6 +77,8 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
     NSString * username = logonDetails[SKLogonDetailUsername];
     NSString * password = logonDetails[SKLogonDetailPassword];
     NSString * steamGuardCode = logonDetails[SKLogonDetailSteamGuardCode];
+	NSString * loginKey = logonDetails[SKLogonDetailLoginKey];
+	NSNumber * rememberMe = logonDetails[SKLogonDetailRememberMe];
     
     _SKClientMsgProtobuf * loginMessage = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientLogon class] messageType:EMsgClientLogon];
     
@@ -79,7 +88,12 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
     CMsgClientLogon_Builder * builder = [[CMsgClientLogon_Builder alloc] init];
     
     [builder setAccountName:username];
-    [builder setPassword:password];
+	
+	if (password != nil)
+	{
+		[builder setPassword:password];
+	}
+	
     [builder setProtocolVersion:[_SKMsgClientLogon CurrentProtocol]];
     [builder setClientOsType:EOSTypeMacOSUnknown];
     [builder setClientPackageVersion:1771];
@@ -105,10 +119,22 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
 	NSData * uniqueIdData = [uniqueIdString dataUsingEncoding:NSUTF8StringEncoding];
 	NSData * uniqueIdHash = [uniqueIdData cr_sha1HashValue];
 	[builder setMachineId:uniqueIdHash];
+	
+	if (rememberMe != nil)
+	{
+		[builder setShouldRememberPassword:[rememberMe boolValue]];
+	}
+	
+	if (loginKey != nil)
+	{
+		[builder setLoginKey:loginKey];
+	}
     
     loginMessage.body = [builder build];
     
     _loginDeferred = [[CRDeferred alloc] init];
+	
+	_userName = username;
     
     [self.steamClient sendMessage:loginMessage];
     
@@ -162,6 +188,53 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
 }
 
 #pragma mark -
+#pragma 'Remember Me' login
+// Storage for this should probably be moved to the Keychain
+
+static NSString * const _SKLastLoginUserNameKey = @"SKSteamLastLoginUserName";
+static NSString * const _SKSteamLoginKeyKey = @"SKSteamLoginKey";
+
+- (NSString *) lastLoginUserName
+{
+	return [[NSUserDefaults standardUserDefaults] stringForKey:_SKLastLoginUserNameKey];
+}
+
+- (void) setLastLoginUserName:(NSString*)lastLoginUserName
+{
+	NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+	[defaults setObject:lastLoginUserName forKey:_SKLastLoginUserNameKey];
+	[defaults removeObjectForKey:_SKSteamLoginKeyKey];
+	[defaults synchronize];
+}
+
+- (NSString *) lastLoginKey
+{
+	return [[NSUserDefaults standardUserDefaults] stringForKey:_SKSteamLoginKeyKey];
+}
+
+- (void) setLoginKey:(NSString *)loginKey
+{
+	NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+	[defaults setObject:loginKey forKey:_SKSteamLoginKeyKey];
+	[defaults synchronize];
+}
+
+- (BOOL) hasRememberedPassword
+{
+	return [self lastLoginUserName] != nil && [self lastLoginKey].length > 0;
+}
+
+- (CRPromise *) logOnWithStoredDetails
+{
+	NSDictionary * details = @{
+		SKLogonDetailUsername : [self lastLoginUserName],
+		SKLogonDetailLoginKey: [self lastLoginKey]
+	};
+	
+	return [self logOnWithDetails:details];
+}
+
+#pragma mark -
 #pragma mark Handlers
 
 - (void) handleClientLogOnResponse:(_SKPacketMsg *)packetMessage
@@ -177,6 +250,7 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
     EResult result = [logonResponse.body eresult];
     if (result == EResultOK)
     {
+		[self setLastLoginUserName:_userName];
         [_loginDeferred resolveWithResult:logonResponse.body];
     }
     else
@@ -238,6 +312,23 @@ NSString * const SKLogonDetailSteamGuardCode = @"SKLogonDetailSteamGuardCode";
 	
 	SKSteamLoggedOffInfo * info = [[SKSteamLoggedOffInfo alloc] initWithMessage:loggedOff];
 	[self.steamClient postNotification:SKSteamLoggedOffNotification withInfo:info];
+}
+
+- (void) handleClientNewLoginKey:(_SKPacketMsg *)packetMessage
+{
+	_SKClientMsgProtobuf * newLoginKeyMessage = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientNewLoginKey class] packetMessage:packetMessage];
+	CMsgClientNewLoginKey * newLoginKey = newLoginKeyMessage.body;
+	
+	NSString * loginKey = newLoginKey.loginKey;
+	[self setLoginKey:loginKey];
+	
+	_SKClientMsgProtobuf * response = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientNewLoginKeyAccepted class] messageType:EMsgClientNewLoginKeyAccepted];
+	
+	CMsgClientNewLoginKeyAccepted_Builder * builder = [[CMsgClientNewLoginKeyAccepted_Builder alloc] init];
+	[builder setUniqueId:newLoginKey.uniqueId];
+	
+	response.body = [builder build];
+	[self.steamClient sendMessage:response];
 }
 
 @end

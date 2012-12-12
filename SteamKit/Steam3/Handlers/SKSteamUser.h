@@ -12,6 +12,7 @@
 extern NSString * const SKLogonDetailUsername;
 extern NSString * const SKLogonDetailPassword;
 extern NSString * const SKLogonDetailSteamGuardCode;
+extern NSString * const SKLogonDetailRememberMe;
 
 @interface SKSteamUser : SKClientMsgHandler
 
@@ -22,5 +23,7 @@ extern NSString * const SKLogonDetailSteamGuardCode;
 - (id) init;
 
 - (CRPromise *) logOnWithDetails:(NSDictionary *)logonDetails;
+- (BOOL) hasRememberedPassword;
+- (CRPromise *) logOnWithStoredDetails;
 
 @end
