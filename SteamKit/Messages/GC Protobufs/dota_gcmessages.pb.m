@@ -1270,419 +1270,419 @@ static CSODOTAGameAccountClient* defaultCSODOTAGameAccountClientInstance = nil;
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CSODOTAGameAccountClient_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasWins {
-  return result.hasWins;
+  return _builderResult.hasWins;
 }
 - (uint32_t) wins {
-  return result.wins;
+  return _builderResult.wins;
 }
 - (CSODOTAGameAccountClient_Builder*) setWins:(uint32_t) value {
-  result.hasWins = YES;
-  result.wins = value;
+  _builderResult.hasWins = YES;
+  _builderResult.wins = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearWins {
-  result.hasWins = NO;
-  result.wins = 0;
+  _builderResult.hasWins = NO;
+  _builderResult.wins = 0;
   return self;
 }
 - (BOOL) hasLosses {
-  return result.hasLosses;
+  return _builderResult.hasLosses;
 }
 - (uint32_t) losses {
-  return result.losses;
+  return _builderResult.losses;
 }
 - (CSODOTAGameAccountClient_Builder*) setLosses:(uint32_t) value {
-  result.hasLosses = YES;
-  result.losses = value;
+  _builderResult.hasLosses = YES;
+  _builderResult.losses = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearLosses {
-  result.hasLosses = NO;
-  result.losses = 0;
+  _builderResult.hasLosses = NO;
+  _builderResult.losses = 0;
   return self;
 }
 - (BOOL) hasAvatar {
-  return result.hasAvatar;
+  return _builderResult.hasAvatar;
 }
 - (uint32_t) avatar {
-  return result.avatar;
+  return _builderResult.avatar;
 }
 - (CSODOTAGameAccountClient_Builder*) setAvatar:(uint32_t) value {
-  result.hasAvatar = YES;
-  result.avatar = value;
+  _builderResult.hasAvatar = YES;
+  _builderResult.avatar = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearAvatar {
-  result.hasAvatar = NO;
-  result.avatar = 0;
+  _builderResult.hasAvatar = NO;
+  _builderResult.avatar = 0;
   return self;
 }
 - (BOOL) hasXp {
-  return result.hasXp;
+  return _builderResult.hasXp;
 }
 - (uint32_t) xp {
-  return result.xp;
+  return _builderResult.xp;
 }
 - (CSODOTAGameAccountClient_Builder*) setXp:(uint32_t) value {
-  result.hasXp = YES;
-  result.xp = value;
+  _builderResult.hasXp = YES;
+  _builderResult.xp = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearXp {
-  result.hasXp = NO;
-  result.xp = 0;
+  _builderResult.hasXp = NO;
+  _builderResult.xp = 0;
   return self;
 }
 - (BOOL) hasLevel {
-  return result.hasLevel;
+  return _builderResult.hasLevel;
 }
 - (uint32_t) level {
-  return result.level;
+  return _builderResult.level;
 }
 - (CSODOTAGameAccountClient_Builder*) setLevel:(uint32_t) value {
-  result.hasLevel = YES;
-  result.level = value;
+  _builderResult.hasLevel = YES;
+  _builderResult.level = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearLevel {
-  result.hasLevel = NO;
-  result.level = 0;
+  _builderResult.hasLevel = NO;
+  _builderResult.level = 0;
   return self;
 }
 - (BOOL) hasInitialSkill {
-  return result.hasInitialSkill;
+  return _builderResult.hasInitialSkill;
 }
 - (uint32_t) initialSkill {
-  return result.initialSkill;
+  return _builderResult.initialSkill;
 }
 - (CSODOTAGameAccountClient_Builder*) setInitialSkill:(uint32_t) value {
-  result.hasInitialSkill = YES;
-  result.initialSkill = value;
+  _builderResult.hasInitialSkill = YES;
+  _builderResult.initialSkill = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearInitialSkill {
-  result.hasInitialSkill = NO;
-  result.initialSkill = 0;
+  _builderResult.hasInitialSkill = NO;
+  _builderResult.initialSkill = 0;
   return self;
 }
 - (BOOL) hasLeaverCount {
-  return result.hasLeaverCount;
+  return _builderResult.hasLeaverCount;
 }
 - (uint32_t) leaverCount {
-  return result.leaverCount;
+  return _builderResult.leaverCount;
 }
 - (CSODOTAGameAccountClient_Builder*) setLeaverCount:(uint32_t) value {
-  result.hasLeaverCount = YES;
-  result.leaverCount = value;
+  _builderResult.hasLeaverCount = YES;
+  _builderResult.leaverCount = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearLeaverCount {
-  result.hasLeaverCount = NO;
-  result.leaverCount = 0;
+  _builderResult.hasLeaverCount = NO;
+  _builderResult.leaverCount = 0;
   return self;
 }
 - (BOOL) hasPreventMatchUntilDate {
-  return result.hasPreventMatchUntilDate;
+  return _builderResult.hasPreventMatchUntilDate;
 }
 - (uint32_t) preventMatchUntilDate {
-  return result.preventMatchUntilDate;
+  return _builderResult.preventMatchUntilDate;
 }
 - (CSODOTAGameAccountClient_Builder*) setPreventMatchUntilDate:(uint32_t) value {
-  result.hasPreventMatchUntilDate = YES;
-  result.preventMatchUntilDate = value;
+  _builderResult.hasPreventMatchUntilDate = YES;
+  _builderResult.preventMatchUntilDate = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearPreventMatchUntilDate {
-  result.hasPreventMatchUntilDate = NO;
-  result.preventMatchUntilDate = 0;
+  _builderResult.hasPreventMatchUntilDate = NO;
+  _builderResult.preventMatchUntilDate = 0;
   return self;
 }
 - (BOOL) hasPreventTextChatUntilDate {
-  return result.hasPreventTextChatUntilDate;
+  return _builderResult.hasPreventTextChatUntilDate;
 }
 - (uint32_t) preventTextChatUntilDate {
-  return result.preventTextChatUntilDate;
+  return _builderResult.preventTextChatUntilDate;
 }
 - (CSODOTAGameAccountClient_Builder*) setPreventTextChatUntilDate:(uint32_t) value {
-  result.hasPreventTextChatUntilDate = YES;
-  result.preventTextChatUntilDate = value;
+  _builderResult.hasPreventTextChatUntilDate = YES;
+  _builderResult.preventTextChatUntilDate = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearPreventTextChatUntilDate {
-  result.hasPreventTextChatUntilDate = NO;
-  result.preventTextChatUntilDate = 0;
+  _builderResult.hasPreventTextChatUntilDate = NO;
+  _builderResult.preventTextChatUntilDate = 0;
   return self;
 }
 - (BOOL) hasPreventVoiceUntilDate {
-  return result.hasPreventVoiceUntilDate;
+  return _builderResult.hasPreventVoiceUntilDate;
 }
 - (uint32_t) preventVoiceUntilDate {
-  return result.preventVoiceUntilDate;
+  return _builderResult.preventVoiceUntilDate;
 }
 - (CSODOTAGameAccountClient_Builder*) setPreventVoiceUntilDate:(uint32_t) value {
-  result.hasPreventVoiceUntilDate = YES;
-  result.preventVoiceUntilDate = value;
+  _builderResult.hasPreventVoiceUntilDate = YES;
+  _builderResult.preventVoiceUntilDate = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearPreventVoiceUntilDate {
-  result.hasPreventVoiceUntilDate = NO;
-  result.preventVoiceUntilDate = 0;
+  _builderResult.hasPreventVoiceUntilDate = NO;
+  _builderResult.preventVoiceUntilDate = 0;
   return self;
 }
 - (BOOL) hasLastAbandonedGameDate {
-  return result.hasLastAbandonedGameDate;
+  return _builderResult.hasLastAbandonedGameDate;
 }
 - (uint32_t) lastAbandonedGameDate {
-  return result.lastAbandonedGameDate;
+  return _builderResult.lastAbandonedGameDate;
 }
 - (CSODOTAGameAccountClient_Builder*) setLastAbandonedGameDate:(uint32_t) value {
-  result.hasLastAbandonedGameDate = YES;
-  result.lastAbandonedGameDate = value;
+  _builderResult.hasLastAbandonedGameDate = YES;
+  _builderResult.lastAbandonedGameDate = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearLastAbandonedGameDate {
-  result.hasLastAbandonedGameDate = NO;
-  result.lastAbandonedGameDate = 0;
+  _builderResult.hasLastAbandonedGameDate = NO;
+  _builderResult.lastAbandonedGameDate = 0;
   return self;
 }
 - (BOOL) hasLeaverPenaltyCount {
-  return result.hasLeaverPenaltyCount;
+  return _builderResult.hasLeaverPenaltyCount;
 }
 - (uint32_t) leaverPenaltyCount {
-  return result.leaverPenaltyCount;
+  return _builderResult.leaverPenaltyCount;
 }
 - (CSODOTAGameAccountClient_Builder*) setLeaverPenaltyCount:(uint32_t) value {
-  result.hasLeaverPenaltyCount = YES;
-  result.leaverPenaltyCount = value;
+  _builderResult.hasLeaverPenaltyCount = YES;
+  _builderResult.leaverPenaltyCount = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearLeaverPenaltyCount {
-  result.hasLeaverPenaltyCount = NO;
-  result.leaverPenaltyCount = 0;
+  _builderResult.hasLeaverPenaltyCount = NO;
+  _builderResult.leaverPenaltyCount = 0;
   return self;
 }
 - (BOOL) hasCompletedGameStreak {
-  return result.hasCompletedGameStreak;
+  return _builderResult.hasCompletedGameStreak;
 }
 - (uint32_t) completedGameStreak {
-  return result.completedGameStreak;
+  return _builderResult.completedGameStreak;
 }
 - (CSODOTAGameAccountClient_Builder*) setCompletedGameStreak:(uint32_t) value {
-  result.hasCompletedGameStreak = YES;
-  result.completedGameStreak = value;
+  _builderResult.hasCompletedGameStreak = YES;
+  _builderResult.completedGameStreak = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearCompletedGameStreak {
-  result.hasCompletedGameStreak = NO;
-  result.completedGameStreak = 0;
+  _builderResult.hasCompletedGameStreak = NO;
+  _builderResult.completedGameStreak = 0;
   return self;
 }
 - (BOOL) hasTeaching {
-  return result.hasTeaching;
+  return _builderResult.hasTeaching;
 }
 - (uint32_t) teaching {
-  return result.teaching;
+  return _builderResult.teaching;
 }
 - (CSODOTAGameAccountClient_Builder*) setTeaching:(uint32_t) value {
-  result.hasTeaching = YES;
-  result.teaching = value;
+  _builderResult.hasTeaching = YES;
+  _builderResult.teaching = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearTeaching {
-  result.hasTeaching = NO;
-  result.teaching = 0;
+  _builderResult.hasTeaching = NO;
+  _builderResult.teaching = 0;
   return self;
 }
 - (BOOL) hasLeadership {
-  return result.hasLeadership;
+  return _builderResult.hasLeadership;
 }
 - (uint32_t) leadership {
-  return result.leadership;
+  return _builderResult.leadership;
 }
 - (CSODOTAGameAccountClient_Builder*) setLeadership:(uint32_t) value {
-  result.hasLeadership = YES;
-  result.leadership = value;
+  _builderResult.hasLeadership = YES;
+  _builderResult.leadership = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearLeadership {
-  result.hasLeadership = NO;
-  result.leadership = 0;
+  _builderResult.hasLeadership = NO;
+  _builderResult.leadership = 0;
   return self;
 }
 - (BOOL) hasFriendly {
-  return result.hasFriendly;
+  return _builderResult.hasFriendly;
 }
 - (uint32_t) friendly {
-  return result.friendly;
+  return _builderResult.friendly;
 }
 - (CSODOTAGameAccountClient_Builder*) setFriendly:(uint32_t) value {
-  result.hasFriendly = YES;
-  result.friendly = value;
+  _builderResult.hasFriendly = YES;
+  _builderResult.friendly = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearFriendly {
-  result.hasFriendly = NO;
-  result.friendly = 0;
+  _builderResult.hasFriendly = NO;
+  _builderResult.friendly = 0;
   return self;
 }
 - (BOOL) hasForgiving {
-  return result.hasForgiving;
+  return _builderResult.hasForgiving;
 }
 - (uint32_t) forgiving {
-  return result.forgiving;
+  return _builderResult.forgiving;
 }
 - (CSODOTAGameAccountClient_Builder*) setForgiving:(uint32_t) value {
-  result.hasForgiving = YES;
-  result.forgiving = value;
+  _builderResult.hasForgiving = YES;
+  _builderResult.forgiving = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearForgiving {
-  result.hasForgiving = NO;
-  result.forgiving = 0;
+  _builderResult.hasForgiving = NO;
+  _builderResult.forgiving = 0;
   return self;
 }
 - (BOOL) hasSuccessfulReportCount {
-  return result.hasSuccessfulReportCount;
+  return _builderResult.hasSuccessfulReportCount;
 }
 - (uint32_t) successfulReportCount {
-  return result.successfulReportCount;
+  return _builderResult.successfulReportCount;
 }
 - (CSODOTAGameAccountClient_Builder*) setSuccessfulReportCount:(uint32_t) value {
-  result.hasSuccessfulReportCount = YES;
-  result.successfulReportCount = value;
+  _builderResult.hasSuccessfulReportCount = YES;
+  _builderResult.successfulReportCount = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearSuccessfulReportCount {
-  result.hasSuccessfulReportCount = NO;
-  result.successfulReportCount = 0;
+  _builderResult.hasSuccessfulReportCount = NO;
+  _builderResult.successfulReportCount = 0;
   return self;
 }
 - (BOOL) hasNotifySuccessfulReport {
-  return result.hasNotifySuccessfulReport;
+  return _builderResult.hasNotifySuccessfulReport;
 }
 - (uint32_t) notifySuccessfulReport {
-  return result.notifySuccessfulReport;
+  return _builderResult.notifySuccessfulReport;
 }
 - (CSODOTAGameAccountClient_Builder*) setNotifySuccessfulReport:(uint32_t) value {
-  result.hasNotifySuccessfulReport = YES;
-  result.notifySuccessfulReport = value;
+  _builderResult.hasNotifySuccessfulReport = YES;
+  _builderResult.notifySuccessfulReport = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearNotifySuccessfulReport {
-  result.hasNotifySuccessfulReport = NO;
-  result.notifySuccessfulReport = 0;
+  _builderResult.hasNotifySuccessfulReport = NO;
+  _builderResult.notifySuccessfulReport = 0;
   return self;
 }
 - (BOOL) hasAccountDisabledUntilDate {
-  return result.hasAccountDisabledUntilDate;
+  return _builderResult.hasAccountDisabledUntilDate;
 }
 - (uint32_t) accountDisabledUntilDate {
-  return result.accountDisabledUntilDate;
+  return _builderResult.accountDisabledUntilDate;
 }
 - (CSODOTAGameAccountClient_Builder*) setAccountDisabledUntilDate:(uint32_t) value {
-  result.hasAccountDisabledUntilDate = YES;
-  result.accountDisabledUntilDate = value;
+  _builderResult.hasAccountDisabledUntilDate = YES;
+  _builderResult.accountDisabledUntilDate = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearAccountDisabledUntilDate {
-  result.hasAccountDisabledUntilDate = NO;
-  result.accountDisabledUntilDate = 0;
+  _builderResult.hasAccountDisabledUntilDate = NO;
+  _builderResult.accountDisabledUntilDate = 0;
   return self;
 }
 - (BOOL) hasAccountDisabledCount {
-  return result.hasAccountDisabledCount;
+  return _builderResult.hasAccountDisabledCount;
 }
 - (uint32_t) accountDisabledCount {
-  return result.accountDisabledCount;
+  return _builderResult.accountDisabledCount;
 }
 - (CSODOTAGameAccountClient_Builder*) setAccountDisabledCount:(uint32_t) value {
-  result.hasAccountDisabledCount = YES;
-  result.accountDisabledCount = value;
+  _builderResult.hasAccountDisabledCount = YES;
+  _builderResult.accountDisabledCount = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearAccountDisabledCount {
-  result.hasAccountDisabledCount = NO;
-  result.accountDisabledCount = 0;
+  _builderResult.hasAccountDisabledCount = NO;
+  _builderResult.accountDisabledCount = 0;
   return self;
 }
 - (BOOL) hasShowcaseHeroId {
-  return result.hasShowcaseHeroId;
+  return _builderResult.hasShowcaseHeroId;
 }
 - (uint32_t) showcaseHeroId {
-  return result.showcaseHeroId;
+  return _builderResult.showcaseHeroId;
 }
 - (CSODOTAGameAccountClient_Builder*) setShowcaseHeroId:(uint32_t) value {
-  result.hasShowcaseHeroId = YES;
-  result.showcaseHeroId = value;
+  _builderResult.hasShowcaseHeroId = YES;
+  _builderResult.showcaseHeroId = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearShowcaseHeroId {
-  result.hasShowcaseHeroId = NO;
-  result.showcaseHeroId = 0;
+  _builderResult.hasShowcaseHeroId = NO;
+  _builderResult.showcaseHeroId = 0;
   return self;
 }
 - (BOOL) hasMatchDisabledUntilDate {
-  return result.hasMatchDisabledUntilDate;
+  return _builderResult.hasMatchDisabledUntilDate;
 }
 - (uint32_t) matchDisabledUntilDate {
-  return result.matchDisabledUntilDate;
+  return _builderResult.matchDisabledUntilDate;
 }
 - (CSODOTAGameAccountClient_Builder*) setMatchDisabledUntilDate:(uint32_t) value {
-  result.hasMatchDisabledUntilDate = YES;
-  result.matchDisabledUntilDate = value;
+  _builderResult.hasMatchDisabledUntilDate = YES;
+  _builderResult.matchDisabledUntilDate = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearMatchDisabledUntilDate {
-  result.hasMatchDisabledUntilDate = NO;
-  result.matchDisabledUntilDate = 0;
+  _builderResult.hasMatchDisabledUntilDate = NO;
+  _builderResult.matchDisabledUntilDate = 0;
   return self;
 }
 - (BOOL) hasMatchDisabledCount {
-  return result.hasMatchDisabledCount;
+  return _builderResult.hasMatchDisabledCount;
 }
 - (uint32_t) matchDisabledCount {
-  return result.matchDisabledCount;
+  return _builderResult.matchDisabledCount;
 }
 - (CSODOTAGameAccountClient_Builder*) setMatchDisabledCount:(uint32_t) value {
-  result.hasMatchDisabledCount = YES;
-  result.matchDisabledCount = value;
+  _builderResult.hasMatchDisabledCount = YES;
+  _builderResult.matchDisabledCount = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearMatchDisabledCount {
-  result.hasMatchDisabledCount = NO;
-  result.matchDisabledCount = 0;
+  _builderResult.hasMatchDisabledCount = NO;
+  _builderResult.matchDisabledCount = 0;
   return self;
 }
 - (BOOL) hasTeamCreationDisabledUntilDate {
-  return result.hasTeamCreationDisabledUntilDate;
+  return _builderResult.hasTeamCreationDisabledUntilDate;
 }
 - (uint32_t) teamCreationDisabledUntilDate {
-  return result.teamCreationDisabledUntilDate;
+  return _builderResult.teamCreationDisabledUntilDate;
 }
 - (CSODOTAGameAccountClient_Builder*) setTeamCreationDisabledUntilDate:(uint32_t) value {
-  result.hasTeamCreationDisabledUntilDate = YES;
-  result.teamCreationDisabledUntilDate = value;
+  _builderResult.hasTeamCreationDisabledUntilDate = YES;
+  _builderResult.teamCreationDisabledUntilDate = value;
   return self;
 }
 - (CSODOTAGameAccountClient_Builder*) clearTeamCreationDisabledUntilDate {
-  result.hasTeamCreationDisabledUntilDate = NO;
-  result.teamCreationDisabledUntilDate = 0;
+  _builderResult.hasTeamCreationDisabledUntilDate = NO;
+  _builderResult.teamCreationDisabledUntilDate = 0;
   return self;
 }
 @end
@@ -2297,243 +2297,243 @@ static CSODOTAGameAccountClientInternal* defaultCSODOTAGameAccountClientInternal
   }
 }
 - (BOOL) hasRank {
-  return result.hasRank;
+  return _builderResult.hasRank;
 }
 - (uint32_t) rank {
-  return result.rank;
+  return _builderResult.rank;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) setRank:(uint32_t) value {
-  result.hasRank = YES;
-  result.rank = value;
+  _builderResult.hasRank = YES;
+  _builderResult.rank = value;
   return self;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) clearRank {
-  result.hasRank = NO;
-  result.rank = 0;
+  _builderResult.hasRank = NO;
+  _builderResult.rank = 0;
   return self;
 }
 - (BOOL) hasRankUncertainty {
-  return result.hasRankUncertainty;
+  return _builderResult.hasRankUncertainty;
 }
 - (uint32_t) rankUncertainty {
-  return result.rankUncertainty;
+  return _builderResult.rankUncertainty;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) setRankUncertainty:(uint32_t) value {
-  result.hasRankUncertainty = YES;
-  result.rankUncertainty = value;
+  _builderResult.hasRankUncertainty = YES;
+  _builderResult.rankUncertainty = value;
   return self;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) clearRankUncertainty {
-  result.hasRankUncertainty = NO;
-  result.rankUncertainty = 0;
+  _builderResult.hasRankUncertainty = NO;
+  _builderResult.rankUncertainty = 0;
   return self;
 }
 - (BOOL) hasWinLossStreak {
-  return result.hasWinLossStreak;
+  return _builderResult.hasWinLossStreak;
 }
 - (int32_t) winLossStreak {
-  return result.winLossStreak;
+  return _builderResult.winLossStreak;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) setWinLossStreak:(int32_t) value {
-  result.hasWinLossStreak = YES;
-  result.winLossStreak = value;
+  _builderResult.hasWinLossStreak = YES;
+  _builderResult.winLossStreak = value;
   return self;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) clearWinLossStreak {
-  result.hasWinLossStreak = NO;
-  result.winLossStreak = 0;
+  _builderResult.hasWinLossStreak = NO;
+  _builderResult.winLossStreak = 0;
   return self;
 }
 - (BOOL) hasFeedingCount {
-  return result.hasFeedingCount;
+  return _builderResult.hasFeedingCount;
 }
 - (uint32_t) feedingCount {
-  return result.feedingCount;
+  return _builderResult.feedingCount;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) setFeedingCount:(uint32_t) value {
-  result.hasFeedingCount = YES;
-  result.feedingCount = value;
+  _builderResult.hasFeedingCount = YES;
+  _builderResult.feedingCount = value;
   return self;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) clearFeedingCount {
-  result.hasFeedingCount = NO;
-  result.feedingCount = 0;
+  _builderResult.hasFeedingCount = NO;
+  _builderResult.feedingCount = 0;
   return self;
 }
 - (BOOL) hasVoiceReports {
-  return result.hasVoiceReports;
+  return _builderResult.hasVoiceReports;
 }
 - (uint32_t) voiceReports {
-  return result.voiceReports;
+  return _builderResult.voiceReports;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) setVoiceReports:(uint32_t) value {
-  result.hasVoiceReports = YES;
-  result.voiceReports = value;
+  _builderResult.hasVoiceReports = YES;
+  _builderResult.voiceReports = value;
   return self;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) clearVoiceReports {
-  result.hasVoiceReports = NO;
-  result.voiceReports = 0;
+  _builderResult.hasVoiceReports = NO;
+  _builderResult.voiceReports = 0;
   return self;
 }
 - (BOOL) hasTextReports {
-  return result.hasTextReports;
+  return _builderResult.hasTextReports;
 }
 - (uint32_t) textReports {
-  return result.textReports;
+  return _builderResult.textReports;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) setTextReports:(uint32_t) value {
-  result.hasTextReports = YES;
-  result.textReports = value;
+  _builderResult.hasTextReports = YES;
+  _builderResult.textReports = value;
   return self;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) clearTextReports {
-  result.hasTextReports = NO;
-  result.textReports = 0;
+  _builderResult.hasTextReports = NO;
+  _builderResult.textReports = 0;
   return self;
 }
 - (BOOL) hasAbilityReports {
-  return result.hasAbilityReports;
+  return _builderResult.hasAbilityReports;
 }
 - (uint32_t) abilityReports {
-  return result.abilityReports;
+  return _builderResult.abilityReports;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) setAbilityReports:(uint32_t) value {
-  result.hasAbilityReports = YES;
-  result.abilityReports = value;
+  _builderResult.hasAbilityReports = YES;
+  _builderResult.abilityReports = value;
   return self;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) clearAbilityReports {
-  result.hasAbilityReports = NO;
-  result.abilityReports = 0;
+  _builderResult.hasAbilityReports = NO;
+  _builderResult.abilityReports = 0;
   return self;
 }
 - (BOOL) hasFeedingReports {
-  return result.hasFeedingReports;
+  return _builderResult.hasFeedingReports;
 }
 - (uint32_t) feedingReports {
-  return result.feedingReports;
+  return _builderResult.feedingReports;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) setFeedingReports:(uint32_t) value {
-  result.hasFeedingReports = YES;
-  result.feedingReports = value;
+  _builderResult.hasFeedingReports = YES;
+  _builderResult.feedingReports = value;
   return self;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) clearFeedingReports {
-  result.hasFeedingReports = NO;
-  result.feedingReports = 0;
+  _builderResult.hasFeedingReports = NO;
+  _builderResult.feedingReports = 0;
   return self;
 }
 - (BOOL) hasAutomaticReportPenalty {
-  return result.hasAutomaticReportPenalty;
+  return _builderResult.hasAutomaticReportPenalty;
 }
 - (uint32_t) automaticReportPenalty {
-  return result.automaticReportPenalty;
+  return _builderResult.automaticReportPenalty;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) setAutomaticReportPenalty:(uint32_t) value {
-  result.hasAutomaticReportPenalty = YES;
-  result.automaticReportPenalty = value;
+  _builderResult.hasAutomaticReportPenalty = YES;
+  _builderResult.automaticReportPenalty = value;
   return self;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) clearAutomaticReportPenalty {
-  result.hasAutomaticReportPenalty = NO;
-  result.automaticReportPenalty = 0;
+  _builderResult.hasAutomaticReportPenalty = NO;
+  _builderResult.automaticReportPenalty = 0;
   return self;
 }
 - (BOOL) hasGamesSinceReportPenalty {
-  return result.hasGamesSinceReportPenalty;
+  return _builderResult.hasGamesSinceReportPenalty;
 }
 - (uint32_t) gamesSinceReportPenalty {
-  return result.gamesSinceReportPenalty;
+  return _builderResult.gamesSinceReportPenalty;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) setGamesSinceReportPenalty:(uint32_t) value {
-  result.hasGamesSinceReportPenalty = YES;
-  result.gamesSinceReportPenalty = value;
+  _builderResult.hasGamesSinceReportPenalty = YES;
+  _builderResult.gamesSinceReportPenalty = value;
   return self;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) clearGamesSinceReportPenalty {
-  result.hasGamesSinceReportPenalty = NO;
-  result.gamesSinceReportPenalty = 0;
+  _builderResult.hasGamesSinceReportPenalty = NO;
+  _builderResult.gamesSinceReportPenalty = 0;
   return self;
 }
 - (BOOL) hasReportPenaltyCount {
-  return result.hasReportPenaltyCount;
+  return _builderResult.hasReportPenaltyCount;
 }
 - (uint32_t) reportPenaltyCount {
-  return result.reportPenaltyCount;
+  return _builderResult.reportPenaltyCount;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) setReportPenaltyCount:(uint32_t) value {
-  result.hasReportPenaltyCount = YES;
-  result.reportPenaltyCount = value;
+  _builderResult.hasReportPenaltyCount = YES;
+  _builderResult.reportPenaltyCount = value;
   return self;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) clearReportPenaltyCount {
-  result.hasReportPenaltyCount = NO;
-  result.reportPenaltyCount = 0;
+  _builderResult.hasReportPenaltyCount = NO;
+  _builderResult.reportPenaltyCount = 0;
   return self;
 }
 - (BOOL) hasPendingDetectedReports {
-  return result.hasPendingDetectedReports;
+  return _builderResult.hasPendingDetectedReports;
 }
 - (uint32_t) pendingDetectedReports {
-  return result.pendingDetectedReports;
+  return _builderResult.pendingDetectedReports;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) setPendingDetectedReports:(uint32_t) value {
-  result.hasPendingDetectedReports = YES;
-  result.pendingDetectedReports = value;
+  _builderResult.hasPendingDetectedReports = YES;
+  _builderResult.pendingDetectedReports = value;
   return self;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) clearPendingDetectedReports {
-  result.hasPendingDetectedReports = NO;
-  result.pendingDetectedReports = 0;
+  _builderResult.hasPendingDetectedReports = NO;
+  _builderResult.pendingDetectedReports = 0;
   return self;
 }
 - (BOOL) hasPendingInGameReports {
-  return result.hasPendingInGameReports;
+  return _builderResult.hasPendingInGameReports;
 }
 - (uint32_t) pendingInGameReports {
-  return result.pendingInGameReports;
+  return _builderResult.pendingInGameReports;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) setPendingInGameReports:(uint32_t) value {
-  result.hasPendingInGameReports = YES;
-  result.pendingInGameReports = value;
+  _builderResult.hasPendingInGameReports = YES;
+  _builderResult.pendingInGameReports = value;
   return self;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) clearPendingInGameReports {
-  result.hasPendingInGameReports = NO;
-  result.pendingInGameReports = 0;
+  _builderResult.hasPendingInGameReports = NO;
+  _builderResult.pendingInGameReports = 0;
   return self;
 }
 - (BOOL) hasPendingOutOfGameReports {
-  return result.hasPendingOutOfGameReports;
+  return _builderResult.hasPendingOutOfGameReports;
 }
 - (uint32_t) pendingOutOfGameReports {
-  return result.pendingOutOfGameReports;
+  return _builderResult.pendingOutOfGameReports;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) setPendingOutOfGameReports:(uint32_t) value {
-  result.hasPendingOutOfGameReports = YES;
-  result.pendingOutOfGameReports = value;
+  _builderResult.hasPendingOutOfGameReports = YES;
+  _builderResult.pendingOutOfGameReports = value;
   return self;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) clearPendingOutOfGameReports {
-  result.hasPendingOutOfGameReports = NO;
-  result.pendingOutOfGameReports = 0;
+  _builderResult.hasPendingOutOfGameReports = NO;
+  _builderResult.pendingOutOfGameReports = 0;
   return self;
 }
 - (BOOL) hasAutomatedPenaltyDate {
-  return result.hasAutomatedPenaltyDate;
+  return _builderResult.hasAutomatedPenaltyDate;
 }
 - (uint32_t) automatedPenaltyDate {
-  return result.automatedPenaltyDate;
+  return _builderResult.automatedPenaltyDate;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) setAutomatedPenaltyDate:(uint32_t) value {
-  result.hasAutomatedPenaltyDate = YES;
-  result.automatedPenaltyDate = value;
+  _builderResult.hasAutomatedPenaltyDate = YES;
+  _builderResult.automatedPenaltyDate = value;
   return self;
 }
 - (CSODOTAGameAccountClientInternal_Builder*) clearAutomatedPenaltyDate {
-  result.hasAutomatedPenaltyDate = NO;
-  result.automatedPenaltyDate = 0;
+  _builderResult.hasAutomatedPenaltyDate = NO;
+  _builderResult.automatedPenaltyDate = 0;
   return self;
 }
 @end
@@ -2878,99 +2878,99 @@ static CSODOTAGameHeroStandings* defaultCSODOTAGameHeroStandingsInstance = nil;
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CSODOTAGameHeroStandings_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CSODOTAGameHeroStandings_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CSODOTAGameHeroStandings_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CSODOTAGameHeroStandings_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 - (BOOL) hasWins {
-  return result.hasWins;
+  return _builderResult.hasWins;
 }
 - (uint32_t) wins {
-  return result.wins;
+  return _builderResult.wins;
 }
 - (CSODOTAGameHeroStandings_Builder*) setWins:(uint32_t) value {
-  result.hasWins = YES;
-  result.wins = value;
+  _builderResult.hasWins = YES;
+  _builderResult.wins = value;
   return self;
 }
 - (CSODOTAGameHeroStandings_Builder*) clearWins {
-  result.hasWins = NO;
-  result.wins = 0;
+  _builderResult.hasWins = NO;
+  _builderResult.wins = 0;
   return self;
 }
 - (BOOL) hasLosses {
-  return result.hasLosses;
+  return _builderResult.hasLosses;
 }
 - (uint32_t) losses {
-  return result.losses;
+  return _builderResult.losses;
 }
 - (CSODOTAGameHeroStandings_Builder*) setLosses:(uint32_t) value {
-  result.hasLosses = YES;
-  result.losses = value;
+  _builderResult.hasLosses = YES;
+  _builderResult.losses = value;
   return self;
 }
 - (CSODOTAGameHeroStandings_Builder*) clearLosses {
-  result.hasLosses = NO;
-  result.losses = 0;
+  _builderResult.hasLosses = NO;
+  _builderResult.losses = 0;
   return self;
 }
 - (BOOL) hasHeroPerformance {
-  return result.hasHeroPerformance;
+  return _builderResult.hasHeroPerformance;
 }
 - (Float32) heroPerformance {
-  return result.heroPerformance;
+  return _builderResult.heroPerformance;
 }
 - (CSODOTAGameHeroStandings_Builder*) setHeroPerformance:(Float32) value {
-  result.hasHeroPerformance = YES;
-  result.heroPerformance = value;
+  _builderResult.hasHeroPerformance = YES;
+  _builderResult.heroPerformance = value;
   return self;
 }
 - (CSODOTAGameHeroStandings_Builder*) clearHeroPerformance {
-  result.hasHeroPerformance = NO;
-  result.heroPerformance = 0;
+  _builderResult.hasHeroPerformance = NO;
+  _builderResult.heroPerformance = 0;
   return self;
 }
 - (BOOL) hasHeroVariance {
-  return result.hasHeroVariance;
+  return _builderResult.hasHeroVariance;
 }
 - (Float32) heroVariance {
-  return result.heroVariance;
+  return _builderResult.heroVariance;
 }
 - (CSODOTAGameHeroStandings_Builder*) setHeroVariance:(Float32) value {
-  result.hasHeroVariance = YES;
-  result.heroVariance = value;
+  _builderResult.hasHeroVariance = YES;
+  _builderResult.heroVariance = value;
   return self;
 }
 - (CSODOTAGameHeroStandings_Builder*) clearHeroVariance {
-  result.hasHeroVariance = NO;
-  result.heroVariance = 0;
+  _builderResult.hasHeroVariance = NO;
+  _builderResult.heroVariance = 0;
   return self;
 }
 @end
@@ -3511,20 +3511,20 @@ BOOL CSODOTAParty_StateIsValidValue(CSODOTAParty_State value) {
     [self setLeaderId:other.leaderId];
   }
   if (other.memberIdsArray.count > 0) {
-    if (result.memberIdsArray == nil) {
-      result.memberIdsArray = [[other.memberIdsArray copyWithZone:[other.memberIdsArray zone]] autorelease];
+    if (_builderResult.memberIdsArray == nil) {
+      _builderResult.memberIdsArray = [[other.memberIdsArray copyWithZone:[other.memberIdsArray zone]] autorelease];
     } else {
-      [result.memberIdsArray appendArray:other.memberIdsArray];
+      [_builderResult.memberIdsArray appendArray:other.memberIdsArray];
     }
   }
   if (other.hasGameModes) {
     [self setGameModes:other.gameModes];
   }
   if (other.pendingInvitesArray.count > 0) {
-    if (result.pendingInvitesArray == nil) {
-      result.pendingInvitesArray = [[other.pendingInvitesArray copyWithZone:[other.pendingInvitesArray zone]] autorelease];
+    if (_builderResult.pendingInvitesArray == nil) {
+      _builderResult.pendingInvitesArray = [[other.pendingInvitesArray copyWithZone:[other.pendingInvitesArray zone]] autorelease];
     } else {
-      [result.pendingInvitesArray appendArray:other.pendingInvitesArray];
+      [_builderResult.pendingInvitesArray appendArray:other.pendingInvitesArray];
     }
   }
   if (other.hasstate) {
@@ -3664,277 +3664,277 @@ BOOL CSODOTAParty_StateIsValidValue(CSODOTAParty_State value) {
   }
 }
 - (BOOL) hasPartyId {
-  return result.hasPartyId;
+  return _builderResult.hasPartyId;
 }
 - (uint64_t) partyId {
-  return result.partyId;
+  return _builderResult.partyId;
 }
 - (CSODOTAParty_Builder*) setPartyId:(uint64_t) value {
-  result.hasPartyId = YES;
-  result.partyId = value;
+  _builderResult.hasPartyId = YES;
+  _builderResult.partyId = value;
   return self;
 }
 - (CSODOTAParty_Builder*) clearPartyId {
-  result.hasPartyId = NO;
-  result.partyId = 0L;
+  _builderResult.hasPartyId = NO;
+  _builderResult.partyId = 0L;
   return self;
 }
 - (BOOL) hasLeaderId {
-  return result.hasLeaderId;
+  return _builderResult.hasLeaderId;
 }
 - (uint64_t) leaderId {
-  return result.leaderId;
+  return _builderResult.leaderId;
 }
 - (CSODOTAParty_Builder*) setLeaderId:(uint64_t) value {
-  result.hasLeaderId = YES;
-  result.leaderId = value;
+  _builderResult.hasLeaderId = YES;
+  _builderResult.leaderId = value;
   return self;
 }
 - (CSODOTAParty_Builder*) clearLeaderId {
-  result.hasLeaderId = NO;
-  result.leaderId = 0L;
+  _builderResult.hasLeaderId = NO;
+  _builderResult.leaderId = 0L;
   return self;
 }
 - (PBAppendableArray *)memberIds {
-  return result.memberIdsArray;
+  return _builderResult.memberIdsArray;
 }
 - (uint64_t)memberIdsAtIndex:(NSUInteger)index {
-  return [result memberIdsAtIndex:index];
+  return [_builderResult memberIdsAtIndex:index];
 }
 - (CSODOTAParty_Builder *)addMemberIds:(uint64_t)value {
-  if (result.memberIdsArray == nil) {
-    result.memberIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
+  if (_builderResult.memberIdsArray == nil) {
+    _builderResult.memberIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
   }
-  [result.memberIdsArray addUint64:value];
+  [_builderResult.memberIdsArray addUint64:value];
   return self;
 }
 - (CSODOTAParty_Builder *)setMemberIdsArray:(NSArray *)array {
-  result.memberIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
+  _builderResult.memberIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CSODOTAParty_Builder *)setMemberIdsValues:(const uint64_t *)values count:(NSUInteger)count {
-  result.memberIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
+  _builderResult.memberIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CSODOTAParty_Builder *)clearMemberIds {
-  result.memberIdsArray = nil;
+  _builderResult.memberIdsArray = nil;
   return self;
 }
 - (BOOL) hasGameModes {
-  return result.hasGameModes;
+  return _builderResult.hasGameModes;
 }
 - (uint32_t) gameModes {
-  return result.gameModes;
+  return _builderResult.gameModes;
 }
 - (CSODOTAParty_Builder*) setGameModes:(uint32_t) value {
-  result.hasGameModes = YES;
-  result.gameModes = value;
+  _builderResult.hasGameModes = YES;
+  _builderResult.gameModes = value;
   return self;
 }
 - (CSODOTAParty_Builder*) clearGameModes {
-  result.hasGameModes = NO;
-  result.gameModes = 0;
+  _builderResult.hasGameModes = NO;
+  _builderResult.gameModes = 0;
   return self;
 }
 - (PBAppendableArray *)pendingInvites {
-  return result.pendingInvitesArray;
+  return _builderResult.pendingInvitesArray;
 }
 - (uint64_t)pendingInvitesAtIndex:(NSUInteger)index {
-  return [result pendingInvitesAtIndex:index];
+  return [_builderResult pendingInvitesAtIndex:index];
 }
 - (CSODOTAParty_Builder *)addPendingInvites:(uint64_t)value {
-  if (result.pendingInvitesArray == nil) {
-    result.pendingInvitesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
+  if (_builderResult.pendingInvitesArray == nil) {
+    _builderResult.pendingInvitesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
   }
-  [result.pendingInvitesArray addUint64:value];
+  [_builderResult.pendingInvitesArray addUint64:value];
   return self;
 }
 - (CSODOTAParty_Builder *)setPendingInvitesArray:(NSArray *)array {
-  result.pendingInvitesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
+  _builderResult.pendingInvitesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CSODOTAParty_Builder *)setPendingInvitesValues:(const uint64_t *)values count:(NSUInteger)count {
-  result.pendingInvitesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
+  _builderResult.pendingInvitesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CSODOTAParty_Builder *)clearPendingInvites {
-  result.pendingInvitesArray = nil;
+  _builderResult.pendingInvitesArray = nil;
   return self;
 }
 - (BOOL) hasstate {
-  return result.hasstate;
+  return _builderResult.hasstate;
 }
 - (CSODOTAParty_State) state {
-  return result.state;
+  return _builderResult.state;
 }
 - (CSODOTAParty_Builder*) setstate:(CSODOTAParty_State) value {
-  result.hasstate = YES;
-  result.state = value;
+  _builderResult.hasstate = YES;
+  _builderResult.state = value;
   return self;
 }
 - (CSODOTAParty_Builder*) clearstate {
-  result.hasstate = NO;
-  result.state = CSODOTAParty_StateUI;
+  _builderResult.hasstate = NO;
+  _builderResult.state = CSODOTAParty_StateUI;
   return self;
 }
 - (BOOL) hasStartedMatchmakingTime {
-  return result.hasStartedMatchmakingTime;
+  return _builderResult.hasStartedMatchmakingTime;
 }
 - (uint32_t) startedMatchmakingTime {
-  return result.startedMatchmakingTime;
+  return _builderResult.startedMatchmakingTime;
 }
 - (CSODOTAParty_Builder*) setStartedMatchmakingTime:(uint32_t) value {
-  result.hasStartedMatchmakingTime = YES;
-  result.startedMatchmakingTime = value;
+  _builderResult.hasStartedMatchmakingTime = YES;
+  _builderResult.startedMatchmakingTime = value;
   return self;
 }
 - (CSODOTAParty_Builder*) clearStartedMatchmakingTime {
-  result.hasStartedMatchmakingTime = NO;
-  result.startedMatchmakingTime = 0;
+  _builderResult.hasStartedMatchmakingTime = NO;
+  _builderResult.startedMatchmakingTime = 0;
   return self;
 }
 - (BOOL) hasMatchgroups {
-  return result.hasMatchgroups;
+  return _builderResult.hasMatchgroups;
 }
 - (uint32_t) matchgroups {
-  return result.matchgroups;
+  return _builderResult.matchgroups;
 }
 - (CSODOTAParty_Builder*) setMatchgroups:(uint32_t) value {
-  result.hasMatchgroups = YES;
-  result.matchgroups = value;
+  _builderResult.hasMatchgroups = YES;
+  _builderResult.matchgroups = value;
   return self;
 }
 - (CSODOTAParty_Builder*) clearMatchgroups {
-  result.hasMatchgroups = NO;
-  result.matchgroups = 0;
+  _builderResult.hasMatchgroups = NO;
+  _builderResult.matchgroups = 0;
   return self;
 }
 - (BOOL) hasPreventMatchUntilDate {
-  return result.hasPreventMatchUntilDate;
+  return _builderResult.hasPreventMatchUntilDate;
 }
 - (uint32_t) preventMatchUntilDate {
-  return result.preventMatchUntilDate;
+  return _builderResult.preventMatchUntilDate;
 }
 - (CSODOTAParty_Builder*) setPreventMatchUntilDate:(uint32_t) value {
-  result.hasPreventMatchUntilDate = YES;
-  result.preventMatchUntilDate = value;
+  _builderResult.hasPreventMatchUntilDate = YES;
+  _builderResult.preventMatchUntilDate = value;
   return self;
 }
 - (CSODOTAParty_Builder*) clearPreventMatchUntilDate {
-  result.hasPreventMatchUntilDate = NO;
-  result.preventMatchUntilDate = 0;
+  _builderResult.hasPreventMatchUntilDate = NO;
+  _builderResult.preventMatchUntilDate = 0;
   return self;
 }
 - (BOOL) hasPreventMatchAccountId {
-  return result.hasPreventMatchAccountId;
+  return _builderResult.hasPreventMatchAccountId;
 }
 - (uint32_t) preventMatchAccountId {
-  return result.preventMatchAccountId;
+  return _builderResult.preventMatchAccountId;
 }
 - (CSODOTAParty_Builder*) setPreventMatchAccountId:(uint32_t) value {
-  result.hasPreventMatchAccountId = YES;
-  result.preventMatchAccountId = value;
+  _builderResult.hasPreventMatchAccountId = YES;
+  _builderResult.preventMatchAccountId = value;
   return self;
 }
 - (CSODOTAParty_Builder*) clearPreventMatchAccountId {
-  result.hasPreventMatchAccountId = NO;
-  result.preventMatchAccountId = 0;
+  _builderResult.hasPreventMatchAccountId = NO;
+  _builderResult.preventMatchAccountId = 0;
   return self;
 }
 - (BOOL) hasmatch_type {
-  return result.hasmatch_type;
+  return _builderResult.hasmatch_type;
 }
 - (MatchType) match_type {
-  return result.match_type;
+  return _builderResult.match_type;
 }
 - (CSODOTAParty_Builder*) setmatch_type:(MatchType) value {
-  result.hasmatch_type = YES;
-  result.match_type = value;
+  _builderResult.hasmatch_type = YES;
+  _builderResult.match_type = value;
   return self;
 }
 - (CSODOTAParty_Builder*) clearmatch_type {
-  result.hasmatch_type = NO;
-  result.match_type = MatchTypeMATCH_TYPE_RANKED;
+  _builderResult.hasmatch_type = NO;
+  _builderResult.match_type = MatchTypeMATCH_TYPE_RANKED;
   return self;
 }
 - (BOOL) hasbot_difficulty {
-  return result.hasbot_difficulty;
+  return _builderResult.hasbot_difficulty;
 }
 - (DOTABotDifficulty) bot_difficulty {
-  return result.bot_difficulty;
+  return _builderResult.bot_difficulty;
 }
 - (CSODOTAParty_Builder*) setbot_difficulty:(DOTABotDifficulty) value {
-  result.hasbot_difficulty = YES;
-  result.bot_difficulty = value;
+  _builderResult.hasbot_difficulty = YES;
+  _builderResult.bot_difficulty = value;
   return self;
 }
 - (CSODOTAParty_Builder*) clearbot_difficulty {
-  result.hasbot_difficulty = NO;
-  result.bot_difficulty = DOTABotDifficultyBOT_DIFFICULTY_PASSIVE;
+  _builderResult.hasbot_difficulty = NO;
+  _builderResult.bot_difficulty = DOTABotDifficultyBOT_DIFFICULTY_PASSIVE;
   return self;
 }
 - (BOOL) hasTeamId {
-  return result.hasTeamId;
+  return _builderResult.hasTeamId;
 }
 - (uint32_t) teamId {
-  return result.teamId;
+  return _builderResult.teamId;
 }
 - (CSODOTAParty_Builder*) setTeamId:(uint32_t) value {
-  result.hasTeamId = YES;
-  result.teamId = value;
+  _builderResult.hasTeamId = YES;
+  _builderResult.teamId = value;
   return self;
 }
 - (CSODOTAParty_Builder*) clearTeamId {
-  result.hasTeamId = NO;
-  result.teamId = 0;
+  _builderResult.hasTeamId = NO;
+  _builderResult.teamId = 0;
   return self;
 }
 - (BOOL) hasMatchDisabledUntilDate {
-  return result.hasMatchDisabledUntilDate;
+  return _builderResult.hasMatchDisabledUntilDate;
 }
 - (uint32_t) matchDisabledUntilDate {
-  return result.matchDisabledUntilDate;
+  return _builderResult.matchDisabledUntilDate;
 }
 - (CSODOTAParty_Builder*) setMatchDisabledUntilDate:(uint32_t) value {
-  result.hasMatchDisabledUntilDate = YES;
-  result.matchDisabledUntilDate = value;
+  _builderResult.hasMatchDisabledUntilDate = YES;
+  _builderResult.matchDisabledUntilDate = value;
   return self;
 }
 - (CSODOTAParty_Builder*) clearMatchDisabledUntilDate {
-  result.hasMatchDisabledUntilDate = NO;
-  result.matchDisabledUntilDate = 0;
+  _builderResult.hasMatchDisabledUntilDate = NO;
+  _builderResult.matchDisabledUntilDate = 0;
   return self;
 }
 - (BOOL) hasMatchDisabledAccountId {
-  return result.hasMatchDisabledAccountId;
+  return _builderResult.hasMatchDisabledAccountId;
 }
 - (uint32_t) matchDisabledAccountId {
-  return result.matchDisabledAccountId;
+  return _builderResult.matchDisabledAccountId;
 }
 - (CSODOTAParty_Builder*) setMatchDisabledAccountId:(uint32_t) value {
-  result.hasMatchDisabledAccountId = YES;
-  result.matchDisabledAccountId = value;
+  _builderResult.hasMatchDisabledAccountId = YES;
+  _builderResult.matchDisabledAccountId = value;
   return self;
 }
 - (CSODOTAParty_Builder*) clearMatchDisabledAccountId {
-  result.hasMatchDisabledAccountId = NO;
-  result.matchDisabledAccountId = 0;
+  _builderResult.hasMatchDisabledAccountId = NO;
+  _builderResult.matchDisabledAccountId = 0;
   return self;
 }
 - (BOOL) hasMatchmakingMaxRangeMinutes {
-  return result.hasMatchmakingMaxRangeMinutes;
+  return _builderResult.hasMatchmakingMaxRangeMinutes;
 }
 - (uint32_t) matchmakingMaxRangeMinutes {
-  return result.matchmakingMaxRangeMinutes;
+  return _builderResult.matchmakingMaxRangeMinutes;
 }
 - (CSODOTAParty_Builder*) setMatchmakingMaxRangeMinutes:(uint32_t) value {
-  result.hasMatchmakingMaxRangeMinutes = YES;
-  result.matchmakingMaxRangeMinutes = value;
+  _builderResult.hasMatchmakingMaxRangeMinutes = YES;
+  _builderResult.matchmakingMaxRangeMinutes = value;
   return self;
 }
 - (CSODOTAParty_Builder*) clearMatchmakingMaxRangeMinutes {
-  result.hasMatchmakingMaxRangeMinutes = NO;
-  result.matchmakingMaxRangeMinutes = 0;
+  _builderResult.hasMatchmakingMaxRangeMinutes = NO;
+  _builderResult.matchmakingMaxRangeMinutes = 0;
   return self;
 }
 @end
@@ -4130,19 +4130,19 @@ static CSODOTAPartyInternal* defaultCSODOTAPartyInternalInstance = nil;
   }
 }
 - (BOOL) hasSearchKey {
-  return result.hasSearchKey;
+  return _builderResult.hasSearchKey;
 }
 - (NSString*) searchKey {
-  return result.searchKey;
+  return _builderResult.searchKey;
 }
 - (CSODOTAPartyInternal_Builder*) setSearchKey:(NSString*) value {
-  result.hasSearchKey = YES;
-  result.searchKey = value;
+  _builderResult.hasSearchKey = YES;
+  _builderResult.searchKey = value;
   return self;
 }
 - (CSODOTAPartyInternal_Builder*) clearSearchKey {
-  result.hasSearchKey = NO;
-  result.searchKey = @"";
+  _builderResult.hasSearchKey = NO;
+  _builderResult.searchKey = @"";
   return self;
 }
 @end
@@ -4385,63 +4385,63 @@ static CSODOTAPartyMemcached* defaultCSODOTAPartyMemcachedInstance = nil;
   }
 }
 - (BOOL) hasParty {
-  return result.hasParty;
+  return _builderResult.hasParty;
 }
 - (CSODOTAParty*) party {
-  return result.party;
+  return _builderResult.party;
 }
 - (CSODOTAPartyMemcached_Builder*) setParty:(CSODOTAParty*) value {
-  result.hasParty = YES;
-  result.party = value;
+  _builderResult.hasParty = YES;
+  _builderResult.party = value;
   return self;
 }
 - (CSODOTAPartyMemcached_Builder*) setPartyBuilder:(CSODOTAParty_Builder*) builderForValue {
   return [self setParty:[builderForValue build]];
 }
 - (CSODOTAPartyMemcached_Builder*) mergeParty:(CSODOTAParty*) value {
-  if (result.hasParty &&
-      result.party != [CSODOTAParty defaultInstance]) {
-    result.party =
-      [[[CSODOTAParty builderWithPrototype:result.party] mergeFrom:value] buildPartial];
+  if (_builderResult.hasParty &&
+      _builderResult.party != [CSODOTAParty defaultInstance]) {
+    _builderResult.party =
+      [[[CSODOTAParty builderWithPrototype:_builderResult.party] mergeFrom:value] buildPartial];
   } else {
-    result.party = value;
+    _builderResult.party = value;
   }
-  result.hasParty = YES;
+  _builderResult.hasParty = YES;
   return self;
 }
 - (CSODOTAPartyMemcached_Builder*) clearParty {
-  result.hasParty = NO;
-  result.party = [CSODOTAParty defaultInstance];
+  _builderResult.hasParty = NO;
+  _builderResult.party = [CSODOTAParty defaultInstance];
   return self;
 }
 - (BOOL) hasInternal {
-  return result.hasInternal;
+  return _builderResult.hasInternal;
 }
 - (CSODOTAPartyInternal*) internal {
-  return result.internal;
+  return _builderResult.internal;
 }
 - (CSODOTAPartyMemcached_Builder*) setInternal:(CSODOTAPartyInternal*) value {
-  result.hasInternal = YES;
-  result.internal = value;
+  _builderResult.hasInternal = YES;
+  _builderResult.internal = value;
   return self;
 }
 - (CSODOTAPartyMemcached_Builder*) setInternalBuilder:(CSODOTAPartyInternal_Builder*) builderForValue {
   return [self setInternal:[builderForValue build]];
 }
 - (CSODOTAPartyMemcached_Builder*) mergeInternal:(CSODOTAPartyInternal*) value {
-  if (result.hasInternal &&
-      result.internal != [CSODOTAPartyInternal defaultInstance]) {
-    result.internal =
-      [[[CSODOTAPartyInternal builderWithPrototype:result.internal] mergeFrom:value] buildPartial];
+  if (_builderResult.hasInternal &&
+      _builderResult.internal != [CSODOTAPartyInternal defaultInstance]) {
+    _builderResult.internal =
+      [[[CSODOTAPartyInternal builderWithPrototype:_builderResult.internal] mergeFrom:value] buildPartial];
   } else {
-    result.internal = value;
+    _builderResult.internal = value;
   }
-  result.hasInternal = YES;
+  _builderResult.hasInternal = YES;
   return self;
 }
 - (CSODOTAPartyMemcached_Builder*) clearInternal {
-  result.hasInternal = NO;
-  result.internal = [CSODOTAPartyInternal defaultInstance];
+  _builderResult.hasInternal = NO;
+  _builderResult.internal = [CSODOTAPartyInternal defaultInstance];
   return self;
 }
 @end
@@ -4886,51 +4886,51 @@ static CSODOTAPartyInvite_PartyMember* defaultCSODOTAPartyInvite_PartyMemberInst
   }
 }
 - (BOOL) hasName {
-  return result.hasName;
+  return _builderResult.hasName;
 }
 - (NSString*) name {
-  return result.name;
+  return _builderResult.name;
 }
 - (CSODOTAPartyInvite_PartyMember_Builder*) setName:(NSString*) value {
-  result.hasName = YES;
-  result.name = value;
+  _builderResult.hasName = YES;
+  _builderResult.name = value;
   return self;
 }
 - (CSODOTAPartyInvite_PartyMember_Builder*) clearName {
-  result.hasName = NO;
-  result.name = @"";
+  _builderResult.hasName = NO;
+  _builderResult.name = @"";
   return self;
 }
 - (BOOL) hasSteamId {
-  return result.hasSteamId;
+  return _builderResult.hasSteamId;
 }
 - (uint64_t) steamId {
-  return result.steamId;
+  return _builderResult.steamId;
 }
 - (CSODOTAPartyInvite_PartyMember_Builder*) setSteamId:(uint64_t) value {
-  result.hasSteamId = YES;
-  result.steamId = value;
+  _builderResult.hasSteamId = YES;
+  _builderResult.steamId = value;
   return self;
 }
 - (CSODOTAPartyInvite_PartyMember_Builder*) clearSteamId {
-  result.hasSteamId = NO;
-  result.steamId = 0L;
+  _builderResult.hasSteamId = NO;
+  _builderResult.steamId = 0L;
   return self;
 }
 - (BOOL) hasAvatar {
-  return result.hasAvatar;
+  return _builderResult.hasAvatar;
 }
 - (uint32_t) avatar {
-  return result.avatar;
+  return _builderResult.avatar;
 }
 - (CSODOTAPartyInvite_PartyMember_Builder*) setAvatar:(uint32_t) value {
-  result.hasAvatar = YES;
-  result.avatar = value;
+  _builderResult.hasAvatar = YES;
+  _builderResult.avatar = value;
   return self;
 }
 - (CSODOTAPartyInvite_PartyMember_Builder*) clearAvatar {
-  result.hasAvatar = NO;
-  result.avatar = 0;
+  _builderResult.hasAvatar = NO;
+  _builderResult.avatar = 0;
   return self;
 }
 @end
@@ -4987,10 +4987,10 @@ static CSODOTAPartyInvite_PartyMember* defaultCSODOTAPartyInvite_PartyMemberInst
     [self setSenderName:other.senderName];
   }
   if (other.membersArray.count > 0) {
-    if (result.membersArray == nil) {
-      result.membersArray = [[other.membersArray copyWithZone:[other.membersArray zone]] autorelease];
+    if (_builderResult.membersArray == nil) {
+      _builderResult.membersArray = [[other.membersArray copyWithZone:[other.membersArray zone]] autorelease];
     } else {
-      [result.membersArray appendArray:other.membersArray];
+      [_builderResult.membersArray appendArray:other.membersArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -5036,76 +5036,76 @@ static CSODOTAPartyInvite_PartyMember* defaultCSODOTAPartyInvite_PartyMemberInst
   }
 }
 - (BOOL) hasGroupId {
-  return result.hasGroupId;
+  return _builderResult.hasGroupId;
 }
 - (uint64_t) groupId {
-  return result.groupId;
+  return _builderResult.groupId;
 }
 - (CSODOTAPartyInvite_Builder*) setGroupId:(uint64_t) value {
-  result.hasGroupId = YES;
-  result.groupId = value;
+  _builderResult.hasGroupId = YES;
+  _builderResult.groupId = value;
   return self;
 }
 - (CSODOTAPartyInvite_Builder*) clearGroupId {
-  result.hasGroupId = NO;
-  result.groupId = 0L;
+  _builderResult.hasGroupId = NO;
+  _builderResult.groupId = 0L;
   return self;
 }
 - (BOOL) hasSenderId {
-  return result.hasSenderId;
+  return _builderResult.hasSenderId;
 }
 - (uint64_t) senderId {
-  return result.senderId;
+  return _builderResult.senderId;
 }
 - (CSODOTAPartyInvite_Builder*) setSenderId:(uint64_t) value {
-  result.hasSenderId = YES;
-  result.senderId = value;
+  _builderResult.hasSenderId = YES;
+  _builderResult.senderId = value;
   return self;
 }
 - (CSODOTAPartyInvite_Builder*) clearSenderId {
-  result.hasSenderId = NO;
-  result.senderId = 0L;
+  _builderResult.hasSenderId = NO;
+  _builderResult.senderId = 0L;
   return self;
 }
 - (BOOL) hasSenderName {
-  return result.hasSenderName;
+  return _builderResult.hasSenderName;
 }
 - (NSString*) senderName {
-  return result.senderName;
+  return _builderResult.senderName;
 }
 - (CSODOTAPartyInvite_Builder*) setSenderName:(NSString*) value {
-  result.hasSenderName = YES;
-  result.senderName = value;
+  _builderResult.hasSenderName = YES;
+  _builderResult.senderName = value;
   return self;
 }
 - (CSODOTAPartyInvite_Builder*) clearSenderName {
-  result.hasSenderName = NO;
-  result.senderName = @"";
+  _builderResult.hasSenderName = NO;
+  _builderResult.senderName = @"";
   return self;
 }
 - (PBAppendableArray *)members {
-  return result.membersArray;
+  return _builderResult.membersArray;
 }
 - (CSODOTAPartyInvite_PartyMember*)membersAtIndex:(NSUInteger)index {
-  return [result membersAtIndex:index];
+  return [_builderResult membersAtIndex:index];
 }
 - (CSODOTAPartyInvite_Builder *)addMembers:(CSODOTAPartyInvite_PartyMember*)value {
-  if (result.membersArray == nil) {
-    result.membersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.membersArray == nil) {
+    _builderResult.membersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.membersArray addObject:value];
+  [_builderResult.membersArray addObject:value];
   return self;
 }
 - (CSODOTAPartyInvite_Builder *)setMembersArray:(NSArray *)array {
-  result.membersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.membersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSODOTAPartyInvite_Builder *)setMembersValues:(const CSODOTAPartyInvite_PartyMember* *)values count:(NSUInteger)count {
-  result.membersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.membersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSODOTAPartyInvite_Builder *)clearMembers {
-  result.membersArray = nil;
+  _builderResult.membersArray = nil;
   return self;
 }
 @end
@@ -5801,275 +5801,275 @@ static CDOTALobbyMember* defaultCDOTALobbyMemberInstance = nil;
   }
 }
 - (BOOL) hasId {
-  return result.hasId;
+  return _builderResult.hasId;
 }
 - (uint64_t) id {
-  return result.id;
+  return _builderResult.id;
 }
 - (CDOTALobbyMember_Builder*) setId:(uint64_t) value {
-  result.hasId = YES;
-  result.id = value;
+  _builderResult.hasId = YES;
+  _builderResult.id = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearId {
-  result.hasId = NO;
-  result.id = 0L;
+  _builderResult.hasId = NO;
+  _builderResult.id = 0L;
   return self;
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CDOTALobbyMember_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 - (BOOL) hasteam {
-  return result.hasteam;
+  return _builderResult.hasteam;
 }
 - (DOTA_GC_TEAM) team {
-  return result.team;
+  return _builderResult.team;
 }
 - (CDOTALobbyMember_Builder*) setteam:(DOTA_GC_TEAM) value {
-  result.hasteam = YES;
-  result.team = value;
+  _builderResult.hasteam = YES;
+  _builderResult.team = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearteam {
-  result.hasteam = NO;
-  result.team = DOTA_GC_TEAMDOTA_GC_TEAM_GOOD_GUYS;
+  _builderResult.hasteam = NO;
+  _builderResult.team = DOTA_GC_TEAMDOTA_GC_TEAM_GOOD_GUYS;
   return self;
 }
 - (BOOL) hasConnectedToGameServer {
-  return result.hasConnectedToGameServer;
+  return _builderResult.hasConnectedToGameServer;
 }
 - (BOOL) connectedToGameServer {
-  return result.connectedToGameServer;
+  return _builderResult.connectedToGameServer;
 }
 - (CDOTALobbyMember_Builder*) setConnectedToGameServer:(BOOL) value {
-  result.hasConnectedToGameServer = YES;
-  result.connectedToGameServer = value;
+  _builderResult.hasConnectedToGameServer = YES;
+  _builderResult.connectedToGameServer = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearConnectedToGameServer {
-  result.hasConnectedToGameServer = NO;
-  result.connectedToGameServer = NO;
+  _builderResult.hasConnectedToGameServer = NO;
+  _builderResult.connectedToGameServer = NO;
   return self;
 }
 - (BOOL) hasName {
-  return result.hasName;
+  return _builderResult.hasName;
 }
 - (NSString*) name {
-  return result.name;
+  return _builderResult.name;
 }
 - (CDOTALobbyMember_Builder*) setName:(NSString*) value {
-  result.hasName = YES;
-  result.name = value;
+  _builderResult.hasName = YES;
+  _builderResult.name = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearName {
-  result.hasName = NO;
-  result.name = @"";
+  _builderResult.hasName = NO;
+  _builderResult.name = @"";
   return self;
 }
 - (BOOL) hasSlot {
-  return result.hasSlot;
+  return _builderResult.hasSlot;
 }
 - (uint32_t) slot {
-  return result.slot;
+  return _builderResult.slot;
 }
 - (CDOTALobbyMember_Builder*) setSlot:(uint32_t) value {
-  result.hasSlot = YES;
-  result.slot = value;
+  _builderResult.hasSlot = YES;
+  _builderResult.slot = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearSlot {
-  result.hasSlot = NO;
-  result.slot = 0;
+  _builderResult.hasSlot = NO;
+  _builderResult.slot = 0;
   return self;
 }
 - (BOOL) hasLatitude {
-  return result.hasLatitude;
+  return _builderResult.hasLatitude;
 }
 - (Float32) latitude {
-  return result.latitude;
+  return _builderResult.latitude;
 }
 - (CDOTALobbyMember_Builder*) setLatitude:(Float32) value {
-  result.hasLatitude = YES;
-  result.latitude = value;
+  _builderResult.hasLatitude = YES;
+  _builderResult.latitude = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearLatitude {
-  result.hasLatitude = NO;
-  result.latitude = 0;
+  _builderResult.hasLatitude = NO;
+  _builderResult.latitude = 0;
   return self;
 }
 - (BOOL) hasLongitude {
-  return result.hasLongitude;
+  return _builderResult.hasLongitude;
 }
 - (Float32) longitude {
-  return result.longitude;
+  return _builderResult.longitude;
 }
 - (CDOTALobbyMember_Builder*) setLongitude:(Float32) value {
-  result.hasLongitude = YES;
-  result.longitude = value;
+  _builderResult.hasLongitude = YES;
+  _builderResult.longitude = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearLongitude {
-  result.hasLongitude = NO;
-  result.longitude = 0;
+  _builderResult.hasLongitude = NO;
+  _builderResult.longitude = 0;
   return self;
 }
 - (BOOL) hasready_state {
-  return result.hasready_state;
+  return _builderResult.hasready_state;
 }
 - (DOTALobbyReadyState) ready_state {
-  return result.ready_state;
+  return _builderResult.ready_state;
 }
 - (CDOTALobbyMember_Builder*) setready_state:(DOTALobbyReadyState) value {
-  result.hasready_state = YES;
-  result.ready_state = value;
+  _builderResult.hasready_state = YES;
+  _builderResult.ready_state = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearready_state {
-  result.hasready_state = NO;
-  result.ready_state = DOTALobbyReadyStateDOTALobbyReadyState_UNDECLARED;
+  _builderResult.hasready_state = NO;
+  _builderResult.ready_state = DOTALobbyReadyStateDOTALobbyReadyState_UNDECLARED;
   return self;
 }
 - (BOOL) hasPartyId {
-  return result.hasPartyId;
+  return _builderResult.hasPartyId;
 }
 - (uint64_t) partyId {
-  return result.partyId;
+  return _builderResult.partyId;
 }
 - (CDOTALobbyMember_Builder*) setPartyId:(uint64_t) value {
-  result.hasPartyId = YES;
-  result.partyId = value;
+  _builderResult.hasPartyId = YES;
+  _builderResult.partyId = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearPartyId {
-  result.hasPartyId = NO;
-  result.partyId = 0L;
+  _builderResult.hasPartyId = NO;
+  _builderResult.partyId = 0L;
   return self;
 }
 - (BOOL) hasMetaLevel {
-  return result.hasMetaLevel;
+  return _builderResult.hasMetaLevel;
 }
 - (uint32_t) metaLevel {
-  return result.metaLevel;
+  return _builderResult.metaLevel;
 }
 - (CDOTALobbyMember_Builder*) setMetaLevel:(uint32_t) value {
-  result.hasMetaLevel = YES;
-  result.metaLevel = value;
+  _builderResult.hasMetaLevel = YES;
+  _builderResult.metaLevel = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearMetaLevel {
-  result.hasMetaLevel = NO;
-  result.metaLevel = 0;
+  _builderResult.hasMetaLevel = NO;
+  _builderResult.metaLevel = 0;
   return self;
 }
 - (BOOL) hasMetaXp {
-  return result.hasMetaXp;
+  return _builderResult.hasMetaXp;
 }
 - (uint32_t) metaXp {
-  return result.metaXp;
+  return _builderResult.metaXp;
 }
 - (CDOTALobbyMember_Builder*) setMetaXp:(uint32_t) value {
-  result.hasMetaXp = YES;
-  result.metaXp = value;
+  _builderResult.hasMetaXp = YES;
+  _builderResult.metaXp = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearMetaXp {
-  result.hasMetaXp = NO;
-  result.metaXp = 0;
+  _builderResult.hasMetaXp = NO;
+  _builderResult.metaXp = 0;
   return self;
 }
 - (BOOL) hasMetaXpAwarded {
-  return result.hasMetaXpAwarded;
+  return _builderResult.hasMetaXpAwarded;
 }
 - (uint32_t) metaXpAwarded {
-  return result.metaXpAwarded;
+  return _builderResult.metaXpAwarded;
 }
 - (CDOTALobbyMember_Builder*) setMetaXpAwarded:(uint32_t) value {
-  result.hasMetaXpAwarded = YES;
-  result.metaXpAwarded = value;
+  _builderResult.hasMetaXpAwarded = YES;
+  _builderResult.metaXpAwarded = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearMetaXpAwarded {
-  result.hasMetaXpAwarded = NO;
-  result.metaXpAwarded = 0;
+  _builderResult.hasMetaXpAwarded = NO;
+  _builderResult.metaXpAwarded = 0;
   return self;
 }
 - (BOOL) hasleaver_status {
-  return result.hasleaver_status;
+  return _builderResult.hasleaver_status;
 }
 - (DOTALeaverStatus_t) leaver_status {
-  return result.leaver_status;
+  return _builderResult.leaver_status;
 }
 - (CDOTALobbyMember_Builder*) setleaver_status:(DOTALeaverStatus_t) value {
-  result.hasleaver_status = YES;
-  result.leaver_status = value;
+  _builderResult.hasleaver_status = YES;
+  _builderResult.leaver_status = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearleaver_status {
-  result.hasleaver_status = NO;
-  result.leaver_status = DOTALeaverStatus_tDOTA_LEAVER_NONE;
+  _builderResult.hasleaver_status = NO;
+  _builderResult.leaver_status = DOTALeaverStatus_tDOTA_LEAVER_NONE;
   return self;
 }
 - (BOOL) hasChannel {
-  return result.hasChannel;
+  return _builderResult.hasChannel;
 }
 - (uint32_t) channel {
-  return result.channel;
+  return _builderResult.channel;
 }
 - (CDOTALobbyMember_Builder*) setChannel:(uint32_t) value {
-  result.hasChannel = YES;
-  result.channel = value;
+  _builderResult.hasChannel = YES;
+  _builderResult.channel = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearChannel {
-  result.hasChannel = NO;
-  result.channel = 0;
+  _builderResult.hasChannel = NO;
+  _builderResult.channel = 0;
   return self;
 }
 - (BOOL) hasPrizeDefIndex {
-  return result.hasPrizeDefIndex;
+  return _builderResult.hasPrizeDefIndex;
 }
 - (uint32_t) prizeDefIndex {
-  return result.prizeDefIndex;
+  return _builderResult.prizeDefIndex;
 }
 - (CDOTALobbyMember_Builder*) setPrizeDefIndex:(uint32_t) value {
-  result.hasPrizeDefIndex = YES;
-  result.prizeDefIndex = value;
+  _builderResult.hasPrizeDefIndex = YES;
+  _builderResult.prizeDefIndex = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearPrizeDefIndex {
-  result.hasPrizeDefIndex = NO;
-  result.prizeDefIndex = 0;
+  _builderResult.hasPrizeDefIndex = NO;
+  _builderResult.prizeDefIndex = 0;
   return self;
 }
 - (BOOL) hasMetaXpBonusRate {
-  return result.hasMetaXpBonusRate;
+  return _builderResult.hasMetaXpBonusRate;
 }
 - (uint32_t) metaXpBonusRate {
-  return result.metaXpBonusRate;
+  return _builderResult.metaXpBonusRate;
 }
 - (CDOTALobbyMember_Builder*) setMetaXpBonusRate:(uint32_t) value {
-  result.hasMetaXpBonusRate = YES;
-  result.metaXpBonusRate = value;
+  _builderResult.hasMetaXpBonusRate = YES;
+  _builderResult.metaXpBonusRate = value;
   return self;
 }
 - (CDOTALobbyMember_Builder*) clearMetaXpBonusRate {
-  result.hasMetaXpBonusRate = NO;
-  result.metaXpBonusRate = 0;
+  _builderResult.hasMetaXpBonusRate = NO;
+  _builderResult.metaXpBonusRate = 0;
   return self;
 }
 @end
@@ -6451,115 +6451,115 @@ static CLobbyTeamDetails* defaultCLobbyTeamDetailsInstance = nil;
   }
 }
 - (BOOL) hasTeamName {
-  return result.hasTeamName;
+  return _builderResult.hasTeamName;
 }
 - (NSString*) teamName {
-  return result.teamName;
+  return _builderResult.teamName;
 }
 - (CLobbyTeamDetails_Builder*) setTeamName:(NSString*) value {
-  result.hasTeamName = YES;
-  result.teamName = value;
+  _builderResult.hasTeamName = YES;
+  _builderResult.teamName = value;
   return self;
 }
 - (CLobbyTeamDetails_Builder*) clearTeamName {
-  result.hasTeamName = NO;
-  result.teamName = @"";
+  _builderResult.hasTeamName = NO;
+  _builderResult.teamName = @"";
   return self;
 }
 - (BOOL) hasTeamTag {
-  return result.hasTeamTag;
+  return _builderResult.hasTeamTag;
 }
 - (NSString*) teamTag {
-  return result.teamTag;
+  return _builderResult.teamTag;
 }
 - (CLobbyTeamDetails_Builder*) setTeamTag:(NSString*) value {
-  result.hasTeamTag = YES;
-  result.teamTag = value;
+  _builderResult.hasTeamTag = YES;
+  _builderResult.teamTag = value;
   return self;
 }
 - (CLobbyTeamDetails_Builder*) clearTeamTag {
-  result.hasTeamTag = NO;
-  result.teamTag = @"";
+  _builderResult.hasTeamTag = NO;
+  _builderResult.teamTag = @"";
   return self;
 }
 - (BOOL) hasTeamId {
-  return result.hasTeamId;
+  return _builderResult.hasTeamId;
 }
 - (uint32_t) teamId {
-  return result.teamId;
+  return _builderResult.teamId;
 }
 - (CLobbyTeamDetails_Builder*) setTeamId:(uint32_t) value {
-  result.hasTeamId = YES;
-  result.teamId = value;
+  _builderResult.hasTeamId = YES;
+  _builderResult.teamId = value;
   return self;
 }
 - (CLobbyTeamDetails_Builder*) clearTeamId {
-  result.hasTeamId = NO;
-  result.teamId = 0;
+  _builderResult.hasTeamId = NO;
+  _builderResult.teamId = 0;
   return self;
 }
 - (BOOL) hasTeamLogo {
-  return result.hasTeamLogo;
+  return _builderResult.hasTeamLogo;
 }
 - (uint64_t) teamLogo {
-  return result.teamLogo;
+  return _builderResult.teamLogo;
 }
 - (CLobbyTeamDetails_Builder*) setTeamLogo:(uint64_t) value {
-  result.hasTeamLogo = YES;
-  result.teamLogo = value;
+  _builderResult.hasTeamLogo = YES;
+  _builderResult.teamLogo = value;
   return self;
 }
 - (CLobbyTeamDetails_Builder*) clearTeamLogo {
-  result.hasTeamLogo = NO;
-  result.teamLogo = 0L;
+  _builderResult.hasTeamLogo = NO;
+  _builderResult.teamLogo = 0L;
   return self;
 }
 - (BOOL) hasTeamBaseLogo {
-  return result.hasTeamBaseLogo;
+  return _builderResult.hasTeamBaseLogo;
 }
 - (uint64_t) teamBaseLogo {
-  return result.teamBaseLogo;
+  return _builderResult.teamBaseLogo;
 }
 - (CLobbyTeamDetails_Builder*) setTeamBaseLogo:(uint64_t) value {
-  result.hasTeamBaseLogo = YES;
-  result.teamBaseLogo = value;
+  _builderResult.hasTeamBaseLogo = YES;
+  _builderResult.teamBaseLogo = value;
   return self;
 }
 - (CLobbyTeamDetails_Builder*) clearTeamBaseLogo {
-  result.hasTeamBaseLogo = NO;
-  result.teamBaseLogo = 0L;
+  _builderResult.hasTeamBaseLogo = NO;
+  _builderResult.teamBaseLogo = 0L;
   return self;
 }
 - (BOOL) hasTeamBannerLogo {
-  return result.hasTeamBannerLogo;
+  return _builderResult.hasTeamBannerLogo;
 }
 - (uint64_t) teamBannerLogo {
-  return result.teamBannerLogo;
+  return _builderResult.teamBannerLogo;
 }
 - (CLobbyTeamDetails_Builder*) setTeamBannerLogo:(uint64_t) value {
-  result.hasTeamBannerLogo = YES;
-  result.teamBannerLogo = value;
+  _builderResult.hasTeamBannerLogo = YES;
+  _builderResult.teamBannerLogo = value;
   return self;
 }
 - (CLobbyTeamDetails_Builder*) clearTeamBannerLogo {
-  result.hasTeamBannerLogo = NO;
-  result.teamBannerLogo = 0L;
+  _builderResult.hasTeamBannerLogo = NO;
+  _builderResult.teamBannerLogo = 0L;
   return self;
 }
 - (BOOL) hasCompleteTeam {
-  return result.hasCompleteTeam;
+  return _builderResult.hasCompleteTeam;
 }
 - (BOOL) completeTeam {
-  return result.completeTeam;
+  return _builderResult.completeTeam;
 }
 - (CLobbyTeamDetails_Builder*) setCompleteTeam:(BOOL) value {
-  result.hasCompleteTeam = YES;
-  result.completeTeam = value;
+  _builderResult.hasCompleteTeam = YES;
+  _builderResult.completeTeam = value;
   return self;
 }
 - (CLobbyTeamDetails_Builder*) clearCompleteTeam {
-  result.hasCompleteTeam = NO;
-  result.completeTeam = NO;
+  _builderResult.hasCompleteTeam = NO;
+  _builderResult.completeTeam = NO;
   return self;
 }
 @end
@@ -6784,35 +6784,35 @@ static CLobbyPendingPlayerReport* defaultCLobbyPendingPlayerReportInstance = nil
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CLobbyPendingPlayerReport_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CLobbyPendingPlayerReport_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasDate {
-  return result.hasDate;
+  return _builderResult.hasDate;
 }
 - (uint32_t) date {
-  return result.date;
+  return _builderResult.date;
 }
 - (CLobbyPendingPlayerReport_Builder*) setDate:(uint32_t) value {
-  result.hasDate = YES;
-  result.date = value;
+  _builderResult.hasDate = YES;
+  _builderResult.date = value;
   return self;
 }
 - (CLobbyPendingPlayerReport_Builder*) clearDate {
-  result.hasDate = NO;
-  result.date = 0;
+  _builderResult.hasDate = NO;
+  _builderResult.date = 0;
   return self;
 }
 @end
@@ -7137,83 +7137,83 @@ static CLobbyTimedRewardDetails* defaultCLobbyTimedRewardDetailsInstance = nil;
   }
 }
 - (BOOL) hasItemId {
-  return result.hasItemId;
+  return _builderResult.hasItemId;
 }
 - (uint64_t) itemId {
-  return result.itemId;
+  return _builderResult.itemId;
 }
 - (CLobbyTimedRewardDetails_Builder*) setItemId:(uint64_t) value {
-  result.hasItemId = YES;
-  result.itemId = value;
+  _builderResult.hasItemId = YES;
+  _builderResult.itemId = value;
   return self;
 }
 - (CLobbyTimedRewardDetails_Builder*) clearItemId {
-  result.hasItemId = NO;
-  result.itemId = 0L;
+  _builderResult.hasItemId = NO;
+  _builderResult.itemId = 0L;
   return self;
 }
 - (BOOL) hasItemDefIndex {
-  return result.hasItemDefIndex;
+  return _builderResult.hasItemDefIndex;
 }
 - (uint32_t) itemDefIndex {
-  return result.itemDefIndex;
+  return _builderResult.itemDefIndex;
 }
 - (CLobbyTimedRewardDetails_Builder*) setItemDefIndex:(uint32_t) value {
-  result.hasItemDefIndex = YES;
-  result.itemDefIndex = value;
+  _builderResult.hasItemDefIndex = YES;
+  _builderResult.itemDefIndex = value;
   return self;
 }
 - (CLobbyTimedRewardDetails_Builder*) clearItemDefIndex {
-  result.hasItemDefIndex = NO;
-  result.itemDefIndex = 0;
+  _builderResult.hasItemDefIndex = NO;
+  _builderResult.itemDefIndex = 0;
   return self;
 }
 - (BOOL) hasIsSupplyCrate {
-  return result.hasIsSupplyCrate;
+  return _builderResult.hasIsSupplyCrate;
 }
 - (BOOL) isSupplyCrate {
-  return result.isSupplyCrate;
+  return _builderResult.isSupplyCrate;
 }
 - (CLobbyTimedRewardDetails_Builder*) setIsSupplyCrate:(BOOL) value {
-  result.hasIsSupplyCrate = YES;
-  result.isSupplyCrate = value;
+  _builderResult.hasIsSupplyCrate = YES;
+  _builderResult.isSupplyCrate = value;
   return self;
 }
 - (CLobbyTimedRewardDetails_Builder*) clearIsSupplyCrate {
-  result.hasIsSupplyCrate = NO;
-  result.isSupplyCrate = NO;
+  _builderResult.hasIsSupplyCrate = NO;
+  _builderResult.isSupplyCrate = NO;
   return self;
 }
 - (BOOL) hasIsTimedDrop {
-  return result.hasIsTimedDrop;
+  return _builderResult.hasIsTimedDrop;
 }
 - (BOOL) isTimedDrop {
-  return result.isTimedDrop;
+  return _builderResult.isTimedDrop;
 }
 - (CLobbyTimedRewardDetails_Builder*) setIsTimedDrop:(BOOL) value {
-  result.hasIsTimedDrop = YES;
-  result.isTimedDrop = value;
+  _builderResult.hasIsTimedDrop = YES;
+  _builderResult.isTimedDrop = value;
   return self;
 }
 - (CLobbyTimedRewardDetails_Builder*) clearIsTimedDrop {
-  result.hasIsTimedDrop = NO;
-  result.isTimedDrop = NO;
+  _builderResult.hasIsTimedDrop = NO;
+  _builderResult.isTimedDrop = NO;
   return self;
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CLobbyTimedRewardDetails_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CLobbyTimedRewardDetails_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 @end
@@ -8408,17 +8408,17 @@ BOOL CSODOTALobby_LobbyTypeIsValidValue(CSODOTALobby_LobbyType value) {
     [self setLobbyId:other.lobbyId];
   }
   if (other.membersArray.count > 0) {
-    if (result.membersArray == nil) {
-      result.membersArray = [[other.membersArray copyWithZone:[other.membersArray zone]] autorelease];
+    if (_builderResult.membersArray == nil) {
+      _builderResult.membersArray = [[other.membersArray copyWithZone:[other.membersArray zone]] autorelease];
     } else {
-      [result.membersArray appendArray:other.membersArray];
+      [_builderResult.membersArray appendArray:other.membersArray];
     }
   }
   if (other.leftMembersArray.count > 0) {
-    if (result.leftMembersArray == nil) {
-      result.leftMembersArray = [[other.leftMembersArray copyWithZone:[other.leftMembersArray zone]] autorelease];
+    if (_builderResult.leftMembersArray == nil) {
+      _builderResult.leftMembersArray = [[other.leftMembersArray copyWithZone:[other.leftMembersArray zone]] autorelease];
     } else {
-      [result.leftMembersArray appendArray:other.leftMembersArray];
+      [_builderResult.leftMembersArray appendArray:other.leftMembersArray];
     }
   }
   if (other.hasLeaderId) {
@@ -8431,10 +8431,10 @@ BOOL CSODOTALobby_LobbyTypeIsValidValue(CSODOTALobby_LobbyType value) {
     [self setGameMode:other.gameMode];
   }
   if (other.pendingInvitesArray.count > 0) {
-    if (result.pendingInvitesArray == nil) {
-      result.pendingInvitesArray = [[other.pendingInvitesArray copyWithZone:[other.pendingInvitesArray zone]] autorelease];
+    if (_builderResult.pendingInvitesArray == nil) {
+      _builderResult.pendingInvitesArray = [[other.pendingInvitesArray copyWithZone:[other.pendingInvitesArray zone]] autorelease];
     } else {
-      [result.pendingInvitesArray appendArray:other.pendingInvitesArray];
+      [_builderResult.pendingInvitesArray appendArray:other.pendingInvitesArray];
     }
   }
   if (other.hasstate) {
@@ -8459,10 +8459,10 @@ BOOL CSODOTALobby_LobbyTypeIsValidValue(CSODOTALobby_LobbyType value) {
     [self setGameName:other.gameName];
   }
   if (other.teamDetailsArray.count > 0) {
-    if (result.teamDetailsArray == nil) {
-      result.teamDetailsArray = [[other.teamDetailsArray copyWithZone:[other.teamDetailsArray zone]] autorelease];
+    if (_builderResult.teamDetailsArray == nil) {
+      _builderResult.teamDetailsArray = [[other.teamDetailsArray copyWithZone:[other.teamDetailsArray zone]] autorelease];
     } else {
-      [result.teamDetailsArray appendArray:other.teamDetailsArray];
+      [_builderResult.teamDetailsArray appendArray:other.teamDetailsArray];
     }
   }
   if (other.hasTutorialLesson) {
@@ -8508,10 +8508,10 @@ BOOL CSODOTALobby_LobbyTypeIsValidValue(CSODOTALobby_LobbyType value) {
     [self setgame_version:other.game_version];
   }
   if (other.timedRewardDetailsArray.count > 0) {
-    if (result.timedRewardDetailsArray == nil) {
-      result.timedRewardDetailsArray = [[other.timedRewardDetailsArray copyWithZone:[other.timedRewardDetailsArray zone]] autorelease];
+    if (_builderResult.timedRewardDetailsArray == nil) {
+      _builderResult.timedRewardDetailsArray = [[other.timedRewardDetailsArray copyWithZone:[other.timedRewardDetailsArray zone]] autorelease];
     } else {
-      [result.timedRewardDetailsArray appendArray:other.timedRewardDetailsArray];
+      [_builderResult.timedRewardDetailsArray appendArray:other.timedRewardDetailsArray];
     }
   }
   if (other.hasPassKey) {
@@ -8521,10 +8521,10 @@ BOOL CSODOTALobby_LobbyTypeIsValidValue(CSODOTALobby_LobbyType value) {
     [self setDropRateBonus:other.dropRateBonus];
   }
   if (other.botSlotDifficultyArray.count > 0) {
-    if (result.botSlotDifficultyArray == nil) {
-      result.botSlotDifficultyArray = [[other.botSlotDifficultyArray copyWithZone:[other.botSlotDifficultyArray zone]] autorelease];
+    if (_builderResult.botSlotDifficultyArray == nil) {
+      _builderResult.botSlotDifficultyArray = [[other.botSlotDifficultyArray copyWithZone:[other.botSlotDifficultyArray zone]] autorelease];
     } else {
-      [result.botSlotDifficultyArray appendArray:other.botSlotDifficultyArray];
+      [_builderResult.botSlotDifficultyArray appendArray:other.botSlotDifficultyArray];
     }
   }
   if (other.hasLeagueid) {
@@ -8790,729 +8790,729 @@ BOOL CSODOTALobby_LobbyTypeIsValidValue(CSODOTALobby_LobbyType value) {
   }
 }
 - (BOOL) hasLobbyId {
-  return result.hasLobbyId;
+  return _builderResult.hasLobbyId;
 }
 - (uint64_t) lobbyId {
-  return result.lobbyId;
+  return _builderResult.lobbyId;
 }
 - (CSODOTALobby_Builder*) setLobbyId:(uint64_t) value {
-  result.hasLobbyId = YES;
-  result.lobbyId = value;
+  _builderResult.hasLobbyId = YES;
+  _builderResult.lobbyId = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearLobbyId {
-  result.hasLobbyId = NO;
-  result.lobbyId = 0L;
+  _builderResult.hasLobbyId = NO;
+  _builderResult.lobbyId = 0L;
   return self;
 }
 - (PBAppendableArray *)members {
-  return result.membersArray;
+  return _builderResult.membersArray;
 }
 - (CDOTALobbyMember*)membersAtIndex:(NSUInteger)index {
-  return [result membersAtIndex:index];
+  return [_builderResult membersAtIndex:index];
 }
 - (CSODOTALobby_Builder *)addMembers:(CDOTALobbyMember*)value {
-  if (result.membersArray == nil) {
-    result.membersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.membersArray == nil) {
+    _builderResult.membersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.membersArray addObject:value];
+  [_builderResult.membersArray addObject:value];
   return self;
 }
 - (CSODOTALobby_Builder *)setMembersArray:(NSArray *)array {
-  result.membersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.membersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSODOTALobby_Builder *)setMembersValues:(const CDOTALobbyMember* *)values count:(NSUInteger)count {
-  result.membersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.membersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSODOTALobby_Builder *)clearMembers {
-  result.membersArray = nil;
+  _builderResult.membersArray = nil;
   return self;
 }
 - (PBAppendableArray *)leftMembers {
-  return result.leftMembersArray;
+  return _builderResult.leftMembersArray;
 }
 - (CDOTALobbyMember*)leftMembersAtIndex:(NSUInteger)index {
-  return [result leftMembersAtIndex:index];
+  return [_builderResult leftMembersAtIndex:index];
 }
 - (CSODOTALobby_Builder *)addLeftMembers:(CDOTALobbyMember*)value {
-  if (result.leftMembersArray == nil) {
-    result.leftMembersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.leftMembersArray == nil) {
+    _builderResult.leftMembersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.leftMembersArray addObject:value];
+  [_builderResult.leftMembersArray addObject:value];
   return self;
 }
 - (CSODOTALobby_Builder *)setLeftMembersArray:(NSArray *)array {
-  result.leftMembersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.leftMembersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSODOTALobby_Builder *)setLeftMembersValues:(const CDOTALobbyMember* *)values count:(NSUInteger)count {
-  result.leftMembersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.leftMembersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSODOTALobby_Builder *)clearLeftMembers {
-  result.leftMembersArray = nil;
+  _builderResult.leftMembersArray = nil;
   return self;
 }
 - (BOOL) hasLeaderId {
-  return result.hasLeaderId;
+  return _builderResult.hasLeaderId;
 }
 - (uint64_t) leaderId {
-  return result.leaderId;
+  return _builderResult.leaderId;
 }
 - (CSODOTALobby_Builder*) setLeaderId:(uint64_t) value {
-  result.hasLeaderId = YES;
-  result.leaderId = value;
+  _builderResult.hasLeaderId = YES;
+  _builderResult.leaderId = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearLeaderId {
-  result.hasLeaderId = NO;
-  result.leaderId = 0L;
+  _builderResult.hasLeaderId = NO;
+  _builderResult.leaderId = 0L;
   return self;
 }
 - (BOOL) hasServerId {
-  return result.hasServerId;
+  return _builderResult.hasServerId;
 }
 - (uint64_t) serverId {
-  return result.serverId;
+  return _builderResult.serverId;
 }
 - (CSODOTALobby_Builder*) setServerId:(uint64_t) value {
-  result.hasServerId = YES;
-  result.serverId = value;
+  _builderResult.hasServerId = YES;
+  _builderResult.serverId = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearServerId {
-  result.hasServerId = NO;
-  result.serverId = 0L;
+  _builderResult.hasServerId = NO;
+  _builderResult.serverId = 0L;
   return self;
 }
 - (BOOL) hasGameMode {
-  return result.hasGameMode;
+  return _builderResult.hasGameMode;
 }
 - (uint32_t) gameMode {
-  return result.gameMode;
+  return _builderResult.gameMode;
 }
 - (CSODOTALobby_Builder*) setGameMode:(uint32_t) value {
-  result.hasGameMode = YES;
-  result.gameMode = value;
+  _builderResult.hasGameMode = YES;
+  _builderResult.gameMode = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearGameMode {
-  result.hasGameMode = NO;
-  result.gameMode = 0;
+  _builderResult.hasGameMode = NO;
+  _builderResult.gameMode = 0;
   return self;
 }
 - (PBAppendableArray *)pendingInvites {
-  return result.pendingInvitesArray;
+  return _builderResult.pendingInvitesArray;
 }
 - (uint64_t)pendingInvitesAtIndex:(NSUInteger)index {
-  return [result pendingInvitesAtIndex:index];
+  return [_builderResult pendingInvitesAtIndex:index];
 }
 - (CSODOTALobby_Builder *)addPendingInvites:(uint64_t)value {
-  if (result.pendingInvitesArray == nil) {
-    result.pendingInvitesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
+  if (_builderResult.pendingInvitesArray == nil) {
+    _builderResult.pendingInvitesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
   }
-  [result.pendingInvitesArray addUint64:value];
+  [_builderResult.pendingInvitesArray addUint64:value];
   return self;
 }
 - (CSODOTALobby_Builder *)setPendingInvitesArray:(NSArray *)array {
-  result.pendingInvitesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
+  _builderResult.pendingInvitesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CSODOTALobby_Builder *)setPendingInvitesValues:(const uint64_t *)values count:(NSUInteger)count {
-  result.pendingInvitesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
+  _builderResult.pendingInvitesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CSODOTALobby_Builder *)clearPendingInvites {
-  result.pendingInvitesArray = nil;
+  _builderResult.pendingInvitesArray = nil;
   return self;
 }
 - (BOOL) hasstate {
-  return result.hasstate;
+  return _builderResult.hasstate;
 }
 - (CSODOTALobby_State) state {
-  return result.state;
+  return _builderResult.state;
 }
 - (CSODOTALobby_Builder*) setstate:(CSODOTALobby_State) value {
-  result.hasstate = YES;
-  result.state = value;
+  _builderResult.hasstate = YES;
+  _builderResult.state = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearstate {
-  result.hasstate = NO;
-  result.state = CSODOTALobby_StateUI;
+  _builderResult.hasstate = NO;
+  _builderResult.state = CSODOTALobby_StateUI;
   return self;
 }
 - (BOOL) hasConnect {
-  return result.hasConnect;
+  return _builderResult.hasConnect;
 }
 - (NSString*) connect {
-  return result.connect;
+  return _builderResult.connect;
 }
 - (CSODOTALobby_Builder*) setConnect:(NSString*) value {
-  result.hasConnect = YES;
-  result.connect = value;
+  _builderResult.hasConnect = YES;
+  _builderResult.connect = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearConnect {
-  result.hasConnect = NO;
-  result.connect = @"";
+  _builderResult.hasConnect = NO;
+  _builderResult.connect = @"";
   return self;
 }
 - (BOOL) haslobby_type {
-  return result.haslobby_type;
+  return _builderResult.haslobby_type;
 }
 - (CSODOTALobby_LobbyType) lobby_type {
-  return result.lobby_type;
+  return _builderResult.lobby_type;
 }
 - (CSODOTALobby_Builder*) setlobby_type:(CSODOTALobby_LobbyType) value {
-  result.haslobby_type = YES;
-  result.lobby_type = value;
+  _builderResult.haslobby_type = YES;
+  _builderResult.lobby_type = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearlobby_type {
-  result.haslobby_type = NO;
-  result.lobby_type = CSODOTALobby_LobbyTypeINVALID;
+  _builderResult.haslobby_type = NO;
+  _builderResult.lobby_type = CSODOTALobby_LobbyTypeINVALID;
   return self;
 }
 - (BOOL) hasAllowCheats {
-  return result.hasAllowCheats;
+  return _builderResult.hasAllowCheats;
 }
 - (BOOL) allowCheats {
-  return result.allowCheats;
+  return _builderResult.allowCheats;
 }
 - (CSODOTALobby_Builder*) setAllowCheats:(BOOL) value {
-  result.hasAllowCheats = YES;
-  result.allowCheats = value;
+  _builderResult.hasAllowCheats = YES;
+  _builderResult.allowCheats = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearAllowCheats {
-  result.hasAllowCheats = NO;
-  result.allowCheats = NO;
+  _builderResult.hasAllowCheats = NO;
+  _builderResult.allowCheats = NO;
   return self;
 }
 - (BOOL) hasFillWithBots {
-  return result.hasFillWithBots;
+  return _builderResult.hasFillWithBots;
 }
 - (BOOL) fillWithBots {
-  return result.fillWithBots;
+  return _builderResult.fillWithBots;
 }
 - (CSODOTALobby_Builder*) setFillWithBots:(BOOL) value {
-  result.hasFillWithBots = YES;
-  result.fillWithBots = value;
+  _builderResult.hasFillWithBots = YES;
+  _builderResult.fillWithBots = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearFillWithBots {
-  result.hasFillWithBots = NO;
-  result.fillWithBots = NO;
+  _builderResult.hasFillWithBots = NO;
+  _builderResult.fillWithBots = NO;
   return self;
 }
 - (BOOL) hasIntroMode {
-  return result.hasIntroMode;
+  return _builderResult.hasIntroMode;
 }
 - (BOOL) introMode {
-  return result.introMode;
+  return _builderResult.introMode;
 }
 - (CSODOTALobby_Builder*) setIntroMode:(BOOL) value {
-  result.hasIntroMode = YES;
-  result.introMode = value;
+  _builderResult.hasIntroMode = YES;
+  _builderResult.introMode = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearIntroMode {
-  result.hasIntroMode = NO;
-  result.introMode = NO;
+  _builderResult.hasIntroMode = NO;
+  _builderResult.introMode = NO;
   return self;
 }
 - (BOOL) hasGameName {
-  return result.hasGameName;
+  return _builderResult.hasGameName;
 }
 - (NSString*) gameName {
-  return result.gameName;
+  return _builderResult.gameName;
 }
 - (CSODOTALobby_Builder*) setGameName:(NSString*) value {
-  result.hasGameName = YES;
-  result.gameName = value;
+  _builderResult.hasGameName = YES;
+  _builderResult.gameName = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearGameName {
-  result.hasGameName = NO;
-  result.gameName = @"";
+  _builderResult.hasGameName = NO;
+  _builderResult.gameName = @"";
   return self;
 }
 - (PBAppendableArray *)teamDetails {
-  return result.teamDetailsArray;
+  return _builderResult.teamDetailsArray;
 }
 - (CLobbyTeamDetails*)teamDetailsAtIndex:(NSUInteger)index {
-  return [result teamDetailsAtIndex:index];
+  return [_builderResult teamDetailsAtIndex:index];
 }
 - (CSODOTALobby_Builder *)addTeamDetails:(CLobbyTeamDetails*)value {
-  if (result.teamDetailsArray == nil) {
-    result.teamDetailsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.teamDetailsArray == nil) {
+    _builderResult.teamDetailsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.teamDetailsArray addObject:value];
+  [_builderResult.teamDetailsArray addObject:value];
   return self;
 }
 - (CSODOTALobby_Builder *)setTeamDetailsArray:(NSArray *)array {
-  result.teamDetailsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.teamDetailsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSODOTALobby_Builder *)setTeamDetailsValues:(const CLobbyTeamDetails* *)values count:(NSUInteger)count {
-  result.teamDetailsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.teamDetailsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSODOTALobby_Builder *)clearTeamDetails {
-  result.teamDetailsArray = nil;
+  _builderResult.teamDetailsArray = nil;
   return self;
 }
 - (BOOL) hasTutorialLesson {
-  return result.hasTutorialLesson;
+  return _builderResult.hasTutorialLesson;
 }
 - (uint32_t) tutorialLesson {
-  return result.tutorialLesson;
+  return _builderResult.tutorialLesson;
 }
 - (CSODOTALobby_Builder*) setTutorialLesson:(uint32_t) value {
-  result.hasTutorialLesson = YES;
-  result.tutorialLesson = value;
+  _builderResult.hasTutorialLesson = YES;
+  _builderResult.tutorialLesson = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearTutorialLesson {
-  result.hasTutorialLesson = NO;
-  result.tutorialLesson = 0;
+  _builderResult.hasTutorialLesson = NO;
+  _builderResult.tutorialLesson = 0;
   return self;
 }
 - (BOOL) hasTournamentId {
-  return result.hasTournamentId;
+  return _builderResult.hasTournamentId;
 }
 - (uint32_t) tournamentId {
-  return result.tournamentId;
+  return _builderResult.tournamentId;
 }
 - (CSODOTALobby_Builder*) setTournamentId:(uint32_t) value {
-  result.hasTournamentId = YES;
-  result.tournamentId = value;
+  _builderResult.hasTournamentId = YES;
+  _builderResult.tournamentId = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearTournamentId {
-  result.hasTournamentId = NO;
-  result.tournamentId = 0;
+  _builderResult.hasTournamentId = NO;
+  _builderResult.tournamentId = 0;
   return self;
 }
 - (BOOL) hasTournamentGameId {
-  return result.hasTournamentGameId;
+  return _builderResult.hasTournamentGameId;
 }
 - (uint32_t) tournamentGameId {
-  return result.tournamentGameId;
+  return _builderResult.tournamentGameId;
 }
 - (CSODOTALobby_Builder*) setTournamentGameId:(uint32_t) value {
-  result.hasTournamentGameId = YES;
-  result.tournamentGameId = value;
+  _builderResult.hasTournamentGameId = YES;
+  _builderResult.tournamentGameId = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearTournamentGameId {
-  result.hasTournamentGameId = NO;
-  result.tournamentGameId = 0;
+  _builderResult.hasTournamentGameId = NO;
+  _builderResult.tournamentGameId = 0;
   return self;
 }
 - (BOOL) hasServerRegion {
-  return result.hasServerRegion;
+  return _builderResult.hasServerRegion;
 }
 - (uint32_t) serverRegion {
-  return result.serverRegion;
+  return _builderResult.serverRegion;
 }
 - (CSODOTALobby_Builder*) setServerRegion:(uint32_t) value {
-  result.hasServerRegion = YES;
-  result.serverRegion = value;
+  _builderResult.hasServerRegion = YES;
+  _builderResult.serverRegion = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearServerRegion {
-  result.hasServerRegion = NO;
-  result.serverRegion = 0;
+  _builderResult.hasServerRegion = NO;
+  _builderResult.serverRegion = 0;
   return self;
 }
 - (BOOL) hasgame_state {
-  return result.hasgame_state;
+  return _builderResult.hasgame_state;
 }
 - (DOTA_GameState) game_state {
-  return result.game_state;
+  return _builderResult.game_state;
 }
 - (CSODOTALobby_Builder*) setgame_state:(DOTA_GameState) value {
-  result.hasgame_state = YES;
-  result.game_state = value;
+  _builderResult.hasgame_state = YES;
+  _builderResult.game_state = value;
   return self;
 }
 - (CSODOTALobby_Builder*) cleargame_state {
-  result.hasgame_state = NO;
-  result.game_state = DOTA_GameStateDOTA_GAMERULES_STATE_INIT;
+  _builderResult.hasgame_state = NO;
+  _builderResult.game_state = DOTA_GameStateDOTA_GAMERULES_STATE_INIT;
   return self;
 }
 - (BOOL) hasNumSpectators {
-  return result.hasNumSpectators;
+  return _builderResult.hasNumSpectators;
 }
 - (uint32_t) numSpectators {
-  return result.numSpectators;
+  return _builderResult.numSpectators;
 }
 - (CSODOTALobby_Builder*) setNumSpectators:(uint32_t) value {
-  result.hasNumSpectators = YES;
-  result.numSpectators = value;
+  _builderResult.hasNumSpectators = YES;
+  _builderResult.numSpectators = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearNumSpectators {
-  result.hasNumSpectators = NO;
-  result.numSpectators = 0;
+  _builderResult.hasNumSpectators = NO;
+  _builderResult.numSpectators = 0;
   return self;
 }
 - (BOOL) hasTowerState {
-  return result.hasTowerState;
+  return _builderResult.hasTowerState;
 }
 - (uint32_t) towerState {
-  return result.towerState;
+  return _builderResult.towerState;
 }
 - (CSODOTALobby_Builder*) setTowerState:(uint32_t) value {
-  result.hasTowerState = YES;
-  result.towerState = value;
+  _builderResult.hasTowerState = YES;
+  _builderResult.towerState = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearTowerState {
-  result.hasTowerState = NO;
-  result.towerState = 0;
+  _builderResult.hasTowerState = NO;
+  _builderResult.towerState = 0;
   return self;
 }
 - (BOOL) hasMatchgroup {
-  return result.hasMatchgroup;
+  return _builderResult.hasMatchgroup;
 }
 - (uint32_t) matchgroup {
-  return result.matchgroup;
+  return _builderResult.matchgroup;
 }
 - (CSODOTALobby_Builder*) setMatchgroup:(uint32_t) value {
-  result.hasMatchgroup = YES;
-  result.matchgroup = value;
+  _builderResult.hasMatchgroup = YES;
+  _builderResult.matchgroup = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearMatchgroup {
-  result.hasMatchgroup = NO;
-  result.matchgroup = 0;
+  _builderResult.hasMatchgroup = NO;
+  _builderResult.matchgroup = 0;
   return self;
 }
 - (BOOL) hasLeaverDetected {
-  return result.hasLeaverDetected;
+  return _builderResult.hasLeaverDetected;
 }
 - (BOOL) leaverDetected {
-  return result.leaverDetected;
+  return _builderResult.leaverDetected;
 }
 - (CSODOTALobby_Builder*) setLeaverDetected:(BOOL) value {
-  result.hasLeaverDetected = YES;
-  result.leaverDetected = value;
+  _builderResult.hasLeaverDetected = YES;
+  _builderResult.leaverDetected = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearLeaverDetected {
-  result.hasLeaverDetected = NO;
-  result.leaverDetected = NO;
+  _builderResult.hasLeaverDetected = NO;
+  _builderResult.leaverDetected = NO;
   return self;
 }
 - (BOOL) hascm_pick {
-  return result.hascm_pick;
+  return _builderResult.hascm_pick;
 }
 - (DOTA_CM_PICK) cm_pick {
-  return result.cm_pick;
+  return _builderResult.cm_pick;
 }
 - (CSODOTALobby_Builder*) setcm_pick:(DOTA_CM_PICK) value {
-  result.hascm_pick = YES;
-  result.cm_pick = value;
+  _builderResult.hascm_pick = YES;
+  _builderResult.cm_pick = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearcm_pick {
-  result.hascm_pick = NO;
-  result.cm_pick = DOTA_CM_PICKDOTA_CM_RANDOM;
+  _builderResult.hascm_pick = NO;
+  _builderResult.cm_pick = DOTA_CM_PICKDOTA_CM_RANDOM;
   return self;
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CSODOTALobby_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 - (BOOL) hasAllowSpectating {
-  return result.hasAllowSpectating;
+  return _builderResult.hasAllowSpectating;
 }
 - (BOOL) allowSpectating {
-  return result.allowSpectating;
+  return _builderResult.allowSpectating;
 }
 - (CSODOTALobby_Builder*) setAllowSpectating:(BOOL) value {
-  result.hasAllowSpectating = YES;
-  result.allowSpectating = value;
+  _builderResult.hasAllowSpectating = YES;
+  _builderResult.allowSpectating = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearAllowSpectating {
-  result.hasAllowSpectating = NO;
-  result.allowSpectating = YES;
+  _builderResult.hasAllowSpectating = NO;
+  _builderResult.allowSpectating = YES;
   return self;
 }
 - (BOOL) hasbot_difficulty {
-  return result.hasbot_difficulty;
+  return _builderResult.hasbot_difficulty;
 }
 - (DOTABotDifficulty) bot_difficulty {
-  return result.bot_difficulty;
+  return _builderResult.bot_difficulty;
 }
 - (CSODOTALobby_Builder*) setbot_difficulty:(DOTABotDifficulty) value {
-  result.hasbot_difficulty = YES;
-  result.bot_difficulty = value;
+  _builderResult.hasbot_difficulty = YES;
+  _builderResult.bot_difficulty = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearbot_difficulty {
-  result.hasbot_difficulty = NO;
-  result.bot_difficulty = DOTABotDifficultyBOT_DIFFICULTY_HARD;
+  _builderResult.hasbot_difficulty = NO;
+  _builderResult.bot_difficulty = DOTABotDifficultyBOT_DIFFICULTY_HARD;
   return self;
 }
 - (BOOL) hasgame_version {
-  return result.hasgame_version;
+  return _builderResult.hasgame_version;
 }
 - (DOTAGameVersion) game_version {
-  return result.game_version;
+  return _builderResult.game_version;
 }
 - (CSODOTALobby_Builder*) setgame_version:(DOTAGameVersion) value {
-  result.hasgame_version = YES;
-  result.game_version = value;
+  _builderResult.hasgame_version = YES;
+  _builderResult.game_version = value;
   return self;
 }
 - (CSODOTALobby_Builder*) cleargame_version {
-  result.hasgame_version = NO;
-  result.game_version = DOTAGameVersionGAME_VERSION_CURRENT;
+  _builderResult.hasgame_version = NO;
+  _builderResult.game_version = DOTAGameVersionGAME_VERSION_CURRENT;
   return self;
 }
 - (PBAppendableArray *)timedRewardDetails {
-  return result.timedRewardDetailsArray;
+  return _builderResult.timedRewardDetailsArray;
 }
 - (CLobbyTimedRewardDetails*)timedRewardDetailsAtIndex:(NSUInteger)index {
-  return [result timedRewardDetailsAtIndex:index];
+  return [_builderResult timedRewardDetailsAtIndex:index];
 }
 - (CSODOTALobby_Builder *)addTimedRewardDetails:(CLobbyTimedRewardDetails*)value {
-  if (result.timedRewardDetailsArray == nil) {
-    result.timedRewardDetailsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.timedRewardDetailsArray == nil) {
+    _builderResult.timedRewardDetailsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.timedRewardDetailsArray addObject:value];
+  [_builderResult.timedRewardDetailsArray addObject:value];
   return self;
 }
 - (CSODOTALobby_Builder *)setTimedRewardDetailsArray:(NSArray *)array {
-  result.timedRewardDetailsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.timedRewardDetailsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSODOTALobby_Builder *)setTimedRewardDetailsValues:(const CLobbyTimedRewardDetails* *)values count:(NSUInteger)count {
-  result.timedRewardDetailsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.timedRewardDetailsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSODOTALobby_Builder *)clearTimedRewardDetails {
-  result.timedRewardDetailsArray = nil;
+  _builderResult.timedRewardDetailsArray = nil;
   return self;
 }
 - (BOOL) hasPassKey {
-  return result.hasPassKey;
+  return _builderResult.hasPassKey;
 }
 - (NSString*) passKey {
-  return result.passKey;
+  return _builderResult.passKey;
 }
 - (CSODOTALobby_Builder*) setPassKey:(NSString*) value {
-  result.hasPassKey = YES;
-  result.passKey = value;
+  _builderResult.hasPassKey = YES;
+  _builderResult.passKey = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearPassKey {
-  result.hasPassKey = NO;
-  result.passKey = @"";
+  _builderResult.hasPassKey = NO;
+  _builderResult.passKey = @"";
   return self;
 }
 - (BOOL) hasDropRateBonus {
-  return result.hasDropRateBonus;
+  return _builderResult.hasDropRateBonus;
 }
 - (Float32) dropRateBonus {
-  return result.dropRateBonus;
+  return _builderResult.dropRateBonus;
 }
 - (CSODOTALobby_Builder*) setDropRateBonus:(Float32) value {
-  result.hasDropRateBonus = YES;
-  result.dropRateBonus = value;
+  _builderResult.hasDropRateBonus = YES;
+  _builderResult.dropRateBonus = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearDropRateBonus {
-  result.hasDropRateBonus = NO;
-  result.dropRateBonus = 0;
+  _builderResult.hasDropRateBonus = NO;
+  _builderResult.dropRateBonus = 0;
   return self;
 }
 - (PBAppendableArray *)bot_slot_difficulty {
-  return result.botSlotDifficultyArray;
+  return _builderResult.botSlotDifficultyArray;
 }
 - (DOTABotDifficulty)bot_slot_difficultyAtIndex:(NSUInteger)index {
-  return [result bot_slot_difficultyAtIndex:index];
+  return [_builderResult bot_slot_difficultyAtIndex:index];
 }
 - (CSODOTALobby_Builder *)addbot_slot_difficulty:(DOTABotDifficulty)value {
-  if (result.botSlotDifficultyArray == nil) {
-    result.botSlotDifficultyArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeInt32];
+  if (_builderResult.botSlotDifficultyArray == nil) {
+    _builderResult.botSlotDifficultyArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeInt32];
   }
-  [result.botSlotDifficultyArray addInt32:value];
+  [_builderResult.botSlotDifficultyArray addInt32:value];
   return self;
 }
 - (CSODOTALobby_Builder *)setbot_slot_difficultyArray:(NSArray *)array {
-  result.botSlotDifficultyArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeInt32];
+  _builderResult.botSlotDifficultyArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeInt32];
   return self;
 }
 - (CSODOTALobby_Builder *)setbot_slot_difficultyValues:(const DOTABotDifficulty *)values count:(NSUInteger)count {
-  result.botSlotDifficultyArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeInt32];
+  _builderResult.botSlotDifficultyArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeInt32];
   return self;
 }
 - (CSODOTALobby_Builder *)clearbot_slot_difficulty {
-  result.botSlotDifficultyArray = nil;
+  _builderResult.botSlotDifficultyArray = nil;
   return self;
 }
 - (BOOL) hasLeagueid {
-  return result.hasLeagueid;
+  return _builderResult.hasLeagueid;
 }
 - (uint32_t) leagueid {
-  return result.leagueid;
+  return _builderResult.leagueid;
 }
 - (CSODOTALobby_Builder*) setLeagueid:(uint32_t) value {
-  result.hasLeagueid = YES;
-  result.leagueid = value;
+  _builderResult.hasLeagueid = YES;
+  _builderResult.leagueid = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearLeagueid {
-  result.hasLeagueid = NO;
-  result.leagueid = 0;
+  _builderResult.hasLeagueid = NO;
+  _builderResult.leagueid = 0;
   return self;
 }
 - (BOOL) hasPenaltyLevelRadiant {
-  return result.hasPenaltyLevelRadiant;
+  return _builderResult.hasPenaltyLevelRadiant;
 }
 - (uint32_t) penaltyLevelRadiant {
-  return result.penaltyLevelRadiant;
+  return _builderResult.penaltyLevelRadiant;
 }
 - (CSODOTALobby_Builder*) setPenaltyLevelRadiant:(uint32_t) value {
-  result.hasPenaltyLevelRadiant = YES;
-  result.penaltyLevelRadiant = value;
+  _builderResult.hasPenaltyLevelRadiant = YES;
+  _builderResult.penaltyLevelRadiant = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearPenaltyLevelRadiant {
-  result.hasPenaltyLevelRadiant = NO;
-  result.penaltyLevelRadiant = 0;
+  _builderResult.hasPenaltyLevelRadiant = NO;
+  _builderResult.penaltyLevelRadiant = 0;
   return self;
 }
 - (BOOL) hasPenaltyLevelDire {
-  return result.hasPenaltyLevelDire;
+  return _builderResult.hasPenaltyLevelDire;
 }
 - (uint32_t) penaltyLevelDire {
-  return result.penaltyLevelDire;
+  return _builderResult.penaltyLevelDire;
 }
 - (CSODOTALobby_Builder*) setPenaltyLevelDire:(uint32_t) value {
-  result.hasPenaltyLevelDire = YES;
-  result.penaltyLevelDire = value;
+  _builderResult.hasPenaltyLevelDire = YES;
+  _builderResult.penaltyLevelDire = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearPenaltyLevelDire {
-  result.hasPenaltyLevelDire = NO;
-  result.penaltyLevelDire = 0;
+  _builderResult.hasPenaltyLevelDire = NO;
+  _builderResult.penaltyLevelDire = 0;
   return self;
 }
 - (BOOL) hasLoadGameId {
-  return result.hasLoadGameId;
+  return _builderResult.hasLoadGameId;
 }
 - (uint32_t) loadGameId {
-  return result.loadGameId;
+  return _builderResult.loadGameId;
 }
 - (CSODOTALobby_Builder*) setLoadGameId:(uint32_t) value {
-  result.hasLoadGameId = YES;
-  result.loadGameId = value;
+  _builderResult.hasLoadGameId = YES;
+  _builderResult.loadGameId = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearLoadGameId {
-  result.hasLoadGameId = NO;
-  result.loadGameId = 0;
+  _builderResult.hasLoadGameId = NO;
+  _builderResult.loadGameId = 0;
   return self;
 }
 - (BOOL) hasSeriesType {
-  return result.hasSeriesType;
+  return _builderResult.hasSeriesType;
 }
 - (uint32_t) seriesType {
-  return result.seriesType;
+  return _builderResult.seriesType;
 }
 - (CSODOTALobby_Builder*) setSeriesType:(uint32_t) value {
-  result.hasSeriesType = YES;
-  result.seriesType = value;
+  _builderResult.hasSeriesType = YES;
+  _builderResult.seriesType = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearSeriesType {
-  result.hasSeriesType = NO;
-  result.seriesType = 0;
+  _builderResult.hasSeriesType = NO;
+  _builderResult.seriesType = 0;
   return self;
 }
 - (BOOL) hasRadiantSeriesWins {
-  return result.hasRadiantSeriesWins;
+  return _builderResult.hasRadiantSeriesWins;
 }
 - (uint32_t) radiantSeriesWins {
-  return result.radiantSeriesWins;
+  return _builderResult.radiantSeriesWins;
 }
 - (CSODOTALobby_Builder*) setRadiantSeriesWins:(uint32_t) value {
-  result.hasRadiantSeriesWins = YES;
-  result.radiantSeriesWins = value;
+  _builderResult.hasRadiantSeriesWins = YES;
+  _builderResult.radiantSeriesWins = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearRadiantSeriesWins {
-  result.hasRadiantSeriesWins = NO;
-  result.radiantSeriesWins = 0;
+  _builderResult.hasRadiantSeriesWins = NO;
+  _builderResult.radiantSeriesWins = 0;
   return self;
 }
 - (BOOL) hasDireSeriesWins {
-  return result.hasDireSeriesWins;
+  return _builderResult.hasDireSeriesWins;
 }
 - (uint32_t) direSeriesWins {
-  return result.direSeriesWins;
+  return _builderResult.direSeriesWins;
 }
 - (CSODOTALobby_Builder*) setDireSeriesWins:(uint32_t) value {
-  result.hasDireSeriesWins = YES;
-  result.direSeriesWins = value;
+  _builderResult.hasDireSeriesWins = YES;
+  _builderResult.direSeriesWins = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearDireSeriesWins {
-  result.hasDireSeriesWins = NO;
-  result.direSeriesWins = 0;
+  _builderResult.hasDireSeriesWins = NO;
+  _builderResult.direSeriesWins = 0;
   return self;
 }
 - (BOOL) hasLootGenerated {
-  return result.hasLootGenerated;
+  return _builderResult.hasLootGenerated;
 }
 - (uint32_t) lootGenerated {
-  return result.lootGenerated;
+  return _builderResult.lootGenerated;
 }
 - (CSODOTALobby_Builder*) setLootGenerated:(uint32_t) value {
-  result.hasLootGenerated = YES;
-  result.lootGenerated = value;
+  _builderResult.hasLootGenerated = YES;
+  _builderResult.lootGenerated = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearLootGenerated {
-  result.hasLootGenerated = NO;
-  result.lootGenerated = 0;
+  _builderResult.hasLootGenerated = NO;
+  _builderResult.lootGenerated = 0;
   return self;
 }
 - (BOOL) hasLootAwarded {
-  return result.hasLootAwarded;
+  return _builderResult.hasLootAwarded;
 }
 - (uint32_t) lootAwarded {
-  return result.lootAwarded;
+  return _builderResult.lootAwarded;
 }
 - (CSODOTALobby_Builder*) setLootAwarded:(uint32_t) value {
-  result.hasLootAwarded = YES;
-  result.lootAwarded = value;
+  _builderResult.hasLootAwarded = YES;
+  _builderResult.lootAwarded = value;
   return self;
 }
 - (CSODOTALobby_Builder*) clearLootAwarded {
-  result.hasLootAwarded = NO;
-  result.lootAwarded = 0;
+  _builderResult.hasLootAwarded = NO;
+  _builderResult.lootAwarded = 0;
   return self;
 }
 @end
@@ -9859,10 +9859,10 @@ static CSODOTALobbyInternal* defaultCSODOTALobbyInternalInstance = nil;
     [self setSearchKey:other.searchKey];
   }
   if (other.pendingPlayerReportsArray.count > 0) {
-    if (result.pendingPlayerReportsArray == nil) {
-      result.pendingPlayerReportsArray = [[other.pendingPlayerReportsArray copyWithZone:[other.pendingPlayerReportsArray zone]] autorelease];
+    if (_builderResult.pendingPlayerReportsArray == nil) {
+      _builderResult.pendingPlayerReportsArray = [[other.pendingPlayerReportsArray copyWithZone:[other.pendingPlayerReportsArray zone]] autorelease];
     } else {
-      [result.pendingPlayerReportsArray appendArray:other.pendingPlayerReportsArray];
+      [_builderResult.pendingPlayerReportsArray appendArray:other.pendingPlayerReportsArray];
     }
   }
   if (other.hasAverageRank) {
@@ -9942,140 +9942,140 @@ static CSODOTALobbyInternal* defaultCSODOTALobbyInternalInstance = nil;
   }
 }
 - (BOOL) hasSearchKey {
-  return result.hasSearchKey;
+  return _builderResult.hasSearchKey;
 }
 - (NSString*) searchKey {
-  return result.searchKey;
+  return _builderResult.searchKey;
 }
 - (CSODOTALobbyInternal_Builder*) setSearchKey:(NSString*) value {
-  result.hasSearchKey = YES;
-  result.searchKey = value;
+  _builderResult.hasSearchKey = YES;
+  _builderResult.searchKey = value;
   return self;
 }
 - (CSODOTALobbyInternal_Builder*) clearSearchKey {
-  result.hasSearchKey = NO;
-  result.searchKey = @"";
+  _builderResult.hasSearchKey = NO;
+  _builderResult.searchKey = @"";
   return self;
 }
 - (PBAppendableArray *)pendingPlayerReports {
-  return result.pendingPlayerReportsArray;
+  return _builderResult.pendingPlayerReportsArray;
 }
 - (CLobbyPendingPlayerReport*)pendingPlayerReportsAtIndex:(NSUInteger)index {
-  return [result pendingPlayerReportsAtIndex:index];
+  return [_builderResult pendingPlayerReportsAtIndex:index];
 }
 - (CSODOTALobbyInternal_Builder *)addPendingPlayerReports:(CLobbyPendingPlayerReport*)value {
-  if (result.pendingPlayerReportsArray == nil) {
-    result.pendingPlayerReportsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.pendingPlayerReportsArray == nil) {
+    _builderResult.pendingPlayerReportsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.pendingPlayerReportsArray addObject:value];
+  [_builderResult.pendingPlayerReportsArray addObject:value];
   return self;
 }
 - (CSODOTALobbyInternal_Builder *)setPendingPlayerReportsArray:(NSArray *)array {
-  result.pendingPlayerReportsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.pendingPlayerReportsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSODOTALobbyInternal_Builder *)setPendingPlayerReportsValues:(const CLobbyPendingPlayerReport* *)values count:(NSUInteger)count {
-  result.pendingPlayerReportsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.pendingPlayerReportsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSODOTALobbyInternal_Builder *)clearPendingPlayerReports {
-  result.pendingPlayerReportsArray = nil;
+  _builderResult.pendingPlayerReportsArray = nil;
   return self;
 }
 - (BOOL) hasAverageRank {
-  return result.hasAverageRank;
+  return _builderResult.hasAverageRank;
 }
 - (uint32_t) averageRank {
-  return result.averageRank;
+  return _builderResult.averageRank;
 }
 - (CSODOTALobbyInternal_Builder*) setAverageRank:(uint32_t) value {
-  result.hasAverageRank = YES;
-  result.averageRank = value;
+  _builderResult.hasAverageRank = YES;
+  _builderResult.averageRank = value;
   return self;
 }
 - (CSODOTALobbyInternal_Builder*) clearAverageRank {
-  result.hasAverageRank = NO;
-  result.averageRank = 0;
+  _builderResult.hasAverageRank = NO;
+  _builderResult.averageRank = 0;
   return self;
 }
 - (BOOL) hasReplaySalt {
-  return result.hasReplaySalt;
+  return _builderResult.hasReplaySalt;
 }
 - (uint32_t) replaySalt {
-  return result.replaySalt;
+  return _builderResult.replaySalt;
 }
 - (CSODOTALobbyInternal_Builder*) setReplaySalt:(uint32_t) value {
-  result.hasReplaySalt = YES;
-  result.replaySalt = value;
+  _builderResult.hasReplaySalt = YES;
+  _builderResult.replaySalt = value;
   return self;
 }
 - (CSODOTALobbyInternal_Builder*) clearReplaySalt {
-  result.hasReplaySalt = NO;
-  result.replaySalt = 0;
+  _builderResult.hasReplaySalt = NO;
+  _builderResult.replaySalt = 0;
   return self;
 }
 - (BOOL) hasDisableRadiantAutomaticTeamDetection {
-  return result.hasDisableRadiantAutomaticTeamDetection;
+  return _builderResult.hasDisableRadiantAutomaticTeamDetection;
 }
 - (BOOL) disableRadiantAutomaticTeamDetection {
-  return result.disableRadiantAutomaticTeamDetection;
+  return _builderResult.disableRadiantAutomaticTeamDetection;
 }
 - (CSODOTALobbyInternal_Builder*) setDisableRadiantAutomaticTeamDetection:(BOOL) value {
-  result.hasDisableRadiantAutomaticTeamDetection = YES;
-  result.disableRadiantAutomaticTeamDetection = value;
+  _builderResult.hasDisableRadiantAutomaticTeamDetection = YES;
+  _builderResult.disableRadiantAutomaticTeamDetection = value;
   return self;
 }
 - (CSODOTALobbyInternal_Builder*) clearDisableRadiantAutomaticTeamDetection {
-  result.hasDisableRadiantAutomaticTeamDetection = NO;
-  result.disableRadiantAutomaticTeamDetection = NO;
+  _builderResult.hasDisableRadiantAutomaticTeamDetection = NO;
+  _builderResult.disableRadiantAutomaticTeamDetection = NO;
   return self;
 }
 - (BOOL) hasDisableDireAutomaticTeamDetection {
-  return result.hasDisableDireAutomaticTeamDetection;
+  return _builderResult.hasDisableDireAutomaticTeamDetection;
 }
 - (BOOL) disableDireAutomaticTeamDetection {
-  return result.disableDireAutomaticTeamDetection;
+  return _builderResult.disableDireAutomaticTeamDetection;
 }
 - (CSODOTALobbyInternal_Builder*) setDisableDireAutomaticTeamDetection:(BOOL) value {
-  result.hasDisableDireAutomaticTeamDetection = YES;
-  result.disableDireAutomaticTeamDetection = value;
+  _builderResult.hasDisableDireAutomaticTeamDetection = YES;
+  _builderResult.disableDireAutomaticTeamDetection = value;
   return self;
 }
 - (CSODOTALobbyInternal_Builder*) clearDisableDireAutomaticTeamDetection {
-  result.hasDisableDireAutomaticTeamDetection = NO;
-  result.disableDireAutomaticTeamDetection = NO;
+  _builderResult.hasDisableDireAutomaticTeamDetection = NO;
+  _builderResult.disableDireAutomaticTeamDetection = NO;
   return self;
 }
 - (BOOL) hasFinalMatchDuration {
-  return result.hasFinalMatchDuration;
+  return _builderResult.hasFinalMatchDuration;
 }
 - (uint32_t) finalMatchDuration {
-  return result.finalMatchDuration;
+  return _builderResult.finalMatchDuration;
 }
 - (CSODOTALobbyInternal_Builder*) setFinalMatchDuration:(uint32_t) value {
-  result.hasFinalMatchDuration = YES;
-  result.finalMatchDuration = value;
+  _builderResult.hasFinalMatchDuration = YES;
+  _builderResult.finalMatchDuration = value;
   return self;
 }
 - (CSODOTALobbyInternal_Builder*) clearFinalMatchDuration {
-  result.hasFinalMatchDuration = NO;
-  result.finalMatchDuration = 0;
+  _builderResult.hasFinalMatchDuration = NO;
+  _builderResult.finalMatchDuration = 0;
   return self;
 }
 - (BOOL) hasSubmittedMatchHistory {
-  return result.hasSubmittedMatchHistory;
+  return _builderResult.hasSubmittedMatchHistory;
 }
 - (BOOL) submittedMatchHistory {
-  return result.submittedMatchHistory;
+  return _builderResult.submittedMatchHistory;
 }
 - (CSODOTALobbyInternal_Builder*) setSubmittedMatchHistory:(BOOL) value {
-  result.hasSubmittedMatchHistory = YES;
-  result.submittedMatchHistory = value;
+  _builderResult.hasSubmittedMatchHistory = YES;
+  _builderResult.submittedMatchHistory = value;
   return self;
 }
 - (CSODOTALobbyInternal_Builder*) clearSubmittedMatchHistory {
-  result.hasSubmittedMatchHistory = NO;
-  result.submittedMatchHistory = NO;
+  _builderResult.hasSubmittedMatchHistory = NO;
+  _builderResult.submittedMatchHistory = NO;
   return self;
 }
 @end
@@ -10318,63 +10318,63 @@ static CSODOTALobbyMemcached* defaultCSODOTALobbyMemcachedInstance = nil;
   }
 }
 - (BOOL) hasLobby {
-  return result.hasLobby;
+  return _builderResult.hasLobby;
 }
 - (CSODOTALobby*) lobby {
-  return result.lobby;
+  return _builderResult.lobby;
 }
 - (CSODOTALobbyMemcached_Builder*) setLobby:(CSODOTALobby*) value {
-  result.hasLobby = YES;
-  result.lobby = value;
+  _builderResult.hasLobby = YES;
+  _builderResult.lobby = value;
   return self;
 }
 - (CSODOTALobbyMemcached_Builder*) setLobbyBuilder:(CSODOTALobby_Builder*) builderForValue {
   return [self setLobby:[builderForValue build]];
 }
 - (CSODOTALobbyMemcached_Builder*) mergeLobby:(CSODOTALobby*) value {
-  if (result.hasLobby &&
-      result.lobby != [CSODOTALobby defaultInstance]) {
-    result.lobby =
-      [[[CSODOTALobby builderWithPrototype:result.lobby] mergeFrom:value] buildPartial];
+  if (_builderResult.hasLobby &&
+      _builderResult.lobby != [CSODOTALobby defaultInstance]) {
+    _builderResult.lobby =
+      [[[CSODOTALobby builderWithPrototype:_builderResult.lobby] mergeFrom:value] buildPartial];
   } else {
-    result.lobby = value;
+    _builderResult.lobby = value;
   }
-  result.hasLobby = YES;
+  _builderResult.hasLobby = YES;
   return self;
 }
 - (CSODOTALobbyMemcached_Builder*) clearLobby {
-  result.hasLobby = NO;
-  result.lobby = [CSODOTALobby defaultInstance];
+  _builderResult.hasLobby = NO;
+  _builderResult.lobby = [CSODOTALobby defaultInstance];
   return self;
 }
 - (BOOL) hasInternal {
-  return result.hasInternal;
+  return _builderResult.hasInternal;
 }
 - (CSODOTALobbyInternal*) internal {
-  return result.internal;
+  return _builderResult.internal;
 }
 - (CSODOTALobbyMemcached_Builder*) setInternal:(CSODOTALobbyInternal*) value {
-  result.hasInternal = YES;
-  result.internal = value;
+  _builderResult.hasInternal = YES;
+  _builderResult.internal = value;
   return self;
 }
 - (CSODOTALobbyMemcached_Builder*) setInternalBuilder:(CSODOTALobbyInternal_Builder*) builderForValue {
   return [self setInternal:[builderForValue build]];
 }
 - (CSODOTALobbyMemcached_Builder*) mergeInternal:(CSODOTALobbyInternal*) value {
-  if (result.hasInternal &&
-      result.internal != [CSODOTALobbyInternal defaultInstance]) {
-    result.internal =
-      [[[CSODOTALobbyInternal builderWithPrototype:result.internal] mergeFrom:value] buildPartial];
+  if (_builderResult.hasInternal &&
+      _builderResult.internal != [CSODOTALobbyInternal defaultInstance]) {
+    _builderResult.internal =
+      [[[CSODOTALobbyInternal builderWithPrototype:_builderResult.internal] mergeFrom:value] buildPartial];
   } else {
-    result.internal = value;
+    _builderResult.internal = value;
   }
-  result.hasInternal = YES;
+  _builderResult.hasInternal = YES;
   return self;
 }
 - (CSODOTALobbyMemcached_Builder*) clearInternal {
-  result.hasInternal = NO;
-  result.internal = [CSODOTALobbyInternal defaultInstance];
+  _builderResult.hasInternal = NO;
+  _builderResult.internal = [CSODOTALobbyInternal defaultInstance];
   return self;
 }
 @end
@@ -10787,35 +10787,35 @@ static CMsgConnectedPlayers_Player* defaultCMsgConnectedPlayers_PlayerInstance =
   }
 }
 - (BOOL) hasSteamId {
-  return result.hasSteamId;
+  return _builderResult.hasSteamId;
 }
 - (uint64_t) steamId {
-  return result.steamId;
+  return _builderResult.steamId;
 }
 - (CMsgConnectedPlayers_Player_Builder*) setSteamId:(uint64_t) value {
-  result.hasSteamId = YES;
-  result.steamId = value;
+  _builderResult.hasSteamId = YES;
+  _builderResult.steamId = value;
   return self;
 }
 - (CMsgConnectedPlayers_Player_Builder*) clearSteamId {
-  result.hasSteamId = NO;
-  result.steamId = 0L;
+  _builderResult.hasSteamId = NO;
+  _builderResult.steamId = 0L;
   return self;
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CMsgConnectedPlayers_Player_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CMsgConnectedPlayers_Player_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 @end
@@ -10863,10 +10863,10 @@ static CMsgConnectedPlayers_Player* defaultCMsgConnectedPlayers_PlayerInstance =
     return self;
   }
   if (other.playersArray.count > 0) {
-    if (result.playersArray == nil) {
-      result.playersArray = [[other.playersArray copyWithZone:[other.playersArray zone]] autorelease];
+    if (_builderResult.playersArray == nil) {
+      _builderResult.playersArray = [[other.playersArray copyWithZone:[other.playersArray zone]] autorelease];
     } else {
-      [result.playersArray appendArray:other.playersArray];
+      [_builderResult.playersArray appendArray:other.playersArray];
     }
   }
   if (other.hasgame_state) {
@@ -10926,76 +10926,76 @@ static CMsgConnectedPlayers_Player* defaultCMsgConnectedPlayers_PlayerInstance =
   }
 }
 - (PBAppendableArray *)players {
-  return result.playersArray;
+  return _builderResult.playersArray;
 }
 - (CMsgConnectedPlayers_Player*)playersAtIndex:(NSUInteger)index {
-  return [result playersAtIndex:index];
+  return [_builderResult playersAtIndex:index];
 }
 - (CMsgConnectedPlayers_Builder *)addPlayers:(CMsgConnectedPlayers_Player*)value {
-  if (result.playersArray == nil) {
-    result.playersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.playersArray == nil) {
+    _builderResult.playersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.playersArray addObject:value];
+  [_builderResult.playersArray addObject:value];
   return self;
 }
 - (CMsgConnectedPlayers_Builder *)setPlayersArray:(NSArray *)array {
-  result.playersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.playersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgConnectedPlayers_Builder *)setPlayersValues:(const CMsgConnectedPlayers_Player* *)values count:(NSUInteger)count {
-  result.playersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.playersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgConnectedPlayers_Builder *)clearPlayers {
-  result.playersArray = nil;
+  _builderResult.playersArray = nil;
   return self;
 }
 - (BOOL) hasgame_state {
-  return result.hasgame_state;
+  return _builderResult.hasgame_state;
 }
 - (DOTA_GameState) game_state {
-  return result.game_state;
+  return _builderResult.game_state;
 }
 - (CMsgConnectedPlayers_Builder*) setgame_state:(DOTA_GameState) value {
-  result.hasgame_state = YES;
-  result.game_state = value;
+  _builderResult.hasgame_state = YES;
+  _builderResult.game_state = value;
   return self;
 }
 - (CMsgConnectedPlayers_Builder*) cleargame_state {
-  result.hasgame_state = NO;
-  result.game_state = DOTA_GameStateDOTA_GAMERULES_STATE_INIT;
+  _builderResult.hasgame_state = NO;
+  _builderResult.game_state = DOTA_GameStateDOTA_GAMERULES_STATE_INIT;
   return self;
 }
 - (BOOL) hasNumSpectators {
-  return result.hasNumSpectators;
+  return _builderResult.hasNumSpectators;
 }
 - (uint32_t) numSpectators {
-  return result.numSpectators;
+  return _builderResult.numSpectators;
 }
 - (CMsgConnectedPlayers_Builder*) setNumSpectators:(uint32_t) value {
-  result.hasNumSpectators = YES;
-  result.numSpectators = value;
+  _builderResult.hasNumSpectators = YES;
+  _builderResult.numSpectators = value;
   return self;
 }
 - (CMsgConnectedPlayers_Builder*) clearNumSpectators {
-  result.hasNumSpectators = NO;
-  result.numSpectators = 0;
+  _builderResult.hasNumSpectators = NO;
+  _builderResult.numSpectators = 0;
   return self;
 }
 - (BOOL) hasTowerState {
-  return result.hasTowerState;
+  return _builderResult.hasTowerState;
 }
 - (uint32_t) towerState {
-  return result.towerState;
+  return _builderResult.towerState;
 }
 - (CMsgConnectedPlayers_Builder*) setTowerState:(uint32_t) value {
-  result.hasTowerState = YES;
-  result.towerState = value;
+  _builderResult.hasTowerState = YES;
+  _builderResult.towerState = value;
   return self;
 }
 - (CMsgConnectedPlayers_Builder*) clearTowerState {
-  result.hasTowerState = NO;
-  result.towerState = 0;
+  _builderResult.hasTowerState = NO;
+  _builderResult.towerState = 0;
   return self;
 }
 @end
@@ -11351,99 +11351,99 @@ static CMsgStartFindingMatch* defaultCMsgStartFindingMatchInstance = nil;
   }
 }
 - (BOOL) hasKey {
-  return result.hasKey;
+  return _builderResult.hasKey;
 }
 - (NSString*) key {
-  return result.key;
+  return _builderResult.key;
 }
 - (CMsgStartFindingMatch_Builder*) setKey:(NSString*) value {
-  result.hasKey = YES;
-  result.key = value;
+  _builderResult.hasKey = YES;
+  _builderResult.key = value;
   return self;
 }
 - (CMsgStartFindingMatch_Builder*) clearKey {
-  result.hasKey = NO;
-  result.key = @"";
+  _builderResult.hasKey = NO;
+  _builderResult.key = @"";
   return self;
 }
 - (BOOL) hasMatchgroups {
-  return result.hasMatchgroups;
+  return _builderResult.hasMatchgroups;
 }
 - (uint32_t) matchgroups {
-  return result.matchgroups;
+  return _builderResult.matchgroups;
 }
 - (CMsgStartFindingMatch_Builder*) setMatchgroups:(uint32_t) value {
-  result.hasMatchgroups = YES;
-  result.matchgroups = value;
+  _builderResult.hasMatchgroups = YES;
+  _builderResult.matchgroups = value;
   return self;
 }
 - (CMsgStartFindingMatch_Builder*) clearMatchgroups {
-  result.hasMatchgroups = NO;
-  result.matchgroups = -1;
+  _builderResult.hasMatchgroups = NO;
+  _builderResult.matchgroups = -1;
   return self;
 }
 - (BOOL) hasClientVersion {
-  return result.hasClientVersion;
+  return _builderResult.hasClientVersion;
 }
 - (uint32_t) clientVersion {
-  return result.clientVersion;
+  return _builderResult.clientVersion;
 }
 - (CMsgStartFindingMatch_Builder*) setClientVersion:(uint32_t) value {
-  result.hasClientVersion = YES;
-  result.clientVersion = value;
+  _builderResult.hasClientVersion = YES;
+  _builderResult.clientVersion = value;
   return self;
 }
 - (CMsgStartFindingMatch_Builder*) clearClientVersion {
-  result.hasClientVersion = NO;
-  result.clientVersion = 0;
+  _builderResult.hasClientVersion = NO;
+  _builderResult.clientVersion = 0;
   return self;
 }
 - (BOOL) hasGameModes {
-  return result.hasGameModes;
+  return _builderResult.hasGameModes;
 }
 - (uint32_t) gameModes {
-  return result.gameModes;
+  return _builderResult.gameModes;
 }
 - (CMsgStartFindingMatch_Builder*) setGameModes:(uint32_t) value {
-  result.hasGameModes = YES;
-  result.gameModes = value;
+  _builderResult.hasGameModes = YES;
+  _builderResult.gameModes = value;
   return self;
 }
 - (CMsgStartFindingMatch_Builder*) clearGameModes {
-  result.hasGameModes = NO;
-  result.gameModes = -1;
+  _builderResult.hasGameModes = NO;
+  _builderResult.gameModes = -1;
   return self;
 }
 - (BOOL) hasbot_difficulty {
-  return result.hasbot_difficulty;
+  return _builderResult.hasbot_difficulty;
 }
 - (DOTABotDifficulty) bot_difficulty {
-  return result.bot_difficulty;
+  return _builderResult.bot_difficulty;
 }
 - (CMsgStartFindingMatch_Builder*) setbot_difficulty:(DOTABotDifficulty) value {
-  result.hasbot_difficulty = YES;
-  result.bot_difficulty = value;
+  _builderResult.hasbot_difficulty = YES;
+  _builderResult.bot_difficulty = value;
   return self;
 }
 - (CMsgStartFindingMatch_Builder*) clearbot_difficulty {
-  result.hasbot_difficulty = NO;
-  result.bot_difficulty = DOTABotDifficultyBOT_DIFFICULTY_HARD;
+  _builderResult.hasbot_difficulty = NO;
+  _builderResult.bot_difficulty = DOTABotDifficultyBOT_DIFFICULTY_HARD;
   return self;
 }
 - (BOOL) hasmatch_type {
-  return result.hasmatch_type;
+  return _builderResult.hasmatch_type;
 }
 - (MatchType) match_type {
-  return result.match_type;
+  return _builderResult.match_type;
 }
 - (CMsgStartFindingMatch_Builder*) setmatch_type:(MatchType) value {
-  result.hasmatch_type = YES;
-  result.match_type = value;
+  _builderResult.hasmatch_type = YES;
+  _builderResult.match_type = value;
   return self;
 }
 - (CMsgStartFindingMatch_Builder*) clearmatch_type {
-  result.hasmatch_type = NO;
-  result.match_type = MatchTypeMATCH_TYPE_RANKED;
+  _builderResult.hasmatch_type = NO;
+  _builderResult.match_type = MatchTypeMATCH_TYPE_RANKED;
   return self;
 }
 @end
@@ -11804,19 +11804,19 @@ static CMsgReadyUp* defaultCMsgReadyUpInstance = nil;
   }
 }
 - (BOOL) hasstate {
-  return result.hasstate;
+  return _builderResult.hasstate;
 }
 - (DOTALobbyReadyState) state {
-  return result.state;
+  return _builderResult.state;
 }
 - (CMsgReadyUp_Builder*) setstate:(DOTALobbyReadyState) value {
-  result.hasstate = YES;
-  result.state = value;
+  _builderResult.hasstate = YES;
+  _builderResult.state = value;
   return self;
 }
 - (CMsgReadyUp_Builder*) clearstate {
-  result.hasstate = NO;
-  result.state = DOTALobbyReadyStateDOTALobbyReadyState_UNDECLARED;
+  _builderResult.hasstate = NO;
+  _builderResult.state = DOTALobbyReadyStateDOTALobbyReadyState_UNDECLARED;
   return self;
 }
 @end
@@ -12051,17 +12051,17 @@ static CMsgReadyUpStatus* defaultCMsgReadyUpStatusInstance = nil;
     [self setLobbyId:other.lobbyId];
   }
   if (other.acceptedIdsArray.count > 0) {
-    if (result.acceptedIdsArray == nil) {
-      result.acceptedIdsArray = [[other.acceptedIdsArray copyWithZone:[other.acceptedIdsArray zone]] autorelease];
+    if (_builderResult.acceptedIdsArray == nil) {
+      _builderResult.acceptedIdsArray = [[other.acceptedIdsArray copyWithZone:[other.acceptedIdsArray zone]] autorelease];
     } else {
-      [result.acceptedIdsArray appendArray:other.acceptedIdsArray];
+      [_builderResult.acceptedIdsArray appendArray:other.acceptedIdsArray];
     }
   }
   if (other.declinedIdsArray.count > 0) {
-    if (result.declinedIdsArray == nil) {
-      result.declinedIdsArray = [[other.declinedIdsArray copyWithZone:[other.declinedIdsArray zone]] autorelease];
+    if (_builderResult.declinedIdsArray == nil) {
+      _builderResult.declinedIdsArray = [[other.declinedIdsArray copyWithZone:[other.declinedIdsArray zone]] autorelease];
     } else {
-      [result.declinedIdsArray appendArray:other.declinedIdsArray];
+      [_builderResult.declinedIdsArray appendArray:other.declinedIdsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -12101,69 +12101,69 @@ static CMsgReadyUpStatus* defaultCMsgReadyUpStatusInstance = nil;
   }
 }
 - (BOOL) hasLobbyId {
-  return result.hasLobbyId;
+  return _builderResult.hasLobbyId;
 }
 - (uint64_t) lobbyId {
-  return result.lobbyId;
+  return _builderResult.lobbyId;
 }
 - (CMsgReadyUpStatus_Builder*) setLobbyId:(uint64_t) value {
-  result.hasLobbyId = YES;
-  result.lobbyId = value;
+  _builderResult.hasLobbyId = YES;
+  _builderResult.lobbyId = value;
   return self;
 }
 - (CMsgReadyUpStatus_Builder*) clearLobbyId {
-  result.hasLobbyId = NO;
-  result.lobbyId = 0L;
+  _builderResult.hasLobbyId = NO;
+  _builderResult.lobbyId = 0L;
   return self;
 }
 - (PBAppendableArray *)acceptedIds {
-  return result.acceptedIdsArray;
+  return _builderResult.acceptedIdsArray;
 }
 - (uint32_t)acceptedIdsAtIndex:(NSUInteger)index {
-  return [result acceptedIdsAtIndex:index];
+  return [_builderResult acceptedIdsAtIndex:index];
 }
 - (CMsgReadyUpStatus_Builder *)addAcceptedIds:(uint32_t)value {
-  if (result.acceptedIdsArray == nil) {
-    result.acceptedIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.acceptedIdsArray == nil) {
+    _builderResult.acceptedIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.acceptedIdsArray addUint32:value];
+  [_builderResult.acceptedIdsArray addUint32:value];
   return self;
 }
 - (CMsgReadyUpStatus_Builder *)setAcceptedIdsArray:(NSArray *)array {
-  result.acceptedIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.acceptedIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgReadyUpStatus_Builder *)setAcceptedIdsValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.acceptedIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.acceptedIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgReadyUpStatus_Builder *)clearAcceptedIds {
-  result.acceptedIdsArray = nil;
+  _builderResult.acceptedIdsArray = nil;
   return self;
 }
 - (PBAppendableArray *)declinedIds {
-  return result.declinedIdsArray;
+  return _builderResult.declinedIdsArray;
 }
 - (uint32_t)declinedIdsAtIndex:(NSUInteger)index {
-  return [result declinedIdsAtIndex:index];
+  return [_builderResult declinedIdsAtIndex:index];
 }
 - (CMsgReadyUpStatus_Builder *)addDeclinedIds:(uint32_t)value {
-  if (result.declinedIdsArray == nil) {
-    result.declinedIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.declinedIdsArray == nil) {
+    _builderResult.declinedIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.declinedIdsArray addUint32:value];
+  [_builderResult.declinedIdsArray addUint32:value];
   return self;
 }
 - (CMsgReadyUpStatus_Builder *)setDeclinedIdsArray:(NSArray *)array {
-  result.declinedIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.declinedIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgReadyUpStatus_Builder *)setDeclinedIdsValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.declinedIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.declinedIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgReadyUpStatus_Builder *)clearDeclinedIds {
-  result.declinedIdsArray = nil;
+  _builderResult.declinedIdsArray = nil;
   return self;
 }
 @end
@@ -12499,10 +12499,10 @@ static CMsgMatchmakingSearchCountResponse* defaultCMsgMatchmakingSearchCountResp
     return self;
   }
   if (other.searchingPlayersByGroupArray.count > 0) {
-    if (result.searchingPlayersByGroupArray == nil) {
-      result.searchingPlayersByGroupArray = [[other.searchingPlayersByGroupArray copyWithZone:[other.searchingPlayersByGroupArray zone]] autorelease];
+    if (_builderResult.searchingPlayersByGroupArray == nil) {
+      _builderResult.searchingPlayersByGroupArray = [[other.searchingPlayersByGroupArray copyWithZone:[other.searchingPlayersByGroupArray zone]] autorelease];
     } else {
-      [result.searchingPlayersByGroupArray appendArray:other.searchingPlayersByGroupArray];
+      [_builderResult.searchingPlayersByGroupArray appendArray:other.searchingPlayersByGroupArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -12534,28 +12534,28 @@ static CMsgMatchmakingSearchCountResponse* defaultCMsgMatchmakingSearchCountResp
   }
 }
 - (PBAppendableArray *)searchingPlayersByGroup {
-  return result.searchingPlayersByGroupArray;
+  return _builderResult.searchingPlayersByGroupArray;
 }
 - (uint32_t)searchingPlayersByGroupAtIndex:(NSUInteger)index {
-  return [result searchingPlayersByGroupAtIndex:index];
+  return [_builderResult searchingPlayersByGroupAtIndex:index];
 }
 - (CMsgMatchmakingSearchCountResponse_Builder *)addSearchingPlayersByGroup:(uint32_t)value {
-  if (result.searchingPlayersByGroupArray == nil) {
-    result.searchingPlayersByGroupArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.searchingPlayersByGroupArray == nil) {
+    _builderResult.searchingPlayersByGroupArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.searchingPlayersByGroupArray addUint32:value];
+  [_builderResult.searchingPlayersByGroupArray addUint32:value];
   return self;
 }
 - (CMsgMatchmakingSearchCountResponse_Builder *)setSearchingPlayersByGroupArray:(NSArray *)array {
-  result.searchingPlayersByGroupArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.searchingPlayersByGroupArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgMatchmakingSearchCountResponse_Builder *)setSearchingPlayersByGroupValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.searchingPlayersByGroupArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.searchingPlayersByGroupArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgMatchmakingSearchCountResponse_Builder *)clearSearchingPlayersByGroup {
-  result.searchingPlayersByGroupArray = nil;
+  _builderResult.searchingPlayersByGroupArray = nil;
   return self;
 }
 @end
@@ -13285,51 +13285,51 @@ static CSourceTVGame_Player* defaultCSourceTVGame_PlayerInstance = nil;
   }
 }
 - (BOOL) hasSteamId {
-  return result.hasSteamId;
+  return _builderResult.hasSteamId;
 }
 - (uint64_t) steamId {
-  return result.steamId;
+  return _builderResult.steamId;
 }
 - (CSourceTVGame_Player_Builder*) setSteamId:(uint64_t) value {
-  result.hasSteamId = YES;
-  result.steamId = value;
+  _builderResult.hasSteamId = YES;
+  _builderResult.steamId = value;
   return self;
 }
 - (CSourceTVGame_Player_Builder*) clearSteamId {
-  result.hasSteamId = NO;
-  result.steamId = 0L;
+  _builderResult.hasSteamId = NO;
+  _builderResult.steamId = 0L;
   return self;
 }
 - (BOOL) hasName {
-  return result.hasName;
+  return _builderResult.hasName;
 }
 - (NSString*) name {
-  return result.name;
+  return _builderResult.name;
 }
 - (CSourceTVGame_Player_Builder*) setName:(NSString*) value {
-  result.hasName = YES;
-  result.name = value;
+  _builderResult.hasName = YES;
+  _builderResult.name = value;
   return self;
 }
 - (CSourceTVGame_Player_Builder*) clearName {
-  result.hasName = NO;
-  result.name = @"";
+  _builderResult.hasName = NO;
+  _builderResult.name = @"";
   return self;
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CSourceTVGame_Player_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CSourceTVGame_Player_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 @end
@@ -13386,34 +13386,34 @@ static CSourceTVGame_Player* defaultCSourceTVGame_PlayerInstance = nil;
     [self setSourceTvPort:other.sourceTvPort];
   }
   if (other.goodPlayersArray.count > 0) {
-    if (result.goodPlayersArray == nil) {
-      result.goodPlayersArray = [[other.goodPlayersArray copyWithZone:[other.goodPlayersArray zone]] autorelease];
+    if (_builderResult.goodPlayersArray == nil) {
+      _builderResult.goodPlayersArray = [[other.goodPlayersArray copyWithZone:[other.goodPlayersArray zone]] autorelease];
     } else {
-      [result.goodPlayersArray appendArray:other.goodPlayersArray];
+      [_builderResult.goodPlayersArray appendArray:other.goodPlayersArray];
     }
   }
   if (other.badPlayersArray.count > 0) {
-    if (result.badPlayersArray == nil) {
-      result.badPlayersArray = [[other.badPlayersArray copyWithZone:[other.badPlayersArray zone]] autorelease];
+    if (_builderResult.badPlayersArray == nil) {
+      _builderResult.badPlayersArray = [[other.badPlayersArray copyWithZone:[other.badPlayersArray zone]] autorelease];
     } else {
-      [result.badPlayersArray appendArray:other.badPlayersArray];
+      [_builderResult.badPlayersArray appendArray:other.badPlayersArray];
     }
   }
   if (other.otherPlayersArray.count > 0) {
-    if (result.otherPlayersArray == nil) {
-      result.otherPlayersArray = [[other.otherPlayersArray copyWithZone:[other.otherPlayersArray zone]] autorelease];
+    if (_builderResult.otherPlayersArray == nil) {
+      _builderResult.otherPlayersArray = [[other.otherPlayersArray copyWithZone:[other.otherPlayersArray zone]] autorelease];
     } else {
-      [result.otherPlayersArray appendArray:other.otherPlayersArray];
+      [_builderResult.otherPlayersArray appendArray:other.otherPlayersArray];
     }
   }
   if (other.hasGameName) {
     [self setGameName:other.gameName];
   }
   if (other.teamDetailsArray.count > 0) {
-    if (result.teamDetailsArray == nil) {
-      result.teamDetailsArray = [[other.teamDetailsArray copyWithZone:[other.teamDetailsArray zone]] autorelease];
+    if (_builderResult.teamDetailsArray == nil) {
+      _builderResult.teamDetailsArray = [[other.teamDetailsArray copyWithZone:[other.teamDetailsArray zone]] autorelease];
     } else {
-      [result.teamDetailsArray appendArray:other.teamDetailsArray];
+      [_builderResult.teamDetailsArray appendArray:other.teamDetailsArray];
     }
   }
   if (other.hasNumSpectators) {
@@ -13537,295 +13537,295 @@ static CSourceTVGame_Player* defaultCSourceTVGame_PlayerInstance = nil;
   }
 }
 - (BOOL) hasSourceTvPublicAddr {
-  return result.hasSourceTvPublicAddr;
+  return _builderResult.hasSourceTvPublicAddr;
 }
 - (uint32_t) sourceTvPublicAddr {
-  return result.sourceTvPublicAddr;
+  return _builderResult.sourceTvPublicAddr;
 }
 - (CSourceTVGame_Builder*) setSourceTvPublicAddr:(uint32_t) value {
-  result.hasSourceTvPublicAddr = YES;
-  result.sourceTvPublicAddr = value;
+  _builderResult.hasSourceTvPublicAddr = YES;
+  _builderResult.sourceTvPublicAddr = value;
   return self;
 }
 - (CSourceTVGame_Builder*) clearSourceTvPublicAddr {
-  result.hasSourceTvPublicAddr = NO;
-  result.sourceTvPublicAddr = 0;
+  _builderResult.hasSourceTvPublicAddr = NO;
+  _builderResult.sourceTvPublicAddr = 0;
   return self;
 }
 - (BOOL) hasSourceTvPrivateAddr {
-  return result.hasSourceTvPrivateAddr;
+  return _builderResult.hasSourceTvPrivateAddr;
 }
 - (uint32_t) sourceTvPrivateAddr {
-  return result.sourceTvPrivateAddr;
+  return _builderResult.sourceTvPrivateAddr;
 }
 - (CSourceTVGame_Builder*) setSourceTvPrivateAddr:(uint32_t) value {
-  result.hasSourceTvPrivateAddr = YES;
-  result.sourceTvPrivateAddr = value;
+  _builderResult.hasSourceTvPrivateAddr = YES;
+  _builderResult.sourceTvPrivateAddr = value;
   return self;
 }
 - (CSourceTVGame_Builder*) clearSourceTvPrivateAddr {
-  result.hasSourceTvPrivateAddr = NO;
-  result.sourceTvPrivateAddr = 0;
+  _builderResult.hasSourceTvPrivateAddr = NO;
+  _builderResult.sourceTvPrivateAddr = 0;
   return self;
 }
 - (BOOL) hasSourceTvPort {
-  return result.hasSourceTvPort;
+  return _builderResult.hasSourceTvPort;
 }
 - (uint32_t) sourceTvPort {
-  return result.sourceTvPort;
+  return _builderResult.sourceTvPort;
 }
 - (CSourceTVGame_Builder*) setSourceTvPort:(uint32_t) value {
-  result.hasSourceTvPort = YES;
-  result.sourceTvPort = value;
+  _builderResult.hasSourceTvPort = YES;
+  _builderResult.sourceTvPort = value;
   return self;
 }
 - (CSourceTVGame_Builder*) clearSourceTvPort {
-  result.hasSourceTvPort = NO;
-  result.sourceTvPort = 0;
+  _builderResult.hasSourceTvPort = NO;
+  _builderResult.sourceTvPort = 0;
   return self;
 }
 - (PBAppendableArray *)goodPlayers {
-  return result.goodPlayersArray;
+  return _builderResult.goodPlayersArray;
 }
 - (CSourceTVGame_Player*)goodPlayersAtIndex:(NSUInteger)index {
-  return [result goodPlayersAtIndex:index];
+  return [_builderResult goodPlayersAtIndex:index];
 }
 - (CSourceTVGame_Builder *)addGoodPlayers:(CSourceTVGame_Player*)value {
-  if (result.goodPlayersArray == nil) {
-    result.goodPlayersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.goodPlayersArray == nil) {
+    _builderResult.goodPlayersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.goodPlayersArray addObject:value];
+  [_builderResult.goodPlayersArray addObject:value];
   return self;
 }
 - (CSourceTVGame_Builder *)setGoodPlayersArray:(NSArray *)array {
-  result.goodPlayersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.goodPlayersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSourceTVGame_Builder *)setGoodPlayersValues:(const CSourceTVGame_Player* *)values count:(NSUInteger)count {
-  result.goodPlayersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.goodPlayersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSourceTVGame_Builder *)clearGoodPlayers {
-  result.goodPlayersArray = nil;
+  _builderResult.goodPlayersArray = nil;
   return self;
 }
 - (PBAppendableArray *)badPlayers {
-  return result.badPlayersArray;
+  return _builderResult.badPlayersArray;
 }
 - (CSourceTVGame_Player*)badPlayersAtIndex:(NSUInteger)index {
-  return [result badPlayersAtIndex:index];
+  return [_builderResult badPlayersAtIndex:index];
 }
 - (CSourceTVGame_Builder *)addBadPlayers:(CSourceTVGame_Player*)value {
-  if (result.badPlayersArray == nil) {
-    result.badPlayersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.badPlayersArray == nil) {
+    _builderResult.badPlayersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.badPlayersArray addObject:value];
+  [_builderResult.badPlayersArray addObject:value];
   return self;
 }
 - (CSourceTVGame_Builder *)setBadPlayersArray:(NSArray *)array {
-  result.badPlayersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.badPlayersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSourceTVGame_Builder *)setBadPlayersValues:(const CSourceTVGame_Player* *)values count:(NSUInteger)count {
-  result.badPlayersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.badPlayersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSourceTVGame_Builder *)clearBadPlayers {
-  result.badPlayersArray = nil;
+  _builderResult.badPlayersArray = nil;
   return self;
 }
 - (PBAppendableArray *)otherPlayers {
-  return result.otherPlayersArray;
+  return _builderResult.otherPlayersArray;
 }
 - (CSourceTVGame_Player*)otherPlayersAtIndex:(NSUInteger)index {
-  return [result otherPlayersAtIndex:index];
+  return [_builderResult otherPlayersAtIndex:index];
 }
 - (CSourceTVGame_Builder *)addOtherPlayers:(CSourceTVGame_Player*)value {
-  if (result.otherPlayersArray == nil) {
-    result.otherPlayersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.otherPlayersArray == nil) {
+    _builderResult.otherPlayersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.otherPlayersArray addObject:value];
+  [_builderResult.otherPlayersArray addObject:value];
   return self;
 }
 - (CSourceTVGame_Builder *)setOtherPlayersArray:(NSArray *)array {
-  result.otherPlayersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.otherPlayersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSourceTVGame_Builder *)setOtherPlayersValues:(const CSourceTVGame_Player* *)values count:(NSUInteger)count {
-  result.otherPlayersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.otherPlayersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSourceTVGame_Builder *)clearOtherPlayers {
-  result.otherPlayersArray = nil;
+  _builderResult.otherPlayersArray = nil;
   return self;
 }
 - (BOOL) hasGameName {
-  return result.hasGameName;
+  return _builderResult.hasGameName;
 }
 - (NSString*) gameName {
-  return result.gameName;
+  return _builderResult.gameName;
 }
 - (CSourceTVGame_Builder*) setGameName:(NSString*) value {
-  result.hasGameName = YES;
-  result.gameName = value;
+  _builderResult.hasGameName = YES;
+  _builderResult.gameName = value;
   return self;
 }
 - (CSourceTVGame_Builder*) clearGameName {
-  result.hasGameName = NO;
-  result.gameName = @"";
+  _builderResult.hasGameName = NO;
+  _builderResult.gameName = @"";
   return self;
 }
 - (PBAppendableArray *)teamDetails {
-  return result.teamDetailsArray;
+  return _builderResult.teamDetailsArray;
 }
 - (CLobbyTeamDetails*)teamDetailsAtIndex:(NSUInteger)index {
-  return [result teamDetailsAtIndex:index];
+  return [_builderResult teamDetailsAtIndex:index];
 }
 - (CSourceTVGame_Builder *)addTeamDetails:(CLobbyTeamDetails*)value {
-  if (result.teamDetailsArray == nil) {
-    result.teamDetailsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.teamDetailsArray == nil) {
+    _builderResult.teamDetailsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.teamDetailsArray addObject:value];
+  [_builderResult.teamDetailsArray addObject:value];
   return self;
 }
 - (CSourceTVGame_Builder *)setTeamDetailsArray:(NSArray *)array {
-  result.teamDetailsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.teamDetailsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSourceTVGame_Builder *)setTeamDetailsValues:(const CLobbyTeamDetails* *)values count:(NSUInteger)count {
-  result.teamDetailsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.teamDetailsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CSourceTVGame_Builder *)clearTeamDetails {
-  result.teamDetailsArray = nil;
+  _builderResult.teamDetailsArray = nil;
   return self;
 }
 - (BOOL) hasNumSpectators {
-  return result.hasNumSpectators;
+  return _builderResult.hasNumSpectators;
 }
 - (uint32_t) numSpectators {
-  return result.numSpectators;
+  return _builderResult.numSpectators;
 }
 - (CSourceTVGame_Builder*) setNumSpectators:(uint32_t) value {
-  result.hasNumSpectators = YES;
-  result.numSpectators = value;
+  _builderResult.hasNumSpectators = YES;
+  _builderResult.numSpectators = value;
   return self;
 }
 - (CSourceTVGame_Builder*) clearNumSpectators {
-  result.hasNumSpectators = NO;
-  result.numSpectators = 0;
+  _builderResult.hasNumSpectators = NO;
+  _builderResult.numSpectators = 0;
   return self;
 }
 - (BOOL) hasTournamentId {
-  return result.hasTournamentId;
+  return _builderResult.hasTournamentId;
 }
 - (uint32_t) tournamentId {
-  return result.tournamentId;
+  return _builderResult.tournamentId;
 }
 - (CSourceTVGame_Builder*) setTournamentId:(uint32_t) value {
-  result.hasTournamentId = YES;
-  result.tournamentId = value;
+  _builderResult.hasTournamentId = YES;
+  _builderResult.tournamentId = value;
   return self;
 }
 - (CSourceTVGame_Builder*) clearTournamentId {
-  result.hasTournamentId = NO;
-  result.tournamentId = 0;
+  _builderResult.hasTournamentId = NO;
+  _builderResult.tournamentId = 0;
   return self;
 }
 - (BOOL) hasTournamentGameId {
-  return result.hasTournamentGameId;
+  return _builderResult.hasTournamentGameId;
 }
 - (uint32_t) tournamentGameId {
-  return result.tournamentGameId;
+  return _builderResult.tournamentGameId;
 }
 - (CSourceTVGame_Builder*) setTournamentGameId:(uint32_t) value {
-  result.hasTournamentGameId = YES;
-  result.tournamentGameId = value;
+  _builderResult.hasTournamentGameId = YES;
+  _builderResult.tournamentGameId = value;
   return self;
 }
 - (CSourceTVGame_Builder*) clearTournamentGameId {
-  result.hasTournamentGameId = NO;
-  result.tournamentGameId = 0;
+  _builderResult.hasTournamentGameId = NO;
+  _builderResult.tournamentGameId = 0;
   return self;
 }
 - (BOOL) hasTowerState {
-  return result.hasTowerState;
+  return _builderResult.hasTowerState;
 }
 - (uint32_t) towerState {
-  return result.towerState;
+  return _builderResult.towerState;
 }
 - (CSourceTVGame_Builder*) setTowerState:(uint32_t) value {
-  result.hasTowerState = YES;
-  result.towerState = value;
+  _builderResult.hasTowerState = YES;
+  _builderResult.towerState = value;
   return self;
 }
 - (CSourceTVGame_Builder*) clearTowerState {
-  result.hasTowerState = NO;
-  result.towerState = 0;
+  _builderResult.hasTowerState = NO;
+  _builderResult.towerState = 0;
   return self;
 }
 - (BOOL) hasTvBroadcastTime {
-  return result.hasTvBroadcastTime;
+  return _builderResult.hasTvBroadcastTime;
 }
 - (Float32) tvBroadcastTime {
-  return result.tvBroadcastTime;
+  return _builderResult.tvBroadcastTime;
 }
 - (CSourceTVGame_Builder*) setTvBroadcastTime:(Float32) value {
-  result.hasTvBroadcastTime = YES;
-  result.tvBroadcastTime = value;
+  _builderResult.hasTvBroadcastTime = YES;
+  _builderResult.tvBroadcastTime = value;
   return self;
 }
 - (CSourceTVGame_Builder*) clearTvBroadcastTime {
-  result.hasTvBroadcastTime = NO;
-  result.tvBroadcastTime = 0;
+  _builderResult.hasTvBroadcastTime = NO;
+  _builderResult.tvBroadcastTime = 0;
   return self;
 }
 - (BOOL) hasGameTime {
-  return result.hasGameTime;
+  return _builderResult.hasGameTime;
 }
 - (Float32) gameTime {
-  return result.gameTime;
+  return _builderResult.gameTime;
 }
 - (CSourceTVGame_Builder*) setGameTime:(Float32) value {
-  result.hasGameTime = YES;
-  result.gameTime = value;
+  _builderResult.hasGameTime = YES;
+  _builderResult.gameTime = value;
   return self;
 }
 - (CSourceTVGame_Builder*) clearGameTime {
-  result.hasGameTime = NO;
-  result.gameTime = 0;
+  _builderResult.hasGameTime = NO;
+  _builderResult.gameTime = 0;
   return self;
 }
 - (BOOL) hasServerSteamid {
-  return result.hasServerSteamid;
+  return _builderResult.hasServerSteamid;
 }
 - (uint64_t) serverSteamid {
-  return result.serverSteamid;
+  return _builderResult.serverSteamid;
 }
 - (CSourceTVGame_Builder*) setServerSteamid:(uint64_t) value {
-  result.hasServerSteamid = YES;
-  result.serverSteamid = value;
+  _builderResult.hasServerSteamid = YES;
+  _builderResult.serverSteamid = value;
   return self;
 }
 - (CSourceTVGame_Builder*) clearServerSteamid {
-  result.hasServerSteamid = NO;
-  result.serverSteamid = 0L;
+  _builderResult.hasServerSteamid = NO;
+  _builderResult.serverSteamid = 0L;
   return self;
 }
 - (BOOL) hasLeagueid {
-  return result.hasLeagueid;
+  return _builderResult.hasLeagueid;
 }
 - (uint32_t) leagueid {
-  return result.leagueid;
+  return _builderResult.leagueid;
 }
 - (CSourceTVGame_Builder*) setLeagueid:(uint32_t) value {
-  result.hasLeagueid = YES;
-  result.leagueid = value;
+  _builderResult.hasLeagueid = YES;
+  _builderResult.leagueid = value;
   return self;
 }
 - (CSourceTVGame_Builder*) clearLeagueid {
-  result.hasLeagueid = NO;
-  result.leagueid = 0;
+  _builderResult.hasLeagueid = NO;
+  _builderResult.leagueid = 0;
   return self;
 }
 @end
@@ -14015,10 +14015,10 @@ static CMsgSourceTVGamesResponse* defaultCMsgSourceTVGamesResponseInstance = nil
     return self;
   }
   if (other.gamesArray.count > 0) {
-    if (result.gamesArray == nil) {
-      result.gamesArray = [[other.gamesArray copyWithZone:[other.gamesArray zone]] autorelease];
+    if (_builderResult.gamesArray == nil) {
+      _builderResult.gamesArray = [[other.gamesArray copyWithZone:[other.gamesArray zone]] autorelease];
     } else {
-      [result.gamesArray appendArray:other.gamesArray];
+      [_builderResult.gamesArray appendArray:other.gamesArray];
     }
   }
   if (other.hasNumTotalGames) {
@@ -14059,44 +14059,44 @@ static CMsgSourceTVGamesResponse* defaultCMsgSourceTVGamesResponseInstance = nil
   }
 }
 - (PBAppendableArray *)games {
-  return result.gamesArray;
+  return _builderResult.gamesArray;
 }
 - (CSourceTVGame*)gamesAtIndex:(NSUInteger)index {
-  return [result gamesAtIndex:index];
+  return [_builderResult gamesAtIndex:index];
 }
 - (CMsgSourceTVGamesResponse_Builder *)addGames:(CSourceTVGame*)value {
-  if (result.gamesArray == nil) {
-    result.gamesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.gamesArray == nil) {
+    _builderResult.gamesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.gamesArray addObject:value];
+  [_builderResult.gamesArray addObject:value];
   return self;
 }
 - (CMsgSourceTVGamesResponse_Builder *)setGamesArray:(NSArray *)array {
-  result.gamesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.gamesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgSourceTVGamesResponse_Builder *)setGamesValues:(const CSourceTVGame* *)values count:(NSUInteger)count {
-  result.gamesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.gamesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgSourceTVGamesResponse_Builder *)clearGames {
-  result.gamesArray = nil;
+  _builderResult.gamesArray = nil;
   return self;
 }
 - (BOOL) hasNumTotalGames {
-  return result.hasNumTotalGames;
+  return _builderResult.hasNumTotalGames;
 }
 - (uint32_t) numTotalGames {
-  return result.numTotalGames;
+  return _builderResult.numTotalGames;
 }
 - (CMsgSourceTVGamesResponse_Builder*) setNumTotalGames:(uint32_t) value {
-  result.hasNumTotalGames = YES;
-  result.numTotalGames = value;
+  _builderResult.hasNumTotalGames = YES;
+  _builderResult.numTotalGames = value;
   return self;
 }
 - (CMsgSourceTVGamesResponse_Builder*) clearNumTotalGames {
-  result.hasNumTotalGames = NO;
-  result.numTotalGames = 0;
+  _builderResult.hasNumTotalGames = NO;
+  _builderResult.numTotalGames = 0;
   return self;
 }
 @end
@@ -14482,115 +14482,115 @@ static CMsgFindSourceTVGames* defaultCMsgFindSourceTVGamesInstance = nil;
   }
 }
 - (BOOL) hasSearchKey {
-  return result.hasSearchKey;
+  return _builderResult.hasSearchKey;
 }
 - (NSString*) searchKey {
-  return result.searchKey;
+  return _builderResult.searchKey;
 }
 - (CMsgFindSourceTVGames_Builder*) setSearchKey:(NSString*) value {
-  result.hasSearchKey = YES;
-  result.searchKey = value;
+  _builderResult.hasSearchKey = YES;
+  _builderResult.searchKey = value;
   return self;
 }
 - (CMsgFindSourceTVGames_Builder*) clearSearchKey {
-  result.hasSearchKey = NO;
-  result.searchKey = @"";
+  _builderResult.hasSearchKey = NO;
+  _builderResult.searchKey = @"";
   return self;
 }
 - (BOOL) hasStart {
-  return result.hasStart;
+  return _builderResult.hasStart;
 }
 - (uint32_t) start {
-  return result.start;
+  return _builderResult.start;
 }
 - (CMsgFindSourceTVGames_Builder*) setStart:(uint32_t) value {
-  result.hasStart = YES;
-  result.start = value;
+  _builderResult.hasStart = YES;
+  _builderResult.start = value;
   return self;
 }
 - (CMsgFindSourceTVGames_Builder*) clearStart {
-  result.hasStart = NO;
-  result.start = 0;
+  _builderResult.hasStart = NO;
+  _builderResult.start = 0;
   return self;
 }
 - (BOOL) hasNumGames {
-  return result.hasNumGames;
+  return _builderResult.hasNumGames;
 }
 - (uint32_t) numGames {
-  return result.numGames;
+  return _builderResult.numGames;
 }
 - (CMsgFindSourceTVGames_Builder*) setNumGames:(uint32_t) value {
-  result.hasNumGames = YES;
-  result.numGames = value;
+  _builderResult.hasNumGames = YES;
+  _builderResult.numGames = value;
   return self;
 }
 - (CMsgFindSourceTVGames_Builder*) clearNumGames {
-  result.hasNumGames = NO;
-  result.numGames = 0;
+  _builderResult.hasNumGames = NO;
+  _builderResult.numGames = 0;
   return self;
 }
 - (BOOL) hasLeagueid {
-  return result.hasLeagueid;
+  return _builderResult.hasLeagueid;
 }
 - (uint32_t) leagueid {
-  return result.leagueid;
+  return _builderResult.leagueid;
 }
 - (CMsgFindSourceTVGames_Builder*) setLeagueid:(uint32_t) value {
-  result.hasLeagueid = YES;
-  result.leagueid = value;
+  _builderResult.hasLeagueid = YES;
+  _builderResult.leagueid = value;
   return self;
 }
 - (CMsgFindSourceTVGames_Builder*) clearLeagueid {
-  result.hasLeagueid = NO;
-  result.leagueid = 0;
+  _builderResult.hasLeagueid = NO;
+  _builderResult.leagueid = 0;
   return self;
 }
 - (BOOL) hasHeroid {
-  return result.hasHeroid;
+  return _builderResult.hasHeroid;
 }
 - (uint32_t) heroid {
-  return result.heroid;
+  return _builderResult.heroid;
 }
 - (CMsgFindSourceTVGames_Builder*) setHeroid:(uint32_t) value {
-  result.hasHeroid = YES;
-  result.heroid = value;
+  _builderResult.hasHeroid = YES;
+  _builderResult.heroid = value;
   return self;
 }
 - (CMsgFindSourceTVGames_Builder*) clearHeroid {
-  result.hasHeroid = NO;
-  result.heroid = 0;
+  _builderResult.hasHeroid = NO;
+  _builderResult.heroid = 0;
   return self;
 }
 - (BOOL) hasDiretide {
-  return result.hasDiretide;
+  return _builderResult.hasDiretide;
 }
 - (BOOL) diretide {
-  return result.diretide;
+  return _builderResult.diretide;
 }
 - (CMsgFindSourceTVGames_Builder*) setDiretide:(BOOL) value {
-  result.hasDiretide = YES;
-  result.diretide = value;
+  _builderResult.hasDiretide = YES;
+  _builderResult.diretide = value;
   return self;
 }
 - (CMsgFindSourceTVGames_Builder*) clearDiretide {
-  result.hasDiretide = NO;
-  result.diretide = NO;
+  _builderResult.hasDiretide = NO;
+  _builderResult.diretide = NO;
   return self;
 }
 - (BOOL) hasXmas {
-  return result.hasXmas;
+  return _builderResult.hasXmas;
 }
 - (BOOL) xmas {
-  return result.xmas;
+  return _builderResult.xmas;
 }
 - (CMsgFindSourceTVGames_Builder*) setXmas:(BOOL) value {
-  result.hasXmas = YES;
-  result.xmas = value;
+  _builderResult.hasXmas = YES;
+  _builderResult.xmas = value;
   return self;
 }
 - (CMsgFindSourceTVGames_Builder*) clearXmas {
-  result.hasXmas = NO;
-  result.xmas = NO;
+  _builderResult.hasXmas = NO;
+  _builderResult.xmas = NO;
   return self;
 }
 @end
@@ -14785,19 +14785,19 @@ static CMsgSpectateFriendGame* defaultCMsgSpectateFriendGameInstance = nil;
   }
 }
 - (BOOL) hasSteamId {
-  return result.hasSteamId;
+  return _builderResult.hasSteamId;
 }
 - (uint64_t) steamId {
-  return result.steamId;
+  return _builderResult.steamId;
 }
 - (CMsgSpectateFriendGame_Builder*) setSteamId:(uint64_t) value {
-  result.hasSteamId = YES;
-  result.steamId = value;
+  _builderResult.hasSteamId = YES;
+  _builderResult.steamId = value;
   return self;
 }
 - (CMsgSpectateFriendGame_Builder*) clearSteamId {
-  result.hasSteamId = NO;
-  result.steamId = 0L;
+  _builderResult.hasSteamId = NO;
+  _builderResult.steamId = 0L;
   return self;
 }
 @end
@@ -14992,19 +14992,19 @@ static CMsgSpectateFriendGameResponse* defaultCMsgSpectateFriendGameResponseInst
   }
 }
 - (BOOL) hasServerSteamid {
-  return result.hasServerSteamid;
+  return _builderResult.hasServerSteamid;
 }
 - (uint64_t) serverSteamid {
-  return result.serverSteamid;
+  return _builderResult.serverSteamid;
 }
 - (CMsgSpectateFriendGameResponse_Builder*) setServerSteamid:(uint64_t) value {
-  result.hasServerSteamid = YES;
-  result.serverSteamid = value;
+  _builderResult.hasServerSteamid = YES;
+  _builderResult.serverSteamid = value;
   return self;
 }
 - (CMsgSpectateFriendGameResponse_Builder*) clearServerSteamid {
-  result.hasServerSteamid = NO;
-  result.serverSteamid = 0L;
+  _builderResult.hasServerSteamid = NO;
+  _builderResult.serverSteamid = 0L;
   return self;
 }
 @end
@@ -15891,291 +15891,291 @@ BOOL CMsgGameServerInfo_ServerTypeIsValidValue(CMsgGameServerInfo_ServerType val
   }
 }
 - (BOOL) hasServerPublicIpAddr {
-  return result.hasServerPublicIpAddr;
+  return _builderResult.hasServerPublicIpAddr;
 }
 - (uint32_t) serverPublicIpAddr {
-  return result.serverPublicIpAddr;
+  return _builderResult.serverPublicIpAddr;
 }
 - (CMsgGameServerInfo_Builder*) setServerPublicIpAddr:(uint32_t) value {
-  result.hasServerPublicIpAddr = YES;
-  result.serverPublicIpAddr = value;
+  _builderResult.hasServerPublicIpAddr = YES;
+  _builderResult.serverPublicIpAddr = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearServerPublicIpAddr {
-  result.hasServerPublicIpAddr = NO;
-  result.serverPublicIpAddr = 0;
+  _builderResult.hasServerPublicIpAddr = NO;
+  _builderResult.serverPublicIpAddr = 0;
   return self;
 }
 - (BOOL) hasServerPrivateIpAddr {
-  return result.hasServerPrivateIpAddr;
+  return _builderResult.hasServerPrivateIpAddr;
 }
 - (uint32_t) serverPrivateIpAddr {
-  return result.serverPrivateIpAddr;
+  return _builderResult.serverPrivateIpAddr;
 }
 - (CMsgGameServerInfo_Builder*) setServerPrivateIpAddr:(uint32_t) value {
-  result.hasServerPrivateIpAddr = YES;
-  result.serverPrivateIpAddr = value;
+  _builderResult.hasServerPrivateIpAddr = YES;
+  _builderResult.serverPrivateIpAddr = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearServerPrivateIpAddr {
-  result.hasServerPrivateIpAddr = NO;
-  result.serverPrivateIpAddr = 0;
+  _builderResult.hasServerPrivateIpAddr = NO;
+  _builderResult.serverPrivateIpAddr = 0;
   return self;
 }
 - (BOOL) hasServerPort {
-  return result.hasServerPort;
+  return _builderResult.hasServerPort;
 }
 - (uint32_t) serverPort {
-  return result.serverPort;
+  return _builderResult.serverPort;
 }
 - (CMsgGameServerInfo_Builder*) setServerPort:(uint32_t) value {
-  result.hasServerPort = YES;
-  result.serverPort = value;
+  _builderResult.hasServerPort = YES;
+  _builderResult.serverPort = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearServerPort {
-  result.hasServerPort = NO;
-  result.serverPort = 0;
+  _builderResult.hasServerPort = NO;
+  _builderResult.serverPort = 0;
   return self;
 }
 - (BOOL) hasServerTvPort {
-  return result.hasServerTvPort;
+  return _builderResult.hasServerTvPort;
 }
 - (uint32_t) serverTvPort {
-  return result.serverTvPort;
+  return _builderResult.serverTvPort;
 }
 - (CMsgGameServerInfo_Builder*) setServerTvPort:(uint32_t) value {
-  result.hasServerTvPort = YES;
-  result.serverTvPort = value;
+  _builderResult.hasServerTvPort = YES;
+  _builderResult.serverTvPort = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearServerTvPort {
-  result.hasServerTvPort = NO;
-  result.serverTvPort = 0;
+  _builderResult.hasServerTvPort = NO;
+  _builderResult.serverTvPort = 0;
   return self;
 }
 - (BOOL) hasServerKey {
-  return result.hasServerKey;
+  return _builderResult.hasServerKey;
 }
 - (NSString*) serverKey {
-  return result.serverKey;
+  return _builderResult.serverKey;
 }
 - (CMsgGameServerInfo_Builder*) setServerKey:(NSString*) value {
-  result.hasServerKey = YES;
-  result.serverKey = value;
+  _builderResult.hasServerKey = YES;
+  _builderResult.serverKey = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearServerKey {
-  result.hasServerKey = NO;
-  result.serverKey = @"";
+  _builderResult.hasServerKey = NO;
+  _builderResult.serverKey = @"";
   return self;
 }
 - (BOOL) hasServerHibernation {
-  return result.hasServerHibernation;
+  return _builderResult.hasServerHibernation;
 }
 - (BOOL) serverHibernation {
-  return result.serverHibernation;
+  return _builderResult.serverHibernation;
 }
 - (CMsgGameServerInfo_Builder*) setServerHibernation:(BOOL) value {
-  result.hasServerHibernation = YES;
-  result.serverHibernation = value;
+  _builderResult.hasServerHibernation = YES;
+  _builderResult.serverHibernation = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearServerHibernation {
-  result.hasServerHibernation = NO;
-  result.serverHibernation = NO;
+  _builderResult.hasServerHibernation = NO;
+  _builderResult.serverHibernation = NO;
   return self;
 }
 - (BOOL) hasserver_type {
-  return result.hasserver_type;
+  return _builderResult.hasserver_type;
 }
 - (CMsgGameServerInfo_ServerType) server_type {
-  return result.server_type;
+  return _builderResult.server_type;
 }
 - (CMsgGameServerInfo_Builder*) setserver_type:(CMsgGameServerInfo_ServerType) value {
-  result.hasserver_type = YES;
-  result.server_type = value;
+  _builderResult.hasserver_type = YES;
+  _builderResult.server_type = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearserver_type {
-  result.hasserver_type = NO;
-  result.server_type = CMsgGameServerInfo_ServerTypeUNSPECIFIED;
+  _builderResult.hasserver_type = NO;
+  _builderResult.server_type = CMsgGameServerInfo_ServerTypeUNSPECIFIED;
   return self;
 }
 - (BOOL) hasServerRegion {
-  return result.hasServerRegion;
+  return _builderResult.hasServerRegion;
 }
 - (uint32_t) serverRegion {
-  return result.serverRegion;
+  return _builderResult.serverRegion;
 }
 - (CMsgGameServerInfo_Builder*) setServerRegion:(uint32_t) value {
-  result.hasServerRegion = YES;
-  result.serverRegion = value;
+  _builderResult.hasServerRegion = YES;
+  _builderResult.serverRegion = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearServerRegion {
-  result.hasServerRegion = NO;
-  result.serverRegion = 0;
+  _builderResult.hasServerRegion = NO;
+  _builderResult.serverRegion = 0;
   return self;
 }
 - (BOOL) hasServerLoadavg {
-  return result.hasServerLoadavg;
+  return _builderResult.hasServerLoadavg;
 }
 - (Float32) serverLoadavg {
-  return result.serverLoadavg;
+  return _builderResult.serverLoadavg;
 }
 - (CMsgGameServerInfo_Builder*) setServerLoadavg:(Float32) value {
-  result.hasServerLoadavg = YES;
-  result.serverLoadavg = value;
+  _builderResult.hasServerLoadavg = YES;
+  _builderResult.serverLoadavg = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearServerLoadavg {
-  result.hasServerLoadavg = NO;
-  result.serverLoadavg = 0;
+  _builderResult.hasServerLoadavg = NO;
+  _builderResult.serverLoadavg = 0;
   return self;
 }
 - (BOOL) hasServerTvBroadcastTime {
-  return result.hasServerTvBroadcastTime;
+  return _builderResult.hasServerTvBroadcastTime;
 }
 - (Float32) serverTvBroadcastTime {
-  return result.serverTvBroadcastTime;
+  return _builderResult.serverTvBroadcastTime;
 }
 - (CMsgGameServerInfo_Builder*) setServerTvBroadcastTime:(Float32) value {
-  result.hasServerTvBroadcastTime = YES;
-  result.serverTvBroadcastTime = value;
+  _builderResult.hasServerTvBroadcastTime = YES;
+  _builderResult.serverTvBroadcastTime = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearServerTvBroadcastTime {
-  result.hasServerTvBroadcastTime = NO;
-  result.serverTvBroadcastTime = 0;
+  _builderResult.hasServerTvBroadcastTime = NO;
+  _builderResult.serverTvBroadcastTime = 0;
   return self;
 }
 - (BOOL) hasServerGameTime {
-  return result.hasServerGameTime;
+  return _builderResult.hasServerGameTime;
 }
 - (Float32) serverGameTime {
-  return result.serverGameTime;
+  return _builderResult.serverGameTime;
 }
 - (CMsgGameServerInfo_Builder*) setServerGameTime:(Float32) value {
-  result.hasServerGameTime = YES;
-  result.serverGameTime = value;
+  _builderResult.hasServerGameTime = YES;
+  _builderResult.serverGameTime = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearServerGameTime {
-  result.hasServerGameTime = NO;
-  result.serverGameTime = 0;
+  _builderResult.hasServerGameTime = NO;
+  _builderResult.serverGameTime = 0;
   return self;
 }
 - (BOOL) hasServerRelayConnectedSteamId {
-  return result.hasServerRelayConnectedSteamId;
+  return _builderResult.hasServerRelayConnectedSteamId;
 }
 - (uint64_t) serverRelayConnectedSteamId {
-  return result.serverRelayConnectedSteamId;
+  return _builderResult.serverRelayConnectedSteamId;
 }
 - (CMsgGameServerInfo_Builder*) setServerRelayConnectedSteamId:(uint64_t) value {
-  result.hasServerRelayConnectedSteamId = YES;
-  result.serverRelayConnectedSteamId = value;
+  _builderResult.hasServerRelayConnectedSteamId = YES;
+  _builderResult.serverRelayConnectedSteamId = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearServerRelayConnectedSteamId {
-  result.hasServerRelayConnectedSteamId = NO;
-  result.serverRelayConnectedSteamId = 0L;
+  _builderResult.hasServerRelayConnectedSteamId = NO;
+  _builderResult.serverRelayConnectedSteamId = 0L;
   return self;
 }
 - (BOOL) hasRelaySlotsMax {
-  return result.hasRelaySlotsMax;
+  return _builderResult.hasRelaySlotsMax;
 }
 - (uint32_t) relaySlotsMax {
-  return result.relaySlotsMax;
+  return _builderResult.relaySlotsMax;
 }
 - (CMsgGameServerInfo_Builder*) setRelaySlotsMax:(uint32_t) value {
-  result.hasRelaySlotsMax = YES;
-  result.relaySlotsMax = value;
+  _builderResult.hasRelaySlotsMax = YES;
+  _builderResult.relaySlotsMax = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearRelaySlotsMax {
-  result.hasRelaySlotsMax = NO;
-  result.relaySlotsMax = 0;
+  _builderResult.hasRelaySlotsMax = NO;
+  _builderResult.relaySlotsMax = 0;
   return self;
 }
 - (BOOL) hasRelaysConnected {
-  return result.hasRelaysConnected;
+  return _builderResult.hasRelaysConnected;
 }
 - (int32_t) relaysConnected {
-  return result.relaysConnected;
+  return _builderResult.relaysConnected;
 }
 - (CMsgGameServerInfo_Builder*) setRelaysConnected:(int32_t) value {
-  result.hasRelaysConnected = YES;
-  result.relaysConnected = value;
+  _builderResult.hasRelaysConnected = YES;
+  _builderResult.relaysConnected = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearRelaysConnected {
-  result.hasRelaysConnected = NO;
-  result.relaysConnected = 0;
+  _builderResult.hasRelaysConnected = NO;
+  _builderResult.relaysConnected = 0;
   return self;
 }
 - (BOOL) hasRelayClientsConnected {
-  return result.hasRelayClientsConnected;
+  return _builderResult.hasRelayClientsConnected;
 }
 - (int32_t) relayClientsConnected {
-  return result.relayClientsConnected;
+  return _builderResult.relayClientsConnected;
 }
 - (CMsgGameServerInfo_Builder*) setRelayClientsConnected:(int32_t) value {
-  result.hasRelayClientsConnected = YES;
-  result.relayClientsConnected = value;
+  _builderResult.hasRelayClientsConnected = YES;
+  _builderResult.relayClientsConnected = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearRelayClientsConnected {
-  result.hasRelayClientsConnected = NO;
-  result.relayClientsConnected = 0;
+  _builderResult.hasRelayClientsConnected = NO;
+  _builderResult.relayClientsConnected = 0;
   return self;
 }
 - (BOOL) hasRelayedGameServerSteamId {
-  return result.hasRelayedGameServerSteamId;
+  return _builderResult.hasRelayedGameServerSteamId;
 }
 - (uint64_t) relayedGameServerSteamId {
-  return result.relayedGameServerSteamId;
+  return _builderResult.relayedGameServerSteamId;
 }
 - (CMsgGameServerInfo_Builder*) setRelayedGameServerSteamId:(uint64_t) value {
-  result.hasRelayedGameServerSteamId = YES;
-  result.relayedGameServerSteamId = value;
+  _builderResult.hasRelayedGameServerSteamId = YES;
+  _builderResult.relayedGameServerSteamId = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearRelayedGameServerSteamId {
-  result.hasRelayedGameServerSteamId = NO;
-  result.relayedGameServerSteamId = 0L;
+  _builderResult.hasRelayedGameServerSteamId = NO;
+  _builderResult.relayedGameServerSteamId = 0L;
   return self;
 }
 - (BOOL) hasParentRelayCount {
-  return result.hasParentRelayCount;
+  return _builderResult.hasParentRelayCount;
 }
 - (uint32_t) parentRelayCount {
-  return result.parentRelayCount;
+  return _builderResult.parentRelayCount;
 }
 - (CMsgGameServerInfo_Builder*) setParentRelayCount:(uint32_t) value {
-  result.hasParentRelayCount = YES;
-  result.parentRelayCount = value;
+  _builderResult.hasParentRelayCount = YES;
+  _builderResult.parentRelayCount = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearParentRelayCount {
-  result.hasParentRelayCount = NO;
-  result.parentRelayCount = 0;
+  _builderResult.hasParentRelayCount = NO;
+  _builderResult.parentRelayCount = 0;
   return self;
 }
 - (BOOL) hasTvSecretCode {
-  return result.hasTvSecretCode;
+  return _builderResult.hasTvSecretCode;
 }
 - (uint64_t) tvSecretCode {
-  return result.tvSecretCode;
+  return _builderResult.tvSecretCode;
 }
 - (CMsgGameServerInfo_Builder*) setTvSecretCode:(uint64_t) value {
-  result.hasTvSecretCode = YES;
-  result.tvSecretCode = value;
+  _builderResult.hasTvSecretCode = YES;
+  _builderResult.tvSecretCode = value;
   return self;
 }
 - (CMsgGameServerInfo_Builder*) clearTvSecretCode {
-  result.hasTvSecretCode = NO;
-  result.tvSecretCode = 0L;
+  _builderResult.hasTvSecretCode = NO;
+  _builderResult.tvSecretCode = 0L;
   return self;
 }
 @end
@@ -16400,35 +16400,35 @@ static CMsgLeaverDetected* defaultCMsgLeaverDetectedInstance = nil;
   }
 }
 - (BOOL) hasSteamId {
-  return result.hasSteamId;
+  return _builderResult.hasSteamId;
 }
 - (uint64_t) steamId {
-  return result.steamId;
+  return _builderResult.steamId;
 }
 - (CMsgLeaverDetected_Builder*) setSteamId:(uint64_t) value {
-  result.hasSteamId = YES;
-  result.steamId = value;
+  _builderResult.hasSteamId = YES;
+  _builderResult.steamId = value;
   return self;
 }
 - (CMsgLeaverDetected_Builder*) clearSteamId {
-  result.hasSteamId = NO;
-  result.steamId = 0L;
+  _builderResult.hasSteamId = NO;
+  _builderResult.steamId = 0L;
   return self;
 }
 - (BOOL) hasLeaverStatus {
-  return result.hasLeaverStatus;
+  return _builderResult.hasLeaverStatus;
 }
 - (uint32_t) leaverStatus {
-  return result.leaverStatus;
+  return _builderResult.leaverStatus;
 }
 - (CMsgLeaverDetected_Builder*) setLeaverStatus:(uint32_t) value {
-  result.hasLeaverStatus = YES;
-  result.leaverStatus = value;
+  _builderResult.hasLeaverStatus = YES;
+  _builderResult.leaverStatus = value;
   return self;
 }
 - (CMsgLeaverDetected_Builder*) clearLeaverStatus {
-  result.hasLeaverStatus = NO;
-  result.leaverStatus = 0;
+  _builderResult.hasLeaverStatus = NO;
+  _builderResult.leaverStatus = 0;
   return self;
 }
 @end
@@ -16623,19 +16623,19 @@ static CMsgLeaverDetectedResponse* defaultCMsgLeaverDetectedResponseInstance = n
   }
 }
 - (BOOL) hasResult {
-  return result.hasResult;
+  return _builderResult.hasResult;
 }
 - (uint32_t) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgLeaverDetectedResponse_Builder*) setResult:(uint32_t) value {
-  result.hasResult = YES;
-  result.result = value;
+  _builderResult.hasResult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgLeaverDetectedResponse_Builder*) clearResult {
-  result.hasResult = NO;
-  result.result = 0;
+  _builderResult.hasResult = NO;
+  _builderResult.result = 0;
   return self;
 }
 @end
@@ -17428,10 +17428,10 @@ static CMsgPracticeLobbySetDetails* defaultCMsgPracticeLobbySetDetailsInstance =
     [self setGameName:other.gameName];
   }
   if (other.teamDetailsArray.count > 0) {
-    if (result.teamDetailsArray == nil) {
-      result.teamDetailsArray = [[other.teamDetailsArray copyWithZone:[other.teamDetailsArray zone]] autorelease];
+    if (_builderResult.teamDetailsArray == nil) {
+      _builderResult.teamDetailsArray = [[other.teamDetailsArray copyWithZone:[other.teamDetailsArray zone]] autorelease];
     } else {
-      [result.teamDetailsArray appendArray:other.teamDetailsArray];
+      [_builderResult.teamDetailsArray appendArray:other.teamDetailsArray];
     }
   }
   if (other.hasServerRegion) {
@@ -17607,332 +17607,332 @@ static CMsgPracticeLobbySetDetails* defaultCMsgPracticeLobbySetDetailsInstance =
   }
 }
 - (BOOL) hasLobbyId {
-  return result.hasLobbyId;
+  return _builderResult.hasLobbyId;
 }
 - (uint64_t) lobbyId {
-  return result.lobbyId;
+  return _builderResult.lobbyId;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setLobbyId:(uint64_t) value {
-  result.hasLobbyId = YES;
-  result.lobbyId = value;
+  _builderResult.hasLobbyId = YES;
+  _builderResult.lobbyId = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearLobbyId {
-  result.hasLobbyId = NO;
-  result.lobbyId = 0L;
+  _builderResult.hasLobbyId = NO;
+  _builderResult.lobbyId = 0L;
   return self;
 }
 - (BOOL) hasGameName {
-  return result.hasGameName;
+  return _builderResult.hasGameName;
 }
 - (NSString*) gameName {
-  return result.gameName;
+  return _builderResult.gameName;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setGameName:(NSString*) value {
-  result.hasGameName = YES;
-  result.gameName = value;
+  _builderResult.hasGameName = YES;
+  _builderResult.gameName = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearGameName {
-  result.hasGameName = NO;
-  result.gameName = @"";
+  _builderResult.hasGameName = NO;
+  _builderResult.gameName = @"";
   return self;
 }
 - (PBAppendableArray *)teamDetails {
-  return result.teamDetailsArray;
+  return _builderResult.teamDetailsArray;
 }
 - (CLobbyTeamDetails*)teamDetailsAtIndex:(NSUInteger)index {
-  return [result teamDetailsAtIndex:index];
+  return [_builderResult teamDetailsAtIndex:index];
 }
 - (CMsgPracticeLobbySetDetails_Builder *)addTeamDetails:(CLobbyTeamDetails*)value {
-  if (result.teamDetailsArray == nil) {
-    result.teamDetailsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.teamDetailsArray == nil) {
+    _builderResult.teamDetailsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.teamDetailsArray addObject:value];
+  [_builderResult.teamDetailsArray addObject:value];
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder *)setTeamDetailsArray:(NSArray *)array {
-  result.teamDetailsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.teamDetailsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder *)setTeamDetailsValues:(const CLobbyTeamDetails* *)values count:(NSUInteger)count {
-  result.teamDetailsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.teamDetailsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder *)clearTeamDetails {
-  result.teamDetailsArray = nil;
+  _builderResult.teamDetailsArray = nil;
   return self;
 }
 - (BOOL) hasServerRegion {
-  return result.hasServerRegion;
+  return _builderResult.hasServerRegion;
 }
 - (uint32_t) serverRegion {
-  return result.serverRegion;
+  return _builderResult.serverRegion;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setServerRegion:(uint32_t) value {
-  result.hasServerRegion = YES;
-  result.serverRegion = value;
+  _builderResult.hasServerRegion = YES;
+  _builderResult.serverRegion = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearServerRegion {
-  result.hasServerRegion = NO;
-  result.serverRegion = 0;
+  _builderResult.hasServerRegion = NO;
+  _builderResult.serverRegion = 0;
   return self;
 }
 - (BOOL) hasGameMode {
-  return result.hasGameMode;
+  return _builderResult.hasGameMode;
 }
 - (uint32_t) gameMode {
-  return result.gameMode;
+  return _builderResult.gameMode;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setGameMode:(uint32_t) value {
-  result.hasGameMode = YES;
-  result.gameMode = value;
+  _builderResult.hasGameMode = YES;
+  _builderResult.gameMode = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearGameMode {
-  result.hasGameMode = NO;
-  result.gameMode = 0;
+  _builderResult.hasGameMode = NO;
+  _builderResult.gameMode = 0;
   return self;
 }
 - (BOOL) hascm_pick {
-  return result.hascm_pick;
+  return _builderResult.hascm_pick;
 }
 - (DOTA_CM_PICK) cm_pick {
-  return result.cm_pick;
+  return _builderResult.cm_pick;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setcm_pick:(DOTA_CM_PICK) value {
-  result.hascm_pick = YES;
-  result.cm_pick = value;
+  _builderResult.hascm_pick = YES;
+  _builderResult.cm_pick = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearcm_pick {
-  result.hascm_pick = NO;
-  result.cm_pick = DOTA_CM_PICKDOTA_CM_RANDOM;
+  _builderResult.hascm_pick = NO;
+  _builderResult.cm_pick = DOTA_CM_PICKDOTA_CM_RANDOM;
   return self;
 }
 - (BOOL) hasbot_difficulty {
-  return result.hasbot_difficulty;
+  return _builderResult.hasbot_difficulty;
 }
 - (DOTABotDifficulty) bot_difficulty {
-  return result.bot_difficulty;
+  return _builderResult.bot_difficulty;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setbot_difficulty:(DOTABotDifficulty) value {
-  result.hasbot_difficulty = YES;
-  result.bot_difficulty = value;
+  _builderResult.hasbot_difficulty = YES;
+  _builderResult.bot_difficulty = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearbot_difficulty {
-  result.hasbot_difficulty = NO;
-  result.bot_difficulty = DOTABotDifficultyBOT_DIFFICULTY_MEDIUM;
+  _builderResult.hasbot_difficulty = NO;
+  _builderResult.bot_difficulty = DOTABotDifficultyBOT_DIFFICULTY_MEDIUM;
   return self;
 }
 - (BOOL) hasAllowCheats {
-  return result.hasAllowCheats;
+  return _builderResult.hasAllowCheats;
 }
 - (BOOL) allowCheats {
-  return result.allowCheats;
+  return _builderResult.allowCheats;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setAllowCheats:(BOOL) value {
-  result.hasAllowCheats = YES;
-  result.allowCheats = value;
+  _builderResult.hasAllowCheats = YES;
+  _builderResult.allowCheats = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearAllowCheats {
-  result.hasAllowCheats = NO;
-  result.allowCheats = NO;
+  _builderResult.hasAllowCheats = NO;
+  _builderResult.allowCheats = NO;
   return self;
 }
 - (BOOL) hasFillWithBots {
-  return result.hasFillWithBots;
+  return _builderResult.hasFillWithBots;
 }
 - (BOOL) fillWithBots {
-  return result.fillWithBots;
+  return _builderResult.fillWithBots;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setFillWithBots:(BOOL) value {
-  result.hasFillWithBots = YES;
-  result.fillWithBots = value;
+  _builderResult.hasFillWithBots = YES;
+  _builderResult.fillWithBots = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearFillWithBots {
-  result.hasFillWithBots = NO;
-  result.fillWithBots = NO;
+  _builderResult.hasFillWithBots = NO;
+  _builderResult.fillWithBots = NO;
   return self;
 }
 - (BOOL) hasIntroMode {
-  return result.hasIntroMode;
+  return _builderResult.hasIntroMode;
 }
 - (BOOL) introMode {
-  return result.introMode;
+  return _builderResult.introMode;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setIntroMode:(BOOL) value {
-  result.hasIntroMode = YES;
-  result.introMode = value;
+  _builderResult.hasIntroMode = YES;
+  _builderResult.introMode = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearIntroMode {
-  result.hasIntroMode = NO;
-  result.introMode = NO;
+  _builderResult.hasIntroMode = NO;
+  _builderResult.introMode = NO;
   return self;
 }
 - (BOOL) hasAllowSpectating {
-  return result.hasAllowSpectating;
+  return _builderResult.hasAllowSpectating;
 }
 - (BOOL) allowSpectating {
-  return result.allowSpectating;
+  return _builderResult.allowSpectating;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setAllowSpectating:(BOOL) value {
-  result.hasAllowSpectating = YES;
-  result.allowSpectating = value;
+  _builderResult.hasAllowSpectating = YES;
+  _builderResult.allowSpectating = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearAllowSpectating {
-  result.hasAllowSpectating = NO;
-  result.allowSpectating = NO;
+  _builderResult.hasAllowSpectating = NO;
+  _builderResult.allowSpectating = NO;
   return self;
 }
 - (BOOL) hasgame_version {
-  return result.hasgame_version;
+  return _builderResult.hasgame_version;
 }
 - (DOTAGameVersion) game_version {
-  return result.game_version;
+  return _builderResult.game_version;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setgame_version:(DOTAGameVersion) value {
-  result.hasgame_version = YES;
-  result.game_version = value;
+  _builderResult.hasgame_version = YES;
+  _builderResult.game_version = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) cleargame_version {
-  result.hasgame_version = NO;
-  result.game_version = DOTAGameVersionGAME_VERSION_CURRENT;
+  _builderResult.hasgame_version = NO;
+  _builderResult.game_version = DOTAGameVersionGAME_VERSION_CURRENT;
   return self;
 }
 - (BOOL) hasPassKey {
-  return result.hasPassKey;
+  return _builderResult.hasPassKey;
 }
 - (NSString*) passKey {
-  return result.passKey;
+  return _builderResult.passKey;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setPassKey:(NSString*) value {
-  result.hasPassKey = YES;
-  result.passKey = value;
+  _builderResult.hasPassKey = YES;
+  _builderResult.passKey = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearPassKey {
-  result.hasPassKey = NO;
-  result.passKey = @"";
+  _builderResult.hasPassKey = NO;
+  _builderResult.passKey = @"";
   return self;
 }
 - (BOOL) hasLeagueid {
-  return result.hasLeagueid;
+  return _builderResult.hasLeagueid;
 }
 - (uint32_t) leagueid {
-  return result.leagueid;
+  return _builderResult.leagueid;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setLeagueid:(uint32_t) value {
-  result.hasLeagueid = YES;
-  result.leagueid = value;
+  _builderResult.hasLeagueid = YES;
+  _builderResult.leagueid = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearLeagueid {
-  result.hasLeagueid = NO;
-  result.leagueid = 0;
+  _builderResult.hasLeagueid = NO;
+  _builderResult.leagueid = 0;
   return self;
 }
 - (BOOL) hasPenaltyLevelRadiant {
-  return result.hasPenaltyLevelRadiant;
+  return _builderResult.hasPenaltyLevelRadiant;
 }
 - (uint32_t) penaltyLevelRadiant {
-  return result.penaltyLevelRadiant;
+  return _builderResult.penaltyLevelRadiant;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setPenaltyLevelRadiant:(uint32_t) value {
-  result.hasPenaltyLevelRadiant = YES;
-  result.penaltyLevelRadiant = value;
+  _builderResult.hasPenaltyLevelRadiant = YES;
+  _builderResult.penaltyLevelRadiant = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearPenaltyLevelRadiant {
-  result.hasPenaltyLevelRadiant = NO;
-  result.penaltyLevelRadiant = 0;
+  _builderResult.hasPenaltyLevelRadiant = NO;
+  _builderResult.penaltyLevelRadiant = 0;
   return self;
 }
 - (BOOL) hasPenaltyLevelDire {
-  return result.hasPenaltyLevelDire;
+  return _builderResult.hasPenaltyLevelDire;
 }
 - (uint32_t) penaltyLevelDire {
-  return result.penaltyLevelDire;
+  return _builderResult.penaltyLevelDire;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setPenaltyLevelDire:(uint32_t) value {
-  result.hasPenaltyLevelDire = YES;
-  result.penaltyLevelDire = value;
+  _builderResult.hasPenaltyLevelDire = YES;
+  _builderResult.penaltyLevelDire = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearPenaltyLevelDire {
-  result.hasPenaltyLevelDire = NO;
-  result.penaltyLevelDire = 0;
+  _builderResult.hasPenaltyLevelDire = NO;
+  _builderResult.penaltyLevelDire = 0;
   return self;
 }
 - (BOOL) hasLoadGameId {
-  return result.hasLoadGameId;
+  return _builderResult.hasLoadGameId;
 }
 - (uint32_t) loadGameId {
-  return result.loadGameId;
+  return _builderResult.loadGameId;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setLoadGameId:(uint32_t) value {
-  result.hasLoadGameId = YES;
-  result.loadGameId = value;
+  _builderResult.hasLoadGameId = YES;
+  _builderResult.loadGameId = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearLoadGameId {
-  result.hasLoadGameId = NO;
-  result.loadGameId = 0;
+  _builderResult.hasLoadGameId = NO;
+  _builderResult.loadGameId = 0;
   return self;
 }
 - (BOOL) hasSeriesType {
-  return result.hasSeriesType;
+  return _builderResult.hasSeriesType;
 }
 - (uint32_t) seriesType {
-  return result.seriesType;
+  return _builderResult.seriesType;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setSeriesType:(uint32_t) value {
-  result.hasSeriesType = YES;
-  result.seriesType = value;
+  _builderResult.hasSeriesType = YES;
+  _builderResult.seriesType = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearSeriesType {
-  result.hasSeriesType = NO;
-  result.seriesType = 0;
+  _builderResult.hasSeriesType = NO;
+  _builderResult.seriesType = 0;
   return self;
 }
 - (BOOL) hasRadiantSeriesWins {
-  return result.hasRadiantSeriesWins;
+  return _builderResult.hasRadiantSeriesWins;
 }
 - (uint32_t) radiantSeriesWins {
-  return result.radiantSeriesWins;
+  return _builderResult.radiantSeriesWins;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setRadiantSeriesWins:(uint32_t) value {
-  result.hasRadiantSeriesWins = YES;
-  result.radiantSeriesWins = value;
+  _builderResult.hasRadiantSeriesWins = YES;
+  _builderResult.radiantSeriesWins = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearRadiantSeriesWins {
-  result.hasRadiantSeriesWins = NO;
-  result.radiantSeriesWins = 0;
+  _builderResult.hasRadiantSeriesWins = NO;
+  _builderResult.radiantSeriesWins = 0;
   return self;
 }
 - (BOOL) hasDireSeriesWins {
-  return result.hasDireSeriesWins;
+  return _builderResult.hasDireSeriesWins;
 }
 - (uint32_t) direSeriesWins {
-  return result.direSeriesWins;
+  return _builderResult.direSeriesWins;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) setDireSeriesWins:(uint32_t) value {
-  result.hasDireSeriesWins = YES;
-  result.direSeriesWins = value;
+  _builderResult.hasDireSeriesWins = YES;
+  _builderResult.direSeriesWins = value;
   return self;
 }
 - (CMsgPracticeLobbySetDetails_Builder*) clearDireSeriesWins {
-  result.hasDireSeriesWins = NO;
-  result.direSeriesWins = 0;
+  _builderResult.hasDireSeriesWins = NO;
+  _builderResult.direSeriesWins = 0;
   return self;
 }
 @end
@@ -18323,129 +18323,129 @@ static CMsgPracticeLobbyCreate* defaultCMsgPracticeLobbyCreateInstance = nil;
   }
 }
 - (BOOL) hasSearchKey {
-  return result.hasSearchKey;
+  return _builderResult.hasSearchKey;
 }
 - (NSString*) searchKey {
-  return result.searchKey;
+  return _builderResult.searchKey;
 }
 - (CMsgPracticeLobbyCreate_Builder*) setSearchKey:(NSString*) value {
-  result.hasSearchKey = YES;
-  result.searchKey = value;
+  _builderResult.hasSearchKey = YES;
+  _builderResult.searchKey = value;
   return self;
 }
 - (CMsgPracticeLobbyCreate_Builder*) clearSearchKey {
-  result.hasSearchKey = NO;
-  result.searchKey = @"";
+  _builderResult.hasSearchKey = NO;
+  _builderResult.searchKey = @"";
   return self;
 }
 - (BOOL) hasTournamentGame {
-  return result.hasTournamentGame;
+  return _builderResult.hasTournamentGame;
 }
 - (BOOL) tournamentGame {
-  return result.tournamentGame;
+  return _builderResult.tournamentGame;
 }
 - (CMsgPracticeLobbyCreate_Builder*) setTournamentGame:(BOOL) value {
-  result.hasTournamentGame = YES;
-  result.tournamentGame = value;
+  _builderResult.hasTournamentGame = YES;
+  _builderResult.tournamentGame = value;
   return self;
 }
 - (CMsgPracticeLobbyCreate_Builder*) clearTournamentGame {
-  result.hasTournamentGame = NO;
-  result.tournamentGame = NO;
+  _builderResult.hasTournamentGame = NO;
+  _builderResult.tournamentGame = NO;
   return self;
 }
 - (BOOL) hasTournamentGameId {
-  return result.hasTournamentGameId;
+  return _builderResult.hasTournamentGameId;
 }
 - (uint32_t) tournamentGameId {
-  return result.tournamentGameId;
+  return _builderResult.tournamentGameId;
 }
 - (CMsgPracticeLobbyCreate_Builder*) setTournamentGameId:(uint32_t) value {
-  result.hasTournamentGameId = YES;
-  result.tournamentGameId = value;
+  _builderResult.hasTournamentGameId = YES;
+  _builderResult.tournamentGameId = value;
   return self;
 }
 - (CMsgPracticeLobbyCreate_Builder*) clearTournamentGameId {
-  result.hasTournamentGameId = NO;
-  result.tournamentGameId = 0;
+  _builderResult.hasTournamentGameId = NO;
+  _builderResult.tournamentGameId = 0;
   return self;
 }
 - (BOOL) hasTournamentId {
-  return result.hasTournamentId;
+  return _builderResult.hasTournamentId;
 }
 - (uint32_t) tournamentId {
-  return result.tournamentId;
+  return _builderResult.tournamentId;
 }
 - (CMsgPracticeLobbyCreate_Builder*) setTournamentId:(uint32_t) value {
-  result.hasTournamentId = YES;
-  result.tournamentId = value;
+  _builderResult.hasTournamentId = YES;
+  _builderResult.tournamentId = value;
   return self;
 }
 - (CMsgPracticeLobbyCreate_Builder*) clearTournamentId {
-  result.hasTournamentId = NO;
-  result.tournamentId = 0;
+  _builderResult.hasTournamentId = NO;
+  _builderResult.tournamentId = 0;
   return self;
 }
 - (BOOL) hasPassKey {
-  return result.hasPassKey;
+  return _builderResult.hasPassKey;
 }
 - (NSString*) passKey {
-  return result.passKey;
+  return _builderResult.passKey;
 }
 - (CMsgPracticeLobbyCreate_Builder*) setPassKey:(NSString*) value {
-  result.hasPassKey = YES;
-  result.passKey = value;
+  _builderResult.hasPassKey = YES;
+  _builderResult.passKey = value;
   return self;
 }
 - (CMsgPracticeLobbyCreate_Builder*) clearPassKey {
-  result.hasPassKey = NO;
-  result.passKey = @"";
+  _builderResult.hasPassKey = NO;
+  _builderResult.passKey = @"";
   return self;
 }
 - (BOOL) hasClientVersion {
-  return result.hasClientVersion;
+  return _builderResult.hasClientVersion;
 }
 - (uint32_t) clientVersion {
-  return result.clientVersion;
+  return _builderResult.clientVersion;
 }
 - (CMsgPracticeLobbyCreate_Builder*) setClientVersion:(uint32_t) value {
-  result.hasClientVersion = YES;
-  result.clientVersion = value;
+  _builderResult.hasClientVersion = YES;
+  _builderResult.clientVersion = value;
   return self;
 }
 - (CMsgPracticeLobbyCreate_Builder*) clearClientVersion {
-  result.hasClientVersion = NO;
-  result.clientVersion = 0;
+  _builderResult.hasClientVersion = NO;
+  _builderResult.clientVersion = 0;
   return self;
 }
 - (BOOL) hasLobbyDetails {
-  return result.hasLobbyDetails;
+  return _builderResult.hasLobbyDetails;
 }
 - (CMsgPracticeLobbySetDetails*) lobbyDetails {
-  return result.lobbyDetails;
+  return _builderResult.lobbyDetails;
 }
 - (CMsgPracticeLobbyCreate_Builder*) setLobbyDetails:(CMsgPracticeLobbySetDetails*) value {
-  result.hasLobbyDetails = YES;
-  result.lobbyDetails = value;
+  _builderResult.hasLobbyDetails = YES;
+  _builderResult.lobbyDetails = value;
   return self;
 }
 - (CMsgPracticeLobbyCreate_Builder*) setLobbyDetailsBuilder:(CMsgPracticeLobbySetDetails_Builder*) builderForValue {
   return [self setLobbyDetails:[builderForValue build]];
 }
 - (CMsgPracticeLobbyCreate_Builder*) mergeLobbyDetails:(CMsgPracticeLobbySetDetails*) value {
-  if (result.hasLobbyDetails &&
-      result.lobbyDetails != [CMsgPracticeLobbySetDetails defaultInstance]) {
-    result.lobbyDetails =
-      [[[CMsgPracticeLobbySetDetails builderWithPrototype:result.lobbyDetails] mergeFrom:value] buildPartial];
+  if (_builderResult.hasLobbyDetails &&
+      _builderResult.lobbyDetails != [CMsgPracticeLobbySetDetails defaultInstance]) {
+    _builderResult.lobbyDetails =
+      [[[CMsgPracticeLobbySetDetails builderWithPrototype:_builderResult.lobbyDetails] mergeFrom:value] buildPartial];
   } else {
-    result.lobbyDetails = value;
+    _builderResult.lobbyDetails = value;
   }
-  result.hasLobbyDetails = YES;
+  _builderResult.hasLobbyDetails = YES;
   return self;
 }
 - (CMsgPracticeLobbyCreate_Builder*) clearLobbyDetails {
-  result.hasLobbyDetails = NO;
-  result.lobbyDetails = [CMsgPracticeLobbySetDetails defaultInstance];
+  _builderResult.hasLobbyDetails = NO;
+  _builderResult.lobbyDetails = [CMsgPracticeLobbySetDetails defaultInstance];
   return self;
 }
 @end
@@ -18710,51 +18710,51 @@ static CMsgPracticeLobbySetTeamSlot* defaultCMsgPracticeLobbySetTeamSlotInstance
   }
 }
 - (BOOL) hasteam {
-  return result.hasteam;
+  return _builderResult.hasteam;
 }
 - (DOTA_GC_TEAM) team {
-  return result.team;
+  return _builderResult.team;
 }
 - (CMsgPracticeLobbySetTeamSlot_Builder*) setteam:(DOTA_GC_TEAM) value {
-  result.hasteam = YES;
-  result.team = value;
+  _builderResult.hasteam = YES;
+  _builderResult.team = value;
   return self;
 }
 - (CMsgPracticeLobbySetTeamSlot_Builder*) clearteam {
-  result.hasteam = NO;
-  result.team = DOTA_GC_TEAMDOTA_GC_TEAM_GOOD_GUYS;
+  _builderResult.hasteam = NO;
+  _builderResult.team = DOTA_GC_TEAMDOTA_GC_TEAM_GOOD_GUYS;
   return self;
 }
 - (BOOL) hasSlot {
-  return result.hasSlot;
+  return _builderResult.hasSlot;
 }
 - (uint32_t) slot {
-  return result.slot;
+  return _builderResult.slot;
 }
 - (CMsgPracticeLobbySetTeamSlot_Builder*) setSlot:(uint32_t) value {
-  result.hasSlot = YES;
-  result.slot = value;
+  _builderResult.hasSlot = YES;
+  _builderResult.slot = value;
   return self;
 }
 - (CMsgPracticeLobbySetTeamSlot_Builder*) clearSlot {
-  result.hasSlot = NO;
-  result.slot = 0;
+  _builderResult.hasSlot = NO;
+  _builderResult.slot = 0;
   return self;
 }
 - (BOOL) hasbot_difficulty {
-  return result.hasbot_difficulty;
+  return _builderResult.hasbot_difficulty;
 }
 - (DOTABotDifficulty) bot_difficulty {
-  return result.bot_difficulty;
+  return _builderResult.bot_difficulty;
 }
 - (CMsgPracticeLobbySetTeamSlot_Builder*) setbot_difficulty:(DOTABotDifficulty) value {
-  result.hasbot_difficulty = YES;
-  result.bot_difficulty = value;
+  _builderResult.hasbot_difficulty = YES;
+  _builderResult.bot_difficulty = value;
   return self;
 }
 - (CMsgPracticeLobbySetTeamSlot_Builder*) clearbot_difficulty {
-  result.hasbot_difficulty = NO;
-  result.bot_difficulty = DOTABotDifficultyBOT_DIFFICULTY_INVALID;
+  _builderResult.hasbot_difficulty = NO;
+  _builderResult.bot_difficulty = DOTABotDifficultyBOT_DIFFICULTY_INVALID;
   return self;
 }
 @end
@@ -18949,19 +18949,19 @@ static CMsgPracticeLobbyJoinBroadcastChannel* defaultCMsgPracticeLobbyJoinBroadc
   }
 }
 - (BOOL) hasChannel {
-  return result.hasChannel;
+  return _builderResult.hasChannel;
 }
 - (uint32_t) channel {
-  return result.channel;
+  return _builderResult.channel;
 }
 - (CMsgPracticeLobbyJoinBroadcastChannel_Builder*) setChannel:(uint32_t) value {
-  result.hasChannel = YES;
-  result.channel = value;
+  _builderResult.hasChannel = YES;
+  _builderResult.channel = value;
   return self;
 }
 - (CMsgPracticeLobbyJoinBroadcastChannel_Builder*) clearChannel {
-  result.hasChannel = NO;
-  result.channel = 0;
+  _builderResult.hasChannel = NO;
+  _builderResult.channel = 0;
   return self;
 }
 @end
@@ -19156,19 +19156,19 @@ static CMsgPracticeLobbyKick* defaultCMsgPracticeLobbyKickInstance = nil;
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgPracticeLobbyKick_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgPracticeLobbyKick_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 @end
@@ -19524,19 +19524,19 @@ static CMsgPracticeLobbyLaunch* defaultCMsgPracticeLobbyLaunchInstance = nil;
   }
 }
 - (BOOL) hasClientVersion {
-  return result.hasClientVersion;
+  return _builderResult.hasClientVersion;
 }
 - (uint32_t) clientVersion {
-  return result.clientVersion;
+  return _builderResult.clientVersion;
 }
 - (CMsgPracticeLobbyLaunch_Builder*) setClientVersion:(uint32_t) value {
-  result.hasClientVersion = YES;
-  result.clientVersion = value;
+  _builderResult.hasClientVersion = YES;
+  _builderResult.clientVersion = value;
   return self;
 }
 - (CMsgPracticeLobbyLaunch_Builder*) clearClientVersion {
-  result.hasClientVersion = NO;
-  result.clientVersion = 0;
+  _builderResult.hasClientVersion = NO;
+  _builderResult.clientVersion = 0;
   return self;
 }
 @end
@@ -19928,35 +19928,35 @@ static CMsgPracticeLobbyList* defaultCMsgPracticeLobbyListInstance = nil;
   }
 }
 - (BOOL) hasTournamentGames {
-  return result.hasTournamentGames;
+  return _builderResult.hasTournamentGames;
 }
 - (BOOL) tournamentGames {
-  return result.tournamentGames;
+  return _builderResult.tournamentGames;
 }
 - (CMsgPracticeLobbyList_Builder*) setTournamentGames:(BOOL) value {
-  result.hasTournamentGames = YES;
-  result.tournamentGames = value;
+  _builderResult.hasTournamentGames = YES;
+  _builderResult.tournamentGames = value;
   return self;
 }
 - (CMsgPracticeLobbyList_Builder*) clearTournamentGames {
-  result.hasTournamentGames = NO;
-  result.tournamentGames = NO;
+  _builderResult.hasTournamentGames = NO;
+  _builderResult.tournamentGames = NO;
   return self;
 }
 - (BOOL) hasPassKey {
-  return result.hasPassKey;
+  return _builderResult.hasPassKey;
 }
 - (NSString*) passKey {
-  return result.passKey;
+  return _builderResult.passKey;
 }
 - (CMsgPracticeLobbyList_Builder*) setPassKey:(NSString*) value {
-  result.hasPassKey = YES;
-  result.passKey = value;
+  _builderResult.hasPassKey = YES;
+  _builderResult.passKey = value;
   return self;
 }
 - (CMsgPracticeLobbyList_Builder*) clearPassKey {
-  result.hasPassKey = NO;
-  result.passKey = @"";
+  _builderResult.hasPassKey = NO;
+  _builderResult.passKey = @"";
   return self;
 }
 @end
@@ -20421,35 +20421,35 @@ static CMsgPracticeLobbyListResponseEntry_CLobbyMember* defaultCMsgPracticeLobby
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgPracticeLobbyListResponseEntry_CLobbyMember_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgPracticeLobbyListResponseEntry_CLobbyMember_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasPlayerName {
-  return result.hasPlayerName;
+  return _builderResult.hasPlayerName;
 }
 - (NSString*) playerName {
-  return result.playerName;
+  return _builderResult.playerName;
 }
 - (CMsgPracticeLobbyListResponseEntry_CLobbyMember_Builder*) setPlayerName:(NSString*) value {
-  result.hasPlayerName = YES;
-  result.playerName = value;
+  _builderResult.hasPlayerName = YES;
+  _builderResult.playerName = value;
   return self;
 }
 - (CMsgPracticeLobbyListResponseEntry_CLobbyMember_Builder*) clearPlayerName {
-  result.hasPlayerName = NO;
-  result.playerName = @"";
+  _builderResult.hasPlayerName = NO;
+  _builderResult.playerName = @"";
   return self;
 }
 @end
@@ -20506,10 +20506,10 @@ static CMsgPracticeLobbyListResponseEntry_CLobbyMember* defaultCMsgPracticeLobby
     [self setTournamentGameId:other.tournamentGameId];
   }
   if (other.membersArray.count > 0) {
-    if (result.membersArray == nil) {
-      result.membersArray = [[other.membersArray copyWithZone:[other.membersArray zone]] autorelease];
+    if (_builderResult.membersArray == nil) {
+      _builderResult.membersArray = [[other.membersArray copyWithZone:[other.membersArray zone]] autorelease];
     } else {
-      [result.membersArray appendArray:other.membersArray];
+      [_builderResult.membersArray appendArray:other.membersArray];
     }
   }
   if (other.hasRequiresPassKey) {
@@ -20569,108 +20569,108 @@ static CMsgPracticeLobbyListResponseEntry_CLobbyMember* defaultCMsgPracticeLobby
   }
 }
 - (BOOL) hasId {
-  return result.hasId;
+  return _builderResult.hasId;
 }
 - (uint64_t) id {
-  return result.id;
+  return _builderResult.id;
 }
 - (CMsgPracticeLobbyListResponseEntry_Builder*) setId:(uint64_t) value {
-  result.hasId = YES;
-  result.id = value;
+  _builderResult.hasId = YES;
+  _builderResult.id = value;
   return self;
 }
 - (CMsgPracticeLobbyListResponseEntry_Builder*) clearId {
-  result.hasId = NO;
-  result.id = 0L;
+  _builderResult.hasId = NO;
+  _builderResult.id = 0L;
   return self;
 }
 - (BOOL) hasTournamentId {
-  return result.hasTournamentId;
+  return _builderResult.hasTournamentId;
 }
 - (uint32_t) tournamentId {
-  return result.tournamentId;
+  return _builderResult.tournamentId;
 }
 - (CMsgPracticeLobbyListResponseEntry_Builder*) setTournamentId:(uint32_t) value {
-  result.hasTournamentId = YES;
-  result.tournamentId = value;
+  _builderResult.hasTournamentId = YES;
+  _builderResult.tournamentId = value;
   return self;
 }
 - (CMsgPracticeLobbyListResponseEntry_Builder*) clearTournamentId {
-  result.hasTournamentId = NO;
-  result.tournamentId = 0;
+  _builderResult.hasTournamentId = NO;
+  _builderResult.tournamentId = 0;
   return self;
 }
 - (BOOL) hasTournamentGameId {
-  return result.hasTournamentGameId;
+  return _builderResult.hasTournamentGameId;
 }
 - (uint32_t) tournamentGameId {
-  return result.tournamentGameId;
+  return _builderResult.tournamentGameId;
 }
 - (CMsgPracticeLobbyListResponseEntry_Builder*) setTournamentGameId:(uint32_t) value {
-  result.hasTournamentGameId = YES;
-  result.tournamentGameId = value;
+  _builderResult.hasTournamentGameId = YES;
+  _builderResult.tournamentGameId = value;
   return self;
 }
 - (CMsgPracticeLobbyListResponseEntry_Builder*) clearTournamentGameId {
-  result.hasTournamentGameId = NO;
-  result.tournamentGameId = 0;
+  _builderResult.hasTournamentGameId = NO;
+  _builderResult.tournamentGameId = 0;
   return self;
 }
 - (PBAppendableArray *)members {
-  return result.membersArray;
+  return _builderResult.membersArray;
 }
 - (CMsgPracticeLobbyListResponseEntry_CLobbyMember*)membersAtIndex:(NSUInteger)index {
-  return [result membersAtIndex:index];
+  return [_builderResult membersAtIndex:index];
 }
 - (CMsgPracticeLobbyListResponseEntry_Builder *)addMembers:(CMsgPracticeLobbyListResponseEntry_CLobbyMember*)value {
-  if (result.membersArray == nil) {
-    result.membersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.membersArray == nil) {
+    _builderResult.membersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.membersArray addObject:value];
+  [_builderResult.membersArray addObject:value];
   return self;
 }
 - (CMsgPracticeLobbyListResponseEntry_Builder *)setMembersArray:(NSArray *)array {
-  result.membersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.membersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgPracticeLobbyListResponseEntry_Builder *)setMembersValues:(const CMsgPracticeLobbyListResponseEntry_CLobbyMember* *)values count:(NSUInteger)count {
-  result.membersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.membersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgPracticeLobbyListResponseEntry_Builder *)clearMembers {
-  result.membersArray = nil;
+  _builderResult.membersArray = nil;
   return self;
 }
 - (BOOL) hasRequiresPassKey {
-  return result.hasRequiresPassKey;
+  return _builderResult.hasRequiresPassKey;
 }
 - (BOOL) requiresPassKey {
-  return result.requiresPassKey;
+  return _builderResult.requiresPassKey;
 }
 - (CMsgPracticeLobbyListResponseEntry_Builder*) setRequiresPassKey:(BOOL) value {
-  result.hasRequiresPassKey = YES;
-  result.requiresPassKey = value;
+  _builderResult.hasRequiresPassKey = YES;
+  _builderResult.requiresPassKey = value;
   return self;
 }
 - (CMsgPracticeLobbyListResponseEntry_Builder*) clearRequiresPassKey {
-  result.hasRequiresPassKey = NO;
-  result.requiresPassKey = NO;
+  _builderResult.hasRequiresPassKey = NO;
+  _builderResult.requiresPassKey = NO;
   return self;
 }
 - (BOOL) hasLeaderAccountId {
-  return result.hasLeaderAccountId;
+  return _builderResult.hasLeaderAccountId;
 }
 - (uint32_t) leaderAccountId {
-  return result.leaderAccountId;
+  return _builderResult.leaderAccountId;
 }
 - (CMsgPracticeLobbyListResponseEntry_Builder*) setLeaderAccountId:(uint32_t) value {
-  result.hasLeaderAccountId = YES;
-  result.leaderAccountId = value;
+  _builderResult.hasLeaderAccountId = YES;
+  _builderResult.leaderAccountId = value;
   return self;
 }
 - (CMsgPracticeLobbyListResponseEntry_Builder*) clearLeaderAccountId {
-  result.hasLeaderAccountId = NO;
-  result.leaderAccountId = 0;
+  _builderResult.hasLeaderAccountId = NO;
+  _builderResult.leaderAccountId = 0;
   return self;
 }
 @end
@@ -20868,10 +20868,10 @@ static CMsgPracticeLobbyListResponse* defaultCMsgPracticeLobbyListResponseInstan
     [self setTournamentGames:other.tournamentGames];
   }
   if (other.lobbiesArray.count > 0) {
-    if (result.lobbiesArray == nil) {
-      result.lobbiesArray = [[other.lobbiesArray copyWithZone:[other.lobbiesArray zone]] autorelease];
+    if (_builderResult.lobbiesArray == nil) {
+      _builderResult.lobbiesArray = [[other.lobbiesArray copyWithZone:[other.lobbiesArray zone]] autorelease];
     } else {
-      [result.lobbiesArray appendArray:other.lobbiesArray];
+      [_builderResult.lobbiesArray appendArray:other.lobbiesArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -20909,44 +20909,44 @@ static CMsgPracticeLobbyListResponse* defaultCMsgPracticeLobbyListResponseInstan
   }
 }
 - (BOOL) hasTournamentGames {
-  return result.hasTournamentGames;
+  return _builderResult.hasTournamentGames;
 }
 - (BOOL) tournamentGames {
-  return result.tournamentGames;
+  return _builderResult.tournamentGames;
 }
 - (CMsgPracticeLobbyListResponse_Builder*) setTournamentGames:(BOOL) value {
-  result.hasTournamentGames = YES;
-  result.tournamentGames = value;
+  _builderResult.hasTournamentGames = YES;
+  _builderResult.tournamentGames = value;
   return self;
 }
 - (CMsgPracticeLobbyListResponse_Builder*) clearTournamentGames {
-  result.hasTournamentGames = NO;
-  result.tournamentGames = NO;
+  _builderResult.hasTournamentGames = NO;
+  _builderResult.tournamentGames = NO;
   return self;
 }
 - (PBAppendableArray *)lobbies {
-  return result.lobbiesArray;
+  return _builderResult.lobbiesArray;
 }
 - (CMsgPracticeLobbyListResponseEntry*)lobbiesAtIndex:(NSUInteger)index {
-  return [result lobbiesAtIndex:index];
+  return [_builderResult lobbiesAtIndex:index];
 }
 - (CMsgPracticeLobbyListResponse_Builder *)addLobbies:(CMsgPracticeLobbyListResponseEntry*)value {
-  if (result.lobbiesArray == nil) {
-    result.lobbiesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.lobbiesArray == nil) {
+    _builderResult.lobbiesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.lobbiesArray addObject:value];
+  [_builderResult.lobbiesArray addObject:value];
   return self;
 }
 - (CMsgPracticeLobbyListResponse_Builder *)setLobbiesArray:(NSArray *)array {
-  result.lobbiesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.lobbiesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgPracticeLobbyListResponse_Builder *)setLobbiesValues:(const CMsgPracticeLobbyListResponseEntry* *)values count:(NSUInteger)count {
-  result.lobbiesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.lobbiesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgPracticeLobbyListResponse_Builder *)clearLobbies {
-  result.lobbiesArray = nil;
+  _builderResult.lobbiesArray = nil;
   return self;
 }
 @end
@@ -21202,51 +21202,51 @@ static CMsgPracticeLobbyJoin* defaultCMsgPracticeLobbyJoinInstance = nil;
   }
 }
 - (BOOL) hasLobbyId {
-  return result.hasLobbyId;
+  return _builderResult.hasLobbyId;
 }
 - (uint64_t) lobbyId {
-  return result.lobbyId;
+  return _builderResult.lobbyId;
 }
 - (CMsgPracticeLobbyJoin_Builder*) setLobbyId:(uint64_t) value {
-  result.hasLobbyId = YES;
-  result.lobbyId = value;
+  _builderResult.hasLobbyId = YES;
+  _builderResult.lobbyId = value;
   return self;
 }
 - (CMsgPracticeLobbyJoin_Builder*) clearLobbyId {
-  result.hasLobbyId = NO;
-  result.lobbyId = 0L;
+  _builderResult.hasLobbyId = NO;
+  _builderResult.lobbyId = 0L;
   return self;
 }
 - (BOOL) hasClientVersion {
-  return result.hasClientVersion;
+  return _builderResult.hasClientVersion;
 }
 - (uint32_t) clientVersion {
-  return result.clientVersion;
+  return _builderResult.clientVersion;
 }
 - (CMsgPracticeLobbyJoin_Builder*) setClientVersion:(uint32_t) value {
-  result.hasClientVersion = YES;
-  result.clientVersion = value;
+  _builderResult.hasClientVersion = YES;
+  _builderResult.clientVersion = value;
   return self;
 }
 - (CMsgPracticeLobbyJoin_Builder*) clearClientVersion {
-  result.hasClientVersion = NO;
-  result.clientVersion = 0;
+  _builderResult.hasClientVersion = NO;
+  _builderResult.clientVersion = 0;
   return self;
 }
 - (BOOL) hasPassKey {
-  return result.hasPassKey;
+  return _builderResult.hasPassKey;
 }
 - (NSString*) passKey {
-  return result.passKey;
+  return _builderResult.passKey;
 }
 - (CMsgPracticeLobbyJoin_Builder*) setPassKey:(NSString*) value {
-  result.hasPassKey = YES;
-  result.passKey = value;
+  _builderResult.hasPassKey = YES;
+  _builderResult.passKey = value;
   return self;
 }
 - (CMsgPracticeLobbyJoin_Builder*) clearPassKey {
-  result.hasPassKey = NO;
-  result.passKey = @"";
+  _builderResult.hasPassKey = NO;
+  _builderResult.passKey = @"";
   return self;
 }
 @end
@@ -21446,19 +21446,19 @@ static CMsgPracticeLobbyJoinResponse* defaultCMsgPracticeLobbyJoinResponseInstan
   }
 }
 - (BOOL) hasresult {
-  return result.hasresult;
+  return _builderResult.hasresult;
 }
 - (DOTAJoinLobbyResult) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgPracticeLobbyJoinResponse_Builder*) setresult:(DOTAJoinLobbyResult) value {
-  result.hasresult = YES;
-  result.result = value;
+  _builderResult.hasresult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgPracticeLobbyJoinResponse_Builder*) clearresult {
-  result.hasresult = NO;
-  result.result = DOTAJoinLobbyResultDOTA_JOIN_RESULT_SUCCESS;
+  _builderResult.hasresult = NO;
+  _builderResult.result = DOTAJoinLobbyResultDOTA_JOIN_RESULT_SUCCESS;
   return self;
 }
 @end
@@ -21633,10 +21633,10 @@ static CMsgFriendPracticeLobbyListRequest* defaultCMsgFriendPracticeLobbyListReq
     return self;
   }
   if (other.friendsArray.count > 0) {
-    if (result.friendsArray == nil) {
-      result.friendsArray = [[other.friendsArray copyWithZone:[other.friendsArray zone]] autorelease];
+    if (_builderResult.friendsArray == nil) {
+      _builderResult.friendsArray = [[other.friendsArray copyWithZone:[other.friendsArray zone]] autorelease];
     } else {
-      [result.friendsArray appendArray:other.friendsArray];
+      [_builderResult.friendsArray appendArray:other.friendsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -21668,28 +21668,28 @@ static CMsgFriendPracticeLobbyListRequest* defaultCMsgFriendPracticeLobbyListReq
   }
 }
 - (PBAppendableArray *)friends {
-  return result.friendsArray;
+  return _builderResult.friendsArray;
 }
 - (uint32_t)friendsAtIndex:(NSUInteger)index {
-  return [result friendsAtIndex:index];
+  return [_builderResult friendsAtIndex:index];
 }
 - (CMsgFriendPracticeLobbyListRequest_Builder *)addFriends:(uint32_t)value {
-  if (result.friendsArray == nil) {
-    result.friendsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.friendsArray == nil) {
+    _builderResult.friendsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.friendsArray addUint32:value];
+  [_builderResult.friendsArray addUint32:value];
   return self;
 }
 - (CMsgFriendPracticeLobbyListRequest_Builder *)setFriendsArray:(NSArray *)array {
-  result.friendsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.friendsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgFriendPracticeLobbyListRequest_Builder *)setFriendsValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.friendsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.friendsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgFriendPracticeLobbyListRequest_Builder *)clearFriends {
-  result.friendsArray = nil;
+  _builderResult.friendsArray = nil;
   return self;
 }
 @end
@@ -21856,10 +21856,10 @@ static CMsgFriendPracticeLobbyListResponse* defaultCMsgFriendPracticeLobbyListRe
     return self;
   }
   if (other.lobbiesArray.count > 0) {
-    if (result.lobbiesArray == nil) {
-      result.lobbiesArray = [[other.lobbiesArray copyWithZone:[other.lobbiesArray zone]] autorelease];
+    if (_builderResult.lobbiesArray == nil) {
+      _builderResult.lobbiesArray = [[other.lobbiesArray copyWithZone:[other.lobbiesArray zone]] autorelease];
     } else {
-      [result.lobbiesArray appendArray:other.lobbiesArray];
+      [_builderResult.lobbiesArray appendArray:other.lobbiesArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -21893,28 +21893,28 @@ static CMsgFriendPracticeLobbyListResponse* defaultCMsgFriendPracticeLobbyListRe
   }
 }
 - (PBAppendableArray *)lobbies {
-  return result.lobbiesArray;
+  return _builderResult.lobbiesArray;
 }
 - (CMsgPracticeLobbyListResponseEntry*)lobbiesAtIndex:(NSUInteger)index {
-  return [result lobbiesAtIndex:index];
+  return [_builderResult lobbiesAtIndex:index];
 }
 - (CMsgFriendPracticeLobbyListResponse_Builder *)addLobbies:(CMsgPracticeLobbyListResponseEntry*)value {
-  if (result.lobbiesArray == nil) {
-    result.lobbiesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.lobbiesArray == nil) {
+    _builderResult.lobbiesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.lobbiesArray addObject:value];
+  [_builderResult.lobbiesArray addObject:value];
   return self;
 }
 - (CMsgFriendPracticeLobbyListResponse_Builder *)setLobbiesArray:(NSArray *)array {
-  result.lobbiesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.lobbiesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgFriendPracticeLobbyListResponse_Builder *)setLobbiesValues:(const CMsgPracticeLobbyListResponseEntry* *)values count:(NSUInteger)count {
-  result.lobbiesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.lobbiesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgFriendPracticeLobbyListResponse_Builder *)clearLobbies {
-  result.lobbiesArray = nil;
+  _builderResult.lobbiesArray = nil;
   return self;
 }
 @end
@@ -22109,19 +22109,19 @@ static CMsgSetAvatar* defaultCMsgSetAvatarInstance = nil;
   }
 }
 - (BOOL) hasAvatar {
-  return result.hasAvatar;
+  return _builderResult.hasAvatar;
 }
 - (uint32_t) avatar {
-  return result.avatar;
+  return _builderResult.avatar;
 }
 - (CMsgSetAvatar_Builder*) setAvatar:(uint32_t) value {
-  result.hasAvatar = YES;
-  result.avatar = value;
+  _builderResult.hasAvatar = YES;
+  _builderResult.avatar = value;
   return self;
 }
 - (CMsgSetAvatar_Builder*) clearAvatar {
-  result.hasAvatar = NO;
-  result.avatar = 0;
+  _builderResult.hasAvatar = NO;
+  _builderResult.avatar = 0;
   return self;
 }
 @end
@@ -22725,45 +22725,45 @@ static CMsgTrackedEvent* defaultCMsgTrackedEventInstance = nil;
     [self setEventType:other.eventType];
   }
   if (other.varsUint32Array.count > 0) {
-    if (result.varsUint32Array == nil) {
-      result.varsUint32Array = [[other.varsUint32Array copyWithZone:[other.varsUint32Array zone]] autorelease];
+    if (_builderResult.varsUint32Array == nil) {
+      _builderResult.varsUint32Array = [[other.varsUint32Array copyWithZone:[other.varsUint32Array zone]] autorelease];
     } else {
-      [result.varsUint32Array appendArray:other.varsUint32Array];
+      [_builderResult.varsUint32Array appendArray:other.varsUint32Array];
     }
   }
   if (other.varsUint64Array.count > 0) {
-    if (result.varsUint64Array == nil) {
-      result.varsUint64Array = [[other.varsUint64Array copyWithZone:[other.varsUint64Array zone]] autorelease];
+    if (_builderResult.varsUint64Array == nil) {
+      _builderResult.varsUint64Array = [[other.varsUint64Array copyWithZone:[other.varsUint64Array zone]] autorelease];
     } else {
-      [result.varsUint64Array appendArray:other.varsUint64Array];
+      [_builderResult.varsUint64Array appendArray:other.varsUint64Array];
     }
   }
   if (other.varsInt32Array.count > 0) {
-    if (result.varsInt32Array == nil) {
-      result.varsInt32Array = [[other.varsInt32Array copyWithZone:[other.varsInt32Array zone]] autorelease];
+    if (_builderResult.varsInt32Array == nil) {
+      _builderResult.varsInt32Array = [[other.varsInt32Array copyWithZone:[other.varsInt32Array zone]] autorelease];
     } else {
-      [result.varsInt32Array appendArray:other.varsInt32Array];
+      [_builderResult.varsInt32Array appendArray:other.varsInt32Array];
     }
   }
   if (other.varsInt64Array.count > 0) {
-    if (result.varsInt64Array == nil) {
-      result.varsInt64Array = [[other.varsInt64Array copyWithZone:[other.varsInt64Array zone]] autorelease];
+    if (_builderResult.varsInt64Array == nil) {
+      _builderResult.varsInt64Array = [[other.varsInt64Array copyWithZone:[other.varsInt64Array zone]] autorelease];
     } else {
-      [result.varsInt64Array appendArray:other.varsInt64Array];
+      [_builderResult.varsInt64Array appendArray:other.varsInt64Array];
     }
   }
   if (other.varsFloatArray.count > 0) {
-    if (result.varsFloatArray == nil) {
-      result.varsFloatArray = [[other.varsFloatArray copyWithZone:[other.varsFloatArray zone]] autorelease];
+    if (_builderResult.varsFloatArray == nil) {
+      _builderResult.varsFloatArray = [[other.varsFloatArray copyWithZone:[other.varsFloatArray zone]] autorelease];
     } else {
-      [result.varsFloatArray appendArray:other.varsFloatArray];
+      [_builderResult.varsFloatArray appendArray:other.varsFloatArray];
     }
   }
   if (other.varsDoubleArray.count > 0) {
-    if (result.varsDoubleArray == nil) {
-      result.varsDoubleArray = [[other.varsDoubleArray copyWithZone:[other.varsDoubleArray zone]] autorelease];
+    if (_builderResult.varsDoubleArray == nil) {
+      _builderResult.varsDoubleArray = [[other.varsDoubleArray copyWithZone:[other.varsDoubleArray zone]] autorelease];
     } else {
-      [result.varsDoubleArray appendArray:other.varsDoubleArray];
+      [_builderResult.varsDoubleArray appendArray:other.varsDoubleArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -22831,217 +22831,217 @@ static CMsgTrackedEvent* defaultCMsgTrackedEventInstance = nil;
   }
 }
 - (BOOL) hasSubmitterId {
-  return result.hasSubmitterId;
+  return _builderResult.hasSubmitterId;
 }
 - (uint64_t) submitterId {
-  return result.submitterId;
+  return _builderResult.submitterId;
 }
 - (CMsgTrackedEvent_Builder*) setSubmitterId:(uint64_t) value {
-  result.hasSubmitterId = YES;
-  result.submitterId = value;
+  _builderResult.hasSubmitterId = YES;
+  _builderResult.submitterId = value;
   return self;
 }
 - (CMsgTrackedEvent_Builder*) clearSubmitterId {
-  result.hasSubmitterId = NO;
-  result.submitterId = 0L;
+  _builderResult.hasSubmitterId = NO;
+  _builderResult.submitterId = 0L;
   return self;
 }
 - (BOOL) hasEventId {
-  return result.hasEventId;
+  return _builderResult.hasEventId;
 }
 - (uint32_t) eventId {
-  return result.eventId;
+  return _builderResult.eventId;
 }
 - (CMsgTrackedEvent_Builder*) setEventId:(uint32_t) value {
-  result.hasEventId = YES;
-  result.eventId = value;
+  _builderResult.hasEventId = YES;
+  _builderResult.eventId = value;
   return self;
 }
 - (CMsgTrackedEvent_Builder*) clearEventId {
-  result.hasEventId = NO;
-  result.eventId = 0;
+  _builderResult.hasEventId = NO;
+  _builderResult.eventId = 0;
   return self;
 }
 - (BOOL) hasTimeSubmitted {
-  return result.hasTimeSubmitted;
+  return _builderResult.hasTimeSubmitted;
 }
 - (uint64_t) timeSubmitted {
-  return result.timeSubmitted;
+  return _builderResult.timeSubmitted;
 }
 - (CMsgTrackedEvent_Builder*) setTimeSubmitted:(uint64_t) value {
-  result.hasTimeSubmitted = YES;
-  result.timeSubmitted = value;
+  _builderResult.hasTimeSubmitted = YES;
+  _builderResult.timeSubmitted = value;
   return self;
 }
 - (CMsgTrackedEvent_Builder*) clearTimeSubmitted {
-  result.hasTimeSubmitted = NO;
-  result.timeSubmitted = 0L;
+  _builderResult.hasTimeSubmitted = NO;
+  _builderResult.timeSubmitted = 0L;
   return self;
 }
 - (BOOL) hasEventType {
-  return result.hasEventType;
+  return _builderResult.hasEventType;
 }
 - (uint32_t) eventType {
-  return result.eventType;
+  return _builderResult.eventType;
 }
 - (CMsgTrackedEvent_Builder*) setEventType:(uint32_t) value {
-  result.hasEventType = YES;
-  result.eventType = value;
+  _builderResult.hasEventType = YES;
+  _builderResult.eventType = value;
   return self;
 }
 - (CMsgTrackedEvent_Builder*) clearEventType {
-  result.hasEventType = NO;
-  result.eventType = 0;
+  _builderResult.hasEventType = NO;
+  _builderResult.eventType = 0;
   return self;
 }
 - (PBAppendableArray *)varsUint32 {
-  return result.varsUint32Array;
+  return _builderResult.varsUint32Array;
 }
 - (uint32_t)varsUint32AtIndex:(NSUInteger)index {
-  return [result varsUint32AtIndex:index];
+  return [_builderResult varsUint32AtIndex:index];
 }
 - (CMsgTrackedEvent_Builder *)addVarsUint32:(uint32_t)value {
-  if (result.varsUint32Array == nil) {
-    result.varsUint32Array = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.varsUint32Array == nil) {
+    _builderResult.varsUint32Array = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.varsUint32Array addUint32:value];
+  [_builderResult.varsUint32Array addUint32:value];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)setVarsUint32Array:(NSArray *)array {
-  result.varsUint32Array = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.varsUint32Array = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)setVarsUint32Values:(const uint32_t *)values count:(NSUInteger)count {
-  result.varsUint32Array = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.varsUint32Array = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)clearVarsUint32 {
-  result.varsUint32Array = nil;
+  _builderResult.varsUint32Array = nil;
   return self;
 }
 - (PBAppendableArray *)varsUint64 {
-  return result.varsUint64Array;
+  return _builderResult.varsUint64Array;
 }
 - (uint64_t)varsUint64AtIndex:(NSUInteger)index {
-  return [result varsUint64AtIndex:index];
+  return [_builderResult varsUint64AtIndex:index];
 }
 - (CMsgTrackedEvent_Builder *)addVarsUint64:(uint64_t)value {
-  if (result.varsUint64Array == nil) {
-    result.varsUint64Array = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
+  if (_builderResult.varsUint64Array == nil) {
+    _builderResult.varsUint64Array = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
   }
-  [result.varsUint64Array addUint64:value];
+  [_builderResult.varsUint64Array addUint64:value];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)setVarsUint64Array:(NSArray *)array {
-  result.varsUint64Array = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
+  _builderResult.varsUint64Array = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)setVarsUint64Values:(const uint64_t *)values count:(NSUInteger)count {
-  result.varsUint64Array = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
+  _builderResult.varsUint64Array = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)clearVarsUint64 {
-  result.varsUint64Array = nil;
+  _builderResult.varsUint64Array = nil;
   return self;
 }
 - (PBAppendableArray *)varsInt32 {
-  return result.varsInt32Array;
+  return _builderResult.varsInt32Array;
 }
 - (int32_t)varsInt32AtIndex:(NSUInteger)index {
-  return [result varsInt32AtIndex:index];
+  return [_builderResult varsInt32AtIndex:index];
 }
 - (CMsgTrackedEvent_Builder *)addVarsInt32:(int32_t)value {
-  if (result.varsInt32Array == nil) {
-    result.varsInt32Array = [PBAppendableArray arrayWithValueType:PBArrayValueTypeInt32];
+  if (_builderResult.varsInt32Array == nil) {
+    _builderResult.varsInt32Array = [PBAppendableArray arrayWithValueType:PBArrayValueTypeInt32];
   }
-  [result.varsInt32Array addInt32:value];
+  [_builderResult.varsInt32Array addInt32:value];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)setVarsInt32Array:(NSArray *)array {
-  result.varsInt32Array = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeInt32];
+  _builderResult.varsInt32Array = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeInt32];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)setVarsInt32Values:(const int32_t *)values count:(NSUInteger)count {
-  result.varsInt32Array = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeInt32];
+  _builderResult.varsInt32Array = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeInt32];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)clearVarsInt32 {
-  result.varsInt32Array = nil;
+  _builderResult.varsInt32Array = nil;
   return self;
 }
 - (PBAppendableArray *)varsInt64 {
-  return result.varsInt64Array;
+  return _builderResult.varsInt64Array;
 }
 - (int64_t)varsInt64AtIndex:(NSUInteger)index {
-  return [result varsInt64AtIndex:index];
+  return [_builderResult varsInt64AtIndex:index];
 }
 - (CMsgTrackedEvent_Builder *)addVarsInt64:(int64_t)value {
-  if (result.varsInt64Array == nil) {
-    result.varsInt64Array = [PBAppendableArray arrayWithValueType:PBArrayValueTypeInt64];
+  if (_builderResult.varsInt64Array == nil) {
+    _builderResult.varsInt64Array = [PBAppendableArray arrayWithValueType:PBArrayValueTypeInt64];
   }
-  [result.varsInt64Array addInt64:value];
+  [_builderResult.varsInt64Array addInt64:value];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)setVarsInt64Array:(NSArray *)array {
-  result.varsInt64Array = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeInt64];
+  _builderResult.varsInt64Array = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeInt64];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)setVarsInt64Values:(const int64_t *)values count:(NSUInteger)count {
-  result.varsInt64Array = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeInt64];
+  _builderResult.varsInt64Array = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeInt64];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)clearVarsInt64 {
-  result.varsInt64Array = nil;
+  _builderResult.varsInt64Array = nil;
   return self;
 }
 - (PBAppendableArray *)varsFloat {
-  return result.varsFloatArray;
+  return _builderResult.varsFloatArray;
 }
 - (Float32)varsFloatAtIndex:(NSUInteger)index {
-  return [result varsFloatAtIndex:index];
+  return [_builderResult varsFloatAtIndex:index];
 }
 - (CMsgTrackedEvent_Builder *)addVarsFloat:(Float32)value {
-  if (result.varsFloatArray == nil) {
-    result.varsFloatArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeFloat];
+  if (_builderResult.varsFloatArray == nil) {
+    _builderResult.varsFloatArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeFloat];
   }
-  [result.varsFloatArray addFloat:value];
+  [_builderResult.varsFloatArray addFloat:value];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)setVarsFloatArray:(NSArray *)array {
-  result.varsFloatArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeFloat];
+  _builderResult.varsFloatArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeFloat];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)setVarsFloatValues:(const Float32 *)values count:(NSUInteger)count {
-  result.varsFloatArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeFloat];
+  _builderResult.varsFloatArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeFloat];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)clearVarsFloat {
-  result.varsFloatArray = nil;
+  _builderResult.varsFloatArray = nil;
   return self;
 }
 - (PBAppendableArray *)varsDouble {
-  return result.varsDoubleArray;
+  return _builderResult.varsDoubleArray;
 }
 - (Float64)varsDoubleAtIndex:(NSUInteger)index {
-  return [result varsDoubleAtIndex:index];
+  return [_builderResult varsDoubleAtIndex:index];
 }
 - (CMsgTrackedEvent_Builder *)addVarsDouble:(Float64)value {
-  if (result.varsDoubleArray == nil) {
-    result.varsDoubleArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeDouble];
+  if (_builderResult.varsDoubleArray == nil) {
+    _builderResult.varsDoubleArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeDouble];
   }
-  [result.varsDoubleArray addDouble:value];
+  [_builderResult.varsDoubleArray addDouble:value];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)setVarsDoubleArray:(NSArray *)array {
-  result.varsDoubleArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeDouble];
+  _builderResult.varsDoubleArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeDouble];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)setVarsDoubleValues:(const Float64 *)values count:(NSUInteger)count {
-  result.varsDoubleArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeDouble];
+  _builderResult.varsDoubleArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeDouble];
   return self;
 }
 - (CMsgTrackedEvent_Builder *)clearVarsDouble {
-  result.varsDoubleArray = nil;
+  _builderResult.varsDoubleArray = nil;
   return self;
 }
 @end
@@ -23208,10 +23208,10 @@ static CMsgSendTrackedEvents* defaultCMsgSendTrackedEventsInstance = nil;
     return self;
   }
   if (other.eventsArray.count > 0) {
-    if (result.eventsArray == nil) {
-      result.eventsArray = [[other.eventsArray copyWithZone:[other.eventsArray zone]] autorelease];
+    if (_builderResult.eventsArray == nil) {
+      _builderResult.eventsArray = [[other.eventsArray copyWithZone:[other.eventsArray zone]] autorelease];
     } else {
-      [result.eventsArray appendArray:other.eventsArray];
+      [_builderResult.eventsArray appendArray:other.eventsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -23245,28 +23245,28 @@ static CMsgSendTrackedEvents* defaultCMsgSendTrackedEventsInstance = nil;
   }
 }
 - (PBAppendableArray *)events {
-  return result.eventsArray;
+  return _builderResult.eventsArray;
 }
 - (CMsgTrackedEvent*)eventsAtIndex:(NSUInteger)index {
-  return [result eventsAtIndex:index];
+  return [_builderResult eventsAtIndex:index];
 }
 - (CMsgSendTrackedEvents_Builder *)addEvents:(CMsgTrackedEvent*)value {
-  if (result.eventsArray == nil) {
-    result.eventsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.eventsArray == nil) {
+    _builderResult.eventsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.eventsArray addObject:value];
+  [_builderResult.eventsArray addObject:value];
   return self;
 }
 - (CMsgSendTrackedEvents_Builder *)setEventsArray:(NSArray *)array {
-  result.eventsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.eventsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgSendTrackedEvents_Builder *)setEventsValues:(const CMsgTrackedEvent* *)values count:(NSUInteger)count {
-  result.eventsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.eventsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgSendTrackedEvents_Builder *)clearEvents {
-  result.eventsArray = nil;
+  _builderResult.eventsArray = nil;
   return self;
 }
 @end
@@ -24671,10 +24671,10 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
     [self setHeroId:other.heroId];
   }
   if (other.itemsArray.count > 0) {
-    if (result.itemsArray == nil) {
-      result.itemsArray = [[other.itemsArray copyWithZone:[other.itemsArray zone]] autorelease];
+    if (_builderResult.itemsArray == nil) {
+      _builderResult.itemsArray = [[other.itemsArray copyWithZone:[other.itemsArray zone]] autorelease];
     } else {
-      [result.itemsArray appendArray:other.itemsArray];
+      [_builderResult.itemsArray appendArray:other.itemsArray];
     }
   }
   if (other.hasGold) {
@@ -24893,476 +24893,476 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint64_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setAccountId:(uint64_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0L;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0L;
   return self;
 }
 - (BOOL) hasFakeClientId {
-  return result.hasFakeClientId;
+  return _builderResult.hasFakeClientId;
 }
 - (uint32_t) fakeClientId {
-  return result.fakeClientId;
+  return _builderResult.fakeClientId;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setFakeClientId:(uint32_t) value {
-  result.hasFakeClientId = YES;
-  result.fakeClientId = value;
+  _builderResult.hasFakeClientId = YES;
+  _builderResult.fakeClientId = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearFakeClientId {
-  result.hasFakeClientId = NO;
-  result.fakeClientId = 0;
+  _builderResult.hasFakeClientId = NO;
+  _builderResult.fakeClientId = 0;
   return self;
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 - (PBAppendableArray *)items {
-  return result.itemsArray;
+  return _builderResult.itemsArray;
 }
 - (uint32_t)itemsAtIndex:(NSUInteger)index {
-  return [result itemsAtIndex:index];
+  return [_builderResult itemsAtIndex:index];
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder *)addItems:(uint32_t)value {
-  if (result.itemsArray == nil) {
-    result.itemsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.itemsArray == nil) {
+    _builderResult.itemsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.itemsArray addUint32:value];
+  [_builderResult.itemsArray addUint32:value];
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder *)setItemsArray:(NSArray *)array {
-  result.itemsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.itemsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder *)setItemsValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.itemsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.itemsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder *)clearItems {
-  result.itemsArray = nil;
+  _builderResult.itemsArray = nil;
   return self;
 }
 - (BOOL) hasGold {
-  return result.hasGold;
+  return _builderResult.hasGold;
 }
 - (uint32_t) gold {
-  return result.gold;
+  return _builderResult.gold;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setGold:(uint32_t) value {
-  result.hasGold = YES;
-  result.gold = value;
+  _builderResult.hasGold = YES;
+  _builderResult.gold = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearGold {
-  result.hasGold = NO;
-  result.gold = 0;
+  _builderResult.hasGold = NO;
+  _builderResult.gold = 0;
   return self;
 }
 - (BOOL) hasKills {
-  return result.hasKills;
+  return _builderResult.hasKills;
 }
 - (uint32_t) kills {
-  return result.kills;
+  return _builderResult.kills;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setKills:(uint32_t) value {
-  result.hasKills = YES;
-  result.kills = value;
+  _builderResult.hasKills = YES;
+  _builderResult.kills = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearKills {
-  result.hasKills = NO;
-  result.kills = 0;
+  _builderResult.hasKills = NO;
+  _builderResult.kills = 0;
   return self;
 }
 - (BOOL) hasDeaths {
-  return result.hasDeaths;
+  return _builderResult.hasDeaths;
 }
 - (uint32_t) deaths {
-  return result.deaths;
+  return _builderResult.deaths;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setDeaths:(uint32_t) value {
-  result.hasDeaths = YES;
-  result.deaths = value;
+  _builderResult.hasDeaths = YES;
+  _builderResult.deaths = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearDeaths {
-  result.hasDeaths = NO;
-  result.deaths = 0;
+  _builderResult.hasDeaths = NO;
+  _builderResult.deaths = 0;
   return self;
 }
 - (BOOL) hasAssists {
-  return result.hasAssists;
+  return _builderResult.hasAssists;
 }
 - (uint32_t) assists {
-  return result.assists;
+  return _builderResult.assists;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setAssists:(uint32_t) value {
-  result.hasAssists = YES;
-  result.assists = value;
+  _builderResult.hasAssists = YES;
+  _builderResult.assists = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearAssists {
-  result.hasAssists = NO;
-  result.assists = 0;
+  _builderResult.hasAssists = NO;
+  _builderResult.assists = 0;
   return self;
 }
 - (BOOL) hasLeaverStatus {
-  return result.hasLeaverStatus;
+  return _builderResult.hasLeaverStatus;
 }
 - (uint32_t) leaverStatus {
-  return result.leaverStatus;
+  return _builderResult.leaverStatus;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setLeaverStatus:(uint32_t) value {
-  result.hasLeaverStatus = YES;
-  result.leaverStatus = value;
+  _builderResult.hasLeaverStatus = YES;
+  _builderResult.leaverStatus = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearLeaverStatus {
-  result.hasLeaverStatus = NO;
-  result.leaverStatus = 0;
+  _builderResult.hasLeaverStatus = NO;
+  _builderResult.leaverStatus = 0;
   return self;
 }
 - (BOOL) hasLastHits {
-  return result.hasLastHits;
+  return _builderResult.hasLastHits;
 }
 - (uint32_t) lastHits {
-  return result.lastHits;
+  return _builderResult.lastHits;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setLastHits:(uint32_t) value {
-  result.hasLastHits = YES;
-  result.lastHits = value;
+  _builderResult.hasLastHits = YES;
+  _builderResult.lastHits = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearLastHits {
-  result.hasLastHits = NO;
-  result.lastHits = 0;
+  _builderResult.hasLastHits = NO;
+  _builderResult.lastHits = 0;
   return self;
 }
 - (BOOL) hasDenies {
-  return result.hasDenies;
+  return _builderResult.hasDenies;
 }
 - (uint32_t) denies {
-  return result.denies;
+  return _builderResult.denies;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setDenies:(uint32_t) value {
-  result.hasDenies = YES;
-  result.denies = value;
+  _builderResult.hasDenies = YES;
+  _builderResult.denies = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearDenies {
-  result.hasDenies = NO;
-  result.denies = 0;
+  _builderResult.hasDenies = NO;
+  _builderResult.denies = 0;
   return self;
 }
 - (BOOL) hasGoldPerMin {
-  return result.hasGoldPerMin;
+  return _builderResult.hasGoldPerMin;
 }
 - (uint32_t) goldPerMin {
-  return result.goldPerMin;
+  return _builderResult.goldPerMin;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setGoldPerMin:(uint32_t) value {
-  result.hasGoldPerMin = YES;
-  result.goldPerMin = value;
+  _builderResult.hasGoldPerMin = YES;
+  _builderResult.goldPerMin = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearGoldPerMin {
-  result.hasGoldPerMin = NO;
-  result.goldPerMin = 0;
+  _builderResult.hasGoldPerMin = NO;
+  _builderResult.goldPerMin = 0;
   return self;
 }
 - (BOOL) hasXpPerMinute {
-  return result.hasXpPerMinute;
+  return _builderResult.hasXpPerMinute;
 }
 - (uint32_t) xpPerMinute {
-  return result.xpPerMinute;
+  return _builderResult.xpPerMinute;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setXpPerMinute:(uint32_t) value {
-  result.hasXpPerMinute = YES;
-  result.xpPerMinute = value;
+  _builderResult.hasXpPerMinute = YES;
+  _builderResult.xpPerMinute = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearXpPerMinute {
-  result.hasXpPerMinute = NO;
-  result.xpPerMinute = 0;
+  _builderResult.hasXpPerMinute = NO;
+  _builderResult.xpPerMinute = 0;
   return self;
 }
 - (BOOL) hasGoldSpent {
-  return result.hasGoldSpent;
+  return _builderResult.hasGoldSpent;
 }
 - (uint32_t) goldSpent {
-  return result.goldSpent;
+  return _builderResult.goldSpent;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setGoldSpent:(uint32_t) value {
-  result.hasGoldSpent = YES;
-  result.goldSpent = value;
+  _builderResult.hasGoldSpent = YES;
+  _builderResult.goldSpent = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearGoldSpent {
-  result.hasGoldSpent = NO;
-  result.goldSpent = 0;
+  _builderResult.hasGoldSpent = NO;
+  _builderResult.goldSpent = 0;
   return self;
 }
 - (BOOL) hasLevel {
-  return result.hasLevel;
+  return _builderResult.hasLevel;
 }
 - (uint32_t) level {
-  return result.level;
+  return _builderResult.level;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setLevel:(uint32_t) value {
-  result.hasLevel = YES;
-  result.level = value;
+  _builderResult.hasLevel = YES;
+  _builderResult.level = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearLevel {
-  result.hasLevel = NO;
-  result.level = 0;
+  _builderResult.hasLevel = NO;
+  _builderResult.level = 0;
   return self;
 }
 - (BOOL) hasHeroDamage {
-  return result.hasHeroDamage;
+  return _builderResult.hasHeroDamage;
 }
 - (uint32_t) heroDamage {
-  return result.heroDamage;
+  return _builderResult.heroDamage;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setHeroDamage:(uint32_t) value {
-  result.hasHeroDamage = YES;
-  result.heroDamage = value;
+  _builderResult.hasHeroDamage = YES;
+  _builderResult.heroDamage = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearHeroDamage {
-  result.hasHeroDamage = NO;
-  result.heroDamage = 0;
+  _builderResult.hasHeroDamage = NO;
+  _builderResult.heroDamage = 0;
   return self;
 }
 - (BOOL) hasTowerDamage {
-  return result.hasTowerDamage;
+  return _builderResult.hasTowerDamage;
 }
 - (uint32_t) towerDamage {
-  return result.towerDamage;
+  return _builderResult.towerDamage;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setTowerDamage:(uint32_t) value {
-  result.hasTowerDamage = YES;
-  result.towerDamage = value;
+  _builderResult.hasTowerDamage = YES;
+  _builderResult.towerDamage = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearTowerDamage {
-  result.hasTowerDamage = NO;
-  result.towerDamage = 0;
+  _builderResult.hasTowerDamage = NO;
+  _builderResult.towerDamage = 0;
   return self;
 }
 - (BOOL) hasHeroHealing {
-  return result.hasHeroHealing;
+  return _builderResult.hasHeroHealing;
 }
 - (uint32_t) heroHealing {
-  return result.heroHealing;
+  return _builderResult.heroHealing;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setHeroHealing:(uint32_t) value {
-  result.hasHeroHealing = YES;
-  result.heroHealing = value;
+  _builderResult.hasHeroHealing = YES;
+  _builderResult.heroHealing = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearHeroHealing {
-  result.hasHeroHealing = NO;
-  result.heroHealing = 0;
+  _builderResult.hasHeroHealing = NO;
+  _builderResult.heroHealing = 0;
   return self;
 }
 - (BOOL) hasTimeLastSeen {
-  return result.hasTimeLastSeen;
+  return _builderResult.hasTimeLastSeen;
 }
 - (uint32_t) timeLastSeen {
-  return result.timeLastSeen;
+  return _builderResult.timeLastSeen;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setTimeLastSeen:(uint32_t) value {
-  result.hasTimeLastSeen = YES;
-  result.timeLastSeen = value;
+  _builderResult.hasTimeLastSeen = YES;
+  _builderResult.timeLastSeen = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearTimeLastSeen {
-  result.hasTimeLastSeen = NO;
-  result.timeLastSeen = 0;
+  _builderResult.hasTimeLastSeen = NO;
+  _builderResult.timeLastSeen = 0;
   return self;
 }
 - (BOOL) hasSupportAbilityValue {
-  return result.hasSupportAbilityValue;
+  return _builderResult.hasSupportAbilityValue;
 }
 - (uint32_t) supportAbilityValue {
-  return result.supportAbilityValue;
+  return _builderResult.supportAbilityValue;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setSupportAbilityValue:(uint32_t) value {
-  result.hasSupportAbilityValue = YES;
-  result.supportAbilityValue = value;
+  _builderResult.hasSupportAbilityValue = YES;
+  _builderResult.supportAbilityValue = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearSupportAbilityValue {
-  result.hasSupportAbilityValue = NO;
-  result.supportAbilityValue = 0;
+  _builderResult.hasSupportAbilityValue = NO;
+  _builderResult.supportAbilityValue = 0;
   return self;
 }
 - (BOOL) hasPartyId {
-  return result.hasPartyId;
+  return _builderResult.hasPartyId;
 }
 - (uint64_t) partyId {
-  return result.partyId;
+  return _builderResult.partyId;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setPartyId:(uint64_t) value {
-  result.hasPartyId = YES;
-  result.partyId = value;
+  _builderResult.hasPartyId = YES;
+  _builderResult.partyId = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearPartyId {
-  result.hasPartyId = NO;
-  result.partyId = 0L;
+  _builderResult.hasPartyId = NO;
+  _builderResult.partyId = 0L;
   return self;
 }
 - (BOOL) hasScaledKills {
-  return result.hasScaledKills;
+  return _builderResult.hasScaledKills;
 }
 - (Float32) scaledKills {
-  return result.scaledKills;
+  return _builderResult.scaledKills;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setScaledKills:(Float32) value {
-  result.hasScaledKills = YES;
-  result.scaledKills = value;
+  _builderResult.hasScaledKills = YES;
+  _builderResult.scaledKills = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearScaledKills {
-  result.hasScaledKills = NO;
-  result.scaledKills = 0;
+  _builderResult.hasScaledKills = NO;
+  _builderResult.scaledKills = 0;
   return self;
 }
 - (BOOL) hasScaledDeaths {
-  return result.hasScaledDeaths;
+  return _builderResult.hasScaledDeaths;
 }
 - (Float32) scaledDeaths {
-  return result.scaledDeaths;
+  return _builderResult.scaledDeaths;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setScaledDeaths:(Float32) value {
-  result.hasScaledDeaths = YES;
-  result.scaledDeaths = value;
+  _builderResult.hasScaledDeaths = YES;
+  _builderResult.scaledDeaths = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearScaledDeaths {
-  result.hasScaledDeaths = NO;
-  result.scaledDeaths = 0;
+  _builderResult.hasScaledDeaths = NO;
+  _builderResult.scaledDeaths = 0;
   return self;
 }
 - (BOOL) hasScaledAssists {
-  return result.hasScaledAssists;
+  return _builderResult.hasScaledAssists;
 }
 - (Float32) scaledAssists {
-  return result.scaledAssists;
+  return _builderResult.scaledAssists;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setScaledAssists:(Float32) value {
-  result.hasScaledAssists = YES;
-  result.scaledAssists = value;
+  _builderResult.hasScaledAssists = YES;
+  _builderResult.scaledAssists = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearScaledAssists {
-  result.hasScaledAssists = NO;
-  result.scaledAssists = 0;
+  _builderResult.hasScaledAssists = NO;
+  _builderResult.scaledAssists = 0;
   return self;
 }
 - (BOOL) hasClaimedFarmGold {
-  return result.hasClaimedFarmGold;
+  return _builderResult.hasClaimedFarmGold;
 }
 - (uint32_t) claimedFarmGold {
-  return result.claimedFarmGold;
+  return _builderResult.claimedFarmGold;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setClaimedFarmGold:(uint32_t) value {
-  result.hasClaimedFarmGold = YES;
-  result.claimedFarmGold = value;
+  _builderResult.hasClaimedFarmGold = YES;
+  _builderResult.claimedFarmGold = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearClaimedFarmGold {
-  result.hasClaimedFarmGold = NO;
-  result.claimedFarmGold = 0;
+  _builderResult.hasClaimedFarmGold = NO;
+  _builderResult.claimedFarmGold = 0;
   return self;
 }
 - (BOOL) hasSupportGold {
-  return result.hasSupportGold;
+  return _builderResult.hasSupportGold;
 }
 - (uint32_t) supportGold {
-  return result.supportGold;
+  return _builderResult.supportGold;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setSupportGold:(uint32_t) value {
-  result.hasSupportGold = YES;
-  result.supportGold = value;
+  _builderResult.hasSupportGold = YES;
+  _builderResult.supportGold = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearSupportGold {
-  result.hasSupportGold = NO;
-  result.supportGold = 0;
+  _builderResult.hasSupportGold = NO;
+  _builderResult.supportGold = 0;
   return self;
 }
 - (BOOL) hasClaimedDenies {
-  return result.hasClaimedDenies;
+  return _builderResult.hasClaimedDenies;
 }
 - (uint32_t) claimedDenies {
-  return result.claimedDenies;
+  return _builderResult.claimedDenies;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setClaimedDenies:(uint32_t) value {
-  result.hasClaimedDenies = YES;
-  result.claimedDenies = value;
+  _builderResult.hasClaimedDenies = YES;
+  _builderResult.claimedDenies = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearClaimedDenies {
-  result.hasClaimedDenies = NO;
-  result.claimedDenies = 0;
+  _builderResult.hasClaimedDenies = NO;
+  _builderResult.claimedDenies = 0;
   return self;
 }
 - (BOOL) hasClaimedMisses {
-  return result.hasClaimedMisses;
+  return _builderResult.hasClaimedMisses;
 }
 - (uint32_t) claimedMisses {
-  return result.claimedMisses;
+  return _builderResult.claimedMisses;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setClaimedMisses:(uint32_t) value {
-  result.hasClaimedMisses = YES;
-  result.claimedMisses = value;
+  _builderResult.hasClaimedMisses = YES;
+  _builderResult.claimedMisses = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearClaimedMisses {
-  result.hasClaimedMisses = NO;
-  result.claimedMisses = 0;
+  _builderResult.hasClaimedMisses = NO;
+  _builderResult.claimedMisses = 0;
   return self;
 }
 - (BOOL) hasMisses {
-  return result.hasMisses;
+  return _builderResult.hasMisses;
 }
 - (uint32_t) misses {
-  return result.misses;
+  return _builderResult.misses;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) setMisses:(uint32_t) value {
-  result.hasMisses = YES;
-  result.misses = value;
+  _builderResult.hasMisses = YES;
+  _builderResult.misses = value;
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer_Builder*) clearMisses {
-  result.hasMisses = NO;
-  result.misses = 0;
+  _builderResult.hasMisses = NO;
+  _builderResult.misses = 0;
   return self;
 }
 @end
@@ -25410,10 +25410,10 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
     return self;
   }
   if (other.playersArray.count > 0) {
-    if (result.playersArray == nil) {
-      result.playersArray = [[other.playersArray copyWithZone:[other.playersArray zone]] autorelease];
+    if (_builderResult.playersArray == nil) {
+      _builderResult.playersArray = [[other.playersArray copyWithZone:[other.playersArray zone]] autorelease];
     } else {
-      [result.playersArray appendArray:other.playersArray];
+      [_builderResult.playersArray appendArray:other.playersArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -25447,28 +25447,28 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
   }
 }
 - (PBAppendableArray *)players {
-  return result.playersArray;
+  return _builderResult.playersArray;
 }
 - (CMsgGameMatchSignOut_CTeam_CPlayer*)playersAtIndex:(NSUInteger)index {
-  return [result playersAtIndex:index];
+  return [_builderResult playersAtIndex:index];
 }
 - (CMsgGameMatchSignOut_CTeam_Builder *)addPlayers:(CMsgGameMatchSignOut_CTeam_CPlayer*)value {
-  if (result.playersArray == nil) {
-    result.playersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.playersArray == nil) {
+    _builderResult.playersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.playersArray addObject:value];
+  [_builderResult.playersArray addObject:value];
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_Builder *)setPlayersArray:(NSArray *)array {
-  result.playersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.playersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_Builder *)setPlayersValues:(const CMsgGameMatchSignOut_CTeam_CPlayer* *)values count:(NSUInteger)count {
-  result.playersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.playersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgGameMatchSignOut_CTeam_Builder *)clearPlayers {
-  result.playersArray = nil;
+  _builderResult.playersArray = nil;
   return self;
 }
 @end
@@ -25528,34 +25528,34 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
     [self setDate:other.date];
   }
   if (other.numPlayersArray.count > 0) {
-    if (result.numPlayersArray == nil) {
-      result.numPlayersArray = [[other.numPlayersArray copyWithZone:[other.numPlayersArray zone]] autorelease];
+    if (_builderResult.numPlayersArray == nil) {
+      _builderResult.numPlayersArray = [[other.numPlayersArray copyWithZone:[other.numPlayersArray zone]] autorelease];
     } else {
-      [result.numPlayersArray appendArray:other.numPlayersArray];
+      [_builderResult.numPlayersArray appendArray:other.numPlayersArray];
     }
   }
   if (other.teamsArray.count > 0) {
-    if (result.teamsArray == nil) {
-      result.teamsArray = [[other.teamsArray copyWithZone:[other.teamsArray zone]] autorelease];
+    if (_builderResult.teamsArray == nil) {
+      _builderResult.teamsArray = [[other.teamsArray copyWithZone:[other.teamsArray zone]] autorelease];
     } else {
-      [result.teamsArray appendArray:other.teamsArray];
+      [_builderResult.teamsArray appendArray:other.teamsArray];
     }
   }
   if (other.hasComputerName) {
     [self setComputerName:other.computerName];
   }
   if (other.towerStatusArray.count > 0) {
-    if (result.towerStatusArray == nil) {
-      result.towerStatusArray = [[other.towerStatusArray copyWithZone:[other.towerStatusArray zone]] autorelease];
+    if (_builderResult.towerStatusArray == nil) {
+      _builderResult.towerStatusArray = [[other.towerStatusArray copyWithZone:[other.towerStatusArray zone]] autorelease];
     } else {
-      [result.towerStatusArray appendArray:other.towerStatusArray];
+      [_builderResult.towerStatusArray appendArray:other.towerStatusArray];
     }
   }
   if (other.barracksStatusArray.count > 0) {
-    if (result.barracksStatusArray == nil) {
-      result.barracksStatusArray = [[other.barracksStatusArray copyWithZone:[other.barracksStatusArray zone]] autorelease];
+    if (_builderResult.barracksStatusArray == nil) {
+      _builderResult.barracksStatusArray = [[other.barracksStatusArray copyWithZone:[other.barracksStatusArray zone]] autorelease];
     } else {
-      [result.barracksStatusArray appendArray:other.barracksStatusArray];
+      [_builderResult.barracksStatusArray appendArray:other.barracksStatusArray];
     }
   }
   if (other.hasCluster) {
@@ -25656,263 +25656,263 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
   }
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CMsgGameMatchSignOut_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CMsgGameMatchSignOut_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 - (BOOL) hasDuration {
-  return result.hasDuration;
+  return _builderResult.hasDuration;
 }
 - (uint32_t) duration {
-  return result.duration;
+  return _builderResult.duration;
 }
 - (CMsgGameMatchSignOut_Builder*) setDuration:(uint32_t) value {
-  result.hasDuration = YES;
-  result.duration = value;
+  _builderResult.hasDuration = YES;
+  _builderResult.duration = value;
   return self;
 }
 - (CMsgGameMatchSignOut_Builder*) clearDuration {
-  result.hasDuration = NO;
-  result.duration = 0;
+  _builderResult.hasDuration = NO;
+  _builderResult.duration = 0;
   return self;
 }
 - (BOOL) hasGoodGuysWin {
-  return result.hasGoodGuysWin;
+  return _builderResult.hasGoodGuysWin;
 }
 - (BOOL) goodGuysWin {
-  return result.goodGuysWin;
+  return _builderResult.goodGuysWin;
 }
 - (CMsgGameMatchSignOut_Builder*) setGoodGuysWin:(BOOL) value {
-  result.hasGoodGuysWin = YES;
-  result.goodGuysWin = value;
+  _builderResult.hasGoodGuysWin = YES;
+  _builderResult.goodGuysWin = value;
   return self;
 }
 - (CMsgGameMatchSignOut_Builder*) clearGoodGuysWin {
-  result.hasGoodGuysWin = NO;
-  result.goodGuysWin = NO;
+  _builderResult.hasGoodGuysWin = NO;
+  _builderResult.goodGuysWin = NO;
   return self;
 }
 - (BOOL) hasDate {
-  return result.hasDate;
+  return _builderResult.hasDate;
 }
 - (uint32_t) date {
-  return result.date;
+  return _builderResult.date;
 }
 - (CMsgGameMatchSignOut_Builder*) setDate:(uint32_t) value {
-  result.hasDate = YES;
-  result.date = value;
+  _builderResult.hasDate = YES;
+  _builderResult.date = value;
   return self;
 }
 - (CMsgGameMatchSignOut_Builder*) clearDate {
-  result.hasDate = NO;
-  result.date = 0;
+  _builderResult.hasDate = NO;
+  _builderResult.date = 0;
   return self;
 }
 - (PBAppendableArray *)numPlayers {
-  return result.numPlayersArray;
+  return _builderResult.numPlayersArray;
 }
 - (uint32_t)numPlayersAtIndex:(NSUInteger)index {
-  return [result numPlayersAtIndex:index];
+  return [_builderResult numPlayersAtIndex:index];
 }
 - (CMsgGameMatchSignOut_Builder *)addNumPlayers:(uint32_t)value {
-  if (result.numPlayersArray == nil) {
-    result.numPlayersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.numPlayersArray == nil) {
+    _builderResult.numPlayersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.numPlayersArray addUint32:value];
+  [_builderResult.numPlayersArray addUint32:value];
   return self;
 }
 - (CMsgGameMatchSignOut_Builder *)setNumPlayersArray:(NSArray *)array {
-  result.numPlayersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.numPlayersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgGameMatchSignOut_Builder *)setNumPlayersValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.numPlayersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.numPlayersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgGameMatchSignOut_Builder *)clearNumPlayers {
-  result.numPlayersArray = nil;
+  _builderResult.numPlayersArray = nil;
   return self;
 }
 - (PBAppendableArray *)teams {
-  return result.teamsArray;
+  return _builderResult.teamsArray;
 }
 - (CMsgGameMatchSignOut_CTeam*)teamsAtIndex:(NSUInteger)index {
-  return [result teamsAtIndex:index];
+  return [_builderResult teamsAtIndex:index];
 }
 - (CMsgGameMatchSignOut_Builder *)addTeams:(CMsgGameMatchSignOut_CTeam*)value {
-  if (result.teamsArray == nil) {
-    result.teamsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.teamsArray == nil) {
+    _builderResult.teamsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.teamsArray addObject:value];
+  [_builderResult.teamsArray addObject:value];
   return self;
 }
 - (CMsgGameMatchSignOut_Builder *)setTeamsArray:(NSArray *)array {
-  result.teamsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.teamsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgGameMatchSignOut_Builder *)setTeamsValues:(const CMsgGameMatchSignOut_CTeam* *)values count:(NSUInteger)count {
-  result.teamsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.teamsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgGameMatchSignOut_Builder *)clearTeams {
-  result.teamsArray = nil;
+  _builderResult.teamsArray = nil;
   return self;
 }
 - (BOOL) hasComputerName {
-  return result.hasComputerName;
+  return _builderResult.hasComputerName;
 }
 - (NSString*) computerName {
-  return result.computerName;
+  return _builderResult.computerName;
 }
 - (CMsgGameMatchSignOut_Builder*) setComputerName:(NSString*) value {
-  result.hasComputerName = YES;
-  result.computerName = value;
+  _builderResult.hasComputerName = YES;
+  _builderResult.computerName = value;
   return self;
 }
 - (CMsgGameMatchSignOut_Builder*) clearComputerName {
-  result.hasComputerName = NO;
-  result.computerName = @"";
+  _builderResult.hasComputerName = NO;
+  _builderResult.computerName = @"";
   return self;
 }
 - (PBAppendableArray *)towerStatus {
-  return result.towerStatusArray;
+  return _builderResult.towerStatusArray;
 }
 - (uint32_t)towerStatusAtIndex:(NSUInteger)index {
-  return [result towerStatusAtIndex:index];
+  return [_builderResult towerStatusAtIndex:index];
 }
 - (CMsgGameMatchSignOut_Builder *)addTowerStatus:(uint32_t)value {
-  if (result.towerStatusArray == nil) {
-    result.towerStatusArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.towerStatusArray == nil) {
+    _builderResult.towerStatusArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.towerStatusArray addUint32:value];
+  [_builderResult.towerStatusArray addUint32:value];
   return self;
 }
 - (CMsgGameMatchSignOut_Builder *)setTowerStatusArray:(NSArray *)array {
-  result.towerStatusArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.towerStatusArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgGameMatchSignOut_Builder *)setTowerStatusValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.towerStatusArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.towerStatusArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgGameMatchSignOut_Builder *)clearTowerStatus {
-  result.towerStatusArray = nil;
+  _builderResult.towerStatusArray = nil;
   return self;
 }
 - (PBAppendableArray *)barracksStatus {
-  return result.barracksStatusArray;
+  return _builderResult.barracksStatusArray;
 }
 - (uint32_t)barracksStatusAtIndex:(NSUInteger)index {
-  return [result barracksStatusAtIndex:index];
+  return [_builderResult barracksStatusAtIndex:index];
 }
 - (CMsgGameMatchSignOut_Builder *)addBarracksStatus:(uint32_t)value {
-  if (result.barracksStatusArray == nil) {
-    result.barracksStatusArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.barracksStatusArray == nil) {
+    _builderResult.barracksStatusArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.barracksStatusArray addUint32:value];
+  [_builderResult.barracksStatusArray addUint32:value];
   return self;
 }
 - (CMsgGameMatchSignOut_Builder *)setBarracksStatusArray:(NSArray *)array {
-  result.barracksStatusArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.barracksStatusArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgGameMatchSignOut_Builder *)setBarracksStatusValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.barracksStatusArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.barracksStatusArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgGameMatchSignOut_Builder *)clearBarracksStatus {
-  result.barracksStatusArray = nil;
+  _builderResult.barracksStatusArray = nil;
   return self;
 }
 - (BOOL) hasCluster {
-  return result.hasCluster;
+  return _builderResult.hasCluster;
 }
 - (uint32_t) cluster {
-  return result.cluster;
+  return _builderResult.cluster;
 }
 - (CMsgGameMatchSignOut_Builder*) setCluster:(uint32_t) value {
-  result.hasCluster = YES;
-  result.cluster = value;
+  _builderResult.hasCluster = YES;
+  _builderResult.cluster = value;
   return self;
 }
 - (CMsgGameMatchSignOut_Builder*) clearCluster {
-  result.hasCluster = NO;
-  result.cluster = 0;
+  _builderResult.hasCluster = NO;
+  _builderResult.cluster = 0;
   return self;
 }
 - (BOOL) hasServerAddr {
-  return result.hasServerAddr;
+  return _builderResult.hasServerAddr;
 }
 - (NSString*) serverAddr {
-  return result.serverAddr;
+  return _builderResult.serverAddr;
 }
 - (CMsgGameMatchSignOut_Builder*) setServerAddr:(NSString*) value {
-  result.hasServerAddr = YES;
-  result.serverAddr = value;
+  _builderResult.hasServerAddr = YES;
+  _builderResult.serverAddr = value;
   return self;
 }
 - (CMsgGameMatchSignOut_Builder*) clearServerAddr {
-  result.hasServerAddr = NO;
-  result.serverAddr = @"";
+  _builderResult.hasServerAddr = NO;
+  _builderResult.serverAddr = @"";
   return self;
 }
 - (BOOL) hasFirstBloodTime {
-  return result.hasFirstBloodTime;
+  return _builderResult.hasFirstBloodTime;
 }
 - (uint32_t) firstBloodTime {
-  return result.firstBloodTime;
+  return _builderResult.firstBloodTime;
 }
 - (CMsgGameMatchSignOut_Builder*) setFirstBloodTime:(uint32_t) value {
-  result.hasFirstBloodTime = YES;
-  result.firstBloodTime = value;
+  _builderResult.hasFirstBloodTime = YES;
+  _builderResult.firstBloodTime = value;
   return self;
 }
 - (CMsgGameMatchSignOut_Builder*) clearFirstBloodTime {
-  result.hasFirstBloodTime = NO;
-  result.firstBloodTime = 0;
+  _builderResult.hasFirstBloodTime = NO;
+  _builderResult.firstBloodTime = 0;
   return self;
 }
 - (BOOL) hasGameBalance {
-  return result.hasGameBalance;
+  return _builderResult.hasGameBalance;
 }
 - (Float32) gameBalance {
-  return result.gameBalance;
+  return _builderResult.gameBalance;
 }
 - (CMsgGameMatchSignOut_Builder*) setGameBalance:(Float32) value {
-  result.hasGameBalance = YES;
-  result.gameBalance = value;
+  _builderResult.hasGameBalance = YES;
+  _builderResult.gameBalance = value;
   return self;
 }
 - (CMsgGameMatchSignOut_Builder*) clearGameBalance {
-  result.hasGameBalance = NO;
-  result.gameBalance = 0;
+  _builderResult.hasGameBalance = NO;
+  _builderResult.gameBalance = 0;
   return self;
 }
 - (BOOL) hasEventScore {
-  return result.hasEventScore;
+  return _builderResult.hasEventScore;
 }
 - (uint32_t) eventScore {
-  return result.eventScore;
+  return _builderResult.eventScore;
 }
 - (CMsgGameMatchSignOut_Builder*) setEventScore:(uint32_t) value {
-  result.hasEventScore = YES;
-  result.eventScore = value;
+  _builderResult.hasEventScore = YES;
+  _builderResult.eventScore = value;
   return self;
 }
 - (CMsgGameMatchSignOut_Builder*) clearEventScore {
-  result.hasEventScore = NO;
-  result.eventScore = 0;
+  _builderResult.hasEventScore = NO;
+  _builderResult.eventScore = 0;
   return self;
 }
 @end
@@ -26180,17 +26180,17 @@ static CMsgGameMatchSignoutResponse* defaultCMsgGameMatchSignoutResponseInstance
     [self setReplaySalt:other.replaySalt];
   }
   if (other.timedRewardDetailsArray.count > 0) {
-    if (result.timedRewardDetailsArray == nil) {
-      result.timedRewardDetailsArray = [[other.timedRewardDetailsArray copyWithZone:[other.timedRewardDetailsArray zone]] autorelease];
+    if (_builderResult.timedRewardDetailsArray == nil) {
+      _builderResult.timedRewardDetailsArray = [[other.timedRewardDetailsArray copyWithZone:[other.timedRewardDetailsArray zone]] autorelease];
     } else {
-      [result.timedRewardDetailsArray appendArray:other.timedRewardDetailsArray];
+      [_builderResult.timedRewardDetailsArray appendArray:other.timedRewardDetailsArray];
     }
   }
   if (other.xpRewardDetailsArray.count > 0) {
-    if (result.xpRewardDetailsArray == nil) {
-      result.xpRewardDetailsArray = [[other.xpRewardDetailsArray copyWithZone:[other.xpRewardDetailsArray zone]] autorelease];
+    if (_builderResult.xpRewardDetailsArray == nil) {
+      _builderResult.xpRewardDetailsArray = [[other.xpRewardDetailsArray copyWithZone:[other.xpRewardDetailsArray zone]] autorelease];
     } else {
-      [result.xpRewardDetailsArray appendArray:other.xpRewardDetailsArray];
+      [_builderResult.xpRewardDetailsArray appendArray:other.xpRewardDetailsArray];
     }
   }
   if (other.hasLeagueid) {
@@ -26245,101 +26245,101 @@ static CMsgGameMatchSignoutResponse* defaultCMsgGameMatchSignoutResponseInstance
   }
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CMsgGameMatchSignoutResponse_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CMsgGameMatchSignoutResponse_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 - (BOOL) hasReplaySalt {
-  return result.hasReplaySalt;
+  return _builderResult.hasReplaySalt;
 }
 - (uint32_t) replaySalt {
-  return result.replaySalt;
+  return _builderResult.replaySalt;
 }
 - (CMsgGameMatchSignoutResponse_Builder*) setReplaySalt:(uint32_t) value {
-  result.hasReplaySalt = YES;
-  result.replaySalt = value;
+  _builderResult.hasReplaySalt = YES;
+  _builderResult.replaySalt = value;
   return self;
 }
 - (CMsgGameMatchSignoutResponse_Builder*) clearReplaySalt {
-  result.hasReplaySalt = NO;
-  result.replaySalt = 0;
+  _builderResult.hasReplaySalt = NO;
+  _builderResult.replaySalt = 0;
   return self;
 }
 - (PBAppendableArray *)timedRewardDetails {
-  return result.timedRewardDetailsArray;
+  return _builderResult.timedRewardDetailsArray;
 }
 - (CLobbyTimedRewardDetails*)timedRewardDetailsAtIndex:(NSUInteger)index {
-  return [result timedRewardDetailsAtIndex:index];
+  return [_builderResult timedRewardDetailsAtIndex:index];
 }
 - (CMsgGameMatchSignoutResponse_Builder *)addTimedRewardDetails:(CLobbyTimedRewardDetails*)value {
-  if (result.timedRewardDetailsArray == nil) {
-    result.timedRewardDetailsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.timedRewardDetailsArray == nil) {
+    _builderResult.timedRewardDetailsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.timedRewardDetailsArray addObject:value];
+  [_builderResult.timedRewardDetailsArray addObject:value];
   return self;
 }
 - (CMsgGameMatchSignoutResponse_Builder *)setTimedRewardDetailsArray:(NSArray *)array {
-  result.timedRewardDetailsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.timedRewardDetailsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgGameMatchSignoutResponse_Builder *)setTimedRewardDetailsValues:(const CLobbyTimedRewardDetails* *)values count:(NSUInteger)count {
-  result.timedRewardDetailsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.timedRewardDetailsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgGameMatchSignoutResponse_Builder *)clearTimedRewardDetails {
-  result.timedRewardDetailsArray = nil;
+  _builderResult.timedRewardDetailsArray = nil;
   return self;
 }
 - (PBAppendableArray *)xpRewardDetails {
-  return result.xpRewardDetailsArray;
+  return _builderResult.xpRewardDetailsArray;
 }
 - (CDOTALobbyMember*)xpRewardDetailsAtIndex:(NSUInteger)index {
-  return [result xpRewardDetailsAtIndex:index];
+  return [_builderResult xpRewardDetailsAtIndex:index];
 }
 - (CMsgGameMatchSignoutResponse_Builder *)addXpRewardDetails:(CDOTALobbyMember*)value {
-  if (result.xpRewardDetailsArray == nil) {
-    result.xpRewardDetailsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.xpRewardDetailsArray == nil) {
+    _builderResult.xpRewardDetailsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.xpRewardDetailsArray addObject:value];
+  [_builderResult.xpRewardDetailsArray addObject:value];
   return self;
 }
 - (CMsgGameMatchSignoutResponse_Builder *)setXpRewardDetailsArray:(NSArray *)array {
-  result.xpRewardDetailsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.xpRewardDetailsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgGameMatchSignoutResponse_Builder *)setXpRewardDetailsValues:(const CDOTALobbyMember* *)values count:(NSUInteger)count {
-  result.xpRewardDetailsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.xpRewardDetailsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgGameMatchSignoutResponse_Builder *)clearXpRewardDetails {
-  result.xpRewardDetailsArray = nil;
+  _builderResult.xpRewardDetailsArray = nil;
   return self;
 }
 - (BOOL) hasLeagueid {
-  return result.hasLeagueid;
+  return _builderResult.hasLeagueid;
 }
 - (uint32_t) leagueid {
-  return result.leagueid;
+  return _builderResult.leagueid;
 }
 - (CMsgGameMatchSignoutResponse_Builder*) setLeagueid:(uint32_t) value {
-  result.hasLeagueid = YES;
-  result.leagueid = value;
+  _builderResult.hasLeagueid = YES;
+  _builderResult.leagueid = value;
   return self;
 }
 - (CMsgGameMatchSignoutResponse_Builder*) clearLeagueid {
-  result.hasLeagueid = NO;
-  result.leagueid = 0;
+  _builderResult.hasLeagueid = NO;
+  _builderResult.leagueid = 0;
   return self;
 }
 @end
@@ -26767,67 +26767,67 @@ static CMsgGameChatLog_CChatLine* defaultCMsgGameChatLog_CChatLineInstance = nil
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgGameChatLog_CChatLine_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgGameChatLog_CChatLine_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasTeamOnly {
-  return result.hasTeamOnly;
+  return _builderResult.hasTeamOnly;
 }
 - (uint32_t) teamOnly {
-  return result.teamOnly;
+  return _builderResult.teamOnly;
 }
 - (CMsgGameChatLog_CChatLine_Builder*) setTeamOnly:(uint32_t) value {
-  result.hasTeamOnly = YES;
-  result.teamOnly = value;
+  _builderResult.hasTeamOnly = YES;
+  _builderResult.teamOnly = value;
   return self;
 }
 - (CMsgGameChatLog_CChatLine_Builder*) clearTeamOnly {
-  result.hasTeamOnly = NO;
-  result.teamOnly = 0;
+  _builderResult.hasTeamOnly = NO;
+  _builderResult.teamOnly = 0;
   return self;
 }
 - (BOOL) hasText {
-  return result.hasText;
+  return _builderResult.hasText;
 }
 - (NSString*) text {
-  return result.text;
+  return _builderResult.text;
 }
 - (CMsgGameChatLog_CChatLine_Builder*) setText:(NSString*) value {
-  result.hasText = YES;
-  result.text = value;
+  _builderResult.hasText = YES;
+  _builderResult.text = value;
   return self;
 }
 - (CMsgGameChatLog_CChatLine_Builder*) clearText {
-  result.hasText = NO;
-  result.text = @"";
+  _builderResult.hasText = NO;
+  _builderResult.text = @"";
   return self;
 }
 - (BOOL) hasGameTime {
-  return result.hasGameTime;
+  return _builderResult.hasGameTime;
 }
 - (uint32_t) gameTime {
-  return result.gameTime;
+  return _builderResult.gameTime;
 }
 - (CMsgGameChatLog_CChatLine_Builder*) setGameTime:(uint32_t) value {
-  result.hasGameTime = YES;
-  result.gameTime = value;
+  _builderResult.hasGameTime = YES;
+  _builderResult.gameTime = value;
   return self;
 }
 - (CMsgGameChatLog_CChatLine_Builder*) clearGameTime {
-  result.hasGameTime = NO;
-  result.gameTime = 0;
+  _builderResult.hasGameTime = NO;
+  _builderResult.gameTime = 0;
   return self;
 }
 @end
@@ -26878,10 +26878,10 @@ static CMsgGameChatLog_CChatLine* defaultCMsgGameChatLog_CChatLineInstance = nil
     [self setMatchId:other.matchId];
   }
   if (other.linesArray.count > 0) {
-    if (result.linesArray == nil) {
-      result.linesArray = [[other.linesArray copyWithZone:[other.linesArray zone]] autorelease];
+    if (_builderResult.linesArray == nil) {
+      _builderResult.linesArray = [[other.linesArray copyWithZone:[other.linesArray zone]] autorelease];
     } else {
-      [result.linesArray appendArray:other.linesArray];
+      [_builderResult.linesArray appendArray:other.linesArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -26919,44 +26919,44 @@ static CMsgGameChatLog_CChatLine* defaultCMsgGameChatLog_CChatLineInstance = nil
   }
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CMsgGameChatLog_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CMsgGameChatLog_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 - (PBAppendableArray *)lines {
-  return result.linesArray;
+  return _builderResult.linesArray;
 }
 - (CMsgGameChatLog_CChatLine*)linesAtIndex:(NSUInteger)index {
-  return [result linesAtIndex:index];
+  return [_builderResult linesAtIndex:index];
 }
 - (CMsgGameChatLog_Builder *)addLines:(CMsgGameChatLog_CChatLine*)value {
-  if (result.linesArray == nil) {
-    result.linesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.linesArray == nil) {
+    _builderResult.linesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.linesArray addObject:value];
+  [_builderResult.linesArray addObject:value];
   return self;
 }
 - (CMsgGameChatLog_Builder *)setLinesArray:(NSArray *)array {
-  result.linesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.linesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgGameChatLog_Builder *)setLinesValues:(const CMsgGameChatLog_CChatLine* *)values count:(NSUInteger)count {
-  result.linesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.linesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgGameChatLog_Builder *)clearLines {
-  result.linesArray = nil;
+  _builderResult.linesArray = nil;
   return self;
 }
 @end
@@ -27212,51 +27212,51 @@ static CMsgTutorialLobbyCreate* defaultCMsgTutorialLobbyCreateInstance = nil;
   }
 }
 - (BOOL) hasSearchKey {
-  return result.hasSearchKey;
+  return _builderResult.hasSearchKey;
 }
 - (NSString*) searchKey {
-  return result.searchKey;
+  return _builderResult.searchKey;
 }
 - (CMsgTutorialLobbyCreate_Builder*) setSearchKey:(NSString*) value {
-  result.hasSearchKey = YES;
-  result.searchKey = value;
+  _builderResult.hasSearchKey = YES;
+  _builderResult.searchKey = value;
   return self;
 }
 - (CMsgTutorialLobbyCreate_Builder*) clearSearchKey {
-  result.hasSearchKey = NO;
-  result.searchKey = @"";
+  _builderResult.hasSearchKey = NO;
+  _builderResult.searchKey = @"";
   return self;
 }
 - (BOOL) hasTutorialLesson {
-  return result.hasTutorialLesson;
+  return _builderResult.hasTutorialLesson;
 }
 - (uint32_t) tutorialLesson {
-  return result.tutorialLesson;
+  return _builderResult.tutorialLesson;
 }
 - (CMsgTutorialLobbyCreate_Builder*) setTutorialLesson:(uint32_t) value {
-  result.hasTutorialLesson = YES;
-  result.tutorialLesson = value;
+  _builderResult.hasTutorialLesson = YES;
+  _builderResult.tutorialLesson = value;
   return self;
 }
 - (CMsgTutorialLobbyCreate_Builder*) clearTutorialLesson {
-  result.hasTutorialLesson = NO;
-  result.tutorialLesson = 0;
+  _builderResult.hasTutorialLesson = NO;
+  _builderResult.tutorialLesson = 0;
   return self;
 }
 - (BOOL) hasClientVersion {
-  return result.hasClientVersion;
+  return _builderResult.hasClientVersion;
 }
 - (uint32_t) clientVersion {
-  return result.clientVersion;
+  return _builderResult.clientVersion;
 }
 - (CMsgTutorialLobbyCreate_Builder*) setClientVersion:(uint32_t) value {
-  result.hasClientVersion = YES;
-  result.clientVersion = value;
+  _builderResult.hasClientVersion = YES;
+  _builderResult.clientVersion = value;
   return self;
 }
 - (CMsgTutorialLobbyCreate_Builder*) clearClientVersion {
-  result.hasClientVersion = NO;
-  result.clientVersion = 0;
+  _builderResult.hasClientVersion = NO;
+  _builderResult.clientVersion = 0;
   return self;
 }
 @end
@@ -27451,19 +27451,19 @@ static CMsgInitialQuestionnaireResponse* defaultCMsgInitialQuestionnaireResponse
   }
 }
 - (BOOL) hasInitialSkill {
-  return result.hasInitialSkill;
+  return _builderResult.hasInitialSkill;
 }
 - (uint32_t) initialSkill {
-  return result.initialSkill;
+  return _builderResult.initialSkill;
 }
 - (CMsgInitialQuestionnaireResponse_Builder*) setInitialSkill:(uint32_t) value {
-  result.hasInitialSkill = YES;
-  result.initialSkill = value;
+  _builderResult.hasInitialSkill = YES;
+  _builderResult.initialSkill = value;
   return self;
 }
 - (CMsgInitialQuestionnaireResponse_Builder*) clearInitialSkill {
-  result.hasInitialSkill = NO;
-  result.initialSkill = 0;
+  _builderResult.hasInitialSkill = NO;
+  _builderResult.initialSkill = 0;
   return self;
 }
 @end
@@ -27824,19 +27824,19 @@ static CMsgInterGCProfile* defaultCMsgInterGCProfileInstance = nil;
   }
 }
 - (BOOL) hasStart {
-  return result.hasStart;
+  return _builderResult.hasStart;
 }
 - (BOOL) start {
-  return result.start;
+  return _builderResult.start;
 }
 - (CMsgInterGCProfile_Builder*) setStart:(BOOL) value {
-  result.hasStart = YES;
-  result.start = value;
+  _builderResult.hasStart = YES;
+  _builderResult.start = value;
   return self;
 }
 - (CMsgInterGCProfile_Builder*) clearStart {
-  result.hasStart = NO;
-  result.start = NO;
+  _builderResult.hasStart = NO;
+  _builderResult.start = NO;
   return self;
 }
 @end
@@ -28305,10 +28305,10 @@ static CMsgDOTATournament_Team* defaultCMsgDOTATournament_TeamInstance = nil;
     [self setTeamAbbrev:other.teamAbbrev];
   }
   if (other.playersArray.count > 0) {
-    if (result.playersArray == nil) {
-      result.playersArray = [[other.playersArray copyWithZone:[other.playersArray zone]] autorelease];
+    if (_builderResult.playersArray == nil) {
+      _builderResult.playersArray = [[other.playersArray copyWithZone:[other.playersArray zone]] autorelease];
     } else {
-      [result.playersArray appendArray:other.playersArray];
+      [_builderResult.playersArray appendArray:other.playersArray];
     }
   }
   if (other.hasSeed) {
@@ -28366,108 +28366,108 @@ static CMsgDOTATournament_Team* defaultCMsgDOTATournament_TeamInstance = nil;
   }
 }
 - (BOOL) hasTeamId {
-  return result.hasTeamId;
+  return _builderResult.hasTeamId;
 }
 - (uint32_t) teamId {
-  return result.teamId;
+  return _builderResult.teamId;
 }
 - (CMsgDOTATournament_Team_Builder*) setTeamId:(uint32_t) value {
-  result.hasTeamId = YES;
-  result.teamId = value;
+  _builderResult.hasTeamId = YES;
+  _builderResult.teamId = value;
   return self;
 }
 - (CMsgDOTATournament_Team_Builder*) clearTeamId {
-  result.hasTeamId = NO;
-  result.teamId = 0;
+  _builderResult.hasTeamId = NO;
+  _builderResult.teamId = 0;
   return self;
 }
 - (BOOL) hasTeamName {
-  return result.hasTeamName;
+  return _builderResult.hasTeamName;
 }
 - (NSString*) teamName {
-  return result.teamName;
+  return _builderResult.teamName;
 }
 - (CMsgDOTATournament_Team_Builder*) setTeamName:(NSString*) value {
-  result.hasTeamName = YES;
-  result.teamName = value;
+  _builderResult.hasTeamName = YES;
+  _builderResult.teamName = value;
   return self;
 }
 - (CMsgDOTATournament_Team_Builder*) clearTeamName {
-  result.hasTeamName = NO;
-  result.teamName = @"";
+  _builderResult.hasTeamName = NO;
+  _builderResult.teamName = @"";
   return self;
 }
 - (BOOL) hasTeamAbbrev {
-  return result.hasTeamAbbrev;
+  return _builderResult.hasTeamAbbrev;
 }
 - (NSString*) teamAbbrev {
-  return result.teamAbbrev;
+  return _builderResult.teamAbbrev;
 }
 - (CMsgDOTATournament_Team_Builder*) setTeamAbbrev:(NSString*) value {
-  result.hasTeamAbbrev = YES;
-  result.teamAbbrev = value;
+  _builderResult.hasTeamAbbrev = YES;
+  _builderResult.teamAbbrev = value;
   return self;
 }
 - (CMsgDOTATournament_Team_Builder*) clearTeamAbbrev {
-  result.hasTeamAbbrev = NO;
-  result.teamAbbrev = @"";
+  _builderResult.hasTeamAbbrev = NO;
+  _builderResult.teamAbbrev = @"";
   return self;
 }
 - (PBAppendableArray *)players {
-  return result.playersArray;
+  return _builderResult.playersArray;
 }
 - (uint32_t)playersAtIndex:(NSUInteger)index {
-  return [result playersAtIndex:index];
+  return [_builderResult playersAtIndex:index];
 }
 - (CMsgDOTATournament_Team_Builder *)addPlayers:(uint32_t)value {
-  if (result.playersArray == nil) {
-    result.playersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.playersArray == nil) {
+    _builderResult.playersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.playersArray addUint32:value];
+  [_builderResult.playersArray addUint32:value];
   return self;
 }
 - (CMsgDOTATournament_Team_Builder *)setPlayersArray:(NSArray *)array {
-  result.playersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.playersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTATournament_Team_Builder *)setPlayersValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.playersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.playersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTATournament_Team_Builder *)clearPlayers {
-  result.playersArray = nil;
+  _builderResult.playersArray = nil;
   return self;
 }
 - (BOOL) hasSeed {
-  return result.hasSeed;
+  return _builderResult.hasSeed;
 }
 - (uint32_t) seed {
-  return result.seed;
+  return _builderResult.seed;
 }
 - (CMsgDOTATournament_Team_Builder*) setSeed:(uint32_t) value {
-  result.hasSeed = YES;
-  result.seed = value;
+  _builderResult.hasSeed = YES;
+  _builderResult.seed = value;
   return self;
 }
 - (CMsgDOTATournament_Team_Builder*) clearSeed {
-  result.hasSeed = NO;
-  result.seed = 0;
+  _builderResult.hasSeed = NO;
+  _builderResult.seed = 0;
   return self;
 }
 - (BOOL) hasTeamLogo {
-  return result.hasTeamLogo;
+  return _builderResult.hasTeamLogo;
 }
 - (uint64_t) teamLogo {
-  return result.teamLogo;
+  return _builderResult.teamLogo;
 }
 - (CMsgDOTATournament_Team_Builder*) setTeamLogo:(uint64_t) value {
-  result.hasTeamLogo = YES;
-  result.teamLogo = value;
+  _builderResult.hasTeamLogo = YES;
+  _builderResult.teamLogo = value;
   return self;
 }
 - (CMsgDOTATournament_Team_Builder*) clearTeamLogo {
-  result.hasTeamLogo = NO;
-  result.teamLogo = 0L;
+  _builderResult.hasTeamLogo = NO;
+  _builderResult.teamLogo = 0L;
   return self;
 }
 @end
@@ -29092,67 +29092,67 @@ static CMsgDOTATournament_Game_ReplayURL* defaultCMsgDOTATournament_Game_ReplayU
   }
 }
 - (BOOL) hasProviderId {
-  return result.hasProviderId;
+  return _builderResult.hasProviderId;
 }
 - (uint32_t) providerId {
-  return result.providerId;
+  return _builderResult.providerId;
 }
 - (CMsgDOTATournament_Game_ReplayURL_Builder*) setProviderId:(uint32_t) value {
-  result.hasProviderId = YES;
-  result.providerId = value;
+  _builderResult.hasProviderId = YES;
+  _builderResult.providerId = value;
   return self;
 }
 - (CMsgDOTATournament_Game_ReplayURL_Builder*) clearProviderId {
-  result.hasProviderId = NO;
-  result.providerId = 0;
+  _builderResult.hasProviderId = NO;
+  _builderResult.providerId = 0;
   return self;
 }
 - (BOOL) hasStreamId {
-  return result.hasStreamId;
+  return _builderResult.hasStreamId;
 }
 - (uint32_t) streamId {
-  return result.streamId;
+  return _builderResult.streamId;
 }
 - (CMsgDOTATournament_Game_ReplayURL_Builder*) setStreamId:(uint32_t) value {
-  result.hasStreamId = YES;
-  result.streamId = value;
+  _builderResult.hasStreamId = YES;
+  _builderResult.streamId = value;
   return self;
 }
 - (CMsgDOTATournament_Game_ReplayURL_Builder*) clearStreamId {
-  result.hasStreamId = NO;
-  result.streamId = 0;
+  _builderResult.hasStreamId = NO;
+  _builderResult.streamId = 0;
   return self;
 }
 - (BOOL) hasUrl {
-  return result.hasUrl;
+  return _builderResult.hasUrl;
 }
 - (NSString*) url {
-  return result.url;
+  return _builderResult.url;
 }
 - (CMsgDOTATournament_Game_ReplayURL_Builder*) setUrl:(NSString*) value {
-  result.hasUrl = YES;
-  result.url = value;
+  _builderResult.hasUrl = YES;
+  _builderResult.url = value;
   return self;
 }
 - (CMsgDOTATournament_Game_ReplayURL_Builder*) clearUrl {
-  result.hasUrl = NO;
-  result.url = @"";
+  _builderResult.hasUrl = NO;
+  _builderResult.url = @"";
   return self;
 }
 - (BOOL) hasDescription {
-  return result.hasDescription;
+  return _builderResult.hasDescription;
 }
 - (NSString*) description {
-  return result.description;
+  return _builderResult.description;
 }
 - (CMsgDOTATournament_Game_ReplayURL_Builder*) setDescription:(NSString*) value {
-  result.hasDescription = YES;
-  result.description = value;
+  _builderResult.hasDescription = YES;
+  _builderResult.description = value;
   return self;
 }
 - (CMsgDOTATournament_Game_ReplayURL_Builder*) clearDescription {
-  result.hasDescription = NO;
-  result.description = @"";
+  _builderResult.hasDescription = NO;
+  _builderResult.description = @"";
   return self;
 }
 @end
@@ -29227,10 +29227,10 @@ static CMsgDOTATournament_Game_ReplayURL* defaultCMsgDOTATournament_Game_ReplayU
     [self setResultsFinal:other.resultsFinal];
   }
   if (other.replayUrlsArray.count > 0) {
-    if (result.replayUrlsArray == nil) {
-      result.replayUrlsArray = [[other.replayUrlsArray copyWithZone:[other.replayUrlsArray zone]] autorelease];
+    if (_builderResult.replayUrlsArray == nil) {
+      _builderResult.replayUrlsArray = [[other.replayUrlsArray copyWithZone:[other.replayUrlsArray zone]] autorelease];
     } else {
-      [result.replayUrlsArray appendArray:other.replayUrlsArray];
+      [_builderResult.replayUrlsArray appendArray:other.replayUrlsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -29300,172 +29300,172 @@ static CMsgDOTATournament_Game_ReplayURL* defaultCMsgDOTATournament_Game_ReplayU
   }
 }
 - (BOOL) hasGameId {
-  return result.hasGameId;
+  return _builderResult.hasGameId;
 }
 - (uint32_t) gameId {
-  return result.gameId;
+  return _builderResult.gameId;
 }
 - (CMsgDOTATournament_Game_Builder*) setGameId:(uint32_t) value {
-  result.hasGameId = YES;
-  result.gameId = value;
+  _builderResult.hasGameId = YES;
+  _builderResult.gameId = value;
   return self;
 }
 - (CMsgDOTATournament_Game_Builder*) clearGameId {
-  result.hasGameId = NO;
-  result.gameId = 0;
+  _builderResult.hasGameId = NO;
+  _builderResult.gameId = 0;
   return self;
 }
 - (BOOL) hasGoodTeamId {
-  return result.hasGoodTeamId;
+  return _builderResult.hasGoodTeamId;
 }
 - (uint32_t) goodTeamId {
-  return result.goodTeamId;
+  return _builderResult.goodTeamId;
 }
 - (CMsgDOTATournament_Game_Builder*) setGoodTeamId:(uint32_t) value {
-  result.hasGoodTeamId = YES;
-  result.goodTeamId = value;
+  _builderResult.hasGoodTeamId = YES;
+  _builderResult.goodTeamId = value;
   return self;
 }
 - (CMsgDOTATournament_Game_Builder*) clearGoodTeamId {
-  result.hasGoodTeamId = NO;
-  result.goodTeamId = 0;
+  _builderResult.hasGoodTeamId = NO;
+  _builderResult.goodTeamId = 0;
   return self;
 }
 - (BOOL) hasBadTeamId {
-  return result.hasBadTeamId;
+  return _builderResult.hasBadTeamId;
 }
 - (uint32_t) badTeamId {
-  return result.badTeamId;
+  return _builderResult.badTeamId;
 }
 - (CMsgDOTATournament_Game_Builder*) setBadTeamId:(uint32_t) value {
-  result.hasBadTeamId = YES;
-  result.badTeamId = value;
+  _builderResult.hasBadTeamId = YES;
+  _builderResult.badTeamId = value;
   return self;
 }
 - (CMsgDOTATournament_Game_Builder*) clearBadTeamId {
-  result.hasBadTeamId = NO;
-  result.badTeamId = 0;
+  _builderResult.hasBadTeamId = NO;
+  _builderResult.badTeamId = 0;
   return self;
 }
 - (BOOL) hasLobbyId {
-  return result.hasLobbyId;
+  return _builderResult.hasLobbyId;
 }
 - (uint64_t) lobbyId {
-  return result.lobbyId;
+  return _builderResult.lobbyId;
 }
 - (CMsgDOTATournament_Game_Builder*) setLobbyId:(uint64_t) value {
-  result.hasLobbyId = YES;
-  result.lobbyId = value;
+  _builderResult.hasLobbyId = YES;
+  _builderResult.lobbyId = value;
   return self;
 }
 - (CMsgDOTATournament_Game_Builder*) clearLobbyId {
-  result.hasLobbyId = NO;
-  result.lobbyId = 0L;
+  _builderResult.hasLobbyId = NO;
+  _builderResult.lobbyId = 0L;
   return self;
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CMsgDOTATournament_Game_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CMsgDOTATournament_Game_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 - (BOOL) hasGameName {
-  return result.hasGameName;
+  return _builderResult.hasGameName;
 }
 - (NSString*) gameName {
-  return result.gameName;
+  return _builderResult.gameName;
 }
 - (CMsgDOTATournament_Game_Builder*) setGameName:(NSString*) value {
-  result.hasGameName = YES;
-  result.gameName = value;
+  _builderResult.hasGameName = YES;
+  _builderResult.gameName = value;
   return self;
 }
 - (CMsgDOTATournament_Game_Builder*) clearGameName {
-  result.hasGameName = NO;
-  result.gameName = @"";
+  _builderResult.hasGameName = NO;
+  _builderResult.gameName = @"";
   return self;
 }
 - (BOOL) hasLiveStream {
-  return result.hasLiveStream;
+  return _builderResult.hasLiveStream;
 }
 - (BOOL) liveStream {
-  return result.liveStream;
+  return _builderResult.liveStream;
 }
 - (CMsgDOTATournament_Game_Builder*) setLiveStream:(BOOL) value {
-  result.hasLiveStream = YES;
-  result.liveStream = value;
+  _builderResult.hasLiveStream = YES;
+  _builderResult.liveStream = value;
   return self;
 }
 - (CMsgDOTATournament_Game_Builder*) clearLiveStream {
-  result.hasLiveStream = NO;
-  result.liveStream = NO;
+  _builderResult.hasLiveStream = NO;
+  _builderResult.liveStream = NO;
   return self;
 }
 - (BOOL) hasMessage {
-  return result.hasMessage;
+  return _builderResult.hasMessage;
 }
 - (NSString*) message {
-  return result.message;
+  return _builderResult.message;
 }
 - (CMsgDOTATournament_Game_Builder*) setMessage:(NSString*) value {
-  result.hasMessage = YES;
-  result.message = value;
+  _builderResult.hasMessage = YES;
+  _builderResult.message = value;
   return self;
 }
 - (CMsgDOTATournament_Game_Builder*) clearMessage {
-  result.hasMessage = NO;
-  result.message = @"";
+  _builderResult.hasMessage = NO;
+  _builderResult.message = @"";
   return self;
 }
 - (BOOL) hasResultsFinal {
-  return result.hasResultsFinal;
+  return _builderResult.hasResultsFinal;
 }
 - (BOOL) resultsFinal {
-  return result.resultsFinal;
+  return _builderResult.resultsFinal;
 }
 - (CMsgDOTATournament_Game_Builder*) setResultsFinal:(BOOL) value {
-  result.hasResultsFinal = YES;
-  result.resultsFinal = value;
+  _builderResult.hasResultsFinal = YES;
+  _builderResult.resultsFinal = value;
   return self;
 }
 - (CMsgDOTATournament_Game_Builder*) clearResultsFinal {
-  result.hasResultsFinal = NO;
-  result.resultsFinal = NO;
+  _builderResult.hasResultsFinal = NO;
+  _builderResult.resultsFinal = NO;
   return self;
 }
 - (PBAppendableArray *)replayUrls {
-  return result.replayUrlsArray;
+  return _builderResult.replayUrlsArray;
 }
 - (CMsgDOTATournament_Game_ReplayURL*)replayUrlsAtIndex:(NSUInteger)index {
-  return [result replayUrlsAtIndex:index];
+  return [_builderResult replayUrlsAtIndex:index];
 }
 - (CMsgDOTATournament_Game_Builder *)addReplayUrls:(CMsgDOTATournament_Game_ReplayURL*)value {
-  if (result.replayUrlsArray == nil) {
-    result.replayUrlsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.replayUrlsArray == nil) {
+    _builderResult.replayUrlsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.replayUrlsArray addObject:value];
+  [_builderResult.replayUrlsArray addObject:value];
   return self;
 }
 - (CMsgDOTATournament_Game_Builder *)setReplayUrlsArray:(NSArray *)array {
-  result.replayUrlsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.replayUrlsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTATournament_Game_Builder *)setReplayUrlsValues:(const CMsgDOTATournament_Game_ReplayURL* *)values count:(NSUInteger)count {
-  result.replayUrlsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.replayUrlsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTATournament_Game_Builder *)clearReplayUrls {
-  result.replayUrlsArray = nil;
+  _builderResult.replayUrlsArray = nil;
   return self;
 }
 @end
@@ -29513,17 +29513,17 @@ static CMsgDOTATournament_Game_ReplayURL* defaultCMsgDOTATournament_Game_ReplayU
     return self;
   }
   if (other.teamsArray.count > 0) {
-    if (result.teamsArray == nil) {
-      result.teamsArray = [[other.teamsArray copyWithZone:[other.teamsArray zone]] autorelease];
+    if (_builderResult.teamsArray == nil) {
+      _builderResult.teamsArray = [[other.teamsArray copyWithZone:[other.teamsArray zone]] autorelease];
     } else {
-      [result.teamsArray appendArray:other.teamsArray];
+      [_builderResult.teamsArray appendArray:other.teamsArray];
     }
   }
   if (other.gamesArray.count > 0) {
-    if (result.gamesArray == nil) {
-      result.gamesArray = [[other.gamesArray copyWithZone:[other.gamesArray zone]] autorelease];
+    if (_builderResult.gamesArray == nil) {
+      _builderResult.gamesArray = [[other.gamesArray copyWithZone:[other.gamesArray zone]] autorelease];
     } else {
-      [result.gamesArray appendArray:other.gamesArray];
+      [_builderResult.gamesArray appendArray:other.gamesArray];
     }
   }
   if (other.hasGid) {
@@ -29570,69 +29570,69 @@ static CMsgDOTATournament_Game_ReplayURL* defaultCMsgDOTATournament_Game_ReplayU
   }
 }
 - (PBAppendableArray *)teams {
-  return result.teamsArray;
+  return _builderResult.teamsArray;
 }
 - (CMsgDOTATournament_Team*)teamsAtIndex:(NSUInteger)index {
-  return [result teamsAtIndex:index];
+  return [_builderResult teamsAtIndex:index];
 }
 - (CMsgDOTATournament_Builder *)addTeams:(CMsgDOTATournament_Team*)value {
-  if (result.teamsArray == nil) {
-    result.teamsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.teamsArray == nil) {
+    _builderResult.teamsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.teamsArray addObject:value];
+  [_builderResult.teamsArray addObject:value];
   return self;
 }
 - (CMsgDOTATournament_Builder *)setTeamsArray:(NSArray *)array {
-  result.teamsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.teamsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTATournament_Builder *)setTeamsValues:(const CMsgDOTATournament_Team* *)values count:(NSUInteger)count {
-  result.teamsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.teamsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTATournament_Builder *)clearTeams {
-  result.teamsArray = nil;
+  _builderResult.teamsArray = nil;
   return self;
 }
 - (PBAppendableArray *)games {
-  return result.gamesArray;
+  return _builderResult.gamesArray;
 }
 - (CMsgDOTATournament_Game*)gamesAtIndex:(NSUInteger)index {
-  return [result gamesAtIndex:index];
+  return [_builderResult gamesAtIndex:index];
 }
 - (CMsgDOTATournament_Builder *)addGames:(CMsgDOTATournament_Game*)value {
-  if (result.gamesArray == nil) {
-    result.gamesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.gamesArray == nil) {
+    _builderResult.gamesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.gamesArray addObject:value];
+  [_builderResult.gamesArray addObject:value];
   return self;
 }
 - (CMsgDOTATournament_Builder *)setGamesArray:(NSArray *)array {
-  result.gamesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.gamesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTATournament_Builder *)setGamesValues:(const CMsgDOTATournament_Game* *)values count:(NSUInteger)count {
-  result.gamesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.gamesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTATournament_Builder *)clearGames {
-  result.gamesArray = nil;
+  _builderResult.gamesArray = nil;
   return self;
 }
 - (BOOL) hasGid {
-  return result.hasGid;
+  return _builderResult.hasGid;
 }
 - (uint64_t) gid {
-  return result.gid;
+  return _builderResult.gid;
 }
 - (CMsgDOTATournament_Builder*) setGid:(uint64_t) value {
-  result.hasGid = YES;
-  result.gid = value;
+  _builderResult.hasGid = YES;
+  _builderResult.gid = value;
   return self;
 }
 - (CMsgDOTATournament_Builder*) clearGid {
-  result.hasGid = NO;
-  result.gid = 0L;
+  _builderResult.hasGid = NO;
+  _builderResult.gid = 0L;
   return self;
 }
 @end
@@ -29857,35 +29857,35 @@ static CMsgDOTATournamentRequest* defaultCMsgDOTATournamentRequestInstance = nil
   }
 }
 - (BOOL) hasTournamentId {
-  return result.hasTournamentId;
+  return _builderResult.hasTournamentId;
 }
 - (uint32_t) tournamentId {
-  return result.tournamentId;
+  return _builderResult.tournamentId;
 }
 - (CMsgDOTATournamentRequest_Builder*) setTournamentId:(uint32_t) value {
-  result.hasTournamentId = YES;
-  result.tournamentId = value;
+  _builderResult.hasTournamentId = YES;
+  _builderResult.tournamentId = value;
   return self;
 }
 - (CMsgDOTATournamentRequest_Builder*) clearTournamentId {
-  result.hasTournamentId = NO;
-  result.tournamentId = 0;
+  _builderResult.hasTournamentId = NO;
+  _builderResult.tournamentId = 0;
   return self;
 }
 - (BOOL) hasClientTournamentGid {
-  return result.hasClientTournamentGid;
+  return _builderResult.hasClientTournamentGid;
 }
 - (uint64_t) clientTournamentGid {
-  return result.clientTournamentGid;
+  return _builderResult.clientTournamentGid;
 }
 - (CMsgDOTATournamentRequest_Builder*) setClientTournamentGid:(uint64_t) value {
-  result.hasClientTournamentGid = YES;
-  result.clientTournamentGid = value;
+  _builderResult.hasClientTournamentGid = YES;
+  _builderResult.clientTournamentGid = value;
   return self;
 }
 - (CMsgDOTATournamentRequest_Builder*) clearClientTournamentGid {
-  result.hasClientTournamentGid = NO;
-  result.clientTournamentGid = 0L;
+  _builderResult.hasClientTournamentGid = NO;
+  _builderResult.clientTournamentGid = 0L;
   return self;
 }
 @end
@@ -30119,49 +30119,49 @@ static CMsgDOTATournamentResponse* defaultCMsgDOTATournamentResponseInstance = n
   }
 }
 - (BOOL) hasResult {
-  return result.hasResult;
+  return _builderResult.hasResult;
 }
 - (uint32_t) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgDOTATournamentResponse_Builder*) setResult:(uint32_t) value {
-  result.hasResult = YES;
-  result.result = value;
+  _builderResult.hasResult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgDOTATournamentResponse_Builder*) clearResult {
-  result.hasResult = NO;
-  result.result = 2;
+  _builderResult.hasResult = NO;
+  _builderResult.result = 2;
   return self;
 }
 - (BOOL) hasTournament {
-  return result.hasTournament;
+  return _builderResult.hasTournament;
 }
 - (CMsgDOTATournament*) tournament {
-  return result.tournament;
+  return _builderResult.tournament;
 }
 - (CMsgDOTATournamentResponse_Builder*) setTournament:(CMsgDOTATournament*) value {
-  result.hasTournament = YES;
-  result.tournament = value;
+  _builderResult.hasTournament = YES;
+  _builderResult.tournament = value;
   return self;
 }
 - (CMsgDOTATournamentResponse_Builder*) setTournamentBuilder:(CMsgDOTATournament_Builder*) builderForValue {
   return [self setTournament:[builderForValue build]];
 }
 - (CMsgDOTATournamentResponse_Builder*) mergeTournament:(CMsgDOTATournament*) value {
-  if (result.hasTournament &&
-      result.tournament != [CMsgDOTATournament defaultInstance]) {
-    result.tournament =
-      [[[CMsgDOTATournament builderWithPrototype:result.tournament] mergeFrom:value] buildPartial];
+  if (_builderResult.hasTournament &&
+      _builderResult.tournament != [CMsgDOTATournament defaultInstance]) {
+    _builderResult.tournament =
+      [[[CMsgDOTATournament builderWithPrototype:_builderResult.tournament] mergeFrom:value] buildPartial];
   } else {
-    result.tournament = value;
+    _builderResult.tournament = value;
   }
-  result.hasTournament = YES;
+  _builderResult.hasTournament = YES;
   return self;
 }
 - (CMsgDOTATournamentResponse_Builder*) clearTournament {
-  result.hasTournament = NO;
-  result.tournament = [CMsgDOTATournament defaultInstance];
+  _builderResult.hasTournament = NO;
+  _builderResult.tournament = [CMsgDOTATournament defaultInstance];
   return self;
 }
 @end
@@ -30386,35 +30386,35 @@ static CMsgDOTAClearTournamentGame* defaultCMsgDOTAClearTournamentGameInstance =
   }
 }
 - (BOOL) hasTournamentId {
-  return result.hasTournamentId;
+  return _builderResult.hasTournamentId;
 }
 - (uint32_t) tournamentId {
-  return result.tournamentId;
+  return _builderResult.tournamentId;
 }
 - (CMsgDOTAClearTournamentGame_Builder*) setTournamentId:(uint32_t) value {
-  result.hasTournamentId = YES;
-  result.tournamentId = value;
+  _builderResult.hasTournamentId = YES;
+  _builderResult.tournamentId = value;
   return self;
 }
 - (CMsgDOTAClearTournamentGame_Builder*) clearTournamentId {
-  result.hasTournamentId = NO;
-  result.tournamentId = 0;
+  _builderResult.hasTournamentId = NO;
+  _builderResult.tournamentId = 0;
   return self;
 }
 - (BOOL) hasGameId {
-  return result.hasGameId;
+  return _builderResult.hasGameId;
 }
 - (uint32_t) gameId {
-  return result.gameId;
+  return _builderResult.gameId;
 }
 - (CMsgDOTAClearTournamentGame_Builder*) setGameId:(uint32_t) value {
-  result.hasGameId = YES;
-  result.gameId = value;
+  _builderResult.hasGameId = YES;
+  _builderResult.gameId = value;
   return self;
 }
 - (CMsgDOTAClearTournamentGame_Builder*) clearGameId {
-  result.hasGameId = NO;
-  result.gameId = 0;
+  _builderResult.hasGameId = NO;
+  _builderResult.gameId = 0;
   return self;
 }
 @end
@@ -32697,707 +32697,707 @@ static CMsgDOTAMatch_Player* defaultCMsgDOTAMatch_PlayerInstance = nil;
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgDOTAMatch_Player_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasPlayerSlot {
-  return result.hasPlayerSlot;
+  return _builderResult.hasPlayerSlot;
 }
 - (uint32_t) playerSlot {
-  return result.playerSlot;
+  return _builderResult.playerSlot;
 }
 - (CMsgDOTAMatch_Player_Builder*) setPlayerSlot:(uint32_t) value {
-  result.hasPlayerSlot = YES;
-  result.playerSlot = value;
+  _builderResult.hasPlayerSlot = YES;
+  _builderResult.playerSlot = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearPlayerSlot {
-  result.hasPlayerSlot = NO;
-  result.playerSlot = 0;
+  _builderResult.hasPlayerSlot = NO;
+  _builderResult.playerSlot = 0;
   return self;
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CMsgDOTAMatch_Player_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 - (BOOL) hasItem0 {
-  return result.hasItem0;
+  return _builderResult.hasItem0;
 }
 - (uint32_t) item0 {
-  return result.item0;
+  return _builderResult.item0;
 }
 - (CMsgDOTAMatch_Player_Builder*) setItem0:(uint32_t) value {
-  result.hasItem0 = YES;
-  result.item0 = value;
+  _builderResult.hasItem0 = YES;
+  _builderResult.item0 = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearItem0 {
-  result.hasItem0 = NO;
-  result.item0 = 0;
+  _builderResult.hasItem0 = NO;
+  _builderResult.item0 = 0;
   return self;
 }
 - (BOOL) hasItem1 {
-  return result.hasItem1;
+  return _builderResult.hasItem1;
 }
 - (uint32_t) item1 {
-  return result.item1;
+  return _builderResult.item1;
 }
 - (CMsgDOTAMatch_Player_Builder*) setItem1:(uint32_t) value {
-  result.hasItem1 = YES;
-  result.item1 = value;
+  _builderResult.hasItem1 = YES;
+  _builderResult.item1 = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearItem1 {
-  result.hasItem1 = NO;
-  result.item1 = 0;
+  _builderResult.hasItem1 = NO;
+  _builderResult.item1 = 0;
   return self;
 }
 - (BOOL) hasItem2 {
-  return result.hasItem2;
+  return _builderResult.hasItem2;
 }
 - (uint32_t) item2 {
-  return result.item2;
+  return _builderResult.item2;
 }
 - (CMsgDOTAMatch_Player_Builder*) setItem2:(uint32_t) value {
-  result.hasItem2 = YES;
-  result.item2 = value;
+  _builderResult.hasItem2 = YES;
+  _builderResult.item2 = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearItem2 {
-  result.hasItem2 = NO;
-  result.item2 = 0;
+  _builderResult.hasItem2 = NO;
+  _builderResult.item2 = 0;
   return self;
 }
 - (BOOL) hasItem3 {
-  return result.hasItem3;
+  return _builderResult.hasItem3;
 }
 - (uint32_t) item3 {
-  return result.item3;
+  return _builderResult.item3;
 }
 - (CMsgDOTAMatch_Player_Builder*) setItem3:(uint32_t) value {
-  result.hasItem3 = YES;
-  result.item3 = value;
+  _builderResult.hasItem3 = YES;
+  _builderResult.item3 = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearItem3 {
-  result.hasItem3 = NO;
-  result.item3 = 0;
+  _builderResult.hasItem3 = NO;
+  _builderResult.item3 = 0;
   return self;
 }
 - (BOOL) hasItem4 {
-  return result.hasItem4;
+  return _builderResult.hasItem4;
 }
 - (uint32_t) item4 {
-  return result.item4;
+  return _builderResult.item4;
 }
 - (CMsgDOTAMatch_Player_Builder*) setItem4:(uint32_t) value {
-  result.hasItem4 = YES;
-  result.item4 = value;
+  _builderResult.hasItem4 = YES;
+  _builderResult.item4 = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearItem4 {
-  result.hasItem4 = NO;
-  result.item4 = 0;
+  _builderResult.hasItem4 = NO;
+  _builderResult.item4 = 0;
   return self;
 }
 - (BOOL) hasItem5 {
-  return result.hasItem5;
+  return _builderResult.hasItem5;
 }
 - (uint32_t) item5 {
-  return result.item5;
+  return _builderResult.item5;
 }
 - (CMsgDOTAMatch_Player_Builder*) setItem5:(uint32_t) value {
-  result.hasItem5 = YES;
-  result.item5 = value;
+  _builderResult.hasItem5 = YES;
+  _builderResult.item5 = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearItem5 {
-  result.hasItem5 = NO;
-  result.item5 = 0;
+  _builderResult.hasItem5 = NO;
+  _builderResult.item5 = 0;
   return self;
 }
 - (BOOL) hasExpectedTeamContribution {
-  return result.hasExpectedTeamContribution;
+  return _builderResult.hasExpectedTeamContribution;
 }
 - (Float32) expectedTeamContribution {
-  return result.expectedTeamContribution;
+  return _builderResult.expectedTeamContribution;
 }
 - (CMsgDOTAMatch_Player_Builder*) setExpectedTeamContribution:(Float32) value {
-  result.hasExpectedTeamContribution = YES;
-  result.expectedTeamContribution = value;
+  _builderResult.hasExpectedTeamContribution = YES;
+  _builderResult.expectedTeamContribution = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearExpectedTeamContribution {
-  result.hasExpectedTeamContribution = NO;
-  result.expectedTeamContribution = 0;
+  _builderResult.hasExpectedTeamContribution = NO;
+  _builderResult.expectedTeamContribution = 0;
   return self;
 }
 - (BOOL) hasScaledMetric {
-  return result.hasScaledMetric;
+  return _builderResult.hasScaledMetric;
 }
 - (Float32) scaledMetric {
-  return result.scaledMetric;
+  return _builderResult.scaledMetric;
 }
 - (CMsgDOTAMatch_Player_Builder*) setScaledMetric:(Float32) value {
-  result.hasScaledMetric = YES;
-  result.scaledMetric = value;
+  _builderResult.hasScaledMetric = YES;
+  _builderResult.scaledMetric = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearScaledMetric {
-  result.hasScaledMetric = NO;
-  result.scaledMetric = 0;
+  _builderResult.hasScaledMetric = NO;
+  _builderResult.scaledMetric = 0;
   return self;
 }
 - (BOOL) hasPreviousRank {
-  return result.hasPreviousRank;
+  return _builderResult.hasPreviousRank;
 }
 - (uint32_t) previousRank {
-  return result.previousRank;
+  return _builderResult.previousRank;
 }
 - (CMsgDOTAMatch_Player_Builder*) setPreviousRank:(uint32_t) value {
-  result.hasPreviousRank = YES;
-  result.previousRank = value;
+  _builderResult.hasPreviousRank = YES;
+  _builderResult.previousRank = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearPreviousRank {
-  result.hasPreviousRank = NO;
-  result.previousRank = 0;
+  _builderResult.hasPreviousRank = NO;
+  _builderResult.previousRank = 0;
   return self;
 }
 - (BOOL) hasRankChange {
-  return result.hasRankChange;
+  return _builderResult.hasRankChange;
 }
 - (uint32_t) rankChange {
-  return result.rankChange;
+  return _builderResult.rankChange;
 }
 - (CMsgDOTAMatch_Player_Builder*) setRankChange:(uint32_t) value {
-  result.hasRankChange = YES;
-  result.rankChange = value;
+  _builderResult.hasRankChange = YES;
+  _builderResult.rankChange = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearRankChange {
-  result.hasRankChange = NO;
-  result.rankChange = 0;
+  _builderResult.hasRankChange = NO;
+  _builderResult.rankChange = 0;
   return self;
 }
 - (BOOL) hasKills {
-  return result.hasKills;
+  return _builderResult.hasKills;
 }
 - (uint32_t) kills {
-  return result.kills;
+  return _builderResult.kills;
 }
 - (CMsgDOTAMatch_Player_Builder*) setKills:(uint32_t) value {
-  result.hasKills = YES;
-  result.kills = value;
+  _builderResult.hasKills = YES;
+  _builderResult.kills = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearKills {
-  result.hasKills = NO;
-  result.kills = 0;
+  _builderResult.hasKills = NO;
+  _builderResult.kills = 0;
   return self;
 }
 - (BOOL) hasDeaths {
-  return result.hasDeaths;
+  return _builderResult.hasDeaths;
 }
 - (uint32_t) deaths {
-  return result.deaths;
+  return _builderResult.deaths;
 }
 - (CMsgDOTAMatch_Player_Builder*) setDeaths:(uint32_t) value {
-  result.hasDeaths = YES;
-  result.deaths = value;
+  _builderResult.hasDeaths = YES;
+  _builderResult.deaths = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearDeaths {
-  result.hasDeaths = NO;
-  result.deaths = 0;
+  _builderResult.hasDeaths = NO;
+  _builderResult.deaths = 0;
   return self;
 }
 - (BOOL) hasAssists {
-  return result.hasAssists;
+  return _builderResult.hasAssists;
 }
 - (uint32_t) assists {
-  return result.assists;
+  return _builderResult.assists;
 }
 - (CMsgDOTAMatch_Player_Builder*) setAssists:(uint32_t) value {
-  result.hasAssists = YES;
-  result.assists = value;
+  _builderResult.hasAssists = YES;
+  _builderResult.assists = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearAssists {
-  result.hasAssists = NO;
-  result.assists = 0;
+  _builderResult.hasAssists = NO;
+  _builderResult.assists = 0;
   return self;
 }
 - (BOOL) hasLeaverStatus {
-  return result.hasLeaverStatus;
+  return _builderResult.hasLeaverStatus;
 }
 - (uint32_t) leaverStatus {
-  return result.leaverStatus;
+  return _builderResult.leaverStatus;
 }
 - (CMsgDOTAMatch_Player_Builder*) setLeaverStatus:(uint32_t) value {
-  result.hasLeaverStatus = YES;
-  result.leaverStatus = value;
+  _builderResult.hasLeaverStatus = YES;
+  _builderResult.leaverStatus = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearLeaverStatus {
-  result.hasLeaverStatus = NO;
-  result.leaverStatus = 0;
+  _builderResult.hasLeaverStatus = NO;
+  _builderResult.leaverStatus = 0;
   return self;
 }
 - (BOOL) hasGold {
-  return result.hasGold;
+  return _builderResult.hasGold;
 }
 - (uint32_t) gold {
-  return result.gold;
+  return _builderResult.gold;
 }
 - (CMsgDOTAMatch_Player_Builder*) setGold:(uint32_t) value {
-  result.hasGold = YES;
-  result.gold = value;
+  _builderResult.hasGold = YES;
+  _builderResult.gold = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearGold {
-  result.hasGold = NO;
-  result.gold = 0;
+  _builderResult.hasGold = NO;
+  _builderResult.gold = 0;
   return self;
 }
 - (BOOL) hasLastHits {
-  return result.hasLastHits;
+  return _builderResult.hasLastHits;
 }
 - (uint32_t) lastHits {
-  return result.lastHits;
+  return _builderResult.lastHits;
 }
 - (CMsgDOTAMatch_Player_Builder*) setLastHits:(uint32_t) value {
-  result.hasLastHits = YES;
-  result.lastHits = value;
+  _builderResult.hasLastHits = YES;
+  _builderResult.lastHits = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearLastHits {
-  result.hasLastHits = NO;
-  result.lastHits = 0;
+  _builderResult.hasLastHits = NO;
+  _builderResult.lastHits = 0;
   return self;
 }
 - (BOOL) hasDenies {
-  return result.hasDenies;
+  return _builderResult.hasDenies;
 }
 - (uint32_t) denies {
-  return result.denies;
+  return _builderResult.denies;
 }
 - (CMsgDOTAMatch_Player_Builder*) setDenies:(uint32_t) value {
-  result.hasDenies = YES;
-  result.denies = value;
+  _builderResult.hasDenies = YES;
+  _builderResult.denies = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearDenies {
-  result.hasDenies = NO;
-  result.denies = 0;
+  _builderResult.hasDenies = NO;
+  _builderResult.denies = 0;
   return self;
 }
 - (BOOL) hasGoldPerMin {
-  return result.hasGoldPerMin;
+  return _builderResult.hasGoldPerMin;
 }
 - (uint32_t) goldPerMin {
-  return result.goldPerMin;
+  return _builderResult.goldPerMin;
 }
 - (CMsgDOTAMatch_Player_Builder*) setGoldPerMin:(uint32_t) value {
-  result.hasGoldPerMin = YES;
-  result.goldPerMin = value;
+  _builderResult.hasGoldPerMin = YES;
+  _builderResult.goldPerMin = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearGoldPerMin {
-  result.hasGoldPerMin = NO;
-  result.goldPerMin = 0;
+  _builderResult.hasGoldPerMin = NO;
+  _builderResult.goldPerMin = 0;
   return self;
 }
 - (BOOL) hasXpPerMin {
-  return result.hasXpPerMin;
+  return _builderResult.hasXpPerMin;
 }
 - (uint32_t) xpPerMin {
-  return result.xpPerMin;
+  return _builderResult.xpPerMin;
 }
 - (CMsgDOTAMatch_Player_Builder*) setXpPerMin:(uint32_t) value {
-  result.hasXpPerMin = YES;
-  result.xpPerMin = value;
+  _builderResult.hasXpPerMin = YES;
+  _builderResult.xpPerMin = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearXpPerMin {
-  result.hasXpPerMin = NO;
-  result.xpPerMin = 0;
+  _builderResult.hasXpPerMin = NO;
+  _builderResult.xpPerMin = 0;
   return self;
 }
 - (BOOL) hasGoldSpent {
-  return result.hasGoldSpent;
+  return _builderResult.hasGoldSpent;
 }
 - (uint32_t) goldSpent {
-  return result.goldSpent;
+  return _builderResult.goldSpent;
 }
 - (CMsgDOTAMatch_Player_Builder*) setGoldSpent:(uint32_t) value {
-  result.hasGoldSpent = YES;
-  result.goldSpent = value;
+  _builderResult.hasGoldSpent = YES;
+  _builderResult.goldSpent = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearGoldSpent {
-  result.hasGoldSpent = NO;
-  result.goldSpent = 0;
+  _builderResult.hasGoldSpent = NO;
+  _builderResult.goldSpent = 0;
   return self;
 }
 - (BOOL) hasHeroDamage {
-  return result.hasHeroDamage;
+  return _builderResult.hasHeroDamage;
 }
 - (uint32_t) heroDamage {
-  return result.heroDamage;
+  return _builderResult.heroDamage;
 }
 - (CMsgDOTAMatch_Player_Builder*) setHeroDamage:(uint32_t) value {
-  result.hasHeroDamage = YES;
-  result.heroDamage = value;
+  _builderResult.hasHeroDamage = YES;
+  _builderResult.heroDamage = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearHeroDamage {
-  result.hasHeroDamage = NO;
-  result.heroDamage = 0;
+  _builderResult.hasHeroDamage = NO;
+  _builderResult.heroDamage = 0;
   return self;
 }
 - (BOOL) hasTowerDamage {
-  return result.hasTowerDamage;
+  return _builderResult.hasTowerDamage;
 }
 - (uint32_t) towerDamage {
-  return result.towerDamage;
+  return _builderResult.towerDamage;
 }
 - (CMsgDOTAMatch_Player_Builder*) setTowerDamage:(uint32_t) value {
-  result.hasTowerDamage = YES;
-  result.towerDamage = value;
+  _builderResult.hasTowerDamage = YES;
+  _builderResult.towerDamage = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearTowerDamage {
-  result.hasTowerDamage = NO;
-  result.towerDamage = 0;
+  _builderResult.hasTowerDamage = NO;
+  _builderResult.towerDamage = 0;
   return self;
 }
 - (BOOL) hasHeroHealing {
-  return result.hasHeroHealing;
+  return _builderResult.hasHeroHealing;
 }
 - (uint32_t) heroHealing {
-  return result.heroHealing;
+  return _builderResult.heroHealing;
 }
 - (CMsgDOTAMatch_Player_Builder*) setHeroHealing:(uint32_t) value {
-  result.hasHeroHealing = YES;
-  result.heroHealing = value;
+  _builderResult.hasHeroHealing = YES;
+  _builderResult.heroHealing = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearHeroHealing {
-  result.hasHeroHealing = NO;
-  result.heroHealing = 0;
+  _builderResult.hasHeroHealing = NO;
+  _builderResult.heroHealing = 0;
   return self;
 }
 - (BOOL) hasLevel {
-  return result.hasLevel;
+  return _builderResult.hasLevel;
 }
 - (uint32_t) level {
-  return result.level;
+  return _builderResult.level;
 }
 - (CMsgDOTAMatch_Player_Builder*) setLevel:(uint32_t) value {
-  result.hasLevel = YES;
-  result.level = value;
+  _builderResult.hasLevel = YES;
+  _builderResult.level = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearLevel {
-  result.hasLevel = NO;
-  result.level = 0;
+  _builderResult.hasLevel = NO;
+  _builderResult.level = 0;
   return self;
 }
 - (BOOL) hasTimeLastSeen {
-  return result.hasTimeLastSeen;
+  return _builderResult.hasTimeLastSeen;
 }
 - (uint32_t) timeLastSeen {
-  return result.timeLastSeen;
+  return _builderResult.timeLastSeen;
 }
 - (CMsgDOTAMatch_Player_Builder*) setTimeLastSeen:(uint32_t) value {
-  result.hasTimeLastSeen = YES;
-  result.timeLastSeen = value;
+  _builderResult.hasTimeLastSeen = YES;
+  _builderResult.timeLastSeen = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearTimeLastSeen {
-  result.hasTimeLastSeen = NO;
-  result.timeLastSeen = 0;
+  _builderResult.hasTimeLastSeen = NO;
+  _builderResult.timeLastSeen = 0;
   return self;
 }
 - (BOOL) hasPlayerName {
-  return result.hasPlayerName;
+  return _builderResult.hasPlayerName;
 }
 - (NSString*) playerName {
-  return result.playerName;
+  return _builderResult.playerName;
 }
 - (CMsgDOTAMatch_Player_Builder*) setPlayerName:(NSString*) value {
-  result.hasPlayerName = YES;
-  result.playerName = value;
+  _builderResult.hasPlayerName = YES;
+  _builderResult.playerName = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearPlayerName {
-  result.hasPlayerName = NO;
-  result.playerName = @"";
+  _builderResult.hasPlayerName = NO;
+  _builderResult.playerName = @"";
   return self;
 }
 - (BOOL) hasSupportAbilityValue {
-  return result.hasSupportAbilityValue;
+  return _builderResult.hasSupportAbilityValue;
 }
 - (uint32_t) supportAbilityValue {
-  return result.supportAbilityValue;
+  return _builderResult.supportAbilityValue;
 }
 - (CMsgDOTAMatch_Player_Builder*) setSupportAbilityValue:(uint32_t) value {
-  result.hasSupportAbilityValue = YES;
-  result.supportAbilityValue = value;
+  _builderResult.hasSupportAbilityValue = YES;
+  _builderResult.supportAbilityValue = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearSupportAbilityValue {
-  result.hasSupportAbilityValue = NO;
-  result.supportAbilityValue = 0;
+  _builderResult.hasSupportAbilityValue = NO;
+  _builderResult.supportAbilityValue = 0;
   return self;
 }
 - (BOOL) hasFeedingDetected {
-  return result.hasFeedingDetected;
+  return _builderResult.hasFeedingDetected;
 }
 - (BOOL) feedingDetected {
-  return result.feedingDetected;
+  return _builderResult.feedingDetected;
 }
 - (CMsgDOTAMatch_Player_Builder*) setFeedingDetected:(BOOL) value {
-  result.hasFeedingDetected = YES;
-  result.feedingDetected = value;
+  _builderResult.hasFeedingDetected = YES;
+  _builderResult.feedingDetected = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearFeedingDetected {
-  result.hasFeedingDetected = NO;
-  result.feedingDetected = NO;
+  _builderResult.hasFeedingDetected = NO;
+  _builderResult.feedingDetected = NO;
   return self;
 }
 - (BOOL) hasSearchRank {
-  return result.hasSearchRank;
+  return _builderResult.hasSearchRank;
 }
 - (uint32_t) searchRank {
-  return result.searchRank;
+  return _builderResult.searchRank;
 }
 - (CMsgDOTAMatch_Player_Builder*) setSearchRank:(uint32_t) value {
-  result.hasSearchRank = YES;
-  result.searchRank = value;
+  _builderResult.hasSearchRank = YES;
+  _builderResult.searchRank = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearSearchRank {
-  result.hasSearchRank = NO;
-  result.searchRank = 0;
+  _builderResult.hasSearchRank = NO;
+  _builderResult.searchRank = 0;
   return self;
 }
 - (BOOL) hasSearchRankUncertainty {
-  return result.hasSearchRankUncertainty;
+  return _builderResult.hasSearchRankUncertainty;
 }
 - (uint32_t) searchRankUncertainty {
-  return result.searchRankUncertainty;
+  return _builderResult.searchRankUncertainty;
 }
 - (CMsgDOTAMatch_Player_Builder*) setSearchRankUncertainty:(uint32_t) value {
-  result.hasSearchRankUncertainty = YES;
-  result.searchRankUncertainty = value;
+  _builderResult.hasSearchRankUncertainty = YES;
+  _builderResult.searchRankUncertainty = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearSearchRankUncertainty {
-  result.hasSearchRankUncertainty = NO;
-  result.searchRankUncertainty = 0;
+  _builderResult.hasSearchRankUncertainty = NO;
+  _builderResult.searchRankUncertainty = 0;
   return self;
 }
 - (BOOL) hasRankUncertaintyChange {
-  return result.hasRankUncertaintyChange;
+  return _builderResult.hasRankUncertaintyChange;
 }
 - (uint32_t) rankUncertaintyChange {
-  return result.rankUncertaintyChange;
+  return _builderResult.rankUncertaintyChange;
 }
 - (CMsgDOTAMatch_Player_Builder*) setRankUncertaintyChange:(uint32_t) value {
-  result.hasRankUncertaintyChange = YES;
-  result.rankUncertaintyChange = value;
+  _builderResult.hasRankUncertaintyChange = YES;
+  _builderResult.rankUncertaintyChange = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearRankUncertaintyChange {
-  result.hasRankUncertaintyChange = NO;
-  result.rankUncertaintyChange = 0;
+  _builderResult.hasRankUncertaintyChange = NO;
+  _builderResult.rankUncertaintyChange = 0;
   return self;
 }
 - (BOOL) hasHeroPlayCount {
-  return result.hasHeroPlayCount;
+  return _builderResult.hasHeroPlayCount;
 }
 - (uint32_t) heroPlayCount {
-  return result.heroPlayCount;
+  return _builderResult.heroPlayCount;
 }
 - (CMsgDOTAMatch_Player_Builder*) setHeroPlayCount:(uint32_t) value {
-  result.hasHeroPlayCount = YES;
-  result.heroPlayCount = value;
+  _builderResult.hasHeroPlayCount = YES;
+  _builderResult.heroPlayCount = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearHeroPlayCount {
-  result.hasHeroPlayCount = NO;
-  result.heroPlayCount = 0;
+  _builderResult.hasHeroPlayCount = NO;
+  _builderResult.heroPlayCount = 0;
   return self;
 }
 - (BOOL) hasPartyId {
-  return result.hasPartyId;
+  return _builderResult.hasPartyId;
 }
 - (uint64_t) partyId {
-  return result.partyId;
+  return _builderResult.partyId;
 }
 - (CMsgDOTAMatch_Player_Builder*) setPartyId:(uint64_t) value {
-  result.hasPartyId = YES;
-  result.partyId = value;
+  _builderResult.hasPartyId = YES;
+  _builderResult.partyId = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearPartyId {
-  result.hasPartyId = NO;
-  result.partyId = 0L;
+  _builderResult.hasPartyId = NO;
+  _builderResult.partyId = 0L;
   return self;
 }
 - (BOOL) hasScaledKills {
-  return result.hasScaledKills;
+  return _builderResult.hasScaledKills;
 }
 - (Float32) scaledKills {
-  return result.scaledKills;
+  return _builderResult.scaledKills;
 }
 - (CMsgDOTAMatch_Player_Builder*) setScaledKills:(Float32) value {
-  result.hasScaledKills = YES;
-  result.scaledKills = value;
+  _builderResult.hasScaledKills = YES;
+  _builderResult.scaledKills = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearScaledKills {
-  result.hasScaledKills = NO;
-  result.scaledKills = 0;
+  _builderResult.hasScaledKills = NO;
+  _builderResult.scaledKills = 0;
   return self;
 }
 - (BOOL) hasScaledDeaths {
-  return result.hasScaledDeaths;
+  return _builderResult.hasScaledDeaths;
 }
 - (Float32) scaledDeaths {
-  return result.scaledDeaths;
+  return _builderResult.scaledDeaths;
 }
 - (CMsgDOTAMatch_Player_Builder*) setScaledDeaths:(Float32) value {
-  result.hasScaledDeaths = YES;
-  result.scaledDeaths = value;
+  _builderResult.hasScaledDeaths = YES;
+  _builderResult.scaledDeaths = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearScaledDeaths {
-  result.hasScaledDeaths = NO;
-  result.scaledDeaths = 0;
+  _builderResult.hasScaledDeaths = NO;
+  _builderResult.scaledDeaths = 0;
   return self;
 }
 - (BOOL) hasScaledAssists {
-  return result.hasScaledAssists;
+  return _builderResult.hasScaledAssists;
 }
 - (Float32) scaledAssists {
-  return result.scaledAssists;
+  return _builderResult.scaledAssists;
 }
 - (CMsgDOTAMatch_Player_Builder*) setScaledAssists:(Float32) value {
-  result.hasScaledAssists = YES;
-  result.scaledAssists = value;
+  _builderResult.hasScaledAssists = YES;
+  _builderResult.scaledAssists = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearScaledAssists {
-  result.hasScaledAssists = NO;
-  result.scaledAssists = 0;
+  _builderResult.hasScaledAssists = NO;
+  _builderResult.scaledAssists = 0;
   return self;
 }
 - (BOOL) hasClaimedFarmGold {
-  return result.hasClaimedFarmGold;
+  return _builderResult.hasClaimedFarmGold;
 }
 - (uint32_t) claimedFarmGold {
-  return result.claimedFarmGold;
+  return _builderResult.claimedFarmGold;
 }
 - (CMsgDOTAMatch_Player_Builder*) setClaimedFarmGold:(uint32_t) value {
-  result.hasClaimedFarmGold = YES;
-  result.claimedFarmGold = value;
+  _builderResult.hasClaimedFarmGold = YES;
+  _builderResult.claimedFarmGold = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearClaimedFarmGold {
-  result.hasClaimedFarmGold = NO;
-  result.claimedFarmGold = 0;
+  _builderResult.hasClaimedFarmGold = NO;
+  _builderResult.claimedFarmGold = 0;
   return self;
 }
 - (BOOL) hasSupportGold {
-  return result.hasSupportGold;
+  return _builderResult.hasSupportGold;
 }
 - (uint32_t) supportGold {
-  return result.supportGold;
+  return _builderResult.supportGold;
 }
 - (CMsgDOTAMatch_Player_Builder*) setSupportGold:(uint32_t) value {
-  result.hasSupportGold = YES;
-  result.supportGold = value;
+  _builderResult.hasSupportGold = YES;
+  _builderResult.supportGold = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearSupportGold {
-  result.hasSupportGold = NO;
-  result.supportGold = 0;
+  _builderResult.hasSupportGold = NO;
+  _builderResult.supportGold = 0;
   return self;
 }
 - (BOOL) hasClaimedDenies {
-  return result.hasClaimedDenies;
+  return _builderResult.hasClaimedDenies;
 }
 - (uint32_t) claimedDenies {
-  return result.claimedDenies;
+  return _builderResult.claimedDenies;
 }
 - (CMsgDOTAMatch_Player_Builder*) setClaimedDenies:(uint32_t) value {
-  result.hasClaimedDenies = YES;
-  result.claimedDenies = value;
+  _builderResult.hasClaimedDenies = YES;
+  _builderResult.claimedDenies = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearClaimedDenies {
-  result.hasClaimedDenies = NO;
-  result.claimedDenies = 0;
+  _builderResult.hasClaimedDenies = NO;
+  _builderResult.claimedDenies = 0;
   return self;
 }
 - (BOOL) hasClaimedMisses {
-  return result.hasClaimedMisses;
+  return _builderResult.hasClaimedMisses;
 }
 - (uint32_t) claimedMisses {
-  return result.claimedMisses;
+  return _builderResult.claimedMisses;
 }
 - (CMsgDOTAMatch_Player_Builder*) setClaimedMisses:(uint32_t) value {
-  result.hasClaimedMisses = YES;
-  result.claimedMisses = value;
+  _builderResult.hasClaimedMisses = YES;
+  _builderResult.claimedMisses = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearClaimedMisses {
-  result.hasClaimedMisses = NO;
-  result.claimedMisses = 0;
+  _builderResult.hasClaimedMisses = NO;
+  _builderResult.claimedMisses = 0;
   return self;
 }
 - (BOOL) hasMisses {
-  return result.hasMisses;
+  return _builderResult.hasMisses;
 }
 - (uint32_t) misses {
-  return result.misses;
+  return _builderResult.misses;
 }
 - (CMsgDOTAMatch_Player_Builder*) setMisses:(uint32_t) value {
-  result.hasMisses = YES;
-  result.misses = value;
+  _builderResult.hasMisses = YES;
+  _builderResult.misses = value;
   return self;
 }
 - (CMsgDOTAMatch_Player_Builder*) clearMisses {
-  result.hasMisses = NO;
-  result.misses = 0;
+  _builderResult.hasMisses = NO;
+  _builderResult.misses = 0;
   return self;
 }
 @end
@@ -33457,27 +33457,27 @@ static CMsgDOTAMatch_Player* defaultCMsgDOTAMatch_PlayerInstance = nil;
     [self setStartTime:other.startTime];
   }
   if (other.playersArray.count > 0) {
-    if (result.playersArray == nil) {
-      result.playersArray = [[other.playersArray copyWithZone:[other.playersArray zone]] autorelease];
+    if (_builderResult.playersArray == nil) {
+      _builderResult.playersArray = [[other.playersArray copyWithZone:[other.playersArray zone]] autorelease];
     } else {
-      [result.playersArray appendArray:other.playersArray];
+      [_builderResult.playersArray appendArray:other.playersArray];
     }
   }
   if (other.hasMatchId) {
     [self setMatchId:other.matchId];
   }
   if (other.towerStatusArray.count > 0) {
-    if (result.towerStatusArray == nil) {
-      result.towerStatusArray = [[other.towerStatusArray copyWithZone:[other.towerStatusArray zone]] autorelease];
+    if (_builderResult.towerStatusArray == nil) {
+      _builderResult.towerStatusArray = [[other.towerStatusArray copyWithZone:[other.towerStatusArray zone]] autorelease];
     } else {
-      [result.towerStatusArray appendArray:other.towerStatusArray];
+      [_builderResult.towerStatusArray appendArray:other.towerStatusArray];
     }
   }
   if (other.barracksStatusArray.count > 0) {
-    if (result.barracksStatusArray == nil) {
-      result.barracksStatusArray = [[other.barracksStatusArray copyWithZone:[other.barracksStatusArray zone]] autorelease];
+    if (_builderResult.barracksStatusArray == nil) {
+      _builderResult.barracksStatusArray = [[other.barracksStatusArray copyWithZone:[other.barracksStatusArray zone]] autorelease];
     } else {
-      [result.barracksStatusArray appendArray:other.barracksStatusArray];
+      [_builderResult.barracksStatusArray appendArray:other.barracksStatusArray];
     }
   }
   if (other.hasCluster) {
@@ -33691,494 +33691,494 @@ static CMsgDOTAMatch_Player* defaultCMsgDOTAMatch_PlayerInstance = nil;
   }
 }
 - (BOOL) hasSeason {
-  return result.hasSeason;
+  return _builderResult.hasSeason;
 }
 - (uint32_t) season {
-  return result.season;
+  return _builderResult.season;
 }
 - (CMsgDOTAMatch_Builder*) setSeason:(uint32_t) value {
-  result.hasSeason = YES;
-  result.season = value;
+  _builderResult.hasSeason = YES;
+  _builderResult.season = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearSeason {
-  result.hasSeason = NO;
-  result.season = 0;
+  _builderResult.hasSeason = NO;
+  _builderResult.season = 0;
   return self;
 }
 - (BOOL) hasGoodGuysWin {
-  return result.hasGoodGuysWin;
+  return _builderResult.hasGoodGuysWin;
 }
 - (BOOL) goodGuysWin {
-  return result.goodGuysWin;
+  return _builderResult.goodGuysWin;
 }
 - (CMsgDOTAMatch_Builder*) setGoodGuysWin:(BOOL) value {
-  result.hasGoodGuysWin = YES;
-  result.goodGuysWin = value;
+  _builderResult.hasGoodGuysWin = YES;
+  _builderResult.goodGuysWin = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearGoodGuysWin {
-  result.hasGoodGuysWin = NO;
-  result.goodGuysWin = NO;
+  _builderResult.hasGoodGuysWin = NO;
+  _builderResult.goodGuysWin = NO;
   return self;
 }
 - (BOOL) hasDuration {
-  return result.hasDuration;
+  return _builderResult.hasDuration;
 }
 - (uint32_t) duration {
-  return result.duration;
+  return _builderResult.duration;
 }
 - (CMsgDOTAMatch_Builder*) setDuration:(uint32_t) value {
-  result.hasDuration = YES;
-  result.duration = value;
+  _builderResult.hasDuration = YES;
+  _builderResult.duration = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearDuration {
-  result.hasDuration = NO;
-  result.duration = 0;
+  _builderResult.hasDuration = NO;
+  _builderResult.duration = 0;
   return self;
 }
 - (BOOL) hasStartTime {
-  return result.hasStartTime;
+  return _builderResult.hasStartTime;
 }
 - (uint32_t) startTime {
-  return result.startTime;
+  return _builderResult.startTime;
 }
 - (CMsgDOTAMatch_Builder*) setStartTime:(uint32_t) value {
-  result.hasStartTime = YES;
-  result.startTime = value;
+  _builderResult.hasStartTime = YES;
+  _builderResult.startTime = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearStartTime {
-  result.hasStartTime = NO;
-  result.startTime = 0;
+  _builderResult.hasStartTime = NO;
+  _builderResult.startTime = 0;
   return self;
 }
 - (PBAppendableArray *)players {
-  return result.playersArray;
+  return _builderResult.playersArray;
 }
 - (CMsgDOTAMatch_Player*)playersAtIndex:(NSUInteger)index {
-  return [result playersAtIndex:index];
+  return [_builderResult playersAtIndex:index];
 }
 - (CMsgDOTAMatch_Builder *)addPlayers:(CMsgDOTAMatch_Player*)value {
-  if (result.playersArray == nil) {
-    result.playersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.playersArray == nil) {
+    _builderResult.playersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.playersArray addObject:value];
+  [_builderResult.playersArray addObject:value];
   return self;
 }
 - (CMsgDOTAMatch_Builder *)setPlayersArray:(NSArray *)array {
-  result.playersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.playersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAMatch_Builder *)setPlayersValues:(const CMsgDOTAMatch_Player* *)values count:(NSUInteger)count {
-  result.playersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.playersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAMatch_Builder *)clearPlayers {
-  result.playersArray = nil;
+  _builderResult.playersArray = nil;
   return self;
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CMsgDOTAMatch_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 - (PBAppendableArray *)towerStatus {
-  return result.towerStatusArray;
+  return _builderResult.towerStatusArray;
 }
 - (uint32_t)towerStatusAtIndex:(NSUInteger)index {
-  return [result towerStatusAtIndex:index];
+  return [_builderResult towerStatusAtIndex:index];
 }
 - (CMsgDOTAMatch_Builder *)addTowerStatus:(uint32_t)value {
-  if (result.towerStatusArray == nil) {
-    result.towerStatusArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.towerStatusArray == nil) {
+    _builderResult.towerStatusArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.towerStatusArray addUint32:value];
+  [_builderResult.towerStatusArray addUint32:value];
   return self;
 }
 - (CMsgDOTAMatch_Builder *)setTowerStatusArray:(NSArray *)array {
-  result.towerStatusArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.towerStatusArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTAMatch_Builder *)setTowerStatusValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.towerStatusArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.towerStatusArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTAMatch_Builder *)clearTowerStatus {
-  result.towerStatusArray = nil;
+  _builderResult.towerStatusArray = nil;
   return self;
 }
 - (PBAppendableArray *)barracksStatus {
-  return result.barracksStatusArray;
+  return _builderResult.barracksStatusArray;
 }
 - (uint32_t)barracksStatusAtIndex:(NSUInteger)index {
-  return [result barracksStatusAtIndex:index];
+  return [_builderResult barracksStatusAtIndex:index];
 }
 - (CMsgDOTAMatch_Builder *)addBarracksStatus:(uint32_t)value {
-  if (result.barracksStatusArray == nil) {
-    result.barracksStatusArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.barracksStatusArray == nil) {
+    _builderResult.barracksStatusArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.barracksStatusArray addUint32:value];
+  [_builderResult.barracksStatusArray addUint32:value];
   return self;
 }
 - (CMsgDOTAMatch_Builder *)setBarracksStatusArray:(NSArray *)array {
-  result.barracksStatusArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.barracksStatusArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTAMatch_Builder *)setBarracksStatusValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.barracksStatusArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.barracksStatusArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTAMatch_Builder *)clearBarracksStatus {
-  result.barracksStatusArray = nil;
+  _builderResult.barracksStatusArray = nil;
   return self;
 }
 - (BOOL) hasCluster {
-  return result.hasCluster;
+  return _builderResult.hasCluster;
 }
 - (uint32_t) cluster {
-  return result.cluster;
+  return _builderResult.cluster;
 }
 - (CMsgDOTAMatch_Builder*) setCluster:(uint32_t) value {
-  result.hasCluster = YES;
-  result.cluster = value;
+  _builderResult.hasCluster = YES;
+  _builderResult.cluster = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearCluster {
-  result.hasCluster = NO;
-  result.cluster = 0;
+  _builderResult.hasCluster = NO;
+  _builderResult.cluster = 0;
   return self;
 }
 - (BOOL) hasFirstBloodTime {
-  return result.hasFirstBloodTime;
+  return _builderResult.hasFirstBloodTime;
 }
 - (uint32_t) firstBloodTime {
-  return result.firstBloodTime;
+  return _builderResult.firstBloodTime;
 }
 - (CMsgDOTAMatch_Builder*) setFirstBloodTime:(uint32_t) value {
-  result.hasFirstBloodTime = YES;
-  result.firstBloodTime = value;
+  _builderResult.hasFirstBloodTime = YES;
+  _builderResult.firstBloodTime = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearFirstBloodTime {
-  result.hasFirstBloodTime = NO;
-  result.firstBloodTime = 0;
+  _builderResult.hasFirstBloodTime = NO;
+  _builderResult.firstBloodTime = 0;
   return self;
 }
 - (BOOL) hasReplaySalt {
-  return result.hasReplaySalt;
+  return _builderResult.hasReplaySalt;
 }
 - (uint32_t) replaySalt {
-  return result.replaySalt;
+  return _builderResult.replaySalt;
 }
 - (CMsgDOTAMatch_Builder*) setReplaySalt:(uint32_t) value {
-  result.hasReplaySalt = YES;
-  result.replaySalt = value;
+  _builderResult.hasReplaySalt = YES;
+  _builderResult.replaySalt = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearReplaySalt {
-  result.hasReplaySalt = NO;
-  result.replaySalt = 0;
+  _builderResult.hasReplaySalt = NO;
+  _builderResult.replaySalt = 0;
   return self;
 }
 - (BOOL) hasServerIp {
-  return result.hasServerIp;
+  return _builderResult.hasServerIp;
 }
 - (uint32_t) serverIp {
-  return result.serverIp;
+  return _builderResult.serverIp;
 }
 - (CMsgDOTAMatch_Builder*) setServerIp:(uint32_t) value {
-  result.hasServerIp = YES;
-  result.serverIp = value;
+  _builderResult.hasServerIp = YES;
+  _builderResult.serverIp = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearServerIp {
-  result.hasServerIp = NO;
-  result.serverIp = 0;
+  _builderResult.hasServerIp = NO;
+  _builderResult.serverIp = 0;
   return self;
 }
 - (BOOL) hasServerPort {
-  return result.hasServerPort;
+  return _builderResult.hasServerPort;
 }
 - (uint32_t) serverPort {
-  return result.serverPort;
+  return _builderResult.serverPort;
 }
 - (CMsgDOTAMatch_Builder*) setServerPort:(uint32_t) value {
-  result.hasServerPort = YES;
-  result.serverPort = value;
+  _builderResult.hasServerPort = YES;
+  _builderResult.serverPort = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearServerPort {
-  result.hasServerPort = NO;
-  result.serverPort = 0;
+  _builderResult.hasServerPort = NO;
+  _builderResult.serverPort = 0;
   return self;
 }
 - (BOOL) hasLobbyType {
-  return result.hasLobbyType;
+  return _builderResult.hasLobbyType;
 }
 - (uint32_t) lobbyType {
-  return result.lobbyType;
+  return _builderResult.lobbyType;
 }
 - (CMsgDOTAMatch_Builder*) setLobbyType:(uint32_t) value {
-  result.hasLobbyType = YES;
-  result.lobbyType = value;
+  _builderResult.hasLobbyType = YES;
+  _builderResult.lobbyType = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearLobbyType {
-  result.hasLobbyType = NO;
-  result.lobbyType = 0;
+  _builderResult.hasLobbyType = NO;
+  _builderResult.lobbyType = 0;
   return self;
 }
 - (BOOL) hasHumanPlayers {
-  return result.hasHumanPlayers;
+  return _builderResult.hasHumanPlayers;
 }
 - (uint32_t) humanPlayers {
-  return result.humanPlayers;
+  return _builderResult.humanPlayers;
 }
 - (CMsgDOTAMatch_Builder*) setHumanPlayers:(uint32_t) value {
-  result.hasHumanPlayers = YES;
-  result.humanPlayers = value;
+  _builderResult.hasHumanPlayers = YES;
+  _builderResult.humanPlayers = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearHumanPlayers {
-  result.hasHumanPlayers = NO;
-  result.humanPlayers = 0;
+  _builderResult.hasHumanPlayers = NO;
+  _builderResult.humanPlayers = 0;
   return self;
 }
 - (BOOL) hasAverageSkill {
-  return result.hasAverageSkill;
+  return _builderResult.hasAverageSkill;
 }
 - (uint32_t) averageSkill {
-  return result.averageSkill;
+  return _builderResult.averageSkill;
 }
 - (CMsgDOTAMatch_Builder*) setAverageSkill:(uint32_t) value {
-  result.hasAverageSkill = YES;
-  result.averageSkill = value;
+  _builderResult.hasAverageSkill = YES;
+  _builderResult.averageSkill = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearAverageSkill {
-  result.hasAverageSkill = NO;
-  result.averageSkill = 0;
+  _builderResult.hasAverageSkill = NO;
+  _builderResult.averageSkill = 0;
   return self;
 }
 - (BOOL) hasGameBalance {
-  return result.hasGameBalance;
+  return _builderResult.hasGameBalance;
 }
 - (Float32) gameBalance {
-  return result.gameBalance;
+  return _builderResult.gameBalance;
 }
 - (CMsgDOTAMatch_Builder*) setGameBalance:(Float32) value {
-  result.hasGameBalance = YES;
-  result.gameBalance = value;
+  _builderResult.hasGameBalance = YES;
+  _builderResult.gameBalance = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearGameBalance {
-  result.hasGameBalance = NO;
-  result.gameBalance = 0;
+  _builderResult.hasGameBalance = NO;
+  _builderResult.gameBalance = 0;
   return self;
 }
 - (BOOL) hasRadiantTeamId {
-  return result.hasRadiantTeamId;
+  return _builderResult.hasRadiantTeamId;
 }
 - (uint32_t) radiantTeamId {
-  return result.radiantTeamId;
+  return _builderResult.radiantTeamId;
 }
 - (CMsgDOTAMatch_Builder*) setRadiantTeamId:(uint32_t) value {
-  result.hasRadiantTeamId = YES;
-  result.radiantTeamId = value;
+  _builderResult.hasRadiantTeamId = YES;
+  _builderResult.radiantTeamId = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearRadiantTeamId {
-  result.hasRadiantTeamId = NO;
-  result.radiantTeamId = 0;
+  _builderResult.hasRadiantTeamId = NO;
+  _builderResult.radiantTeamId = 0;
   return self;
 }
 - (BOOL) hasDireTeamId {
-  return result.hasDireTeamId;
+  return _builderResult.hasDireTeamId;
 }
 - (uint32_t) direTeamId {
-  return result.direTeamId;
+  return _builderResult.direTeamId;
 }
 - (CMsgDOTAMatch_Builder*) setDireTeamId:(uint32_t) value {
-  result.hasDireTeamId = YES;
-  result.direTeamId = value;
+  _builderResult.hasDireTeamId = YES;
+  _builderResult.direTeamId = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearDireTeamId {
-  result.hasDireTeamId = NO;
-  result.direTeamId = 0;
+  _builderResult.hasDireTeamId = NO;
+  _builderResult.direTeamId = 0;
   return self;
 }
 - (BOOL) hasLeagueid {
-  return result.hasLeagueid;
+  return _builderResult.hasLeagueid;
 }
 - (uint32_t) leagueid {
-  return result.leagueid;
+  return _builderResult.leagueid;
 }
 - (CMsgDOTAMatch_Builder*) setLeagueid:(uint32_t) value {
-  result.hasLeagueid = YES;
-  result.leagueid = value;
+  _builderResult.hasLeagueid = YES;
+  _builderResult.leagueid = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearLeagueid {
-  result.hasLeagueid = NO;
-  result.leagueid = 0;
+  _builderResult.hasLeagueid = NO;
+  _builderResult.leagueid = 0;
   return self;
 }
 - (BOOL) hasRadiantName {
-  return result.hasRadiantName;
+  return _builderResult.hasRadiantName;
 }
 - (NSString*) radiantName {
-  return result.radiantName;
+  return _builderResult.radiantName;
 }
 - (CMsgDOTAMatch_Builder*) setRadiantName:(NSString*) value {
-  result.hasRadiantName = YES;
-  result.radiantName = value;
+  _builderResult.hasRadiantName = YES;
+  _builderResult.radiantName = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearRadiantName {
-  result.hasRadiantName = NO;
-  result.radiantName = @"";
+  _builderResult.hasRadiantName = NO;
+  _builderResult.radiantName = @"";
   return self;
 }
 - (BOOL) hasDireName {
-  return result.hasDireName;
+  return _builderResult.hasDireName;
 }
 - (NSString*) direName {
-  return result.direName;
+  return _builderResult.direName;
 }
 - (CMsgDOTAMatch_Builder*) setDireName:(NSString*) value {
-  result.hasDireName = YES;
-  result.direName = value;
+  _builderResult.hasDireName = YES;
+  _builderResult.direName = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearDireName {
-  result.hasDireName = NO;
-  result.direName = @"";
+  _builderResult.hasDireName = NO;
+  _builderResult.direName = @"";
   return self;
 }
 - (BOOL) hasRadiantLogo {
-  return result.hasRadiantLogo;
+  return _builderResult.hasRadiantLogo;
 }
 - (uint64_t) radiantLogo {
-  return result.radiantLogo;
+  return _builderResult.radiantLogo;
 }
 - (CMsgDOTAMatch_Builder*) setRadiantLogo:(uint64_t) value {
-  result.hasRadiantLogo = YES;
-  result.radiantLogo = value;
+  _builderResult.hasRadiantLogo = YES;
+  _builderResult.radiantLogo = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearRadiantLogo {
-  result.hasRadiantLogo = NO;
-  result.radiantLogo = 0L;
+  _builderResult.hasRadiantLogo = NO;
+  _builderResult.radiantLogo = 0L;
   return self;
 }
 - (BOOL) hasDireLogo {
-  return result.hasDireLogo;
+  return _builderResult.hasDireLogo;
 }
 - (uint64_t) direLogo {
-  return result.direLogo;
+  return _builderResult.direLogo;
 }
 - (CMsgDOTAMatch_Builder*) setDireLogo:(uint64_t) value {
-  result.hasDireLogo = YES;
-  result.direLogo = value;
+  _builderResult.hasDireLogo = YES;
+  _builderResult.direLogo = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearDireLogo {
-  result.hasDireLogo = NO;
-  result.direLogo = 0L;
+  _builderResult.hasDireLogo = NO;
+  _builderResult.direLogo = 0L;
   return self;
 }
 - (BOOL) hasRadiantTeamComplete {
-  return result.hasRadiantTeamComplete;
+  return _builderResult.hasRadiantTeamComplete;
 }
 - (uint32_t) radiantTeamComplete {
-  return result.radiantTeamComplete;
+  return _builderResult.radiantTeamComplete;
 }
 - (CMsgDOTAMatch_Builder*) setRadiantTeamComplete:(uint32_t) value {
-  result.hasRadiantTeamComplete = YES;
-  result.radiantTeamComplete = value;
+  _builderResult.hasRadiantTeamComplete = YES;
+  _builderResult.radiantTeamComplete = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearRadiantTeamComplete {
-  result.hasRadiantTeamComplete = NO;
-  result.radiantTeamComplete = 0;
+  _builderResult.hasRadiantTeamComplete = NO;
+  _builderResult.radiantTeamComplete = 0;
   return self;
 }
 - (BOOL) hasDireTeamComplete {
-  return result.hasDireTeamComplete;
+  return _builderResult.hasDireTeamComplete;
 }
 - (uint32_t) direTeamComplete {
-  return result.direTeamComplete;
+  return _builderResult.direTeamComplete;
 }
 - (CMsgDOTAMatch_Builder*) setDireTeamComplete:(uint32_t) value {
-  result.hasDireTeamComplete = YES;
-  result.direTeamComplete = value;
+  _builderResult.hasDireTeamComplete = YES;
+  _builderResult.direTeamComplete = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearDireTeamComplete {
-  result.hasDireTeamComplete = NO;
-  result.direTeamComplete = 0;
+  _builderResult.hasDireTeamComplete = NO;
+  _builderResult.direTeamComplete = 0;
   return self;
 }
 - (BOOL) hasPositiveVotes {
-  return result.hasPositiveVotes;
+  return _builderResult.hasPositiveVotes;
 }
 - (uint32_t) positiveVotes {
-  return result.positiveVotes;
+  return _builderResult.positiveVotes;
 }
 - (CMsgDOTAMatch_Builder*) setPositiveVotes:(uint32_t) value {
-  result.hasPositiveVotes = YES;
-  result.positiveVotes = value;
+  _builderResult.hasPositiveVotes = YES;
+  _builderResult.positiveVotes = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearPositiveVotes {
-  result.hasPositiveVotes = NO;
-  result.positiveVotes = 0;
+  _builderResult.hasPositiveVotes = NO;
+  _builderResult.positiveVotes = 0;
   return self;
 }
 - (BOOL) hasNegativeVotes {
-  return result.hasNegativeVotes;
+  return _builderResult.hasNegativeVotes;
 }
 - (uint32_t) negativeVotes {
-  return result.negativeVotes;
+  return _builderResult.negativeVotes;
 }
 - (CMsgDOTAMatch_Builder*) setNegativeVotes:(uint32_t) value {
-  result.hasNegativeVotes = YES;
-  result.negativeVotes = value;
+  _builderResult.hasNegativeVotes = YES;
+  _builderResult.negativeVotes = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) clearNegativeVotes {
-  result.hasNegativeVotes = NO;
-  result.negativeVotes = 0;
+  _builderResult.hasNegativeVotes = NO;
+  _builderResult.negativeVotes = 0;
   return self;
 }
 - (BOOL) hasgame_mode {
-  return result.hasgame_mode;
+  return _builderResult.hasgame_mode;
 }
 - (DOTA_GameMode) game_mode {
-  return result.game_mode;
+  return _builderResult.game_mode;
 }
 - (CMsgDOTAMatch_Builder*) setgame_mode:(DOTA_GameMode) value {
-  result.hasgame_mode = YES;
-  result.game_mode = value;
+  _builderResult.hasgame_mode = YES;
+  _builderResult.game_mode = value;
   return self;
 }
 - (CMsgDOTAMatch_Builder*) cleargame_mode {
-  result.hasgame_mode = NO;
-  result.game_mode = DOTA_GameModeDOTA_GAMEMODE_NONE;
+  _builderResult.hasgame_mode = NO;
+  _builderResult.game_mode = DOTA_GameModeDOTA_GAMEMODE_NONE;
   return self;
 }
 @end
@@ -34353,10 +34353,10 @@ static CMsgDOTAPlayerMatchHistory* defaultCMsgDOTAPlayerMatchHistoryInstance = n
     return self;
   }
   if (other.matchIdsArray.count > 0) {
-    if (result.matchIdsArray == nil) {
-      result.matchIdsArray = [[other.matchIdsArray copyWithZone:[other.matchIdsArray zone]] autorelease];
+    if (_builderResult.matchIdsArray == nil) {
+      _builderResult.matchIdsArray = [[other.matchIdsArray copyWithZone:[other.matchIdsArray zone]] autorelease];
     } else {
-      [result.matchIdsArray appendArray:other.matchIdsArray];
+      [_builderResult.matchIdsArray appendArray:other.matchIdsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -34388,28 +34388,28 @@ static CMsgDOTAPlayerMatchHistory* defaultCMsgDOTAPlayerMatchHistoryInstance = n
   }
 }
 - (PBAppendableArray *)matchIds {
-  return result.matchIdsArray;
+  return _builderResult.matchIdsArray;
 }
 - (uint32_t)matchIdsAtIndex:(NSUInteger)index {
-  return [result matchIdsAtIndex:index];
+  return [_builderResult matchIdsAtIndex:index];
 }
 - (CMsgDOTAPlayerMatchHistory_Builder *)addMatchIds:(uint32_t)value {
-  if (result.matchIdsArray == nil) {
-    result.matchIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.matchIdsArray == nil) {
+    _builderResult.matchIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.matchIdsArray addUint32:value];
+  [_builderResult.matchIdsArray addUint32:value];
   return self;
 }
 - (CMsgDOTAPlayerMatchHistory_Builder *)setMatchIdsArray:(NSArray *)array {
-  result.matchIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.matchIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTAPlayerMatchHistory_Builder *)setMatchIdsValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.matchIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.matchIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTAPlayerMatchHistory_Builder *)clearMatchIds {
-  result.matchIdsArray = nil;
+  _builderResult.matchIdsArray = nil;
   return self;
 }
 @end
@@ -34630,10 +34630,10 @@ static CMsgDOTAMatchHistoryFilter* defaultCMsgDOTAMatchHistoryFilterInstance = n
     return self;
   }
   if (other.matchIdsArray.count > 0) {
-    if (result.matchIdsArray == nil) {
-      result.matchIdsArray = [[other.matchIdsArray copyWithZone:[other.matchIdsArray zone]] autorelease];
+    if (_builderResult.matchIdsArray == nil) {
+      _builderResult.matchIdsArray = [[other.matchIdsArray copyWithZone:[other.matchIdsArray zone]] autorelease];
     } else {
-      [result.matchIdsArray appendArray:other.matchIdsArray];
+      [_builderResult.matchIdsArray appendArray:other.matchIdsArray];
     }
   }
   if (other.hasNewestMatchIdAtLastQuery) {
@@ -34679,60 +34679,60 @@ static CMsgDOTAMatchHistoryFilter* defaultCMsgDOTAMatchHistoryFilterInstance = n
   }
 }
 - (PBAppendableArray *)matchIds {
-  return result.matchIdsArray;
+  return _builderResult.matchIdsArray;
 }
 - (uint32_t)matchIdsAtIndex:(NSUInteger)index {
-  return [result matchIdsAtIndex:index];
+  return [_builderResult matchIdsAtIndex:index];
 }
 - (CMsgDOTAMatchHistoryFilter_Builder *)addMatchIds:(uint32_t)value {
-  if (result.matchIdsArray == nil) {
-    result.matchIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.matchIdsArray == nil) {
+    _builderResult.matchIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.matchIdsArray addUint32:value];
+  [_builderResult.matchIdsArray addUint32:value];
   return self;
 }
 - (CMsgDOTAMatchHistoryFilter_Builder *)setMatchIdsArray:(NSArray *)array {
-  result.matchIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.matchIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTAMatchHistoryFilter_Builder *)setMatchIdsValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.matchIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.matchIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTAMatchHistoryFilter_Builder *)clearMatchIds {
-  result.matchIdsArray = nil;
+  _builderResult.matchIdsArray = nil;
   return self;
 }
 - (BOOL) hasNewestMatchIdAtLastQuery {
-  return result.hasNewestMatchIdAtLastQuery;
+  return _builderResult.hasNewestMatchIdAtLastQuery;
 }
 - (uint32_t) newestMatchIdAtLastQuery {
-  return result.newestMatchIdAtLastQuery;
+  return _builderResult.newestMatchIdAtLastQuery;
 }
 - (CMsgDOTAMatchHistoryFilter_Builder*) setNewestMatchIdAtLastQuery:(uint32_t) value {
-  result.hasNewestMatchIdAtLastQuery = YES;
-  result.newestMatchIdAtLastQuery = value;
+  _builderResult.hasNewestMatchIdAtLastQuery = YES;
+  _builderResult.newestMatchIdAtLastQuery = value;
   return self;
 }
 - (CMsgDOTAMatchHistoryFilter_Builder*) clearNewestMatchIdAtLastQuery {
-  result.hasNewestMatchIdAtLastQuery = NO;
-  result.newestMatchIdAtLastQuery = 0;
+  _builderResult.hasNewestMatchIdAtLastQuery = NO;
+  _builderResult.newestMatchIdAtLastQuery = 0;
   return self;
 }
 - (BOOL) hasTimeLastQuery {
-  return result.hasTimeLastQuery;
+  return _builderResult.hasTimeLastQuery;
 }
 - (uint32_t) timeLastQuery {
-  return result.timeLastQuery;
+  return _builderResult.timeLastQuery;
 }
 - (CMsgDOTAMatchHistoryFilter_Builder*) setTimeLastQuery:(uint32_t) value {
-  result.hasTimeLastQuery = YES;
-  result.timeLastQuery = value;
+  _builderResult.hasTimeLastQuery = YES;
+  _builderResult.timeLastQuery = value;
   return self;
 }
 - (CMsgDOTAMatchHistoryFilter_Builder*) clearTimeLastQuery {
-  result.hasTimeLastQuery = NO;
-  result.timeLastQuery = 0;
+  _builderResult.hasTimeLastQuery = NO;
+  _builderResult.timeLastQuery = 0;
   return self;
 }
 @end
@@ -35379,243 +35379,243 @@ BOOL CMsgDOTARequestMatches_SkillLevelIsValidValue(CMsgDOTARequestMatches_SkillL
   }
 }
 - (BOOL) hasPlayerName {
-  return result.hasPlayerName;
+  return _builderResult.hasPlayerName;
 }
 - (NSString*) playerName {
-  return result.playerName;
+  return _builderResult.playerName;
 }
 - (CMsgDOTARequestMatches_Builder*) setPlayerName:(NSString*) value {
-  result.hasPlayerName = YES;
-  result.playerName = value;
+  _builderResult.hasPlayerName = YES;
+  _builderResult.playerName = value;
   return self;
 }
 - (CMsgDOTARequestMatches_Builder*) clearPlayerName {
-  result.hasPlayerName = NO;
-  result.playerName = @"";
+  _builderResult.hasPlayerName = NO;
+  _builderResult.playerName = @"";
   return self;
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CMsgDOTARequestMatches_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CMsgDOTARequestMatches_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 - (BOOL) hasGameMode {
-  return result.hasGameMode;
+  return _builderResult.hasGameMode;
 }
 - (uint32_t) gameMode {
-  return result.gameMode;
+  return _builderResult.gameMode;
 }
 - (CMsgDOTARequestMatches_Builder*) setGameMode:(uint32_t) value {
-  result.hasGameMode = YES;
-  result.gameMode = value;
+  _builderResult.hasGameMode = YES;
+  _builderResult.gameMode = value;
   return self;
 }
 - (CMsgDOTARequestMatches_Builder*) clearGameMode {
-  result.hasGameMode = NO;
-  result.gameMode = 0;
+  _builderResult.hasGameMode = NO;
+  _builderResult.gameMode = 0;
   return self;
 }
 - (BOOL) hasDateMin {
-  return result.hasDateMin;
+  return _builderResult.hasDateMin;
 }
 - (uint32_t) dateMin {
-  return result.dateMin;
+  return _builderResult.dateMin;
 }
 - (CMsgDOTARequestMatches_Builder*) setDateMin:(uint32_t) value {
-  result.hasDateMin = YES;
-  result.dateMin = value;
+  _builderResult.hasDateMin = YES;
+  _builderResult.dateMin = value;
   return self;
 }
 - (CMsgDOTARequestMatches_Builder*) clearDateMin {
-  result.hasDateMin = NO;
-  result.dateMin = 0;
+  _builderResult.hasDateMin = NO;
+  _builderResult.dateMin = 0;
   return self;
 }
 - (BOOL) hasDateMax {
-  return result.hasDateMax;
+  return _builderResult.hasDateMax;
 }
 - (uint32_t) dateMax {
-  return result.dateMax;
+  return _builderResult.dateMax;
 }
 - (CMsgDOTARequestMatches_Builder*) setDateMax:(uint32_t) value {
-  result.hasDateMax = YES;
-  result.dateMax = value;
+  _builderResult.hasDateMax = YES;
+  _builderResult.dateMax = value;
   return self;
 }
 - (CMsgDOTARequestMatches_Builder*) clearDateMax {
-  result.hasDateMax = NO;
-  result.dateMax = 0;
+  _builderResult.hasDateMax = NO;
+  _builderResult.dateMax = 0;
   return self;
 }
 - (BOOL) hasFriendsOnly {
-  return result.hasFriendsOnly;
+  return _builderResult.hasFriendsOnly;
 }
 - (BOOL) friendsOnly {
-  return result.friendsOnly;
+  return _builderResult.friendsOnly;
 }
 - (CMsgDOTARequestMatches_Builder*) setFriendsOnly:(BOOL) value {
-  result.hasFriendsOnly = YES;
-  result.friendsOnly = value;
+  _builderResult.hasFriendsOnly = YES;
+  _builderResult.friendsOnly = value;
   return self;
 }
 - (CMsgDOTARequestMatches_Builder*) clearFriendsOnly {
-  result.hasFriendsOnly = NO;
-  result.friendsOnly = NO;
+  _builderResult.hasFriendsOnly = NO;
+  _builderResult.friendsOnly = NO;
   return self;
 }
 - (BOOL) hasRecentlyPlayedOnly {
-  return result.hasRecentlyPlayedOnly;
+  return _builderResult.hasRecentlyPlayedOnly;
 }
 - (BOOL) recentlyPlayedOnly {
-  return result.recentlyPlayedOnly;
+  return _builderResult.recentlyPlayedOnly;
 }
 - (CMsgDOTARequestMatches_Builder*) setRecentlyPlayedOnly:(BOOL) value {
-  result.hasRecentlyPlayedOnly = YES;
-  result.recentlyPlayedOnly = value;
+  _builderResult.hasRecentlyPlayedOnly = YES;
+  _builderResult.recentlyPlayedOnly = value;
   return self;
 }
 - (CMsgDOTARequestMatches_Builder*) clearRecentlyPlayedOnly {
-  result.hasRecentlyPlayedOnly = NO;
-  result.recentlyPlayedOnly = NO;
+  _builderResult.hasRecentlyPlayedOnly = NO;
+  _builderResult.recentlyPlayedOnly = NO;
   return self;
 }
 - (BOOL) hasMatchesRequested {
-  return result.hasMatchesRequested;
+  return _builderResult.hasMatchesRequested;
 }
 - (uint32_t) matchesRequested {
-  return result.matchesRequested;
+  return _builderResult.matchesRequested;
 }
 - (CMsgDOTARequestMatches_Builder*) setMatchesRequested:(uint32_t) value {
-  result.hasMatchesRequested = YES;
-  result.matchesRequested = value;
+  _builderResult.hasMatchesRequested = YES;
+  _builderResult.matchesRequested = value;
   return self;
 }
 - (CMsgDOTARequestMatches_Builder*) clearMatchesRequested {
-  result.hasMatchesRequested = NO;
-  result.matchesRequested = 0;
+  _builderResult.hasMatchesRequested = NO;
+  _builderResult.matchesRequested = 0;
   return self;
 }
 - (BOOL) hasStartAtMatchId {
-  return result.hasStartAtMatchId;
+  return _builderResult.hasStartAtMatchId;
 }
 - (uint32_t) startAtMatchId {
-  return result.startAtMatchId;
+  return _builderResult.startAtMatchId;
 }
 - (CMsgDOTARequestMatches_Builder*) setStartAtMatchId:(uint32_t) value {
-  result.hasStartAtMatchId = YES;
-  result.startAtMatchId = value;
+  _builderResult.hasStartAtMatchId = YES;
+  _builderResult.startAtMatchId = value;
   return self;
 }
 - (CMsgDOTARequestMatches_Builder*) clearStartAtMatchId {
-  result.hasStartAtMatchId = NO;
-  result.startAtMatchId = 0;
+  _builderResult.hasStartAtMatchId = NO;
+  _builderResult.startAtMatchId = 0;
   return self;
 }
 - (BOOL) hasMinPlayers {
-  return result.hasMinPlayers;
+  return _builderResult.hasMinPlayers;
 }
 - (uint32_t) minPlayers {
-  return result.minPlayers;
+  return _builderResult.minPlayers;
 }
 - (CMsgDOTARequestMatches_Builder*) setMinPlayers:(uint32_t) value {
-  result.hasMinPlayers = YES;
-  result.minPlayers = value;
+  _builderResult.hasMinPlayers = YES;
+  _builderResult.minPlayers = value;
   return self;
 }
 - (CMsgDOTARequestMatches_Builder*) clearMinPlayers {
-  result.hasMinPlayers = NO;
-  result.minPlayers = 0;
+  _builderResult.hasMinPlayers = NO;
+  _builderResult.minPlayers = 0;
   return self;
 }
 - (BOOL) hasRequestId {
-  return result.hasRequestId;
+  return _builderResult.hasRequestId;
 }
 - (uint32_t) requestId {
-  return result.requestId;
+  return _builderResult.requestId;
 }
 - (CMsgDOTARequestMatches_Builder*) setRequestId:(uint32_t) value {
-  result.hasRequestId = YES;
-  result.requestId = value;
+  _builderResult.hasRequestId = YES;
+  _builderResult.requestId = value;
   return self;
 }
 - (CMsgDOTARequestMatches_Builder*) clearRequestId {
-  result.hasRequestId = NO;
-  result.requestId = 0;
+  _builderResult.hasRequestId = NO;
+  _builderResult.requestId = 0;
   return self;
 }
 - (BOOL) hasTournamentGamesOnly {
-  return result.hasTournamentGamesOnly;
+  return _builderResult.hasTournamentGamesOnly;
 }
 - (BOOL) tournamentGamesOnly {
-  return result.tournamentGamesOnly;
+  return _builderResult.tournamentGamesOnly;
 }
 - (CMsgDOTARequestMatches_Builder*) setTournamentGamesOnly:(BOOL) value {
-  result.hasTournamentGamesOnly = YES;
-  result.tournamentGamesOnly = value;
+  _builderResult.hasTournamentGamesOnly = YES;
+  _builderResult.tournamentGamesOnly = value;
   return self;
 }
 - (CMsgDOTARequestMatches_Builder*) clearTournamentGamesOnly {
-  result.hasTournamentGamesOnly = NO;
-  result.tournamentGamesOnly = NO;
+  _builderResult.hasTournamentGamesOnly = NO;
+  _builderResult.tournamentGamesOnly = NO;
   return self;
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgDOTARequestMatches_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgDOTARequestMatches_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasLeagueId {
-  return result.hasLeagueId;
+  return _builderResult.hasLeagueId;
 }
 - (uint32_t) leagueId {
-  return result.leagueId;
+  return _builderResult.leagueId;
 }
 - (CMsgDOTARequestMatches_Builder*) setLeagueId:(uint32_t) value {
-  result.hasLeagueId = YES;
-  result.leagueId = value;
+  _builderResult.hasLeagueId = YES;
+  _builderResult.leagueId = value;
   return self;
 }
 - (CMsgDOTARequestMatches_Builder*) clearLeagueId {
-  result.hasLeagueId = NO;
-  result.leagueId = 0;
+  _builderResult.hasLeagueId = NO;
+  _builderResult.leagueId = 0;
   return self;
 }
 - (BOOL) hasskill {
-  return result.hasskill;
+  return _builderResult.hasskill;
 }
 - (CMsgDOTARequestMatches_SkillLevel) skill {
-  return result.skill;
+  return _builderResult.skill;
 }
 - (CMsgDOTARequestMatches_Builder*) setskill:(CMsgDOTARequestMatches_SkillLevel) value {
-  result.hasskill = YES;
-  result.skill = value;
+  _builderResult.hasskill = YES;
+  _builderResult.skill = value;
   return self;
 }
 - (CMsgDOTARequestMatches_Builder*) clearskill {
-  result.hasskill = NO;
-  result.skill = CMsgDOTARequestMatches_SkillLevelAny;
+  _builderResult.hasskill = NO;
+  _builderResult.skill = CMsgDOTARequestMatches_SkillLevelAny;
   return self;
 }
 @end
@@ -35851,10 +35851,10 @@ static CMsgDOTARequestMatchesResponse* defaultCMsgDOTARequestMatchesResponseInst
     return self;
   }
   if (other.matchesArray.count > 0) {
-    if (result.matchesArray == nil) {
-      result.matchesArray = [[other.matchesArray copyWithZone:[other.matchesArray zone]] autorelease];
+    if (_builderResult.matchesArray == nil) {
+      _builderResult.matchesArray = [[other.matchesArray copyWithZone:[other.matchesArray zone]] autorelease];
     } else {
-      [result.matchesArray appendArray:other.matchesArray];
+      [_builderResult.matchesArray appendArray:other.matchesArray];
     }
   }
   if (other.hasRequestId) {
@@ -35909,76 +35909,76 @@ static CMsgDOTARequestMatchesResponse* defaultCMsgDOTARequestMatchesResponseInst
   }
 }
 - (PBAppendableArray *)matches {
-  return result.matchesArray;
+  return _builderResult.matchesArray;
 }
 - (CMsgDOTAMatch*)matchesAtIndex:(NSUInteger)index {
-  return [result matchesAtIndex:index];
+  return [_builderResult matchesAtIndex:index];
 }
 - (CMsgDOTARequestMatchesResponse_Builder *)addMatches:(CMsgDOTAMatch*)value {
-  if (result.matchesArray == nil) {
-    result.matchesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.matchesArray == nil) {
+    _builderResult.matchesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.matchesArray addObject:value];
+  [_builderResult.matchesArray addObject:value];
   return self;
 }
 - (CMsgDOTARequestMatchesResponse_Builder *)setMatchesArray:(NSArray *)array {
-  result.matchesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.matchesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTARequestMatchesResponse_Builder *)setMatchesValues:(const CMsgDOTAMatch* *)values count:(NSUInteger)count {
-  result.matchesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.matchesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTARequestMatchesResponse_Builder *)clearMatches {
-  result.matchesArray = nil;
+  _builderResult.matchesArray = nil;
   return self;
 }
 - (BOOL) hasRequestId {
-  return result.hasRequestId;
+  return _builderResult.hasRequestId;
 }
 - (uint32_t) requestId {
-  return result.requestId;
+  return _builderResult.requestId;
 }
 - (CMsgDOTARequestMatchesResponse_Builder*) setRequestId:(uint32_t) value {
-  result.hasRequestId = YES;
-  result.requestId = value;
+  _builderResult.hasRequestId = YES;
+  _builderResult.requestId = value;
   return self;
 }
 - (CMsgDOTARequestMatchesResponse_Builder*) clearRequestId {
-  result.hasRequestId = NO;
-  result.requestId = 0;
+  _builderResult.hasRequestId = NO;
+  _builderResult.requestId = 0;
   return self;
 }
 - (BOOL) hasTotalResults {
-  return result.hasTotalResults;
+  return _builderResult.hasTotalResults;
 }
 - (uint32_t) totalResults {
-  return result.totalResults;
+  return _builderResult.totalResults;
 }
 - (CMsgDOTARequestMatchesResponse_Builder*) setTotalResults:(uint32_t) value {
-  result.hasTotalResults = YES;
-  result.totalResults = value;
+  _builderResult.hasTotalResults = YES;
+  _builderResult.totalResults = value;
   return self;
 }
 - (CMsgDOTARequestMatchesResponse_Builder*) clearTotalResults {
-  result.hasTotalResults = NO;
-  result.totalResults = 0;
+  _builderResult.hasTotalResults = NO;
+  _builderResult.totalResults = 0;
   return self;
 }
 - (BOOL) hasResultsRemaining {
-  return result.hasResultsRemaining;
+  return _builderResult.hasResultsRemaining;
 }
 - (uint32_t) resultsRemaining {
-  return result.resultsRemaining;
+  return _builderResult.resultsRemaining;
 }
 - (CMsgDOTARequestMatchesResponse_Builder*) setResultsRemaining:(uint32_t) value {
-  result.hasResultsRemaining = YES;
-  result.resultsRemaining = value;
+  _builderResult.hasResultsRemaining = YES;
+  _builderResult.resultsRemaining = value;
   return self;
 }
 - (CMsgDOTARequestMatchesResponse_Builder*) clearResultsRemaining {
-  result.hasResultsRemaining = NO;
-  result.resultsRemaining = 0;
+  _builderResult.hasResultsRemaining = NO;
+  _builderResult.resultsRemaining = 0;
   return self;
 }
 @end
@@ -36231,35 +36231,35 @@ BOOL CMsgDOTAPopup_PopupIDIsValidValue(CMsgDOTAPopup_PopupID value) {
   }
 }
 - (BOOL) hasid {
-  return result.hasid;
+  return _builderResult.hasid;
 }
 - (CMsgDOTAPopup_PopupID) id {
-  return result.id;
+  return _builderResult.id;
 }
 - (CMsgDOTAPopup_Builder*) setid:(CMsgDOTAPopup_PopupID) value {
-  result.hasid = YES;
-  result.id = value;
+  _builderResult.hasid = YES;
+  _builderResult.id = value;
   return self;
 }
 - (CMsgDOTAPopup_Builder*) clearid {
-  result.hasid = NO;
-  result.id = CMsgDOTAPopup_PopupIDKICKED_FROM_LOBBY;
+  _builderResult.hasid = NO;
+  _builderResult.id = CMsgDOTAPopup_PopupIDKICKED_FROM_LOBBY;
   return self;
 }
 - (BOOL) hasCustomText {
-  return result.hasCustomText;
+  return _builderResult.hasCustomText;
 }
 - (NSString*) customText {
-  return result.customText;
+  return _builderResult.customText;
 }
 - (CMsgDOTAPopup_Builder*) setCustomText:(NSString*) value {
-  result.hasCustomText = YES;
-  result.customText = value;
+  _builderResult.hasCustomText = YES;
+  _builderResult.customText = value;
   return self;
 }
 - (CMsgDOTAPopup_Builder*) clearCustomText {
-  result.hasCustomText = NO;
-  result.customText = @"";
+  _builderResult.hasCustomText = NO;
+  _builderResult.customText = @"";
   return self;
 }
 @end
@@ -36484,35 +36484,35 @@ static CMsgDOTATeamMemberSDO* defaultCMsgDOTATeamMemberSDOInstance = nil;
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgDOTATeamMemberSDO_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgDOTATeamMemberSDO_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasTeamId {
-  return result.hasTeamId;
+  return _builderResult.hasTeamId;
 }
 - (uint32_t) teamId {
-  return result.teamId;
+  return _builderResult.teamId;
 }
 - (CMsgDOTATeamMemberSDO_Builder*) setTeamId:(uint32_t) value {
-  result.hasTeamId = YES;
-  result.teamId = value;
+  _builderResult.hasTeamId = YES;
+  _builderResult.teamId = value;
   return self;
 }
 - (CMsgDOTATeamMemberSDO_Builder*) clearTeamId {
-  result.hasTeamId = NO;
-  result.teamId = 0;
+  _builderResult.hasTeamId = NO;
+  _builderResult.teamId = 0;
   return self;
 }
 @end
@@ -36797,67 +36797,67 @@ static CMsgDOTATeamMember* defaultCMsgDOTATeamMemberInstance = nil;
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgDOTATeamMember_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgDOTATeamMember_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasTeamId {
-  return result.hasTeamId;
+  return _builderResult.hasTeamId;
 }
 - (uint32_t) teamId {
-  return result.teamId;
+  return _builderResult.teamId;
 }
 - (CMsgDOTATeamMember_Builder*) setTeamId:(uint32_t) value {
-  result.hasTeamId = YES;
-  result.teamId = value;
+  _builderResult.hasTeamId = YES;
+  _builderResult.teamId = value;
   return self;
 }
 - (CMsgDOTATeamMember_Builder*) clearTeamId {
-  result.hasTeamId = NO;
-  result.teamId = 0;
+  _builderResult.hasTeamId = NO;
+  _builderResult.teamId = 0;
   return self;
 }
 - (BOOL) hasPermissions {
-  return result.hasPermissions;
+  return _builderResult.hasPermissions;
 }
 - (uint32_t) permissions {
-  return result.permissions;
+  return _builderResult.permissions;
 }
 - (CMsgDOTATeamMember_Builder*) setPermissions:(uint32_t) value {
-  result.hasPermissions = YES;
-  result.permissions = value;
+  _builderResult.hasPermissions = YES;
+  _builderResult.permissions = value;
   return self;
 }
 - (CMsgDOTATeamMember_Builder*) clearPermissions {
-  result.hasPermissions = NO;
-  result.permissions = 0;
+  _builderResult.hasPermissions = NO;
+  _builderResult.permissions = 0;
   return self;
 }
 - (BOOL) hasTimeJoined {
-  return result.hasTimeJoined;
+  return _builderResult.hasTimeJoined;
 }
 - (uint32_t) timeJoined {
-  return result.timeJoined;
+  return _builderResult.timeJoined;
 }
 - (CMsgDOTATeamMember_Builder*) setTimeJoined:(uint32_t) value {
-  result.hasTimeJoined = YES;
-  result.timeJoined = value;
+  _builderResult.hasTimeJoined = YES;
+  _builderResult.timeJoined = value;
   return self;
 }
 - (CMsgDOTATeamMember_Builder*) clearTimeJoined {
-  result.hasTimeJoined = NO;
-  result.timeJoined = 0;
+  _builderResult.hasTimeJoined = NO;
+  _builderResult.timeJoined = 0;
   return self;
 }
 @end
@@ -37435,10 +37435,10 @@ static CMsgDOTATeam* defaultCMsgDOTATeamInstance = nil;
     return self;
   }
   if (other.membersArray.count > 0) {
-    if (result.membersArray == nil) {
-      result.membersArray = [[other.membersArray copyWithZone:[other.membersArray zone]] autorelease];
+    if (_builderResult.membersArray == nil) {
+      _builderResult.membersArray = [[other.membersArray copyWithZone:[other.membersArray zone]] autorelease];
     } else {
-      [result.membersArray appendArray:other.membersArray];
+      [_builderResult.membersArray appendArray:other.membersArray];
     }
   }
   if (other.hasTeamId) {
@@ -37490,10 +37490,10 @@ static CMsgDOTATeam* defaultCMsgDOTATeamInstance = nil;
     [self setFullgamesplayed:other.fullgamesplayed];
   }
   if (other.leaguesArray.count > 0) {
-    if (result.leaguesArray == nil) {
-      result.leaguesArray = [[other.leaguesArray copyWithZone:[other.leaguesArray zone]] autorelease];
+    if (_builderResult.leaguesArray == nil) {
+      _builderResult.leaguesArray = [[other.leaguesArray copyWithZone:[other.leaguesArray zone]] autorelease];
     } else {
-      [result.leaguesArray appendArray:other.leaguesArray];
+      [_builderResult.leaguesArray appendArray:other.leaguesArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -37595,309 +37595,309 @@ static CMsgDOTATeam* defaultCMsgDOTATeamInstance = nil;
   }
 }
 - (PBAppendableArray *)members {
-  return result.membersArray;
+  return _builderResult.membersArray;
 }
 - (CMsgDOTATeamMember*)membersAtIndex:(NSUInteger)index {
-  return [result membersAtIndex:index];
+  return [_builderResult membersAtIndex:index];
 }
 - (CMsgDOTATeam_Builder *)addMembers:(CMsgDOTATeamMember*)value {
-  if (result.membersArray == nil) {
-    result.membersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.membersArray == nil) {
+    _builderResult.membersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.membersArray addObject:value];
+  [_builderResult.membersArray addObject:value];
   return self;
 }
 - (CMsgDOTATeam_Builder *)setMembersArray:(NSArray *)array {
-  result.membersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.membersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTATeam_Builder *)setMembersValues:(const CMsgDOTATeamMember* *)values count:(NSUInteger)count {
-  result.membersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.membersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTATeam_Builder *)clearMembers {
-  result.membersArray = nil;
+  _builderResult.membersArray = nil;
   return self;
 }
 - (BOOL) hasTeamId {
-  return result.hasTeamId;
+  return _builderResult.hasTeamId;
 }
 - (uint32_t) teamId {
-  return result.teamId;
+  return _builderResult.teamId;
 }
 - (CMsgDOTATeam_Builder*) setTeamId:(uint32_t) value {
-  result.hasTeamId = YES;
-  result.teamId = value;
+  _builderResult.hasTeamId = YES;
+  _builderResult.teamId = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearTeamId {
-  result.hasTeamId = NO;
-  result.teamId = 0;
+  _builderResult.hasTeamId = NO;
+  _builderResult.teamId = 0;
   return self;
 }
 - (BOOL) hasName {
-  return result.hasName;
+  return _builderResult.hasName;
 }
 - (NSString*) name {
-  return result.name;
+  return _builderResult.name;
 }
 - (CMsgDOTATeam_Builder*) setName:(NSString*) value {
-  result.hasName = YES;
-  result.name = value;
+  _builderResult.hasName = YES;
+  _builderResult.name = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearName {
-  result.hasName = NO;
-  result.name = @"";
+  _builderResult.hasName = NO;
+  _builderResult.name = @"";
   return self;
 }
 - (BOOL) hasTag {
-  return result.hasTag;
+  return _builderResult.hasTag;
 }
 - (NSString*) tag {
-  return result.tag;
+  return _builderResult.tag;
 }
 - (CMsgDOTATeam_Builder*) setTag:(NSString*) value {
-  result.hasTag = YES;
-  result.tag = value;
+  _builderResult.hasTag = YES;
+  _builderResult.tag = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearTag {
-  result.hasTag = NO;
-  result.tag = @"";
+  _builderResult.hasTag = NO;
+  _builderResult.tag = @"";
   return self;
 }
 - (BOOL) hasAdminId {
-  return result.hasAdminId;
+  return _builderResult.hasAdminId;
 }
 - (uint32_t) adminId {
-  return result.adminId;
+  return _builderResult.adminId;
 }
 - (CMsgDOTATeam_Builder*) setAdminId:(uint32_t) value {
-  result.hasAdminId = YES;
-  result.adminId = value;
+  _builderResult.hasAdminId = YES;
+  _builderResult.adminId = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearAdminId {
-  result.hasAdminId = NO;
-  result.adminId = 0;
+  _builderResult.hasAdminId = NO;
+  _builderResult.adminId = 0;
   return self;
 }
 - (BOOL) hasTimeCreated {
-  return result.hasTimeCreated;
+  return _builderResult.hasTimeCreated;
 }
 - (uint32_t) timeCreated {
-  return result.timeCreated;
+  return _builderResult.timeCreated;
 }
 - (CMsgDOTATeam_Builder*) setTimeCreated:(uint32_t) value {
-  result.hasTimeCreated = YES;
-  result.timeCreated = value;
+  _builderResult.hasTimeCreated = YES;
+  _builderResult.timeCreated = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearTimeCreated {
-  result.hasTimeCreated = NO;
-  result.timeCreated = 0;
+  _builderResult.hasTimeCreated = NO;
+  _builderResult.timeCreated = 0;
   return self;
 }
 - (BOOL) hasDisbanded {
-  return result.hasDisbanded;
+  return _builderResult.hasDisbanded;
 }
 - (BOOL) disbanded {
-  return result.disbanded;
+  return _builderResult.disbanded;
 }
 - (CMsgDOTATeam_Builder*) setDisbanded:(BOOL) value {
-  result.hasDisbanded = YES;
-  result.disbanded = value;
+  _builderResult.hasDisbanded = YES;
+  _builderResult.disbanded = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearDisbanded {
-  result.hasDisbanded = NO;
-  result.disbanded = NO;
+  _builderResult.hasDisbanded = NO;
+  _builderResult.disbanded = NO;
   return self;
 }
 - (BOOL) hasWins {
-  return result.hasWins;
+  return _builderResult.hasWins;
 }
 - (uint32_t) wins {
-  return result.wins;
+  return _builderResult.wins;
 }
 - (CMsgDOTATeam_Builder*) setWins:(uint32_t) value {
-  result.hasWins = YES;
-  result.wins = value;
+  _builderResult.hasWins = YES;
+  _builderResult.wins = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearWins {
-  result.hasWins = NO;
-  result.wins = 0;
+  _builderResult.hasWins = NO;
+  _builderResult.wins = 0;
   return self;
 }
 - (BOOL) hasLosses {
-  return result.hasLosses;
+  return _builderResult.hasLosses;
 }
 - (uint32_t) losses {
-  return result.losses;
+  return _builderResult.losses;
 }
 - (CMsgDOTATeam_Builder*) setLosses:(uint32_t) value {
-  result.hasLosses = YES;
-  result.losses = value;
+  _builderResult.hasLosses = YES;
+  _builderResult.losses = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearLosses {
-  result.hasLosses = NO;
-  result.losses = 0;
+  _builderResult.hasLosses = NO;
+  _builderResult.losses = 0;
   return self;
 }
 - (BOOL) hasRank {
-  return result.hasRank;
+  return _builderResult.hasRank;
 }
 - (uint32_t) rank {
-  return result.rank;
+  return _builderResult.rank;
 }
 - (CMsgDOTATeam_Builder*) setRank:(uint32_t) value {
-  result.hasRank = YES;
-  result.rank = value;
+  _builderResult.hasRank = YES;
+  _builderResult.rank = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearRank {
-  result.hasRank = NO;
-  result.rank = 0;
+  _builderResult.hasRank = NO;
+  _builderResult.rank = 0;
   return self;
 }
 - (BOOL) hasLogo {
-  return result.hasLogo;
+  return _builderResult.hasLogo;
 }
 - (uint64_t) logo {
-  return result.logo;
+  return _builderResult.logo;
 }
 - (CMsgDOTATeam_Builder*) setLogo:(uint64_t) value {
-  result.hasLogo = YES;
-  result.logo = value;
+  _builderResult.hasLogo = YES;
+  _builderResult.logo = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearLogo {
-  result.hasLogo = NO;
-  result.logo = 0L;
+  _builderResult.hasLogo = NO;
+  _builderResult.logo = 0L;
   return self;
 }
 - (BOOL) hasBaseLogo {
-  return result.hasBaseLogo;
+  return _builderResult.hasBaseLogo;
 }
 - (uint64_t) baseLogo {
-  return result.baseLogo;
+  return _builderResult.baseLogo;
 }
 - (CMsgDOTATeam_Builder*) setBaseLogo:(uint64_t) value {
-  result.hasBaseLogo = YES;
-  result.baseLogo = value;
+  _builderResult.hasBaseLogo = YES;
+  _builderResult.baseLogo = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearBaseLogo {
-  result.hasBaseLogo = NO;
-  result.baseLogo = 0L;
+  _builderResult.hasBaseLogo = NO;
+  _builderResult.baseLogo = 0L;
   return self;
 }
 - (BOOL) hasBannerLogo {
-  return result.hasBannerLogo;
+  return _builderResult.hasBannerLogo;
 }
 - (uint64_t) bannerLogo {
-  return result.bannerLogo;
+  return _builderResult.bannerLogo;
 }
 - (CMsgDOTATeam_Builder*) setBannerLogo:(uint64_t) value {
-  result.hasBannerLogo = YES;
-  result.bannerLogo = value;
+  _builderResult.hasBannerLogo = YES;
+  _builderResult.bannerLogo = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearBannerLogo {
-  result.hasBannerLogo = NO;
-  result.bannerLogo = 0L;
+  _builderResult.hasBannerLogo = NO;
+  _builderResult.bannerLogo = 0L;
   return self;
 }
 - (BOOL) hasSponsorLogo {
-  return result.hasSponsorLogo;
+  return _builderResult.hasSponsorLogo;
 }
 - (uint64_t) sponsorLogo {
-  return result.sponsorLogo;
+  return _builderResult.sponsorLogo;
 }
 - (CMsgDOTATeam_Builder*) setSponsorLogo:(uint64_t) value {
-  result.hasSponsorLogo = YES;
-  result.sponsorLogo = value;
+  _builderResult.hasSponsorLogo = YES;
+  _builderResult.sponsorLogo = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearSponsorLogo {
-  result.hasSponsorLogo = NO;
-  result.sponsorLogo = 0L;
+  _builderResult.hasSponsorLogo = NO;
+  _builderResult.sponsorLogo = 0L;
   return self;
 }
 - (BOOL) hasCountryCode {
-  return result.hasCountryCode;
+  return _builderResult.hasCountryCode;
 }
 - (NSString*) countryCode {
-  return result.countryCode;
+  return _builderResult.countryCode;
 }
 - (CMsgDOTATeam_Builder*) setCountryCode:(NSString*) value {
-  result.hasCountryCode = YES;
-  result.countryCode = value;
+  _builderResult.hasCountryCode = YES;
+  _builderResult.countryCode = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearCountryCode {
-  result.hasCountryCode = NO;
-  result.countryCode = @"";
+  _builderResult.hasCountryCode = NO;
+  _builderResult.countryCode = @"";
   return self;
 }
 - (BOOL) hasUrl {
-  return result.hasUrl;
+  return _builderResult.hasUrl;
 }
 - (NSString*) url {
-  return result.url;
+  return _builderResult.url;
 }
 - (CMsgDOTATeam_Builder*) setUrl:(NSString*) value {
-  result.hasUrl = YES;
-  result.url = value;
+  _builderResult.hasUrl = YES;
+  _builderResult.url = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearUrl {
-  result.hasUrl = NO;
-  result.url = @"";
+  _builderResult.hasUrl = NO;
+  _builderResult.url = @"";
   return self;
 }
 - (BOOL) hasFullgamesplayed {
-  return result.hasFullgamesplayed;
+  return _builderResult.hasFullgamesplayed;
 }
 - (uint32_t) fullgamesplayed {
-  return result.fullgamesplayed;
+  return _builderResult.fullgamesplayed;
 }
 - (CMsgDOTATeam_Builder*) setFullgamesplayed:(uint32_t) value {
-  result.hasFullgamesplayed = YES;
-  result.fullgamesplayed = value;
+  _builderResult.hasFullgamesplayed = YES;
+  _builderResult.fullgamesplayed = value;
   return self;
 }
 - (CMsgDOTATeam_Builder*) clearFullgamesplayed {
-  result.hasFullgamesplayed = NO;
-  result.fullgamesplayed = 0;
+  _builderResult.hasFullgamesplayed = NO;
+  _builderResult.fullgamesplayed = 0;
   return self;
 }
 - (PBAppendableArray *)leagues {
-  return result.leaguesArray;
+  return _builderResult.leaguesArray;
 }
 - (uint32_t)leaguesAtIndex:(NSUInteger)index {
-  return [result leaguesAtIndex:index];
+  return [_builderResult leaguesAtIndex:index];
 }
 - (CMsgDOTATeam_Builder *)addLeagues:(uint32_t)value {
-  if (result.leaguesArray == nil) {
-    result.leaguesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.leaguesArray == nil) {
+    _builderResult.leaguesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.leaguesArray addUint32:value];
+  [_builderResult.leaguesArray addUint32:value];
   return self;
 }
 - (CMsgDOTATeam_Builder *)setLeaguesArray:(NSArray *)array {
-  result.leaguesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.leaguesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTATeam_Builder *)setLeaguesValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.leaguesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.leaguesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTATeam_Builder *)clearLeagues {
-  result.leaguesArray = nil;
+  _builderResult.leaguesArray = nil;
   return self;
 }
 @end
@@ -38306,131 +38306,131 @@ static CMsgDOTACreateTeam* defaultCMsgDOTACreateTeamInstance = nil;
   }
 }
 - (BOOL) hasName {
-  return result.hasName;
+  return _builderResult.hasName;
 }
 - (NSString*) name {
-  return result.name;
+  return _builderResult.name;
 }
 - (CMsgDOTACreateTeam_Builder*) setName:(NSString*) value {
-  result.hasName = YES;
-  result.name = value;
+  _builderResult.hasName = YES;
+  _builderResult.name = value;
   return self;
 }
 - (CMsgDOTACreateTeam_Builder*) clearName {
-  result.hasName = NO;
-  result.name = @"";
+  _builderResult.hasName = NO;
+  _builderResult.name = @"";
   return self;
 }
 - (BOOL) hasTag {
-  return result.hasTag;
+  return _builderResult.hasTag;
 }
 - (NSString*) tag {
-  return result.tag;
+  return _builderResult.tag;
 }
 - (CMsgDOTACreateTeam_Builder*) setTag:(NSString*) value {
-  result.hasTag = YES;
-  result.tag = value;
+  _builderResult.hasTag = YES;
+  _builderResult.tag = value;
   return self;
 }
 - (CMsgDOTACreateTeam_Builder*) clearTag {
-  result.hasTag = NO;
-  result.tag = @"";
+  _builderResult.hasTag = NO;
+  _builderResult.tag = @"";
   return self;
 }
 - (BOOL) hasLogo {
-  return result.hasLogo;
+  return _builderResult.hasLogo;
 }
 - (uint64_t) logo {
-  return result.logo;
+  return _builderResult.logo;
 }
 - (CMsgDOTACreateTeam_Builder*) setLogo:(uint64_t) value {
-  result.hasLogo = YES;
-  result.logo = value;
+  _builderResult.hasLogo = YES;
+  _builderResult.logo = value;
   return self;
 }
 - (CMsgDOTACreateTeam_Builder*) clearLogo {
-  result.hasLogo = NO;
-  result.logo = 0L;
+  _builderResult.hasLogo = NO;
+  _builderResult.logo = 0L;
   return self;
 }
 - (BOOL) hasBaseLogo {
-  return result.hasBaseLogo;
+  return _builderResult.hasBaseLogo;
 }
 - (uint64_t) baseLogo {
-  return result.baseLogo;
+  return _builderResult.baseLogo;
 }
 - (CMsgDOTACreateTeam_Builder*) setBaseLogo:(uint64_t) value {
-  result.hasBaseLogo = YES;
-  result.baseLogo = value;
+  _builderResult.hasBaseLogo = YES;
+  _builderResult.baseLogo = value;
   return self;
 }
 - (CMsgDOTACreateTeam_Builder*) clearBaseLogo {
-  result.hasBaseLogo = NO;
-  result.baseLogo = 0L;
+  _builderResult.hasBaseLogo = NO;
+  _builderResult.baseLogo = 0L;
   return self;
 }
 - (BOOL) hasBannerLogo {
-  return result.hasBannerLogo;
+  return _builderResult.hasBannerLogo;
 }
 - (uint64_t) bannerLogo {
-  return result.bannerLogo;
+  return _builderResult.bannerLogo;
 }
 - (CMsgDOTACreateTeam_Builder*) setBannerLogo:(uint64_t) value {
-  result.hasBannerLogo = YES;
-  result.bannerLogo = value;
+  _builderResult.hasBannerLogo = YES;
+  _builderResult.bannerLogo = value;
   return self;
 }
 - (CMsgDOTACreateTeam_Builder*) clearBannerLogo {
-  result.hasBannerLogo = NO;
-  result.bannerLogo = 0L;
+  _builderResult.hasBannerLogo = NO;
+  _builderResult.bannerLogo = 0L;
   return self;
 }
 - (BOOL) hasSponsorLogo {
-  return result.hasSponsorLogo;
+  return _builderResult.hasSponsorLogo;
 }
 - (uint64_t) sponsorLogo {
-  return result.sponsorLogo;
+  return _builderResult.sponsorLogo;
 }
 - (CMsgDOTACreateTeam_Builder*) setSponsorLogo:(uint64_t) value {
-  result.hasSponsorLogo = YES;
-  result.sponsorLogo = value;
+  _builderResult.hasSponsorLogo = YES;
+  _builderResult.sponsorLogo = value;
   return self;
 }
 - (CMsgDOTACreateTeam_Builder*) clearSponsorLogo {
-  result.hasSponsorLogo = NO;
-  result.sponsorLogo = 0L;
+  _builderResult.hasSponsorLogo = NO;
+  _builderResult.sponsorLogo = 0L;
   return self;
 }
 - (BOOL) hasCountryCode {
-  return result.hasCountryCode;
+  return _builderResult.hasCountryCode;
 }
 - (NSString*) countryCode {
-  return result.countryCode;
+  return _builderResult.countryCode;
 }
 - (CMsgDOTACreateTeam_Builder*) setCountryCode:(NSString*) value {
-  result.hasCountryCode = YES;
-  result.countryCode = value;
+  _builderResult.hasCountryCode = YES;
+  _builderResult.countryCode = value;
   return self;
 }
 - (CMsgDOTACreateTeam_Builder*) clearCountryCode {
-  result.hasCountryCode = NO;
-  result.countryCode = @"";
+  _builderResult.hasCountryCode = NO;
+  _builderResult.countryCode = @"";
   return self;
 }
 - (BOOL) hasUrl {
-  return result.hasUrl;
+  return _builderResult.hasUrl;
 }
 - (NSString*) url {
-  return result.url;
+  return _builderResult.url;
 }
 - (CMsgDOTACreateTeam_Builder*) setUrl:(NSString*) value {
-  result.hasUrl = YES;
-  result.url = value;
+  _builderResult.hasUrl = YES;
+  _builderResult.url = value;
   return self;
 }
 - (CMsgDOTACreateTeam_Builder*) clearUrl {
-  result.hasUrl = NO;
-  result.url = @"";
+  _builderResult.hasUrl = NO;
+  _builderResult.url = @"";
   return self;
 }
 @end
@@ -38625,10 +38625,10 @@ BOOL CMsgDOTACreateTeamResponse_ResultIsValidValue(CMsgDOTACreateTeamResponse_Re
     return self;
   }
   if (other.resultsArray.count > 0) {
-    if (result.resultsArray == nil) {
-      result.resultsArray = [[other.resultsArray copyWithZone:[other.resultsArray zone]] autorelease];
+    if (_builderResult.resultsArray == nil) {
+      _builderResult.resultsArray = [[other.resultsArray copyWithZone:[other.resultsArray zone]] autorelease];
     } else {
-      [result.resultsArray appendArray:other.resultsArray];
+      [_builderResult.resultsArray appendArray:other.resultsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -38665,28 +38665,28 @@ BOOL CMsgDOTACreateTeamResponse_ResultIsValidValue(CMsgDOTACreateTeamResponse_Re
   }
 }
 - (PBAppendableArray *)results {
-  return result.resultsArray;
+  return _builderResult.resultsArray;
 }
 - (CMsgDOTACreateTeamResponse_Result)resultsAtIndex:(NSUInteger)index {
-  return [result resultsAtIndex:index];
+  return [_builderResult resultsAtIndex:index];
 }
 - (CMsgDOTACreateTeamResponse_Builder *)addresults:(CMsgDOTACreateTeamResponse_Result)value {
-  if (result.resultsArray == nil) {
-    result.resultsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeInt32];
+  if (_builderResult.resultsArray == nil) {
+    _builderResult.resultsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeInt32];
   }
-  [result.resultsArray addInt32:value];
+  [_builderResult.resultsArray addInt32:value];
   return self;
 }
 - (CMsgDOTACreateTeamResponse_Builder *)setresultsArray:(NSArray *)array {
-  result.resultsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeInt32];
+  _builderResult.resultsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeInt32];
   return self;
 }
 - (CMsgDOTACreateTeamResponse_Builder *)setresultsValues:(const CMsgDOTACreateTeamResponse_Result *)values count:(NSUInteger)count {
-  result.resultsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeInt32];
+  _builderResult.resultsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeInt32];
   return self;
 }
 - (CMsgDOTACreateTeamResponse_Builder *)clearresults {
-  result.resultsArray = nil;
+  _builderResult.resultsArray = nil;
   return self;
 }
 @end
@@ -38971,67 +38971,67 @@ static CMsgDOTAEditTeamLogo* defaultCMsgDOTAEditTeamLogoInstance = nil;
   }
 }
 - (BOOL) hasLogo {
-  return result.hasLogo;
+  return _builderResult.hasLogo;
 }
 - (uint64_t) logo {
-  return result.logo;
+  return _builderResult.logo;
 }
 - (CMsgDOTAEditTeamLogo_Builder*) setLogo:(uint64_t) value {
-  result.hasLogo = YES;
-  result.logo = value;
+  _builderResult.hasLogo = YES;
+  _builderResult.logo = value;
   return self;
 }
 - (CMsgDOTAEditTeamLogo_Builder*) clearLogo {
-  result.hasLogo = NO;
-  result.logo = 0L;
+  _builderResult.hasLogo = NO;
+  _builderResult.logo = 0L;
   return self;
 }
 - (BOOL) hasBaseLogo {
-  return result.hasBaseLogo;
+  return _builderResult.hasBaseLogo;
 }
 - (uint64_t) baseLogo {
-  return result.baseLogo;
+  return _builderResult.baseLogo;
 }
 - (CMsgDOTAEditTeamLogo_Builder*) setBaseLogo:(uint64_t) value {
-  result.hasBaseLogo = YES;
-  result.baseLogo = value;
+  _builderResult.hasBaseLogo = YES;
+  _builderResult.baseLogo = value;
   return self;
 }
 - (CMsgDOTAEditTeamLogo_Builder*) clearBaseLogo {
-  result.hasBaseLogo = NO;
-  result.baseLogo = 0L;
+  _builderResult.hasBaseLogo = NO;
+  _builderResult.baseLogo = 0L;
   return self;
 }
 - (BOOL) hasBannerLogo {
-  return result.hasBannerLogo;
+  return _builderResult.hasBannerLogo;
 }
 - (uint64_t) bannerLogo {
-  return result.bannerLogo;
+  return _builderResult.bannerLogo;
 }
 - (CMsgDOTAEditTeamLogo_Builder*) setBannerLogo:(uint64_t) value {
-  result.hasBannerLogo = YES;
-  result.bannerLogo = value;
+  _builderResult.hasBannerLogo = YES;
+  _builderResult.bannerLogo = value;
   return self;
 }
 - (CMsgDOTAEditTeamLogo_Builder*) clearBannerLogo {
-  result.hasBannerLogo = NO;
-  result.bannerLogo = 0L;
+  _builderResult.hasBannerLogo = NO;
+  _builderResult.bannerLogo = 0L;
   return self;
 }
 - (BOOL) hasSponsorLogo {
-  return result.hasSponsorLogo;
+  return _builderResult.hasSponsorLogo;
 }
 - (uint64_t) sponsorLogo {
-  return result.sponsorLogo;
+  return _builderResult.sponsorLogo;
 }
 - (CMsgDOTAEditTeamLogo_Builder*) setSponsorLogo:(uint64_t) value {
-  result.hasSponsorLogo = YES;
-  result.sponsorLogo = value;
+  _builderResult.hasSponsorLogo = YES;
+  _builderResult.sponsorLogo = value;
   return self;
 }
 - (CMsgDOTAEditTeamLogo_Builder*) clearSponsorLogo {
-  result.hasSponsorLogo = NO;
-  result.sponsorLogo = 0L;
+  _builderResult.hasSponsorLogo = NO;
+  _builderResult.sponsorLogo = 0L;
   return self;
 }
 @end
@@ -39216,10 +39216,10 @@ BOOL CMsgDOTAEditTeamLogoResponse_ResultIsValidValue(CMsgDOTAEditTeamLogoRespons
     return self;
   }
   if (other.resultsArray.count > 0) {
-    if (result.resultsArray == nil) {
-      result.resultsArray = [[other.resultsArray copyWithZone:[other.resultsArray zone]] autorelease];
+    if (_builderResult.resultsArray == nil) {
+      _builderResult.resultsArray = [[other.resultsArray copyWithZone:[other.resultsArray zone]] autorelease];
     } else {
-      [result.resultsArray appendArray:other.resultsArray];
+      [_builderResult.resultsArray appendArray:other.resultsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -39256,28 +39256,28 @@ BOOL CMsgDOTAEditTeamLogoResponse_ResultIsValidValue(CMsgDOTAEditTeamLogoRespons
   }
 }
 - (PBAppendableArray *)results {
-  return result.resultsArray;
+  return _builderResult.resultsArray;
 }
 - (CMsgDOTAEditTeamLogoResponse_Result)resultsAtIndex:(NSUInteger)index {
-  return [result resultsAtIndex:index];
+  return [_builderResult resultsAtIndex:index];
 }
 - (CMsgDOTAEditTeamLogoResponse_Builder *)addresults:(CMsgDOTAEditTeamLogoResponse_Result)value {
-  if (result.resultsArray == nil) {
-    result.resultsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeInt32];
+  if (_builderResult.resultsArray == nil) {
+    _builderResult.resultsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeInt32];
   }
-  [result.resultsArray addInt32:value];
+  [_builderResult.resultsArray addInt32:value];
   return self;
 }
 - (CMsgDOTAEditTeamLogoResponse_Builder *)setresultsArray:(NSArray *)array {
-  result.resultsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeInt32];
+  _builderResult.resultsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeInt32];
   return self;
 }
 - (CMsgDOTAEditTeamLogoResponse_Builder *)setresultsValues:(const CMsgDOTAEditTeamLogoResponse_Result *)values count:(NSUInteger)count {
-  result.resultsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeInt32];
+  _builderResult.resultsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeInt32];
   return self;
 }
 - (CMsgDOTAEditTeamLogoResponse_Builder *)clearresults {
-  result.resultsArray = nil;
+  _builderResult.resultsArray = nil;
   return self;
 }
 @end
@@ -39504,35 +39504,35 @@ static CMsgDOTAEditTeamDetails* defaultCMsgDOTAEditTeamDetailsInstance = nil;
   }
 }
 - (BOOL) hasCountryCode {
-  return result.hasCountryCode;
+  return _builderResult.hasCountryCode;
 }
 - (NSString*) countryCode {
-  return result.countryCode;
+  return _builderResult.countryCode;
 }
 - (CMsgDOTAEditTeamDetails_Builder*) setCountryCode:(NSString*) value {
-  result.hasCountryCode = YES;
-  result.countryCode = value;
+  _builderResult.hasCountryCode = YES;
+  _builderResult.countryCode = value;
   return self;
 }
 - (CMsgDOTAEditTeamDetails_Builder*) clearCountryCode {
-  result.hasCountryCode = NO;
-  result.countryCode = @"";
+  _builderResult.hasCountryCode = NO;
+  _builderResult.countryCode = @"";
   return self;
 }
 - (BOOL) hasUrl {
-  return result.hasUrl;
+  return _builderResult.hasUrl;
 }
 - (NSString*) url {
-  return result.url;
+  return _builderResult.url;
 }
 - (CMsgDOTAEditTeamDetails_Builder*) setUrl:(NSString*) value {
-  result.hasUrl = YES;
-  result.url = value;
+  _builderResult.hasUrl = YES;
+  _builderResult.url = value;
   return self;
 }
 - (CMsgDOTAEditTeamDetails_Builder*) clearUrl {
-  result.hasUrl = NO;
-  result.url = @"";
+  _builderResult.hasUrl = NO;
+  _builderResult.url = @"";
   return self;
 }
 @end
@@ -39716,10 +39716,10 @@ BOOL CMsgDOTAEditTeamDetailsResponse_ResultIsValidValue(CMsgDOTAEditTeamDetailsR
     return self;
   }
   if (other.resultsArray.count > 0) {
-    if (result.resultsArray == nil) {
-      result.resultsArray = [[other.resultsArray copyWithZone:[other.resultsArray zone]] autorelease];
+    if (_builderResult.resultsArray == nil) {
+      _builderResult.resultsArray = [[other.resultsArray copyWithZone:[other.resultsArray zone]] autorelease];
     } else {
-      [result.resultsArray appendArray:other.resultsArray];
+      [_builderResult.resultsArray appendArray:other.resultsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -39756,28 +39756,28 @@ BOOL CMsgDOTAEditTeamDetailsResponse_ResultIsValidValue(CMsgDOTAEditTeamDetailsR
   }
 }
 - (PBAppendableArray *)results {
-  return result.resultsArray;
+  return _builderResult.resultsArray;
 }
 - (CMsgDOTAEditTeamDetailsResponse_Result)resultsAtIndex:(NSUInteger)index {
-  return [result resultsAtIndex:index];
+  return [_builderResult resultsAtIndex:index];
 }
 - (CMsgDOTAEditTeamDetailsResponse_Builder *)addresults:(CMsgDOTAEditTeamDetailsResponse_Result)value {
-  if (result.resultsArray == nil) {
-    result.resultsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeInt32];
+  if (_builderResult.resultsArray == nil) {
+    _builderResult.resultsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeInt32];
   }
-  [result.resultsArray addInt32:value];
+  [_builderResult.resultsArray addInt32:value];
   return self;
 }
 - (CMsgDOTAEditTeamDetailsResponse_Builder *)setresultsArray:(NSArray *)array {
-  result.resultsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeInt32];
+  _builderResult.resultsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeInt32];
   return self;
 }
 - (CMsgDOTAEditTeamDetailsResponse_Builder *)setresultsValues:(const CMsgDOTAEditTeamDetailsResponse_Result *)values count:(NSUInteger)count {
-  result.resultsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeInt32];
+  _builderResult.resultsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeInt32];
   return self;
 }
 - (CMsgDOTAEditTeamDetailsResponse_Builder *)clearresults {
-  result.resultsArray = nil;
+  _builderResult.resultsArray = nil;
   return self;
 }
 @end
@@ -40178,35 +40178,35 @@ BOOL CMsgDOTADisbandTeamResponse_ResultIsValidValue(CMsgDOTADisbandTeamResponse_
   }
 }
 - (BOOL) hasresult {
-  return result.hasresult;
+  return _builderResult.hasresult;
 }
 - (CMsgDOTADisbandTeamResponse_Result) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgDOTADisbandTeamResponse_Builder*) setresult:(CMsgDOTADisbandTeamResponse_Result) value {
-  result.hasresult = YES;
-  result.result = value;
+  _builderResult.hasresult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgDOTADisbandTeamResponse_Builder*) clearresult {
-  result.hasresult = NO;
-  result.result = CMsgDOTADisbandTeamResponse_ResultSUCCESS;
+  _builderResult.hasresult = NO;
+  _builderResult.result = CMsgDOTADisbandTeamResponse_ResultSUCCESS;
   return self;
 }
 - (BOOL) hasTeamName {
-  return result.hasTeamName;
+  return _builderResult.hasTeamName;
 }
 - (NSString*) teamName {
-  return result.teamName;
+  return _builderResult.teamName;
 }
 - (CMsgDOTADisbandTeamResponse_Builder*) setTeamName:(NSString*) value {
-  result.hasTeamName = YES;
-  result.teamName = value;
+  _builderResult.hasTeamName = YES;
+  _builderResult.teamName = value;
   return self;
 }
 - (CMsgDOTADisbandTeamResponse_Builder*) clearTeamName {
-  result.hasTeamName = NO;
-  result.teamName = @"";
+  _builderResult.hasTeamName = NO;
+  _builderResult.teamName = @"";
   return self;
 }
 @end
@@ -40615,49 +40615,49 @@ BOOL CMsgDOTARequestTeamDataResponse_ResultIsValidValue(CMsgDOTARequestTeamDataR
   }
 }
 - (BOOL) hasresult {
-  return result.hasresult;
+  return _builderResult.hasresult;
 }
 - (CMsgDOTARequestTeamDataResponse_Result) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgDOTARequestTeamDataResponse_Builder*) setresult:(CMsgDOTARequestTeamDataResponse_Result) value {
-  result.hasresult = YES;
-  result.result = value;
+  _builderResult.hasresult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgDOTARequestTeamDataResponse_Builder*) clearresult {
-  result.hasresult = NO;
-  result.result = CMsgDOTARequestTeamDataResponse_ResultSUCCESS;
+  _builderResult.hasresult = NO;
+  _builderResult.result = CMsgDOTARequestTeamDataResponse_ResultSUCCESS;
   return self;
 }
 - (BOOL) hasData {
-  return result.hasData;
+  return _builderResult.hasData;
 }
 - (CMsgDOTATeamData*) data {
-  return result.data;
+  return _builderResult.data;
 }
 - (CMsgDOTARequestTeamDataResponse_Builder*) setData:(CMsgDOTATeamData*) value {
-  result.hasData = YES;
-  result.data = value;
+  _builderResult.hasData = YES;
+  _builderResult.data = value;
   return self;
 }
 - (CMsgDOTARequestTeamDataResponse_Builder*) setDataBuilder:(CMsgDOTATeamData_Builder*) builderForValue {
   return [self setData:[builderForValue build]];
 }
 - (CMsgDOTARequestTeamDataResponse_Builder*) mergeData:(CMsgDOTATeamData*) value {
-  if (result.hasData &&
-      result.data != [CMsgDOTATeamData defaultInstance]) {
-    result.data =
-      [[[CMsgDOTATeamData builderWithPrototype:result.data] mergeFrom:value] buildPartial];
+  if (_builderResult.hasData &&
+      _builderResult.data != [CMsgDOTATeamData defaultInstance]) {
+    _builderResult.data =
+      [[[CMsgDOTATeamData builderWithPrototype:_builderResult.data] mergeFrom:value] buildPartial];
   } else {
-    result.data = value;
+    _builderResult.data = value;
   }
-  result.hasData = YES;
+  _builderResult.hasData = YES;
   return self;
 }
 - (CMsgDOTARequestTeamDataResponse_Builder*) clearData {
-  result.hasData = NO;
-  result.data = [CMsgDOTATeamData defaultInstance];
+  _builderResult.hasData = NO;
+  _builderResult.data = [CMsgDOTATeamData defaultInstance];
   return self;
 }
 @end
@@ -40896,49 +40896,49 @@ static CMsgDOTATeamData* defaultCMsgDOTATeamDataInstance = nil;
   }
 }
 - (BOOL) hasOnTeam {
-  return result.hasOnTeam;
+  return _builderResult.hasOnTeam;
 }
 - (BOOL) onTeam {
-  return result.onTeam;
+  return _builderResult.onTeam;
 }
 - (CMsgDOTATeamData_Builder*) setOnTeam:(BOOL) value {
-  result.hasOnTeam = YES;
-  result.onTeam = value;
+  _builderResult.hasOnTeam = YES;
+  _builderResult.onTeam = value;
   return self;
 }
 - (CMsgDOTATeamData_Builder*) clearOnTeam {
-  result.hasOnTeam = NO;
-  result.onTeam = NO;
+  _builderResult.hasOnTeam = NO;
+  _builderResult.onTeam = NO;
   return self;
 }
 - (BOOL) hasTeam {
-  return result.hasTeam;
+  return _builderResult.hasTeam;
 }
 - (CMsgDOTATeam*) team {
-  return result.team;
+  return _builderResult.team;
 }
 - (CMsgDOTATeamData_Builder*) setTeam:(CMsgDOTATeam*) value {
-  result.hasTeam = YES;
-  result.team = value;
+  _builderResult.hasTeam = YES;
+  _builderResult.team = value;
   return self;
 }
 - (CMsgDOTATeamData_Builder*) setTeamBuilder:(CMsgDOTATeam_Builder*) builderForValue {
   return [self setTeam:[builderForValue build]];
 }
 - (CMsgDOTATeamData_Builder*) mergeTeam:(CMsgDOTATeam*) value {
-  if (result.hasTeam &&
-      result.team != [CMsgDOTATeam defaultInstance]) {
-    result.team =
-      [[[CMsgDOTATeam builderWithPrototype:result.team] mergeFrom:value] buildPartial];
+  if (_builderResult.hasTeam &&
+      _builderResult.team != [CMsgDOTATeam defaultInstance]) {
+    _builderResult.team =
+      [[[CMsgDOTATeam builderWithPrototype:_builderResult.team] mergeFrom:value] buildPartial];
   } else {
-    result.team = value;
+    _builderResult.team = value;
   }
-  result.hasTeam = YES;
+  _builderResult.hasTeam = YES;
   return self;
 }
 - (CMsgDOTATeamData_Builder*) clearTeam {
-  result.hasTeam = NO;
-  result.team = [CMsgDOTATeam defaultInstance];
+  _builderResult.hasTeam = NO;
+  _builderResult.team = [CMsgDOTATeam defaultInstance];
   return self;
 }
 @end
@@ -41133,19 +41133,19 @@ static CMsgDOTATeamProfileRequest* defaultCMsgDOTATeamProfileRequestInstance = n
   }
 }
 - (BOOL) hasTeamId {
-  return result.hasTeamId;
+  return _builderResult.hasTeamId;
 }
 - (uint32_t) teamId {
-  return result.teamId;
+  return _builderResult.teamId;
 }
 - (CMsgDOTATeamProfileRequest_Builder*) setTeamId:(uint32_t) value {
-  result.hasTeamId = YES;
-  result.teamId = value;
+  _builderResult.hasTeamId = YES;
+  _builderResult.teamId = value;
   return self;
 }
 - (CMsgDOTATeamProfileRequest_Builder*) clearTeamId {
-  result.hasTeamId = NO;
-  result.teamId = 0;
+  _builderResult.hasTeamId = NO;
+  _builderResult.teamId = 0;
   return self;
 }
 @end
@@ -41379,49 +41379,49 @@ static CMsgDOTATeamProfileResponse* defaultCMsgDOTATeamProfileResponseInstance =
   }
 }
 - (BOOL) hasEresult {
-  return result.hasEresult;
+  return _builderResult.hasEresult;
 }
 - (uint32_t) eresult {
-  return result.eresult;
+  return _builderResult.eresult;
 }
 - (CMsgDOTATeamProfileResponse_Builder*) setEresult:(uint32_t) value {
-  result.hasEresult = YES;
-  result.eresult = value;
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
   return self;
 }
 - (CMsgDOTATeamProfileResponse_Builder*) clearEresult {
-  result.hasEresult = NO;
-  result.eresult = 0;
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 0;
   return self;
 }
 - (BOOL) hasTeam {
-  return result.hasTeam;
+  return _builderResult.hasTeam;
 }
 - (CMsgDOTATeam*) team {
-  return result.team;
+  return _builderResult.team;
 }
 - (CMsgDOTATeamProfileResponse_Builder*) setTeam:(CMsgDOTATeam*) value {
-  result.hasTeam = YES;
-  result.team = value;
+  _builderResult.hasTeam = YES;
+  _builderResult.team = value;
   return self;
 }
 - (CMsgDOTATeamProfileResponse_Builder*) setTeamBuilder:(CMsgDOTATeam_Builder*) builderForValue {
   return [self setTeam:[builderForValue build]];
 }
 - (CMsgDOTATeamProfileResponse_Builder*) mergeTeam:(CMsgDOTATeam*) value {
-  if (result.hasTeam &&
-      result.team != [CMsgDOTATeam defaultInstance]) {
-    result.team =
-      [[[CMsgDOTATeam builderWithPrototype:result.team] mergeFrom:value] buildPartial];
+  if (_builderResult.hasTeam &&
+      _builderResult.team != [CMsgDOTATeam defaultInstance]) {
+    _builderResult.team =
+      [[[CMsgDOTATeam builderWithPrototype:_builderResult.team] mergeFrom:value] buildPartial];
   } else {
-    result.team = value;
+    _builderResult.team = value;
   }
-  result.hasTeam = YES;
+  _builderResult.hasTeam = YES;
   return self;
 }
 - (CMsgDOTATeamProfileResponse_Builder*) clearTeam {
-  result.hasTeam = NO;
-  result.team = [CMsgDOTATeam defaultInstance];
+  _builderResult.hasTeam = NO;
+  _builderResult.team = [CMsgDOTATeam defaultInstance];
   return self;
 }
 @end
@@ -42041,83 +42041,83 @@ static CMsgDOTAProTeamListResponse_TeamEntry* defaultCMsgDOTAProTeamListResponse
   }
 }
 - (BOOL) hasTeamId {
-  return result.hasTeamId;
+  return _builderResult.hasTeamId;
 }
 - (uint32_t) teamId {
-  return result.teamId;
+  return _builderResult.teamId;
 }
 - (CMsgDOTAProTeamListResponse_TeamEntry_Builder*) setTeamId:(uint32_t) value {
-  result.hasTeamId = YES;
-  result.teamId = value;
+  _builderResult.hasTeamId = YES;
+  _builderResult.teamId = value;
   return self;
 }
 - (CMsgDOTAProTeamListResponse_TeamEntry_Builder*) clearTeamId {
-  result.hasTeamId = NO;
-  result.teamId = 0;
+  _builderResult.hasTeamId = NO;
+  _builderResult.teamId = 0;
   return self;
 }
 - (BOOL) hasTag {
-  return result.hasTag;
+  return _builderResult.hasTag;
 }
 - (NSString*) tag {
-  return result.tag;
+  return _builderResult.tag;
 }
 - (CMsgDOTAProTeamListResponse_TeamEntry_Builder*) setTag:(NSString*) value {
-  result.hasTag = YES;
-  result.tag = value;
+  _builderResult.hasTag = YES;
+  _builderResult.tag = value;
   return self;
 }
 - (CMsgDOTAProTeamListResponse_TeamEntry_Builder*) clearTag {
-  result.hasTag = NO;
-  result.tag = @"";
+  _builderResult.hasTag = NO;
+  _builderResult.tag = @"";
   return self;
 }
 - (BOOL) hasTimeCreated {
-  return result.hasTimeCreated;
+  return _builderResult.hasTimeCreated;
 }
 - (uint32_t) timeCreated {
-  return result.timeCreated;
+  return _builderResult.timeCreated;
 }
 - (CMsgDOTAProTeamListResponse_TeamEntry_Builder*) setTimeCreated:(uint32_t) value {
-  result.hasTimeCreated = YES;
-  result.timeCreated = value;
+  _builderResult.hasTimeCreated = YES;
+  _builderResult.timeCreated = value;
   return self;
 }
 - (CMsgDOTAProTeamListResponse_TeamEntry_Builder*) clearTimeCreated {
-  result.hasTimeCreated = NO;
-  result.timeCreated = 0;
+  _builderResult.hasTimeCreated = NO;
+  _builderResult.timeCreated = 0;
   return self;
 }
 - (BOOL) hasLogo {
-  return result.hasLogo;
+  return _builderResult.hasLogo;
 }
 - (uint64_t) logo {
-  return result.logo;
+  return _builderResult.logo;
 }
 - (CMsgDOTAProTeamListResponse_TeamEntry_Builder*) setLogo:(uint64_t) value {
-  result.hasLogo = YES;
-  result.logo = value;
+  _builderResult.hasLogo = YES;
+  _builderResult.logo = value;
   return self;
 }
 - (CMsgDOTAProTeamListResponse_TeamEntry_Builder*) clearLogo {
-  result.hasLogo = NO;
-  result.logo = 0L;
+  _builderResult.hasLogo = NO;
+  _builderResult.logo = 0L;
   return self;
 }
 - (BOOL) hasCountryCode {
-  return result.hasCountryCode;
+  return _builderResult.hasCountryCode;
 }
 - (NSString*) countryCode {
-  return result.countryCode;
+  return _builderResult.countryCode;
 }
 - (CMsgDOTAProTeamListResponse_TeamEntry_Builder*) setCountryCode:(NSString*) value {
-  result.hasCountryCode = YES;
-  result.countryCode = value;
+  _builderResult.hasCountryCode = YES;
+  _builderResult.countryCode = value;
   return self;
 }
 - (CMsgDOTAProTeamListResponse_TeamEntry_Builder*) clearCountryCode {
-  result.hasCountryCode = NO;
-  result.countryCode = @"";
+  _builderResult.hasCountryCode = NO;
+  _builderResult.countryCode = @"";
   return self;
 }
 @end
@@ -42165,10 +42165,10 @@ static CMsgDOTAProTeamListResponse_TeamEntry* defaultCMsgDOTAProTeamListResponse
     return self;
   }
   if (other.teamsArray.count > 0) {
-    if (result.teamsArray == nil) {
-      result.teamsArray = [[other.teamsArray copyWithZone:[other.teamsArray zone]] autorelease];
+    if (_builderResult.teamsArray == nil) {
+      _builderResult.teamsArray = [[other.teamsArray copyWithZone:[other.teamsArray zone]] autorelease];
     } else {
-      [result.teamsArray appendArray:other.teamsArray];
+      [_builderResult.teamsArray appendArray:other.teamsArray];
     }
   }
   if (other.hasEresult) {
@@ -42209,44 +42209,44 @@ static CMsgDOTAProTeamListResponse_TeamEntry* defaultCMsgDOTAProTeamListResponse
   }
 }
 - (PBAppendableArray *)teams {
-  return result.teamsArray;
+  return _builderResult.teamsArray;
 }
 - (CMsgDOTAProTeamListResponse_TeamEntry*)teamsAtIndex:(NSUInteger)index {
-  return [result teamsAtIndex:index];
+  return [_builderResult teamsAtIndex:index];
 }
 - (CMsgDOTAProTeamListResponse_Builder *)addTeams:(CMsgDOTAProTeamListResponse_TeamEntry*)value {
-  if (result.teamsArray == nil) {
-    result.teamsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.teamsArray == nil) {
+    _builderResult.teamsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.teamsArray addObject:value];
+  [_builderResult.teamsArray addObject:value];
   return self;
 }
 - (CMsgDOTAProTeamListResponse_Builder *)setTeamsArray:(NSArray *)array {
-  result.teamsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.teamsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAProTeamListResponse_Builder *)setTeamsValues:(const CMsgDOTAProTeamListResponse_TeamEntry* *)values count:(NSUInteger)count {
-  result.teamsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.teamsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAProTeamListResponse_Builder *)clearTeams {
-  result.teamsArray = nil;
+  _builderResult.teamsArray = nil;
   return self;
 }
 - (BOOL) hasEresult {
-  return result.hasEresult;
+  return _builderResult.hasEresult;
 }
 - (uint32_t) eresult {
-  return result.eresult;
+  return _builderResult.eresult;
 }
 - (CMsgDOTAProTeamListResponse_Builder*) setEresult:(uint32_t) value {
-  result.hasEresult = YES;
-  result.eresult = value;
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
   return self;
 }
 - (CMsgDOTAProTeamListResponse_Builder*) clearEresult {
-  result.hasEresult = NO;
-  result.eresult = 0;
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 0;
   return self;
 }
 @end
@@ -42441,19 +42441,19 @@ static CMsgDOTAInitiateTeamInvite* defaultCMsgDOTAInitiateTeamInviteInstance = n
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgDOTAInitiateTeamInvite_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgDOTAInitiateTeamInvite_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 @end
@@ -42697,35 +42697,35 @@ BOOL CMsgDOTAInitiateTeamInviteResponse_ResultIsValidValue(CMsgDOTAInitiateTeamI
   }
 }
 - (BOOL) hasresult {
-  return result.hasresult;
+  return _builderResult.hasresult;
 }
 - (CMsgDOTAInitiateTeamInviteResponse_Result) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgDOTAInitiateTeamInviteResponse_Builder*) setresult:(CMsgDOTAInitiateTeamInviteResponse_Result) value {
-  result.hasresult = YES;
-  result.result = value;
+  _builderResult.hasresult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgDOTAInitiateTeamInviteResponse_Builder*) clearresult {
-  result.hasresult = NO;
-  result.result = CMsgDOTAInitiateTeamInviteResponse_ResultSUCCESS;
+  _builderResult.hasresult = NO;
+  _builderResult.result = CMsgDOTAInitiateTeamInviteResponse_ResultSUCCESS;
   return self;
 }
 - (BOOL) hasInviteeName {
-  return result.hasInviteeName;
+  return _builderResult.hasInviteeName;
 }
 - (NSString*) inviteeName {
-  return result.inviteeName;
+  return _builderResult.inviteeName;
 }
 - (CMsgDOTAInitiateTeamInviteResponse_Builder*) setInviteeName:(NSString*) value {
-  result.hasInviteeName = YES;
-  result.inviteeName = value;
+  _builderResult.hasInviteeName = YES;
+  _builderResult.inviteeName = value;
   return self;
 }
 - (CMsgDOTAInitiateTeamInviteResponse_Builder*) clearInviteeName {
-  result.hasInviteeName = NO;
-  result.inviteeName = @"";
+  _builderResult.hasInviteeName = NO;
+  _builderResult.inviteeName = @"";
   return self;
 }
 @end
@@ -43012,67 +43012,67 @@ static CMsgDOTATeamInvite* defaultCMsgDOTATeamInviteInstance = nil;
   }
 }
 - (BOOL) hasInviterAccountId {
-  return result.hasInviterAccountId;
+  return _builderResult.hasInviterAccountId;
 }
 - (uint32_t) inviterAccountId {
-  return result.inviterAccountId;
+  return _builderResult.inviterAccountId;
 }
 - (CMsgDOTATeamInvite_Builder*) setInviterAccountId:(uint32_t) value {
-  result.hasInviterAccountId = YES;
-  result.inviterAccountId = value;
+  _builderResult.hasInviterAccountId = YES;
+  _builderResult.inviterAccountId = value;
   return self;
 }
 - (CMsgDOTATeamInvite_Builder*) clearInviterAccountId {
-  result.hasInviterAccountId = NO;
-  result.inviterAccountId = 0;
+  _builderResult.hasInviterAccountId = NO;
+  _builderResult.inviterAccountId = 0;
   return self;
 }
 - (BOOL) hasTeamName {
-  return result.hasTeamName;
+  return _builderResult.hasTeamName;
 }
 - (NSString*) teamName {
-  return result.teamName;
+  return _builderResult.teamName;
 }
 - (CMsgDOTATeamInvite_Builder*) setTeamName:(NSString*) value {
-  result.hasTeamName = YES;
-  result.teamName = value;
+  _builderResult.hasTeamName = YES;
+  _builderResult.teamName = value;
   return self;
 }
 - (CMsgDOTATeamInvite_Builder*) clearTeamName {
-  result.hasTeamName = NO;
-  result.teamName = @"";
+  _builderResult.hasTeamName = NO;
+  _builderResult.teamName = @"";
   return self;
 }
 - (BOOL) hasTeamTag {
-  return result.hasTeamTag;
+  return _builderResult.hasTeamTag;
 }
 - (NSString*) teamTag {
-  return result.teamTag;
+  return _builderResult.teamTag;
 }
 - (CMsgDOTATeamInvite_Builder*) setTeamTag:(NSString*) value {
-  result.hasTeamTag = YES;
-  result.teamTag = value;
+  _builderResult.hasTeamTag = YES;
+  _builderResult.teamTag = value;
   return self;
 }
 - (CMsgDOTATeamInvite_Builder*) clearTeamTag {
-  result.hasTeamTag = NO;
-  result.teamTag = @"";
+  _builderResult.hasTeamTag = NO;
+  _builderResult.teamTag = @"";
   return self;
 }
 - (BOOL) hasLogo {
-  return result.hasLogo;
+  return _builderResult.hasLogo;
 }
 - (uint64_t) logo {
-  return result.logo;
+  return _builderResult.logo;
 }
 - (CMsgDOTATeamInvite_Builder*) setLogo:(uint64_t) value {
-  result.hasLogo = YES;
-  result.logo = value;
+  _builderResult.hasLogo = YES;
+  _builderResult.logo = value;
   return self;
 }
 - (CMsgDOTATeamInvite_Builder*) clearLogo {
-  result.hasLogo = NO;
-  result.logo = 0L;
+  _builderResult.hasLogo = NO;
+  _builderResult.logo = 0L;
   return self;
 }
 @end
@@ -43282,19 +43282,19 @@ BOOL CMsgDOTATeamInviteReply_ReplyIsValidValue(CMsgDOTATeamInviteReply_Reply val
   }
 }
 - (BOOL) hasreply {
-  return result.hasreply;
+  return _builderResult.hasreply;
 }
 - (CMsgDOTATeamInviteReply_Reply) reply {
-  return result.reply;
+  return _builderResult.reply;
 }
 - (CMsgDOTATeamInviteReply_Builder*) setreply:(CMsgDOTATeamInviteReply_Reply) value {
-  result.hasreply = YES;
-  result.reply = value;
+  _builderResult.hasreply = YES;
+  _builderResult.reply = value;
   return self;
 }
 - (CMsgDOTATeamInviteReply_Builder*) clearreply {
-  result.hasreply = NO;
-  result.reply = CMsgDOTATeamInviteReply_ReplyJOIN;
+  _builderResult.hasreply = NO;
+  _builderResult.reply = CMsgDOTATeamInviteReply_ReplyJOIN;
   return self;
 }
 @end
@@ -43534,35 +43534,35 @@ BOOL CMsgDOTATeamInviteReplyResponse_ResultIsValidValue(CMsgDOTATeamInviteReplyR
   }
 }
 - (BOOL) hasresult {
-  return result.hasresult;
+  return _builderResult.hasresult;
 }
 - (CMsgDOTATeamInviteReplyResponse_Result) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgDOTATeamInviteReplyResponse_Builder*) setresult:(CMsgDOTATeamInviteReplyResponse_Result) value {
-  result.hasresult = YES;
-  result.result = value;
+  _builderResult.hasresult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgDOTATeamInviteReplyResponse_Builder*) clearresult {
-  result.hasresult = NO;
-  result.result = CMsgDOTATeamInviteReplyResponse_ResultSUCCESS;
+  _builderResult.hasresult = NO;
+  _builderResult.result = CMsgDOTATeamInviteReplyResponse_ResultSUCCESS;
   return self;
 }
 - (BOOL) hasTeamName {
-  return result.hasTeamName;
+  return _builderResult.hasTeamName;
 }
 - (NSString*) teamName {
-  return result.teamName;
+  return _builderResult.teamName;
 }
 - (CMsgDOTATeamInviteReplyResponse_Builder*) setTeamName:(NSString*) value {
-  result.hasTeamName = YES;
-  result.teamName = value;
+  _builderResult.hasTeamName = YES;
+  _builderResult.teamName = value;
   return self;
 }
 - (CMsgDOTATeamInviteReplyResponse_Builder*) clearTeamName {
-  result.hasTeamName = NO;
-  result.teamName = @"";
+  _builderResult.hasTeamName = NO;
+  _builderResult.teamName = @"";
   return self;
 }
 @end
@@ -43804,35 +43804,35 @@ BOOL CMsgDOTATeamInviteComplete_ResultIsValidValue(CMsgDOTATeamInviteComplete_Re
   }
 }
 - (BOOL) hasresult {
-  return result.hasresult;
+  return _builderResult.hasresult;
 }
 - (CMsgDOTATeamInviteComplete_Result) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgDOTATeamInviteComplete_Builder*) setresult:(CMsgDOTATeamInviteComplete_Result) value {
-  result.hasresult = YES;
-  result.result = value;
+  _builderResult.hasresult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgDOTATeamInviteComplete_Builder*) clearresult {
-  result.hasresult = NO;
-  result.result = CMsgDOTATeamInviteComplete_ResultJOINED;
+  _builderResult.hasresult = NO;
+  _builderResult.result = CMsgDOTATeamInviteComplete_ResultJOINED;
   return self;
 }
 - (BOOL) hasInviteeName {
-  return result.hasInviteeName;
+  return _builderResult.hasInviteeName;
 }
 - (NSString*) inviteeName {
-  return result.inviteeName;
+  return _builderResult.inviteeName;
 }
 - (CMsgDOTATeamInviteComplete_Builder*) setInviteeName:(NSString*) value {
-  result.hasInviteeName = YES;
-  result.inviteeName = value;
+  _builderResult.hasInviteeName = YES;
+  _builderResult.inviteeName = value;
   return self;
 }
 - (CMsgDOTATeamInviteComplete_Builder*) clearInviteeName {
-  result.hasInviteeName = NO;
-  result.inviteeName = @"";
+  _builderResult.hasInviteeName = NO;
+  _builderResult.inviteeName = @"";
   return self;
 }
 @end
@@ -44027,19 +44027,19 @@ static CMsgDOTAKickTeamMember* defaultCMsgDOTAKickTeamMemberInstance = nil;
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgDOTAKickTeamMember_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgDOTAKickTeamMember_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 @end
@@ -44248,19 +44248,19 @@ BOOL CMsgDOTAKickTeamMemberResponse_ResultIsValidValue(CMsgDOTAKickTeamMemberRes
   }
 }
 - (BOOL) hasresult {
-  return result.hasresult;
+  return _builderResult.hasresult;
 }
 - (CMsgDOTAKickTeamMemberResponse_Result) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgDOTAKickTeamMemberResponse_Builder*) setresult:(CMsgDOTAKickTeamMemberResponse_Result) value {
-  result.hasresult = YES;
-  result.result = value;
+  _builderResult.hasresult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgDOTAKickTeamMemberResponse_Builder*) clearresult {
-  result.hasresult = NO;
-  result.result = CMsgDOTAKickTeamMemberResponse_ResultSUCCESS;
+  _builderResult.hasresult = NO;
+  _builderResult.result = CMsgDOTAKickTeamMemberResponse_ResultSUCCESS;
   return self;
 }
 @end
@@ -44455,19 +44455,19 @@ static CMsgDOTATransferTeamAdmin* defaultCMsgDOTATransferTeamAdminInstance = nil
   }
 }
 - (BOOL) hasNewAdminAccountId {
-  return result.hasNewAdminAccountId;
+  return _builderResult.hasNewAdminAccountId;
 }
 - (uint32_t) newAdminAccountId {
-  return result.newAdminAccountId;
+  return _builderResult.newAdminAccountId;
 }
 - (CMsgDOTATransferTeamAdmin_Builder*) setNewAdminAccountId:(uint32_t) value {
-  result.hasNewAdminAccountId = YES;
-  result.newAdminAccountId = value;
+  _builderResult.hasNewAdminAccountId = YES;
+  _builderResult.newAdminAccountId = value;
   return self;
 }
 - (CMsgDOTATransferTeamAdmin_Builder*) clearNewAdminAccountId {
-  result.hasNewAdminAccountId = NO;
-  result.newAdminAccountId = 0;
+  _builderResult.hasNewAdminAccountId = NO;
+  _builderResult.newAdminAccountId = 0;
   return self;
 }
 @end
@@ -44868,35 +44868,35 @@ BOOL CMsgDOTALeaveTeamResponse_ResultIsValidValue(CMsgDOTALeaveTeamResponse_Resu
   }
 }
 - (BOOL) hasresult {
-  return result.hasresult;
+  return _builderResult.hasresult;
 }
 - (CMsgDOTALeaveTeamResponse_Result) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgDOTALeaveTeamResponse_Builder*) setresult:(CMsgDOTALeaveTeamResponse_Result) value {
-  result.hasresult = YES;
-  result.result = value;
+  _builderResult.hasresult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgDOTALeaveTeamResponse_Builder*) clearresult {
-  result.hasresult = NO;
-  result.result = CMsgDOTALeaveTeamResponse_ResultSUCCESS;
+  _builderResult.hasresult = NO;
+  _builderResult.result = CMsgDOTALeaveTeamResponse_ResultSUCCESS;
   return self;
 }
 - (BOOL) hasTeamName {
-  return result.hasTeamName;
+  return _builderResult.hasTeamName;
 }
 - (NSString*) teamName {
-  return result.teamName;
+  return _builderResult.teamName;
 }
 - (CMsgDOTALeaveTeamResponse_Builder*) setTeamName:(NSString*) value {
-  result.hasTeamName = YES;
-  result.teamName = value;
+  _builderResult.hasTeamName = YES;
+  _builderResult.teamName = value;
   return self;
 }
 - (CMsgDOTALeaveTeamResponse_Builder*) clearTeamName {
-  result.hasTeamName = NO;
-  result.teamName = @"";
+  _builderResult.hasTeamName = NO;
+  _builderResult.teamName = @"";
   return self;
 }
 @end
@@ -45092,19 +45092,19 @@ static CMsgDOTASuggestTeamMatchmaking* defaultCMsgDOTASuggestTeamMatchmakingInst
   }
 }
 - (BOOL) hasTeammateName {
-  return result.hasTeammateName;
+  return _builderResult.hasTeammateName;
 }
 - (NSString*) teammateName {
-  return result.teammateName;
+  return _builderResult.teammateName;
 }
 - (CMsgDOTASuggestTeamMatchmaking_Builder*) setTeammateName:(NSString*) value {
-  result.hasTeammateName = YES;
-  result.teammateName = value;
+  _builderResult.hasTeammateName = YES;
+  _builderResult.teammateName = value;
   return self;
 }
 - (CMsgDOTASuggestTeamMatchmaking_Builder*) clearTeammateName {
-  result.hasTeammateName = NO;
-  result.teammateName = @"";
+  _builderResult.hasTeammateName = NO;
+  _builderResult.teammateName = @"";
   return self;
 }
 @end
@@ -45490,35 +45490,35 @@ static CMsgDOTABetaParticipation* defaultCMsgDOTABetaParticipationInstance = nil
   }
 }
 - (BOOL) hasAccessRights {
-  return result.hasAccessRights;
+  return _builderResult.hasAccessRights;
 }
 - (uint32_t) accessRights {
-  return result.accessRights;
+  return _builderResult.accessRights;
 }
 - (CMsgDOTABetaParticipation_Builder*) setAccessRights:(uint32_t) value {
-  result.hasAccessRights = YES;
-  result.accessRights = value;
+  _builderResult.hasAccessRights = YES;
+  _builderResult.accessRights = value;
   return self;
 }
 - (CMsgDOTABetaParticipation_Builder*) clearAccessRights {
-  result.hasAccessRights = NO;
-  result.accessRights = 0;
+  _builderResult.hasAccessRights = NO;
+  _builderResult.accessRights = 0;
   return self;
 }
 - (BOOL) hasBetaJoinTime {
-  return result.hasBetaJoinTime;
+  return _builderResult.hasBetaJoinTime;
 }
 - (uint32_t) betaJoinTime {
-  return result.betaJoinTime;
+  return _builderResult.betaJoinTime;
 }
 - (CMsgDOTABetaParticipation_Builder*) setBetaJoinTime:(uint32_t) value {
-  result.hasBetaJoinTime = YES;
-  result.betaJoinTime = value;
+  _builderResult.hasBetaJoinTime = YES;
+  _builderResult.betaJoinTime = value;
   return self;
 }
 - (CMsgDOTABetaParticipation_Builder*) clearBetaJoinTime {
-  result.hasBetaJoinTime = NO;
-  result.betaJoinTime = 0;
+  _builderResult.hasBetaJoinTime = NO;
+  _builderResult.betaJoinTime = 0;
   return self;
 }
 @end
@@ -45713,19 +45713,19 @@ static CMsgDOTAGenericResult* defaultCMsgDOTAGenericResultInstance = nil;
   }
 }
 - (BOOL) hasEresult {
-  return result.hasEresult;
+  return _builderResult.hasEresult;
 }
 - (uint32_t) eresult {
-  return result.eresult;
+  return _builderResult.eresult;
 }
 - (CMsgDOTAGenericResult_Builder*) setEresult:(uint32_t) value {
-  result.hasEresult = YES;
-  result.eresult = value;
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
   return self;
 }
 - (CMsgDOTAGenericResult_Builder*) clearEresult {
-  result.hasEresult = NO;
-  result.eresult = 2;
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
   return self;
 }
 @end
@@ -45921,19 +45921,19 @@ static CMsgDOTABroadcastNotification* defaultCMsgDOTABroadcastNotificationInstan
   }
 }
 - (BOOL) hasMessage {
-  return result.hasMessage;
+  return _builderResult.hasMessage;
 }
 - (NSString*) message {
-  return result.message;
+  return _builderResult.message;
 }
 - (CMsgDOTABroadcastNotification_Builder*) setMessage:(NSString*) value {
-  result.hasMessage = YES;
-  result.message = value;
+  _builderResult.hasMessage = YES;
+  _builderResult.message = value;
   return self;
 }
 - (CMsgDOTABroadcastNotification_Builder*) clearMessage {
-  result.hasMessage = NO;
-  result.message = @"";
+  _builderResult.hasMessage = NO;
+  _builderResult.message = @"";
   return self;
 }
 @end
@@ -47180,355 +47180,355 @@ BOOL CMsgDOTALiveScoreboardUpdate_Team_Player_DOTAUltimateStateIsValidValue(CMsg
   }
 }
 - (BOOL) hasPlayerSlot {
-  return result.hasPlayerSlot;
+  return _builderResult.hasPlayerSlot;
 }
 - (uint32_t) playerSlot {
-  return result.playerSlot;
+  return _builderResult.playerSlot;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setPlayerSlot:(uint32_t) value {
-  result.hasPlayerSlot = YES;
-  result.playerSlot = value;
+  _builderResult.hasPlayerSlot = YES;
+  _builderResult.playerSlot = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearPlayerSlot {
-  result.hasPlayerSlot = NO;
-  result.playerSlot = 0;
+  _builderResult.hasPlayerSlot = NO;
+  _builderResult.playerSlot = 0;
   return self;
 }
 - (BOOL) hasPlayerName {
-  return result.hasPlayerName;
+  return _builderResult.hasPlayerName;
 }
 - (NSString*) playerName {
-  return result.playerName;
+  return _builderResult.playerName;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setPlayerName:(NSString*) value {
-  result.hasPlayerName = YES;
-  result.playerName = value;
+  _builderResult.hasPlayerName = YES;
+  _builderResult.playerName = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearPlayerName {
-  result.hasPlayerName = NO;
-  result.playerName = @"";
+  _builderResult.hasPlayerName = NO;
+  _builderResult.playerName = @"";
   return self;
 }
 - (BOOL) hasHeroName {
-  return result.hasHeroName;
+  return _builderResult.hasHeroName;
 }
 - (NSString*) heroName {
-  return result.heroName;
+  return _builderResult.heroName;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setHeroName:(NSString*) value {
-  result.hasHeroName = YES;
-  result.heroName = value;
+  _builderResult.hasHeroName = YES;
+  _builderResult.heroName = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearHeroName {
-  result.hasHeroName = NO;
-  result.heroName = @"";
+  _builderResult.hasHeroName = NO;
+  _builderResult.heroName = @"";
   return self;
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 - (BOOL) hasKills {
-  return result.hasKills;
+  return _builderResult.hasKills;
 }
 - (uint32_t) kills {
-  return result.kills;
+  return _builderResult.kills;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setKills:(uint32_t) value {
-  result.hasKills = YES;
-  result.kills = value;
+  _builderResult.hasKills = YES;
+  _builderResult.kills = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearKills {
-  result.hasKills = NO;
-  result.kills = 0;
+  _builderResult.hasKills = NO;
+  _builderResult.kills = 0;
   return self;
 }
 - (BOOL) hasDeaths {
-  return result.hasDeaths;
+  return _builderResult.hasDeaths;
 }
 - (uint32_t) deaths {
-  return result.deaths;
+  return _builderResult.deaths;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setDeaths:(uint32_t) value {
-  result.hasDeaths = YES;
-  result.deaths = value;
+  _builderResult.hasDeaths = YES;
+  _builderResult.deaths = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearDeaths {
-  result.hasDeaths = NO;
-  result.deaths = 0;
+  _builderResult.hasDeaths = NO;
+  _builderResult.deaths = 0;
   return self;
 }
 - (BOOL) hasAssists {
-  return result.hasAssists;
+  return _builderResult.hasAssists;
 }
 - (uint32_t) assists {
-  return result.assists;
+  return _builderResult.assists;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setAssists:(uint32_t) value {
-  result.hasAssists = YES;
-  result.assists = value;
+  _builderResult.hasAssists = YES;
+  _builderResult.assists = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearAssists {
-  result.hasAssists = NO;
-  result.assists = 0;
+  _builderResult.hasAssists = NO;
+  _builderResult.assists = 0;
   return self;
 }
 - (BOOL) hasLastHits {
-  return result.hasLastHits;
+  return _builderResult.hasLastHits;
 }
 - (uint32_t) lastHits {
-  return result.lastHits;
+  return _builderResult.lastHits;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setLastHits:(uint32_t) value {
-  result.hasLastHits = YES;
-  result.lastHits = value;
+  _builderResult.hasLastHits = YES;
+  _builderResult.lastHits = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearLastHits {
-  result.hasLastHits = NO;
-  result.lastHits = 0;
+  _builderResult.hasLastHits = NO;
+  _builderResult.lastHits = 0;
   return self;
 }
 - (BOOL) hasDenies {
-  return result.hasDenies;
+  return _builderResult.hasDenies;
 }
 - (uint32_t) denies {
-  return result.denies;
+  return _builderResult.denies;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setDenies:(uint32_t) value {
-  result.hasDenies = YES;
-  result.denies = value;
+  _builderResult.hasDenies = YES;
+  _builderResult.denies = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearDenies {
-  result.hasDenies = NO;
-  result.denies = 0;
+  _builderResult.hasDenies = NO;
+  _builderResult.denies = 0;
   return self;
 }
 - (BOOL) hasGold {
-  return result.hasGold;
+  return _builderResult.hasGold;
 }
 - (uint32_t) gold {
-  return result.gold;
+  return _builderResult.gold;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setGold:(uint32_t) value {
-  result.hasGold = YES;
-  result.gold = value;
+  _builderResult.hasGold = YES;
+  _builderResult.gold = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearGold {
-  result.hasGold = NO;
-  result.gold = 0;
+  _builderResult.hasGold = NO;
+  _builderResult.gold = 0;
   return self;
 }
 - (BOOL) hasLevel {
-  return result.hasLevel;
+  return _builderResult.hasLevel;
 }
 - (uint32_t) level {
-  return result.level;
+  return _builderResult.level;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setLevel:(uint32_t) value {
-  result.hasLevel = YES;
-  result.level = value;
+  _builderResult.hasLevel = YES;
+  _builderResult.level = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearLevel {
-  result.hasLevel = NO;
-  result.level = 0;
+  _builderResult.hasLevel = NO;
+  _builderResult.level = 0;
   return self;
 }
 - (BOOL) hasGoldPerMin {
-  return result.hasGoldPerMin;
+  return _builderResult.hasGoldPerMin;
 }
 - (Float32) goldPerMin {
-  return result.goldPerMin;
+  return _builderResult.goldPerMin;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setGoldPerMin:(Float32) value {
-  result.hasGoldPerMin = YES;
-  result.goldPerMin = value;
+  _builderResult.hasGoldPerMin = YES;
+  _builderResult.goldPerMin = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearGoldPerMin {
-  result.hasGoldPerMin = NO;
-  result.goldPerMin = 0;
+  _builderResult.hasGoldPerMin = NO;
+  _builderResult.goldPerMin = 0;
   return self;
 }
 - (BOOL) hasXpPerMin {
-  return result.hasXpPerMin;
+  return _builderResult.hasXpPerMin;
 }
 - (Float32) xpPerMin {
-  return result.xpPerMin;
+  return _builderResult.xpPerMin;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setXpPerMin:(Float32) value {
-  result.hasXpPerMin = YES;
-  result.xpPerMin = value;
+  _builderResult.hasXpPerMin = YES;
+  _builderResult.xpPerMin = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearXpPerMin {
-  result.hasXpPerMin = NO;
-  result.xpPerMin = 0;
+  _builderResult.hasXpPerMin = NO;
+  _builderResult.xpPerMin = 0;
   return self;
 }
 - (BOOL) hasultimate_state {
-  return result.hasultimate_state;
+  return _builderResult.hasultimate_state;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_DOTAUltimateState) ultimate_state {
-  return result.ultimate_state;
+  return _builderResult.ultimate_state;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setultimate_state:(CMsgDOTALiveScoreboardUpdate_Team_Player_DOTAUltimateState) value {
-  result.hasultimate_state = YES;
-  result.ultimate_state = value;
+  _builderResult.hasultimate_state = YES;
+  _builderResult.ultimate_state = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearultimate_state {
-  result.hasultimate_state = NO;
-  result.ultimate_state = CMsgDOTALiveScoreboardUpdate_Team_Player_DOTAUltimateStatek_EDOTAUltimateStateNotLearned;
+  _builderResult.hasultimate_state = NO;
+  _builderResult.ultimate_state = CMsgDOTALiveScoreboardUpdate_Team_Player_DOTAUltimateStatek_EDOTAUltimateStateNotLearned;
   return self;
 }
 - (BOOL) hasUltimateCooldown {
-  return result.hasUltimateCooldown;
+  return _builderResult.hasUltimateCooldown;
 }
 - (Float32) ultimateCooldown {
-  return result.ultimateCooldown;
+  return _builderResult.ultimateCooldown;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setUltimateCooldown:(Float32) value {
-  result.hasUltimateCooldown = YES;
-  result.ultimateCooldown = value;
+  _builderResult.hasUltimateCooldown = YES;
+  _builderResult.ultimateCooldown = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearUltimateCooldown {
-  result.hasUltimateCooldown = NO;
-  result.ultimateCooldown = 0;
+  _builderResult.hasUltimateCooldown = NO;
+  _builderResult.ultimateCooldown = 0;
   return self;
 }
 - (BOOL) hasItem0 {
-  return result.hasItem0;
+  return _builderResult.hasItem0;
 }
 - (uint32_t) item0 {
-  return result.item0;
+  return _builderResult.item0;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setItem0:(uint32_t) value {
-  result.hasItem0 = YES;
-  result.item0 = value;
+  _builderResult.hasItem0 = YES;
+  _builderResult.item0 = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearItem0 {
-  result.hasItem0 = NO;
-  result.item0 = 0;
+  _builderResult.hasItem0 = NO;
+  _builderResult.item0 = 0;
   return self;
 }
 - (BOOL) hasItem1 {
-  return result.hasItem1;
+  return _builderResult.hasItem1;
 }
 - (uint32_t) item1 {
-  return result.item1;
+  return _builderResult.item1;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setItem1:(uint32_t) value {
-  result.hasItem1 = YES;
-  result.item1 = value;
+  _builderResult.hasItem1 = YES;
+  _builderResult.item1 = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearItem1 {
-  result.hasItem1 = NO;
-  result.item1 = 0;
+  _builderResult.hasItem1 = NO;
+  _builderResult.item1 = 0;
   return self;
 }
 - (BOOL) hasItem2 {
-  return result.hasItem2;
+  return _builderResult.hasItem2;
 }
 - (uint32_t) item2 {
-  return result.item2;
+  return _builderResult.item2;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setItem2:(uint32_t) value {
-  result.hasItem2 = YES;
-  result.item2 = value;
+  _builderResult.hasItem2 = YES;
+  _builderResult.item2 = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearItem2 {
-  result.hasItem2 = NO;
-  result.item2 = 0;
+  _builderResult.hasItem2 = NO;
+  _builderResult.item2 = 0;
   return self;
 }
 - (BOOL) hasItem3 {
-  return result.hasItem3;
+  return _builderResult.hasItem3;
 }
 - (uint32_t) item3 {
-  return result.item3;
+  return _builderResult.item3;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setItem3:(uint32_t) value {
-  result.hasItem3 = YES;
-  result.item3 = value;
+  _builderResult.hasItem3 = YES;
+  _builderResult.item3 = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearItem3 {
-  result.hasItem3 = NO;
-  result.item3 = 0;
+  _builderResult.hasItem3 = NO;
+  _builderResult.item3 = 0;
   return self;
 }
 - (BOOL) hasItem4 {
-  return result.hasItem4;
+  return _builderResult.hasItem4;
 }
 - (uint32_t) item4 {
-  return result.item4;
+  return _builderResult.item4;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setItem4:(uint32_t) value {
-  result.hasItem4 = YES;
-  result.item4 = value;
+  _builderResult.hasItem4 = YES;
+  _builderResult.item4 = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearItem4 {
-  result.hasItem4 = NO;
-  result.item4 = 0;
+  _builderResult.hasItem4 = NO;
+  _builderResult.item4 = 0;
   return self;
 }
 - (BOOL) hasItem5 {
-  return result.hasItem5;
+  return _builderResult.hasItem5;
 }
 - (uint32_t) item5 {
-  return result.item5;
+  return _builderResult.item5;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setItem5:(uint32_t) value {
-  result.hasItem5 = YES;
-  result.item5 = value;
+  _builderResult.hasItem5 = YES;
+  _builderResult.item5 = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearItem5 {
-  result.hasItem5 = NO;
-  result.item5 = 0;
+  _builderResult.hasItem5 = NO;
+  _builderResult.item5 = 0;
   return self;
 }
 - (BOOL) hasRespawnTimer {
-  return result.hasRespawnTimer;
+  return _builderResult.hasRespawnTimer;
 }
 - (uint32_t) respawnTimer {
-  return result.respawnTimer;
+  return _builderResult.respawnTimer;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) setRespawnTimer:(uint32_t) value {
-  result.hasRespawnTimer = YES;
-  result.respawnTimer = value;
+  _builderResult.hasRespawnTimer = YES;
+  _builderResult.respawnTimer = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player_Builder*) clearRespawnTimer {
-  result.hasRespawnTimer = NO;
-  result.respawnTimer = 0;
+  _builderResult.hasRespawnTimer = NO;
+  _builderResult.respawnTimer = 0;
   return self;
 }
 @end
@@ -47576,10 +47576,10 @@ BOOL CMsgDOTALiveScoreboardUpdate_Team_Player_DOTAUltimateStateIsValidValue(CMsg
     return self;
   }
   if (other.playersArray.count > 0) {
-    if (result.playersArray == nil) {
-      result.playersArray = [[other.playersArray copyWithZone:[other.playersArray zone]] autorelease];
+    if (_builderResult.playersArray == nil) {
+      _builderResult.playersArray = [[other.playersArray copyWithZone:[other.playersArray zone]] autorelease];
     } else {
-      [result.playersArray appendArray:other.playersArray];
+      [_builderResult.playersArray appendArray:other.playersArray];
     }
   }
   if (other.hasScore) {
@@ -47620,44 +47620,44 @@ BOOL CMsgDOTALiveScoreboardUpdate_Team_Player_DOTAUltimateStateIsValidValue(CMsg
   }
 }
 - (PBAppendableArray *)players {
-  return result.playersArray;
+  return _builderResult.playersArray;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Player*)playersAtIndex:(NSUInteger)index {
-  return [result playersAtIndex:index];
+  return [_builderResult playersAtIndex:index];
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Builder *)addPlayers:(CMsgDOTALiveScoreboardUpdate_Team_Player*)value {
-  if (result.playersArray == nil) {
-    result.playersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.playersArray == nil) {
+    _builderResult.playersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.playersArray addObject:value];
+  [_builderResult.playersArray addObject:value];
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Builder *)setPlayersArray:(NSArray *)array {
-  result.playersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.playersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Builder *)setPlayersValues:(const CMsgDOTALiveScoreboardUpdate_Team_Player* *)values count:(NSUInteger)count {
-  result.playersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.playersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Builder *)clearPlayers {
-  result.playersArray = nil;
+  _builderResult.playersArray = nil;
   return self;
 }
 - (BOOL) hasScore {
-  return result.hasScore;
+  return _builderResult.hasScore;
 }
 - (uint32_t) score {
-  return result.score;
+  return _builderResult.score;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Builder*) setScore:(uint32_t) value {
-  result.hasScore = YES;
-  result.score = value;
+  _builderResult.hasScore = YES;
+  _builderResult.score = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team_Builder*) clearScore {
-  result.hasScore = NO;
-  result.score = 0;
+  _builderResult.hasScore = NO;
+  _builderResult.score = 0;
   return self;
 }
 @end
@@ -47788,143 +47788,143 @@ BOOL CMsgDOTALiveScoreboardUpdate_Team_Player_DOTAUltimateStateIsValidValue(CMsg
   }
 }
 - (BOOL) hasTournamentId {
-  return result.hasTournamentId;
+  return _builderResult.hasTournamentId;
 }
 - (uint32_t) tournamentId {
-  return result.tournamentId;
+  return _builderResult.tournamentId;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) setTournamentId:(uint32_t) value {
-  result.hasTournamentId = YES;
-  result.tournamentId = value;
+  _builderResult.hasTournamentId = YES;
+  _builderResult.tournamentId = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) clearTournamentId {
-  result.hasTournamentId = NO;
-  result.tournamentId = 0;
+  _builderResult.hasTournamentId = NO;
+  _builderResult.tournamentId = 0;
   return self;
 }
 - (BOOL) hasTournamentGameId {
-  return result.hasTournamentGameId;
+  return _builderResult.hasTournamentGameId;
 }
 - (uint32_t) tournamentGameId {
-  return result.tournamentGameId;
+  return _builderResult.tournamentGameId;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) setTournamentGameId:(uint32_t) value {
-  result.hasTournamentGameId = YES;
-  result.tournamentGameId = value;
+  _builderResult.hasTournamentGameId = YES;
+  _builderResult.tournamentGameId = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) clearTournamentGameId {
-  result.hasTournamentGameId = NO;
-  result.tournamentGameId = 0;
+  _builderResult.hasTournamentGameId = NO;
+  _builderResult.tournamentGameId = 0;
   return self;
 }
 - (BOOL) hasDuration {
-  return result.hasDuration;
+  return _builderResult.hasDuration;
 }
 - (Float32) duration {
-  return result.duration;
+  return _builderResult.duration;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) setDuration:(Float32) value {
-  result.hasDuration = YES;
-  result.duration = value;
+  _builderResult.hasDuration = YES;
+  _builderResult.duration = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) clearDuration {
-  result.hasDuration = NO;
-  result.duration = 0;
+  _builderResult.hasDuration = NO;
+  _builderResult.duration = 0;
   return self;
 }
 - (BOOL) hasHltvDelay {
-  return result.hasHltvDelay;
+  return _builderResult.hasHltvDelay;
 }
 - (int32_t) hltvDelay {
-  return result.hltvDelay;
+  return _builderResult.hltvDelay;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) setHltvDelay:(int32_t) value {
-  result.hasHltvDelay = YES;
-  result.hltvDelay = value;
+  _builderResult.hasHltvDelay = YES;
+  _builderResult.hltvDelay = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) clearHltvDelay {
-  result.hasHltvDelay = NO;
-  result.hltvDelay = 0;
+  _builderResult.hasHltvDelay = NO;
+  _builderResult.hltvDelay = 0;
   return self;
 }
 - (BOOL) hasTeamGood {
-  return result.hasTeamGood;
+  return _builderResult.hasTeamGood;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team*) teamGood {
-  return result.teamGood;
+  return _builderResult.teamGood;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) setTeamGood:(CMsgDOTALiveScoreboardUpdate_Team*) value {
-  result.hasTeamGood = YES;
-  result.teamGood = value;
+  _builderResult.hasTeamGood = YES;
+  _builderResult.teamGood = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) setTeamGoodBuilder:(CMsgDOTALiveScoreboardUpdate_Team_Builder*) builderForValue {
   return [self setTeamGood:[builderForValue build]];
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) mergeTeamGood:(CMsgDOTALiveScoreboardUpdate_Team*) value {
-  if (result.hasTeamGood &&
-      result.teamGood != [CMsgDOTALiveScoreboardUpdate_Team defaultInstance]) {
-    result.teamGood =
-      [[[CMsgDOTALiveScoreboardUpdate_Team builderWithPrototype:result.teamGood] mergeFrom:value] buildPartial];
+  if (_builderResult.hasTeamGood &&
+      _builderResult.teamGood != [CMsgDOTALiveScoreboardUpdate_Team defaultInstance]) {
+    _builderResult.teamGood =
+      [[[CMsgDOTALiveScoreboardUpdate_Team builderWithPrototype:_builderResult.teamGood] mergeFrom:value] buildPartial];
   } else {
-    result.teamGood = value;
+    _builderResult.teamGood = value;
   }
-  result.hasTeamGood = YES;
+  _builderResult.hasTeamGood = YES;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) clearTeamGood {
-  result.hasTeamGood = NO;
-  result.teamGood = [CMsgDOTALiveScoreboardUpdate_Team defaultInstance];
+  _builderResult.hasTeamGood = NO;
+  _builderResult.teamGood = [CMsgDOTALiveScoreboardUpdate_Team defaultInstance];
   return self;
 }
 - (BOOL) hasTeamBad {
-  return result.hasTeamBad;
+  return _builderResult.hasTeamBad;
 }
 - (CMsgDOTALiveScoreboardUpdate_Team*) teamBad {
-  return result.teamBad;
+  return _builderResult.teamBad;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) setTeamBad:(CMsgDOTALiveScoreboardUpdate_Team*) value {
-  result.hasTeamBad = YES;
-  result.teamBad = value;
+  _builderResult.hasTeamBad = YES;
+  _builderResult.teamBad = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) setTeamBadBuilder:(CMsgDOTALiveScoreboardUpdate_Team_Builder*) builderForValue {
   return [self setTeamBad:[builderForValue build]];
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) mergeTeamBad:(CMsgDOTALiveScoreboardUpdate_Team*) value {
-  if (result.hasTeamBad &&
-      result.teamBad != [CMsgDOTALiveScoreboardUpdate_Team defaultInstance]) {
-    result.teamBad =
-      [[[CMsgDOTALiveScoreboardUpdate_Team builderWithPrototype:result.teamBad] mergeFrom:value] buildPartial];
+  if (_builderResult.hasTeamBad &&
+      _builderResult.teamBad != [CMsgDOTALiveScoreboardUpdate_Team defaultInstance]) {
+    _builderResult.teamBad =
+      [[[CMsgDOTALiveScoreboardUpdate_Team builderWithPrototype:_builderResult.teamBad] mergeFrom:value] buildPartial];
   } else {
-    result.teamBad = value;
+    _builderResult.teamBad = value;
   }
-  result.hasTeamBad = YES;
+  _builderResult.hasTeamBad = YES;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) clearTeamBad {
-  result.hasTeamBad = NO;
-  result.teamBad = [CMsgDOTALiveScoreboardUpdate_Team defaultInstance];
+  _builderResult.hasTeamBad = NO;
+  _builderResult.teamBad = [CMsgDOTALiveScoreboardUpdate_Team defaultInstance];
   return self;
 }
 - (BOOL) hasRoshanRespawnTimer {
-  return result.hasRoshanRespawnTimer;
+  return _builderResult.hasRoshanRespawnTimer;
 }
 - (uint32_t) roshanRespawnTimer {
-  return result.roshanRespawnTimer;
+  return _builderResult.roshanRespawnTimer;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) setRoshanRespawnTimer:(uint32_t) value {
-  result.hasRoshanRespawnTimer = YES;
-  result.roshanRespawnTimer = value;
+  _builderResult.hasRoshanRespawnTimer = YES;
+  _builderResult.roshanRespawnTimer = value;
   return self;
 }
 - (CMsgDOTALiveScoreboardUpdate_Builder*) clearRoshanRespawnTimer {
-  result.hasRoshanRespawnTimer = NO;
-  result.roshanRespawnTimer = 0;
+  _builderResult.hasRoshanRespawnTimer = NO;
+  _builderResult.roshanRespawnTimer = 0;
   return self;
 }
 @end
@@ -48217,67 +48217,67 @@ static CMsgDOTAJoinChatChannel* defaultCMsgDOTAJoinChatChannelInstance = nil;
   }
 }
 - (BOOL) hasPersonaName {
-  return result.hasPersonaName;
+  return _builderResult.hasPersonaName;
 }
 - (NSString*) personaName {
-  return result.personaName;
+  return _builderResult.personaName;
 }
 - (CMsgDOTAJoinChatChannel_Builder*) setPersonaName:(NSString*) value {
-  result.hasPersonaName = YES;
-  result.personaName = value;
+  _builderResult.hasPersonaName = YES;
+  _builderResult.personaName = value;
   return self;
 }
 - (CMsgDOTAJoinChatChannel_Builder*) clearPersonaName {
-  result.hasPersonaName = NO;
-  result.personaName = @"";
+  _builderResult.hasPersonaName = NO;
+  _builderResult.personaName = @"";
   return self;
 }
 - (BOOL) hasChannelName {
-  return result.hasChannelName;
+  return _builderResult.hasChannelName;
 }
 - (NSString*) channelName {
-  return result.channelName;
+  return _builderResult.channelName;
 }
 - (CMsgDOTAJoinChatChannel_Builder*) setChannelName:(NSString*) value {
-  result.hasChannelName = YES;
-  result.channelName = value;
+  _builderResult.hasChannelName = YES;
+  _builderResult.channelName = value;
   return self;
 }
 - (CMsgDOTAJoinChatChannel_Builder*) clearChannelName {
-  result.hasChannelName = NO;
-  result.channelName = @"";
+  _builderResult.hasChannelName = NO;
+  _builderResult.channelName = @"";
   return self;
 }
 - (BOOL) hasPassword {
-  return result.hasPassword;
+  return _builderResult.hasPassword;
 }
 - (NSString*) password {
-  return result.password;
+  return _builderResult.password;
 }
 - (CMsgDOTAJoinChatChannel_Builder*) setPassword:(NSString*) value {
-  result.hasPassword = YES;
-  result.password = value;
+  _builderResult.hasPassword = YES;
+  _builderResult.password = value;
   return self;
 }
 - (CMsgDOTAJoinChatChannel_Builder*) clearPassword {
-  result.hasPassword = NO;
-  result.password = @"";
+  _builderResult.hasPassword = NO;
+  _builderResult.password = @"";
   return self;
 }
 - (BOOL) haschannel_type {
-  return result.haschannel_type;
+  return _builderResult.haschannel_type;
 }
 - (DOTAChatChannelType_t) channel_type {
-  return result.channel_type;
+  return _builderResult.channel_type;
 }
 - (CMsgDOTAJoinChatChannel_Builder*) setchannel_type:(DOTAChatChannelType_t) value {
-  result.haschannel_type = YES;
-  result.channel_type = value;
+  _builderResult.haschannel_type = YES;
+  _builderResult.channel_type = value;
   return self;
 }
 - (CMsgDOTAJoinChatChannel_Builder*) clearchannel_type {
-  result.haschannel_type = NO;
-  result.channel_type = DOTAChatChannelType_tDOTAChannelType_Regional;
+  _builderResult.haschannel_type = NO;
+  _builderResult.channel_type = DOTAChatChannelType_tDOTAChannelType_Regional;
   return self;
 }
 @end
@@ -48473,19 +48473,19 @@ static CMsgDOTALeaveChatChannel* defaultCMsgDOTALeaveChatChannelInstance = nil;
   }
 }
 - (BOOL) hasChannelName {
-  return result.hasChannelName;
+  return _builderResult.hasChannelName;
 }
 - (NSString*) channelName {
-  return result.channelName;
+  return _builderResult.channelName;
 }
 - (CMsgDOTALeaveChatChannel_Builder*) setChannelName:(NSString*) value {
-  result.hasChannelName = YES;
-  result.channelName = value;
+  _builderResult.hasChannelName = YES;
+  _builderResult.channelName = value;
   return self;
 }
 - (CMsgDOTALeaveChatChannel_Builder*) clearChannelName {
-  result.hasChannelName = NO;
-  result.channelName = @"";
+  _builderResult.hasChannelName = NO;
+  _builderResult.channelName = @"";
   return self;
 }
 @end
@@ -48864,115 +48864,115 @@ static CMsgDOTAChatMessage* defaultCMsgDOTAChatMessageInstance = nil;
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgDOTAChatMessage_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgDOTAChatMessage_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasChannelName {
-  return result.hasChannelName;
+  return _builderResult.hasChannelName;
 }
 - (NSString*) channelName {
-  return result.channelName;
+  return _builderResult.channelName;
 }
 - (CMsgDOTAChatMessage_Builder*) setChannelName:(NSString*) value {
-  result.hasChannelName = YES;
-  result.channelName = value;
+  _builderResult.hasChannelName = YES;
+  _builderResult.channelName = value;
   return self;
 }
 - (CMsgDOTAChatMessage_Builder*) clearChannelName {
-  result.hasChannelName = NO;
-  result.channelName = @"";
+  _builderResult.hasChannelName = NO;
+  _builderResult.channelName = @"";
   return self;
 }
 - (BOOL) hasPersonaName {
-  return result.hasPersonaName;
+  return _builderResult.hasPersonaName;
 }
 - (NSString*) personaName {
-  return result.personaName;
+  return _builderResult.personaName;
 }
 - (CMsgDOTAChatMessage_Builder*) setPersonaName:(NSString*) value {
-  result.hasPersonaName = YES;
-  result.personaName = value;
+  _builderResult.hasPersonaName = YES;
+  _builderResult.personaName = value;
   return self;
 }
 - (CMsgDOTAChatMessage_Builder*) clearPersonaName {
-  result.hasPersonaName = NO;
-  result.personaName = @"";
+  _builderResult.hasPersonaName = NO;
+  _builderResult.personaName = @"";
   return self;
 }
 - (BOOL) hasText {
-  return result.hasText;
+  return _builderResult.hasText;
 }
 - (NSString*) text {
-  return result.text;
+  return _builderResult.text;
 }
 - (CMsgDOTAChatMessage_Builder*) setText:(NSString*) value {
-  result.hasText = YES;
-  result.text = value;
+  _builderResult.hasText = YES;
+  _builderResult.text = value;
   return self;
 }
 - (CMsgDOTAChatMessage_Builder*) clearText {
-  result.hasText = NO;
-  result.text = @"";
+  _builderResult.hasText = NO;
+  _builderResult.text = @"";
   return self;
 }
 - (BOOL) hasTimestamp {
-  return result.hasTimestamp;
+  return _builderResult.hasTimestamp;
 }
 - (uint32_t) timestamp {
-  return result.timestamp;
+  return _builderResult.timestamp;
 }
 - (CMsgDOTAChatMessage_Builder*) setTimestamp:(uint32_t) value {
-  result.hasTimestamp = YES;
-  result.timestamp = value;
+  _builderResult.hasTimestamp = YES;
+  _builderResult.timestamp = value;
   return self;
 }
 - (CMsgDOTAChatMessage_Builder*) clearTimestamp {
-  result.hasTimestamp = NO;
-  result.timestamp = 0;
+  _builderResult.hasTimestamp = NO;
+  _builderResult.timestamp = 0;
   return self;
 }
 - (BOOL) hasSuggestInviteAccountId {
-  return result.hasSuggestInviteAccountId;
+  return _builderResult.hasSuggestInviteAccountId;
 }
 - (uint32_t) suggestInviteAccountId {
-  return result.suggestInviteAccountId;
+  return _builderResult.suggestInviteAccountId;
 }
 - (CMsgDOTAChatMessage_Builder*) setSuggestInviteAccountId:(uint32_t) value {
-  result.hasSuggestInviteAccountId = YES;
-  result.suggestInviteAccountId = value;
+  _builderResult.hasSuggestInviteAccountId = YES;
+  _builderResult.suggestInviteAccountId = value;
   return self;
 }
 - (CMsgDOTAChatMessage_Builder*) clearSuggestInviteAccountId {
-  result.hasSuggestInviteAccountId = NO;
-  result.suggestInviteAccountId = 0;
+  _builderResult.hasSuggestInviteAccountId = NO;
+  _builderResult.suggestInviteAccountId = 0;
   return self;
 }
 - (BOOL) hasSuggestInviteName {
-  return result.hasSuggestInviteName;
+  return _builderResult.hasSuggestInviteName;
 }
 - (NSString*) suggestInviteName {
-  return result.suggestInviteName;
+  return _builderResult.suggestInviteName;
 }
 - (CMsgDOTAChatMessage_Builder*) setSuggestInviteName:(NSString*) value {
-  result.hasSuggestInviteName = YES;
-  result.suggestInviteName = value;
+  _builderResult.hasSuggestInviteName = YES;
+  _builderResult.suggestInviteName = value;
   return self;
 }
 - (CMsgDOTAChatMessage_Builder*) clearSuggestInviteName {
-  result.hasSuggestInviteName = NO;
-  result.suggestInviteName = @"";
+  _builderResult.hasSuggestInviteName = NO;
+  _builderResult.suggestInviteName = @"";
   return self;
 }
 @end
@@ -49325,35 +49325,35 @@ static CMsgDOTASetChatChannelVerbosity_ChannelVerbosity* defaultCMsgDOTASetChatC
   }
 }
 - (BOOL) hasChannelId {
-  return result.hasChannelId;
+  return _builderResult.hasChannelId;
 }
 - (uint64_t) channelId {
-  return result.channelId;
+  return _builderResult.channelId;
 }
 - (CMsgDOTASetChatChannelVerbosity_ChannelVerbosity_Builder*) setChannelId:(uint64_t) value {
-  result.hasChannelId = YES;
-  result.channelId = value;
+  _builderResult.hasChannelId = YES;
+  _builderResult.channelId = value;
   return self;
 }
 - (CMsgDOTASetChatChannelVerbosity_ChannelVerbosity_Builder*) clearChannelId {
-  result.hasChannelId = NO;
-  result.channelId = 0L;
+  _builderResult.hasChannelId = NO;
+  _builderResult.channelId = 0L;
   return self;
 }
 - (BOOL) hasSuppressionFlags {
-  return result.hasSuppressionFlags;
+  return _builderResult.hasSuppressionFlags;
 }
 - (uint32_t) suppressionFlags {
-  return result.suppressionFlags;
+  return _builderResult.suppressionFlags;
 }
 - (CMsgDOTASetChatChannelVerbosity_ChannelVerbosity_Builder*) setSuppressionFlags:(uint32_t) value {
-  result.hasSuppressionFlags = YES;
-  result.suppressionFlags = value;
+  _builderResult.hasSuppressionFlags = YES;
+  _builderResult.suppressionFlags = value;
   return self;
 }
 - (CMsgDOTASetChatChannelVerbosity_ChannelVerbosity_Builder*) clearSuppressionFlags {
-  result.hasSuppressionFlags = NO;
-  result.suppressionFlags = 0;
+  _builderResult.hasSuppressionFlags = NO;
+  _builderResult.suppressionFlags = 0;
   return self;
 }
 @end
@@ -49401,10 +49401,10 @@ static CMsgDOTASetChatChannelVerbosity_ChannelVerbosity* defaultCMsgDOTASetChatC
     return self;
   }
   if (other.verbositiesArray.count > 0) {
-    if (result.verbositiesArray == nil) {
-      result.verbositiesArray = [[other.verbositiesArray copyWithZone:[other.verbositiesArray zone]] autorelease];
+    if (_builderResult.verbositiesArray == nil) {
+      _builderResult.verbositiesArray = [[other.verbositiesArray copyWithZone:[other.verbositiesArray zone]] autorelease];
     } else {
-      [result.verbositiesArray appendArray:other.verbositiesArray];
+      [_builderResult.verbositiesArray appendArray:other.verbositiesArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -49438,28 +49438,28 @@ static CMsgDOTASetChatChannelVerbosity_ChannelVerbosity* defaultCMsgDOTASetChatC
   }
 }
 - (PBAppendableArray *)verbosities {
-  return result.verbositiesArray;
+  return _builderResult.verbositiesArray;
 }
 - (CMsgDOTASetChatChannelVerbosity_ChannelVerbosity*)verbositiesAtIndex:(NSUInteger)index {
-  return [result verbositiesAtIndex:index];
+  return [_builderResult verbositiesAtIndex:index];
 }
 - (CMsgDOTASetChatChannelVerbosity_Builder *)addVerbosities:(CMsgDOTASetChatChannelVerbosity_ChannelVerbosity*)value {
-  if (result.verbositiesArray == nil) {
-    result.verbositiesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.verbositiesArray == nil) {
+    _builderResult.verbositiesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.verbositiesArray addObject:value];
+  [_builderResult.verbositiesArray addObject:value];
   return self;
 }
 - (CMsgDOTASetChatChannelVerbosity_Builder *)setVerbositiesArray:(NSArray *)array {
-  result.verbositiesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.verbositiesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTASetChatChannelVerbosity_Builder *)setVerbositiesValues:(const CMsgDOTASetChatChannelVerbosity_ChannelVerbosity* *)values count:(NSUInteger)count {
-  result.verbositiesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.verbositiesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTASetChatChannelVerbosity_Builder *)clearVerbosities {
-  result.verbositiesArray = nil;
+  _builderResult.verbositiesArray = nil;
   return self;
 }
 @end
@@ -49685,35 +49685,35 @@ static CMsgDOTAChatMember* defaultCMsgDOTAChatMemberInstance = nil;
   }
 }
 - (BOOL) hasSteamId {
-  return result.hasSteamId;
+  return _builderResult.hasSteamId;
 }
 - (uint64_t) steamId {
-  return result.steamId;
+  return _builderResult.steamId;
 }
 - (CMsgDOTAChatMember_Builder*) setSteamId:(uint64_t) value {
-  result.hasSteamId = YES;
-  result.steamId = value;
+  _builderResult.hasSteamId = YES;
+  _builderResult.steamId = value;
   return self;
 }
 - (CMsgDOTAChatMember_Builder*) clearSteamId {
-  result.hasSteamId = NO;
-  result.steamId = 0L;
+  _builderResult.hasSteamId = NO;
+  _builderResult.steamId = 0L;
   return self;
 }
 - (BOOL) hasPersonaName {
-  return result.hasPersonaName;
+  return _builderResult.hasPersonaName;
 }
 - (NSString*) personaName {
-  return result.personaName;
+  return _builderResult.personaName;
 }
 - (CMsgDOTAChatMember_Builder*) setPersonaName:(NSString*) value {
-  result.hasPersonaName = YES;
-  result.personaName = value;
+  _builderResult.hasPersonaName = YES;
+  _builderResult.personaName = value;
   return self;
 }
 - (CMsgDOTAChatMember_Builder*) clearPersonaName {
-  result.hasPersonaName = NO;
-  result.personaName = @"";
+  _builderResult.hasPersonaName = NO;
+  _builderResult.personaName = @"";
   return self;
 }
 @end
@@ -49985,10 +49985,10 @@ static CMsgDOTAJoinChatChannelResponse* defaultCMsgDOTAJoinChatChannelResponseIn
     [self setMaxMembers:other.maxMembers];
   }
   if (other.membersArray.count > 0) {
-    if (result.membersArray == nil) {
-      result.membersArray = [[other.membersArray copyWithZone:[other.membersArray zone]] autorelease];
+    if (_builderResult.membersArray == nil) {
+      _builderResult.membersArray = [[other.membersArray copyWithZone:[other.membersArray zone]] autorelease];
     } else {
-      [result.membersArray appendArray:other.membersArray];
+      [_builderResult.membersArray appendArray:other.membersArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -50038,92 +50038,92 @@ static CMsgDOTAJoinChatChannelResponse* defaultCMsgDOTAJoinChatChannelResponseIn
   }
 }
 - (BOOL) hasResponse {
-  return result.hasResponse;
+  return _builderResult.hasResponse;
 }
 - (uint32_t) response {
-  return result.response;
+  return _builderResult.response;
 }
 - (CMsgDOTAJoinChatChannelResponse_Builder*) setResponse:(uint32_t) value {
-  result.hasResponse = YES;
-  result.response = value;
+  _builderResult.hasResponse = YES;
+  _builderResult.response = value;
   return self;
 }
 - (CMsgDOTAJoinChatChannelResponse_Builder*) clearResponse {
-  result.hasResponse = NO;
-  result.response = 0;
+  _builderResult.hasResponse = NO;
+  _builderResult.response = 0;
   return self;
 }
 - (BOOL) hasChannelName {
-  return result.hasChannelName;
+  return _builderResult.hasChannelName;
 }
 - (NSString*) channelName {
-  return result.channelName;
+  return _builderResult.channelName;
 }
 - (CMsgDOTAJoinChatChannelResponse_Builder*) setChannelName:(NSString*) value {
-  result.hasChannelName = YES;
-  result.channelName = value;
+  _builderResult.hasChannelName = YES;
+  _builderResult.channelName = value;
   return self;
 }
 - (CMsgDOTAJoinChatChannelResponse_Builder*) clearChannelName {
-  result.hasChannelName = NO;
-  result.channelName = @"";
+  _builderResult.hasChannelName = NO;
+  _builderResult.channelName = @"";
   return self;
 }
 - (BOOL) hasChannelId {
-  return result.hasChannelId;
+  return _builderResult.hasChannelId;
 }
 - (uint64_t) channelId {
-  return result.channelId;
+  return _builderResult.channelId;
 }
 - (CMsgDOTAJoinChatChannelResponse_Builder*) setChannelId:(uint64_t) value {
-  result.hasChannelId = YES;
-  result.channelId = value;
+  _builderResult.hasChannelId = YES;
+  _builderResult.channelId = value;
   return self;
 }
 - (CMsgDOTAJoinChatChannelResponse_Builder*) clearChannelId {
-  result.hasChannelId = NO;
-  result.channelId = 0L;
+  _builderResult.hasChannelId = NO;
+  _builderResult.channelId = 0L;
   return self;
 }
 - (BOOL) hasMaxMembers {
-  return result.hasMaxMembers;
+  return _builderResult.hasMaxMembers;
 }
 - (uint32_t) maxMembers {
-  return result.maxMembers;
+  return _builderResult.maxMembers;
 }
 - (CMsgDOTAJoinChatChannelResponse_Builder*) setMaxMembers:(uint32_t) value {
-  result.hasMaxMembers = YES;
-  result.maxMembers = value;
+  _builderResult.hasMaxMembers = YES;
+  _builderResult.maxMembers = value;
   return self;
 }
 - (CMsgDOTAJoinChatChannelResponse_Builder*) clearMaxMembers {
-  result.hasMaxMembers = NO;
-  result.maxMembers = 0;
+  _builderResult.hasMaxMembers = NO;
+  _builderResult.maxMembers = 0;
   return self;
 }
 - (PBAppendableArray *)members {
-  return result.membersArray;
+  return _builderResult.membersArray;
 }
 - (CMsgDOTAChatMember*)membersAtIndex:(NSUInteger)index {
-  return [result membersAtIndex:index];
+  return [_builderResult membersAtIndex:index];
 }
 - (CMsgDOTAJoinChatChannelResponse_Builder *)addMembers:(CMsgDOTAChatMember*)value {
-  if (result.membersArray == nil) {
-    result.membersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.membersArray == nil) {
+    _builderResult.membersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.membersArray addObject:value];
+  [_builderResult.membersArray addObject:value];
   return self;
 }
 - (CMsgDOTAJoinChatChannelResponse_Builder *)setMembersArray:(NSArray *)array {
-  result.membersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.membersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAJoinChatChannelResponse_Builder *)setMembersValues:(const CMsgDOTAChatMember* *)values count:(NSUInteger)count {
-  result.membersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.membersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAJoinChatChannelResponse_Builder *)clearMembers {
-  result.membersArray = nil;
+  _builderResult.membersArray = nil;
   return self;
 }
 @end
@@ -50316,10 +50316,10 @@ static CMsgDOTAChatChannelFullUpdate* defaultCMsgDOTAChatChannelFullUpdateInstan
     [self setChannelId:other.channelId];
   }
   if (other.membersArray.count > 0) {
-    if (result.membersArray == nil) {
-      result.membersArray = [[other.membersArray copyWithZone:[other.membersArray zone]] autorelease];
+    if (_builderResult.membersArray == nil) {
+      _builderResult.membersArray = [[other.membersArray copyWithZone:[other.membersArray zone]] autorelease];
     } else {
-      [result.membersArray appendArray:other.membersArray];
+      [_builderResult.membersArray appendArray:other.membersArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -50357,44 +50357,44 @@ static CMsgDOTAChatChannelFullUpdate* defaultCMsgDOTAChatChannelFullUpdateInstan
   }
 }
 - (BOOL) hasChannelId {
-  return result.hasChannelId;
+  return _builderResult.hasChannelId;
 }
 - (uint64_t) channelId {
-  return result.channelId;
+  return _builderResult.channelId;
 }
 - (CMsgDOTAChatChannelFullUpdate_Builder*) setChannelId:(uint64_t) value {
-  result.hasChannelId = YES;
-  result.channelId = value;
+  _builderResult.hasChannelId = YES;
+  _builderResult.channelId = value;
   return self;
 }
 - (CMsgDOTAChatChannelFullUpdate_Builder*) clearChannelId {
-  result.hasChannelId = NO;
-  result.channelId = 0L;
+  _builderResult.hasChannelId = NO;
+  _builderResult.channelId = 0L;
   return self;
 }
 - (PBAppendableArray *)members {
-  return result.membersArray;
+  return _builderResult.membersArray;
 }
 - (CMsgDOTAChatMember*)membersAtIndex:(NSUInteger)index {
-  return [result membersAtIndex:index];
+  return [_builderResult membersAtIndex:index];
 }
 - (CMsgDOTAChatChannelFullUpdate_Builder *)addMembers:(CMsgDOTAChatMember*)value {
-  if (result.membersArray == nil) {
-    result.membersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.membersArray == nil) {
+    _builderResult.membersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.membersArray addObject:value];
+  [_builderResult.membersArray addObject:value];
   return self;
 }
 - (CMsgDOTAChatChannelFullUpdate_Builder *)setMembersArray:(NSArray *)array {
-  result.membersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.membersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAChatChannelFullUpdate_Builder *)setMembersValues:(const CMsgDOTAChatMember* *)values count:(NSUInteger)count {
-  result.membersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.membersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAChatChannelFullUpdate_Builder *)clearMembers {
-  result.membersArray = nil;
+  _builderResult.membersArray = nil;
   return self;
 }
 @end
@@ -50650,51 +50650,51 @@ static CMsgDOTAOtherJoinedChatChannel* defaultCMsgDOTAOtherJoinedChatChannelInst
   }
 }
 - (BOOL) hasChannelId {
-  return result.hasChannelId;
+  return _builderResult.hasChannelId;
 }
 - (uint64_t) channelId {
-  return result.channelId;
+  return _builderResult.channelId;
 }
 - (CMsgDOTAOtherJoinedChatChannel_Builder*) setChannelId:(uint64_t) value {
-  result.hasChannelId = YES;
-  result.channelId = value;
+  _builderResult.hasChannelId = YES;
+  _builderResult.channelId = value;
   return self;
 }
 - (CMsgDOTAOtherJoinedChatChannel_Builder*) clearChannelId {
-  result.hasChannelId = NO;
-  result.channelId = 0L;
+  _builderResult.hasChannelId = NO;
+  _builderResult.channelId = 0L;
   return self;
 }
 - (BOOL) hasPersonaName {
-  return result.hasPersonaName;
+  return _builderResult.hasPersonaName;
 }
 - (NSString*) personaName {
-  return result.personaName;
+  return _builderResult.personaName;
 }
 - (CMsgDOTAOtherJoinedChatChannel_Builder*) setPersonaName:(NSString*) value {
-  result.hasPersonaName = YES;
-  result.personaName = value;
+  _builderResult.hasPersonaName = YES;
+  _builderResult.personaName = value;
   return self;
 }
 - (CMsgDOTAOtherJoinedChatChannel_Builder*) clearPersonaName {
-  result.hasPersonaName = NO;
-  result.personaName = @"";
+  _builderResult.hasPersonaName = NO;
+  _builderResult.personaName = @"";
   return self;
 }
 - (BOOL) hasSteamId {
-  return result.hasSteamId;
+  return _builderResult.hasSteamId;
 }
 - (uint64_t) steamId {
-  return result.steamId;
+  return _builderResult.steamId;
 }
 - (CMsgDOTAOtherJoinedChatChannel_Builder*) setSteamId:(uint64_t) value {
-  result.hasSteamId = YES;
-  result.steamId = value;
+  _builderResult.hasSteamId = YES;
+  _builderResult.steamId = value;
   return self;
 }
 - (CMsgDOTAOtherJoinedChatChannel_Builder*) clearSteamId {
-  result.hasSteamId = NO;
-  result.steamId = 0L;
+  _builderResult.hasSteamId = NO;
+  _builderResult.steamId = 0L;
   return self;
 }
 @end
@@ -50919,35 +50919,35 @@ static CMsgDOTAOtherLeftChatChannel* defaultCMsgDOTAOtherLeftChatChannelInstance
   }
 }
 - (BOOL) hasChannelId {
-  return result.hasChannelId;
+  return _builderResult.hasChannelId;
 }
 - (uint64_t) channelId {
-  return result.channelId;
+  return _builderResult.channelId;
 }
 - (CMsgDOTAOtherLeftChatChannel_Builder*) setChannelId:(uint64_t) value {
-  result.hasChannelId = YES;
-  result.channelId = value;
+  _builderResult.hasChannelId = YES;
+  _builderResult.channelId = value;
   return self;
 }
 - (CMsgDOTAOtherLeftChatChannel_Builder*) clearChannelId {
-  result.hasChannelId = NO;
-  result.channelId = 0L;
+  _builderResult.hasChannelId = NO;
+  _builderResult.channelId = 0L;
   return self;
 }
 - (BOOL) hasSteamId {
-  return result.hasSteamId;
+  return _builderResult.hasSteamId;
 }
 - (uint64_t) steamId {
-  return result.steamId;
+  return _builderResult.steamId;
 }
 - (CMsgDOTAOtherLeftChatChannel_Builder*) setSteamId:(uint64_t) value {
-  result.hasSteamId = YES;
-  result.steamId = value;
+  _builderResult.hasSteamId = YES;
+  _builderResult.steamId = value;
   return self;
 }
 - (CMsgDOTAOtherLeftChatChannel_Builder*) clearSteamId {
-  result.hasSteamId = NO;
-  result.steamId = 0L;
+  _builderResult.hasSteamId = NO;
+  _builderResult.steamId = 0L;
   return self;
 }
 @end
@@ -51334,35 +51334,35 @@ static CMsgDOTARequestDefaultChatChannelResponse* defaultCMsgDOTARequestDefaultC
   }
 }
 - (BOOL) hasChannelName {
-  return result.hasChannelName;
+  return _builderResult.hasChannelName;
 }
 - (NSString*) channelName {
-  return result.channelName;
+  return _builderResult.channelName;
 }
 - (CMsgDOTARequestDefaultChatChannelResponse_Builder*) setChannelName:(NSString*) value {
-  result.hasChannelName = YES;
-  result.channelName = value;
+  _builderResult.hasChannelName = YES;
+  _builderResult.channelName = value;
   return self;
 }
 - (CMsgDOTARequestDefaultChatChannelResponse_Builder*) clearChannelName {
-  result.hasChannelName = NO;
-  result.channelName = @"";
+  _builderResult.hasChannelName = NO;
+  _builderResult.channelName = @"";
   return self;
 }
 - (BOOL) hasChannelId {
-  return result.hasChannelId;
+  return _builderResult.hasChannelId;
 }
 - (uint64_t) channelId {
-  return result.channelId;
+  return _builderResult.channelId;
 }
 - (CMsgDOTARequestDefaultChatChannelResponse_Builder*) setChannelId:(uint64_t) value {
-  result.hasChannelId = YES;
-  result.channelId = value;
+  _builderResult.hasChannelId = YES;
+  _builderResult.channelId = value;
   return self;
 }
 - (CMsgDOTARequestDefaultChatChannelResponse_Builder*) clearChannelId {
-  result.hasChannelId = NO;
-  result.channelId = 0L;
+  _builderResult.hasChannelId = NO;
+  _builderResult.channelId = 0L;
   return self;
 }
 @end
@@ -51903,51 +51903,51 @@ static CMsgDOTARequestChatChannelListResponse_ChatChannel* defaultCMsgDOTAReques
   }
 }
 - (BOOL) hasChannelName {
-  return result.hasChannelName;
+  return _builderResult.hasChannelName;
 }
 - (NSString*) channelName {
-  return result.channelName;
+  return _builderResult.channelName;
 }
 - (CMsgDOTARequestChatChannelListResponse_ChatChannel_Builder*) setChannelName:(NSString*) value {
-  result.hasChannelName = YES;
-  result.channelName = value;
+  _builderResult.hasChannelName = YES;
+  _builderResult.channelName = value;
   return self;
 }
 - (CMsgDOTARequestChatChannelListResponse_ChatChannel_Builder*) clearChannelName {
-  result.hasChannelName = NO;
-  result.channelName = @"";
+  _builderResult.hasChannelName = NO;
+  _builderResult.channelName = @"";
   return self;
 }
 - (BOOL) hasNumMembers {
-  return result.hasNumMembers;
+  return _builderResult.hasNumMembers;
 }
 - (uint32_t) numMembers {
-  return result.numMembers;
+  return _builderResult.numMembers;
 }
 - (CMsgDOTARequestChatChannelListResponse_ChatChannel_Builder*) setNumMembers:(uint32_t) value {
-  result.hasNumMembers = YES;
-  result.numMembers = value;
+  _builderResult.hasNumMembers = YES;
+  _builderResult.numMembers = value;
   return self;
 }
 - (CMsgDOTARequestChatChannelListResponse_ChatChannel_Builder*) clearNumMembers {
-  result.hasNumMembers = NO;
-  result.numMembers = 0;
+  _builderResult.hasNumMembers = NO;
+  _builderResult.numMembers = 0;
   return self;
 }
 - (BOOL) haschannel_type {
-  return result.haschannel_type;
+  return _builderResult.haschannel_type;
 }
 - (DOTAChatChannelType_t) channel_type {
-  return result.channel_type;
+  return _builderResult.channel_type;
 }
 - (CMsgDOTARequestChatChannelListResponse_ChatChannel_Builder*) setchannel_type:(DOTAChatChannelType_t) value {
-  result.haschannel_type = YES;
-  result.channel_type = value;
+  _builderResult.haschannel_type = YES;
+  _builderResult.channel_type = value;
   return self;
 }
 - (CMsgDOTARequestChatChannelListResponse_ChatChannel_Builder*) clearchannel_type {
-  result.haschannel_type = NO;
-  result.channel_type = DOTAChatChannelType_tDOTAChannelType_Regional;
+  _builderResult.haschannel_type = NO;
+  _builderResult.channel_type = DOTAChatChannelType_tDOTAChannelType_Regional;
   return self;
 }
 @end
@@ -51995,10 +51995,10 @@ static CMsgDOTARequestChatChannelListResponse_ChatChannel* defaultCMsgDOTAReques
     return self;
   }
   if (other.channelsArray.count > 0) {
-    if (result.channelsArray == nil) {
-      result.channelsArray = [[other.channelsArray copyWithZone:[other.channelsArray zone]] autorelease];
+    if (_builderResult.channelsArray == nil) {
+      _builderResult.channelsArray = [[other.channelsArray copyWithZone:[other.channelsArray zone]] autorelease];
     } else {
-      [result.channelsArray appendArray:other.channelsArray];
+      [_builderResult.channelsArray appendArray:other.channelsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -52032,28 +52032,28 @@ static CMsgDOTARequestChatChannelListResponse_ChatChannel* defaultCMsgDOTAReques
   }
 }
 - (PBAppendableArray *)channels {
-  return result.channelsArray;
+  return _builderResult.channelsArray;
 }
 - (CMsgDOTARequestChatChannelListResponse_ChatChannel*)channelsAtIndex:(NSUInteger)index {
-  return [result channelsAtIndex:index];
+  return [_builderResult channelsAtIndex:index];
 }
 - (CMsgDOTARequestChatChannelListResponse_Builder *)addChannels:(CMsgDOTARequestChatChannelListResponse_ChatChannel*)value {
-  if (result.channelsArray == nil) {
-    result.channelsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.channelsArray == nil) {
+    _builderResult.channelsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.channelsArray addObject:value];
+  [_builderResult.channelsArray addObject:value];
   return self;
 }
 - (CMsgDOTARequestChatChannelListResponse_Builder *)setChannelsArray:(NSArray *)array {
-  result.channelsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.channelsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTARequestChatChannelListResponse_Builder *)setChannelsValues:(const CMsgDOTARequestChatChannelListResponse_ChatChannel* *)values count:(NSUInteger)count {
-  result.channelsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.channelsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTARequestChatChannelListResponse_Builder *)clearChannels {
-  result.channelsArray = nil;
+  _builderResult.channelsArray = nil;
   return self;
 }
 @end
@@ -52548,115 +52548,115 @@ static CMsgDOTAPlayerReports_PlayerReport* defaultCMsgDOTAPlayerReports_PlayerRe
   }
 }
 - (BOOL) hasReportId {
-  return result.hasReportId;
+  return _builderResult.hasReportId;
 }
 - (uint32_t) reportId {
-  return result.reportId;
+  return _builderResult.reportId;
 }
 - (CMsgDOTAPlayerReports_PlayerReport_Builder*) setReportId:(uint32_t) value {
-  result.hasReportId = YES;
-  result.reportId = value;
+  _builderResult.hasReportId = YES;
+  _builderResult.reportId = value;
   return self;
 }
 - (CMsgDOTAPlayerReports_PlayerReport_Builder*) clearReportId {
-  result.hasReportId = NO;
-  result.reportId = 0;
+  _builderResult.hasReportId = NO;
+  _builderResult.reportId = 0;
   return self;
 }
 - (BOOL) hasReporterAccountId {
-  return result.hasReporterAccountId;
+  return _builderResult.hasReporterAccountId;
 }
 - (uint32_t) reporterAccountId {
-  return result.reporterAccountId;
+  return _builderResult.reporterAccountId;
 }
 - (CMsgDOTAPlayerReports_PlayerReport_Builder*) setReporterAccountId:(uint32_t) value {
-  result.hasReporterAccountId = YES;
-  result.reporterAccountId = value;
+  _builderResult.hasReporterAccountId = YES;
+  _builderResult.reporterAccountId = value;
   return self;
 }
 - (CMsgDOTAPlayerReports_PlayerReport_Builder*) clearReporterAccountId {
-  result.hasReporterAccountId = NO;
-  result.reporterAccountId = 0;
+  _builderResult.hasReporterAccountId = NO;
+  _builderResult.reporterAccountId = 0;
   return self;
 }
 - (BOOL) hasTargetAccountId {
-  return result.hasTargetAccountId;
+  return _builderResult.hasTargetAccountId;
 }
 - (uint32_t) targetAccountId {
-  return result.targetAccountId;
+  return _builderResult.targetAccountId;
 }
 - (CMsgDOTAPlayerReports_PlayerReport_Builder*) setTargetAccountId:(uint32_t) value {
-  result.hasTargetAccountId = YES;
-  result.targetAccountId = value;
+  _builderResult.hasTargetAccountId = YES;
+  _builderResult.targetAccountId = value;
   return self;
 }
 - (CMsgDOTAPlayerReports_PlayerReport_Builder*) clearTargetAccountId {
-  result.hasTargetAccountId = NO;
-  result.targetAccountId = 0;
+  _builderResult.hasTargetAccountId = NO;
+  _builderResult.targetAccountId = 0;
   return self;
 }
 - (BOOL) hasReportFlags {
-  return result.hasReportFlags;
+  return _builderResult.hasReportFlags;
 }
 - (uint32_t) reportFlags {
-  return result.reportFlags;
+  return _builderResult.reportFlags;
 }
 - (CMsgDOTAPlayerReports_PlayerReport_Builder*) setReportFlags:(uint32_t) value {
-  result.hasReportFlags = YES;
-  result.reportFlags = value;
+  _builderResult.hasReportFlags = YES;
+  _builderResult.reportFlags = value;
   return self;
 }
 - (CMsgDOTAPlayerReports_PlayerReport_Builder*) clearReportFlags {
-  result.hasReportFlags = NO;
-  result.reportFlags = 0;
+  _builderResult.hasReportFlags = NO;
+  _builderResult.reportFlags = 0;
   return self;
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CMsgDOTAPlayerReports_PlayerReport_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CMsgDOTAPlayerReports_PlayerReport_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 - (BOOL) hasDate {
-  return result.hasDate;
+  return _builderResult.hasDate;
 }
 - (uint32_t) date {
-  return result.date;
+  return _builderResult.date;
 }
 - (CMsgDOTAPlayerReports_PlayerReport_Builder*) setDate:(uint32_t) value {
-  result.hasDate = YES;
-  result.date = value;
+  _builderResult.hasDate = YES;
+  _builderResult.date = value;
   return self;
 }
 - (CMsgDOTAPlayerReports_PlayerReport_Builder*) clearDate {
-  result.hasDate = NO;
-  result.date = 0;
+  _builderResult.hasDate = NO;
+  _builderResult.date = 0;
   return self;
 }
 - (BOOL) hasComment {
-  return result.hasComment;
+  return _builderResult.hasComment;
 }
 - (NSString*) comment {
-  return result.comment;
+  return _builderResult.comment;
 }
 - (CMsgDOTAPlayerReports_PlayerReport_Builder*) setComment:(NSString*) value {
-  result.hasComment = YES;
-  result.comment = value;
+  _builderResult.hasComment = YES;
+  _builderResult.comment = value;
   return self;
 }
 - (CMsgDOTAPlayerReports_PlayerReport_Builder*) clearComment {
-  result.hasComment = NO;
-  result.comment = @"";
+  _builderResult.hasComment = NO;
+  _builderResult.comment = @"";
   return self;
 }
 @end
@@ -52704,10 +52704,10 @@ static CMsgDOTAPlayerReports_PlayerReport* defaultCMsgDOTAPlayerReports_PlayerRe
     return self;
   }
   if (other.reportsArray.count > 0) {
-    if (result.reportsArray == nil) {
-      result.reportsArray = [[other.reportsArray copyWithZone:[other.reportsArray zone]] autorelease];
+    if (_builderResult.reportsArray == nil) {
+      _builderResult.reportsArray = [[other.reportsArray copyWithZone:[other.reportsArray zone]] autorelease];
     } else {
-      [result.reportsArray appendArray:other.reportsArray];
+      [_builderResult.reportsArray appendArray:other.reportsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -52741,28 +52741,28 @@ static CMsgDOTAPlayerReports_PlayerReport* defaultCMsgDOTAPlayerReports_PlayerRe
   }
 }
 - (PBAppendableArray *)reports {
-  return result.reportsArray;
+  return _builderResult.reportsArray;
 }
 - (CMsgDOTAPlayerReports_PlayerReport*)reportsAtIndex:(NSUInteger)index {
-  return [result reportsAtIndex:index];
+  return [_builderResult reportsAtIndex:index];
 }
 - (CMsgDOTAPlayerReports_Builder *)addReports:(CMsgDOTAPlayerReports_PlayerReport*)value {
-  if (result.reportsArray == nil) {
-    result.reportsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.reportsArray == nil) {
+    _builderResult.reportsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.reportsArray addObject:value];
+  [_builderResult.reportsArray addObject:value];
   return self;
 }
 - (CMsgDOTAPlayerReports_Builder *)setReportsArray:(NSArray *)array {
-  result.reportsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.reportsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAPlayerReports_Builder *)setReportsValues:(const CMsgDOTAPlayerReports_PlayerReport* *)values count:(NSUInteger)count {
-  result.reportsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.reportsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAPlayerReports_Builder *)clearReports {
-  result.reportsArray = nil;
+  _builderResult.reportsArray = nil;
   return self;
 }
 @end
@@ -53208,67 +53208,67 @@ static CMsgDOTAReportsRemainingResponse* defaultCMsgDOTAReportsRemainingResponse
   }
 }
 - (BOOL) hasNumPositiveReportsRemaining {
-  return result.hasNumPositiveReportsRemaining;
+  return _builderResult.hasNumPositiveReportsRemaining;
 }
 - (uint32_t) numPositiveReportsRemaining {
-  return result.numPositiveReportsRemaining;
+  return _builderResult.numPositiveReportsRemaining;
 }
 - (CMsgDOTAReportsRemainingResponse_Builder*) setNumPositiveReportsRemaining:(uint32_t) value {
-  result.hasNumPositiveReportsRemaining = YES;
-  result.numPositiveReportsRemaining = value;
+  _builderResult.hasNumPositiveReportsRemaining = YES;
+  _builderResult.numPositiveReportsRemaining = value;
   return self;
 }
 - (CMsgDOTAReportsRemainingResponse_Builder*) clearNumPositiveReportsRemaining {
-  result.hasNumPositiveReportsRemaining = NO;
-  result.numPositiveReportsRemaining = 0;
+  _builderResult.hasNumPositiveReportsRemaining = NO;
+  _builderResult.numPositiveReportsRemaining = 0;
   return self;
 }
 - (BOOL) hasNumNegativeReportsRemaining {
-  return result.hasNumNegativeReportsRemaining;
+  return _builderResult.hasNumNegativeReportsRemaining;
 }
 - (uint32_t) numNegativeReportsRemaining {
-  return result.numNegativeReportsRemaining;
+  return _builderResult.numNegativeReportsRemaining;
 }
 - (CMsgDOTAReportsRemainingResponse_Builder*) setNumNegativeReportsRemaining:(uint32_t) value {
-  result.hasNumNegativeReportsRemaining = YES;
-  result.numNegativeReportsRemaining = value;
+  _builderResult.hasNumNegativeReportsRemaining = YES;
+  _builderResult.numNegativeReportsRemaining = value;
   return self;
 }
 - (CMsgDOTAReportsRemainingResponse_Builder*) clearNumNegativeReportsRemaining {
-  result.hasNumNegativeReportsRemaining = NO;
-  result.numNegativeReportsRemaining = 0;
+  _builderResult.hasNumNegativeReportsRemaining = NO;
+  _builderResult.numNegativeReportsRemaining = 0;
   return self;
 }
 - (BOOL) hasNumPositiveReportsTotal {
-  return result.hasNumPositiveReportsTotal;
+  return _builderResult.hasNumPositiveReportsTotal;
 }
 - (uint32_t) numPositiveReportsTotal {
-  return result.numPositiveReportsTotal;
+  return _builderResult.numPositiveReportsTotal;
 }
 - (CMsgDOTAReportsRemainingResponse_Builder*) setNumPositiveReportsTotal:(uint32_t) value {
-  result.hasNumPositiveReportsTotal = YES;
-  result.numPositiveReportsTotal = value;
+  _builderResult.hasNumPositiveReportsTotal = YES;
+  _builderResult.numPositiveReportsTotal = value;
   return self;
 }
 - (CMsgDOTAReportsRemainingResponse_Builder*) clearNumPositiveReportsTotal {
-  result.hasNumPositiveReportsTotal = NO;
-  result.numPositiveReportsTotal = 0;
+  _builderResult.hasNumPositiveReportsTotal = NO;
+  _builderResult.numPositiveReportsTotal = 0;
   return self;
 }
 - (BOOL) hasNumNegativeReportsTotal {
-  return result.hasNumNegativeReportsTotal;
+  return _builderResult.hasNumNegativeReportsTotal;
 }
 - (uint32_t) numNegativeReportsTotal {
-  return result.numNegativeReportsTotal;
+  return _builderResult.numNegativeReportsTotal;
 }
 - (CMsgDOTAReportsRemainingResponse_Builder*) setNumNegativeReportsTotal:(uint32_t) value {
-  result.hasNumNegativeReportsTotal = YES;
-  result.numNegativeReportsTotal = value;
+  _builderResult.hasNumNegativeReportsTotal = YES;
+  _builderResult.numNegativeReportsTotal = value;
   return self;
 }
 - (CMsgDOTAReportsRemainingResponse_Builder*) clearNumNegativeReportsTotal {
-  result.hasNumNegativeReportsTotal = NO;
-  result.numNegativeReportsTotal = 0;
+  _builderResult.hasNumNegativeReportsTotal = NO;
+  _builderResult.numNegativeReportsTotal = 0;
   return self;
 }
 @end
@@ -53524,51 +53524,51 @@ static CMsgDOTASubmitPlayerReport* defaultCMsgDOTASubmitPlayerReportInstance = n
   }
 }
 - (BOOL) hasTargetAccountId {
-  return result.hasTargetAccountId;
+  return _builderResult.hasTargetAccountId;
 }
 - (uint32_t) targetAccountId {
-  return result.targetAccountId;
+  return _builderResult.targetAccountId;
 }
 - (CMsgDOTASubmitPlayerReport_Builder*) setTargetAccountId:(uint32_t) value {
-  result.hasTargetAccountId = YES;
-  result.targetAccountId = value;
+  _builderResult.hasTargetAccountId = YES;
+  _builderResult.targetAccountId = value;
   return self;
 }
 - (CMsgDOTASubmitPlayerReport_Builder*) clearTargetAccountId {
-  result.hasTargetAccountId = NO;
-  result.targetAccountId = 0;
+  _builderResult.hasTargetAccountId = NO;
+  _builderResult.targetAccountId = 0;
   return self;
 }
 - (BOOL) hasReportFlags {
-  return result.hasReportFlags;
+  return _builderResult.hasReportFlags;
 }
 - (uint32_t) reportFlags {
-  return result.reportFlags;
+  return _builderResult.reportFlags;
 }
 - (CMsgDOTASubmitPlayerReport_Builder*) setReportFlags:(uint32_t) value {
-  result.hasReportFlags = YES;
-  result.reportFlags = value;
+  _builderResult.hasReportFlags = YES;
+  _builderResult.reportFlags = value;
   return self;
 }
 - (CMsgDOTASubmitPlayerReport_Builder*) clearReportFlags {
-  result.hasReportFlags = NO;
-  result.reportFlags = 0;
+  _builderResult.hasReportFlags = NO;
+  _builderResult.reportFlags = 0;
   return self;
 }
 - (BOOL) hasComment {
-  return result.hasComment;
+  return _builderResult.hasComment;
 }
 - (NSString*) comment {
-  return result.comment;
+  return _builderResult.comment;
 }
 - (CMsgDOTASubmitPlayerReport_Builder*) setComment:(NSString*) value {
-  result.hasComment = YES;
-  result.comment = value;
+  _builderResult.hasComment = YES;
+  _builderResult.comment = value;
   return self;
 }
 - (CMsgDOTASubmitPlayerReport_Builder*) clearComment {
-  result.hasComment = NO;
-  result.comment = @"";
+  _builderResult.hasComment = NO;
+  _builderResult.comment = @"";
   return self;
 }
 @end
@@ -53823,51 +53823,51 @@ static CMsgDOTASubmitPlayerReportResponse* defaultCMsgDOTASubmitPlayerReportResp
   }
 }
 - (BOOL) hasTargetAccountId {
-  return result.hasTargetAccountId;
+  return _builderResult.hasTargetAccountId;
 }
 - (uint32_t) targetAccountId {
-  return result.targetAccountId;
+  return _builderResult.targetAccountId;
 }
 - (CMsgDOTASubmitPlayerReportResponse_Builder*) setTargetAccountId:(uint32_t) value {
-  result.hasTargetAccountId = YES;
-  result.targetAccountId = value;
+  _builderResult.hasTargetAccountId = YES;
+  _builderResult.targetAccountId = value;
   return self;
 }
 - (CMsgDOTASubmitPlayerReportResponse_Builder*) clearTargetAccountId {
-  result.hasTargetAccountId = NO;
-  result.targetAccountId = 0;
+  _builderResult.hasTargetAccountId = NO;
+  _builderResult.targetAccountId = 0;
   return self;
 }
 - (BOOL) hasReportFlags {
-  return result.hasReportFlags;
+  return _builderResult.hasReportFlags;
 }
 - (uint32_t) reportFlags {
-  return result.reportFlags;
+  return _builderResult.reportFlags;
 }
 - (CMsgDOTASubmitPlayerReportResponse_Builder*) setReportFlags:(uint32_t) value {
-  result.hasReportFlags = YES;
-  result.reportFlags = value;
+  _builderResult.hasReportFlags = YES;
+  _builderResult.reportFlags = value;
   return self;
 }
 - (CMsgDOTASubmitPlayerReportResponse_Builder*) clearReportFlags {
-  result.hasReportFlags = NO;
-  result.reportFlags = 0;
+  _builderResult.hasReportFlags = NO;
+  _builderResult.reportFlags = 0;
   return self;
 }
 - (BOOL) hasResult {
-  return result.hasResult;
+  return _builderResult.hasResult;
 }
 - (uint32_t) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgDOTASubmitPlayerReportResponse_Builder*) setResult:(uint32_t) value {
-  result.hasResult = YES;
-  result.result = value;
+  _builderResult.hasResult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgDOTASubmitPlayerReportResponse_Builder*) clearResult {
-  result.hasResult = NO;
-  result.result = 0;
+  _builderResult.hasResult = NO;
+  _builderResult.result = 0;
   return self;
 }
 @end
@@ -54062,19 +54062,19 @@ static CMsgDOTAReportCountsRequest* defaultCMsgDOTAReportCountsRequestInstance =
   }
 }
 - (BOOL) hasTargetAccountId {
-  return result.hasTargetAccountId;
+  return _builderResult.hasTargetAccountId;
 }
 - (uint32_t) targetAccountId {
-  return result.targetAccountId;
+  return _builderResult.targetAccountId;
 }
 - (CMsgDOTAReportCountsRequest_Builder*) setTargetAccountId:(uint32_t) value {
-  result.hasTargetAccountId = YES;
-  result.targetAccountId = value;
+  _builderResult.hasTargetAccountId = YES;
+  _builderResult.targetAccountId = value;
   return self;
 }
 - (CMsgDOTAReportCountsRequest_Builder*) clearTargetAccountId {
-  result.hasTargetAccountId = NO;
-  result.targetAccountId = 0;
+  _builderResult.hasTargetAccountId = NO;
+  _builderResult.targetAccountId = 0;
   return self;
 }
 @end
@@ -54389,83 +54389,83 @@ static CMsgDOTAReportCountsResponse* defaultCMsgDOTAReportCountsResponseInstance
   }
 }
 - (BOOL) hasTargetAccountId {
-  return result.hasTargetAccountId;
+  return _builderResult.hasTargetAccountId;
 }
 - (uint32_t) targetAccountId {
-  return result.targetAccountId;
+  return _builderResult.targetAccountId;
 }
 - (CMsgDOTAReportCountsResponse_Builder*) setTargetAccountId:(uint32_t) value {
-  result.hasTargetAccountId = YES;
-  result.targetAccountId = value;
+  _builderResult.hasTargetAccountId = YES;
+  _builderResult.targetAccountId = value;
   return self;
 }
 - (CMsgDOTAReportCountsResponse_Builder*) clearTargetAccountId {
-  result.hasTargetAccountId = NO;
-  result.targetAccountId = 0;
+  _builderResult.hasTargetAccountId = NO;
+  _builderResult.targetAccountId = 0;
   return self;
 }
 - (BOOL) hasLeadershipCount {
-  return result.hasLeadershipCount;
+  return _builderResult.hasLeadershipCount;
 }
 - (uint32_t) leadershipCount {
-  return result.leadershipCount;
+  return _builderResult.leadershipCount;
 }
 - (CMsgDOTAReportCountsResponse_Builder*) setLeadershipCount:(uint32_t) value {
-  result.hasLeadershipCount = YES;
-  result.leadershipCount = value;
+  _builderResult.hasLeadershipCount = YES;
+  _builderResult.leadershipCount = value;
   return self;
 }
 - (CMsgDOTAReportCountsResponse_Builder*) clearLeadershipCount {
-  result.hasLeadershipCount = NO;
-  result.leadershipCount = 0;
+  _builderResult.hasLeadershipCount = NO;
+  _builderResult.leadershipCount = 0;
   return self;
 }
 - (BOOL) hasTeachingCount {
-  return result.hasTeachingCount;
+  return _builderResult.hasTeachingCount;
 }
 - (uint32_t) teachingCount {
-  return result.teachingCount;
+  return _builderResult.teachingCount;
 }
 - (CMsgDOTAReportCountsResponse_Builder*) setTeachingCount:(uint32_t) value {
-  result.hasTeachingCount = YES;
-  result.teachingCount = value;
+  _builderResult.hasTeachingCount = YES;
+  _builderResult.teachingCount = value;
   return self;
 }
 - (CMsgDOTAReportCountsResponse_Builder*) clearTeachingCount {
-  result.hasTeachingCount = NO;
-  result.teachingCount = 0;
+  _builderResult.hasTeachingCount = NO;
+  _builderResult.teachingCount = 0;
   return self;
 }
 - (BOOL) hasFriendlyCount {
-  return result.hasFriendlyCount;
+  return _builderResult.hasFriendlyCount;
 }
 - (uint32_t) friendlyCount {
-  return result.friendlyCount;
+  return _builderResult.friendlyCount;
 }
 - (CMsgDOTAReportCountsResponse_Builder*) setFriendlyCount:(uint32_t) value {
-  result.hasFriendlyCount = YES;
-  result.friendlyCount = value;
+  _builderResult.hasFriendlyCount = YES;
+  _builderResult.friendlyCount = value;
   return self;
 }
 - (CMsgDOTAReportCountsResponse_Builder*) clearFriendlyCount {
-  result.hasFriendlyCount = NO;
-  result.friendlyCount = 0;
+  _builderResult.hasFriendlyCount = NO;
+  _builderResult.friendlyCount = 0;
   return self;
 }
 - (BOOL) hasForgivingCount {
-  return result.hasForgivingCount;
+  return _builderResult.hasForgivingCount;
 }
 - (uint32_t) forgivingCount {
-  return result.forgivingCount;
+  return _builderResult.forgivingCount;
 }
 - (CMsgDOTAReportCountsResponse_Builder*) setForgivingCount:(uint32_t) value {
-  result.hasForgivingCount = YES;
-  result.forgivingCount = value;
+  _builderResult.hasForgivingCount = YES;
+  _builderResult.forgivingCount = value;
   return self;
 }
 - (CMsgDOTAReportCountsResponse_Builder*) clearForgivingCount {
-  result.hasForgivingCount = NO;
-  result.forgivingCount = 0;
+  _builderResult.hasForgivingCount = NO;
+  _builderResult.forgivingCount = 0;
   return self;
 }
 @end
@@ -54690,35 +54690,35 @@ static CMsgDOTARequestPlayerResources* defaultCMsgDOTARequestPlayerResourcesInst
   }
 }
 - (BOOL) hasSteamId {
-  return result.hasSteamId;
+  return _builderResult.hasSteamId;
 }
 - (uint64_t) steamId {
-  return result.steamId;
+  return _builderResult.steamId;
 }
 - (CMsgDOTARequestPlayerResources_Builder*) setSteamId:(uint64_t) value {
-  result.hasSteamId = YES;
-  result.steamId = value;
+  _builderResult.hasSteamId = YES;
+  _builderResult.steamId = value;
   return self;
 }
 - (CMsgDOTARequestPlayerResources_Builder*) clearSteamId {
-  result.hasSteamId = NO;
-  result.steamId = 0L;
+  _builderResult.hasSteamId = NO;
+  _builderResult.steamId = 0L;
   return self;
 }
 - (BOOL) hasPlayerId {
-  return result.hasPlayerId;
+  return _builderResult.hasPlayerId;
 }
 - (uint32_t) playerId {
-  return result.playerId;
+  return _builderResult.playerId;
 }
 - (CMsgDOTARequestPlayerResources_Builder*) setPlayerId:(uint32_t) value {
-  result.hasPlayerId = YES;
-  result.playerId = value;
+  _builderResult.hasPlayerId = YES;
+  _builderResult.playerId = value;
   return self;
 }
 - (CMsgDOTARequestPlayerResources_Builder*) clearPlayerId {
-  result.hasPlayerId = NO;
-  result.playerId = 0;
+  _builderResult.hasPlayerId = NO;
+  _builderResult.playerId = 0;
   return self;
 }
 @end
@@ -55078,99 +55078,99 @@ static CMsgDOTARequestPlayerResourcesResponse* defaultCMsgDOTARequestPlayerResou
   }
 }
 - (BOOL) hasSteamId {
-  return result.hasSteamId;
+  return _builderResult.hasSteamId;
 }
 - (uint64_t) steamId {
-  return result.steamId;
+  return _builderResult.steamId;
 }
 - (CMsgDOTARequestPlayerResourcesResponse_Builder*) setSteamId:(uint64_t) value {
-  result.hasSteamId = YES;
-  result.steamId = value;
+  _builderResult.hasSteamId = YES;
+  _builderResult.steamId = value;
   return self;
 }
 - (CMsgDOTARequestPlayerResourcesResponse_Builder*) clearSteamId {
-  result.hasSteamId = NO;
-  result.steamId = 0L;
+  _builderResult.hasSteamId = NO;
+  _builderResult.steamId = 0L;
   return self;
 }
 - (BOOL) hasRank {
-  return result.hasRank;
+  return _builderResult.hasRank;
 }
 - (uint32_t) rank {
-  return result.rank;
+  return _builderResult.rank;
 }
 - (CMsgDOTARequestPlayerResourcesResponse_Builder*) setRank:(uint32_t) value {
-  result.hasRank = YES;
-  result.rank = value;
+  _builderResult.hasRank = YES;
+  _builderResult.rank = value;
   return self;
 }
 - (CMsgDOTARequestPlayerResourcesResponse_Builder*) clearRank {
-  result.hasRank = NO;
-  result.rank = 0;
+  _builderResult.hasRank = NO;
+  _builderResult.rank = 0;
   return self;
 }
 - (BOOL) hasPlayerId {
-  return result.hasPlayerId;
+  return _builderResult.hasPlayerId;
 }
 - (uint32_t) playerId {
-  return result.playerId;
+  return _builderResult.playerId;
 }
 - (CMsgDOTARequestPlayerResourcesResponse_Builder*) setPlayerId:(uint32_t) value {
-  result.hasPlayerId = YES;
-  result.playerId = value;
+  _builderResult.hasPlayerId = YES;
+  _builderResult.playerId = value;
   return self;
 }
 - (CMsgDOTARequestPlayerResourcesResponse_Builder*) clearPlayerId {
-  result.hasPlayerId = NO;
-  result.playerId = 0;
+  _builderResult.hasPlayerId = NO;
+  _builderResult.playerId = 0;
   return self;
 }
 - (BOOL) hasPreventTextChat {
-  return result.hasPreventTextChat;
+  return _builderResult.hasPreventTextChat;
 }
 - (BOOL) preventTextChat {
-  return result.preventTextChat;
+  return _builderResult.preventTextChat;
 }
 - (CMsgDOTARequestPlayerResourcesResponse_Builder*) setPreventTextChat:(BOOL) value {
-  result.hasPreventTextChat = YES;
-  result.preventTextChat = value;
+  _builderResult.hasPreventTextChat = YES;
+  _builderResult.preventTextChat = value;
   return self;
 }
 - (CMsgDOTARequestPlayerResourcesResponse_Builder*) clearPreventTextChat {
-  result.hasPreventTextChat = NO;
-  result.preventTextChat = NO;
+  _builderResult.hasPreventTextChat = NO;
+  _builderResult.preventTextChat = NO;
   return self;
 }
 - (BOOL) hasPreventVoiceChat {
-  return result.hasPreventVoiceChat;
+  return _builderResult.hasPreventVoiceChat;
 }
 - (BOOL) preventVoiceChat {
-  return result.preventVoiceChat;
+  return _builderResult.preventVoiceChat;
 }
 - (CMsgDOTARequestPlayerResourcesResponse_Builder*) setPreventVoiceChat:(BOOL) value {
-  result.hasPreventVoiceChat = YES;
-  result.preventVoiceChat = value;
+  _builderResult.hasPreventVoiceChat = YES;
+  _builderResult.preventVoiceChat = value;
   return self;
 }
 - (CMsgDOTARequestPlayerResourcesResponse_Builder*) clearPreventVoiceChat {
-  result.hasPreventVoiceChat = NO;
-  result.preventVoiceChat = NO;
+  _builderResult.hasPreventVoiceChat = NO;
+  _builderResult.preventVoiceChat = NO;
   return self;
 }
 - (BOOL) hasMatchMakingBan {
-  return result.hasMatchMakingBan;
+  return _builderResult.hasMatchMakingBan;
 }
 - (BOOL) matchMakingBan {
-  return result.matchMakingBan;
+  return _builderResult.matchMakingBan;
 }
 - (CMsgDOTARequestPlayerResourcesResponse_Builder*) setMatchMakingBan:(BOOL) value {
-  result.hasMatchMakingBan = YES;
-  result.matchMakingBan = value;
+  _builderResult.hasMatchMakingBan = YES;
+  _builderResult.matchMakingBan = value;
   return self;
 }
 - (CMsgDOTARequestPlayerResourcesResponse_Builder*) clearMatchMakingBan {
-  result.hasMatchMakingBan = NO;
-  result.matchMakingBan = NO;
+  _builderResult.hasMatchMakingBan = NO;
+  _builderResult.matchMakingBan = NO;
   return self;
 }
 @end
@@ -55370,19 +55370,19 @@ static CMsgDOTAKickedFromMatchmakingQueue* defaultCMsgDOTAKickedFromMatchmakingQ
   }
 }
 - (BOOL) hasmatch_type {
-  return result.hasmatch_type;
+  return _builderResult.hasmatch_type;
 }
 - (MatchType) match_type {
-  return result.match_type;
+  return _builderResult.match_type;
 }
 - (CMsgDOTAKickedFromMatchmakingQueue_Builder*) setmatch_type:(MatchType) value {
-  result.hasmatch_type = YES;
-  result.match_type = value;
+  _builderResult.hasmatch_type = YES;
+  _builderResult.match_type = value;
   return self;
 }
 - (CMsgDOTAKickedFromMatchmakingQueue_Builder*) clearmatch_type {
-  result.hasmatch_type = NO;
-  result.match_type = MatchTypeMATCH_TYPE_RANKED;
+  _builderResult.hasmatch_type = NO;
+  _builderResult.match_type = MatchTypeMATCH_TYPE_RANKED;
   return self;
 }
 @end
@@ -55577,19 +55577,19 @@ static CMsgDOTARequestSaveGames* defaultCMsgDOTARequestSaveGamesInstance = nil;
   }
 }
 - (BOOL) hasServerRegion {
-  return result.hasServerRegion;
+  return _builderResult.hasServerRegion;
 }
 - (uint32_t) serverRegion {
-  return result.serverRegion;
+  return _builderResult.serverRegion;
 }
 - (CMsgDOTARequestSaveGames_Builder*) setServerRegion:(uint32_t) value {
-  result.hasServerRegion = YES;
-  result.serverRegion = value;
+  _builderResult.hasServerRegion = YES;
+  _builderResult.serverRegion = value;
   return self;
 }
 - (CMsgDOTARequestSaveGames_Builder*) clearServerRegion {
-  result.hasServerRegion = NO;
-  result.serverRegion = 0;
+  _builderResult.hasServerRegion = NO;
+  _builderResult.serverRegion = 0;
   return self;
 }
 @end
@@ -55784,19 +55784,19 @@ static CMsgDOTARequestSaveGamesServer* defaultCMsgDOTARequestSaveGamesServerInst
   }
 }
 - (BOOL) hasSteamId {
-  return result.hasSteamId;
+  return _builderResult.hasSteamId;
 }
 - (uint64_t) steamId {
-  return result.steamId;
+  return _builderResult.steamId;
 }
 - (CMsgDOTARequestSaveGamesServer_Builder*) setSteamId:(uint64_t) value {
-  result.hasSteamId = YES;
-  result.steamId = value;
+  _builderResult.hasSteamId = YES;
+  _builderResult.steamId = value;
   return self;
 }
 - (CMsgDOTARequestSaveGamesServer_Builder*) clearSteamId {
-  result.hasSteamId = NO;
-  result.steamId = 0L;
+  _builderResult.hasSteamId = NO;
+  _builderResult.steamId = 0L;
   return self;
 }
 @end
@@ -56391,51 +56391,51 @@ static CMsgDOTARequestSaveGamesResponse_SaveGame_Player* defaultCMsgDOTARequestS
   }
 }
 - (BOOL) hasteam {
-  return result.hasteam;
+  return _builderResult.hasteam;
 }
 - (DOTA_GC_TEAM) team {
-  return result.team;
+  return _builderResult.team;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Player_Builder*) setteam:(DOTA_GC_TEAM) value {
-  result.hasteam = YES;
-  result.team = value;
+  _builderResult.hasteam = YES;
+  _builderResult.team = value;
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Player_Builder*) clearteam {
-  result.hasteam = NO;
-  result.team = DOTA_GC_TEAMDOTA_GC_TEAM_GOOD_GUYS;
+  _builderResult.hasteam = NO;
+  _builderResult.team = DOTA_GC_TEAMDOTA_GC_TEAM_GOOD_GUYS;
   return self;
 }
 - (BOOL) hasName {
-  return result.hasName;
+  return _builderResult.hasName;
 }
 - (NSString*) name {
-  return result.name;
+  return _builderResult.name;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Player_Builder*) setName:(NSString*) value {
-  result.hasName = YES;
-  result.name = value;
+  _builderResult.hasName = YES;
+  _builderResult.name = value;
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Player_Builder*) clearName {
-  result.hasName = NO;
-  result.name = @"";
+  _builderResult.hasName = NO;
+  _builderResult.name = @"";
   return self;
 }
 - (BOOL) hasHero {
-  return result.hasHero;
+  return _builderResult.hasHero;
 }
 - (NSString*) hero {
-  return result.hero;
+  return _builderResult.hero;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Player_Builder*) setHero:(NSString*) value {
-  result.hasHero = YES;
-  result.hero = value;
+  _builderResult.hasHero = YES;
+  _builderResult.hero = value;
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Player_Builder*) clearHero {
-  result.hasHero = NO;
-  result.hero = @"";
+  _builderResult.hasHero = NO;
+  _builderResult.hero = @"";
   return self;
 }
 @end
@@ -56894,35 +56894,35 @@ static CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions* d
   }
 }
 - (BOOL) hasX {
-  return result.hasX;
+  return _builderResult.hasX;
 }
 - (Float32) x {
-  return result.x;
+  return _builderResult.x;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions_Builder*) setX:(Float32) value {
-  result.hasX = YES;
-  result.x = value;
+  _builderResult.hasX = YES;
+  _builderResult.x = value;
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions_Builder*) clearX {
-  result.hasX = NO;
-  result.x = 0;
+  _builderResult.hasX = NO;
+  _builderResult.x = 0;
   return self;
 }
 - (BOOL) hasY {
-  return result.hasY;
+  return _builderResult.hasY;
 }
 - (Float32) y {
-  return result.y;
+  return _builderResult.y;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions_Builder*) setY:(Float32) value {
-  result.hasY = YES;
-  result.y = value;
+  _builderResult.hasY = YES;
+  _builderResult.y = value;
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions_Builder*) clearY {
-  result.hasY = NO;
-  result.y = 0;
+  _builderResult.hasY = NO;
+  _builderResult.y = 0;
   return self;
 }
 @end
@@ -56982,10 +56982,10 @@ static CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions* d
     [self setTeam2Score:other.team2Score];
   }
   if (other.playerPositionsArray.count > 0) {
-    if (result.playerPositionsArray == nil) {
-      result.playerPositionsArray = [[other.playerPositionsArray copyWithZone:[other.playerPositionsArray zone]] autorelease];
+    if (_builderResult.playerPositionsArray == nil) {
+      _builderResult.playerPositionsArray = [[other.playerPositionsArray copyWithZone:[other.playerPositionsArray zone]] autorelease];
     } else {
-      [result.playerPositionsArray appendArray:other.playerPositionsArray];
+      [_builderResult.playerPositionsArray appendArray:other.playerPositionsArray];
     }
   }
   if (other.hasSaveId) {
@@ -57042,108 +57042,108 @@ static CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions* d
   }
 }
 - (BOOL) hasSaveNumber {
-  return result.hasSaveNumber;
+  return _builderResult.hasSaveNumber;
 }
 - (uint32_t) saveNumber {
-  return result.saveNumber;
+  return _builderResult.saveNumber;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_Builder*) setSaveNumber:(uint32_t) value {
-  result.hasSaveNumber = YES;
-  result.saveNumber = value;
+  _builderResult.hasSaveNumber = YES;
+  _builderResult.saveNumber = value;
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_Builder*) clearSaveNumber {
-  result.hasSaveNumber = NO;
-  result.saveNumber = 0;
+  _builderResult.hasSaveNumber = NO;
+  _builderResult.saveNumber = 0;
   return self;
 }
 - (BOOL) hasGameTime {
-  return result.hasGameTime;
+  return _builderResult.hasGameTime;
 }
 - (uint32_t) gameTime {
-  return result.gameTime;
+  return _builderResult.gameTime;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_Builder*) setGameTime:(uint32_t) value {
-  result.hasGameTime = YES;
-  result.gameTime = value;
+  _builderResult.hasGameTime = YES;
+  _builderResult.gameTime = value;
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_Builder*) clearGameTime {
-  result.hasGameTime = NO;
-  result.gameTime = 0;
+  _builderResult.hasGameTime = NO;
+  _builderResult.gameTime = 0;
   return self;
 }
 - (BOOL) hasTeam1Score {
-  return result.hasTeam1Score;
+  return _builderResult.hasTeam1Score;
 }
 - (uint32_t) team1Score {
-  return result.team1Score;
+  return _builderResult.team1Score;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_Builder*) setTeam1Score:(uint32_t) value {
-  result.hasTeam1Score = YES;
-  result.team1Score = value;
+  _builderResult.hasTeam1Score = YES;
+  _builderResult.team1Score = value;
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_Builder*) clearTeam1Score {
-  result.hasTeam1Score = NO;
-  result.team1Score = 0;
+  _builderResult.hasTeam1Score = NO;
+  _builderResult.team1Score = 0;
   return self;
 }
 - (BOOL) hasTeam2Score {
-  return result.hasTeam2Score;
+  return _builderResult.hasTeam2Score;
 }
 - (uint32_t) team2Score {
-  return result.team2Score;
+  return _builderResult.team2Score;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_Builder*) setTeam2Score:(uint32_t) value {
-  result.hasTeam2Score = YES;
-  result.team2Score = value;
+  _builderResult.hasTeam2Score = YES;
+  _builderResult.team2Score = value;
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_Builder*) clearTeam2Score {
-  result.hasTeam2Score = NO;
-  result.team2Score = 0;
+  _builderResult.hasTeam2Score = NO;
+  _builderResult.team2Score = 0;
   return self;
 }
 - (PBAppendableArray *)playerPositions {
-  return result.playerPositionsArray;
+  return _builderResult.playerPositionsArray;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions*)playerPositionsAtIndex:(NSUInteger)index {
-  return [result playerPositionsAtIndex:index];
+  return [_builderResult playerPositionsAtIndex:index];
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_Builder *)addPlayerPositions:(CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions*)value {
-  if (result.playerPositionsArray == nil) {
-    result.playerPositionsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.playerPositionsArray == nil) {
+    _builderResult.playerPositionsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.playerPositionsArray addObject:value];
+  [_builderResult.playerPositionsArray addObject:value];
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_Builder *)setPlayerPositionsArray:(NSArray *)array {
-  result.playerPositionsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.playerPositionsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_Builder *)setPlayerPositionsValues:(const CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions* *)values count:(NSUInteger)count {
-  result.playerPositionsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.playerPositionsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_Builder *)clearPlayerPositions {
-  result.playerPositionsArray = nil;
+  _builderResult.playerPositionsArray = nil;
   return self;
 }
 - (BOOL) hasSaveId {
-  return result.hasSaveId;
+  return _builderResult.hasSaveId;
 }
 - (uint32_t) saveId {
-  return result.saveId;
+  return _builderResult.saveId;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_Builder*) setSaveId:(uint32_t) value {
-  result.hasSaveId = YES;
-  result.saveId = value;
+  _builderResult.hasSaveId = YES;
+  _builderResult.saveId = value;
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_Builder*) clearSaveId {
-  result.hasSaveId = NO;
-  result.saveId = 0;
+  _builderResult.hasSaveId = NO;
+  _builderResult.saveId = 0;
   return self;
 }
 @end
@@ -57197,17 +57197,17 @@ static CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions* d
     [self setSaveTime:other.saveTime];
   }
   if (other.playersArray.count > 0) {
-    if (result.playersArray == nil) {
-      result.playersArray = [[other.playersArray copyWithZone:[other.playersArray zone]] autorelease];
+    if (_builderResult.playersArray == nil) {
+      _builderResult.playersArray = [[other.playersArray copyWithZone:[other.playersArray zone]] autorelease];
     } else {
-      [result.playersArray appendArray:other.playersArray];
+      [_builderResult.playersArray appendArray:other.playersArray];
     }
   }
   if (other.saveInstancesArray.count > 0) {
-    if (result.saveInstancesArray == nil) {
-      result.saveInstancesArray = [[other.saveInstancesArray copyWithZone:[other.saveInstancesArray zone]] autorelease];
+    if (_builderResult.saveInstancesArray == nil) {
+      _builderResult.saveInstancesArray = [[other.saveInstancesArray copyWithZone:[other.saveInstancesArray zone]] autorelease];
     } else {
-      [result.saveInstancesArray appendArray:other.saveInstancesArray];
+      [_builderResult.saveInstancesArray appendArray:other.saveInstancesArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -57255,85 +57255,85 @@ static CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions* d
   }
 }
 - (BOOL) hasLobbyId {
-  return result.hasLobbyId;
+  return _builderResult.hasLobbyId;
 }
 - (uint64_t) lobbyId {
-  return result.lobbyId;
+  return _builderResult.lobbyId;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Builder*) setLobbyId:(uint64_t) value {
-  result.hasLobbyId = YES;
-  result.lobbyId = value;
+  _builderResult.hasLobbyId = YES;
+  _builderResult.lobbyId = value;
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Builder*) clearLobbyId {
-  result.hasLobbyId = NO;
-  result.lobbyId = 0L;
+  _builderResult.hasLobbyId = NO;
+  _builderResult.lobbyId = 0L;
   return self;
 }
 - (BOOL) hasSaveTime {
-  return result.hasSaveTime;
+  return _builderResult.hasSaveTime;
 }
 - (uint32_t) saveTime {
-  return result.saveTime;
+  return _builderResult.saveTime;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Builder*) setSaveTime:(uint32_t) value {
-  result.hasSaveTime = YES;
-  result.saveTime = value;
+  _builderResult.hasSaveTime = YES;
+  _builderResult.saveTime = value;
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Builder*) clearSaveTime {
-  result.hasSaveTime = NO;
-  result.saveTime = 0;
+  _builderResult.hasSaveTime = NO;
+  _builderResult.saveTime = 0;
   return self;
 }
 - (PBAppendableArray *)players {
-  return result.playersArray;
+  return _builderResult.playersArray;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Player*)playersAtIndex:(NSUInteger)index {
-  return [result playersAtIndex:index];
+  return [_builderResult playersAtIndex:index];
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Builder *)addPlayers:(CMsgDOTARequestSaveGamesResponse_SaveGame_Player*)value {
-  if (result.playersArray == nil) {
-    result.playersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.playersArray == nil) {
+    _builderResult.playersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.playersArray addObject:value];
+  [_builderResult.playersArray addObject:value];
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Builder *)setPlayersArray:(NSArray *)array {
-  result.playersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.playersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Builder *)setPlayersValues:(const CMsgDOTARequestSaveGamesResponse_SaveGame_Player* *)values count:(NSUInteger)count {
-  result.playersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.playersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Builder *)clearPlayers {
-  result.playersArray = nil;
+  _builderResult.playersArray = nil;
   return self;
 }
 - (PBAppendableArray *)saveInstances {
-  return result.saveInstancesArray;
+  return _builderResult.saveInstancesArray;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance*)saveInstancesAtIndex:(NSUInteger)index {
-  return [result saveInstancesAtIndex:index];
+  return [_builderResult saveInstancesAtIndex:index];
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Builder *)addSaveInstances:(CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance*)value {
-  if (result.saveInstancesArray == nil) {
-    result.saveInstancesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.saveInstancesArray == nil) {
+    _builderResult.saveInstancesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.saveInstancesArray addObject:value];
+  [_builderResult.saveInstancesArray addObject:value];
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Builder *)setSaveInstancesArray:(NSArray *)array {
-  result.saveInstancesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.saveInstancesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Builder *)setSaveInstancesValues:(const CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance* *)values count:(NSUInteger)count {
-  result.saveInstancesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.saveInstancesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Builder *)clearSaveInstances {
-  result.saveInstancesArray = nil;
+  _builderResult.saveInstancesArray = nil;
   return self;
 }
 @end
@@ -57384,10 +57384,10 @@ static CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions* d
     [self setSteamId:other.steamId];
   }
   if (other.saveGamesArray.count > 0) {
-    if (result.saveGamesArray == nil) {
-      result.saveGamesArray = [[other.saveGamesArray copyWithZone:[other.saveGamesArray zone]] autorelease];
+    if (_builderResult.saveGamesArray == nil) {
+      _builderResult.saveGamesArray = [[other.saveGamesArray copyWithZone:[other.saveGamesArray zone]] autorelease];
     } else {
-      [result.saveGamesArray appendArray:other.saveGamesArray];
+      [_builderResult.saveGamesArray appendArray:other.saveGamesArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -57425,44 +57425,44 @@ static CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions* d
   }
 }
 - (BOOL) hasSteamId {
-  return result.hasSteamId;
+  return _builderResult.hasSteamId;
 }
 - (uint64_t) steamId {
-  return result.steamId;
+  return _builderResult.steamId;
 }
 - (CMsgDOTARequestSaveGamesResponse_Builder*) setSteamId:(uint64_t) value {
-  result.hasSteamId = YES;
-  result.steamId = value;
+  _builderResult.hasSteamId = YES;
+  _builderResult.steamId = value;
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_Builder*) clearSteamId {
-  result.hasSteamId = NO;
-  result.steamId = 0L;
+  _builderResult.hasSteamId = NO;
+  _builderResult.steamId = 0L;
   return self;
 }
 - (PBAppendableArray *)saveGames {
-  return result.saveGamesArray;
+  return _builderResult.saveGamesArray;
 }
 - (CMsgDOTARequestSaveGamesResponse_SaveGame*)saveGamesAtIndex:(NSUInteger)index {
-  return [result saveGamesAtIndex:index];
+  return [_builderResult saveGamesAtIndex:index];
 }
 - (CMsgDOTARequestSaveGamesResponse_Builder *)addSaveGames:(CMsgDOTARequestSaveGamesResponse_SaveGame*)value {
-  if (result.saveGamesArray == nil) {
-    result.saveGamesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.saveGamesArray == nil) {
+    _builderResult.saveGamesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.saveGamesArray addObject:value];
+  [_builderResult.saveGamesArray addObject:value];
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_Builder *)setSaveGamesArray:(NSArray *)array {
-  result.saveGamesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.saveGamesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_Builder *)setSaveGamesValues:(const CMsgDOTARequestSaveGamesResponse_SaveGame* *)values count:(NSUInteger)count {
-  result.saveGamesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.saveGamesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTARequestSaveGamesResponse_Builder *)clearSaveGames {
-  result.saveGamesArray = nil;
+  _builderResult.saveGamesArray = nil;
   return self;
 }
 @end
@@ -57634,10 +57634,10 @@ static CMsgDOTAPlayerFailedToConnect* defaultCMsgDOTAPlayerFailedToConnectInstan
     return self;
   }
   if (other.failedLoadersArray.count > 0) {
-    if (result.failedLoadersArray == nil) {
-      result.failedLoadersArray = [[other.failedLoadersArray copyWithZone:[other.failedLoadersArray zone]] autorelease];
+    if (_builderResult.failedLoadersArray == nil) {
+      _builderResult.failedLoadersArray = [[other.failedLoadersArray copyWithZone:[other.failedLoadersArray zone]] autorelease];
     } else {
-      [result.failedLoadersArray appendArray:other.failedLoadersArray];
+      [_builderResult.failedLoadersArray appendArray:other.failedLoadersArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -57669,28 +57669,28 @@ static CMsgDOTAPlayerFailedToConnect* defaultCMsgDOTAPlayerFailedToConnectInstan
   }
 }
 - (PBAppendableArray *)failedLoaders {
-  return result.failedLoadersArray;
+  return _builderResult.failedLoadersArray;
 }
 - (uint64_t)failedLoadersAtIndex:(NSUInteger)index {
-  return [result failedLoadersAtIndex:index];
+  return [_builderResult failedLoadersAtIndex:index];
 }
 - (CMsgDOTAPlayerFailedToConnect_Builder *)addFailedLoaders:(uint64_t)value {
-  if (result.failedLoadersArray == nil) {
-    result.failedLoadersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
+  if (_builderResult.failedLoadersArray == nil) {
+    _builderResult.failedLoadersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
   }
-  [result.failedLoadersArray addUint64:value];
+  [_builderResult.failedLoadersArray addUint64:value];
   return self;
 }
 - (CMsgDOTAPlayerFailedToConnect_Builder *)setFailedLoadersArray:(NSArray *)array {
-  result.failedLoadersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
+  _builderResult.failedLoadersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgDOTAPlayerFailedToConnect_Builder *)setFailedLoadersValues:(const uint64_t *)values count:(NSUInteger)count {
-  result.failedLoadersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
+  _builderResult.failedLoadersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgDOTAPlayerFailedToConnect_Builder *)clearFailedLoaders {
-  result.failedLoadersArray = nil;
+  _builderResult.failedLoadersArray = nil;
   return self;
 }
 @end
@@ -58035,99 +58035,99 @@ static CMsgGCToRelayConnect* defaultCMsgGCToRelayConnectInstance = nil;
   }
 }
 - (BOOL) hasSourceTvPublicAddr {
-  return result.hasSourceTvPublicAddr;
+  return _builderResult.hasSourceTvPublicAddr;
 }
 - (uint32_t) sourceTvPublicAddr {
-  return result.sourceTvPublicAddr;
+  return _builderResult.sourceTvPublicAddr;
 }
 - (CMsgGCToRelayConnect_Builder*) setSourceTvPublicAddr:(uint32_t) value {
-  result.hasSourceTvPublicAddr = YES;
-  result.sourceTvPublicAddr = value;
+  _builderResult.hasSourceTvPublicAddr = YES;
+  _builderResult.sourceTvPublicAddr = value;
   return self;
 }
 - (CMsgGCToRelayConnect_Builder*) clearSourceTvPublicAddr {
-  result.hasSourceTvPublicAddr = NO;
-  result.sourceTvPublicAddr = 0;
+  _builderResult.hasSourceTvPublicAddr = NO;
+  _builderResult.sourceTvPublicAddr = 0;
   return self;
 }
 - (BOOL) hasSourceTvPrivateAddr {
-  return result.hasSourceTvPrivateAddr;
+  return _builderResult.hasSourceTvPrivateAddr;
 }
 - (uint32_t) sourceTvPrivateAddr {
-  return result.sourceTvPrivateAddr;
+  return _builderResult.sourceTvPrivateAddr;
 }
 - (CMsgGCToRelayConnect_Builder*) setSourceTvPrivateAddr:(uint32_t) value {
-  result.hasSourceTvPrivateAddr = YES;
-  result.sourceTvPrivateAddr = value;
+  _builderResult.hasSourceTvPrivateAddr = YES;
+  _builderResult.sourceTvPrivateAddr = value;
   return self;
 }
 - (CMsgGCToRelayConnect_Builder*) clearSourceTvPrivateAddr {
-  result.hasSourceTvPrivateAddr = NO;
-  result.sourceTvPrivateAddr = 0;
+  _builderResult.hasSourceTvPrivateAddr = NO;
+  _builderResult.sourceTvPrivateAddr = 0;
   return self;
 }
 - (BOOL) hasSourceTvPort {
-  return result.hasSourceTvPort;
+  return _builderResult.hasSourceTvPort;
 }
 - (uint32_t) sourceTvPort {
-  return result.sourceTvPort;
+  return _builderResult.sourceTvPort;
 }
 - (CMsgGCToRelayConnect_Builder*) setSourceTvPort:(uint32_t) value {
-  result.hasSourceTvPort = YES;
-  result.sourceTvPort = value;
+  _builderResult.hasSourceTvPort = YES;
+  _builderResult.sourceTvPort = value;
   return self;
 }
 - (CMsgGCToRelayConnect_Builder*) clearSourceTvPort {
-  result.hasSourceTvPort = NO;
-  result.sourceTvPort = 0;
+  _builderResult.hasSourceTvPort = NO;
+  _builderResult.sourceTvPort = 0;
   return self;
 }
 - (BOOL) hasGameServerSteamId {
-  return result.hasGameServerSteamId;
+  return _builderResult.hasGameServerSteamId;
 }
 - (uint64_t) gameServerSteamId {
-  return result.gameServerSteamId;
+  return _builderResult.gameServerSteamId;
 }
 - (CMsgGCToRelayConnect_Builder*) setGameServerSteamId:(uint64_t) value {
-  result.hasGameServerSteamId = YES;
-  result.gameServerSteamId = value;
+  _builderResult.hasGameServerSteamId = YES;
+  _builderResult.gameServerSteamId = value;
   return self;
 }
 - (CMsgGCToRelayConnect_Builder*) clearGameServerSteamId {
-  result.hasGameServerSteamId = NO;
-  result.gameServerSteamId = 0L;
+  _builderResult.hasGameServerSteamId = NO;
+  _builderResult.gameServerSteamId = 0L;
   return self;
 }
 - (BOOL) hasParentCount {
-  return result.hasParentCount;
+  return _builderResult.hasParentCount;
 }
 - (uint32_t) parentCount {
-  return result.parentCount;
+  return _builderResult.parentCount;
 }
 - (CMsgGCToRelayConnect_Builder*) setParentCount:(uint32_t) value {
-  result.hasParentCount = YES;
-  result.parentCount = value;
+  _builderResult.hasParentCount = YES;
+  _builderResult.parentCount = value;
   return self;
 }
 - (CMsgGCToRelayConnect_Builder*) clearParentCount {
-  result.hasParentCount = NO;
-  result.parentCount = 0;
+  _builderResult.hasParentCount = NO;
+  _builderResult.parentCount = 0;
   return self;
 }
 - (BOOL) hasTvUniqueSecretCode {
-  return result.hasTvUniqueSecretCode;
+  return _builderResult.hasTvUniqueSecretCode;
 }
 - (uint64_t) tvUniqueSecretCode {
-  return result.tvUniqueSecretCode;
+  return _builderResult.tvUniqueSecretCode;
 }
 - (CMsgGCToRelayConnect_Builder*) setTvUniqueSecretCode:(uint64_t) value {
-  result.hasTvUniqueSecretCode = YES;
-  result.tvUniqueSecretCode = value;
+  _builderResult.hasTvUniqueSecretCode = YES;
+  _builderResult.tvUniqueSecretCode = value;
   return self;
 }
 - (CMsgGCToRelayConnect_Builder*) clearTvUniqueSecretCode {
-  result.hasTvUniqueSecretCode = NO;
-  result.tvUniqueSecretCode = 0L;
+  _builderResult.hasTvUniqueSecretCode = NO;
+  _builderResult.tvUniqueSecretCode = 0L;
   return self;
 }
 @end
@@ -58573,67 +58573,67 @@ static CMsgWatchGame* defaultCMsgWatchGameInstance = nil;
   }
 }
 - (BOOL) hasServerSteamid {
-  return result.hasServerSteamid;
+  return _builderResult.hasServerSteamid;
 }
 - (uint64_t) serverSteamid {
-  return result.serverSteamid;
+  return _builderResult.serverSteamid;
 }
 - (CMsgWatchGame_Builder*) setServerSteamid:(uint64_t) value {
-  result.hasServerSteamid = YES;
-  result.serverSteamid = value;
+  _builderResult.hasServerSteamid = YES;
+  _builderResult.serverSteamid = value;
   return self;
 }
 - (CMsgWatchGame_Builder*) clearServerSteamid {
-  result.hasServerSteamid = NO;
-  result.serverSteamid = 0L;
+  _builderResult.hasServerSteamid = NO;
+  _builderResult.serverSteamid = 0L;
   return self;
 }
 - (BOOL) hasClientVersion {
-  return result.hasClientVersion;
+  return _builderResult.hasClientVersion;
 }
 - (uint32_t) clientVersion {
-  return result.clientVersion;
+  return _builderResult.clientVersion;
 }
 - (CMsgWatchGame_Builder*) setClientVersion:(uint32_t) value {
-  result.hasClientVersion = YES;
-  result.clientVersion = value;
+  _builderResult.hasClientVersion = YES;
+  _builderResult.clientVersion = value;
   return self;
 }
 - (CMsgWatchGame_Builder*) clearClientVersion {
-  result.hasClientVersion = NO;
-  result.clientVersion = 0;
+  _builderResult.hasClientVersion = NO;
+  _builderResult.clientVersion = 0;
   return self;
 }
 - (BOOL) hasWatchServerSteamid {
-  return result.hasWatchServerSteamid;
+  return _builderResult.hasWatchServerSteamid;
 }
 - (uint64_t) watchServerSteamid {
-  return result.watchServerSteamid;
+  return _builderResult.watchServerSteamid;
 }
 - (CMsgWatchGame_Builder*) setWatchServerSteamid:(uint64_t) value {
-  result.hasWatchServerSteamid = YES;
-  result.watchServerSteamid = value;
+  _builderResult.hasWatchServerSteamid = YES;
+  _builderResult.watchServerSteamid = value;
   return self;
 }
 - (CMsgWatchGame_Builder*) clearWatchServerSteamid {
-  result.hasWatchServerSteamid = NO;
-  result.watchServerSteamid = 0L;
+  _builderResult.hasWatchServerSteamid = NO;
+  _builderResult.watchServerSteamid = 0L;
   return self;
 }
 - (BOOL) hasLobbyId {
-  return result.hasLobbyId;
+  return _builderResult.hasLobbyId;
 }
 - (uint64_t) lobbyId {
-  return result.lobbyId;
+  return _builderResult.lobbyId;
 }
 - (CMsgWatchGame_Builder*) setLobbyId:(uint64_t) value {
-  result.hasLobbyId = YES;
-  result.lobbyId = value;
+  _builderResult.hasLobbyId = YES;
+  _builderResult.lobbyId = value;
   return self;
 }
 - (CMsgWatchGame_Builder*) clearLobbyId {
-  result.hasLobbyId = NO;
-  result.lobbyId = 0L;
+  _builderResult.hasLobbyId = NO;
+  _builderResult.lobbyId = 0L;
   return self;
 }
 @end
@@ -59189,115 +59189,115 @@ BOOL CMsgWatchGameResponse_WatchGameResultIsValidValue(CMsgWatchGameResponse_Wat
   }
 }
 - (BOOL) haswatch_game_result {
-  return result.haswatch_game_result;
+  return _builderResult.haswatch_game_result;
 }
 - (CMsgWatchGameResponse_WatchGameResult) watch_game_result {
-  return result.watch_game_result;
+  return _builderResult.watch_game_result;
 }
 - (CMsgWatchGameResponse_Builder*) setwatch_game_result:(CMsgWatchGameResponse_WatchGameResult) value {
-  result.haswatch_game_result = YES;
-  result.watch_game_result = value;
+  _builderResult.haswatch_game_result = YES;
+  _builderResult.watch_game_result = value;
   return self;
 }
 - (CMsgWatchGameResponse_Builder*) clearwatch_game_result {
-  result.haswatch_game_result = NO;
-  result.watch_game_result = CMsgWatchGameResponse_WatchGameResultPENDING;
+  _builderResult.haswatch_game_result = NO;
+  _builderResult.watch_game_result = CMsgWatchGameResponse_WatchGameResultPENDING;
   return self;
 }
 - (BOOL) hasSourceTvPublicAddr {
-  return result.hasSourceTvPublicAddr;
+  return _builderResult.hasSourceTvPublicAddr;
 }
 - (uint32_t) sourceTvPublicAddr {
-  return result.sourceTvPublicAddr;
+  return _builderResult.sourceTvPublicAddr;
 }
 - (CMsgWatchGameResponse_Builder*) setSourceTvPublicAddr:(uint32_t) value {
-  result.hasSourceTvPublicAddr = YES;
-  result.sourceTvPublicAddr = value;
+  _builderResult.hasSourceTvPublicAddr = YES;
+  _builderResult.sourceTvPublicAddr = value;
   return self;
 }
 - (CMsgWatchGameResponse_Builder*) clearSourceTvPublicAddr {
-  result.hasSourceTvPublicAddr = NO;
-  result.sourceTvPublicAddr = 0;
+  _builderResult.hasSourceTvPublicAddr = NO;
+  _builderResult.sourceTvPublicAddr = 0;
   return self;
 }
 - (BOOL) hasSourceTvPrivateAddr {
-  return result.hasSourceTvPrivateAddr;
+  return _builderResult.hasSourceTvPrivateAddr;
 }
 - (uint32_t) sourceTvPrivateAddr {
-  return result.sourceTvPrivateAddr;
+  return _builderResult.sourceTvPrivateAddr;
 }
 - (CMsgWatchGameResponse_Builder*) setSourceTvPrivateAddr:(uint32_t) value {
-  result.hasSourceTvPrivateAddr = YES;
-  result.sourceTvPrivateAddr = value;
+  _builderResult.hasSourceTvPrivateAddr = YES;
+  _builderResult.sourceTvPrivateAddr = value;
   return self;
 }
 - (CMsgWatchGameResponse_Builder*) clearSourceTvPrivateAddr {
-  result.hasSourceTvPrivateAddr = NO;
-  result.sourceTvPrivateAddr = 0;
+  _builderResult.hasSourceTvPrivateAddr = NO;
+  _builderResult.sourceTvPrivateAddr = 0;
   return self;
 }
 - (BOOL) hasSourceTvPort {
-  return result.hasSourceTvPort;
+  return _builderResult.hasSourceTvPort;
 }
 - (uint32_t) sourceTvPort {
-  return result.sourceTvPort;
+  return _builderResult.sourceTvPort;
 }
 - (CMsgWatchGameResponse_Builder*) setSourceTvPort:(uint32_t) value {
-  result.hasSourceTvPort = YES;
-  result.sourceTvPort = value;
+  _builderResult.hasSourceTvPort = YES;
+  _builderResult.sourceTvPort = value;
   return self;
 }
 - (CMsgWatchGameResponse_Builder*) clearSourceTvPort {
-  result.hasSourceTvPort = NO;
-  result.sourceTvPort = 0;
+  _builderResult.hasSourceTvPort = NO;
+  _builderResult.sourceTvPort = 0;
   return self;
 }
 - (BOOL) hasGameServerSteamid {
-  return result.hasGameServerSteamid;
+  return _builderResult.hasGameServerSteamid;
 }
 - (uint64_t) gameServerSteamid {
-  return result.gameServerSteamid;
+  return _builderResult.gameServerSteamid;
 }
 - (CMsgWatchGameResponse_Builder*) setGameServerSteamid:(uint64_t) value {
-  result.hasGameServerSteamid = YES;
-  result.gameServerSteamid = value;
+  _builderResult.hasGameServerSteamid = YES;
+  _builderResult.gameServerSteamid = value;
   return self;
 }
 - (CMsgWatchGameResponse_Builder*) clearGameServerSteamid {
-  result.hasGameServerSteamid = NO;
-  result.gameServerSteamid = 0L;
+  _builderResult.hasGameServerSteamid = NO;
+  _builderResult.gameServerSteamid = 0L;
   return self;
 }
 - (BOOL) hasWatchServerSteamid {
-  return result.hasWatchServerSteamid;
+  return _builderResult.hasWatchServerSteamid;
 }
 - (uint64_t) watchServerSteamid {
-  return result.watchServerSteamid;
+  return _builderResult.watchServerSteamid;
 }
 - (CMsgWatchGameResponse_Builder*) setWatchServerSteamid:(uint64_t) value {
-  result.hasWatchServerSteamid = YES;
-  result.watchServerSteamid = value;
+  _builderResult.hasWatchServerSteamid = YES;
+  _builderResult.watchServerSteamid = value;
   return self;
 }
 - (CMsgWatchGameResponse_Builder*) clearWatchServerSteamid {
-  result.hasWatchServerSteamid = NO;
-  result.watchServerSteamid = 0L;
+  _builderResult.hasWatchServerSteamid = NO;
+  _builderResult.watchServerSteamid = 0L;
   return self;
 }
 - (BOOL) hasWatchTvUniqueSecretCode {
-  return result.hasWatchTvUniqueSecretCode;
+  return _builderResult.hasWatchTvUniqueSecretCode;
 }
 - (uint64_t) watchTvUniqueSecretCode {
-  return result.watchTvUniqueSecretCode;
+  return _builderResult.watchTvUniqueSecretCode;
 }
 - (CMsgWatchGameResponse_Builder*) setWatchTvUniqueSecretCode:(uint64_t) value {
-  result.hasWatchTvUniqueSecretCode = YES;
-  result.watchTvUniqueSecretCode = value;
+  _builderResult.hasWatchTvUniqueSecretCode = YES;
+  _builderResult.watchTvUniqueSecretCode = value;
   return self;
 }
 - (CMsgWatchGameResponse_Builder*) clearWatchTvUniqueSecretCode {
-  result.hasWatchTvUniqueSecretCode = NO;
-  result.watchTvUniqueSecretCode = 0L;
+  _builderResult.hasWatchTvUniqueSecretCode = NO;
+  _builderResult.watchTvUniqueSecretCode = 0L;
   return self;
 }
 @end
@@ -59492,19 +59492,19 @@ static CMsgGCBanStatusRequest* defaultCMsgGCBanStatusRequestInstance = nil;
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgGCBanStatusRequest_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgGCBanStatusRequest_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 @end
@@ -59804,67 +59804,67 @@ static CMsgGCBanStatusResponse* defaultCMsgGCBanStatusResponseInstance = nil;
   }
 }
 - (BOOL) hasResult {
-  return result.hasResult;
+  return _builderResult.hasResult;
 }
 - (uint32_t) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgGCBanStatusResponse_Builder*) setResult:(uint32_t) value {
-  result.hasResult = YES;
-  result.result = value;
+  _builderResult.hasResult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgGCBanStatusResponse_Builder*) clearResult {
-  result.hasResult = NO;
-  result.result = 0;
+  _builderResult.hasResult = NO;
+  _builderResult.result = 0;
   return self;
 }
 - (BOOL) hasMatchBanned {
-  return result.hasMatchBanned;
+  return _builderResult.hasMatchBanned;
 }
 - (BOOL) matchBanned {
-  return result.matchBanned;
+  return _builderResult.matchBanned;
 }
 - (CMsgGCBanStatusResponse_Builder*) setMatchBanned:(BOOL) value {
-  result.hasMatchBanned = YES;
-  result.matchBanned = value;
+  _builderResult.hasMatchBanned = YES;
+  _builderResult.matchBanned = value;
   return self;
 }
 - (CMsgGCBanStatusResponse_Builder*) clearMatchBanned {
-  result.hasMatchBanned = NO;
-  result.matchBanned = NO;
+  _builderResult.hasMatchBanned = NO;
+  _builderResult.matchBanned = NO;
   return self;
 }
 - (BOOL) hasTextChatBanned {
-  return result.hasTextChatBanned;
+  return _builderResult.hasTextChatBanned;
 }
 - (BOOL) textChatBanned {
-  return result.textChatBanned;
+  return _builderResult.textChatBanned;
 }
 - (CMsgGCBanStatusResponse_Builder*) setTextChatBanned:(BOOL) value {
-  result.hasTextChatBanned = YES;
-  result.textChatBanned = value;
+  _builderResult.hasTextChatBanned = YES;
+  _builderResult.textChatBanned = value;
   return self;
 }
 - (CMsgGCBanStatusResponse_Builder*) clearTextChatBanned {
-  result.hasTextChatBanned = NO;
-  result.textChatBanned = NO;
+  _builderResult.hasTextChatBanned = NO;
+  _builderResult.textChatBanned = NO;
   return self;
 }
 - (BOOL) hasVoiceChatBanned {
-  return result.hasVoiceChatBanned;
+  return _builderResult.hasVoiceChatBanned;
 }
 - (BOOL) voiceChatBanned {
-  return result.voiceChatBanned;
+  return _builderResult.voiceChatBanned;
 }
 - (CMsgGCBanStatusResponse_Builder*) setVoiceChatBanned:(BOOL) value {
-  result.hasVoiceChatBanned = YES;
-  result.voiceChatBanned = value;
+  _builderResult.hasVoiceChatBanned = YES;
+  _builderResult.voiceChatBanned = value;
   return self;
 }
 - (CMsgGCBanStatusResponse_Builder*) clearVoiceChatBanned {
-  result.hasVoiceChatBanned = NO;
-  result.voiceChatBanned = NO;
+  _builderResult.hasVoiceChatBanned = NO;
+  _builderResult.voiceChatBanned = NO;
   return self;
 }
 @end
@@ -60119,51 +60119,51 @@ static CMsgDOTADailyStats* defaultCMsgDOTADailyStatsInstance = nil;
   }
 }
 - (BOOL) hasDate {
-  return result.hasDate;
+  return _builderResult.hasDate;
 }
 - (uint32_t) date {
-  return result.date;
+  return _builderResult.date;
 }
 - (CMsgDOTADailyStats_Builder*) setDate:(uint32_t) value {
-  result.hasDate = YES;
-  result.date = value;
+  _builderResult.hasDate = YES;
+  _builderResult.date = value;
   return self;
 }
 - (CMsgDOTADailyStats_Builder*) clearDate {
-  result.hasDate = NO;
-  result.date = 0;
+  _builderResult.hasDate = NO;
+  _builderResult.date = 0;
   return self;
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CMsgDOTADailyStats_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CMsgDOTADailyStats_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 - (BOOL) hasPopularity {
-  return result.hasPopularity;
+  return _builderResult.hasPopularity;
 }
 - (uint32_t) popularity {
-  return result.popularity;
+  return _builderResult.popularity;
 }
 - (CMsgDOTADailyStats_Builder*) setPopularity:(uint32_t) value {
-  result.hasPopularity = YES;
-  result.popularity = value;
+  _builderResult.hasPopularity = YES;
+  _builderResult.popularity = value;
   return self;
 }
 - (CMsgDOTADailyStats_Builder*) clearPopularity {
-  result.hasPopularity = NO;
-  result.popularity = 0;
+  _builderResult.hasPopularity = NO;
+  _builderResult.popularity = 0;
   return self;
 }
 @end
@@ -60519,19 +60519,19 @@ static CMsgGCMatchDetailsRequest* defaultCMsgGCMatchDetailsRequestInstance = nil
   }
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CMsgGCMatchDetailsRequest_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CMsgGCMatchDetailsRequest_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 @end
@@ -60800,65 +60800,65 @@ static CMsgGCMatchDetailsResponse* defaultCMsgGCMatchDetailsResponseInstance = n
   }
 }
 - (BOOL) hasResult {
-  return result.hasResult;
+  return _builderResult.hasResult;
 }
 - (uint32_t) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgGCMatchDetailsResponse_Builder*) setResult:(uint32_t) value {
-  result.hasResult = YES;
-  result.result = value;
+  _builderResult.hasResult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgGCMatchDetailsResponse_Builder*) clearResult {
-  result.hasResult = NO;
-  result.result = 0;
+  _builderResult.hasResult = NO;
+  _builderResult.result = 0;
   return self;
 }
 - (BOOL) hasMatch {
-  return result.hasMatch;
+  return _builderResult.hasMatch;
 }
 - (CMsgDOTAMatch*) match {
-  return result.match;
+  return _builderResult.match;
 }
 - (CMsgGCMatchDetailsResponse_Builder*) setMatch:(CMsgDOTAMatch*) value {
-  result.hasMatch = YES;
-  result.match = value;
+  _builderResult.hasMatch = YES;
+  _builderResult.match = value;
   return self;
 }
 - (CMsgGCMatchDetailsResponse_Builder*) setMatchBuilder:(CMsgDOTAMatch_Builder*) builderForValue {
   return [self setMatch:[builderForValue build]];
 }
 - (CMsgGCMatchDetailsResponse_Builder*) mergeMatch:(CMsgDOTAMatch*) value {
-  if (result.hasMatch &&
-      result.match != [CMsgDOTAMatch defaultInstance]) {
-    result.match =
-      [[[CMsgDOTAMatch builderWithPrototype:result.match] mergeFrom:value] buildPartial];
+  if (_builderResult.hasMatch &&
+      _builderResult.match != [CMsgDOTAMatch defaultInstance]) {
+    _builderResult.match =
+      [[[CMsgDOTAMatch builderWithPrototype:_builderResult.match] mergeFrom:value] buildPartial];
   } else {
-    result.match = value;
+    _builderResult.match = value;
   }
-  result.hasMatch = YES;
+  _builderResult.hasMatch = YES;
   return self;
 }
 - (CMsgGCMatchDetailsResponse_Builder*) clearMatch {
-  result.hasMatch = NO;
-  result.match = [CMsgDOTAMatch defaultInstance];
+  _builderResult.hasMatch = NO;
+  _builderResult.match = [CMsgDOTAMatch defaultInstance];
   return self;
 }
 - (BOOL) hasvote {
-  return result.hasvote;
+  return _builderResult.hasvote;
 }
 - (DOTAMatchVote) vote {
-  return result.vote;
+  return _builderResult.vote;
 }
 - (CMsgGCMatchDetailsResponse_Builder*) setvote:(DOTAMatchVote) value {
-  result.hasvote = YES;
-  result.vote = value;
+  _builderResult.hasvote = YES;
+  _builderResult.vote = value;
   return self;
 }
 - (CMsgGCMatchDetailsResponse_Builder*) clearvote {
-  result.hasvote = NO;
-  result.vote = DOTAMatchVoteDOTAMatchVote_INVALID;
+  _builderResult.hasvote = NO;
+  _builderResult.vote = DOTAMatchVoteDOTAMatchVote_INVALID;
   return self;
 }
 @end
@@ -61088,35 +61088,35 @@ static CMsgDOTAProfileRequest* defaultCMsgDOTAProfileRequestInstance = nil;
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgDOTAProfileRequest_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgDOTAProfileRequest_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasRequestName {
-  return result.hasRequestName;
+  return _builderResult.hasRequestName;
 }
 - (BOOL) requestName {
-  return result.requestName;
+  return _builderResult.requestName;
 }
 - (CMsgDOTAProfileRequest_Builder*) setRequestName:(BOOL) value {
-  result.hasRequestName = YES;
-  result.requestName = value;
+  _builderResult.hasRequestName = YES;
+  _builderResult.requestName = value;
   return self;
 }
 - (CMsgDOTAProfileRequest_Builder*) clearRequestName {
-  result.hasRequestName = NO;
-  result.requestName = NO;
+  _builderResult.hasRequestName = NO;
+  _builderResult.requestName = NO;
   return self;
 }
 @end
@@ -61733,35 +61733,35 @@ static CMsgDOTAProfileResponse_PlayedHero* defaultCMsgDOTAProfileResponse_Played
   }
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CMsgDOTAProfileResponse_PlayedHero_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CMsgDOTAProfileResponse_PlayedHero_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 - (BOOL) hasWins {
-  return result.hasWins;
+  return _builderResult.hasWins;
 }
 - (uint32_t) wins {
-  return result.wins;
+  return _builderResult.wins;
 }
 - (CMsgDOTAProfileResponse_PlayedHero_Builder*) setWins:(uint32_t) value {
-  result.hasWins = YES;
-  result.wins = value;
+  _builderResult.hasWins = YES;
+  _builderResult.wins = value;
   return self;
 }
 - (CMsgDOTAProfileResponse_PlayedHero_Builder*) clearWins {
-  result.hasWins = NO;
-  result.wins = 0;
+  _builderResult.hasWins = NO;
+  _builderResult.wins = 0;
   return self;
 }
 @end
@@ -61962,10 +61962,10 @@ static CMsgDOTAProfileResponse_ShowcaseHero* defaultCMsgDOTAProfileResponse_Show
     [self setHeroId:other.heroId];
   }
   if (other.objectDataArray.count > 0) {
-    if (result.objectDataArray == nil) {
-      result.objectDataArray = [[other.objectDataArray copyWithZone:[other.objectDataArray zone]] autorelease];
+    if (_builderResult.objectDataArray == nil) {
+      _builderResult.objectDataArray = [[other.objectDataArray copyWithZone:[other.objectDataArray zone]] autorelease];
     } else {
-      [result.objectDataArray appendArray:other.objectDataArray];
+      [_builderResult.objectDataArray appendArray:other.objectDataArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -62001,44 +62001,44 @@ static CMsgDOTAProfileResponse_ShowcaseHero* defaultCMsgDOTAProfileResponse_Show
   }
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CMsgDOTAProfileResponse_ShowcaseHero_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CMsgDOTAProfileResponse_ShowcaseHero_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 - (PBAppendableArray *)objectData {
-  return result.objectDataArray;
+  return _builderResult.objectDataArray;
 }
 - (NSData*)objectDataAtIndex:(NSUInteger)index {
-  return [result objectDataAtIndex:index];
+  return [_builderResult objectDataAtIndex:index];
 }
 - (CMsgDOTAProfileResponse_ShowcaseHero_Builder *)addObjectData:(NSData*)value {
-  if (result.objectDataArray == nil) {
-    result.objectDataArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.objectDataArray == nil) {
+    _builderResult.objectDataArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.objectDataArray addObject:value];
+  [_builderResult.objectDataArray addObject:value];
   return self;
 }
 - (CMsgDOTAProfileResponse_ShowcaseHero_Builder *)setObjectDataArray:(NSArray *)array {
-  result.objectDataArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.objectDataArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAProfileResponse_ShowcaseHero_Builder *)setObjectDataValues:(const NSData* *)values count:(NSUInteger)count {
-  result.objectDataArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.objectDataArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAProfileResponse_ShowcaseHero_Builder *)clearObjectData {
-  result.objectDataArray = nil;
+  _builderResult.objectDataArray = nil;
   return self;
 }
 @end
@@ -62263,35 +62263,35 @@ static CMsgDOTAProfileResponse_LeaguePass* defaultCMsgDOTAProfileResponse_League
   }
 }
 - (BOOL) hasLeagueId {
-  return result.hasLeagueId;
+  return _builderResult.hasLeagueId;
 }
 - (uint32_t) leagueId {
-  return result.leagueId;
+  return _builderResult.leagueId;
 }
 - (CMsgDOTAProfileResponse_LeaguePass_Builder*) setLeagueId:(uint32_t) value {
-  result.hasLeagueId = YES;
-  result.leagueId = value;
+  _builderResult.hasLeagueId = YES;
+  _builderResult.leagueId = value;
   return self;
 }
 - (CMsgDOTAProfileResponse_LeaguePass_Builder*) clearLeagueId {
-  result.hasLeagueId = NO;
-  result.leagueId = 0;
+  _builderResult.hasLeagueId = NO;
+  _builderResult.leagueId = 0;
   return self;
 }
 - (BOOL) hasItemDef {
-  return result.hasItemDef;
+  return _builderResult.hasItemDef;
 }
 - (uint32_t) itemDef {
-  return result.itemDef;
+  return _builderResult.itemDef;
 }
 - (CMsgDOTAProfileResponse_LeaguePass_Builder*) setItemDef:(uint32_t) value {
-  result.hasItemDef = YES;
-  result.itemDef = value;
+  _builderResult.hasItemDef = YES;
+  _builderResult.itemDef = value;
   return self;
 }
 - (CMsgDOTAProfileResponse_LeaguePass_Builder*) clearItemDef {
-  result.hasItemDef = NO;
-  result.itemDef = 0;
+  _builderResult.hasItemDef = NO;
+  _builderResult.itemDef = 0;
   return self;
 }
 @end
@@ -62486,19 +62486,19 @@ static CMsgDOTAProfileResponse_EventTicket* defaultCMsgDOTAProfileResponse_Event
   }
 }
 - (BOOL) hasEventId {
-  return result.hasEventId;
+  return _builderResult.hasEventId;
 }
 - (uint32_t) eventId {
-  return result.eventId;
+  return _builderResult.eventId;
 }
 - (CMsgDOTAProfileResponse_EventTicket_Builder*) setEventId:(uint32_t) value {
-  result.hasEventId = YES;
-  result.eventId = value;
+  _builderResult.hasEventId = YES;
+  _builderResult.eventId = value;
   return self;
 }
 - (CMsgDOTAProfileResponse_EventTicket_Builder*) clearEventId {
-  result.hasEventId = NO;
-  result.eventId = 0;
+  _builderResult.hasEventId = NO;
+  _builderResult.eventId = 0;
   return self;
 }
 @end
@@ -62552,17 +62552,17 @@ static CMsgDOTAProfileResponse_EventTicket* defaultCMsgDOTAProfileResponse_Event
     [self mergeGameAccountClient:other.gameAccountClient];
   }
   if (other.latestMatchesArray.count > 0) {
-    if (result.latestMatchesArray == nil) {
-      result.latestMatchesArray = [[other.latestMatchesArray copyWithZone:[other.latestMatchesArray zone]] autorelease];
+    if (_builderResult.latestMatchesArray == nil) {
+      _builderResult.latestMatchesArray = [[other.latestMatchesArray copyWithZone:[other.latestMatchesArray zone]] autorelease];
     } else {
-      [result.latestMatchesArray appendArray:other.latestMatchesArray];
+      [_builderResult.latestMatchesArray appendArray:other.latestMatchesArray];
     }
   }
   if (other.heroesArray.count > 0) {
-    if (result.heroesArray == nil) {
-      result.heroesArray = [[other.heroesArray copyWithZone:[other.heroesArray zone]] autorelease];
+    if (_builderResult.heroesArray == nil) {
+      _builderResult.heroesArray = [[other.heroesArray copyWithZone:[other.heroesArray zone]] autorelease];
     } else {
-      [result.heroesArray appendArray:other.heroesArray];
+      [_builderResult.heroesArray appendArray:other.heroesArray];
     }
   }
   if (other.hasPlayerName) {
@@ -62581,17 +62581,17 @@ static CMsgDOTAProfileResponse_EventTicket* defaultCMsgDOTAProfileResponse_Event
     [self mergeShowcaseHero:other.showcaseHero];
   }
   if (other.leaguePassesArray.count > 0) {
-    if (result.leaguePassesArray == nil) {
-      result.leaguePassesArray = [[other.leaguePassesArray copyWithZone:[other.leaguePassesArray zone]] autorelease];
+    if (_builderResult.leaguePassesArray == nil) {
+      _builderResult.leaguePassesArray = [[other.leaguePassesArray copyWithZone:[other.leaguePassesArray zone]] autorelease];
     } else {
-      [result.leaguePassesArray appendArray:other.leaguePassesArray];
+      [_builderResult.leaguePassesArray appendArray:other.leaguePassesArray];
     }
   }
   if (other.eventTicketsArray.count > 0) {
-    if (result.eventTicketsArray == nil) {
-      result.eventTicketsArray = [[other.eventTicketsArray copyWithZone:[other.eventTicketsArray zone]] autorelease];
+    if (_builderResult.eventTicketsArray == nil) {
+      _builderResult.eventTicketsArray = [[other.eventTicketsArray copyWithZone:[other.eventTicketsArray zone]] autorelease];
     } else {
-      [result.eventTicketsArray appendArray:other.eventTicketsArray];
+      [_builderResult.eventTicketsArray appendArray:other.eventTicketsArray];
     }
   }
   if (other.hasTeamId) {
@@ -62688,259 +62688,259 @@ static CMsgDOTAProfileResponse_EventTicket* defaultCMsgDOTAProfileResponse_Event
   }
 }
 - (BOOL) hasResult {
-  return result.hasResult;
+  return _builderResult.hasResult;
 }
 - (uint32_t) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgDOTAProfileResponse_Builder*) setResult:(uint32_t) value {
-  result.hasResult = YES;
-  result.result = value;
+  _builderResult.hasResult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder*) clearResult {
-  result.hasResult = NO;
-  result.result = 0;
+  _builderResult.hasResult = NO;
+  _builderResult.result = 0;
   return self;
 }
 - (BOOL) hasGameAccountClient {
-  return result.hasGameAccountClient;
+  return _builderResult.hasGameAccountClient;
 }
 - (CSODOTAGameAccountClient*) gameAccountClient {
-  return result.gameAccountClient;
+  return _builderResult.gameAccountClient;
 }
 - (CMsgDOTAProfileResponse_Builder*) setGameAccountClient:(CSODOTAGameAccountClient*) value {
-  result.hasGameAccountClient = YES;
-  result.gameAccountClient = value;
+  _builderResult.hasGameAccountClient = YES;
+  _builderResult.gameAccountClient = value;
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder*) setGameAccountClientBuilder:(CSODOTAGameAccountClient_Builder*) builderForValue {
   return [self setGameAccountClient:[builderForValue build]];
 }
 - (CMsgDOTAProfileResponse_Builder*) mergeGameAccountClient:(CSODOTAGameAccountClient*) value {
-  if (result.hasGameAccountClient &&
-      result.gameAccountClient != [CSODOTAGameAccountClient defaultInstance]) {
-    result.gameAccountClient =
-      [[[CSODOTAGameAccountClient builderWithPrototype:result.gameAccountClient] mergeFrom:value] buildPartial];
+  if (_builderResult.hasGameAccountClient &&
+      _builderResult.gameAccountClient != [CSODOTAGameAccountClient defaultInstance]) {
+    _builderResult.gameAccountClient =
+      [[[CSODOTAGameAccountClient builderWithPrototype:_builderResult.gameAccountClient] mergeFrom:value] buildPartial];
   } else {
-    result.gameAccountClient = value;
+    _builderResult.gameAccountClient = value;
   }
-  result.hasGameAccountClient = YES;
+  _builderResult.hasGameAccountClient = YES;
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder*) clearGameAccountClient {
-  result.hasGameAccountClient = NO;
-  result.gameAccountClient = [CSODOTAGameAccountClient defaultInstance];
+  _builderResult.hasGameAccountClient = NO;
+  _builderResult.gameAccountClient = [CSODOTAGameAccountClient defaultInstance];
   return self;
 }
 - (PBAppendableArray *)latestMatches {
-  return result.latestMatchesArray;
+  return _builderResult.latestMatchesArray;
 }
 - (CMsgDOTAMatch*)latestMatchesAtIndex:(NSUInteger)index {
-  return [result latestMatchesAtIndex:index];
+  return [_builderResult latestMatchesAtIndex:index];
 }
 - (CMsgDOTAProfileResponse_Builder *)addLatestMatches:(CMsgDOTAMatch*)value {
-  if (result.latestMatchesArray == nil) {
-    result.latestMatchesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.latestMatchesArray == nil) {
+    _builderResult.latestMatchesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.latestMatchesArray addObject:value];
+  [_builderResult.latestMatchesArray addObject:value];
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder *)setLatestMatchesArray:(NSArray *)array {
-  result.latestMatchesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.latestMatchesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder *)setLatestMatchesValues:(const CMsgDOTAMatch* *)values count:(NSUInteger)count {
-  result.latestMatchesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.latestMatchesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder *)clearLatestMatches {
-  result.latestMatchesArray = nil;
+  _builderResult.latestMatchesArray = nil;
   return self;
 }
 - (PBAppendableArray *)heroes {
-  return result.heroesArray;
+  return _builderResult.heroesArray;
 }
 - (CMsgDOTAProfileResponse_PlayedHero*)heroesAtIndex:(NSUInteger)index {
-  return [result heroesAtIndex:index];
+  return [_builderResult heroesAtIndex:index];
 }
 - (CMsgDOTAProfileResponse_Builder *)addHeroes:(CMsgDOTAProfileResponse_PlayedHero*)value {
-  if (result.heroesArray == nil) {
-    result.heroesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.heroesArray == nil) {
+    _builderResult.heroesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.heroesArray addObject:value];
+  [_builderResult.heroesArray addObject:value];
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder *)setHeroesArray:(NSArray *)array {
-  result.heroesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.heroesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder *)setHeroesValues:(const CMsgDOTAProfileResponse_PlayedHero* *)values count:(NSUInteger)count {
-  result.heroesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.heroesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder *)clearHeroes {
-  result.heroesArray = nil;
+  _builderResult.heroesArray = nil;
   return self;
 }
 - (BOOL) hasPlayerName {
-  return result.hasPlayerName;
+  return _builderResult.hasPlayerName;
 }
 - (NSString*) playerName {
-  return result.playerName;
+  return _builderResult.playerName;
 }
 - (CMsgDOTAProfileResponse_Builder*) setPlayerName:(NSString*) value {
-  result.hasPlayerName = YES;
-  result.playerName = value;
+  _builderResult.hasPlayerName = YES;
+  _builderResult.playerName = value;
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder*) clearPlayerName {
-  result.hasPlayerName = NO;
-  result.playerName = @"";
+  _builderResult.hasPlayerName = NO;
+  _builderResult.playerName = @"";
   return self;
 }
 - (BOOL) hasTeamName {
-  return result.hasTeamName;
+  return _builderResult.hasTeamName;
 }
 - (NSString*) teamName {
-  return result.teamName;
+  return _builderResult.teamName;
 }
 - (CMsgDOTAProfileResponse_Builder*) setTeamName:(NSString*) value {
-  result.hasTeamName = YES;
-  result.teamName = value;
+  _builderResult.hasTeamName = YES;
+  _builderResult.teamName = value;
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder*) clearTeamName {
-  result.hasTeamName = NO;
-  result.teamName = @"";
+  _builderResult.hasTeamName = NO;
+  _builderResult.teamName = @"";
   return self;
 }
 - (BOOL) hasTeamTag {
-  return result.hasTeamTag;
+  return _builderResult.hasTeamTag;
 }
 - (NSString*) teamTag {
-  return result.teamTag;
+  return _builderResult.teamTag;
 }
 - (CMsgDOTAProfileResponse_Builder*) setTeamTag:(NSString*) value {
-  result.hasTeamTag = YES;
-  result.teamTag = value;
+  _builderResult.hasTeamTag = YES;
+  _builderResult.teamTag = value;
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder*) clearTeamTag {
-  result.hasTeamTag = NO;
-  result.teamTag = @"";
+  _builderResult.hasTeamTag = NO;
+  _builderResult.teamTag = @"";
   return self;
 }
 - (BOOL) hasTeamLogo {
-  return result.hasTeamLogo;
+  return _builderResult.hasTeamLogo;
 }
 - (uint64_t) teamLogo {
-  return result.teamLogo;
+  return _builderResult.teamLogo;
 }
 - (CMsgDOTAProfileResponse_Builder*) setTeamLogo:(uint64_t) value {
-  result.hasTeamLogo = YES;
-  result.teamLogo = value;
+  _builderResult.hasTeamLogo = YES;
+  _builderResult.teamLogo = value;
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder*) clearTeamLogo {
-  result.hasTeamLogo = NO;
-  result.teamLogo = 0L;
+  _builderResult.hasTeamLogo = NO;
+  _builderResult.teamLogo = 0L;
   return self;
 }
 - (BOOL) hasShowcaseHero {
-  return result.hasShowcaseHero;
+  return _builderResult.hasShowcaseHero;
 }
 - (CMsgDOTAProfileResponse_ShowcaseHero*) showcaseHero {
-  return result.showcaseHero;
+  return _builderResult.showcaseHero;
 }
 - (CMsgDOTAProfileResponse_Builder*) setShowcaseHero:(CMsgDOTAProfileResponse_ShowcaseHero*) value {
-  result.hasShowcaseHero = YES;
-  result.showcaseHero = value;
+  _builderResult.hasShowcaseHero = YES;
+  _builderResult.showcaseHero = value;
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder*) setShowcaseHeroBuilder:(CMsgDOTAProfileResponse_ShowcaseHero_Builder*) builderForValue {
   return [self setShowcaseHero:[builderForValue build]];
 }
 - (CMsgDOTAProfileResponse_Builder*) mergeShowcaseHero:(CMsgDOTAProfileResponse_ShowcaseHero*) value {
-  if (result.hasShowcaseHero &&
-      result.showcaseHero != [CMsgDOTAProfileResponse_ShowcaseHero defaultInstance]) {
-    result.showcaseHero =
-      [[[CMsgDOTAProfileResponse_ShowcaseHero builderWithPrototype:result.showcaseHero] mergeFrom:value] buildPartial];
+  if (_builderResult.hasShowcaseHero &&
+      _builderResult.showcaseHero != [CMsgDOTAProfileResponse_ShowcaseHero defaultInstance]) {
+    _builderResult.showcaseHero =
+      [[[CMsgDOTAProfileResponse_ShowcaseHero builderWithPrototype:_builderResult.showcaseHero] mergeFrom:value] buildPartial];
   } else {
-    result.showcaseHero = value;
+    _builderResult.showcaseHero = value;
   }
-  result.hasShowcaseHero = YES;
+  _builderResult.hasShowcaseHero = YES;
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder*) clearShowcaseHero {
-  result.hasShowcaseHero = NO;
-  result.showcaseHero = [CMsgDOTAProfileResponse_ShowcaseHero defaultInstance];
+  _builderResult.hasShowcaseHero = NO;
+  _builderResult.showcaseHero = [CMsgDOTAProfileResponse_ShowcaseHero defaultInstance];
   return self;
 }
 - (PBAppendableArray *)leaguePasses {
-  return result.leaguePassesArray;
+  return _builderResult.leaguePassesArray;
 }
 - (CMsgDOTAProfileResponse_LeaguePass*)leaguePassesAtIndex:(NSUInteger)index {
-  return [result leaguePassesAtIndex:index];
+  return [_builderResult leaguePassesAtIndex:index];
 }
 - (CMsgDOTAProfileResponse_Builder *)addLeaguePasses:(CMsgDOTAProfileResponse_LeaguePass*)value {
-  if (result.leaguePassesArray == nil) {
-    result.leaguePassesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.leaguePassesArray == nil) {
+    _builderResult.leaguePassesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.leaguePassesArray addObject:value];
+  [_builderResult.leaguePassesArray addObject:value];
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder *)setLeaguePassesArray:(NSArray *)array {
-  result.leaguePassesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.leaguePassesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder *)setLeaguePassesValues:(const CMsgDOTAProfileResponse_LeaguePass* *)values count:(NSUInteger)count {
-  result.leaguePassesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.leaguePassesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder *)clearLeaguePasses {
-  result.leaguePassesArray = nil;
+  _builderResult.leaguePassesArray = nil;
   return self;
 }
 - (PBAppendableArray *)eventTickets {
-  return result.eventTicketsArray;
+  return _builderResult.eventTicketsArray;
 }
 - (CMsgDOTAProfileResponse_EventTicket*)eventTicketsAtIndex:(NSUInteger)index {
-  return [result eventTicketsAtIndex:index];
+  return [_builderResult eventTicketsAtIndex:index];
 }
 - (CMsgDOTAProfileResponse_Builder *)addEventTickets:(CMsgDOTAProfileResponse_EventTicket*)value {
-  if (result.eventTicketsArray == nil) {
-    result.eventTicketsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.eventTicketsArray == nil) {
+    _builderResult.eventTicketsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.eventTicketsArray addObject:value];
+  [_builderResult.eventTicketsArray addObject:value];
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder *)setEventTicketsArray:(NSArray *)array {
-  result.eventTicketsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.eventTicketsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder *)setEventTicketsValues:(const CMsgDOTAProfileResponse_EventTicket* *)values count:(NSUInteger)count {
-  result.eventTicketsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.eventTicketsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder *)clearEventTickets {
-  result.eventTicketsArray = nil;
+  _builderResult.eventTicketsArray = nil;
   return self;
 }
 - (BOOL) hasTeamId {
-  return result.hasTeamId;
+  return _builderResult.hasTeamId;
 }
 - (uint32_t) teamId {
-  return result.teamId;
+  return _builderResult.teamId;
 }
 - (CMsgDOTAProfileResponse_Builder*) setTeamId:(uint32_t) value {
-  result.hasTeamId = YES;
-  result.teamId = value;
+  _builderResult.hasTeamId = YES;
+  _builderResult.teamId = value;
   return self;
 }
 - (CMsgDOTAProfileResponse_Builder*) clearTeamId {
-  result.hasTeamId = NO;
-  result.teamId = 0;
+  _builderResult.hasTeamId = NO;
+  _builderResult.teamId = 0;
   return self;
 }
 @end
@@ -63135,19 +63135,19 @@ static CMsgDOTAIntraGCRankRequest* defaultCMsgDOTAIntraGCRankRequestInstance = n
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgDOTAIntraGCRankRequest_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgDOTAIntraGCRankRequest_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 @end
@@ -63342,19 +63342,19 @@ static CMsgDOTAIntraGCRankResponse* defaultCMsgDOTAIntraGCRankResponseInstance =
   }
 }
 - (BOOL) hasRank {
-  return result.hasRank;
+  return _builderResult.hasRank;
 }
 - (uint32_t) rank {
-  return result.rank;
+  return _builderResult.rank;
 }
 - (CMsgDOTAIntraGCRankResponse_Builder*) setRank:(uint32_t) value {
-  result.hasRank = YES;
-  result.rank = value;
+  _builderResult.hasRank = YES;
+  _builderResult.rank = value;
   return self;
 }
 - (CMsgDOTAIntraGCRankResponse_Builder*) clearRank {
-  result.hasRank = NO;
-  result.rank = 0;
+  _builderResult.hasRank = NO;
+  _builderResult.rank = 0;
   return self;
 }
 @end
@@ -64012,10 +64012,10 @@ static CMsgUnpickedHeroListResponse* defaultCMsgUnpickedHeroListResponseInstance
     return self;
   }
   if (other.heroIdsArray.count > 0) {
-    if (result.heroIdsArray == nil) {
-      result.heroIdsArray = [[other.heroIdsArray copyWithZone:[other.heroIdsArray zone]] autorelease];
+    if (_builderResult.heroIdsArray == nil) {
+      _builderResult.heroIdsArray = [[other.heroIdsArray copyWithZone:[other.heroIdsArray zone]] autorelease];
     } else {
-      [result.heroIdsArray appendArray:other.heroIdsArray];
+      [_builderResult.heroIdsArray appendArray:other.heroIdsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -64047,28 +64047,28 @@ static CMsgUnpickedHeroListResponse* defaultCMsgUnpickedHeroListResponseInstance
   }
 }
 - (PBAppendableArray *)heroIds {
-  return result.heroIdsArray;
+  return _builderResult.heroIdsArray;
 }
 - (uint32_t)heroIdsAtIndex:(NSUInteger)index {
-  return [result heroIdsAtIndex:index];
+  return [_builderResult heroIdsAtIndex:index];
 }
 - (CMsgUnpickedHeroListResponse_Builder *)addHeroIds:(uint32_t)value {
-  if (result.heroIdsArray == nil) {
-    result.heroIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.heroIdsArray == nil) {
+    _builderResult.heroIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.heroIdsArray addUint32:value];
+  [_builderResult.heroIdsArray addUint32:value];
   return self;
 }
 - (CMsgUnpickedHeroListResponse_Builder *)setHeroIdsArray:(NSArray *)array {
-  result.heroIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.heroIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgUnpickedHeroListResponse_Builder *)setHeroIdsValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.heroIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.heroIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgUnpickedHeroListResponse_Builder *)clearHeroIds {
-  result.heroIdsArray = nil;
+  _builderResult.heroIdsArray = nil;
   return self;
 }
 @end
@@ -64263,19 +64263,19 @@ static CMsgRemoveFromUnpickedHeroList* defaultCMsgRemoveFromUnpickedHeroListInst
   }
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CMsgRemoveFromUnpickedHeroList_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CMsgRemoveFromUnpickedHeroList_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 @end
@@ -64611,10 +64611,10 @@ static CMsgDOTAMatchGroupWaitTimesResponse* defaultCMsgDOTAMatchGroupWaitTimesRe
     return self;
   }
   if (other.waitTimesByGroupArray.count > 0) {
-    if (result.waitTimesByGroupArray == nil) {
-      result.waitTimesByGroupArray = [[other.waitTimesByGroupArray copyWithZone:[other.waitTimesByGroupArray zone]] autorelease];
+    if (_builderResult.waitTimesByGroupArray == nil) {
+      _builderResult.waitTimesByGroupArray = [[other.waitTimesByGroupArray copyWithZone:[other.waitTimesByGroupArray zone]] autorelease];
     } else {
-      [result.waitTimesByGroupArray appendArray:other.waitTimesByGroupArray];
+      [_builderResult.waitTimesByGroupArray appendArray:other.waitTimesByGroupArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -64646,28 +64646,28 @@ static CMsgDOTAMatchGroupWaitTimesResponse* defaultCMsgDOTAMatchGroupWaitTimesRe
   }
 }
 - (PBAppendableArray *)waitTimesByGroup {
-  return result.waitTimesByGroupArray;
+  return _builderResult.waitTimesByGroupArray;
 }
 - (uint32_t)waitTimesByGroupAtIndex:(NSUInteger)index {
-  return [result waitTimesByGroupAtIndex:index];
+  return [_builderResult waitTimesByGroupAtIndex:index];
 }
 - (CMsgDOTAMatchGroupWaitTimesResponse_Builder *)addWaitTimesByGroup:(uint32_t)value {
-  if (result.waitTimesByGroupArray == nil) {
-    result.waitTimesByGroupArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.waitTimesByGroupArray == nil) {
+    _builderResult.waitTimesByGroupArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.waitTimesByGroupArray addUint32:value];
+  [_builderResult.waitTimesByGroupArray addUint32:value];
   return self;
 }
 - (CMsgDOTAMatchGroupWaitTimesResponse_Builder *)setWaitTimesByGroupArray:(NSArray *)array {
-  result.waitTimesByGroupArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.waitTimesByGroupArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTAMatchGroupWaitTimesResponse_Builder *)setWaitTimesByGroupValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.waitTimesByGroupArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.waitTimesByGroupArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTAMatchGroupWaitTimesResponse_Builder *)clearWaitTimesByGroup {
-  result.waitTimesByGroupArray = nil;
+  _builderResult.waitTimesByGroupArray = nil;
   return self;
 }
 @end
@@ -65292,243 +65292,243 @@ static CItemDropEvent* defaultCItemDropEventInstance = nil;
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CItemDropEvent_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CItemDropEvent_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasTimeStamp {
-  return result.hasTimeStamp;
+  return _builderResult.hasTimeStamp;
 }
 - (uint32_t) timeStamp {
-  return result.timeStamp;
+  return _builderResult.timeStamp;
 }
 - (CItemDropEvent_Builder*) setTimeStamp:(uint32_t) value {
-  result.hasTimeStamp = YES;
-  result.timeStamp = value;
+  _builderResult.hasTimeStamp = YES;
+  _builderResult.timeStamp = value;
   return self;
 }
 - (CItemDropEvent_Builder*) clearTimeStamp {
-  result.hasTimeStamp = NO;
-  result.timeStamp = 0;
+  _builderResult.hasTimeStamp = NO;
+  _builderResult.timeStamp = 0;
   return self;
 }
 - (BOOL) hasDefIndex {
-  return result.hasDefIndex;
+  return _builderResult.hasDefIndex;
 }
 - (uint32_t) defIndex {
-  return result.defIndex;
+  return _builderResult.defIndex;
 }
 - (CItemDropEvent_Builder*) setDefIndex:(uint32_t) value {
-  result.hasDefIndex = YES;
-  result.defIndex = value;
+  _builderResult.hasDefIndex = YES;
+  _builderResult.defIndex = value;
   return self;
 }
 - (CItemDropEvent_Builder*) clearDefIndex {
-  result.hasDefIndex = NO;
-  result.defIndex = 0;
+  _builderResult.hasDefIndex = NO;
+  _builderResult.defIndex = 0;
   return self;
 }
 - (BOOL) hasItemId {
-  return result.hasItemId;
+  return _builderResult.hasItemId;
 }
 - (uint64_t) itemId {
-  return result.itemId;
+  return _builderResult.itemId;
 }
 - (CItemDropEvent_Builder*) setItemId:(uint64_t) value {
-  result.hasItemId = YES;
-  result.itemId = value;
+  _builderResult.hasItemId = YES;
+  _builderResult.itemId = value;
   return self;
 }
 - (CItemDropEvent_Builder*) clearItemId {
-  result.hasItemId = NO;
-  result.itemId = 0L;
+  _builderResult.hasItemId = NO;
+  _builderResult.itemId = 0L;
   return self;
 }
 - (BOOL) hasGamesPlayedSinceLastDrop {
-  return result.hasGamesPlayedSinceLastDrop;
+  return _builderResult.hasGamesPlayedSinceLastDrop;
 }
 - (uint32_t) gamesPlayedSinceLastDrop {
-  return result.gamesPlayedSinceLastDrop;
+  return _builderResult.gamesPlayedSinceLastDrop;
 }
 - (CItemDropEvent_Builder*) setGamesPlayedSinceLastDrop:(uint32_t) value {
-  result.hasGamesPlayedSinceLastDrop = YES;
-  result.gamesPlayedSinceLastDrop = value;
+  _builderResult.hasGamesPlayedSinceLastDrop = YES;
+  _builderResult.gamesPlayedSinceLastDrop = value;
   return self;
 }
 - (CItemDropEvent_Builder*) clearGamesPlayedSinceLastDrop {
-  result.hasGamesPlayedSinceLastDrop = NO;
-  result.gamesPlayedSinceLastDrop = 0;
+  _builderResult.hasGamesPlayedSinceLastDrop = NO;
+  _builderResult.gamesPlayedSinceLastDrop = 0;
   return self;
 }
 - (BOOL) hasTimePlayedSinceLastDrop {
-  return result.hasTimePlayedSinceLastDrop;
+  return _builderResult.hasTimePlayedSinceLastDrop;
 }
 - (uint32_t) timePlayedSinceLastDrop {
-  return result.timePlayedSinceLastDrop;
+  return _builderResult.timePlayedSinceLastDrop;
 }
 - (CItemDropEvent_Builder*) setTimePlayedSinceLastDrop:(uint32_t) value {
-  result.hasTimePlayedSinceLastDrop = YES;
-  result.timePlayedSinceLastDrop = value;
+  _builderResult.hasTimePlayedSinceLastDrop = YES;
+  _builderResult.timePlayedSinceLastDrop = value;
   return self;
 }
 - (CItemDropEvent_Builder*) clearTimePlayedSinceLastDrop {
-  result.hasTimePlayedSinceLastDrop = NO;
-  result.timePlayedSinceLastDrop = 0;
+  _builderResult.hasTimePlayedSinceLastDrop = NO;
+  _builderResult.timePlayedSinceLastDrop = 0;
   return self;
 }
 - (BOOL) hasDropBonus {
-  return result.hasDropBonus;
+  return _builderResult.hasDropBonus;
 }
 - (Float32) dropBonus {
-  return result.dropBonus;
+  return _builderResult.dropBonus;
 }
 - (CItemDropEvent_Builder*) setDropBonus:(Float32) value {
-  result.hasDropBonus = YES;
-  result.dropBonus = value;
+  _builderResult.hasDropBonus = YES;
+  _builderResult.dropBonus = value;
   return self;
 }
 - (CItemDropEvent_Builder*) clearDropBonus {
-  result.hasDropBonus = NO;
-  result.dropBonus = 0;
+  _builderResult.hasDropBonus = NO;
+  _builderResult.dropBonus = 0;
   return self;
 }
 - (BOOL) hasRarity {
-  return result.hasRarity;
+  return _builderResult.hasRarity;
 }
 - (uint32_t) rarity {
-  return result.rarity;
+  return _builderResult.rarity;
 }
 - (CItemDropEvent_Builder*) setRarity:(uint32_t) value {
-  result.hasRarity = YES;
-  result.rarity = value;
+  _builderResult.hasRarity = YES;
+  _builderResult.rarity = value;
   return self;
 }
 - (CItemDropEvent_Builder*) clearRarity {
-  result.hasRarity = NO;
-  result.rarity = 0;
+  _builderResult.hasRarity = NO;
+  _builderResult.rarity = 0;
   return self;
 }
 - (BOOL) hasCurrentScore {
-  return result.hasCurrentScore;
+  return _builderResult.hasCurrentScore;
 }
 - (uint32_t) currentScore {
-  return result.currentScore;
+  return _builderResult.currentScore;
 }
 - (CItemDropEvent_Builder*) setCurrentScore:(uint32_t) value {
-  result.hasCurrentScore = YES;
-  result.currentScore = value;
+  _builderResult.hasCurrentScore = YES;
+  _builderResult.currentScore = value;
   return self;
 }
 - (CItemDropEvent_Builder*) clearCurrentScore {
-  result.hasCurrentScore = NO;
-  result.currentScore = 0;
+  _builderResult.hasCurrentScore = NO;
+  _builderResult.currentScore = 0;
   return self;
 }
 - (BOOL) hasNextDropAt {
-  return result.hasNextDropAt;
+  return _builderResult.hasNextDropAt;
 }
 - (uint32_t) nextDropAt {
-  return result.nextDropAt;
+  return _builderResult.nextDropAt;
 }
 - (CItemDropEvent_Builder*) setNextDropAt:(uint32_t) value {
-  result.hasNextDropAt = YES;
-  result.nextDropAt = value;
+  _builderResult.hasNextDropAt = YES;
+  _builderResult.nextDropAt = value;
   return self;
 }
 - (CItemDropEvent_Builder*) clearNextDropAt {
-  result.hasNextDropAt = NO;
-  result.nextDropAt = 0;
+  _builderResult.hasNextDropAt = NO;
+  _builderResult.nextDropAt = 0;
   return self;
 }
 - (BOOL) hasIsCrate {
-  return result.hasIsCrate;
+  return _builderResult.hasIsCrate;
 }
 - (BOOL) isCrate {
-  return result.isCrate;
+  return _builderResult.isCrate;
 }
 - (CItemDropEvent_Builder*) setIsCrate:(BOOL) value {
-  result.hasIsCrate = YES;
-  result.isCrate = value;
+  _builderResult.hasIsCrate = YES;
+  _builderResult.isCrate = value;
   return self;
 }
 - (CItemDropEvent_Builder*) clearIsCrate {
-  result.hasIsCrate = NO;
-  result.isCrate = NO;
+  _builderResult.hasIsCrate = NO;
+  _builderResult.isCrate = NO;
   return self;
 }
 - (BOOL) hasIsLevelReward {
-  return result.hasIsLevelReward;
+  return _builderResult.hasIsLevelReward;
 }
 - (BOOL) isLevelReward {
-  return result.isLevelReward;
+  return _builderResult.isLevelReward;
 }
 - (CItemDropEvent_Builder*) setIsLevelReward:(BOOL) value {
-  result.hasIsLevelReward = YES;
-  result.isLevelReward = value;
+  _builderResult.hasIsLevelReward = YES;
+  _builderResult.isLevelReward = value;
   return self;
 }
 - (CItemDropEvent_Builder*) clearIsLevelReward {
-  result.hasIsLevelReward = NO;
-  result.isLevelReward = NO;
+  _builderResult.hasIsLevelReward = NO;
+  _builderResult.isLevelReward = NO;
   return self;
 }
 - (BOOL) hasXp {
-  return result.hasXp;
+  return _builderResult.hasXp;
 }
 - (uint32_t) xp {
-  return result.xp;
+  return _builderResult.xp;
 }
 - (CItemDropEvent_Builder*) setXp:(uint32_t) value {
-  result.hasXp = YES;
-  result.xp = value;
+  _builderResult.hasXp = YES;
+  _builderResult.xp = value;
   return self;
 }
 - (CItemDropEvent_Builder*) clearXp {
-  result.hasXp = NO;
-  result.xp = 0;
+  _builderResult.hasXp = NO;
+  _builderResult.xp = 0;
   return self;
 }
 - (BOOL) hasLevel {
-  return result.hasLevel;
+  return _builderResult.hasLevel;
 }
 - (uint32_t) level {
-  return result.level;
+  return _builderResult.level;
 }
 - (CItemDropEvent_Builder*) setLevel:(uint32_t) value {
-  result.hasLevel = YES;
-  result.level = value;
+  _builderResult.hasLevel = YES;
+  _builderResult.level = value;
   return self;
 }
 - (CItemDropEvent_Builder*) clearLevel {
-  result.hasLevel = NO;
-  result.level = 0;
+  _builderResult.hasLevel = NO;
+  _builderResult.level = 0;
   return self;
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CItemDropEvent_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CItemDropEvent_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 @end
@@ -65998,163 +65998,163 @@ static CXPGainEvent* defaultCXPGainEventInstance = nil;
   }
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CXPGainEvent_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CXPGainEvent_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CXPGainEvent_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CXPGainEvent_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasTimeStamp {
-  return result.hasTimeStamp;
+  return _builderResult.hasTimeStamp;
 }
 - (uint32_t) timeStamp {
-  return result.timeStamp;
+  return _builderResult.timeStamp;
 }
 - (CXPGainEvent_Builder*) setTimeStamp:(uint32_t) value {
-  result.hasTimeStamp = YES;
-  result.timeStamp = value;
+  _builderResult.hasTimeStamp = YES;
+  _builderResult.timeStamp = value;
   return self;
 }
 - (CXPGainEvent_Builder*) clearTimeStamp {
-  result.hasTimeStamp = NO;
-  result.timeStamp = 0;
+  _builderResult.hasTimeStamp = NO;
+  _builderResult.timeStamp = 0;
   return self;
 }
 - (BOOL) hasDuration {
-  return result.hasDuration;
+  return _builderResult.hasDuration;
 }
 - (uint32_t) duration {
-  return result.duration;
+  return _builderResult.duration;
 }
 - (CXPGainEvent_Builder*) setDuration:(uint32_t) value {
-  result.hasDuration = YES;
-  result.duration = value;
+  _builderResult.hasDuration = YES;
+  _builderResult.duration = value;
   return self;
 }
 - (CXPGainEvent_Builder*) clearDuration {
-  result.hasDuration = NO;
-  result.duration = 0;
+  _builderResult.hasDuration = NO;
+  _builderResult.duration = 0;
   return self;
 }
 - (BOOL) hasBaseXp {
-  return result.hasBaseXp;
+  return _builderResult.hasBaseXp;
 }
 - (uint32_t) baseXp {
-  return result.baseXp;
+  return _builderResult.baseXp;
 }
 - (CXPGainEvent_Builder*) setBaseXp:(uint32_t) value {
-  result.hasBaseXp = YES;
-  result.baseXp = value;
+  _builderResult.hasBaseXp = YES;
+  _builderResult.baseXp = value;
   return self;
 }
 - (CXPGainEvent_Builder*) clearBaseXp {
-  result.hasBaseXp = NO;
-  result.baseXp = 0;
+  _builderResult.hasBaseXp = NO;
+  _builderResult.baseXp = 0;
   return self;
 }
 - (BOOL) hasTimeRewardXp {
-  return result.hasTimeRewardXp;
+  return _builderResult.hasTimeRewardXp;
 }
 - (uint32_t) timeRewardXp {
-  return result.timeRewardXp;
+  return _builderResult.timeRewardXp;
 }
 - (CXPGainEvent_Builder*) setTimeRewardXp:(uint32_t) value {
-  result.hasTimeRewardXp = YES;
-  result.timeRewardXp = value;
+  _builderResult.hasTimeRewardXp = YES;
+  _builderResult.timeRewardXp = value;
   return self;
 }
 - (CXPGainEvent_Builder*) clearTimeRewardXp {
-  result.hasTimeRewardXp = NO;
-  result.timeRewardXp = 0;
+  _builderResult.hasTimeRewardXp = NO;
+  _builderResult.timeRewardXp = 0;
   return self;
 }
 - (BOOL) hasDropRateBonusXp {
-  return result.hasDropRateBonusXp;
+  return _builderResult.hasDropRateBonusXp;
 }
 - (uint32_t) dropRateBonusXp {
-  return result.dropRateBonusXp;
+  return _builderResult.dropRateBonusXp;
 }
 - (CXPGainEvent_Builder*) setDropRateBonusXp:(uint32_t) value {
-  result.hasDropRateBonusXp = YES;
-  result.dropRateBonusXp = value;
+  _builderResult.hasDropRateBonusXp = YES;
+  _builderResult.dropRateBonusXp = value;
   return self;
 }
 - (CXPGainEvent_Builder*) clearDropRateBonusXp {
-  result.hasDropRateBonusXp = NO;
-  result.dropRateBonusXp = 0;
+  _builderResult.hasDropRateBonusXp = NO;
+  _builderResult.dropRateBonusXp = 0;
   return self;
 }
 - (BOOL) hasFinalXp {
-  return result.hasFinalXp;
+  return _builderResult.hasFinalXp;
 }
 - (uint32_t) finalXp {
-  return result.finalXp;
+  return _builderResult.finalXp;
 }
 - (CXPGainEvent_Builder*) setFinalXp:(uint32_t) value {
-  result.hasFinalXp = YES;
-  result.finalXp = value;
+  _builderResult.hasFinalXp = YES;
+  _builderResult.finalXp = value;
   return self;
 }
 - (CXPGainEvent_Builder*) clearFinalXp {
-  result.hasFinalXp = NO;
-  result.finalXp = 0;
+  _builderResult.hasFinalXp = NO;
+  _builderResult.finalXp = 0;
   return self;
 }
 - (BOOL) hasDropRateBonus {
-  return result.hasDropRateBonus;
+  return _builderResult.hasDropRateBonus;
 }
 - (Float32) dropRateBonus {
-  return result.dropRateBonus;
+  return _builderResult.dropRateBonus;
 }
 - (CXPGainEvent_Builder*) setDropRateBonus:(Float32) value {
-  result.hasDropRateBonus = YES;
-  result.dropRateBonus = value;
+  _builderResult.hasDropRateBonus = YES;
+  _builderResult.dropRateBonus = value;
   return self;
 }
 - (CXPGainEvent_Builder*) clearDropRateBonus {
-  result.hasDropRateBonus = NO;
-  result.dropRateBonus = 0;
+  _builderResult.hasDropRateBonus = NO;
+  _builderResult.dropRateBonus = 0;
   return self;
 }
 - (BOOL) hasLeveledUp {
-  return result.hasLeveledUp;
+  return _builderResult.hasLeveledUp;
 }
 - (BOOL) leveledUp {
-  return result.leveledUp;
+  return _builderResult.leveledUp;
 }
 - (CXPGainEvent_Builder*) setLeveledUp:(BOOL) value {
-  result.hasLeveledUp = YES;
-  result.leveledUp = value;
+  _builderResult.hasLeveledUp = YES;
+  _builderResult.leveledUp = value;
   return self;
 }
 - (CXPGainEvent_Builder*) clearLeveledUp {
-  result.hasLeveledUp = NO;
-  result.leveledUp = NO;
+  _builderResult.hasLeveledUp = NO;
+  _builderResult.leveledUp = NO;
   return self;
 }
 @end
@@ -66769,243 +66769,243 @@ static CLowPriPenalty* defaultCLowPriPenaltyInstance = nil;
   }
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CLowPriPenalty_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CLowPriPenalty_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CLowPriPenalty_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CLowPriPenalty_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasTimeStamp {
-  return result.hasTimeStamp;
+  return _builderResult.hasTimeStamp;
 }
 - (uint32_t) timeStamp {
-  return result.timeStamp;
+  return _builderResult.timeStamp;
 }
 - (CLowPriPenalty_Builder*) setTimeStamp:(uint32_t) value {
-  result.hasTimeStamp = YES;
-  result.timeStamp = value;
+  _builderResult.hasTimeStamp = YES;
+  _builderResult.timeStamp = value;
   return self;
 }
 - (CLowPriPenalty_Builder*) clearTimeStamp {
-  result.hasTimeStamp = NO;
-  result.timeStamp = 0;
+  _builderResult.hasTimeStamp = NO;
+  _builderResult.timeStamp = 0;
   return self;
 }
 - (BOOL) hasGamesSinceReportPenalty {
-  return result.hasGamesSinceReportPenalty;
+  return _builderResult.hasGamesSinceReportPenalty;
 }
 - (uint32_t) gamesSinceReportPenalty {
-  return result.gamesSinceReportPenalty;
+  return _builderResult.gamesSinceReportPenalty;
 }
 - (CLowPriPenalty_Builder*) setGamesSinceReportPenalty:(uint32_t) value {
-  result.hasGamesSinceReportPenalty = YES;
-  result.gamesSinceReportPenalty = value;
+  _builderResult.hasGamesSinceReportPenalty = YES;
+  _builderResult.gamesSinceReportPenalty = value;
   return self;
 }
 - (CLowPriPenalty_Builder*) clearGamesSinceReportPenalty {
-  result.hasGamesSinceReportPenalty = NO;
-  result.gamesSinceReportPenalty = 0;
+  _builderResult.hasGamesSinceReportPenalty = NO;
+  _builderResult.gamesSinceReportPenalty = 0;
   return self;
 }
 - (BOOL) hasPendingInGameReports {
-  return result.hasPendingInGameReports;
+  return _builderResult.hasPendingInGameReports;
 }
 - (uint32_t) pendingInGameReports {
-  return result.pendingInGameReports;
+  return _builderResult.pendingInGameReports;
 }
 - (CLowPriPenalty_Builder*) setPendingInGameReports:(uint32_t) value {
-  result.hasPendingInGameReports = YES;
-  result.pendingInGameReports = value;
+  _builderResult.hasPendingInGameReports = YES;
+  _builderResult.pendingInGameReports = value;
   return self;
 }
 - (CLowPriPenalty_Builder*) clearPendingInGameReports {
-  result.hasPendingInGameReports = NO;
-  result.pendingInGameReports = 0;
+  _builderResult.hasPendingInGameReports = NO;
+  _builderResult.pendingInGameReports = 0;
   return self;
 }
 - (BOOL) hasPendingOutOfGameReports {
-  return result.hasPendingOutOfGameReports;
+  return _builderResult.hasPendingOutOfGameReports;
 }
 - (uint32_t) pendingOutOfGameReports {
-  return result.pendingOutOfGameReports;
+  return _builderResult.pendingOutOfGameReports;
 }
 - (CLowPriPenalty_Builder*) setPendingOutOfGameReports:(uint32_t) value {
-  result.hasPendingOutOfGameReports = YES;
-  result.pendingOutOfGameReports = value;
+  _builderResult.hasPendingOutOfGameReports = YES;
+  _builderResult.pendingOutOfGameReports = value;
   return self;
 }
 - (CLowPriPenalty_Builder*) clearPendingOutOfGameReports {
-  result.hasPendingOutOfGameReports = NO;
-  result.pendingOutOfGameReports = 0;
+  _builderResult.hasPendingOutOfGameReports = NO;
+  _builderResult.pendingOutOfGameReports = 0;
   return self;
 }
 - (BOOL) hasPendingDetectedReports {
-  return result.hasPendingDetectedReports;
+  return _builderResult.hasPendingDetectedReports;
 }
 - (uint32_t) pendingDetectedReports {
-  return result.pendingDetectedReports;
+  return _builderResult.pendingDetectedReports;
 }
 - (CLowPriPenalty_Builder*) setPendingDetectedReports:(uint32_t) value {
-  result.hasPendingDetectedReports = YES;
-  result.pendingDetectedReports = value;
+  _builderResult.hasPendingDetectedReports = YES;
+  _builderResult.pendingDetectedReports = value;
   return self;
 }
 - (CLowPriPenalty_Builder*) clearPendingDetectedReports {
-  result.hasPendingDetectedReports = NO;
-  result.pendingDetectedReports = 0;
+  _builderResult.hasPendingDetectedReports = NO;
+  _builderResult.pendingDetectedReports = 0;
   return self;
 }
 - (BOOL) hasReportPenaltyCount {
-  return result.hasReportPenaltyCount;
+  return _builderResult.hasReportPenaltyCount;
 }
 - (uint32_t) reportPenaltyCount {
-  return result.reportPenaltyCount;
+  return _builderResult.reportPenaltyCount;
 }
 - (CLowPriPenalty_Builder*) setReportPenaltyCount:(uint32_t) value {
-  result.hasReportPenaltyCount = YES;
-  result.reportPenaltyCount = value;
+  _builderResult.hasReportPenaltyCount = YES;
+  _builderResult.reportPenaltyCount = value;
   return self;
 }
 - (CLowPriPenalty_Builder*) clearReportPenaltyCount {
-  result.hasReportPenaltyCount = NO;
-  result.reportPenaltyCount = 0;
+  _builderResult.hasReportPenaltyCount = NO;
+  _builderResult.reportPenaltyCount = 0;
   return self;
 }
 - (BOOL) hasLastPenaltyDate {
-  return result.hasLastPenaltyDate;
+  return _builderResult.hasLastPenaltyDate;
 }
 - (uint32_t) lastPenaltyDate {
-  return result.lastPenaltyDate;
+  return _builderResult.lastPenaltyDate;
 }
 - (CLowPriPenalty_Builder*) setLastPenaltyDate:(uint32_t) value {
-  result.hasLastPenaltyDate = YES;
-  result.lastPenaltyDate = value;
+  _builderResult.hasLastPenaltyDate = YES;
+  _builderResult.lastPenaltyDate = value;
   return self;
 }
 - (CLowPriPenalty_Builder*) clearLastPenaltyDate {
-  result.hasLastPenaltyDate = NO;
-  result.lastPenaltyDate = 0;
+  _builderResult.hasLastPenaltyDate = NO;
+  _builderResult.lastPenaltyDate = 0;
   return self;
 }
 - (BOOL) hasLastAbandonDate {
-  return result.hasLastAbandonDate;
+  return _builderResult.hasLastAbandonDate;
 }
 - (uint32_t) lastAbandonDate {
-  return result.lastAbandonDate;
+  return _builderResult.lastAbandonDate;
 }
 - (CLowPriPenalty_Builder*) setLastAbandonDate:(uint32_t) value {
-  result.hasLastAbandonDate = YES;
-  result.lastAbandonDate = value;
+  _builderResult.hasLastAbandonDate = YES;
+  _builderResult.lastAbandonDate = value;
   return self;
 }
 - (CLowPriPenalty_Builder*) clearLastAbandonDate {
-  result.hasLastAbandonDate = NO;
-  result.lastAbandonDate = 0;
+  _builderResult.hasLastAbandonDate = NO;
+  _builderResult.lastAbandonDate = 0;
   return self;
 }
 - (BOOL) hasAbandonPenaltyCount {
-  return result.hasAbandonPenaltyCount;
+  return _builderResult.hasAbandonPenaltyCount;
 }
 - (uint32_t) abandonPenaltyCount {
-  return result.abandonPenaltyCount;
+  return _builderResult.abandonPenaltyCount;
 }
 - (CLowPriPenalty_Builder*) setAbandonPenaltyCount:(uint32_t) value {
-  result.hasAbandonPenaltyCount = YES;
-  result.abandonPenaltyCount = value;
+  _builderResult.hasAbandonPenaltyCount = YES;
+  _builderResult.abandonPenaltyCount = value;
   return self;
 }
 - (CLowPriPenalty_Builder*) clearAbandonPenaltyCount {
-  result.hasAbandonPenaltyCount = NO;
-  result.abandonPenaltyCount = 0;
+  _builderResult.hasAbandonPenaltyCount = NO;
+  _builderResult.abandonPenaltyCount = 0;
   return self;
 }
 - (BOOL) hasCompletedGameStreak {
-  return result.hasCompletedGameStreak;
+  return _builderResult.hasCompletedGameStreak;
 }
 - (uint32_t) completedGameStreak {
-  return result.completedGameStreak;
+  return _builderResult.completedGameStreak;
 }
 - (CLowPriPenalty_Builder*) setCompletedGameStreak:(uint32_t) value {
-  result.hasCompletedGameStreak = YES;
-  result.completedGameStreak = value;
+  _builderResult.hasCompletedGameStreak = YES;
+  _builderResult.completedGameStreak = value;
   return self;
 }
 - (CLowPriPenalty_Builder*) clearCompletedGameStreak {
-  result.hasCompletedGameStreak = NO;
-  result.completedGameStreak = 0;
+  _builderResult.hasCompletedGameStreak = NO;
+  _builderResult.completedGameStreak = 0;
   return self;
 }
 - (BOOL) hasAbandonTimeGiven {
-  return result.hasAbandonTimeGiven;
+  return _builderResult.hasAbandonTimeGiven;
 }
 - (uint32_t) abandonTimeGiven {
-  return result.abandonTimeGiven;
+  return _builderResult.abandonTimeGiven;
 }
 - (CLowPriPenalty_Builder*) setAbandonTimeGiven:(uint32_t) value {
-  result.hasAbandonTimeGiven = YES;
-  result.abandonTimeGiven = value;
+  _builderResult.hasAbandonTimeGiven = YES;
+  _builderResult.abandonTimeGiven = value;
   return self;
 }
 - (CLowPriPenalty_Builder*) clearAbandonTimeGiven {
-  result.hasAbandonTimeGiven = NO;
-  result.abandonTimeGiven = 0;
+  _builderResult.hasAbandonTimeGiven = NO;
+  _builderResult.abandonTimeGiven = 0;
   return self;
 }
 - (BOOL) hasReportTimeGiven {
-  return result.hasReportTimeGiven;
+  return _builderResult.hasReportTimeGiven;
 }
 - (uint32_t) reportTimeGiven {
-  return result.reportTimeGiven;
+  return _builderResult.reportTimeGiven;
 }
 - (CLowPriPenalty_Builder*) setReportTimeGiven:(uint32_t) value {
-  result.hasReportTimeGiven = YES;
-  result.reportTimeGiven = value;
+  _builderResult.hasReportTimeGiven = YES;
+  _builderResult.reportTimeGiven = value;
   return self;
 }
 - (CLowPriPenalty_Builder*) clearReportTimeGiven {
-  result.hasReportTimeGiven = NO;
-  result.reportTimeGiven = 0;
+  _builderResult.hasReportTimeGiven = NO;
+  _builderResult.reportTimeGiven = 0;
   return self;
 }
 - (BOOL) hasRank {
-  return result.hasRank;
+  return _builderResult.hasRank;
 }
 - (uint32_t) rank {
-  return result.rank;
+  return _builderResult.rank;
 }
 - (CLowPriPenalty_Builder*) setRank:(uint32_t) value {
-  result.hasRank = YES;
-  result.rank = value;
+  _builderResult.hasRank = YES;
+  _builderResult.rank = value;
   return self;
 }
 - (CLowPriPenalty_Builder*) clearRank {
-  result.hasRank = NO;
-  result.rank = 0;
+  _builderResult.hasRank = NO;
+  _builderResult.rank = 0;
   return self;
 }
 @end
@@ -67340,83 +67340,83 @@ static CMsgDOTAWelcome* defaultCMsgDOTAWelcomeInstance = nil;
   }
 }
 - (BOOL) hasSpectatorOnly {
-  return result.hasSpectatorOnly;
+  return _builderResult.hasSpectatorOnly;
 }
 - (BOOL) spectatorOnly {
-  return result.spectatorOnly;
+  return _builderResult.spectatorOnly;
 }
 - (CMsgDOTAWelcome_Builder*) setSpectatorOnly:(BOOL) value {
-  result.hasSpectatorOnly = YES;
-  result.spectatorOnly = value;
+  _builderResult.hasSpectatorOnly = YES;
+  _builderResult.spectatorOnly = value;
   return self;
 }
 - (CMsgDOTAWelcome_Builder*) clearSpectatorOnly {
-  result.hasSpectatorOnly = NO;
-  result.spectatorOnly = NO;
+  _builderResult.hasSpectatorOnly = NO;
+  _builderResult.spectatorOnly = NO;
   return self;
 }
 - (BOOL) hasAllowTeamCreation {
-  return result.hasAllowTeamCreation;
+  return _builderResult.hasAllowTeamCreation;
 }
 - (BOOL) allowTeamCreation {
-  return result.allowTeamCreation;
+  return _builderResult.allowTeamCreation;
 }
 - (CMsgDOTAWelcome_Builder*) setAllowTeamCreation:(BOOL) value {
-  result.hasAllowTeamCreation = YES;
-  result.allowTeamCreation = value;
+  _builderResult.hasAllowTeamCreation = YES;
+  _builderResult.allowTeamCreation = value;
   return self;
 }
 - (CMsgDOTAWelcome_Builder*) clearAllowTeamCreation {
-  result.hasAllowTeamCreation = NO;
-  result.allowTeamCreation = NO;
+  _builderResult.hasAllowTeamCreation = NO;
+  _builderResult.allowTeamCreation = NO;
   return self;
 }
 - (BOOL) hasTournamentAdmin {
-  return result.hasTournamentAdmin;
+  return _builderResult.hasTournamentAdmin;
 }
 - (BOOL) tournamentAdmin {
-  return result.tournamentAdmin;
+  return _builderResult.tournamentAdmin;
 }
 - (CMsgDOTAWelcome_Builder*) setTournamentAdmin:(BOOL) value {
-  result.hasTournamentAdmin = YES;
-  result.tournamentAdmin = value;
+  _builderResult.hasTournamentAdmin = YES;
+  _builderResult.tournamentAdmin = value;
   return self;
 }
 - (CMsgDOTAWelcome_Builder*) clearTournamentAdmin {
-  result.hasTournamentAdmin = NO;
-  result.tournamentAdmin = NO;
+  _builderResult.hasTournamentAdmin = NO;
+  _builderResult.tournamentAdmin = NO;
   return self;
 }
 - (BOOL) hasTournamentBroadcaster {
-  return result.hasTournamentBroadcaster;
+  return _builderResult.hasTournamentBroadcaster;
 }
 - (BOOL) tournamentBroadcaster {
-  return result.tournamentBroadcaster;
+  return _builderResult.tournamentBroadcaster;
 }
 - (CMsgDOTAWelcome_Builder*) setTournamentBroadcaster:(BOOL) value {
-  result.hasTournamentBroadcaster = YES;
-  result.tournamentBroadcaster = value;
+  _builderResult.hasTournamentBroadcaster = YES;
+  _builderResult.tournamentBroadcaster = value;
   return self;
 }
 - (CMsgDOTAWelcome_Builder*) clearTournamentBroadcaster {
-  result.hasTournamentBroadcaster = NO;
-  result.tournamentBroadcaster = NO;
+  _builderResult.hasTournamentBroadcaster = NO;
+  _builderResult.tournamentBroadcaster = NO;
   return self;
 }
 - (BOOL) hasStoreItemHash {
-  return result.hasStoreItemHash;
+  return _builderResult.hasStoreItemHash;
 }
 - (uint32_t) storeItemHash {
-  return result.storeItemHash;
+  return _builderResult.storeItemHash;
 }
 - (CMsgDOTAWelcome_Builder*) setStoreItemHash:(uint32_t) value {
-  result.hasStoreItemHash = YES;
-  result.storeItemHash = value;
+  _builderResult.hasStoreItemHash = YES;
+  _builderResult.storeItemHash = value;
   return self;
 }
 - (CMsgDOTAWelcome_Builder*) clearStoreItemHash {
-  result.hasStoreItemHash = NO;
-  result.storeItemHash = 0;
+  _builderResult.hasStoreItemHash = NO;
+  _builderResult.storeItemHash = 0;
   return self;
 }
 @end
@@ -67641,35 +67641,35 @@ static CSODOTAGameHeroFavorites* defaultCSODOTAGameHeroFavoritesInstance = nil;
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CSODOTAGameHeroFavorites_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CSODOTAGameHeroFavorites_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CSODOTAGameHeroFavorites_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CSODOTAGameHeroFavorites_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 @end
@@ -67864,19 +67864,19 @@ static CMsgDOTAHeroFavoritesAdd* defaultCMsgDOTAHeroFavoritesAddInstance = nil;
   }
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CMsgDOTAHeroFavoritesAdd_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CMsgDOTAHeroFavoritesAdd_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 @end
@@ -68071,19 +68071,19 @@ static CMsgDOTAHeroFavoritesRemove* defaultCMsgDOTAHeroFavoritesRemoveInstance =
   }
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CMsgDOTAHeroFavoritesRemove_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CMsgDOTAHeroFavoritesRemove_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 @end
@@ -68445,10 +68445,10 @@ static CMsgDOTAPlayerHeroesRecentResponse* defaultCMsgDOTAPlayerHeroesRecentResp
     [self setResult:other.result];
   }
   if (other.heroIdsArray.count > 0) {
-    if (result.heroIdsArray == nil) {
-      result.heroIdsArray = [[other.heroIdsArray copyWithZone:[other.heroIdsArray zone]] autorelease];
+    if (_builderResult.heroIdsArray == nil) {
+      _builderResult.heroIdsArray = [[other.heroIdsArray copyWithZone:[other.heroIdsArray zone]] autorelease];
     } else {
-      [result.heroIdsArray appendArray:other.heroIdsArray];
+      [_builderResult.heroIdsArray appendArray:other.heroIdsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -68484,44 +68484,44 @@ static CMsgDOTAPlayerHeroesRecentResponse* defaultCMsgDOTAPlayerHeroesRecentResp
   }
 }
 - (BOOL) hasResult {
-  return result.hasResult;
+  return _builderResult.hasResult;
 }
 - (uint32_t) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgDOTAPlayerHeroesRecentResponse_Builder*) setResult:(uint32_t) value {
-  result.hasResult = YES;
-  result.result = value;
+  _builderResult.hasResult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgDOTAPlayerHeroesRecentResponse_Builder*) clearResult {
-  result.hasResult = NO;
-  result.result = 0;
+  _builderResult.hasResult = NO;
+  _builderResult.result = 0;
   return self;
 }
 - (PBAppendableArray *)heroIds {
-  return result.heroIdsArray;
+  return _builderResult.heroIdsArray;
 }
 - (uint32_t)heroIdsAtIndex:(NSUInteger)index {
-  return [result heroIdsAtIndex:index];
+  return [_builderResult heroIdsAtIndex:index];
 }
 - (CMsgDOTAPlayerHeroesRecentResponse_Builder *)addHeroIds:(uint32_t)value {
-  if (result.heroIdsArray == nil) {
-    result.heroIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.heroIdsArray == nil) {
+    _builderResult.heroIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.heroIdsArray addUint32:value];
+  [_builderResult.heroIdsArray addUint32:value];
   return self;
 }
 - (CMsgDOTAPlayerHeroesRecentResponse_Builder *)setHeroIdsArray:(NSArray *)array {
-  result.heroIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.heroIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTAPlayerHeroesRecentResponse_Builder *)setHeroIdsValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.heroIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.heroIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTAPlayerHeroesRecentResponse_Builder *)clearHeroIds {
-  result.heroIdsArray = nil;
+  _builderResult.heroIdsArray = nil;
   return self;
 }
 @end
@@ -69187,179 +69187,179 @@ static CDOTAOverview_PlayersByRegion* defaultCDOTAOverview_PlayersByRegionInstan
   }
 }
 - (BOOL) hasRegion {
-  return result.hasRegion;
+  return _builderResult.hasRegion;
 }
 - (int32_t) region {
-  return result.region;
+  return _builderResult.region;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) setRegion:(int32_t) value {
-  result.hasRegion = YES;
-  result.region = value;
+  _builderResult.hasRegion = YES;
+  _builderResult.region = value;
   return self;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) clearRegion {
-  result.hasRegion = NO;
-  result.region = 0;
+  _builderResult.hasRegion = NO;
+  _builderResult.region = 0;
   return self;
 }
 - (BOOL) hasTotal {
-  return result.hasTotal;
+  return _builderResult.hasTotal;
 }
 - (int32_t) total {
-  return result.total;
+  return _builderResult.total;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) setTotal:(int32_t) value {
-  result.hasTotal = YES;
-  result.total = value;
+  _builderResult.hasTotal = YES;
+  _builderResult.total = value;
   return self;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) clearTotal {
-  result.hasTotal = NO;
-  result.total = 0;
+  _builderResult.hasTotal = NO;
+  _builderResult.total = 0;
   return self;
 }
 - (BOOL) hasInQueue {
-  return result.hasInQueue;
+  return _builderResult.hasInQueue;
 }
 - (int32_t) inQueue {
-  return result.inQueue;
+  return _builderResult.inQueue;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) setInQueue:(int32_t) value {
-  result.hasInQueue = YES;
-  result.inQueue = value;
+  _builderResult.hasInQueue = YES;
+  _builderResult.inQueue = value;
   return self;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) clearInQueue {
-  result.hasInQueue = NO;
-  result.inQueue = 0;
+  _builderResult.hasInQueue = NO;
+  _builderResult.inQueue = 0;
   return self;
 }
 - (BOOL) hasInMatch {
-  return result.hasInMatch;
+  return _builderResult.hasInMatch;
 }
 - (int32_t) inMatch {
-  return result.inMatch;
+  return _builderResult.inMatch;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) setInMatch:(int32_t) value {
-  result.hasInMatch = YES;
-  result.inMatch = value;
+  _builderResult.hasInMatch = YES;
+  _builderResult.inMatch = value;
   return self;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) clearInMatch {
-  result.hasInMatch = NO;
-  result.inMatch = 0;
+  _builderResult.hasInMatch = NO;
+  _builderResult.inMatch = 0;
   return self;
 }
 - (BOOL) hasInPractice {
-  return result.hasInPractice;
+  return _builderResult.hasInPractice;
 }
 - (int32_t) inPractice {
-  return result.inPractice;
+  return _builderResult.inPractice;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) setInPractice:(int32_t) value {
-  result.hasInPractice = YES;
-  result.inPractice = value;
+  _builderResult.hasInPractice = YES;
+  _builderResult.inPractice = value;
   return self;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) clearInPractice {
-  result.hasInPractice = NO;
-  result.inPractice = 0;
+  _builderResult.hasInPractice = NO;
+  _builderResult.inPractice = 0;
   return self;
 }
 - (BOOL) hasInTournament {
-  return result.hasInTournament;
+  return _builderResult.hasInTournament;
 }
 - (int32_t) inTournament {
-  return result.inTournament;
+  return _builderResult.inTournament;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) setInTournament:(int32_t) value {
-  result.hasInTournament = YES;
-  result.inTournament = value;
+  _builderResult.hasInTournament = YES;
+  _builderResult.inTournament = value;
   return self;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) clearInTournament {
-  result.hasInTournament = NO;
-  result.inTournament = 0;
+  _builderResult.hasInTournament = NO;
+  _builderResult.inTournament = 0;
   return self;
 }
 - (BOOL) hasInTutorial {
-  return result.hasInTutorial;
+  return _builderResult.hasInTutorial;
 }
 - (int32_t) inTutorial {
-  return result.inTutorial;
+  return _builderResult.inTutorial;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) setInTutorial:(int32_t) value {
-  result.hasInTutorial = YES;
-  result.inTutorial = value;
+  _builderResult.hasInTutorial = YES;
+  _builderResult.inTutorial = value;
   return self;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) clearInTutorial {
-  result.hasInTutorial = NO;
-  result.inTutorial = 0;
+  _builderResult.hasInTutorial = NO;
+  _builderResult.inTutorial = 0;
   return self;
 }
 - (BOOL) hasInCoop {
-  return result.hasInCoop;
+  return _builderResult.hasInCoop;
 }
 - (int32_t) inCoop {
-  return result.inCoop;
+  return _builderResult.inCoop;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) setInCoop:(int32_t) value {
-  result.hasInCoop = YES;
-  result.inCoop = value;
+  _builderResult.hasInCoop = YES;
+  _builderResult.inCoop = value;
   return self;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) clearInCoop {
-  result.hasInCoop = NO;
-  result.inCoop = 0;
+  _builderResult.hasInCoop = NO;
+  _builderResult.inCoop = 0;
   return self;
 }
 - (BOOL) hasInTeamMatch {
-  return result.hasInTeamMatch;
+  return _builderResult.hasInTeamMatch;
 }
 - (int32_t) inTeamMatch {
-  return result.inTeamMatch;
+  return _builderResult.inTeamMatch;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) setInTeamMatch:(int32_t) value {
-  result.hasInTeamMatch = YES;
-  result.inTeamMatch = value;
+  _builderResult.hasInTeamMatch = YES;
+  _builderResult.inTeamMatch = value;
   return self;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) clearInTeamMatch {
-  result.hasInTeamMatch = NO;
-  result.inTeamMatch = 0;
+  _builderResult.hasInTeamMatch = NO;
+  _builderResult.inTeamMatch = 0;
   return self;
 }
 - (BOOL) hasSpectating {
-  return result.hasSpectating;
+  return _builderResult.hasSpectating;
 }
 - (int32_t) spectating {
-  return result.spectating;
+  return _builderResult.spectating;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) setSpectating:(int32_t) value {
-  result.hasSpectating = YES;
-  result.spectating = value;
+  _builderResult.hasSpectating = YES;
+  _builderResult.spectating = value;
   return self;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) clearSpectating {
-  result.hasSpectating = NO;
-  result.spectating = 0;
+  _builderResult.hasSpectating = NO;
+  _builderResult.spectating = 0;
   return self;
 }
 - (BOOL) hasIdle {
-  return result.hasIdle;
+  return _builderResult.hasIdle;
 }
 - (int32_t) idle {
-  return result.idle;
+  return _builderResult.idle;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) setIdle:(int32_t) value {
-  result.hasIdle = YES;
-  result.idle = value;
+  _builderResult.hasIdle = YES;
+  _builderResult.idle = value;
   return self;
 }
 - (CDOTAOverview_PlayersByRegion_Builder*) clearIdle {
-  result.hasIdle = NO;
-  result.idle = 0;
+  _builderResult.hasIdle = NO;
+  _builderResult.idle = 0;
   return self;
 }
 @end
@@ -69614,51 +69614,51 @@ static CDOTAOverview_ServersByRegion* defaultCDOTAOverview_ServersByRegionInstan
   }
 }
 - (BOOL) hasRegion {
-  return result.hasRegion;
+  return _builderResult.hasRegion;
 }
 - (int32_t) region {
-  return result.region;
+  return _builderResult.region;
 }
 - (CDOTAOverview_ServersByRegion_Builder*) setRegion:(int32_t) value {
-  result.hasRegion = YES;
-  result.region = value;
+  _builderResult.hasRegion = YES;
+  _builderResult.region = value;
   return self;
 }
 - (CDOTAOverview_ServersByRegion_Builder*) clearRegion {
-  result.hasRegion = NO;
-  result.region = 0;
+  _builderResult.hasRegion = NO;
+  _builderResult.region = 0;
   return self;
 }
 - (BOOL) hasInUse {
-  return result.hasInUse;
+  return _builderResult.hasInUse;
 }
 - (int32_t) inUse {
-  return result.inUse;
+  return _builderResult.inUse;
 }
 - (CDOTAOverview_ServersByRegion_Builder*) setInUse:(int32_t) value {
-  result.hasInUse = YES;
-  result.inUse = value;
+  _builderResult.hasInUse = YES;
+  _builderResult.inUse = value;
   return self;
 }
 - (CDOTAOverview_ServersByRegion_Builder*) clearInUse {
-  result.hasInUse = NO;
-  result.inUse = 0;
+  _builderResult.hasInUse = NO;
+  _builderResult.inUse = 0;
   return self;
 }
 - (BOOL) hasAvailable {
-  return result.hasAvailable;
+  return _builderResult.hasAvailable;
 }
 - (int32_t) available {
-  return result.available;
+  return _builderResult.available;
 }
 - (CDOTAOverview_ServersByRegion_Builder*) setAvailable:(int32_t) value {
-  result.hasAvailable = YES;
-  result.available = value;
+  _builderResult.hasAvailable = YES;
+  _builderResult.available = value;
   return self;
 }
 - (CDOTAOverview_ServersByRegion_Builder*) clearAvailable {
-  result.hasAvailable = NO;
-  result.available = 0;
+  _builderResult.hasAvailable = NO;
+  _builderResult.available = 0;
   return self;
 }
 @end
@@ -69706,24 +69706,24 @@ static CDOTAOverview_ServersByRegion* defaultCDOTAOverview_ServersByRegionInstan
     return self;
   }
   if (other.playersByRegionArray.count > 0) {
-    if (result.playersByRegionArray == nil) {
-      result.playersByRegionArray = [[other.playersByRegionArray copyWithZone:[other.playersByRegionArray zone]] autorelease];
+    if (_builderResult.playersByRegionArray == nil) {
+      _builderResult.playersByRegionArray = [[other.playersByRegionArray copyWithZone:[other.playersByRegionArray zone]] autorelease];
     } else {
-      [result.playersByRegionArray appendArray:other.playersByRegionArray];
+      [_builderResult.playersByRegionArray appendArray:other.playersByRegionArray];
     }
   }
   if (other.gameServersByRegionArray.count > 0) {
-    if (result.gameServersByRegionArray == nil) {
-      result.gameServersByRegionArray = [[other.gameServersByRegionArray copyWithZone:[other.gameServersByRegionArray zone]] autorelease];
+    if (_builderResult.gameServersByRegionArray == nil) {
+      _builderResult.gameServersByRegionArray = [[other.gameServersByRegionArray copyWithZone:[other.gameServersByRegionArray zone]] autorelease];
     } else {
-      [result.gameServersByRegionArray appendArray:other.gameServersByRegionArray];
+      [_builderResult.gameServersByRegionArray appendArray:other.gameServersByRegionArray];
     }
   }
   if (other.proxyServersByRegionArray.count > 0) {
-    if (result.proxyServersByRegionArray == nil) {
-      result.proxyServersByRegionArray = [[other.proxyServersByRegionArray copyWithZone:[other.proxyServersByRegionArray zone]] autorelease];
+    if (_builderResult.proxyServersByRegionArray == nil) {
+      _builderResult.proxyServersByRegionArray = [[other.proxyServersByRegionArray copyWithZone:[other.proxyServersByRegionArray zone]] autorelease];
     } else {
-      [result.proxyServersByRegionArray appendArray:other.proxyServersByRegionArray];
+      [_builderResult.proxyServersByRegionArray appendArray:other.proxyServersByRegionArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -69769,78 +69769,78 @@ static CDOTAOverview_ServersByRegion* defaultCDOTAOverview_ServersByRegionInstan
   }
 }
 - (PBAppendableArray *)playersByRegion {
-  return result.playersByRegionArray;
+  return _builderResult.playersByRegionArray;
 }
 - (CDOTAOverview_PlayersByRegion*)playersByRegionAtIndex:(NSUInteger)index {
-  return [result playersByRegionAtIndex:index];
+  return [_builderResult playersByRegionAtIndex:index];
 }
 - (CDOTAOverview_Builder *)addPlayersByRegion:(CDOTAOverview_PlayersByRegion*)value {
-  if (result.playersByRegionArray == nil) {
-    result.playersByRegionArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.playersByRegionArray == nil) {
+    _builderResult.playersByRegionArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.playersByRegionArray addObject:value];
+  [_builderResult.playersByRegionArray addObject:value];
   return self;
 }
 - (CDOTAOverview_Builder *)setPlayersByRegionArray:(NSArray *)array {
-  result.playersByRegionArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.playersByRegionArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CDOTAOverview_Builder *)setPlayersByRegionValues:(const CDOTAOverview_PlayersByRegion* *)values count:(NSUInteger)count {
-  result.playersByRegionArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.playersByRegionArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CDOTAOverview_Builder *)clearPlayersByRegion {
-  result.playersByRegionArray = nil;
+  _builderResult.playersByRegionArray = nil;
   return self;
 }
 - (PBAppendableArray *)gameServersByRegion {
-  return result.gameServersByRegionArray;
+  return _builderResult.gameServersByRegionArray;
 }
 - (CDOTAOverview_ServersByRegion*)gameServersByRegionAtIndex:(NSUInteger)index {
-  return [result gameServersByRegionAtIndex:index];
+  return [_builderResult gameServersByRegionAtIndex:index];
 }
 - (CDOTAOverview_Builder *)addGameServersByRegion:(CDOTAOverview_ServersByRegion*)value {
-  if (result.gameServersByRegionArray == nil) {
-    result.gameServersByRegionArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.gameServersByRegionArray == nil) {
+    _builderResult.gameServersByRegionArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.gameServersByRegionArray addObject:value];
+  [_builderResult.gameServersByRegionArray addObject:value];
   return self;
 }
 - (CDOTAOverview_Builder *)setGameServersByRegionArray:(NSArray *)array {
-  result.gameServersByRegionArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.gameServersByRegionArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CDOTAOverview_Builder *)setGameServersByRegionValues:(const CDOTAOverview_ServersByRegion* *)values count:(NSUInteger)count {
-  result.gameServersByRegionArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.gameServersByRegionArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CDOTAOverview_Builder *)clearGameServersByRegion {
-  result.gameServersByRegionArray = nil;
+  _builderResult.gameServersByRegionArray = nil;
   return self;
 }
 - (PBAppendableArray *)proxyServersByRegion {
-  return result.proxyServersByRegionArray;
+  return _builderResult.proxyServersByRegionArray;
 }
 - (CDOTAOverview_ServersByRegion*)proxyServersByRegionAtIndex:(NSUInteger)index {
-  return [result proxyServersByRegionAtIndex:index];
+  return [_builderResult proxyServersByRegionAtIndex:index];
 }
 - (CDOTAOverview_Builder *)addProxyServersByRegion:(CDOTAOverview_ServersByRegion*)value {
-  if (result.proxyServersByRegionArray == nil) {
-    result.proxyServersByRegionArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.proxyServersByRegionArray == nil) {
+    _builderResult.proxyServersByRegionArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.proxyServersByRegionArray addObject:value];
+  [_builderResult.proxyServersByRegionArray addObject:value];
   return self;
 }
 - (CDOTAOverview_Builder *)setProxyServersByRegionArray:(NSArray *)array {
-  result.proxyServersByRegionArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.proxyServersByRegionArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CDOTAOverview_Builder *)setProxyServersByRegionValues:(const CDOTAOverview_ServersByRegion* *)values count:(NSUInteger)count {
-  result.proxyServersByRegionArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.proxyServersByRegionArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CDOTAOverview_Builder *)clearProxyServersByRegion {
-  result.proxyServersByRegionArray = nil;
+  _builderResult.proxyServersByRegionArray = nil;
   return self;
 }
 @end
@@ -70035,19 +70035,19 @@ static CMsgSetShowcaseHero* defaultCMsgSetShowcaseHeroInstance = nil;
   }
 }
 - (BOOL) hasShowcaseHeroId {
-  return result.hasShowcaseHeroId;
+  return _builderResult.hasShowcaseHeroId;
 }
 - (uint32_t) showcaseHeroId {
-  return result.showcaseHeroId;
+  return _builderResult.showcaseHeroId;
 }
 - (CMsgSetShowcaseHero_Builder*) setShowcaseHeroId:(uint32_t) value {
-  result.hasShowcaseHeroId = YES;
-  result.showcaseHeroId = value;
+  _builderResult.hasShowcaseHeroId = YES;
+  _builderResult.showcaseHeroId = value;
   return self;
 }
 - (CMsgSetShowcaseHero_Builder*) clearShowcaseHeroId {
-  result.hasShowcaseHeroId = NO;
-  result.showcaseHeroId = 0;
+  _builderResult.hasShowcaseHeroId = NO;
+  _builderResult.showcaseHeroId = 0;
   return self;
 }
 @end
@@ -70473,51 +70473,51 @@ static CLeague* defaultCLeagueInstance = nil;
   }
 }
 - (BOOL) hasLeagueid {
-  return result.hasLeagueid;
+  return _builderResult.hasLeagueid;
 }
 - (uint32_t) leagueid {
-  return result.leagueid;
+  return _builderResult.leagueid;
 }
 - (CLeague_Builder*) setLeagueid:(uint32_t) value {
-  result.hasLeagueid = YES;
-  result.leagueid = value;
+  _builderResult.hasLeagueid = YES;
+  _builderResult.leagueid = value;
   return self;
 }
 - (CLeague_Builder*) clearLeagueid {
-  result.hasLeagueid = NO;
-  result.leagueid = 0;
+  _builderResult.hasLeagueid = NO;
+  _builderResult.leagueid = 0;
   return self;
 }
 - (BOOL) hasLive {
-  return result.hasLive;
+  return _builderResult.hasLive;
 }
 - (BOOL) live {
-  return result.live;
+  return _builderResult.live;
 }
 - (CLeague_Builder*) setLive:(BOOL) value {
-  result.hasLive = YES;
-  result.live = value;
+  _builderResult.hasLive = YES;
+  _builderResult.live = value;
   return self;
 }
 - (CLeague_Builder*) clearLive {
-  result.hasLive = NO;
-  result.live = NO;
+  _builderResult.hasLive = NO;
+  _builderResult.live = NO;
   return self;
 }
 - (BOOL) hasFreeleague {
-  return result.hasFreeleague;
+  return _builderResult.hasFreeleague;
 }
 - (BOOL) freeleague {
-  return result.freeleague;
+  return _builderResult.freeleague;
 }
 - (CLeague_Builder*) setFreeleague:(BOOL) value {
-  result.hasFreeleague = YES;
-  result.freeleague = value;
+  _builderResult.hasFreeleague = YES;
+  _builderResult.freeleague = value;
   return self;
 }
 - (CLeague_Builder*) clearFreeleague {
-  result.hasFreeleague = NO;
-  result.freeleague = NO;
+  _builderResult.hasFreeleague = NO;
+  _builderResult.freeleague = NO;
   return self;
 }
 @end
@@ -70684,10 +70684,10 @@ static CMsgResponseLeagueInfo* defaultCMsgResponseLeagueInfoInstance = nil;
     return self;
   }
   if (other.leaguesArray.count > 0) {
-    if (result.leaguesArray == nil) {
-      result.leaguesArray = [[other.leaguesArray copyWithZone:[other.leaguesArray zone]] autorelease];
+    if (_builderResult.leaguesArray == nil) {
+      _builderResult.leaguesArray = [[other.leaguesArray copyWithZone:[other.leaguesArray zone]] autorelease];
     } else {
-      [result.leaguesArray appendArray:other.leaguesArray];
+      [_builderResult.leaguesArray appendArray:other.leaguesArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -70721,28 +70721,28 @@ static CMsgResponseLeagueInfo* defaultCMsgResponseLeagueInfoInstance = nil;
   }
 }
 - (PBAppendableArray *)leagues {
-  return result.leaguesArray;
+  return _builderResult.leaguesArray;
 }
 - (CLeague*)leaguesAtIndex:(NSUInteger)index {
-  return [result leaguesAtIndex:index];
+  return [_builderResult leaguesAtIndex:index];
 }
 - (CMsgResponseLeagueInfo_Builder *)addLeagues:(CLeague*)value {
-  if (result.leaguesArray == nil) {
-    result.leaguesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.leaguesArray == nil) {
+    _builderResult.leaguesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.leaguesArray addObject:value];
+  [_builderResult.leaguesArray addObject:value];
   return self;
 }
 - (CMsgResponseLeagueInfo_Builder *)setLeaguesArray:(NSArray *)array {
-  result.leaguesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.leaguesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgResponseLeagueInfo_Builder *)setLeaguesValues:(const CLeague* *)values count:(NSUInteger)count {
-  result.leaguesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.leaguesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgResponseLeagueInfo_Builder *)clearLeagues {
-  result.leaguesArray = nil;
+  _builderResult.leaguesArray = nil;
   return self;
 }
 @end
@@ -71243,179 +71243,179 @@ static CMsgTournamentItemEvent* defaultCMsgTournamentItemEventInstance = nil;
   }
 }
 - (BOOL) hasKillerAccountId {
-  return result.hasKillerAccountId;
+  return _builderResult.hasKillerAccountId;
 }
 - (uint32_t) killerAccountId {
-  return result.killerAccountId;
+  return _builderResult.killerAccountId;
 }
 - (CMsgTournamentItemEvent_Builder*) setKillerAccountId:(uint32_t) value {
-  result.hasKillerAccountId = YES;
-  result.killerAccountId = value;
+  _builderResult.hasKillerAccountId = YES;
+  _builderResult.killerAccountId = value;
   return self;
 }
 - (CMsgTournamentItemEvent_Builder*) clearKillerAccountId {
-  result.hasKillerAccountId = NO;
-  result.killerAccountId = 0;
+  _builderResult.hasKillerAccountId = NO;
+  _builderResult.killerAccountId = 0;
   return self;
 }
 - (BOOL) hasVictimAccountId {
-  return result.hasVictimAccountId;
+  return _builderResult.hasVictimAccountId;
 }
 - (uint32_t) victimAccountId {
-  return result.victimAccountId;
+  return _builderResult.victimAccountId;
 }
 - (CMsgTournamentItemEvent_Builder*) setVictimAccountId:(uint32_t) value {
-  result.hasVictimAccountId = YES;
-  result.victimAccountId = value;
+  _builderResult.hasVictimAccountId = YES;
+  _builderResult.victimAccountId = value;
   return self;
 }
 - (CMsgTournamentItemEvent_Builder*) clearVictimAccountId {
-  result.hasVictimAccountId = NO;
-  result.victimAccountId = 0;
+  _builderResult.hasVictimAccountId = NO;
+  _builderResult.victimAccountId = 0;
   return self;
 }
 - (BOOL) hasevent_type {
-  return result.hasevent_type;
+  return _builderResult.hasevent_type;
 }
 - (DOTA_TournamentEvents) event_type {
-  return result.event_type;
+  return _builderResult.event_type;
 }
 - (CMsgTournamentItemEvent_Builder*) setevent_type:(DOTA_TournamentEvents) value {
-  result.hasevent_type = YES;
-  result.event_type = value;
+  _builderResult.hasevent_type = YES;
+  _builderResult.event_type = value;
   return self;
 }
 - (CMsgTournamentItemEvent_Builder*) clearevent_type {
-  result.hasevent_type = NO;
-  result.event_type = DOTA_TournamentEventsTE_FIRST_BLOOD;
+  _builderResult.hasevent_type = NO;
+  _builderResult.event_type = DOTA_TournamentEventsTE_FIRST_BLOOD;
   return self;
 }
 - (BOOL) hasTvDelay {
-  return result.hasTvDelay;
+  return _builderResult.hasTvDelay;
 }
 - (int32_t) tvDelay {
-  return result.tvDelay;
+  return _builderResult.tvDelay;
 }
 - (CMsgTournamentItemEvent_Builder*) setTvDelay:(int32_t) value {
-  result.hasTvDelay = YES;
-  result.tvDelay = value;
+  _builderResult.hasTvDelay = YES;
+  _builderResult.tvDelay = value;
   return self;
 }
 - (CMsgTournamentItemEvent_Builder*) clearTvDelay {
-  result.hasTvDelay = NO;
-  result.tvDelay = 0;
+  _builderResult.hasTvDelay = NO;
+  _builderResult.tvDelay = 0;
   return self;
 }
 - (BOOL) hasDotaTime {
-  return result.hasDotaTime;
+  return _builderResult.hasDotaTime;
 }
 - (int32_t) dotaTime {
-  return result.dotaTime;
+  return _builderResult.dotaTime;
 }
 - (CMsgTournamentItemEvent_Builder*) setDotaTime:(int32_t) value {
-  result.hasDotaTime = YES;
-  result.dotaTime = value;
+  _builderResult.hasDotaTime = YES;
+  _builderResult.dotaTime = value;
   return self;
 }
 - (CMsgTournamentItemEvent_Builder*) clearDotaTime {
-  result.hasDotaTime = NO;
-  result.dotaTime = 0;
+  _builderResult.hasDotaTime = NO;
+  _builderResult.dotaTime = 0;
   return self;
 }
 - (BOOL) hasReplayTime {
-  return result.hasReplayTime;
+  return _builderResult.hasReplayTime;
 }
 - (Float32) replayTime {
-  return result.replayTime;
+  return _builderResult.replayTime;
 }
 - (CMsgTournamentItemEvent_Builder*) setReplayTime:(Float32) value {
-  result.hasReplayTime = YES;
-  result.replayTime = value;
+  _builderResult.hasReplayTime = YES;
+  _builderResult.replayTime = value;
   return self;
 }
 - (CMsgTournamentItemEvent_Builder*) clearReplayTime {
-  result.hasReplayTime = NO;
-  result.replayTime = 0;
+  _builderResult.hasReplayTime = NO;
+  _builderResult.replayTime = 0;
   return self;
 }
 - (BOOL) hasLootList {
-  return result.hasLootList;
+  return _builderResult.hasLootList;
 }
 - (NSString*) lootList {
-  return result.lootList;
+  return _builderResult.lootList;
 }
 - (CMsgTournamentItemEvent_Builder*) setLootList:(NSString*) value {
-  result.hasLootList = YES;
-  result.lootList = value;
+  _builderResult.hasLootList = YES;
+  _builderResult.lootList = value;
   return self;
 }
 - (CMsgTournamentItemEvent_Builder*) clearLootList {
-  result.hasLootList = NO;
-  result.lootList = @"";
+  _builderResult.hasLootList = NO;
+  _builderResult.lootList = @"";
   return self;
 }
 - (BOOL) hasEventTeam {
-  return result.hasEventTeam;
+  return _builderResult.hasEventTeam;
 }
 - (uint32_t) eventTeam {
-  return result.eventTeam;
+  return _builderResult.eventTeam;
 }
 - (CMsgTournamentItemEvent_Builder*) setEventTeam:(uint32_t) value {
-  result.hasEventTeam = YES;
-  result.eventTeam = value;
+  _builderResult.hasEventTeam = YES;
+  _builderResult.eventTeam = value;
   return self;
 }
 - (CMsgTournamentItemEvent_Builder*) clearEventTeam {
-  result.hasEventTeam = NO;
-  result.eventTeam = 0;
+  _builderResult.hasEventTeam = NO;
+  _builderResult.eventTeam = 0;
   return self;
 }
 - (BOOL) hasMultiKillCount {
-  return result.hasMultiKillCount;
+  return _builderResult.hasMultiKillCount;
 }
 - (uint32_t) multiKillCount {
-  return result.multiKillCount;
+  return _builderResult.multiKillCount;
 }
 - (CMsgTournamentItemEvent_Builder*) setMultiKillCount:(uint32_t) value {
-  result.hasMultiKillCount = YES;
-  result.multiKillCount = value;
+  _builderResult.hasMultiKillCount = YES;
+  _builderResult.multiKillCount = value;
   return self;
 }
 - (CMsgTournamentItemEvent_Builder*) clearMultiKillCount {
-  result.hasMultiKillCount = NO;
-  result.multiKillCount = 0;
+  _builderResult.hasMultiKillCount = NO;
+  _builderResult.multiKillCount = 0;
   return self;
 }
 - (BOOL) hasWinnerScore {
-  return result.hasWinnerScore;
+  return _builderResult.hasWinnerScore;
 }
 - (uint32_t) winnerScore {
-  return result.winnerScore;
+  return _builderResult.winnerScore;
 }
 - (CMsgTournamentItemEvent_Builder*) setWinnerScore:(uint32_t) value {
-  result.hasWinnerScore = YES;
-  result.winnerScore = value;
+  _builderResult.hasWinnerScore = YES;
+  _builderResult.winnerScore = value;
   return self;
 }
 - (CMsgTournamentItemEvent_Builder*) clearWinnerScore {
-  result.hasWinnerScore = NO;
-  result.winnerScore = 0;
+  _builderResult.hasWinnerScore = NO;
+  _builderResult.winnerScore = 0;
   return self;
 }
 - (BOOL) hasLoserScore {
-  return result.hasLoserScore;
+  return _builderResult.hasLoserScore;
 }
 - (uint32_t) loserScore {
-  return result.loserScore;
+  return _builderResult.loserScore;
 }
 - (CMsgTournamentItemEvent_Builder*) setLoserScore:(uint32_t) value {
-  result.hasLoserScore = YES;
-  result.loserScore = value;
+  _builderResult.hasLoserScore = YES;
+  _builderResult.loserScore = value;
   return self;
 }
 - (CMsgTournamentItemEvent_Builder*) clearLoserScore {
-  result.hasLoserScore = NO;
-  result.loserScore = 0;
+  _builderResult.hasLoserScore = NO;
+  _builderResult.loserScore = 0;
   return self;
 }
 @end
@@ -71646,35 +71646,35 @@ static CMsgTournamentItemEventResponse* defaultCMsgTournamentItemEventResponseIn
   }
 }
 - (BOOL) hasevent_type {
-  return result.hasevent_type;
+  return _builderResult.hasevent_type;
 }
 - (DOTA_TournamentEvents) event_type {
-  return result.event_type;
+  return _builderResult.event_type;
 }
 - (CMsgTournamentItemEventResponse_Builder*) setevent_type:(DOTA_TournamentEvents) value {
-  result.hasevent_type = YES;
-  result.event_type = value;
+  _builderResult.hasevent_type = YES;
+  _builderResult.event_type = value;
   return self;
 }
 - (CMsgTournamentItemEventResponse_Builder*) clearevent_type {
-  result.hasevent_type = NO;
-  result.event_type = DOTA_TournamentEventsTE_FIRST_BLOOD;
+  _builderResult.hasevent_type = NO;
+  _builderResult.event_type = DOTA_TournamentEventsTE_FIRST_BLOOD;
   return self;
 }
 - (BOOL) hasWinnerName {
-  return result.hasWinnerName;
+  return _builderResult.hasWinnerName;
 }
 - (NSString*) winnerName {
-  return result.winnerName;
+  return _builderResult.winnerName;
 }
 - (CMsgTournamentItemEventResponse_Builder*) setWinnerName:(NSString*) value {
-  result.hasWinnerName = YES;
-  result.winnerName = value;
+  _builderResult.hasWinnerName = YES;
+  _builderResult.winnerName = value;
   return self;
 }
 - (CMsgTournamentItemEventResponse_Builder*) clearWinnerName {
-  result.hasWinnerName = NO;
-  result.winnerName = @"";
+  _builderResult.hasWinnerName = NO;
+  _builderResult.winnerName = @"";
   return self;
 }
 @end
@@ -72041,35 +72041,35 @@ static CMsgDOTAMatchVotes_PlayerVote* defaultCMsgDOTAMatchVotes_PlayerVoteInstan
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgDOTAMatchVotes_PlayerVote_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgDOTAMatchVotes_PlayerVote_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasVote {
-  return result.hasVote;
+  return _builderResult.hasVote;
 }
 - (uint32_t) vote {
-  return result.vote;
+  return _builderResult.vote;
 }
 - (CMsgDOTAMatchVotes_PlayerVote_Builder*) setVote:(uint32_t) value {
-  result.hasVote = YES;
-  result.vote = value;
+  _builderResult.hasVote = YES;
+  _builderResult.vote = value;
   return self;
 }
 - (CMsgDOTAMatchVotes_PlayerVote_Builder*) clearVote {
-  result.hasVote = NO;
-  result.vote = 0;
+  _builderResult.hasVote = NO;
+  _builderResult.vote = 0;
   return self;
 }
 @end
@@ -72120,10 +72120,10 @@ static CMsgDOTAMatchVotes_PlayerVote* defaultCMsgDOTAMatchVotes_PlayerVoteInstan
     [self setMatchId:other.matchId];
   }
   if (other.votesArray.count > 0) {
-    if (result.votesArray == nil) {
-      result.votesArray = [[other.votesArray copyWithZone:[other.votesArray zone]] autorelease];
+    if (_builderResult.votesArray == nil) {
+      _builderResult.votesArray = [[other.votesArray copyWithZone:[other.votesArray zone]] autorelease];
     } else {
-      [result.votesArray appendArray:other.votesArray];
+      [_builderResult.votesArray appendArray:other.votesArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -72161,44 +72161,44 @@ static CMsgDOTAMatchVotes_PlayerVote* defaultCMsgDOTAMatchVotes_PlayerVoteInstan
   }
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CMsgDOTAMatchVotes_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CMsgDOTAMatchVotes_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 - (PBAppendableArray *)votes {
-  return result.votesArray;
+  return _builderResult.votesArray;
 }
 - (CMsgDOTAMatchVotes_PlayerVote*)votesAtIndex:(NSUInteger)index {
-  return [result votesAtIndex:index];
+  return [_builderResult votesAtIndex:index];
 }
 - (CMsgDOTAMatchVotes_Builder *)addVotes:(CMsgDOTAMatchVotes_PlayerVote*)value {
-  if (result.votesArray == nil) {
-    result.votesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.votesArray == nil) {
+    _builderResult.votesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.votesArray addObject:value];
+  [_builderResult.votesArray addObject:value];
   return self;
 }
 - (CMsgDOTAMatchVotes_Builder *)setVotesArray:(NSArray *)array {
-  result.votesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.votesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAMatchVotes_Builder *)setVotesValues:(const CMsgDOTAMatchVotes_PlayerVote* *)values count:(NSUInteger)count {
-  result.votesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.votesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAMatchVotes_Builder *)clearVotes {
-  result.votesArray = nil;
+  _builderResult.votesArray = nil;
   return self;
 }
 @end
@@ -72428,35 +72428,35 @@ static CMsgCastMatchVote* defaultCMsgCastMatchVoteInstance = nil;
   }
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CMsgCastMatchVote_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CMsgCastMatchVote_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 - (BOOL) hasvote {
-  return result.hasvote;
+  return _builderResult.hasvote;
 }
 - (DOTAMatchVote) vote {
-  return result.vote;
+  return _builderResult.vote;
 }
 - (CMsgCastMatchVote_Builder*) setvote:(DOTAMatchVote) value {
-  result.hasvote = YES;
-  result.vote = value;
+  _builderResult.hasvote = YES;
+  _builderResult.vote = value;
   return self;
 }
 - (CMsgCastMatchVote_Builder*) clearvote {
-  result.hasvote = NO;
-  result.vote = DOTAMatchVoteDOTAMatchVote_INVALID;
+  _builderResult.hasvote = NO;
+  _builderResult.vote = DOTAMatchVoteDOTAMatchVote_INVALID;
   return self;
 }
 @end
@@ -72681,35 +72681,35 @@ static CMsgRetrieveMatchVote* defaultCMsgRetrieveMatchVoteInstance = nil;
   }
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CMsgRetrieveMatchVote_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CMsgRetrieveMatchVote_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 - (BOOL) hasIncremental {
-  return result.hasIncremental;
+  return _builderResult.hasIncremental;
 }
 - (uint32_t) incremental {
-  return result.incremental;
+  return _builderResult.incremental;
 }
 - (CMsgRetrieveMatchVote_Builder*) setIncremental:(uint32_t) value {
-  result.hasIncremental = YES;
-  result.incremental = value;
+  _builderResult.hasIncremental = YES;
+  _builderResult.incremental = value;
   return self;
 }
 - (CMsgRetrieveMatchVote_Builder*) clearIncremental {
-  result.hasIncremental = NO;
-  result.incremental = 0;
+  _builderResult.hasIncremental = NO;
+  _builderResult.incremental = 0;
   return self;
 }
 @end
@@ -72999,67 +72999,67 @@ static CMsgMatchVoteResponse* defaultCMsgMatchVoteResponseInstance = nil;
   }
 }
 - (BOOL) hasEresult {
-  return result.hasEresult;
+  return _builderResult.hasEresult;
 }
 - (uint32_t) eresult {
-  return result.eresult;
+  return _builderResult.eresult;
 }
 - (CMsgMatchVoteResponse_Builder*) setEresult:(uint32_t) value {
-  result.hasEresult = YES;
-  result.eresult = value;
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
   return self;
 }
 - (CMsgMatchVoteResponse_Builder*) clearEresult {
-  result.hasEresult = NO;
-  result.eresult = 2;
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
   return self;
 }
 - (BOOL) hasvote {
-  return result.hasvote;
+  return _builderResult.hasvote;
 }
 - (DOTAMatchVote) vote {
-  return result.vote;
+  return _builderResult.vote;
 }
 - (CMsgMatchVoteResponse_Builder*) setvote:(DOTAMatchVote) value {
-  result.hasvote = YES;
-  result.vote = value;
+  _builderResult.hasvote = YES;
+  _builderResult.vote = value;
   return self;
 }
 - (CMsgMatchVoteResponse_Builder*) clearvote {
-  result.hasvote = NO;
-  result.vote = DOTAMatchVoteDOTAMatchVote_INVALID;
+  _builderResult.hasvote = NO;
+  _builderResult.vote = DOTAMatchVoteDOTAMatchVote_INVALID;
   return self;
 }
 - (BOOL) hasPositiveVotes {
-  return result.hasPositiveVotes;
+  return _builderResult.hasPositiveVotes;
 }
 - (uint32_t) positiveVotes {
-  return result.positiveVotes;
+  return _builderResult.positiveVotes;
 }
 - (CMsgMatchVoteResponse_Builder*) setPositiveVotes:(uint32_t) value {
-  result.hasPositiveVotes = YES;
-  result.positiveVotes = value;
+  _builderResult.hasPositiveVotes = YES;
+  _builderResult.positiveVotes = value;
   return self;
 }
 - (CMsgMatchVoteResponse_Builder*) clearPositiveVotes {
-  result.hasPositiveVotes = NO;
-  result.positiveVotes = 0;
+  _builderResult.hasPositiveVotes = NO;
+  _builderResult.positiveVotes = 0;
   return self;
 }
 - (BOOL) hasNegativeVotes {
-  return result.hasNegativeVotes;
+  return _builderResult.hasNegativeVotes;
 }
 - (uint32_t) negativeVotes {
-  return result.negativeVotes;
+  return _builderResult.negativeVotes;
 }
 - (CMsgMatchVoteResponse_Builder*) setNegativeVotes:(uint32_t) value {
-  result.hasNegativeVotes = YES;
-  result.negativeVotes = value;
+  _builderResult.hasNegativeVotes = YES;
+  _builderResult.negativeVotes = value;
   return self;
 }
 - (CMsgMatchVoteResponse_Builder*) clearNegativeVotes {
-  result.hasNegativeVotes = NO;
-  result.negativeVotes = 0;
+  _builderResult.hasNegativeVotes = NO;
+  _builderResult.negativeVotes = 0;
   return self;
 }
 @end
@@ -73254,19 +73254,19 @@ static CMsgTeamFanfare* defaultCMsgTeamFanfareInstance = nil;
   }
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CMsgTeamFanfare_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CMsgTeamFanfare_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 @end
@@ -73491,35 +73491,35 @@ static CMsgResponseTeamFanfare* defaultCMsgResponseTeamFanfareInstance = nil;
   }
 }
 - (BOOL) hasFanfareGoodguys {
-  return result.hasFanfareGoodguys;
+  return _builderResult.hasFanfareGoodguys;
 }
 - (uint32_t) fanfareGoodguys {
-  return result.fanfareGoodguys;
+  return _builderResult.fanfareGoodguys;
 }
 - (CMsgResponseTeamFanfare_Builder*) setFanfareGoodguys:(uint32_t) value {
-  result.hasFanfareGoodguys = YES;
-  result.fanfareGoodguys = value;
+  _builderResult.hasFanfareGoodguys = YES;
+  _builderResult.fanfareGoodguys = value;
   return self;
 }
 - (CMsgResponseTeamFanfare_Builder*) clearFanfareGoodguys {
-  result.hasFanfareGoodguys = NO;
-  result.fanfareGoodguys = 0;
+  _builderResult.hasFanfareGoodguys = NO;
+  _builderResult.fanfareGoodguys = 0;
   return self;
 }
 - (BOOL) hasFanfareBadguys {
-  return result.hasFanfareBadguys;
+  return _builderResult.hasFanfareBadguys;
 }
 - (uint32_t) fanfareBadguys {
-  return result.fanfareBadguys;
+  return _builderResult.fanfareBadguys;
 }
 - (CMsgResponseTeamFanfare_Builder*) setFanfareBadguys:(uint32_t) value {
-  result.hasFanfareBadguys = YES;
-  result.fanfareBadguys = value;
+  _builderResult.hasFanfareBadguys = YES;
+  _builderResult.fanfareBadguys = value;
   return self;
 }
 - (CMsgResponseTeamFanfare_Builder*) clearFanfareBadguys {
-  result.hasFanfareBadguys = NO;
-  result.fanfareBadguys = 0;
+  _builderResult.hasFanfareBadguys = NO;
+  _builderResult.fanfareBadguys = 0;
   return self;
 }
 @end
@@ -73714,19 +73714,19 @@ static CMsgSpectatorConnect* defaultCMsgSpectatorConnectInstance = nil;
   }
 }
 - (BOOL) hasSpectatorId {
-  return result.hasSpectatorId;
+  return _builderResult.hasSpectatorId;
 }
 - (uint64_t) spectatorId {
-  return result.spectatorId;
+  return _builderResult.spectatorId;
 }
 - (CMsgSpectatorConnect_Builder*) setSpectatorId:(uint64_t) value {
-  result.hasSpectatorId = YES;
-  result.spectatorId = value;
+  _builderResult.hasSpectatorId = YES;
+  _builderResult.spectatorId = value;
   return self;
 }
 - (CMsgSpectatorConnect_Builder*) clearSpectatorId {
-  result.hasSpectatorId = NO;
-  result.spectatorId = 0L;
+  _builderResult.hasSpectatorId = NO;
+  _builderResult.spectatorId = 0L;
   return self;
 }
 @end
@@ -73921,19 +73921,19 @@ static CMsgSpectatorDisconnect* defaultCMsgSpectatorDisconnectInstance = nil;
   }
 }
 - (BOOL) hasSpectatorId {
-  return result.hasSpectatorId;
+  return _builderResult.hasSpectatorId;
 }
 - (uint64_t) spectatorId {
-  return result.spectatorId;
+  return _builderResult.spectatorId;
 }
 - (CMsgSpectatorDisconnect_Builder*) setSpectatorId:(uint64_t) value {
-  result.hasSpectatorId = YES;
-  result.spectatorId = value;
+  _builderResult.hasSpectatorId = YES;
+  _builderResult.spectatorId = value;
   return self;
 }
 - (CMsgSpectatorDisconnect_Builder*) clearSpectatorId {
-  result.hasSpectatorId = NO;
-  result.spectatorId = 0L;
+  _builderResult.hasSpectatorId = NO;
+  _builderResult.spectatorId = 0L;
   return self;
 }
 @end
@@ -74187,10 +74187,10 @@ static CMsgGameServerUploadSaveGame* defaultCMsgGameServerUploadSaveGameInstance
     [self setLobbyId:other.lobbyId];
   }
   if (other.playerSteamIdsArray.count > 0) {
-    if (result.playerSteamIdsArray == nil) {
-      result.playerSteamIdsArray = [[other.playerSteamIdsArray copyWithZone:[other.playerSteamIdsArray zone]] autorelease];
+    if (_builderResult.playerSteamIdsArray == nil) {
+      _builderResult.playerSteamIdsArray = [[other.playerSteamIdsArray copyWithZone:[other.playerSteamIdsArray zone]] autorelease];
     } else {
-      [result.playerSteamIdsArray appendArray:other.playerSteamIdsArray];
+      [_builderResult.playerSteamIdsArray appendArray:other.playerSteamIdsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -74234,76 +74234,76 @@ static CMsgGameServerUploadSaveGame* defaultCMsgGameServerUploadSaveGameInstance
   }
 }
 - (BOOL) hasGameTime {
-  return result.hasGameTime;
+  return _builderResult.hasGameTime;
 }
 - (uint32_t) gameTime {
-  return result.gameTime;
+  return _builderResult.gameTime;
 }
 - (CMsgGameServerUploadSaveGame_Builder*) setGameTime:(uint32_t) value {
-  result.hasGameTime = YES;
-  result.gameTime = value;
+  _builderResult.hasGameTime = YES;
+  _builderResult.gameTime = value;
   return self;
 }
 - (CMsgGameServerUploadSaveGame_Builder*) clearGameTime {
-  result.hasGameTime = NO;
-  result.gameTime = 0;
+  _builderResult.hasGameTime = NO;
+  _builderResult.gameTime = 0;
   return self;
 }
 - (BOOL) hasSaveGameData {
-  return result.hasSaveGameData;
+  return _builderResult.hasSaveGameData;
 }
 - (NSData*) saveGameData {
-  return result.saveGameData;
+  return _builderResult.saveGameData;
 }
 - (CMsgGameServerUploadSaveGame_Builder*) setSaveGameData:(NSData*) value {
-  result.hasSaveGameData = YES;
-  result.saveGameData = value;
+  _builderResult.hasSaveGameData = YES;
+  _builderResult.saveGameData = value;
   return self;
 }
 - (CMsgGameServerUploadSaveGame_Builder*) clearSaveGameData {
-  result.hasSaveGameData = NO;
-  result.saveGameData = [NSData data];
+  _builderResult.hasSaveGameData = NO;
+  _builderResult.saveGameData = [NSData data];
   return self;
 }
 - (BOOL) hasLobbyId {
-  return result.hasLobbyId;
+  return _builderResult.hasLobbyId;
 }
 - (uint64_t) lobbyId {
-  return result.lobbyId;
+  return _builderResult.lobbyId;
 }
 - (CMsgGameServerUploadSaveGame_Builder*) setLobbyId:(uint64_t) value {
-  result.hasLobbyId = YES;
-  result.lobbyId = value;
+  _builderResult.hasLobbyId = YES;
+  _builderResult.lobbyId = value;
   return self;
 }
 - (CMsgGameServerUploadSaveGame_Builder*) clearLobbyId {
-  result.hasLobbyId = NO;
-  result.lobbyId = 0L;
+  _builderResult.hasLobbyId = NO;
+  _builderResult.lobbyId = 0L;
   return self;
 }
 - (PBAppendableArray *)playerSteamIds {
-  return result.playerSteamIdsArray;
+  return _builderResult.playerSteamIdsArray;
 }
 - (uint64_t)playerSteamIdsAtIndex:(NSUInteger)index {
-  return [result playerSteamIdsAtIndex:index];
+  return [_builderResult playerSteamIdsAtIndex:index];
 }
 - (CMsgGameServerUploadSaveGame_Builder *)addPlayerSteamIds:(uint64_t)value {
-  if (result.playerSteamIdsArray == nil) {
-    result.playerSteamIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
+  if (_builderResult.playerSteamIdsArray == nil) {
+    _builderResult.playerSteamIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
   }
-  [result.playerSteamIdsArray addUint64:value];
+  [_builderResult.playerSteamIdsArray addUint64:value];
   return self;
 }
 - (CMsgGameServerUploadSaveGame_Builder *)setPlayerSteamIdsArray:(NSArray *)array {
-  result.playerSteamIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
+  _builderResult.playerSteamIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgGameServerUploadSaveGame_Builder *)setPlayerSteamIdsValues:(const uint64_t *)values count:(NSUInteger)count {
-  result.playerSteamIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
+  _builderResult.playerSteamIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgGameServerUploadSaveGame_Builder *)clearPlayerSteamIds {
-  result.playerSteamIdsArray = nil;
+  _builderResult.playerSteamIdsArray = nil;
   return self;
 }
 @end
@@ -74514,19 +74514,19 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
   }
 }
 - (BOOL) hasresult {
-  return result.hasresult;
+  return _builderResult.hasresult;
 }
 - (CMsgGameServerSaveGameResult_Result) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgGameServerSaveGameResult_Builder*) setresult:(CMsgGameServerSaveGameResult_Result) value {
-  result.hasresult = YES;
-  result.result = value;
+  _builderResult.hasresult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgGameServerSaveGameResult_Builder*) clearresult {
-  result.hasresult = NO;
-  result.result = CMsgGameServerSaveGameResult_ResultSaveSuccessful;
+  _builderResult.hasresult = NO;
+  _builderResult.result = CMsgGameServerSaveGameResult_ResultSaveSuccessful;
   return self;
 }
 @end
@@ -74721,19 +74721,19 @@ static CMsgGameServerGetLoadGame* defaultCMsgGameServerGetLoadGameInstance = nil
   }
 }
 - (BOOL) hasSaveId {
-  return result.hasSaveId;
+  return _builderResult.hasSaveId;
 }
 - (uint32_t) saveId {
-  return result.saveId;
+  return _builderResult.saveId;
 }
 - (CMsgGameServerGetLoadGame_Builder*) setSaveId:(uint32_t) value {
-  result.hasSaveId = YES;
-  result.saveId = value;
+  _builderResult.hasSaveId = YES;
+  _builderResult.saveId = value;
   return self;
 }
 - (CMsgGameServerGetLoadGame_Builder*) clearSaveId {
-  result.hasSaveId = NO;
-  result.saveId = 0;
+  _builderResult.hasSaveId = NO;
+  _builderResult.saveId = 0;
   return self;
 }
 @end
@@ -74929,19 +74929,19 @@ static CMsgGameServerGetLoadGameResult* defaultCMsgGameServerGetLoadGameResultIn
   }
 }
 - (BOOL) hasSaveGameData {
-  return result.hasSaveGameData;
+  return _builderResult.hasSaveGameData;
 }
 - (NSData*) saveGameData {
-  return result.saveGameData;
+  return _builderResult.saveGameData;
 }
 - (CMsgGameServerGetLoadGameResult_Builder*) setSaveGameData:(NSData*) value {
-  result.hasSaveGameData = YES;
-  result.saveGameData = value;
+  _builderResult.hasSaveGameData = YES;
+  _builderResult.saveGameData = value;
   return self;
 }
 - (CMsgGameServerGetLoadGameResult_Builder*) clearSaveGameData {
-  result.hasSaveGameData = NO;
-  result.saveGameData = [NSData data];
+  _builderResult.hasSaveGameData = NO;
+  _builderResult.saveGameData = [NSData data];
   return self;
 }
 @end
@@ -75332,35 +75332,35 @@ static CMsgCheckSpectatorOnlyResponse* defaultCMsgCheckSpectatorOnlyResponseInst
   }
 }
 - (BOOL) hasEresult {
-  return result.hasEresult;
+  return _builderResult.hasEresult;
 }
 - (uint32_t) eresult {
-  return result.eresult;
+  return _builderResult.eresult;
 }
 - (CMsgCheckSpectatorOnlyResponse_Builder*) setEresult:(uint32_t) value {
-  result.hasEresult = YES;
-  result.eresult = value;
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
   return self;
 }
 - (CMsgCheckSpectatorOnlyResponse_Builder*) clearEresult {
-  result.hasEresult = NO;
-  result.eresult = 2;
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
   return self;
 }
 - (BOOL) hasSpectatorOnly {
-  return result.hasSpectatorOnly;
+  return _builderResult.hasSpectatorOnly;
 }
 - (BOOL) spectatorOnly {
-  return result.spectatorOnly;
+  return _builderResult.spectatorOnly;
 }
 - (CMsgCheckSpectatorOnlyResponse_Builder*) setSpectatorOnly:(BOOL) value {
-  result.hasSpectatorOnly = YES;
-  result.spectatorOnly = value;
+  _builderResult.hasSpectatorOnly = YES;
+  _builderResult.spectatorOnly = value;
   return self;
 }
 - (CMsgCheckSpectatorOnlyResponse_Builder*) clearSpectatorOnly {
-  result.hasSpectatorOnly = NO;
-  result.spectatorOnly = NO;
+  _builderResult.hasSpectatorOnly = NO;
+  _builderResult.spectatorOnly = NO;
   return self;
 }
 @end
@@ -75814,67 +75814,67 @@ static CMsgDOTAHallOfFame_FeaturedPlayer* defaultCMsgDOTAHallOfFame_FeaturedPlay
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgDOTAHallOfFame_FeaturedPlayer_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgDOTAHallOfFame_FeaturedPlayer_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CMsgDOTAHallOfFame_FeaturedPlayer_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CMsgDOTAHallOfFame_FeaturedPlayer_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 - (BOOL) hasAverageScaledMetric {
-  return result.hasAverageScaledMetric;
+  return _builderResult.hasAverageScaledMetric;
 }
 - (Float32) averageScaledMetric {
-  return result.averageScaledMetric;
+  return _builderResult.averageScaledMetric;
 }
 - (CMsgDOTAHallOfFame_FeaturedPlayer_Builder*) setAverageScaledMetric:(Float32) value {
-  result.hasAverageScaledMetric = YES;
-  result.averageScaledMetric = value;
+  _builderResult.hasAverageScaledMetric = YES;
+  _builderResult.averageScaledMetric = value;
   return self;
 }
 - (CMsgDOTAHallOfFame_FeaturedPlayer_Builder*) clearAverageScaledMetric {
-  result.hasAverageScaledMetric = NO;
-  result.averageScaledMetric = 0;
+  _builderResult.hasAverageScaledMetric = NO;
+  _builderResult.averageScaledMetric = 0;
   return self;
 }
 - (BOOL) hasNumGames {
-  return result.hasNumGames;
+  return _builderResult.hasNumGames;
 }
 - (uint32_t) numGames {
-  return result.numGames;
+  return _builderResult.numGames;
 }
 - (CMsgDOTAHallOfFame_FeaturedPlayer_Builder*) setNumGames:(uint32_t) value {
-  result.hasNumGames = YES;
-  result.numGames = value;
+  _builderResult.hasNumGames = YES;
+  _builderResult.numGames = value;
   return self;
 }
 - (CMsgDOTAHallOfFame_FeaturedPlayer_Builder*) clearNumGames {
-  result.hasNumGames = NO;
-  result.numGames = 0;
+  _builderResult.hasNumGames = NO;
+  _builderResult.numGames = 0;
   return self;
 }
 @end
@@ -76159,67 +76159,67 @@ static CMsgDOTAHallOfFame_FeaturedFarmer* defaultCMsgDOTAHallOfFame_FeaturedFarm
   }
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgDOTAHallOfFame_FeaturedFarmer_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgDOTAHallOfFame_FeaturedFarmer_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasHeroId {
-  return result.hasHeroId;
+  return _builderResult.hasHeroId;
 }
 - (uint32_t) heroId {
-  return result.heroId;
+  return _builderResult.heroId;
 }
 - (CMsgDOTAHallOfFame_FeaturedFarmer_Builder*) setHeroId:(uint32_t) value {
-  result.hasHeroId = YES;
-  result.heroId = value;
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
 - (CMsgDOTAHallOfFame_FeaturedFarmer_Builder*) clearHeroId {
-  result.hasHeroId = NO;
-  result.heroId = 0;
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 - (BOOL) hasGoldPerMin {
-  return result.hasGoldPerMin;
+  return _builderResult.hasGoldPerMin;
 }
 - (uint32_t) goldPerMin {
-  return result.goldPerMin;
+  return _builderResult.goldPerMin;
 }
 - (CMsgDOTAHallOfFame_FeaturedFarmer_Builder*) setGoldPerMin:(uint32_t) value {
-  result.hasGoldPerMin = YES;
-  result.goldPerMin = value;
+  _builderResult.hasGoldPerMin = YES;
+  _builderResult.goldPerMin = value;
   return self;
 }
 - (CMsgDOTAHallOfFame_FeaturedFarmer_Builder*) clearGoldPerMin {
-  result.hasGoldPerMin = NO;
-  result.goldPerMin = 0;
+  _builderResult.hasGoldPerMin = NO;
+  _builderResult.goldPerMin = 0;
   return self;
 }
 - (BOOL) hasMatchId {
-  return result.hasMatchId;
+  return _builderResult.hasMatchId;
 }
 - (uint32_t) matchId {
-  return result.matchId;
+  return _builderResult.matchId;
 }
 - (CMsgDOTAHallOfFame_FeaturedFarmer_Builder*) setMatchId:(uint32_t) value {
-  result.hasMatchId = YES;
-  result.matchId = value;
+  _builderResult.hasMatchId = YES;
+  _builderResult.matchId = value;
   return self;
 }
 - (CMsgDOTAHallOfFame_FeaturedFarmer_Builder*) clearMatchId {
-  result.hasMatchId = NO;
-  result.matchId = 0;
+  _builderResult.hasMatchId = NO;
+  _builderResult.matchId = 0;
   return self;
 }
 @end
@@ -76270,10 +76270,10 @@ static CMsgDOTAHallOfFame_FeaturedFarmer* defaultCMsgDOTAHallOfFame_FeaturedFarm
     [self setWeek:other.week];
   }
   if (other.featuredPlayersArray.count > 0) {
-    if (result.featuredPlayersArray == nil) {
-      result.featuredPlayersArray = [[other.featuredPlayersArray copyWithZone:[other.featuredPlayersArray zone]] autorelease];
+    if (_builderResult.featuredPlayersArray == nil) {
+      _builderResult.featuredPlayersArray = [[other.featuredPlayersArray copyWithZone:[other.featuredPlayersArray zone]] autorelease];
     } else {
-      [result.featuredPlayersArray appendArray:other.featuredPlayersArray];
+      [_builderResult.featuredPlayersArray appendArray:other.featuredPlayersArray];
     }
   }
   if (other.hasFeaturedFarmer) {
@@ -76323,74 +76323,74 @@ static CMsgDOTAHallOfFame_FeaturedFarmer* defaultCMsgDOTAHallOfFame_FeaturedFarm
   }
 }
 - (BOOL) hasWeek {
-  return result.hasWeek;
+  return _builderResult.hasWeek;
 }
 - (uint32_t) week {
-  return result.week;
+  return _builderResult.week;
 }
 - (CMsgDOTAHallOfFame_Builder*) setWeek:(uint32_t) value {
-  result.hasWeek = YES;
-  result.week = value;
+  _builderResult.hasWeek = YES;
+  _builderResult.week = value;
   return self;
 }
 - (CMsgDOTAHallOfFame_Builder*) clearWeek {
-  result.hasWeek = NO;
-  result.week = 0;
+  _builderResult.hasWeek = NO;
+  _builderResult.week = 0;
   return self;
 }
 - (PBAppendableArray *)featuredPlayers {
-  return result.featuredPlayersArray;
+  return _builderResult.featuredPlayersArray;
 }
 - (CMsgDOTAHallOfFame_FeaturedPlayer*)featuredPlayersAtIndex:(NSUInteger)index {
-  return [result featuredPlayersAtIndex:index];
+  return [_builderResult featuredPlayersAtIndex:index];
 }
 - (CMsgDOTAHallOfFame_Builder *)addFeaturedPlayers:(CMsgDOTAHallOfFame_FeaturedPlayer*)value {
-  if (result.featuredPlayersArray == nil) {
-    result.featuredPlayersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.featuredPlayersArray == nil) {
+    _builderResult.featuredPlayersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.featuredPlayersArray addObject:value];
+  [_builderResult.featuredPlayersArray addObject:value];
   return self;
 }
 - (CMsgDOTAHallOfFame_Builder *)setFeaturedPlayersArray:(NSArray *)array {
-  result.featuredPlayersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.featuredPlayersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAHallOfFame_Builder *)setFeaturedPlayersValues:(const CMsgDOTAHallOfFame_FeaturedPlayer* *)values count:(NSUInteger)count {
-  result.featuredPlayersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.featuredPlayersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgDOTAHallOfFame_Builder *)clearFeaturedPlayers {
-  result.featuredPlayersArray = nil;
+  _builderResult.featuredPlayersArray = nil;
   return self;
 }
 - (BOOL) hasFeaturedFarmer {
-  return result.hasFeaturedFarmer;
+  return _builderResult.hasFeaturedFarmer;
 }
 - (CMsgDOTAHallOfFame_FeaturedFarmer*) featuredFarmer {
-  return result.featuredFarmer;
+  return _builderResult.featuredFarmer;
 }
 - (CMsgDOTAHallOfFame_Builder*) setFeaturedFarmer:(CMsgDOTAHallOfFame_FeaturedFarmer*) value {
-  result.hasFeaturedFarmer = YES;
-  result.featuredFarmer = value;
+  _builderResult.hasFeaturedFarmer = YES;
+  _builderResult.featuredFarmer = value;
   return self;
 }
 - (CMsgDOTAHallOfFame_Builder*) setFeaturedFarmerBuilder:(CMsgDOTAHallOfFame_FeaturedFarmer_Builder*) builderForValue {
   return [self setFeaturedFarmer:[builderForValue build]];
 }
 - (CMsgDOTAHallOfFame_Builder*) mergeFeaturedFarmer:(CMsgDOTAHallOfFame_FeaturedFarmer*) value {
-  if (result.hasFeaturedFarmer &&
-      result.featuredFarmer != [CMsgDOTAHallOfFame_FeaturedFarmer defaultInstance]) {
-    result.featuredFarmer =
-      [[[CMsgDOTAHallOfFame_FeaturedFarmer builderWithPrototype:result.featuredFarmer] mergeFrom:value] buildPartial];
+  if (_builderResult.hasFeaturedFarmer &&
+      _builderResult.featuredFarmer != [CMsgDOTAHallOfFame_FeaturedFarmer defaultInstance]) {
+    _builderResult.featuredFarmer =
+      [[[CMsgDOTAHallOfFame_FeaturedFarmer builderWithPrototype:_builderResult.featuredFarmer] mergeFrom:value] buildPartial];
   } else {
-    result.featuredFarmer = value;
+    _builderResult.featuredFarmer = value;
   }
-  result.hasFeaturedFarmer = YES;
+  _builderResult.hasFeaturedFarmer = YES;
   return self;
 }
 - (CMsgDOTAHallOfFame_Builder*) clearFeaturedFarmer {
-  result.hasFeaturedFarmer = NO;
-  result.featuredFarmer = [CMsgDOTAHallOfFame_FeaturedFarmer defaultInstance];
+  _builderResult.hasFeaturedFarmer = NO;
+  _builderResult.featuredFarmer = [CMsgDOTAHallOfFame_FeaturedFarmer defaultInstance];
   return self;
 }
 @end
@@ -76585,19 +76585,19 @@ static CMsgDOTAHallOfFameRequest* defaultCMsgDOTAHallOfFameRequestInstance = nil
   }
 }
 - (BOOL) hasWeek {
-  return result.hasWeek;
+  return _builderResult.hasWeek;
 }
 - (uint32_t) week {
-  return result.week;
+  return _builderResult.week;
 }
 - (CMsgDOTAHallOfFameRequest_Builder*) setWeek:(uint32_t) value {
-  result.hasWeek = YES;
-  result.week = value;
+  _builderResult.hasWeek = YES;
+  _builderResult.week = value;
   return self;
 }
 - (CMsgDOTAHallOfFameRequest_Builder*) clearWeek {
-  result.hasWeek = NO;
-  result.week = 0;
+  _builderResult.hasWeek = NO;
+  _builderResult.week = 0;
   return self;
 }
 @end
@@ -76831,49 +76831,49 @@ static CMsgDOTAHallOfFameResponse* defaultCMsgDOTAHallOfFameResponseInstance = n
   }
 }
 - (BOOL) hasHallOfFame {
-  return result.hasHallOfFame;
+  return _builderResult.hasHallOfFame;
 }
 - (CMsgDOTAHallOfFame*) hallOfFame {
-  return result.hallOfFame;
+  return _builderResult.hallOfFame;
 }
 - (CMsgDOTAHallOfFameResponse_Builder*) setHallOfFame:(CMsgDOTAHallOfFame*) value {
-  result.hasHallOfFame = YES;
-  result.hallOfFame = value;
+  _builderResult.hasHallOfFame = YES;
+  _builderResult.hallOfFame = value;
   return self;
 }
 - (CMsgDOTAHallOfFameResponse_Builder*) setHallOfFameBuilder:(CMsgDOTAHallOfFame_Builder*) builderForValue {
   return [self setHallOfFame:[builderForValue build]];
 }
 - (CMsgDOTAHallOfFameResponse_Builder*) mergeHallOfFame:(CMsgDOTAHallOfFame*) value {
-  if (result.hasHallOfFame &&
-      result.hallOfFame != [CMsgDOTAHallOfFame defaultInstance]) {
-    result.hallOfFame =
-      [[[CMsgDOTAHallOfFame builderWithPrototype:result.hallOfFame] mergeFrom:value] buildPartial];
+  if (_builderResult.hasHallOfFame &&
+      _builderResult.hallOfFame != [CMsgDOTAHallOfFame defaultInstance]) {
+    _builderResult.hallOfFame =
+      [[[CMsgDOTAHallOfFame builderWithPrototype:_builderResult.hallOfFame] mergeFrom:value] buildPartial];
   } else {
-    result.hallOfFame = value;
+    _builderResult.hallOfFame = value;
   }
-  result.hasHallOfFame = YES;
+  _builderResult.hasHallOfFame = YES;
   return self;
 }
 - (CMsgDOTAHallOfFameResponse_Builder*) clearHallOfFame {
-  result.hasHallOfFame = NO;
-  result.hallOfFame = [CMsgDOTAHallOfFame defaultInstance];
+  _builderResult.hasHallOfFame = NO;
+  _builderResult.hallOfFame = [CMsgDOTAHallOfFame defaultInstance];
   return self;
 }
 - (BOOL) hasEresult {
-  return result.hasEresult;
+  return _builderResult.hasEresult;
 }
 - (uint32_t) eresult {
-  return result.eresult;
+  return _builderResult.eresult;
 }
 - (CMsgDOTAHallOfFameResponse_Builder*) setEresult:(uint32_t) value {
-  result.hasEresult = YES;
-  result.eresult = value;
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
   return self;
 }
 - (CMsgDOTAHallOfFameResponse_Builder*) clearEresult {
-  result.hasEresult = NO;
-  result.eresult = 2;
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
   return self;
 }
 @end
@@ -77068,19 +77068,19 @@ static CMsgDOTAGenerateDiretidePrizeList* defaultCMsgDOTAGenerateDiretidePrizeLi
   }
 }
 - (BOOL) hasPrizeList {
-  return result.hasPrizeList;
+  return _builderResult.hasPrizeList;
 }
 - (uint32_t) prizeList {
-  return result.prizeList;
+  return _builderResult.prizeList;
 }
 - (CMsgDOTAGenerateDiretidePrizeList_Builder*) setPrizeList:(uint32_t) value {
-  result.hasPrizeList = YES;
-  result.prizeList = value;
+  _builderResult.hasPrizeList = YES;
+  _builderResult.prizeList = value;
   return self;
 }
 - (CMsgDOTAGenerateDiretidePrizeList_Builder*) clearPrizeList {
-  result.hasPrizeList = NO;
-  result.prizeList = 0;
+  _builderResult.hasPrizeList = NO;
+  _builderResult.prizeList = 0;
   return self;
 }
 @end
@@ -77309,17 +77309,17 @@ static CMsgDOTAGenerateDiretidePrizeListResponse* defaultCMsgDOTAGenerateDiretid
     return self;
   }
   if (other.itemDefsArray.count > 0) {
-    if (result.itemDefsArray == nil) {
-      result.itemDefsArray = [[other.itemDefsArray copyWithZone:[other.itemDefsArray zone]] autorelease];
+    if (_builderResult.itemDefsArray == nil) {
+      _builderResult.itemDefsArray = [[other.itemDefsArray copyWithZone:[other.itemDefsArray zone]] autorelease];
     } else {
-      [result.itemDefsArray appendArray:other.itemDefsArray];
+      [_builderResult.itemDefsArray appendArray:other.itemDefsArray];
     }
   }
   if (other.steamIdsArray.count > 0) {
-    if (result.steamIdsArray == nil) {
-      result.steamIdsArray = [[other.steamIdsArray copyWithZone:[other.steamIdsArray zone]] autorelease];
+    if (_builderResult.steamIdsArray == nil) {
+      _builderResult.steamIdsArray = [[other.steamIdsArray copyWithZone:[other.steamIdsArray zone]] autorelease];
     } else {
-      [result.steamIdsArray appendArray:other.steamIdsArray];
+      [_builderResult.steamIdsArray appendArray:other.steamIdsArray];
     }
   }
   if (other.hasPrizeList) {
@@ -77362,69 +77362,69 @@ static CMsgDOTAGenerateDiretidePrizeListResponse* defaultCMsgDOTAGenerateDiretid
   }
 }
 - (PBAppendableArray *)itemDefs {
-  return result.itemDefsArray;
+  return _builderResult.itemDefsArray;
 }
 - (uint32_t)itemDefsAtIndex:(NSUInteger)index {
-  return [result itemDefsAtIndex:index];
+  return [_builderResult itemDefsAtIndex:index];
 }
 - (CMsgDOTAGenerateDiretidePrizeListResponse_Builder *)addItemDefs:(uint32_t)value {
-  if (result.itemDefsArray == nil) {
-    result.itemDefsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.itemDefsArray == nil) {
+    _builderResult.itemDefsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.itemDefsArray addUint32:value];
+  [_builderResult.itemDefsArray addUint32:value];
   return self;
 }
 - (CMsgDOTAGenerateDiretidePrizeListResponse_Builder *)setItemDefsArray:(NSArray *)array {
-  result.itemDefsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.itemDefsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTAGenerateDiretidePrizeListResponse_Builder *)setItemDefsValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.itemDefsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.itemDefsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgDOTAGenerateDiretidePrizeListResponse_Builder *)clearItemDefs {
-  result.itemDefsArray = nil;
+  _builderResult.itemDefsArray = nil;
   return self;
 }
 - (PBAppendableArray *)steamIds {
-  return result.steamIdsArray;
+  return _builderResult.steamIdsArray;
 }
 - (uint64_t)steamIdsAtIndex:(NSUInteger)index {
-  return [result steamIdsAtIndex:index];
+  return [_builderResult steamIdsAtIndex:index];
 }
 - (CMsgDOTAGenerateDiretidePrizeListResponse_Builder *)addSteamIds:(uint64_t)value {
-  if (result.steamIdsArray == nil) {
-    result.steamIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
+  if (_builderResult.steamIdsArray == nil) {
+    _builderResult.steamIdsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
   }
-  [result.steamIdsArray addUint64:value];
+  [_builderResult.steamIdsArray addUint64:value];
   return self;
 }
 - (CMsgDOTAGenerateDiretidePrizeListResponse_Builder *)setSteamIdsArray:(NSArray *)array {
-  result.steamIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
+  _builderResult.steamIdsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgDOTAGenerateDiretidePrizeListResponse_Builder *)setSteamIdsValues:(const uint64_t *)values count:(NSUInteger)count {
-  result.steamIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
+  _builderResult.steamIdsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgDOTAGenerateDiretidePrizeListResponse_Builder *)clearSteamIds {
-  result.steamIdsArray = nil;
+  _builderResult.steamIdsArray = nil;
   return self;
 }
 - (BOOL) hasPrizeList {
-  return result.hasPrizeList;
+  return _builderResult.hasPrizeList;
 }
 - (uint32_t) prizeList {
-  return result.prizeList;
+  return _builderResult.prizeList;
 }
 - (CMsgDOTAGenerateDiretidePrizeListResponse_Builder*) setPrizeList:(uint32_t) value {
-  result.hasPrizeList = YES;
-  result.prizeList = value;
+  _builderResult.hasPrizeList = YES;
+  _builderResult.prizeList = value;
   return self;
 }
 - (CMsgDOTAGenerateDiretidePrizeListResponse_Builder*) clearPrizeList {
-  result.hasPrizeList = NO;
-  result.prizeList = 0;
+  _builderResult.hasPrizeList = NO;
+  _builderResult.prizeList = 0;
   return self;
 }
 @end
@@ -77649,35 +77649,35 @@ static CMsgDOTARewardDiretidePrizes* defaultCMsgDOTARewardDiretidePrizesInstance
   }
 }
 - (BOOL) hasTeam {
-  return result.hasTeam;
+  return _builderResult.hasTeam;
 }
 - (uint32_t) team {
-  return result.team;
+  return _builderResult.team;
 }
 - (CMsgDOTARewardDiretidePrizes_Builder*) setTeam:(uint32_t) value {
-  result.hasTeam = YES;
-  result.team = value;
+  _builderResult.hasTeam = YES;
+  _builderResult.team = value;
   return self;
 }
 - (CMsgDOTARewardDiretidePrizes_Builder*) clearTeam {
-  result.hasTeam = NO;
-  result.team = 0;
+  _builderResult.hasTeam = NO;
+  _builderResult.team = 0;
   return self;
 }
 - (BOOL) hasPrizeList {
-  return result.hasPrizeList;
+  return _builderResult.hasPrizeList;
 }
 - (uint32_t) prizeList {
-  return result.prizeList;
+  return _builderResult.prizeList;
 }
 - (CMsgDOTARewardDiretidePrizes_Builder*) setPrizeList:(uint32_t) value {
-  result.hasPrizeList = YES;
-  result.prizeList = value;
+  _builderResult.hasPrizeList = YES;
+  _builderResult.prizeList = value;
   return self;
 }
 - (CMsgDOTARewardDiretidePrizes_Builder*) clearPrizeList {
-  result.hasPrizeList = NO;
-  result.prizeList = 0;
+  _builderResult.hasPrizeList = NO;
+  _builderResult.prizeList = 0;
   return self;
 }
 @end
@@ -77872,19 +77872,19 @@ static CMsgDOTADiretidePrizesRewardedResponse* defaultCMsgDOTADiretidePrizesRewa
   }
 }
 - (BOOL) hasPrizeList {
-  return result.hasPrizeList;
+  return _builderResult.hasPrizeList;
 }
 - (uint32_t) prizeList {
-  return result.prizeList;
+  return _builderResult.prizeList;
 }
 - (CMsgDOTADiretidePrizesRewardedResponse_Builder*) setPrizeList:(uint32_t) value {
-  result.hasPrizeList = YES;
-  result.prizeList = value;
+  _builderResult.hasPrizeList = YES;
+  _builderResult.prizeList = value;
   return self;
 }
 - (CMsgDOTADiretidePrizesRewardedResponse_Builder*) clearPrizeList {
-  result.hasPrizeList = NO;
-  result.prizeList = 0;
+  _builderResult.hasPrizeList = NO;
+  _builderResult.prizeList = 0;
   return self;
 }
 @end
@@ -78109,35 +78109,35 @@ static CMsgDOTADiretidePrizeResponse* defaultCMsgDOTADiretidePrizeResponseInstan
   }
 }
 - (BOOL) hasItemDef {
-  return result.hasItemDef;
+  return _builderResult.hasItemDef;
 }
 - (uint32_t) itemDef {
-  return result.itemDef;
+  return _builderResult.itemDef;
 }
 - (CMsgDOTADiretidePrizeResponse_Builder*) setItemDef:(uint32_t) value {
-  result.hasItemDef = YES;
-  result.itemDef = value;
+  _builderResult.hasItemDef = YES;
+  _builderResult.itemDef = value;
   return self;
 }
 - (CMsgDOTADiretidePrizeResponse_Builder*) clearItemDef {
-  result.hasItemDef = NO;
-  result.itemDef = 0;
+  _builderResult.hasItemDef = NO;
+  _builderResult.itemDef = 0;
   return self;
 }
 - (BOOL) hasPrizeList {
-  return result.hasPrizeList;
+  return _builderResult.hasPrizeList;
 }
 - (uint32_t) prizeList {
-  return result.prizeList;
+  return _builderResult.prizeList;
 }
 - (CMsgDOTADiretidePrizeResponse_Builder*) setPrizeList:(uint32_t) value {
-  result.hasPrizeList = YES;
-  result.prizeList = value;
+  _builderResult.hasPrizeList = YES;
+  _builderResult.prizeList = value;
   return self;
 }
 - (CMsgDOTADiretidePrizeResponse_Builder*) clearPrizeList {
-  result.hasPrizeList = NO;
-  result.prizeList = 0;
+  _builderResult.hasPrizeList = NO;
+  _builderResult.prizeList = 0;
   return self;
 }
 @end
@@ -78332,19 +78332,19 @@ static CMsgDOTAHalloweenHighScoreRequest* defaultCMsgDOTAHalloweenHighScoreReque
   }
 }
 - (BOOL) hasRound {
-  return result.hasRound;
+  return _builderResult.hasRound;
 }
 - (int32_t) round {
-  return result.round;
+  return _builderResult.round;
 }
 - (CMsgDOTAHalloweenHighScoreRequest_Builder*) setRound:(int32_t) value {
-  result.hasRound = YES;
-  result.round = value;
+  _builderResult.hasRound = YES;
+  _builderResult.round = value;
   return self;
 }
 - (CMsgDOTAHalloweenHighScoreRequest_Builder*) clearRound {
-  result.hasRound = NO;
-  result.round = -1;
+  _builderResult.hasRound = NO;
+  _builderResult.round = -1;
   return self;
 }
 @end
@@ -78638,81 +78638,81 @@ static CMsgDOTAHalloweenHighScoreResponse* defaultCMsgDOTAHalloweenHighScoreResp
   }
 }
 - (BOOL) hasScore {
-  return result.hasScore;
+  return _builderResult.hasScore;
 }
 - (uint32_t) score {
-  return result.score;
+  return _builderResult.score;
 }
 - (CMsgDOTAHalloweenHighScoreResponse_Builder*) setScore:(uint32_t) value {
-  result.hasScore = YES;
-  result.score = value;
+  _builderResult.hasScore = YES;
+  _builderResult.score = value;
   return self;
 }
 - (CMsgDOTAHalloweenHighScoreResponse_Builder*) clearScore {
-  result.hasScore = NO;
-  result.score = 0;
+  _builderResult.hasScore = NO;
+  _builderResult.score = 0;
   return self;
 }
 - (BOOL) hasMatch {
-  return result.hasMatch;
+  return _builderResult.hasMatch;
 }
 - (CMsgDOTAMatch*) match {
-  return result.match;
+  return _builderResult.match;
 }
 - (CMsgDOTAHalloweenHighScoreResponse_Builder*) setMatch:(CMsgDOTAMatch*) value {
-  result.hasMatch = YES;
-  result.match = value;
+  _builderResult.hasMatch = YES;
+  _builderResult.match = value;
   return self;
 }
 - (CMsgDOTAHalloweenHighScoreResponse_Builder*) setMatchBuilder:(CMsgDOTAMatch_Builder*) builderForValue {
   return [self setMatch:[builderForValue build]];
 }
 - (CMsgDOTAHalloweenHighScoreResponse_Builder*) mergeMatch:(CMsgDOTAMatch*) value {
-  if (result.hasMatch &&
-      result.match != [CMsgDOTAMatch defaultInstance]) {
-    result.match =
-      [[[CMsgDOTAMatch builderWithPrototype:result.match] mergeFrom:value] buildPartial];
+  if (_builderResult.hasMatch &&
+      _builderResult.match != [CMsgDOTAMatch defaultInstance]) {
+    _builderResult.match =
+      [[[CMsgDOTAMatch builderWithPrototype:_builderResult.match] mergeFrom:value] buildPartial];
   } else {
-    result.match = value;
+    _builderResult.match = value;
   }
-  result.hasMatch = YES;
+  _builderResult.hasMatch = YES;
   return self;
 }
 - (CMsgDOTAHalloweenHighScoreResponse_Builder*) clearMatch {
-  result.hasMatch = NO;
-  result.match = [CMsgDOTAMatch defaultInstance];
+  _builderResult.hasMatch = NO;
+  _builderResult.match = [CMsgDOTAMatch defaultInstance];
   return self;
 }
 - (BOOL) hasEresult {
-  return result.hasEresult;
+  return _builderResult.hasEresult;
 }
 - (uint32_t) eresult {
-  return result.eresult;
+  return _builderResult.eresult;
 }
 - (CMsgDOTAHalloweenHighScoreResponse_Builder*) setEresult:(uint32_t) value {
-  result.hasEresult = YES;
-  result.eresult = value;
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
   return self;
 }
 - (CMsgDOTAHalloweenHighScoreResponse_Builder*) clearEresult {
-  result.hasEresult = NO;
-  result.eresult = 0;
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 0;
   return self;
 }
 - (BOOL) hasRound {
-  return result.hasRound;
+  return _builderResult.hasRound;
 }
 - (int32_t) round {
-  return result.round;
+  return _builderResult.round;
 }
 - (CMsgDOTAHalloweenHighScoreResponse_Builder*) setRound:(int32_t) value {
-  result.hasRound = YES;
-  result.round = value;
+  _builderResult.hasRound = YES;
+  _builderResult.round = value;
   return self;
 }
 - (CMsgDOTAHalloweenHighScoreResponse_Builder*) clearRound {
-  result.hasRound = NO;
-  result.round = 0;
+  _builderResult.hasRound = NO;
+  _builderResult.round = 0;
   return self;
 }
 @end
@@ -78907,19 +78907,19 @@ static CMsgDOTANotifyResetKeybindings* defaultCMsgDOTANotifyResetKeybindingsInst
   }
 }
 - (BOOL) hasKeybindTemplate {
-  return result.hasKeybindTemplate;
+  return _builderResult.hasKeybindTemplate;
 }
 - (uint32_t) keybindTemplate {
-  return result.keybindTemplate;
+  return _builderResult.keybindTemplate;
 }
 - (CMsgDOTANotifyResetKeybindings_Builder*) setKeybindTemplate:(uint32_t) value {
-  result.hasKeybindTemplate = YES;
-  result.keybindTemplate = value;
+  _builderResult.hasKeybindTemplate = YES;
+  _builderResult.keybindTemplate = value;
   return self;
 }
 - (CMsgDOTANotifyResetKeybindings_Builder*) clearKeybindTemplate {
-  result.hasKeybindTemplate = NO;
-  result.keybindTemplate = 0;
+  _builderResult.hasKeybindTemplate = NO;
+  _builderResult.keybindTemplate = 0;
   return self;
 }
 @end

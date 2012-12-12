@@ -545,7 +545,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFGoldenWrenchBroadcast_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFGoldenWrenchBroadcast* result;
+  CMsgTFGoldenWrenchBroadcast* _builderResult;
 }
 
 - (CMsgTFGoldenWrenchBroadcast*) defaultInstance;
@@ -608,7 +608,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFSaxxyBroadcast_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFSaxxyBroadcast* result;
+  CMsgTFSaxxyBroadcast* _builderResult;
 }
 
 - (CMsgTFSaxxyBroadcast*) defaultInstance;
@@ -682,7 +682,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CSOTFDuelSummary_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOTFDuelSummary* result;
+  CSOTFDuelSummary* _builderResult;
 }
 
 - (CSOTFDuelSummary*) defaultInstance;
@@ -764,7 +764,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CSOTFMapContribution_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOTFMapContribution* result;
+  CSOTFMapContribution* _builderResult;
 }
 
 - (CSOTFMapContribution*) defaultInstance;
@@ -827,7 +827,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFVoteKickBanPlayer_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFVoteKickBanPlayer* result;
+  CMsgTFVoteKickBanPlayer* _builderResult;
 }
 
 - (CMsgTFVoteKickBanPlayer*) defaultInstance;
@@ -905,7 +905,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFVoteKickBanPlayerResult_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFVoteKickBanPlayerResult* result;
+  CMsgTFVoteKickBanPlayerResult* _builderResult;
 }
 
 - (CMsgTFVoteKickBanPlayerResult*) defaultInstance;
@@ -988,7 +988,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFKickPlayer_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFKickPlayer* result;
+  CMsgTFKickPlayer* _builderResult;
 }
 
 - (CMsgTFKickPlayer*) defaultInstance;
@@ -1038,7 +1038,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFStartedTraining_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFStartedTraining* result;
+  CMsgTFStartedTraining* _builderResult;
 }
 
 - (CMsgTFStartedTraining*) defaultInstance;
@@ -1082,7 +1082,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFFreeTrialChooseMostHelpfulFriend_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFFreeTrialChooseMostHelpfulFriend* result;
+  CMsgTFFreeTrialChooseMostHelpfulFriend* _builderResult;
 }
 
 - (CMsgTFFreeTrialChooseMostHelpfulFriend*) defaultInstance;
@@ -1130,7 +1130,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFRequestTF2Friends_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFRequestTF2Friends* result;
+  CMsgTFRequestTF2Friends* _builderResult;
 }
 
 - (CMsgTFRequestTF2Friends*) defaultInstance;
@@ -1180,7 +1180,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFRequestTF2FriendsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFRequestTF2FriendsResponse* result;
+  CMsgTFRequestTF2FriendsResponse* _builderResult;
 }
 
 - (CMsgTFRequestTF2FriendsResponse*) defaultInstance;
@@ -1235,7 +1235,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CSOTFPlayerInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOTFPlayerInfo* result;
+  CSOTFPlayerInfo* _builderResult;
 }
 
 - (CSOTFPlayerInfo*) defaultInstance;
@@ -1289,7 +1289,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFThankedBySomeone_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFThankedBySomeone* result;
+  CMsgTFThankedBySomeone* _builderResult;
 }
 
 - (CMsgTFThankedBySomeone*) defaultInstance;
@@ -1334,7 +1334,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFThankedSomeone_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFThankedSomeone* result;
+  CMsgTFThankedSomeone* _builderResult;
 }
 
 - (CMsgTFThankedSomeone*) defaultInstance;
@@ -1374,7 +1374,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFFreeTrialConvertedToPremium_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFFreeTrialConvertedToPremium* result;
+  CMsgTFFreeTrialConvertedToPremium* _builderResult;
 }
 
 - (CMsgTFFreeTrialConvertedToPremium*) defaultInstance;
@@ -1421,7 +1421,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgSaxxyAwarded_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSaxxyAwarded* result;
+  CMsgSaxxyAwarded* _builderResult;
 }
 
 - (CMsgSaxxyAwarded*) defaultInstance;
@@ -1481,7 +1481,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgReplaySubmitContestEntry_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgReplaySubmitContestEntry* result;
+  CMsgReplaySubmitContestEntry* _builderResult;
 }
 
 - (CMsgReplaySubmitContestEntry*) defaultInstance;
@@ -1535,7 +1535,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgReplaySubmitContestEntryResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgReplaySubmitContestEntryResponse* result;
+  CMsgReplaySubmitContestEntryResponse* _builderResult;
 }
 
 - (CMsgReplaySubmitContestEntryResponse*) defaultInstance;
@@ -1595,7 +1595,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CReplayCachedContestData_Builder : PBGeneratedMessage_Builder {
 @private
-  CReplayCachedContestData* result;
+  CReplayCachedContestData* _builderResult;
 }
 
 - (CReplayCachedContestData*) defaultInstance;
@@ -1657,7 +1657,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFCoaching_AddToCoaches_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFCoaching_AddToCoaches* result;
+  CMsgTFCoaching_AddToCoaches* _builderResult;
 }
 
 - (CMsgTFCoaching_AddToCoaches*) defaultInstance;
@@ -1697,7 +1697,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFCoaching_RemoveFromCoaches_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFCoaching_RemoveFromCoaches* result;
+  CMsgTFCoaching_RemoveFromCoaches* _builderResult;
 }
 
 - (CMsgTFCoaching_RemoveFromCoaches*) defaultInstance;
@@ -1741,7 +1741,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFCoaching_FindCoach_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFCoaching_FindCoach* result;
+  CMsgTFCoaching_FindCoach* _builderResult;
 }
 
 - (CMsgTFCoaching_FindCoach*) defaultInstance;
@@ -1798,7 +1798,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFCoaching_FindCoachResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFCoaching_FindCoachResponse* result;
+  CMsgTFCoaching_FindCoachResponse* _builderResult;
 }
 
 - (CMsgTFCoaching_FindCoachResponse*) defaultInstance;
@@ -1861,7 +1861,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFCoaching_AskCoach_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFCoaching_AskCoach* result;
+  CMsgTFCoaching_AskCoach* _builderResult;
 }
 
 - (CMsgTFCoaching_AskCoach*) defaultInstance;
@@ -1915,7 +1915,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFCoaching_AskCoachResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFCoaching_AskCoachResponse* result;
+  CMsgTFCoaching_AskCoachResponse* _builderResult;
 }
 
 - (CMsgTFCoaching_AskCoachResponse*) defaultInstance;
@@ -1976,7 +1976,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFCoaching_CoachJoinGame_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFCoaching_CoachJoinGame* result;
+  CMsgTFCoaching_CoachJoinGame* _builderResult;
 }
 
 - (CMsgTFCoaching_CoachJoinGame*) defaultInstance;
@@ -2044,7 +2044,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFCoaching_CoachJoining_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFCoaching_CoachJoining* result;
+  CMsgTFCoaching_CoachJoining* _builderResult;
 }
 
 - (CMsgTFCoaching_CoachJoining*) defaultInstance;
@@ -2098,7 +2098,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFCoaching_CoachJoined_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFCoaching_CoachJoined* result;
+  CMsgTFCoaching_CoachJoined* _builderResult;
 }
 
 - (CMsgTFCoaching_CoachJoined*) defaultInstance;
@@ -2147,7 +2147,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFCoaching_LikeCurrentCoach_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFCoaching_LikeCurrentCoach* result;
+  CMsgTFCoaching_LikeCurrentCoach* _builderResult;
 }
 
 - (CMsgTFCoaching_LikeCurrentCoach*) defaultInstance;
@@ -2196,7 +2196,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFCoaching_RemoveCurrentCoach_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFCoaching_RemoveCurrentCoach* result;
+  CMsgTFCoaching_RemoveCurrentCoach* _builderResult;
 }
 
 - (CMsgTFCoaching_RemoveCurrentCoach*) defaultInstance;
@@ -2290,7 +2290,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFQuickplay_ScoreServers_ServerInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFQuickplay_ScoreServers_ServerInfo* result;
+  CMsgTFQuickplay_ScoreServers_ServerInfo* _builderResult;
 }
 
 - (CMsgTFQuickplay_ScoreServers_ServerInfo*) defaultInstance;
@@ -2338,7 +2338,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFQuickplay_ScoreServers_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFQuickplay_ScoreServers* result;
+  CMsgTFQuickplay_ScoreServers* _builderResult;
 }
 
 - (CMsgTFQuickplay_ScoreServers*) defaultInstance;
@@ -2426,7 +2426,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFQuickplay_ScoreServersResponse_ServerInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFQuickplay_ScoreServersResponse_ServerInfo* result;
+  CMsgTFQuickplay_ScoreServersResponse_ServerInfo* _builderResult;
 }
 
 - (CMsgTFQuickplay_ScoreServersResponse_ServerInfo*) defaultInstance;
@@ -2464,7 +2464,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFQuickplay_ScoreServersResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFQuickplay_ScoreServersResponse* result;
+  CMsgTFQuickplay_ScoreServersResponse* _builderResult;
 }
 
 - (CMsgTFQuickplay_ScoreServersResponse*) defaultInstance;
@@ -2515,7 +2515,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFQuickplay_PlayerJoining_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFQuickplay_PlayerJoining* result;
+  CMsgTFQuickplay_PlayerJoining* _builderResult;
 }
 
 - (CMsgTFQuickplay_PlayerJoining*) defaultInstance;
@@ -2568,7 +2568,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_GameServer_LevelInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_GameServer_LevelInfo* result;
+  CMsgGC_GameServer_LevelInfo* _builderResult;
 }
 
 - (CMsgGC_GameServer_LevelInfo*) defaultInstance;
@@ -2622,7 +2622,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_GameServer_AuthChallenge_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_GameServer_AuthChallenge* result;
+  CMsgGC_GameServer_AuthChallenge* _builderResult;
 }
 
 - (CMsgGC_GameServer_AuthChallenge*) defaultInstance;
@@ -2687,7 +2687,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_GameServer_AuthResult_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_GameServer_AuthResult* result;
+  CMsgGC_GameServer_AuthResult* _builderResult;
 }
 
 - (CMsgGC_GameServer_AuthResult*) defaultInstance;
@@ -2760,7 +2760,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_GameServer_AuthChallengeResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_GameServer_AuthChallengeResponse* result;
+  CMsgGC_GameServer_AuthChallengeResponse* _builderResult;
 }
 
 - (CMsgGC_GameServer_AuthChallengeResponse*) defaultInstance;
@@ -2814,7 +2814,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_GameServer_CreateIdentity_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_GameServer_CreateIdentity* result;
+  CMsgGC_GameServer_CreateIdentity* _builderResult;
 }
 
 - (CMsgGC_GameServer_CreateIdentity*) defaultInstance;
@@ -2875,7 +2875,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_GameServer_CreateIdentityResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_GameServer_CreateIdentityResponse* result;
+  CMsgGC_GameServer_CreateIdentityResponse* _builderResult;
 }
 
 - (CMsgGC_GameServer_CreateIdentityResponse*) defaultInstance;
@@ -2939,7 +2939,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_GameServer_List_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_GameServer_List* result;
+  CMsgGC_GameServer_List* _builderResult;
 }
 
 - (CMsgGC_GameServer_List*) defaultInstance;
@@ -3025,7 +3025,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_GameServer_ListResponse_GameServerIdentity_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_GameServer_ListResponse_GameServerIdentity* result;
+  CMsgGC_GameServer_ListResponse_GameServerIdentity* _builderResult;
 }
 
 - (CMsgGC_GameServer_ListResponse_GameServerIdentity*) defaultInstance;
@@ -3063,7 +3063,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_GameServer_ListResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_GameServer_ListResponse* result;
+  CMsgGC_GameServer_ListResponse* _builderResult;
 }
 
 - (CMsgGC_GameServer_ListResponse*) defaultInstance;
@@ -3114,7 +3114,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_GameServer_ResetIdentity_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_GameServer_ResetIdentity* result;
+  CMsgGC_GameServer_ResetIdentity* _builderResult;
 }
 
 - (CMsgGC_GameServer_ResetIdentity*) defaultInstance;
@@ -3171,7 +3171,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_GameServer_ResetIdentityResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_GameServer_ResetIdentityResponse* result;
+  CMsgGC_GameServer_ResetIdentityResponse* _builderResult;
 }
 
 - (CMsgGC_GameServer_ResetIdentityResponse*) defaultInstance;
@@ -3239,7 +3239,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_Halloween_ReservedItem_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_Halloween_ReservedItem* result;
+  CMsgGC_Halloween_ReservedItem* _builderResult;
 }
 
 - (CMsgGC_Halloween_ReservedItem*) defaultInstance;
@@ -3317,7 +3317,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_Halloween_GrantItem_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_Halloween_GrantItem* result;
+  CMsgGC_Halloween_GrantItem* _builderResult;
 }
 
 - (CMsgGC_Halloween_GrantItem*) defaultInstance;
@@ -3376,7 +3376,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_Halloween_GrantItemResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_Halloween_GrantItemResponse* result;
+  CMsgGC_Halloween_GrantItemResponse* _builderResult;
 }
 
 - (CMsgGC_Halloween_GrantItemResponse*) defaultInstance;
@@ -3421,7 +3421,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_Halloween_ItemClaimed_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_Halloween_ItemClaimed* result;
+  CMsgGC_Halloween_ItemClaimed* _builderResult;
 }
 
 - (CMsgGC_Halloween_ItemClaimed*) defaultInstance;
@@ -3469,7 +3469,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_PickupItemEligibility_Query_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_PickupItemEligibility_Query* result;
+  CMsgGC_PickupItemEligibility_Query* _builderResult;
 }
 
 - (CMsgGC_PickupItemEligibility_Query*) defaultInstance;
@@ -3531,7 +3531,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGC_PickupItemEligibility_QueryResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGC_PickupItemEligibility_QueryResponse* result;
+  CMsgGC_PickupItemEligibility_QueryResponse* _builderResult;
 }
 
 - (CMsgGC_PickupItemEligibility_QueryResponse*) defaultInstance;
@@ -3606,7 +3606,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CSOTFPartyMember_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOTFPartyMember* result;
+  CSOTFPartyMember* _builderResult;
 }
 
 - (CSOTFPartyMember*) defaultInstance;
@@ -3694,7 +3694,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgMatchSearchCriteria_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMatchSearchCriteria* result;
+  CMsgMatchSearchCriteria* _builderResult;
 }
 
 - (CMsgMatchSearchCriteria*) defaultInstance;
@@ -3786,7 +3786,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgCreateOrUpdateParty_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCreateOrUpdateParty* result;
+  CMsgCreateOrUpdateParty* _builderResult;
 }
 
 - (CMsgCreateOrUpdateParty*) defaultInstance;
@@ -3865,7 +3865,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgCreateOrUpdatePartyReply_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCreateOrUpdatePartyReply* result;
+  CMsgCreateOrUpdatePartyReply* _builderResult;
 }
 
 - (CMsgCreateOrUpdatePartyReply*) defaultInstance;
@@ -3987,7 +3987,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CSOTFParty_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOTFParty* result;
+  CSOTFParty* _builderResult;
 }
 
 - (CSOTFParty*) defaultInstance;
@@ -4176,7 +4176,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CSOTFPartyInvite_PartyMember_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOTFPartyInvite_PartyMember* result;
+  CSOTFPartyInvite_PartyMember* _builderResult;
 }
 
 - (CSOTFPartyInvite_PartyMember*) defaultInstance;
@@ -4209,7 +4209,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CSOTFPartyInvite_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOTFPartyInvite* result;
+  CSOTFPartyInvite* _builderResult;
 }
 
 - (CSOTFPartyInvite*) defaultInstance;
@@ -4323,7 +4323,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CTFLobbyMember_Builder : PBGeneratedMessage_Builder {
 @private
-  CTFLobbyMember* result;
+  CTFLobbyMember* _builderResult;
 }
 
 - (CTFLobbyMember*) defaultInstance;
@@ -4436,7 +4436,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CLobbyPendingPlayerReport_Builder : PBGeneratedMessage_Builder {
 @private
-  CLobbyPendingPlayerReport* result;
+  CLobbyPendingPlayerReport* _builderResult;
 }
 
 - (CLobbyPendingPlayerReport*) defaultInstance;
@@ -4486,7 +4486,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGameMatchSignOut_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameMatchSignOut* result;
+  CMsgGameMatchSignOut* _builderResult;
 }
 
 - (CMsgGameMatchSignOut*) defaultInstance;
@@ -4627,7 +4627,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CSOTFLobby_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOTFLobby* result;
+  CSOTFLobby* _builderResult;
 }
 
 - (CSOTFLobby*) defaultInstance;
@@ -4803,7 +4803,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgExitMatchmaking_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgExitMatchmaking* result;
+  CMsgExitMatchmaking* _builderResult;
 }
 
 - (CMsgExitMatchmaking*) defaultInstance;
@@ -4855,7 +4855,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgAcceptInvite_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAcceptInvite* result;
+  CMsgAcceptInvite* _builderResult;
 }
 
 - (CMsgAcceptInvite*) defaultInstance;
@@ -4914,7 +4914,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgAcceptInviteResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAcceptInviteResponse* result;
+  CMsgAcceptInviteResponse* _builderResult;
 }
 
 - (CMsgAcceptInviteResponse*) defaultInstance;
@@ -4963,7 +4963,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgReadyUp_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgReadyUp* result;
+  CMsgReadyUp* _builderResult;
 }
 
 - (CMsgReadyUp*) defaultInstance;
@@ -5008,7 +5008,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgMatchmakingSearchCountRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMatchmakingSearchCountRequest* result;
+  CMsgMatchmakingSearchCountRequest* _builderResult;
 }
 
 - (CMsgMatchmakingSearchCountRequest*) defaultInstance;
@@ -5051,7 +5051,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgMatchmakingSearchCountResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMatchmakingSearchCountResponse* result;
+  CMsgMatchmakingSearchCountResponse* _builderResult;
 }
 
 - (CMsgMatchmakingSearchCountResponse*) defaultInstance;
@@ -5098,7 +5098,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgKickedFromMatchmakingQueue_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgKickedFromMatchmakingQueue* result;
+  CMsgKickedFromMatchmakingQueue* _builderResult;
 }
 
 - (CMsgKickedFromMatchmakingQueue*) defaultInstance;
@@ -5141,7 +5141,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFPlayerFailedToConnect_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFPlayerFailedToConnect* result;
+  CMsgTFPlayerFailedToConnect* _builderResult;
 }
 
 - (CMsgTFPlayerFailedToConnect*) defaultInstance;
@@ -5204,7 +5204,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFJoinChatChannel_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFJoinChatChannel* result;
+  CMsgTFJoinChatChannel* _builderResult;
 }
 
 - (CMsgTFJoinChatChannel*) defaultInstance;
@@ -5268,7 +5268,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFLeaveChatChannel_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFLeaveChatChannel* result;
+  CMsgTFLeaveChatChannel* _builderResult;
 }
 
 - (CMsgTFLeaveChatChannel*) defaultInstance;
@@ -5362,7 +5362,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFJoinChatChannelResponse_ChatMember_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFJoinChatChannelResponse_ChatMember* result;
+  CMsgTFJoinChatChannelResponse_ChatMember* _builderResult;
 }
 
 - (CMsgTFJoinChatChannelResponse_ChatMember*) defaultInstance;
@@ -5390,7 +5390,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFJoinChatChannelResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFJoinChatChannelResponse* result;
+  CMsgTFJoinChatChannelResponse* _builderResult;
 }
 
 - (CMsgTFJoinChatChannelResponse*) defaultInstance;
@@ -5469,7 +5469,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFOtherJoinedChatChannel_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFOtherJoinedChatChannel* result;
+  CMsgTFOtherJoinedChatChannel* _builderResult;
 }
 
 - (CMsgTFOtherJoinedChatChannel*) defaultInstance;
@@ -5532,7 +5532,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFOtherLeftChatChannel_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFOtherLeftChatChannel* result;
+  CMsgTFOtherLeftChatChannel* _builderResult;
 }
 
 - (CMsgTFOtherLeftChatChannel*) defaultInstance;
@@ -5582,7 +5582,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFRequestDefaultChatChannel_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFRequestDefaultChatChannel* result;
+  CMsgTFRequestDefaultChatChannel* _builderResult;
 }
 
 - (CMsgTFRequestDefaultChatChannel*) defaultInstance;
@@ -5630,7 +5630,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFRequestDefaultChatChannelResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFRequestDefaultChatChannelResponse* result;
+  CMsgTFRequestDefaultChatChannelResponse* _builderResult;
 }
 
 - (CMsgTFRequestDefaultChatChannelResponse*) defaultInstance;
@@ -5680,7 +5680,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFRequestChatChannelList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFRequestChatChannelList* result;
+  CMsgTFRequestChatChannelList* _builderResult;
 }
 
 - (CMsgTFRequestChatChannelList*) defaultInstance;
@@ -5757,7 +5757,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFRequestChatChannelListResponse_ChatChannel_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFRequestChatChannelListResponse_ChatChannel* result;
+  CMsgTFRequestChatChannelListResponse_ChatChannel* _builderResult;
 }
 
 - (CMsgTFRequestChatChannelListResponse_ChatChannel*) defaultInstance;
@@ -5790,7 +5790,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgTFRequestChatChannelListResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTFRequestChatChannelListResponse* result;
+  CMsgTFRequestChatChannelListResponse* _builderResult;
 }
 
 - (CMsgTFRequestChatChannelListResponse*) defaultInstance;
@@ -5946,7 +5946,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGameServerMatchmakingStatus_Player_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameServerMatchmakingStatus_Player* result;
+  CMsgGameServerMatchmakingStatus_Player* _builderResult;
 }
 
 - (CMsgGameServerMatchmakingStatus_Player*) defaultInstance;
@@ -5974,7 +5974,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGameServerMatchmakingStatus_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameServerMatchmakingStatus* result;
+  CMsgGameServerMatchmakingStatus* _builderResult;
 }
 
 - (CMsgGameServerMatchmakingStatus*) defaultInstance;
@@ -6180,7 +6180,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgMatchmakingProgress_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMatchmakingProgress* result;
+  CMsgMatchmakingProgress* _builderResult;
 }
 
 - (CMsgMatchmakingProgress*) defaultInstance;
@@ -6345,7 +6345,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgMvMVictoryInfo_Item_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMvMVictoryInfo_Item* result;
+  CMsgMvMVictoryInfo_Item* _builderResult;
 }
 
 - (CMsgMvMVictoryInfo_Item*) defaultInstance;
@@ -6431,7 +6431,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgMvMVictoryInfo_Player_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMvMVictoryInfo_Player* result;
+  CMsgMvMVictoryInfo_Player* _builderResult;
 }
 
 - (CMsgMvMVictoryInfo_Player*) defaultInstance;
@@ -6491,7 +6491,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgMvMVictoryInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMvMVictoryInfo* result;
+  CMsgMvMVictoryInfo* _builderResult;
 }
 
 - (CMsgMvMVictoryInfo*) defaultInstance;
@@ -6555,7 +6555,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CGCMsgTFHelloResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCMsgTFHelloResponse* result;
+  CGCMsgTFHelloResponse* _builderResult;
 }
 
 - (CGCMsgTFHelloResponse*) defaultInstance;
@@ -6615,7 +6615,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CGCMsgTFSync_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCMsgTFSync* result;
+  CGCMsgTFSync* _builderResult;
 }
 
 - (CGCMsgTFSync*) defaultInstance;
@@ -6718,7 +6718,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgMvMVictory_Player_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMvMVictory_Player* result;
+  CMsgMvMVictory_Player* _builderResult;
 }
 
 - (CMsgMvMVictory_Player*) defaultInstance;
@@ -6746,7 +6746,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgMvMVictory_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMvMVictory* result;
+  CMsgMvMVictory* _builderResult;
 }
 
 - (CMsgMvMVictory*) defaultInstance;
@@ -6822,7 +6822,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgMvMMannUpVictoryReply_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMvMMannUpVictoryReply* result;
+  CMsgMvMMannUpVictoryReply* _builderResult;
 }
 
 - (CMsgMvMMannUpVictoryReply*) defaultInstance;
@@ -6870,7 +6870,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgGameServerKickingLobby_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameServerKickingLobby* result;
+  CMsgGameServerKickingLobby* _builderResult;
 }
 
 - (CMsgGameServerKickingLobby*) defaultInstance;
@@ -6921,7 +6921,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgLeaveGameAndPrepareToJoinParty_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgLeaveGameAndPrepareToJoinParty* result;
+  CMsgLeaveGameAndPrepareToJoinParty* _builderResult;
 }
 
 - (CMsgLeaveGameAndPrepareToJoinParty*) defaultInstance;
@@ -6974,7 +6974,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgRemovePlayerFromLobby_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgRemovePlayerFromLobby* result;
+  CMsgRemovePlayerFromLobby* _builderResult;
 }
 
 - (CMsgRemovePlayerFromLobby*) defaultInstance;
@@ -7028,7 +7028,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgSetLobbySafeToLeave_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSetLobbySafeToLeave* result;
+  CMsgSetLobbySafeToLeave* _builderResult;
 }
 
 - (CMsgSetLobbySafeToLeave*) defaultInstance;
@@ -7101,7 +7101,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgHalloween_ServerBossEvent_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgHalloween_ServerBossEvent* result;
+  CMsgHalloween_ServerBossEvent* _builderResult;
 }
 
 - (CMsgHalloween_ServerBossEvent*) defaultInstance;
@@ -7296,7 +7296,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgHalloween_Merasmus2012_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgHalloween_Merasmus2012* result;
+  CMsgHalloween_Merasmus2012* _builderResult;
 }
 
 - (CMsgHalloween_Merasmus2012*) defaultInstance;
@@ -7519,7 +7519,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgUpdateHalloweenMerasmusLootLevel_Player_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgUpdateHalloweenMerasmusLootLevel_Player* result;
+  CMsgUpdateHalloweenMerasmusLootLevel_Player* _builderResult;
 }
 
 - (CMsgUpdateHalloweenMerasmusLootLevel_Player*) defaultInstance;
@@ -7542,7 +7542,7 @@ BOOL CMsgRemovePlayerFromLobby_RemoveReasonIsValidValue(CMsgRemovePlayerFromLobb
 
 @interface CMsgUpdateHalloweenMerasmusLootLevel_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgUpdateHalloweenMerasmusLootLevel* result;
+  CMsgUpdateHalloweenMerasmusLootLevel* _builderResult;
 }
 
 - (CMsgUpdateHalloweenMerasmusLootLevel*) defaultInstance;

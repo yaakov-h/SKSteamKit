@@ -202,7 +202,7 @@
 
 @interface CMsgWebAPIKey_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgWebAPIKey* result;
+  CMsgWebAPIKey* _builderResult;
 }
 
 - (CMsgWebAPIKey*) defaultInstance;
@@ -322,7 +322,7 @@
 
 @interface CMsgHttpRequest_RequestHeader_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgHttpRequest_RequestHeader* result;
+  CMsgHttpRequest_RequestHeader* _builderResult;
 }
 
 - (CMsgHttpRequest_RequestHeader*) defaultInstance;
@@ -380,7 +380,7 @@
 
 @interface CMsgHttpRequest_QueryParam_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgHttpRequest_QueryParam* result;
+  CMsgHttpRequest_QueryParam* _builderResult;
 }
 
 - (CMsgHttpRequest_QueryParam*) defaultInstance;
@@ -408,7 +408,7 @@
 
 @interface CMsgHttpRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgHttpRequest* result;
+  CMsgHttpRequest* _builderResult;
 }
 
 - (CMsgHttpRequest*) defaultInstance;
@@ -517,7 +517,7 @@
 
 @interface CMsgWebAPIRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgWebAPIRequest* result;
+  CMsgWebAPIRequest* _builderResult;
 }
 
 - (CMsgWebAPIRequest*) defaultInstance;
@@ -637,7 +637,7 @@
 
 @interface CMsgHttpResponse_ResponseHeader_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgHttpResponse_ResponseHeader* result;
+  CMsgHttpResponse_ResponseHeader* _builderResult;
 }
 
 - (CMsgHttpResponse_ResponseHeader*) defaultInstance;
@@ -665,7 +665,7 @@
 
 @interface CMsgHttpResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgHttpResponse* result;
+  CMsgHttpResponse* _builderResult;
 }
 
 - (CMsgHttpResponse*) defaultInstance;
@@ -730,7 +730,7 @@
 
 @interface CMsgAMFindAccounts_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMFindAccounts* result;
+  CMsgAMFindAccounts* _builderResult;
 }
 
 - (CMsgAMFindAccounts*) defaultInstance;
@@ -783,7 +783,7 @@
 
 @interface CMsgAMFindAccountsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMFindAccountsResponse* result;
+  CMsgAMFindAccountsResponse* _builderResult;
 }
 
 - (CMsgAMFindAccountsResponse*) defaultInstance;
@@ -858,7 +858,7 @@
 
 @interface CMsgNotifyWatchdog_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgNotifyWatchdog* result;
+  CMsgNotifyWatchdog* _builderResult;
 }
 
 - (CMsgNotifyWatchdog*) defaultInstance;
@@ -937,7 +937,7 @@
 
 @interface CMsgAMGetLicenses_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMGetLicenses* result;
+  CMsgAMGetLicenses* _builderResult;
 }
 
 - (CMsgAMGetLicenses*) defaultInstance;
@@ -990,7 +990,7 @@
 
 @interface CMsgPackageLicense_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPackageLicense* result;
+  CMsgPackageLicense* _builderResult;
 }
 
 - (CMsgPackageLicense*) defaultInstance;
@@ -1047,7 +1047,7 @@
 
 @interface CMsgAMGetLicensesResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMGetLicensesResponse* result;
+  CMsgAMGetLicensesResponse* _builderResult;
 }
 
 - (CMsgAMGetLicensesResponse*) defaultInstance;
@@ -1110,7 +1110,7 @@
 
 @interface CMsgAMGetUserGameStats_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMGetUserGameStats* result;
+  CMsgAMGetUserGameStats* _builderResult;
 }
 
 - (CMsgAMGetUserGameStats*) defaultInstance;
@@ -1215,7 +1215,7 @@
 
 @interface CMsgAMGetUserGameStatsResponse_Stats_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMGetUserGameStatsResponse_Stats* result;
+  CMsgAMGetUserGameStatsResponse_Stats* _builderResult;
 }
 
 - (CMsgAMGetUserGameStatsResponse_Stats*) defaultInstance;
@@ -1277,7 +1277,7 @@
 
 @interface CMsgAMGetUserGameStatsResponse_Achievement_Blocks_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMGetUserGameStatsResponse_Achievement_Blocks* result;
+  CMsgAMGetUserGameStatsResponse_Achievement_Blocks* _builderResult;
 }
 
 - (CMsgAMGetUserGameStatsResponse_Achievement_Blocks*) defaultInstance;
@@ -1310,7 +1310,7 @@
 
 @interface CMsgAMGetUserGameStatsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMGetUserGameStatsResponse* result;
+  CMsgAMGetUserGameStatsResponse* _builderResult;
 }
 
 - (CMsgAMGetUserGameStatsResponse*) defaultInstance;
@@ -1387,7 +1387,7 @@
 
 @interface CMsgGCGetCommandList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCGetCommandList* result;
+  CMsgGCGetCommandList* _builderResult;
 }
 
 - (CMsgGCGetCommandList*) defaultInstance;
@@ -1440,7 +1440,7 @@
 
 @interface CMsgGCGetCommandListResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCGetCommandListResponse* result;
+  CMsgGCGetCommandListResponse* _builderResult;
 }
 
 - (CMsgGCGetCommandListResponse*) defaultInstance;
@@ -1490,7 +1490,7 @@
 
 @interface CGCMsgMemCachedGet_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCMsgMemCachedGet* result;
+  CGCMsgMemCachedGet* _builderResult;
 }
 
 - (CGCMsgMemCachedGet*) defaultInstance;
@@ -1570,7 +1570,7 @@
 
 @interface CGCMsgMemCachedGetResponse_ValueTag_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCMsgMemCachedGetResponse_ValueTag* result;
+  CGCMsgMemCachedGetResponse_ValueTag* _builderResult;
 }
 
 - (CGCMsgMemCachedGetResponse_ValueTag*) defaultInstance;
@@ -1598,7 +1598,7 @@
 
 @interface CGCMsgMemCachedGetResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCMsgMemCachedGetResponse* result;
+  CGCMsgMemCachedGetResponse* _builderResult;
 }
 
 - (CGCMsgMemCachedGetResponse*) defaultInstance;
@@ -1678,7 +1678,7 @@
 
 @interface CGCMsgMemCachedSet_KeyPair_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCMsgMemCachedSet_KeyPair* result;
+  CGCMsgMemCachedSet_KeyPair* _builderResult;
 }
 
 - (CGCMsgMemCachedSet_KeyPair*) defaultInstance;
@@ -1706,7 +1706,7 @@
 
 @interface CGCMsgMemCachedSet_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCMsgMemCachedSet* result;
+  CGCMsgMemCachedSet* _builderResult;
 }
 
 - (CGCMsgMemCachedSet*) defaultInstance;
@@ -1756,7 +1756,7 @@
 
 @interface CGCMsgMemCachedDelete_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCMsgMemCachedDelete* result;
+  CGCMsgMemCachedDelete* _builderResult;
 }
 
 - (CGCMsgMemCachedDelete*) defaultInstance;
@@ -1819,7 +1819,7 @@
 
 @interface CMsgAMAddFreeLicense_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMAddFreeLicense* result;
+  CMsgAMAddFreeLicense* _builderResult;
 }
 
 - (CMsgAMAddFreeLicense*) defaultInstance;
@@ -1891,7 +1891,7 @@
 
 @interface CMsgAMAddFreeLicenseResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMAddFreeLicenseResponse* result;
+  CMsgAMAddFreeLicenseResponse* _builderResult;
 }
 
 - (CMsgAMAddFreeLicenseResponse*) defaultInstance;
@@ -1949,7 +1949,7 @@
 
 @interface CGCMsgGetIPLocation_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCMsgGetIPLocation* result;
+  CGCMsgGetIPLocation* _builderResult;
 }
 
 - (CGCMsgGetIPLocation*) defaultInstance;
@@ -2020,7 +2020,7 @@
 
 @interface CIPLocationInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CIPLocationInfo* result;
+  CIPLocationInfo* _builderResult;
 }
 
 - (CIPLocationInfo*) defaultInstance;
@@ -2093,7 +2093,7 @@
 
 @interface CGCMsgGetIPLocationResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCMsgGetIPLocationResponse* result;
+  CGCMsgGetIPLocationResponse* _builderResult;
 }
 
 - (CGCMsgGetIPLocationResponse*) defaultInstance;
@@ -2148,7 +2148,7 @@
 
 @interface CGCMsgSystemStatsSchema_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCMsgSystemStatsSchema* result;
+  CGCMsgSystemStatsSchema* _builderResult;
 }
 
 - (CGCMsgSystemStatsSchema*) defaultInstance;
@@ -2198,7 +2198,7 @@
 
 @interface CGCMsgGetSystemStats_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCMsgGetSystemStats* result;
+  CGCMsgGetSystemStats* _builderResult;
 }
 
 - (CGCMsgGetSystemStats*) defaultInstance;
@@ -2290,7 +2290,7 @@
 
 @interface CGCMsgGetSystemStatsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCMsgGetSystemStatsResponse* result;
+  CGCMsgGetSystemStatsResponse* _builderResult;
 }
 
 - (CGCMsgGetSystemStatsResponse*) defaultInstance;
@@ -2447,7 +2447,7 @@
 
 @interface CMsgAMSendEmail_ReplacementToken_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMSendEmail_ReplacementToken* result;
+  CMsgAMSendEmail_ReplacementToken* _builderResult;
 }
 
 - (CMsgAMSendEmail_ReplacementToken*) defaultInstance;
@@ -2505,7 +2505,7 @@
 
 @interface CMsgAMSendEmail_PersonaNameReplacementToken_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMSendEmail_PersonaNameReplacementToken* result;
+  CMsgAMSendEmail_PersonaNameReplacementToken* _builderResult;
 }
 
 - (CMsgAMSendEmail_PersonaNameReplacementToken*) defaultInstance;
@@ -2533,7 +2533,7 @@
 
 @interface CMsgAMSendEmail_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMSendEmail* result;
+  CMsgAMSendEmail* _builderResult;
 }
 
 - (CMsgAMSendEmail*) defaultInstance;
@@ -2611,7 +2611,7 @@
 
 @interface CMsgAMSendEmailResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMSendEmailResponse* result;
+  CMsgAMSendEmailResponse* _builderResult;
 }
 
 - (CMsgAMSendEmailResponse*) defaultInstance;
@@ -2672,7 +2672,7 @@
 
 @interface CMsgGCGetEmailTemplate_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCGetEmailTemplate* result;
+  CMsgGCGetEmailTemplate* _builderResult;
 }
 
 - (CMsgGCGetEmailTemplate*) defaultInstance;
@@ -2744,7 +2744,7 @@
 
 @interface CMsgGCGetEmailTemplateResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCGetEmailTemplateResponse* result;
+  CMsgGCGetEmailTemplateResponse* _builderResult;
 }
 
 - (CMsgGCGetEmailTemplateResponse*) defaultInstance;
@@ -2819,7 +2819,7 @@
 
 @interface CMsgAMGrantGuestPasses2_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMGrantGuestPasses2* result;
+  CMsgAMGrantGuestPasses2* _builderResult;
 }
 
 - (CMsgAMGrantGuestPasses2*) defaultInstance;
@@ -2892,7 +2892,7 @@
 
 @interface CMsgAMGrantGuestPasses2Response_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAMGrantGuestPasses2Response* result;
+  CMsgAMGrantGuestPasses2Response* _builderResult;
 }
 
 - (CMsgAMGrantGuestPasses2Response*) defaultInstance;
@@ -2950,7 +2950,7 @@
 
 @interface CGCSystemMsg_GetAccountDetails_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCSystemMsg_GetAccountDetails* result;
+  CGCSystemMsg_GetAccountDetails* _builderResult;
 }
 
 - (CGCSystemMsg_GetAccountDetails*) defaultInstance;
@@ -3060,7 +3060,7 @@
 
 @interface CGCSystemMsg_GetAccountDetails_Response_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCSystemMsg_GetAccountDetails_Response* result;
+  CGCSystemMsg_GetAccountDetails_Response* _builderResult;
 }
 
 - (CGCSystemMsg_GetAccountDetails_Response*) defaultInstance;
@@ -3178,7 +3178,7 @@
 
 @interface CMsgGCGetPersonaNames_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCGetPersonaNames* result;
+  CMsgGCGetPersonaNames* _builderResult;
 }
 
 - (CMsgGCGetPersonaNames*) defaultInstance;
@@ -3261,7 +3261,7 @@
 
 @interface CMsgGCGetPersonaNames_Response_PersonaName_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCGetPersonaNames_Response_PersonaName* result;
+  CMsgGCGetPersonaNames_Response_PersonaName* _builderResult;
 }
 
 - (CMsgGCGetPersonaNames_Response_PersonaName*) defaultInstance;
@@ -3289,7 +3289,7 @@
 
 @interface CMsgGCGetPersonaNames_Response_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCGetPersonaNames_Response* result;
+  CMsgGCGetPersonaNames_Response* _builderResult;
 }
 
 - (CMsgGCGetPersonaNames_Response*) defaultInstance;

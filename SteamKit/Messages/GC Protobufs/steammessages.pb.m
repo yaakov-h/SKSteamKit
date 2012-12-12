@@ -373,83 +373,83 @@ static CMsgWebAPIKey* defaultCMsgWebAPIKeyInstance = nil;
   }
 }
 - (BOOL) hasStatus {
-  return result.hasStatus;
+  return _builderResult.hasStatus;
 }
 - (uint32_t) status {
-  return result.status;
+  return _builderResult.status;
 }
 - (CMsgWebAPIKey_Builder*) setStatus:(uint32_t) value {
-  result.hasStatus = YES;
-  result.status = value;
+  _builderResult.hasStatus = YES;
+  _builderResult.status = value;
   return self;
 }
 - (CMsgWebAPIKey_Builder*) clearStatus {
-  result.hasStatus = NO;
-  result.status = 255;
+  _builderResult.hasStatus = NO;
+  _builderResult.status = 255;
   return self;
 }
 - (BOOL) hasAccountId {
-  return result.hasAccountId;
+  return _builderResult.hasAccountId;
 }
 - (uint32_t) accountId {
-  return result.accountId;
+  return _builderResult.accountId;
 }
 - (CMsgWebAPIKey_Builder*) setAccountId:(uint32_t) value {
-  result.hasAccountId = YES;
-  result.accountId = value;
+  _builderResult.hasAccountId = YES;
+  _builderResult.accountId = value;
   return self;
 }
 - (CMsgWebAPIKey_Builder*) clearAccountId {
-  result.hasAccountId = NO;
-  result.accountId = 0;
+  _builderResult.hasAccountId = NO;
+  _builderResult.accountId = 0;
   return self;
 }
 - (BOOL) hasPublisherGroupId {
-  return result.hasPublisherGroupId;
+  return _builderResult.hasPublisherGroupId;
 }
 - (uint32_t) publisherGroupId {
-  return result.publisherGroupId;
+  return _builderResult.publisherGroupId;
 }
 - (CMsgWebAPIKey_Builder*) setPublisherGroupId:(uint32_t) value {
-  result.hasPublisherGroupId = YES;
-  result.publisherGroupId = value;
+  _builderResult.hasPublisherGroupId = YES;
+  _builderResult.publisherGroupId = value;
   return self;
 }
 - (CMsgWebAPIKey_Builder*) clearPublisherGroupId {
-  result.hasPublisherGroupId = NO;
-  result.publisherGroupId = 0;
+  _builderResult.hasPublisherGroupId = NO;
+  _builderResult.publisherGroupId = 0;
   return self;
 }
 - (BOOL) hasKeyId {
-  return result.hasKeyId;
+  return _builderResult.hasKeyId;
 }
 - (uint32_t) keyId {
-  return result.keyId;
+  return _builderResult.keyId;
 }
 - (CMsgWebAPIKey_Builder*) setKeyId:(uint32_t) value {
-  result.hasKeyId = YES;
-  result.keyId = value;
+  _builderResult.hasKeyId = YES;
+  _builderResult.keyId = value;
   return self;
 }
 - (CMsgWebAPIKey_Builder*) clearKeyId {
-  result.hasKeyId = NO;
-  result.keyId = 0;
+  _builderResult.hasKeyId = NO;
+  _builderResult.keyId = 0;
   return self;
 }
 - (BOOL) hasDomain {
-  return result.hasDomain;
+  return _builderResult.hasDomain;
 }
 - (NSString*) domain {
-  return result.domain;
+  return _builderResult.domain;
 }
 - (CMsgWebAPIKey_Builder*) setDomain:(NSString*) value {
-  result.hasDomain = YES;
-  result.domain = value;
+  _builderResult.hasDomain = YES;
+  _builderResult.domain = value;
   return self;
 }
 - (CMsgWebAPIKey_Builder*) clearDomain {
-  result.hasDomain = NO;
-  result.domain = @"";
+  _builderResult.hasDomain = NO;
+  _builderResult.domain = @"";
   return self;
 }
 @end
@@ -942,35 +942,35 @@ static CMsgHttpRequest_RequestHeader* defaultCMsgHttpRequest_RequestHeaderInstan
   }
 }
 - (BOOL) hasName {
-  return result.hasName;
+  return _builderResult.hasName;
 }
 - (NSString*) name {
-  return result.name;
+  return _builderResult.name;
 }
 - (CMsgHttpRequest_RequestHeader_Builder*) setName:(NSString*) value {
-  result.hasName = YES;
-  result.name = value;
+  _builderResult.hasName = YES;
+  _builderResult.name = value;
   return self;
 }
 - (CMsgHttpRequest_RequestHeader_Builder*) clearName {
-  result.hasName = NO;
-  result.name = @"";
+  _builderResult.hasName = NO;
+  _builderResult.name = @"";
   return self;
 }
 - (BOOL) hasValue {
-  return result.hasValue;
+  return _builderResult.hasValue;
 }
 - (NSString*) value {
-  return result.value;
+  return _builderResult.value;
 }
 - (CMsgHttpRequest_RequestHeader_Builder*) setValue:(NSString*) value {
-  result.hasValue = YES;
-  result.value = value;
+  _builderResult.hasValue = YES;
+  _builderResult.value = value;
   return self;
 }
 - (CMsgHttpRequest_RequestHeader_Builder*) clearValue {
-  result.hasValue = NO;
-  result.value = @"";
+  _builderResult.hasValue = NO;
+  _builderResult.value = @"";
   return self;
 }
 @end
@@ -1197,35 +1197,35 @@ static CMsgHttpRequest_QueryParam* defaultCMsgHttpRequest_QueryParamInstance = n
   }
 }
 - (BOOL) hasName {
-  return result.hasName;
+  return _builderResult.hasName;
 }
 - (NSString*) name {
-  return result.name;
+  return _builderResult.name;
 }
 - (CMsgHttpRequest_QueryParam_Builder*) setName:(NSString*) value {
-  result.hasName = YES;
-  result.name = value;
+  _builderResult.hasName = YES;
+  _builderResult.name = value;
   return self;
 }
 - (CMsgHttpRequest_QueryParam_Builder*) clearName {
-  result.hasName = NO;
-  result.name = @"";
+  _builderResult.hasName = NO;
+  _builderResult.name = @"";
   return self;
 }
 - (BOOL) hasValue {
-  return result.hasValue;
+  return _builderResult.hasValue;
 }
 - (NSData*) value {
-  return result.value;
+  return _builderResult.value;
 }
 - (CMsgHttpRequest_QueryParam_Builder*) setValue:(NSData*) value {
-  result.hasValue = YES;
-  result.value = value;
+  _builderResult.hasValue = YES;
+  _builderResult.value = value;
   return self;
 }
 - (CMsgHttpRequest_QueryParam_Builder*) clearValue {
-  result.hasValue = NO;
-  result.value = [NSData data];
+  _builderResult.hasValue = NO;
+  _builderResult.value = [NSData data];
   return self;
 }
 @end
@@ -1282,24 +1282,24 @@ static CMsgHttpRequest_QueryParam* defaultCMsgHttpRequest_QueryParamInstance = n
     [self setUrl:other.url];
   }
   if (other.headersArray.count > 0) {
-    if (result.headersArray == nil) {
-      result.headersArray = [[other.headersArray copyWithZone:[other.headersArray zone]] autorelease];
+    if (_builderResult.headersArray == nil) {
+      _builderResult.headersArray = [[other.headersArray copyWithZone:[other.headersArray zone]] autorelease];
     } else {
-      [result.headersArray appendArray:other.headersArray];
+      [_builderResult.headersArray appendArray:other.headersArray];
     }
   }
   if (other.getParamsArray.count > 0) {
-    if (result.getParamsArray == nil) {
-      result.getParamsArray = [[other.getParamsArray copyWithZone:[other.getParamsArray zone]] autorelease];
+    if (_builderResult.getParamsArray == nil) {
+      _builderResult.getParamsArray = [[other.getParamsArray copyWithZone:[other.getParamsArray zone]] autorelease];
     } else {
-      [result.getParamsArray appendArray:other.getParamsArray];
+      [_builderResult.getParamsArray appendArray:other.getParamsArray];
     }
   }
   if (other.postParamsArray.count > 0) {
-    if (result.postParamsArray == nil) {
-      result.postParamsArray = [[other.postParamsArray copyWithZone:[other.postParamsArray zone]] autorelease];
+    if (_builderResult.postParamsArray == nil) {
+      _builderResult.postParamsArray = [[other.postParamsArray copyWithZone:[other.postParamsArray zone]] autorelease];
     } else {
-      [result.postParamsArray appendArray:other.postParamsArray];
+      [_builderResult.postParamsArray appendArray:other.postParamsArray];
     }
   }
   if (other.hasBody) {
@@ -1364,142 +1364,142 @@ static CMsgHttpRequest_QueryParam* defaultCMsgHttpRequest_QueryParamInstance = n
   }
 }
 - (BOOL) hasRequestMethod {
-  return result.hasRequestMethod;
+  return _builderResult.hasRequestMethod;
 }
 - (uint32_t) requestMethod {
-  return result.requestMethod;
+  return _builderResult.requestMethod;
 }
 - (CMsgHttpRequest_Builder*) setRequestMethod:(uint32_t) value {
-  result.hasRequestMethod = YES;
-  result.requestMethod = value;
+  _builderResult.hasRequestMethod = YES;
+  _builderResult.requestMethod = value;
   return self;
 }
 - (CMsgHttpRequest_Builder*) clearRequestMethod {
-  result.hasRequestMethod = NO;
-  result.requestMethod = 0;
+  _builderResult.hasRequestMethod = NO;
+  _builderResult.requestMethod = 0;
   return self;
 }
 - (BOOL) hasHostname {
-  return result.hasHostname;
+  return _builderResult.hasHostname;
 }
 - (NSString*) hostname {
-  return result.hostname;
+  return _builderResult.hostname;
 }
 - (CMsgHttpRequest_Builder*) setHostname:(NSString*) value {
-  result.hasHostname = YES;
-  result.hostname = value;
+  _builderResult.hasHostname = YES;
+  _builderResult.hostname = value;
   return self;
 }
 - (CMsgHttpRequest_Builder*) clearHostname {
-  result.hasHostname = NO;
-  result.hostname = @"";
+  _builderResult.hasHostname = NO;
+  _builderResult.hostname = @"";
   return self;
 }
 - (BOOL) hasUrl {
-  return result.hasUrl;
+  return _builderResult.hasUrl;
 }
 - (NSString*) url {
-  return result.url;
+  return _builderResult.url;
 }
 - (CMsgHttpRequest_Builder*) setUrl:(NSString*) value {
-  result.hasUrl = YES;
-  result.url = value;
+  _builderResult.hasUrl = YES;
+  _builderResult.url = value;
   return self;
 }
 - (CMsgHttpRequest_Builder*) clearUrl {
-  result.hasUrl = NO;
-  result.url = @"";
+  _builderResult.hasUrl = NO;
+  _builderResult.url = @"";
   return self;
 }
 - (PBAppendableArray *)headers {
-  return result.headersArray;
+  return _builderResult.headersArray;
 }
 - (CMsgHttpRequest_RequestHeader*)headersAtIndex:(NSUInteger)index {
-  return [result headersAtIndex:index];
+  return [_builderResult headersAtIndex:index];
 }
 - (CMsgHttpRequest_Builder *)addHeaders:(CMsgHttpRequest_RequestHeader*)value {
-  if (result.headersArray == nil) {
-    result.headersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.headersArray == nil) {
+    _builderResult.headersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.headersArray addObject:value];
+  [_builderResult.headersArray addObject:value];
   return self;
 }
 - (CMsgHttpRequest_Builder *)setHeadersArray:(NSArray *)array {
-  result.headersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.headersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgHttpRequest_Builder *)setHeadersValues:(const CMsgHttpRequest_RequestHeader* *)values count:(NSUInteger)count {
-  result.headersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.headersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgHttpRequest_Builder *)clearHeaders {
-  result.headersArray = nil;
+  _builderResult.headersArray = nil;
   return self;
 }
 - (PBAppendableArray *)getParams {
-  return result.getParamsArray;
+  return _builderResult.getParamsArray;
 }
 - (CMsgHttpRequest_QueryParam*)getParamsAtIndex:(NSUInteger)index {
-  return [result getParamsAtIndex:index];
+  return [_builderResult getParamsAtIndex:index];
 }
 - (CMsgHttpRequest_Builder *)addGetParams:(CMsgHttpRequest_QueryParam*)value {
-  if (result.getParamsArray == nil) {
-    result.getParamsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.getParamsArray == nil) {
+    _builderResult.getParamsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.getParamsArray addObject:value];
+  [_builderResult.getParamsArray addObject:value];
   return self;
 }
 - (CMsgHttpRequest_Builder *)setGetParamsArray:(NSArray *)array {
-  result.getParamsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.getParamsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgHttpRequest_Builder *)setGetParamsValues:(const CMsgHttpRequest_QueryParam* *)values count:(NSUInteger)count {
-  result.getParamsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.getParamsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgHttpRequest_Builder *)clearGetParams {
-  result.getParamsArray = nil;
+  _builderResult.getParamsArray = nil;
   return self;
 }
 - (PBAppendableArray *)postParams {
-  return result.postParamsArray;
+  return _builderResult.postParamsArray;
 }
 - (CMsgHttpRequest_QueryParam*)postParamsAtIndex:(NSUInteger)index {
-  return [result postParamsAtIndex:index];
+  return [_builderResult postParamsAtIndex:index];
 }
 - (CMsgHttpRequest_Builder *)addPostParams:(CMsgHttpRequest_QueryParam*)value {
-  if (result.postParamsArray == nil) {
-    result.postParamsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.postParamsArray == nil) {
+    _builderResult.postParamsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.postParamsArray addObject:value];
+  [_builderResult.postParamsArray addObject:value];
   return self;
 }
 - (CMsgHttpRequest_Builder *)setPostParamsArray:(NSArray *)array {
-  result.postParamsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.postParamsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgHttpRequest_Builder *)setPostParamsValues:(const CMsgHttpRequest_QueryParam* *)values count:(NSUInteger)count {
-  result.postParamsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.postParamsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgHttpRequest_Builder *)clearPostParams {
-  result.postParamsArray = nil;
+  _builderResult.postParamsArray = nil;
   return self;
 }
 - (BOOL) hasBody {
-  return result.hasBody;
+  return _builderResult.hasBody;
 }
 - (NSData*) body {
-  return result.body;
+  return _builderResult.body;
 }
 - (CMsgHttpRequest_Builder*) setBody:(NSData*) value {
-  result.hasBody = YES;
-  result.body = value;
+  _builderResult.hasBody = YES;
+  _builderResult.body = value;
   return self;
 }
 - (CMsgHttpRequest_Builder*) clearBody {
-  result.hasBody = NO;
-  result.body = [NSData data];
+  _builderResult.hasBody = NO;
+  _builderResult.body = [NSData data];
   return self;
 }
 @end
@@ -1895,143 +1895,143 @@ static CMsgWebAPIRequest* defaultCMsgWebAPIRequestInstance = nil;
   }
 }
 - (BOOL) hasUnusedJobName {
-  return result.hasUnusedJobName;
+  return _builderResult.hasUnusedJobName;
 }
 - (NSString*) unusedJobName {
-  return result.unusedJobName;
+  return _builderResult.unusedJobName;
 }
 - (CMsgWebAPIRequest_Builder*) setUnusedJobName:(NSString*) value {
-  result.hasUnusedJobName = YES;
-  result.unusedJobName = value;
+  _builderResult.hasUnusedJobName = YES;
+  _builderResult.unusedJobName = value;
   return self;
 }
 - (CMsgWebAPIRequest_Builder*) clearUnusedJobName {
-  result.hasUnusedJobName = NO;
-  result.unusedJobName = @"";
+  _builderResult.hasUnusedJobName = NO;
+  _builderResult.unusedJobName = @"";
   return self;
 }
 - (BOOL) hasInterfaceName {
-  return result.hasInterfaceName;
+  return _builderResult.hasInterfaceName;
 }
 - (NSString*) interfaceName {
-  return result.interfaceName;
+  return _builderResult.interfaceName;
 }
 - (CMsgWebAPIRequest_Builder*) setInterfaceName:(NSString*) value {
-  result.hasInterfaceName = YES;
-  result.interfaceName = value;
+  _builderResult.hasInterfaceName = YES;
+  _builderResult.interfaceName = value;
   return self;
 }
 - (CMsgWebAPIRequest_Builder*) clearInterfaceName {
-  result.hasInterfaceName = NO;
-  result.interfaceName = @"";
+  _builderResult.hasInterfaceName = NO;
+  _builderResult.interfaceName = @"";
   return self;
 }
 - (BOOL) hasMethodName {
-  return result.hasMethodName;
+  return _builderResult.hasMethodName;
 }
 - (NSString*) methodName {
-  return result.methodName;
+  return _builderResult.methodName;
 }
 - (CMsgWebAPIRequest_Builder*) setMethodName:(NSString*) value {
-  result.hasMethodName = YES;
-  result.methodName = value;
+  _builderResult.hasMethodName = YES;
+  _builderResult.methodName = value;
   return self;
 }
 - (CMsgWebAPIRequest_Builder*) clearMethodName {
-  result.hasMethodName = NO;
-  result.methodName = @"";
+  _builderResult.hasMethodName = NO;
+  _builderResult.methodName = @"";
   return self;
 }
 - (BOOL) hasVersion {
-  return result.hasVersion;
+  return _builderResult.hasVersion;
 }
 - (uint32_t) version {
-  return result.version;
+  return _builderResult.version;
 }
 - (CMsgWebAPIRequest_Builder*) setVersion:(uint32_t) value {
-  result.hasVersion = YES;
-  result.version = value;
+  _builderResult.hasVersion = YES;
+  _builderResult.version = value;
   return self;
 }
 - (CMsgWebAPIRequest_Builder*) clearVersion {
-  result.hasVersion = NO;
-  result.version = 0;
+  _builderResult.hasVersion = NO;
+  _builderResult.version = 0;
   return self;
 }
 - (BOOL) hasApiKey {
-  return result.hasApiKey;
+  return _builderResult.hasApiKey;
 }
 - (CMsgWebAPIKey*) apiKey {
-  return result.apiKey;
+  return _builderResult.apiKey;
 }
 - (CMsgWebAPIRequest_Builder*) setApiKey:(CMsgWebAPIKey*) value {
-  result.hasApiKey = YES;
-  result.apiKey = value;
+  _builderResult.hasApiKey = YES;
+  _builderResult.apiKey = value;
   return self;
 }
 - (CMsgWebAPIRequest_Builder*) setApiKeyBuilder:(CMsgWebAPIKey_Builder*) builderForValue {
   return [self setApiKey:[builderForValue build]];
 }
 - (CMsgWebAPIRequest_Builder*) mergeApiKey:(CMsgWebAPIKey*) value {
-  if (result.hasApiKey &&
-      result.apiKey != [CMsgWebAPIKey defaultInstance]) {
-    result.apiKey =
-      [[[CMsgWebAPIKey builderWithPrototype:result.apiKey] mergeFrom:value] buildPartial];
+  if (_builderResult.hasApiKey &&
+      _builderResult.apiKey != [CMsgWebAPIKey defaultInstance]) {
+    _builderResult.apiKey =
+      [[[CMsgWebAPIKey builderWithPrototype:_builderResult.apiKey] mergeFrom:value] buildPartial];
   } else {
-    result.apiKey = value;
+    _builderResult.apiKey = value;
   }
-  result.hasApiKey = YES;
+  _builderResult.hasApiKey = YES;
   return self;
 }
 - (CMsgWebAPIRequest_Builder*) clearApiKey {
-  result.hasApiKey = NO;
-  result.apiKey = [CMsgWebAPIKey defaultInstance];
+  _builderResult.hasApiKey = NO;
+  _builderResult.apiKey = [CMsgWebAPIKey defaultInstance];
   return self;
 }
 - (BOOL) hasRequest {
-  return result.hasRequest;
+  return _builderResult.hasRequest;
 }
 - (CMsgHttpRequest*) request {
-  return result.request;
+  return _builderResult.request;
 }
 - (CMsgWebAPIRequest_Builder*) setRequest:(CMsgHttpRequest*) value {
-  result.hasRequest = YES;
-  result.request = value;
+  _builderResult.hasRequest = YES;
+  _builderResult.request = value;
   return self;
 }
 - (CMsgWebAPIRequest_Builder*) setRequestBuilder:(CMsgHttpRequest_Builder*) builderForValue {
   return [self setRequest:[builderForValue build]];
 }
 - (CMsgWebAPIRequest_Builder*) mergeRequest:(CMsgHttpRequest*) value {
-  if (result.hasRequest &&
-      result.request != [CMsgHttpRequest defaultInstance]) {
-    result.request =
-      [[[CMsgHttpRequest builderWithPrototype:result.request] mergeFrom:value] buildPartial];
+  if (_builderResult.hasRequest &&
+      _builderResult.request != [CMsgHttpRequest defaultInstance]) {
+    _builderResult.request =
+      [[[CMsgHttpRequest builderWithPrototype:_builderResult.request] mergeFrom:value] buildPartial];
   } else {
-    result.request = value;
+    _builderResult.request = value;
   }
-  result.hasRequest = YES;
+  _builderResult.hasRequest = YES;
   return self;
 }
 - (CMsgWebAPIRequest_Builder*) clearRequest {
-  result.hasRequest = NO;
-  result.request = [CMsgHttpRequest defaultInstance];
+  _builderResult.hasRequest = NO;
+  _builderResult.request = [CMsgHttpRequest defaultInstance];
   return self;
 }
 - (BOOL) hasRoutingAppId {
-  return result.hasRoutingAppId;
+  return _builderResult.hasRoutingAppId;
 }
 - (uint32_t) routingAppId {
-  return result.routingAppId;
+  return _builderResult.routingAppId;
 }
 - (CMsgWebAPIRequest_Builder*) setRoutingAppId:(uint32_t) value {
-  result.hasRoutingAppId = YES;
-  result.routingAppId = value;
+  _builderResult.hasRoutingAppId = YES;
+  _builderResult.routingAppId = value;
   return self;
 }
 - (CMsgWebAPIRequest_Builder*) clearRoutingAppId {
-  result.hasRoutingAppId = NO;
-  result.routingAppId = 0;
+  _builderResult.hasRoutingAppId = NO;
+  _builderResult.routingAppId = 0;
   return self;
 }
 @end
@@ -2424,35 +2424,35 @@ static CMsgHttpResponse_ResponseHeader* defaultCMsgHttpResponse_ResponseHeaderIn
   }
 }
 - (BOOL) hasName {
-  return result.hasName;
+  return _builderResult.hasName;
 }
 - (NSString*) name {
-  return result.name;
+  return _builderResult.name;
 }
 - (CMsgHttpResponse_ResponseHeader_Builder*) setName:(NSString*) value {
-  result.hasName = YES;
-  result.name = value;
+  _builderResult.hasName = YES;
+  _builderResult.name = value;
   return self;
 }
 - (CMsgHttpResponse_ResponseHeader_Builder*) clearName {
-  result.hasName = NO;
-  result.name = @"";
+  _builderResult.hasName = NO;
+  _builderResult.name = @"";
   return self;
 }
 - (BOOL) hasValue {
-  return result.hasValue;
+  return _builderResult.hasValue;
 }
 - (NSString*) value {
-  return result.value;
+  return _builderResult.value;
 }
 - (CMsgHttpResponse_ResponseHeader_Builder*) setValue:(NSString*) value {
-  result.hasValue = YES;
-  result.value = value;
+  _builderResult.hasValue = YES;
+  _builderResult.value = value;
   return self;
 }
 - (CMsgHttpResponse_ResponseHeader_Builder*) clearValue {
-  result.hasValue = NO;
-  result.value = @"";
+  _builderResult.hasValue = NO;
+  _builderResult.value = @"";
   return self;
 }
 @end
@@ -2503,10 +2503,10 @@ static CMsgHttpResponse_ResponseHeader* defaultCMsgHttpResponse_ResponseHeaderIn
     [self setStatusCode:other.statusCode];
   }
   if (other.headersArray.count > 0) {
-    if (result.headersArray == nil) {
-      result.headersArray = [[other.headersArray copyWithZone:[other.headersArray zone]] autorelease];
+    if (_builderResult.headersArray == nil) {
+      _builderResult.headersArray = [[other.headersArray copyWithZone:[other.headersArray zone]] autorelease];
     } else {
-      [result.headersArray appendArray:other.headersArray];
+      [_builderResult.headersArray appendArray:other.headersArray];
     }
   }
   if (other.hasBody) {
@@ -2551,60 +2551,60 @@ static CMsgHttpResponse_ResponseHeader* defaultCMsgHttpResponse_ResponseHeaderIn
   }
 }
 - (BOOL) hasStatusCode {
-  return result.hasStatusCode;
+  return _builderResult.hasStatusCode;
 }
 - (uint32_t) statusCode {
-  return result.statusCode;
+  return _builderResult.statusCode;
 }
 - (CMsgHttpResponse_Builder*) setStatusCode:(uint32_t) value {
-  result.hasStatusCode = YES;
-  result.statusCode = value;
+  _builderResult.hasStatusCode = YES;
+  _builderResult.statusCode = value;
   return self;
 }
 - (CMsgHttpResponse_Builder*) clearStatusCode {
-  result.hasStatusCode = NO;
-  result.statusCode = 0;
+  _builderResult.hasStatusCode = NO;
+  _builderResult.statusCode = 0;
   return self;
 }
 - (PBAppendableArray *)headers {
-  return result.headersArray;
+  return _builderResult.headersArray;
 }
 - (CMsgHttpResponse_ResponseHeader*)headersAtIndex:(NSUInteger)index {
-  return [result headersAtIndex:index];
+  return [_builderResult headersAtIndex:index];
 }
 - (CMsgHttpResponse_Builder *)addHeaders:(CMsgHttpResponse_ResponseHeader*)value {
-  if (result.headersArray == nil) {
-    result.headersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.headersArray == nil) {
+    _builderResult.headersArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.headersArray addObject:value];
+  [_builderResult.headersArray addObject:value];
   return self;
 }
 - (CMsgHttpResponse_Builder *)setHeadersArray:(NSArray *)array {
-  result.headersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.headersArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgHttpResponse_Builder *)setHeadersValues:(const CMsgHttpResponse_ResponseHeader* *)values count:(NSUInteger)count {
-  result.headersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.headersArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgHttpResponse_Builder *)clearHeaders {
-  result.headersArray = nil;
+  _builderResult.headersArray = nil;
   return self;
 }
 - (BOOL) hasBody {
-  return result.hasBody;
+  return _builderResult.hasBody;
 }
 - (NSData*) body {
-  return result.body;
+  return _builderResult.body;
 }
 - (CMsgHttpResponse_Builder*) setBody:(NSData*) value {
-  result.hasBody = YES;
-  result.body = value;
+  _builderResult.hasBody = YES;
+  _builderResult.body = value;
   return self;
 }
 - (CMsgHttpResponse_Builder*) clearBody {
-  result.hasBody = NO;
-  result.body = [NSData data];
+  _builderResult.hasBody = NO;
+  _builderResult.body = [NSData data];
   return self;
 }
 @end
@@ -2830,35 +2830,35 @@ static CMsgAMFindAccounts* defaultCMsgAMFindAccountsInstance = nil;
   }
 }
 - (BOOL) hasSearchType {
-  return result.hasSearchType;
+  return _builderResult.hasSearchType;
 }
 - (uint32_t) searchType {
-  return result.searchType;
+  return _builderResult.searchType;
 }
 - (CMsgAMFindAccounts_Builder*) setSearchType:(uint32_t) value {
-  result.hasSearchType = YES;
-  result.searchType = value;
+  _builderResult.hasSearchType = YES;
+  _builderResult.searchType = value;
   return self;
 }
 - (CMsgAMFindAccounts_Builder*) clearSearchType {
-  result.hasSearchType = NO;
-  result.searchType = 0;
+  _builderResult.hasSearchType = NO;
+  _builderResult.searchType = 0;
   return self;
 }
 - (BOOL) hasSearchString {
-  return result.hasSearchString;
+  return _builderResult.hasSearchString;
 }
 - (NSString*) searchString {
-  return result.searchString;
+  return _builderResult.searchString;
 }
 - (CMsgAMFindAccounts_Builder*) setSearchString:(NSString*) value {
-  result.hasSearchString = YES;
-  result.searchString = value;
+  _builderResult.hasSearchString = YES;
+  _builderResult.searchString = value;
   return self;
 }
 - (CMsgAMFindAccounts_Builder*) clearSearchString {
-  result.hasSearchString = NO;
-  result.searchString = @"";
+  _builderResult.hasSearchString = NO;
+  _builderResult.searchString = @"";
   return self;
 }
 @end
@@ -3030,10 +3030,10 @@ static CMsgAMFindAccountsResponse* defaultCMsgAMFindAccountsResponseInstance = n
     return self;
   }
   if (other.steamIdArray.count > 0) {
-    if (result.steamIdArray == nil) {
-      result.steamIdArray = [[other.steamIdArray copyWithZone:[other.steamIdArray zone]] autorelease];
+    if (_builderResult.steamIdArray == nil) {
+      _builderResult.steamIdArray = [[other.steamIdArray copyWithZone:[other.steamIdArray zone]] autorelease];
     } else {
-      [result.steamIdArray appendArray:other.steamIdArray];
+      [_builderResult.steamIdArray appendArray:other.steamIdArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -3065,28 +3065,28 @@ static CMsgAMFindAccountsResponse* defaultCMsgAMFindAccountsResponseInstance = n
   }
 }
 - (PBAppendableArray *)steamId {
-  return result.steamIdArray;
+  return _builderResult.steamIdArray;
 }
 - (uint64_t)steamIdAtIndex:(NSUInteger)index {
-  return [result steamIdAtIndex:index];
+  return [_builderResult steamIdAtIndex:index];
 }
 - (CMsgAMFindAccountsResponse_Builder *)addSteamId:(uint64_t)value {
-  if (result.steamIdArray == nil) {
-    result.steamIdArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
+  if (_builderResult.steamIdArray == nil) {
+    _builderResult.steamIdArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
   }
-  [result.steamIdArray addUint64:value];
+  [_builderResult.steamIdArray addUint64:value];
   return self;
 }
 - (CMsgAMFindAccountsResponse_Builder *)setSteamIdArray:(NSArray *)array {
-  result.steamIdArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
+  _builderResult.steamIdArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgAMFindAccountsResponse_Builder *)setSteamIdValues:(const uint64_t *)values count:(NSUInteger)count {
-  result.steamIdArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
+  _builderResult.steamIdArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgAMFindAccountsResponse_Builder *)clearSteamId {
-  result.steamIdArray = nil;
+  _builderResult.steamIdArray = nil;
   return self;
 }
 @end
@@ -3467,115 +3467,115 @@ static CMsgNotifyWatchdog* defaultCMsgNotifyWatchdogInstance = nil;
   }
 }
 - (BOOL) hasSource {
-  return result.hasSource;
+  return _builderResult.hasSource;
 }
 - (uint32_t) source {
-  return result.source;
+  return _builderResult.source;
 }
 - (CMsgNotifyWatchdog_Builder*) setSource:(uint32_t) value {
-  result.hasSource = YES;
-  result.source = value;
+  _builderResult.hasSource = YES;
+  _builderResult.source = value;
   return self;
 }
 - (CMsgNotifyWatchdog_Builder*) clearSource {
-  result.hasSource = NO;
-  result.source = 0;
+  _builderResult.hasSource = NO;
+  _builderResult.source = 0;
   return self;
 }
 - (BOOL) hasAlertType {
-  return result.hasAlertType;
+  return _builderResult.hasAlertType;
 }
 - (uint32_t) alertType {
-  return result.alertType;
+  return _builderResult.alertType;
 }
 - (CMsgNotifyWatchdog_Builder*) setAlertType:(uint32_t) value {
-  result.hasAlertType = YES;
-  result.alertType = value;
+  _builderResult.hasAlertType = YES;
+  _builderResult.alertType = value;
   return self;
 }
 - (CMsgNotifyWatchdog_Builder*) clearAlertType {
-  result.hasAlertType = NO;
-  result.alertType = 0;
+  _builderResult.hasAlertType = NO;
+  _builderResult.alertType = 0;
   return self;
 }
 - (BOOL) hasAlertDestination {
-  return result.hasAlertDestination;
+  return _builderResult.hasAlertDestination;
 }
 - (uint32_t) alertDestination {
-  return result.alertDestination;
+  return _builderResult.alertDestination;
 }
 - (CMsgNotifyWatchdog_Builder*) setAlertDestination:(uint32_t) value {
-  result.hasAlertDestination = YES;
-  result.alertDestination = value;
+  _builderResult.hasAlertDestination = YES;
+  _builderResult.alertDestination = value;
   return self;
 }
 - (CMsgNotifyWatchdog_Builder*) clearAlertDestination {
-  result.hasAlertDestination = NO;
-  result.alertDestination = 0;
+  _builderResult.hasAlertDestination = NO;
+  _builderResult.alertDestination = 0;
   return self;
 }
 - (BOOL) hasCritical {
-  return result.hasCritical;
+  return _builderResult.hasCritical;
 }
 - (BOOL) critical {
-  return result.critical;
+  return _builderResult.critical;
 }
 - (CMsgNotifyWatchdog_Builder*) setCritical:(BOOL) value {
-  result.hasCritical = YES;
-  result.critical = value;
+  _builderResult.hasCritical = YES;
+  _builderResult.critical = value;
   return self;
 }
 - (CMsgNotifyWatchdog_Builder*) clearCritical {
-  result.hasCritical = NO;
-  result.critical = NO;
+  _builderResult.hasCritical = NO;
+  _builderResult.critical = NO;
   return self;
 }
 - (BOOL) hasTime {
-  return result.hasTime;
+  return _builderResult.hasTime;
 }
 - (uint32_t) time {
-  return result.time;
+  return _builderResult.time;
 }
 - (CMsgNotifyWatchdog_Builder*) setTime:(uint32_t) value {
-  result.hasTime = YES;
-  result.time = value;
+  _builderResult.hasTime = YES;
+  _builderResult.time = value;
   return self;
 }
 - (CMsgNotifyWatchdog_Builder*) clearTime {
-  result.hasTime = NO;
-  result.time = 0;
+  _builderResult.hasTime = NO;
+  _builderResult.time = 0;
   return self;
 }
 - (BOOL) hasAppid {
-  return result.hasAppid;
+  return _builderResult.hasAppid;
 }
 - (uint32_t) appid {
-  return result.appid;
+  return _builderResult.appid;
 }
 - (CMsgNotifyWatchdog_Builder*) setAppid:(uint32_t) value {
-  result.hasAppid = YES;
-  result.appid = value;
+  _builderResult.hasAppid = YES;
+  _builderResult.appid = value;
   return self;
 }
 - (CMsgNotifyWatchdog_Builder*) clearAppid {
-  result.hasAppid = NO;
-  result.appid = 0;
+  _builderResult.hasAppid = NO;
+  _builderResult.appid = 0;
   return self;
 }
 - (BOOL) hasText {
-  return result.hasText;
+  return _builderResult.hasText;
 }
 - (NSString*) text {
-  return result.text;
+  return _builderResult.text;
 }
 - (CMsgNotifyWatchdog_Builder*) setText:(NSString*) value {
-  result.hasText = YES;
-  result.text = value;
+  _builderResult.hasText = YES;
+  _builderResult.text = value;
   return self;
 }
 - (CMsgNotifyWatchdog_Builder*) clearText {
-  result.hasText = NO;
-  result.text = @"";
+  _builderResult.hasText = NO;
+  _builderResult.text = @"";
   return self;
 }
 @end
@@ -3770,19 +3770,19 @@ static CMsgAMGetLicenses* defaultCMsgAMGetLicensesInstance = nil;
   }
 }
 - (BOOL) hasSteamid {
-  return result.hasSteamid;
+  return _builderResult.hasSteamid;
 }
 - (uint64_t) steamid {
-  return result.steamid;
+  return _builderResult.steamid;
 }
 - (CMsgAMGetLicenses_Builder*) setSteamid:(uint64_t) value {
-  result.hasSteamid = YES;
-  result.steamid = value;
+  _builderResult.hasSteamid = YES;
+  _builderResult.steamid = value;
   return self;
 }
 - (CMsgAMGetLicenses_Builder*) clearSteamid {
-  result.hasSteamid = NO;
-  result.steamid = 0L;
+  _builderResult.hasSteamid = NO;
+  _builderResult.steamid = 0L;
   return self;
 }
 @end
@@ -4007,35 +4007,35 @@ static CMsgPackageLicense* defaultCMsgPackageLicenseInstance = nil;
   }
 }
 - (BOOL) hasPackageId {
-  return result.hasPackageId;
+  return _builderResult.hasPackageId;
 }
 - (uint32_t) packageId {
-  return result.packageId;
+  return _builderResult.packageId;
 }
 - (CMsgPackageLicense_Builder*) setPackageId:(uint32_t) value {
-  result.hasPackageId = YES;
-  result.packageId = value;
+  _builderResult.hasPackageId = YES;
+  _builderResult.packageId = value;
   return self;
 }
 - (CMsgPackageLicense_Builder*) clearPackageId {
-  result.hasPackageId = NO;
-  result.packageId = 0;
+  _builderResult.hasPackageId = NO;
+  _builderResult.packageId = 0;
   return self;
 }
 - (BOOL) hasTimeCreated {
-  return result.hasTimeCreated;
+  return _builderResult.hasTimeCreated;
 }
 - (uint32_t) timeCreated {
-  return result.timeCreated;
+  return _builderResult.timeCreated;
 }
 - (CMsgPackageLicense_Builder*) setTimeCreated:(uint32_t) value {
-  result.hasTimeCreated = YES;
-  result.timeCreated = value;
+  _builderResult.hasTimeCreated = YES;
+  _builderResult.timeCreated = value;
   return self;
 }
 - (CMsgPackageLicense_Builder*) clearTimeCreated {
-  result.hasTimeCreated = NO;
-  result.timeCreated = 0;
+  _builderResult.hasTimeCreated = NO;
+  _builderResult.timeCreated = 0;
   return self;
 }
 @end
@@ -4225,10 +4225,10 @@ static CMsgAMGetLicensesResponse* defaultCMsgAMGetLicensesResponseInstance = nil
     return self;
   }
   if (other.licenseArray.count > 0) {
-    if (result.licenseArray == nil) {
-      result.licenseArray = [[other.licenseArray copyWithZone:[other.licenseArray zone]] autorelease];
+    if (_builderResult.licenseArray == nil) {
+      _builderResult.licenseArray = [[other.licenseArray copyWithZone:[other.licenseArray zone]] autorelease];
     } else {
-      [result.licenseArray appendArray:other.licenseArray];
+      [_builderResult.licenseArray appendArray:other.licenseArray];
     }
   }
   if (other.hasResult) {
@@ -4269,44 +4269,44 @@ static CMsgAMGetLicensesResponse* defaultCMsgAMGetLicensesResponseInstance = nil
   }
 }
 - (PBAppendableArray *)license {
-  return result.licenseArray;
+  return _builderResult.licenseArray;
 }
 - (CMsgPackageLicense*)licenseAtIndex:(NSUInteger)index {
-  return [result licenseAtIndex:index];
+  return [_builderResult licenseAtIndex:index];
 }
 - (CMsgAMGetLicensesResponse_Builder *)addLicense:(CMsgPackageLicense*)value {
-  if (result.licenseArray == nil) {
-    result.licenseArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.licenseArray == nil) {
+    _builderResult.licenseArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.licenseArray addObject:value];
+  [_builderResult.licenseArray addObject:value];
   return self;
 }
 - (CMsgAMGetLicensesResponse_Builder *)setLicenseArray:(NSArray *)array {
-  result.licenseArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.licenseArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgAMGetLicensesResponse_Builder *)setLicenseValues:(const CMsgPackageLicense* *)values count:(NSUInteger)count {
-  result.licenseArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.licenseArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgAMGetLicensesResponse_Builder *)clearLicense {
-  result.licenseArray = nil;
+  _builderResult.licenseArray = nil;
   return self;
 }
 - (BOOL) hasResult {
-  return result.hasResult;
+  return _builderResult.hasResult;
 }
 - (uint32_t) result {
-  return result.result;
+  return _builderResult.result;
 }
 - (CMsgAMGetLicensesResponse_Builder*) setResult:(uint32_t) value {
-  result.hasResult = YES;
-  result.result = value;
+  _builderResult.hasResult = YES;
+  _builderResult.result = value;
   return self;
 }
 - (CMsgAMGetLicensesResponse_Builder*) clearResult {
-  result.hasResult = NO;
-  result.result = 0;
+  _builderResult.hasResult = NO;
+  _builderResult.result = 0;
   return self;
 }
 @end
@@ -4533,10 +4533,10 @@ static CMsgAMGetUserGameStats* defaultCMsgAMGetUserGameStatsInstance = nil;
     [self setGameId:other.gameId];
   }
   if (other.statsArray.count > 0) {
-    if (result.statsArray == nil) {
-      result.statsArray = [[other.statsArray copyWithZone:[other.statsArray zone]] autorelease];
+    if (_builderResult.statsArray == nil) {
+      _builderResult.statsArray = [[other.statsArray copyWithZone:[other.statsArray zone]] autorelease];
     } else {
-      [result.statsArray appendArray:other.statsArray];
+      [_builderResult.statsArray appendArray:other.statsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -4576,60 +4576,60 @@ static CMsgAMGetUserGameStats* defaultCMsgAMGetUserGameStatsInstance = nil;
   }
 }
 - (BOOL) hasSteamId {
-  return result.hasSteamId;
+  return _builderResult.hasSteamId;
 }
 - (uint64_t) steamId {
-  return result.steamId;
+  return _builderResult.steamId;
 }
 - (CMsgAMGetUserGameStats_Builder*) setSteamId:(uint64_t) value {
-  result.hasSteamId = YES;
-  result.steamId = value;
+  _builderResult.hasSteamId = YES;
+  _builderResult.steamId = value;
   return self;
 }
 - (CMsgAMGetUserGameStats_Builder*) clearSteamId {
-  result.hasSteamId = NO;
-  result.steamId = 0L;
+  _builderResult.hasSteamId = NO;
+  _builderResult.steamId = 0L;
   return self;
 }
 - (BOOL) hasGameId {
-  return result.hasGameId;
+  return _builderResult.hasGameId;
 }
 - (uint64_t) gameId {
-  return result.gameId;
+  return _builderResult.gameId;
 }
 - (CMsgAMGetUserGameStats_Builder*) setGameId:(uint64_t) value {
-  result.hasGameId = YES;
-  result.gameId = value;
+  _builderResult.hasGameId = YES;
+  _builderResult.gameId = value;
   return self;
 }
 - (CMsgAMGetUserGameStats_Builder*) clearGameId {
-  result.hasGameId = NO;
-  result.gameId = 0L;
+  _builderResult.hasGameId = NO;
+  _builderResult.gameId = 0L;
   return self;
 }
 - (PBAppendableArray *)stats {
-  return result.statsArray;
+  return _builderResult.statsArray;
 }
 - (uint32_t)statsAtIndex:(NSUInteger)index {
-  return [result statsAtIndex:index];
+  return [_builderResult statsAtIndex:index];
 }
 - (CMsgAMGetUserGameStats_Builder *)addStats:(uint32_t)value {
-  if (result.statsArray == nil) {
-    result.statsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.statsArray == nil) {
+    _builderResult.statsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.statsArray addUint32:value];
+  [_builderResult.statsArray addUint32:value];
   return self;
 }
 - (CMsgAMGetUserGameStats_Builder *)setStatsArray:(NSArray *)array {
-  result.statsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.statsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgAMGetUserGameStats_Builder *)setStatsValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.statsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.statsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CMsgAMGetUserGameStats_Builder *)clearStats {
-  result.statsArray = nil;
+  _builderResult.statsArray = nil;
   return self;
 }
 @end
@@ -5068,35 +5068,35 @@ static CMsgAMGetUserGameStatsResponse_Stats* defaultCMsgAMGetUserGameStatsRespon
   }
 }
 - (BOOL) hasStatId {
-  return result.hasStatId;
+  return _builderResult.hasStatId;
 }
 - (uint32_t) statId {
-  return result.statId;
+  return _builderResult.statId;
 }
 - (CMsgAMGetUserGameStatsResponse_Stats_Builder*) setStatId:(uint32_t) value {
-  result.hasStatId = YES;
-  result.statId = value;
+  _builderResult.hasStatId = YES;
+  _builderResult.statId = value;
   return self;
 }
 - (CMsgAMGetUserGameStatsResponse_Stats_Builder*) clearStatId {
-  result.hasStatId = NO;
-  result.statId = 0;
+  _builderResult.hasStatId = NO;
+  _builderResult.statId = 0;
   return self;
 }
 - (BOOL) hasStatValue {
-  return result.hasStatValue;
+  return _builderResult.hasStatValue;
 }
 - (uint32_t) statValue {
-  return result.statValue;
+  return _builderResult.statValue;
 }
 - (CMsgAMGetUserGameStatsResponse_Stats_Builder*) setStatValue:(uint32_t) value {
-  result.hasStatValue = YES;
-  result.statValue = value;
+  _builderResult.hasStatValue = YES;
+  _builderResult.statValue = value;
   return self;
 }
 - (CMsgAMGetUserGameStatsResponse_Stats_Builder*) clearStatValue {
-  result.hasStatValue = NO;
-  result.statValue = 0;
+  _builderResult.hasStatValue = NO;
+  _builderResult.statValue = 0;
   return self;
 }
 @end
@@ -5351,51 +5351,51 @@ static CMsgAMGetUserGameStatsResponse_Achievement_Blocks* defaultCMsgAMGetUserGa
   }
 }
 - (BOOL) hasAchievementId {
-  return result.hasAchievementId;
+  return _builderResult.hasAchievementId;
 }
 - (uint32_t) achievementId {
-  return result.achievementId;
+  return _builderResult.achievementId;
 }
 - (CMsgAMGetUserGameStatsResponse_Achievement_Blocks_Builder*) setAchievementId:(uint32_t) value {
-  result.hasAchievementId = YES;
-  result.achievementId = value;
+  _builderResult.hasAchievementId = YES;
+  _builderResult.achievementId = value;
   return self;
 }
 - (CMsgAMGetUserGameStatsResponse_Achievement_Blocks_Builder*) clearAchievementId {
-  result.hasAchievementId = NO;
-  result.achievementId = 0;
+  _builderResult.hasAchievementId = NO;
+  _builderResult.achievementId = 0;
   return self;
 }
 - (BOOL) hasAchievementBitId {
-  return result.hasAchievementBitId;
+  return _builderResult.hasAchievementBitId;
 }
 - (uint32_t) achievementBitId {
-  return result.achievementBitId;
+  return _builderResult.achievementBitId;
 }
 - (CMsgAMGetUserGameStatsResponse_Achievement_Blocks_Builder*) setAchievementBitId:(uint32_t) value {
-  result.hasAchievementBitId = YES;
-  result.achievementBitId = value;
+  _builderResult.hasAchievementBitId = YES;
+  _builderResult.achievementBitId = value;
   return self;
 }
 - (CMsgAMGetUserGameStatsResponse_Achievement_Blocks_Builder*) clearAchievementBitId {
-  result.hasAchievementBitId = NO;
-  result.achievementBitId = 0;
+  _builderResult.hasAchievementBitId = NO;
+  _builderResult.achievementBitId = 0;
   return self;
 }
 - (BOOL) hasUnlockTime {
-  return result.hasUnlockTime;
+  return _builderResult.hasUnlockTime;
 }
 - (uint32_t) unlockTime {
-  return result.unlockTime;
+  return _builderResult.unlockTime;
 }
 - (CMsgAMGetUserGameStatsResponse_Achievement_Blocks_Builder*) setUnlockTime:(uint32_t) value {
-  result.hasUnlockTime = YES;
-  result.unlockTime = value;
+  _builderResult.hasUnlockTime = YES;
+  _builderResult.unlockTime = value;
   return self;
 }
 - (CMsgAMGetUserGameStatsResponse_Achievement_Blocks_Builder*) clearUnlockTime {
-  result.hasUnlockTime = NO;
-  result.unlockTime = 0;
+  _builderResult.hasUnlockTime = NO;
+  _builderResult.unlockTime = 0;
   return self;
 }
 @end
@@ -5452,17 +5452,17 @@ static CMsgAMGetUserGameStatsResponse_Achievement_Blocks* defaultCMsgAMGetUserGa
     [self setEresult:other.eresult];
   }
   if (other.statsArray.count > 0) {
-    if (result.statsArray == nil) {
-      result.statsArray = [[other.statsArray copyWithZone:[other.statsArray zone]] autorelease];
+    if (_builderResult.statsArray == nil) {
+      _builderResult.statsArray = [[other.statsArray copyWithZone:[other.statsArray zone]] autorelease];
     } else {
-      [result.statsArray appendArray:other.statsArray];
+      [_builderResult.statsArray appendArray:other.statsArray];
     }
   }
   if (other.achievementBlocksArray.count > 0) {
-    if (result.achievementBlocksArray == nil) {
-      result.achievementBlocksArray = [[other.achievementBlocksArray copyWithZone:[other.achievementBlocksArray zone]] autorelease];
+    if (_builderResult.achievementBlocksArray == nil) {
+      _builderResult.achievementBlocksArray = [[other.achievementBlocksArray copyWithZone:[other.achievementBlocksArray zone]] autorelease];
     } else {
-      [result.achievementBlocksArray appendArray:other.achievementBlocksArray];
+      [_builderResult.achievementBlocksArray appendArray:other.achievementBlocksArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -5514,101 +5514,101 @@ static CMsgAMGetUserGameStatsResponse_Achievement_Blocks* defaultCMsgAMGetUserGa
   }
 }
 - (BOOL) hasSteamId {
-  return result.hasSteamId;
+  return _builderResult.hasSteamId;
 }
 - (uint64_t) steamId {
-  return result.steamId;
+  return _builderResult.steamId;
 }
 - (CMsgAMGetUserGameStatsResponse_Builder*) setSteamId:(uint64_t) value {
-  result.hasSteamId = YES;
-  result.steamId = value;
+  _builderResult.hasSteamId = YES;
+  _builderResult.steamId = value;
   return self;
 }
 - (CMsgAMGetUserGameStatsResponse_Builder*) clearSteamId {
-  result.hasSteamId = NO;
-  result.steamId = 0L;
+  _builderResult.hasSteamId = NO;
+  _builderResult.steamId = 0L;
   return self;
 }
 - (BOOL) hasGameId {
-  return result.hasGameId;
+  return _builderResult.hasGameId;
 }
 - (uint64_t) gameId {
-  return result.gameId;
+  return _builderResult.gameId;
 }
 - (CMsgAMGetUserGameStatsResponse_Builder*) setGameId:(uint64_t) value {
-  result.hasGameId = YES;
-  result.gameId = value;
+  _builderResult.hasGameId = YES;
+  _builderResult.gameId = value;
   return self;
 }
 - (CMsgAMGetUserGameStatsResponse_Builder*) clearGameId {
-  result.hasGameId = NO;
-  result.gameId = 0L;
+  _builderResult.hasGameId = NO;
+  _builderResult.gameId = 0L;
   return self;
 }
 - (BOOL) hasEresult {
-  return result.hasEresult;
+  return _builderResult.hasEresult;
 }
 - (int32_t) eresult {
-  return result.eresult;
+  return _builderResult.eresult;
 }
 - (CMsgAMGetUserGameStatsResponse_Builder*) setEresult:(int32_t) value {
-  result.hasEresult = YES;
-  result.eresult = value;
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
   return self;
 }
 - (CMsgAMGetUserGameStatsResponse_Builder*) clearEresult {
-  result.hasEresult = NO;
-  result.eresult = 2;
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
   return self;
 }
 - (PBAppendableArray *)stats {
-  return result.statsArray;
+  return _builderResult.statsArray;
 }
 - (CMsgAMGetUserGameStatsResponse_Stats*)statsAtIndex:(NSUInteger)index {
-  return [result statsAtIndex:index];
+  return [_builderResult statsAtIndex:index];
 }
 - (CMsgAMGetUserGameStatsResponse_Builder *)addStats:(CMsgAMGetUserGameStatsResponse_Stats*)value {
-  if (result.statsArray == nil) {
-    result.statsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.statsArray == nil) {
+    _builderResult.statsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.statsArray addObject:value];
+  [_builderResult.statsArray addObject:value];
   return self;
 }
 - (CMsgAMGetUserGameStatsResponse_Builder *)setStatsArray:(NSArray *)array {
-  result.statsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.statsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgAMGetUserGameStatsResponse_Builder *)setStatsValues:(const CMsgAMGetUserGameStatsResponse_Stats* *)values count:(NSUInteger)count {
-  result.statsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.statsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgAMGetUserGameStatsResponse_Builder *)clearStats {
-  result.statsArray = nil;
+  _builderResult.statsArray = nil;
   return self;
 }
 - (PBAppendableArray *)achievementBlocks {
-  return result.achievementBlocksArray;
+  return _builderResult.achievementBlocksArray;
 }
 - (CMsgAMGetUserGameStatsResponse_Achievement_Blocks*)achievementBlocksAtIndex:(NSUInteger)index {
-  return [result achievementBlocksAtIndex:index];
+  return [_builderResult achievementBlocksAtIndex:index];
 }
 - (CMsgAMGetUserGameStatsResponse_Builder *)addAchievementBlocks:(CMsgAMGetUserGameStatsResponse_Achievement_Blocks*)value {
-  if (result.achievementBlocksArray == nil) {
-    result.achievementBlocksArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.achievementBlocksArray == nil) {
+    _builderResult.achievementBlocksArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.achievementBlocksArray addObject:value];
+  [_builderResult.achievementBlocksArray addObject:value];
   return self;
 }
 - (CMsgAMGetUserGameStatsResponse_Builder *)setAchievementBlocksArray:(NSArray *)array {
-  result.achievementBlocksArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.achievementBlocksArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgAMGetUserGameStatsResponse_Builder *)setAchievementBlocksValues:(const CMsgAMGetUserGameStatsResponse_Achievement_Blocks* *)values count:(NSUInteger)count {
-  result.achievementBlocksArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.achievementBlocksArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgAMGetUserGameStatsResponse_Builder *)clearAchievementBlocks {
-  result.achievementBlocksArray = nil;
+  _builderResult.achievementBlocksArray = nil;
   return self;
 }
 @end
@@ -5834,35 +5834,35 @@ static CMsgGCGetCommandList* defaultCMsgGCGetCommandListInstance = nil;
   }
 }
 - (BOOL) hasAppId {
-  return result.hasAppId;
+  return _builderResult.hasAppId;
 }
 - (uint32_t) appId {
-  return result.appId;
+  return _builderResult.appId;
 }
 - (CMsgGCGetCommandList_Builder*) setAppId:(uint32_t) value {
-  result.hasAppId = YES;
-  result.appId = value;
+  _builderResult.hasAppId = YES;
+  _builderResult.appId = value;
   return self;
 }
 - (CMsgGCGetCommandList_Builder*) clearAppId {
-  result.hasAppId = NO;
-  result.appId = 0;
+  _builderResult.hasAppId = NO;
+  _builderResult.appId = 0;
   return self;
 }
 - (BOOL) hasCommandPrefix {
-  return result.hasCommandPrefix;
+  return _builderResult.hasCommandPrefix;
 }
 - (NSString*) commandPrefix {
-  return result.commandPrefix;
+  return _builderResult.commandPrefix;
 }
 - (CMsgGCGetCommandList_Builder*) setCommandPrefix:(NSString*) value {
-  result.hasCommandPrefix = YES;
-  result.commandPrefix = value;
+  _builderResult.hasCommandPrefix = YES;
+  _builderResult.commandPrefix = value;
   return self;
 }
 - (CMsgGCGetCommandList_Builder*) clearCommandPrefix {
-  result.hasCommandPrefix = NO;
-  result.commandPrefix = @"";
+  _builderResult.hasCommandPrefix = NO;
+  _builderResult.commandPrefix = @"";
   return self;
 }
 @end
@@ -6037,10 +6037,10 @@ static CMsgGCGetCommandListResponse* defaultCMsgGCGetCommandListResponseInstance
     return self;
   }
   if (other.commandNameArray.count > 0) {
-    if (result.commandNameArray == nil) {
-      result.commandNameArray = [[other.commandNameArray copyWithZone:[other.commandNameArray zone]] autorelease];
+    if (_builderResult.commandNameArray == nil) {
+      _builderResult.commandNameArray = [[other.commandNameArray copyWithZone:[other.commandNameArray zone]] autorelease];
     } else {
-      [result.commandNameArray appendArray:other.commandNameArray];
+      [_builderResult.commandNameArray appendArray:other.commandNameArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -6072,28 +6072,28 @@ static CMsgGCGetCommandListResponse* defaultCMsgGCGetCommandListResponseInstance
   }
 }
 - (PBAppendableArray *)commandName {
-  return result.commandNameArray;
+  return _builderResult.commandNameArray;
 }
 - (NSString*)commandNameAtIndex:(NSUInteger)index {
-  return [result commandNameAtIndex:index];
+  return [_builderResult commandNameAtIndex:index];
 }
 - (CMsgGCGetCommandListResponse_Builder *)addCommandName:(NSString*)value {
-  if (result.commandNameArray == nil) {
-    result.commandNameArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.commandNameArray == nil) {
+    _builderResult.commandNameArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.commandNameArray addObject:value];
+  [_builderResult.commandNameArray addObject:value];
   return self;
 }
 - (CMsgGCGetCommandListResponse_Builder *)setCommandNameArray:(NSArray *)array {
-  result.commandNameArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.commandNameArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgGCGetCommandListResponse_Builder *)setCommandNameValues:(const NSString* *)values count:(NSUInteger)count {
-  result.commandNameArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.commandNameArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgGCGetCommandListResponse_Builder *)clearCommandName {
-  result.commandNameArray = nil;
+  _builderResult.commandNameArray = nil;
   return self;
 }
 @end
@@ -6268,10 +6268,10 @@ static CGCMsgMemCachedGet* defaultCGCMsgMemCachedGetInstance = nil;
     return self;
   }
   if (other.keysArray.count > 0) {
-    if (result.keysArray == nil) {
-      result.keysArray = [[other.keysArray copyWithZone:[other.keysArray zone]] autorelease];
+    if (_builderResult.keysArray == nil) {
+      _builderResult.keysArray = [[other.keysArray copyWithZone:[other.keysArray zone]] autorelease];
     } else {
-      [result.keysArray appendArray:other.keysArray];
+      [_builderResult.keysArray appendArray:other.keysArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -6303,28 +6303,28 @@ static CGCMsgMemCachedGet* defaultCGCMsgMemCachedGetInstance = nil;
   }
 }
 - (PBAppendableArray *)keys {
-  return result.keysArray;
+  return _builderResult.keysArray;
 }
 - (NSString*)keysAtIndex:(NSUInteger)index {
-  return [result keysAtIndex:index];
+  return [_builderResult keysAtIndex:index];
 }
 - (CGCMsgMemCachedGet_Builder *)addKeys:(NSString*)value {
-  if (result.keysArray == nil) {
-    result.keysArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.keysArray == nil) {
+    _builderResult.keysArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.keysArray addObject:value];
+  [_builderResult.keysArray addObject:value];
   return self;
 }
 - (CGCMsgMemCachedGet_Builder *)setKeysArray:(NSArray *)array {
-  result.keysArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.keysArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CGCMsgMemCachedGet_Builder *)setKeysValues:(const NSString* *)values count:(NSUInteger)count {
-  result.keysArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.keysArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CGCMsgMemCachedGet_Builder *)clearKeys {
-  result.keysArray = nil;
+  _builderResult.keysArray = nil;
   return self;
 }
 @end
@@ -6674,35 +6674,35 @@ static CGCMsgMemCachedGetResponse_ValueTag* defaultCGCMsgMemCachedGetResponse_Va
   }
 }
 - (BOOL) hasFound {
-  return result.hasFound;
+  return _builderResult.hasFound;
 }
 - (BOOL) found {
-  return result.found;
+  return _builderResult.found;
 }
 - (CGCMsgMemCachedGetResponse_ValueTag_Builder*) setFound:(BOOL) value {
-  result.hasFound = YES;
-  result.found = value;
+  _builderResult.hasFound = YES;
+  _builderResult.found = value;
   return self;
 }
 - (CGCMsgMemCachedGetResponse_ValueTag_Builder*) clearFound {
-  result.hasFound = NO;
-  result.found = NO;
+  _builderResult.hasFound = NO;
+  _builderResult.found = NO;
   return self;
 }
 - (BOOL) hasValue {
-  return result.hasValue;
+  return _builderResult.hasValue;
 }
 - (NSData*) value {
-  return result.value;
+  return _builderResult.value;
 }
 - (CGCMsgMemCachedGetResponse_ValueTag_Builder*) setValue:(NSData*) value {
-  result.hasValue = YES;
-  result.value = value;
+  _builderResult.hasValue = YES;
+  _builderResult.value = value;
   return self;
 }
 - (CGCMsgMemCachedGetResponse_ValueTag_Builder*) clearValue {
-  result.hasValue = NO;
-  result.value = [NSData data];
+  _builderResult.hasValue = NO;
+  _builderResult.value = [NSData data];
   return self;
 }
 @end
@@ -6750,10 +6750,10 @@ static CGCMsgMemCachedGetResponse_ValueTag* defaultCGCMsgMemCachedGetResponse_Va
     return self;
   }
   if (other.valuesArray.count > 0) {
-    if (result.valuesArray == nil) {
-      result.valuesArray = [[other.valuesArray copyWithZone:[other.valuesArray zone]] autorelease];
+    if (_builderResult.valuesArray == nil) {
+      _builderResult.valuesArray = [[other.valuesArray copyWithZone:[other.valuesArray zone]] autorelease];
     } else {
-      [result.valuesArray appendArray:other.valuesArray];
+      [_builderResult.valuesArray appendArray:other.valuesArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -6787,28 +6787,28 @@ static CGCMsgMemCachedGetResponse_ValueTag* defaultCGCMsgMemCachedGetResponse_Va
   }
 }
 - (PBAppendableArray *)values {
-  return result.valuesArray;
+  return _builderResult.valuesArray;
 }
 - (CGCMsgMemCachedGetResponse_ValueTag*)valuesAtIndex:(NSUInteger)index {
-  return [result valuesAtIndex:index];
+  return [_builderResult valuesAtIndex:index];
 }
 - (CGCMsgMemCachedGetResponse_Builder *)addValues:(CGCMsgMemCachedGetResponse_ValueTag*)value {
-  if (result.valuesArray == nil) {
-    result.valuesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.valuesArray == nil) {
+    _builderResult.valuesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.valuesArray addObject:value];
+  [_builderResult.valuesArray addObject:value];
   return self;
 }
 - (CGCMsgMemCachedGetResponse_Builder *)setValuesArray:(NSArray *)array {
-  result.valuesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.valuesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CGCMsgMemCachedGetResponse_Builder *)setValuesValues:(const CGCMsgMemCachedGetResponse_ValueTag* *)values count:(NSUInteger)count {
-  result.valuesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.valuesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CGCMsgMemCachedGetResponse_Builder *)clearValues {
-  result.valuesArray = nil;
+  _builderResult.valuesArray = nil;
   return self;
 }
 @end
@@ -7154,35 +7154,35 @@ static CGCMsgMemCachedSet_KeyPair* defaultCGCMsgMemCachedSet_KeyPairInstance = n
   }
 }
 - (BOOL) hasName {
-  return result.hasName;
+  return _builderResult.hasName;
 }
 - (NSString*) name {
-  return result.name;
+  return _builderResult.name;
 }
 - (CGCMsgMemCachedSet_KeyPair_Builder*) setName:(NSString*) value {
-  result.hasName = YES;
-  result.name = value;
+  _builderResult.hasName = YES;
+  _builderResult.name = value;
   return self;
 }
 - (CGCMsgMemCachedSet_KeyPair_Builder*) clearName {
-  result.hasName = NO;
-  result.name = @"";
+  _builderResult.hasName = NO;
+  _builderResult.name = @"";
   return self;
 }
 - (BOOL) hasValue {
-  return result.hasValue;
+  return _builderResult.hasValue;
 }
 - (NSData*) value {
-  return result.value;
+  return _builderResult.value;
 }
 - (CGCMsgMemCachedSet_KeyPair_Builder*) setValue:(NSData*) value {
-  result.hasValue = YES;
-  result.value = value;
+  _builderResult.hasValue = YES;
+  _builderResult.value = value;
   return self;
 }
 - (CGCMsgMemCachedSet_KeyPair_Builder*) clearValue {
-  result.hasValue = NO;
-  result.value = [NSData data];
+  _builderResult.hasValue = NO;
+  _builderResult.value = [NSData data];
   return self;
 }
 @end
@@ -7230,10 +7230,10 @@ static CGCMsgMemCachedSet_KeyPair* defaultCGCMsgMemCachedSet_KeyPairInstance = n
     return self;
   }
   if (other.keysArray.count > 0) {
-    if (result.keysArray == nil) {
-      result.keysArray = [[other.keysArray copyWithZone:[other.keysArray zone]] autorelease];
+    if (_builderResult.keysArray == nil) {
+      _builderResult.keysArray = [[other.keysArray copyWithZone:[other.keysArray zone]] autorelease];
     } else {
-      [result.keysArray appendArray:other.keysArray];
+      [_builderResult.keysArray appendArray:other.keysArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -7267,28 +7267,28 @@ static CGCMsgMemCachedSet_KeyPair* defaultCGCMsgMemCachedSet_KeyPairInstance = n
   }
 }
 - (PBAppendableArray *)keys {
-  return result.keysArray;
+  return _builderResult.keysArray;
 }
 - (CGCMsgMemCachedSet_KeyPair*)keysAtIndex:(NSUInteger)index {
-  return [result keysAtIndex:index];
+  return [_builderResult keysAtIndex:index];
 }
 - (CGCMsgMemCachedSet_Builder *)addKeys:(CGCMsgMemCachedSet_KeyPair*)value {
-  if (result.keysArray == nil) {
-    result.keysArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.keysArray == nil) {
+    _builderResult.keysArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.keysArray addObject:value];
+  [_builderResult.keysArray addObject:value];
   return self;
 }
 - (CGCMsgMemCachedSet_Builder *)setKeysArray:(NSArray *)array {
-  result.keysArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.keysArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CGCMsgMemCachedSet_Builder *)setKeysValues:(const CGCMsgMemCachedSet_KeyPair* *)values count:(NSUInteger)count {
-  result.keysArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.keysArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CGCMsgMemCachedSet_Builder *)clearKeys {
-  result.keysArray = nil;
+  _builderResult.keysArray = nil;
   return self;
 }
 @end
@@ -7463,10 +7463,10 @@ static CGCMsgMemCachedDelete* defaultCGCMsgMemCachedDeleteInstance = nil;
     return self;
   }
   if (other.keysArray.count > 0) {
-    if (result.keysArray == nil) {
-      result.keysArray = [[other.keysArray copyWithZone:[other.keysArray zone]] autorelease];
+    if (_builderResult.keysArray == nil) {
+      _builderResult.keysArray = [[other.keysArray copyWithZone:[other.keysArray zone]] autorelease];
     } else {
-      [result.keysArray appendArray:other.keysArray];
+      [_builderResult.keysArray appendArray:other.keysArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -7498,28 +7498,28 @@ static CGCMsgMemCachedDelete* defaultCGCMsgMemCachedDeleteInstance = nil;
   }
 }
 - (PBAppendableArray *)keys {
-  return result.keysArray;
+  return _builderResult.keysArray;
 }
 - (NSString*)keysAtIndex:(NSUInteger)index {
-  return [result keysAtIndex:index];
+  return [_builderResult keysAtIndex:index];
 }
 - (CGCMsgMemCachedDelete_Builder *)addKeys:(NSString*)value {
-  if (result.keysArray == nil) {
-    result.keysArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.keysArray == nil) {
+    _builderResult.keysArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.keysArray addObject:value];
+  [_builderResult.keysArray addObject:value];
   return self;
 }
 - (CGCMsgMemCachedDelete_Builder *)setKeysArray:(NSArray *)array {
-  result.keysArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.keysArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CGCMsgMemCachedDelete_Builder *)setKeysValues:(const NSString* *)values count:(NSUInteger)count {
-  result.keysArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.keysArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CGCMsgMemCachedDelete_Builder *)clearKeys {
-  result.keysArray = nil;
+  _builderResult.keysArray = nil;
   return self;
 }
 @end
@@ -7805,67 +7805,67 @@ static CMsgAMAddFreeLicense* defaultCMsgAMAddFreeLicenseInstance = nil;
   }
 }
 - (BOOL) hasSteamid {
-  return result.hasSteamid;
+  return _builderResult.hasSteamid;
 }
 - (uint64_t) steamid {
-  return result.steamid;
+  return _builderResult.steamid;
 }
 - (CMsgAMAddFreeLicense_Builder*) setSteamid:(uint64_t) value {
-  result.hasSteamid = YES;
-  result.steamid = value;
+  _builderResult.hasSteamid = YES;
+  _builderResult.steamid = value;
   return self;
 }
 - (CMsgAMAddFreeLicense_Builder*) clearSteamid {
-  result.hasSteamid = NO;
-  result.steamid = 0L;
+  _builderResult.hasSteamid = NO;
+  _builderResult.steamid = 0L;
   return self;
 }
 - (BOOL) hasIpPublic {
-  return result.hasIpPublic;
+  return _builderResult.hasIpPublic;
 }
 - (uint32_t) ipPublic {
-  return result.ipPublic;
+  return _builderResult.ipPublic;
 }
 - (CMsgAMAddFreeLicense_Builder*) setIpPublic:(uint32_t) value {
-  result.hasIpPublic = YES;
-  result.ipPublic = value;
+  _builderResult.hasIpPublic = YES;
+  _builderResult.ipPublic = value;
   return self;
 }
 - (CMsgAMAddFreeLicense_Builder*) clearIpPublic {
-  result.hasIpPublic = NO;
-  result.ipPublic = 0;
+  _builderResult.hasIpPublic = NO;
+  _builderResult.ipPublic = 0;
   return self;
 }
 - (BOOL) hasPackageid {
-  return result.hasPackageid;
+  return _builderResult.hasPackageid;
 }
 - (uint32_t) packageid {
-  return result.packageid;
+  return _builderResult.packageid;
 }
 - (CMsgAMAddFreeLicense_Builder*) setPackageid:(uint32_t) value {
-  result.hasPackageid = YES;
-  result.packageid = value;
+  _builderResult.hasPackageid = YES;
+  _builderResult.packageid = value;
   return self;
 }
 - (CMsgAMAddFreeLicense_Builder*) clearPackageid {
-  result.hasPackageid = NO;
-  result.packageid = 0;
+  _builderResult.hasPackageid = NO;
+  _builderResult.packageid = 0;
   return self;
 }
 - (BOOL) hasStoreCountryCode {
-  return result.hasStoreCountryCode;
+  return _builderResult.hasStoreCountryCode;
 }
 - (NSString*) storeCountryCode {
-  return result.storeCountryCode;
+  return _builderResult.storeCountryCode;
 }
 - (CMsgAMAddFreeLicense_Builder*) setStoreCountryCode:(NSString*) value {
-  result.hasStoreCountryCode = YES;
-  result.storeCountryCode = value;
+  _builderResult.hasStoreCountryCode = YES;
+  _builderResult.storeCountryCode = value;
   return self;
 }
 - (CMsgAMAddFreeLicense_Builder*) clearStoreCountryCode {
-  result.hasStoreCountryCode = NO;
-  result.storeCountryCode = @"";
+  _builderResult.hasStoreCountryCode = NO;
+  _builderResult.storeCountryCode = @"";
   return self;
 }
 @end
@@ -8120,51 +8120,51 @@ static CMsgAMAddFreeLicenseResponse* defaultCMsgAMAddFreeLicenseResponseInstance
   }
 }
 - (BOOL) hasEresult {
-  return result.hasEresult;
+  return _builderResult.hasEresult;
 }
 - (int32_t) eresult {
-  return result.eresult;
+  return _builderResult.eresult;
 }
 - (CMsgAMAddFreeLicenseResponse_Builder*) setEresult:(int32_t) value {
-  result.hasEresult = YES;
-  result.eresult = value;
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
   return self;
 }
 - (CMsgAMAddFreeLicenseResponse_Builder*) clearEresult {
-  result.hasEresult = NO;
-  result.eresult = 2;
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
   return self;
 }
 - (BOOL) hasPurchaseResultDetail {
-  return result.hasPurchaseResultDetail;
+  return _builderResult.hasPurchaseResultDetail;
 }
 - (int32_t) purchaseResultDetail {
-  return result.purchaseResultDetail;
+  return _builderResult.purchaseResultDetail;
 }
 - (CMsgAMAddFreeLicenseResponse_Builder*) setPurchaseResultDetail:(int32_t) value {
-  result.hasPurchaseResultDetail = YES;
-  result.purchaseResultDetail = value;
+  _builderResult.hasPurchaseResultDetail = YES;
+  _builderResult.purchaseResultDetail = value;
   return self;
 }
 - (CMsgAMAddFreeLicenseResponse_Builder*) clearPurchaseResultDetail {
-  result.hasPurchaseResultDetail = NO;
-  result.purchaseResultDetail = 0;
+  _builderResult.hasPurchaseResultDetail = NO;
+  _builderResult.purchaseResultDetail = 0;
   return self;
 }
 - (BOOL) hasTransid {
-  return result.hasTransid;
+  return _builderResult.hasTransid;
 }
 - (uint64_t) transid {
-  return result.transid;
+  return _builderResult.transid;
 }
 - (CMsgAMAddFreeLicenseResponse_Builder*) setTransid:(uint64_t) value {
-  result.hasTransid = YES;
-  result.transid = value;
+  _builderResult.hasTransid = YES;
+  _builderResult.transid = value;
   return self;
 }
 - (CMsgAMAddFreeLicenseResponse_Builder*) clearTransid {
-  result.hasTransid = NO;
-  result.transid = 0L;
+  _builderResult.hasTransid = NO;
+  _builderResult.transid = 0L;
   return self;
 }
 @end
@@ -8336,10 +8336,10 @@ static CGCMsgGetIPLocation* defaultCGCMsgGetIPLocationInstance = nil;
     return self;
   }
   if (other.ipsArray.count > 0) {
-    if (result.ipsArray == nil) {
-      result.ipsArray = [[other.ipsArray copyWithZone:[other.ipsArray zone]] autorelease];
+    if (_builderResult.ipsArray == nil) {
+      _builderResult.ipsArray = [[other.ipsArray copyWithZone:[other.ipsArray zone]] autorelease];
     } else {
-      [result.ipsArray appendArray:other.ipsArray];
+      [_builderResult.ipsArray appendArray:other.ipsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -8371,28 +8371,28 @@ static CGCMsgGetIPLocation* defaultCGCMsgGetIPLocationInstance = nil;
   }
 }
 - (PBAppendableArray *)ips {
-  return result.ipsArray;
+  return _builderResult.ipsArray;
 }
 - (uint32_t)ipsAtIndex:(NSUInteger)index {
-  return [result ipsAtIndex:index];
+  return [_builderResult ipsAtIndex:index];
 }
 - (CGCMsgGetIPLocation_Builder *)addIps:(uint32_t)value {
-  if (result.ipsArray == nil) {
-    result.ipsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  if (_builderResult.ipsArray == nil) {
+    _builderResult.ipsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [result.ipsArray addUint32:value];
+  [_builderResult.ipsArray addUint32:value];
   return self;
 }
 - (CGCMsgGetIPLocation_Builder *)setIpsArray:(NSArray *)array {
-  result.ipsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  _builderResult.ipsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CGCMsgGetIPLocation_Builder *)setIpsValues:(const uint32_t *)values count:(NSUInteger)count {
-  result.ipsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  _builderResult.ipsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
 - (CGCMsgGetIPLocation_Builder *)clearIps {
-  result.ipsArray = nil;
+  _builderResult.ipsArray = nil;
   return self;
 }
 @end
@@ -8740,99 +8740,99 @@ static CIPLocationInfo* defaultCIPLocationInfoInstance = nil;
   }
 }
 - (BOOL) hasIp {
-  return result.hasIp;
+  return _builderResult.hasIp;
 }
 - (uint32_t) ip {
-  return result.ip;
+  return _builderResult.ip;
 }
 - (CIPLocationInfo_Builder*) setIp:(uint32_t) value {
-  result.hasIp = YES;
-  result.ip = value;
+  _builderResult.hasIp = YES;
+  _builderResult.ip = value;
   return self;
 }
 - (CIPLocationInfo_Builder*) clearIp {
-  result.hasIp = NO;
-  result.ip = 0;
+  _builderResult.hasIp = NO;
+  _builderResult.ip = 0;
   return self;
 }
 - (BOOL) hasLatitude {
-  return result.hasLatitude;
+  return _builderResult.hasLatitude;
 }
 - (Float32) latitude {
-  return result.latitude;
+  return _builderResult.latitude;
 }
 - (CIPLocationInfo_Builder*) setLatitude:(Float32) value {
-  result.hasLatitude = YES;
-  result.latitude = value;
+  _builderResult.hasLatitude = YES;
+  _builderResult.latitude = value;
   return self;
 }
 - (CIPLocationInfo_Builder*) clearLatitude {
-  result.hasLatitude = NO;
-  result.latitude = 0;
+  _builderResult.hasLatitude = NO;
+  _builderResult.latitude = 0;
   return self;
 }
 - (BOOL) hasLongitude {
-  return result.hasLongitude;
+  return _builderResult.hasLongitude;
 }
 - (Float32) longitude {
-  return result.longitude;
+  return _builderResult.longitude;
 }
 - (CIPLocationInfo_Builder*) setLongitude:(Float32) value {
-  result.hasLongitude = YES;
-  result.longitude = value;
+  _builderResult.hasLongitude = YES;
+  _builderResult.longitude = value;
   return self;
 }
 - (CIPLocationInfo_Builder*) clearLongitude {
-  result.hasLongitude = NO;
-  result.longitude = 0;
+  _builderResult.hasLongitude = NO;
+  _builderResult.longitude = 0;
   return self;
 }
 - (BOOL) hasCountry {
-  return result.hasCountry;
+  return _builderResult.hasCountry;
 }
 - (NSString*) country {
-  return result.country;
+  return _builderResult.country;
 }
 - (CIPLocationInfo_Builder*) setCountry:(NSString*) value {
-  result.hasCountry = YES;
-  result.country = value;
+  _builderResult.hasCountry = YES;
+  _builderResult.country = value;
   return self;
 }
 - (CIPLocationInfo_Builder*) clearCountry {
-  result.hasCountry = NO;
-  result.country = @"";
+  _builderResult.hasCountry = NO;
+  _builderResult.country = @"";
   return self;
 }
 - (BOOL) hasState {
-  return result.hasState;
+  return _builderResult.hasState;
 }
 - (NSString*) state {
-  return result.state;
+  return _builderResult.state;
 }
 - (CIPLocationInfo_Builder*) setState:(NSString*) value {
-  result.hasState = YES;
-  result.state = value;
+  _builderResult.hasState = YES;
+  _builderResult.state = value;
   return self;
 }
 - (CIPLocationInfo_Builder*) clearState {
-  result.hasState = NO;
-  result.state = @"";
+  _builderResult.hasState = NO;
+  _builderResult.state = @"";
   return self;
 }
 - (BOOL) hasCity {
-  return result.hasCity;
+  return _builderResult.hasCity;
 }
 - (NSString*) city {
-  return result.city;
+  return _builderResult.city;
 }
 - (CIPLocationInfo_Builder*) setCity:(NSString*) value {
-  result.hasCity = YES;
-  result.city = value;
+  _builderResult.hasCity = YES;
+  _builderResult.city = value;
   return self;
 }
 - (CIPLocationInfo_Builder*) clearCity {
-  result.hasCity = NO;
-  result.city = @"";
+  _builderResult.hasCity = NO;
+  _builderResult.city = @"";
   return self;
 }
 @end
@@ -8999,10 +8999,10 @@ static CGCMsgGetIPLocationResponse* defaultCGCMsgGetIPLocationResponseInstance =
     return self;
   }
   if (other.infosArray.count > 0) {
-    if (result.infosArray == nil) {
-      result.infosArray = [[other.infosArray copyWithZone:[other.infosArray zone]] autorelease];
+    if (_builderResult.infosArray == nil) {
+      _builderResult.infosArray = [[other.infosArray copyWithZone:[other.infosArray zone]] autorelease];
     } else {
-      [result.infosArray appendArray:other.infosArray];
+      [_builderResult.infosArray appendArray:other.infosArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -9036,28 +9036,28 @@ static CGCMsgGetIPLocationResponse* defaultCGCMsgGetIPLocationResponseInstance =
   }
 }
 - (PBAppendableArray *)infos {
-  return result.infosArray;
+  return _builderResult.infosArray;
 }
 - (CIPLocationInfo*)infosAtIndex:(NSUInteger)index {
-  return [result infosAtIndex:index];
+  return [_builderResult infosAtIndex:index];
 }
 - (CGCMsgGetIPLocationResponse_Builder *)addInfos:(CIPLocationInfo*)value {
-  if (result.infosArray == nil) {
-    result.infosArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.infosArray == nil) {
+    _builderResult.infosArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.infosArray addObject:value];
+  [_builderResult.infosArray addObject:value];
   return self;
 }
 - (CGCMsgGetIPLocationResponse_Builder *)setInfosArray:(NSArray *)array {
-  result.infosArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.infosArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CGCMsgGetIPLocationResponse_Builder *)setInfosValues:(const CIPLocationInfo* *)values count:(NSUInteger)count {
-  result.infosArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.infosArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CGCMsgGetIPLocationResponse_Builder *)clearInfos {
-  result.infosArray = nil;
+  _builderResult.infosArray = nil;
   return self;
 }
 @end
@@ -9283,35 +9283,35 @@ static CGCMsgSystemStatsSchema* defaultCGCMsgSystemStatsSchemaInstance = nil;
   }
 }
 - (BOOL) hasGcAppId {
-  return result.hasGcAppId;
+  return _builderResult.hasGcAppId;
 }
 - (uint32_t) gcAppId {
-  return result.gcAppId;
+  return _builderResult.gcAppId;
 }
 - (CGCMsgSystemStatsSchema_Builder*) setGcAppId:(uint32_t) value {
-  result.hasGcAppId = YES;
-  result.gcAppId = value;
+  _builderResult.hasGcAppId = YES;
+  _builderResult.gcAppId = value;
   return self;
 }
 - (CGCMsgSystemStatsSchema_Builder*) clearGcAppId {
-  result.hasGcAppId = NO;
-  result.gcAppId = 0;
+  _builderResult.hasGcAppId = NO;
+  _builderResult.gcAppId = 0;
   return self;
 }
 - (BOOL) hasSchemaKv {
-  return result.hasSchemaKv;
+  return _builderResult.hasSchemaKv;
 }
 - (NSData*) schemaKv {
-  return result.schemaKv;
+  return _builderResult.schemaKv;
 }
 - (CGCMsgSystemStatsSchema_Builder*) setSchemaKv:(NSData*) value {
-  result.hasSchemaKv = YES;
-  result.schemaKv = value;
+  _builderResult.hasSchemaKv = YES;
+  _builderResult.schemaKv = value;
   return self;
 }
 - (CGCMsgSystemStatsSchema_Builder*) clearSchemaKv {
-  result.hasSchemaKv = NO;
-  result.schemaKv = [NSData data];
+  _builderResult.hasSchemaKv = NO;
+  _builderResult.schemaKv = [NSData data];
   return self;
 }
 @end
@@ -10028,211 +10028,211 @@ static CGCMsgGetSystemStatsResponse* defaultCGCMsgGetSystemStatsResponseInstance
   }
 }
 - (BOOL) hasGcAppId {
-  return result.hasGcAppId;
+  return _builderResult.hasGcAppId;
 }
 - (uint32_t) gcAppId {
-  return result.gcAppId;
+  return _builderResult.gcAppId;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) setGcAppId:(uint32_t) value {
-  result.hasGcAppId = YES;
-  result.gcAppId = value;
+  _builderResult.hasGcAppId = YES;
+  _builderResult.gcAppId = value;
   return self;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) clearGcAppId {
-  result.hasGcAppId = NO;
-  result.gcAppId = 0;
+  _builderResult.hasGcAppId = NO;
+  _builderResult.gcAppId = 0;
   return self;
 }
 - (BOOL) hasStatsKv {
-  return result.hasStatsKv;
+  return _builderResult.hasStatsKv;
 }
 - (NSData*) statsKv {
-  return result.statsKv;
+  return _builderResult.statsKv;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) setStatsKv:(NSData*) value {
-  result.hasStatsKv = YES;
-  result.statsKv = value;
+  _builderResult.hasStatsKv = YES;
+  _builderResult.statsKv = value;
   return self;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) clearStatsKv {
-  result.hasStatsKv = NO;
-  result.statsKv = [NSData data];
+  _builderResult.hasStatsKv = NO;
+  _builderResult.statsKv = [NSData data];
   return self;
 }
 - (BOOL) hasActiveJobs {
-  return result.hasActiveJobs;
+  return _builderResult.hasActiveJobs;
 }
 - (uint32_t) activeJobs {
-  return result.activeJobs;
+  return _builderResult.activeJobs;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) setActiveJobs:(uint32_t) value {
-  result.hasActiveJobs = YES;
-  result.activeJobs = value;
+  _builderResult.hasActiveJobs = YES;
+  _builderResult.activeJobs = value;
   return self;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) clearActiveJobs {
-  result.hasActiveJobs = NO;
-  result.activeJobs = 0;
+  _builderResult.hasActiveJobs = NO;
+  _builderResult.activeJobs = 0;
   return self;
 }
 - (BOOL) hasYieldingJobs {
-  return result.hasYieldingJobs;
+  return _builderResult.hasYieldingJobs;
 }
 - (uint32_t) yieldingJobs {
-  return result.yieldingJobs;
+  return _builderResult.yieldingJobs;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) setYieldingJobs:(uint32_t) value {
-  result.hasYieldingJobs = YES;
-  result.yieldingJobs = value;
+  _builderResult.hasYieldingJobs = YES;
+  _builderResult.yieldingJobs = value;
   return self;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) clearYieldingJobs {
-  result.hasYieldingJobs = NO;
-  result.yieldingJobs = 0;
+  _builderResult.hasYieldingJobs = NO;
+  _builderResult.yieldingJobs = 0;
   return self;
 }
 - (BOOL) hasUserSessions {
-  return result.hasUserSessions;
+  return _builderResult.hasUserSessions;
 }
 - (uint32_t) userSessions {
-  return result.userSessions;
+  return _builderResult.userSessions;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) setUserSessions:(uint32_t) value {
-  result.hasUserSessions = YES;
-  result.userSessions = value;
+  _builderResult.hasUserSessions = YES;
+  _builderResult.userSessions = value;
   return self;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) clearUserSessions {
-  result.hasUserSessions = NO;
-  result.userSessions = 0;
+  _builderResult.hasUserSessions = NO;
+  _builderResult.userSessions = 0;
   return self;
 }
 - (BOOL) hasGameServerSessions {
-  return result.hasGameServerSessions;
+  return _builderResult.hasGameServerSessions;
 }
 - (uint32_t) gameServerSessions {
-  return result.gameServerSessions;
+  return _builderResult.gameServerSessions;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) setGameServerSessions:(uint32_t) value {
-  result.hasGameServerSessions = YES;
-  result.gameServerSessions = value;
+  _builderResult.hasGameServerSessions = YES;
+  _builderResult.gameServerSessions = value;
   return self;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) clearGameServerSessions {
-  result.hasGameServerSessions = NO;
-  result.gameServerSessions = 0;
+  _builderResult.hasGameServerSessions = NO;
+  _builderResult.gameServerSessions = 0;
   return self;
 }
 - (BOOL) hasSocaches {
-  return result.hasSocaches;
+  return _builderResult.hasSocaches;
 }
 - (uint32_t) socaches {
-  return result.socaches;
+  return _builderResult.socaches;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) setSocaches:(uint32_t) value {
-  result.hasSocaches = YES;
-  result.socaches = value;
+  _builderResult.hasSocaches = YES;
+  _builderResult.socaches = value;
   return self;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) clearSocaches {
-  result.hasSocaches = NO;
-  result.socaches = 0;
+  _builderResult.hasSocaches = NO;
+  _builderResult.socaches = 0;
   return self;
 }
 - (BOOL) hasSocachesToUnload {
-  return result.hasSocachesToUnload;
+  return _builderResult.hasSocachesToUnload;
 }
 - (uint32_t) socachesToUnload {
-  return result.socachesToUnload;
+  return _builderResult.socachesToUnload;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) setSocachesToUnload:(uint32_t) value {
-  result.hasSocachesToUnload = YES;
-  result.socachesToUnload = value;
+  _builderResult.hasSocachesToUnload = YES;
+  _builderResult.socachesToUnload = value;
   return self;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) clearSocachesToUnload {
-  result.hasSocachesToUnload = NO;
-  result.socachesToUnload = 0;
+  _builderResult.hasSocachesToUnload = NO;
+  _builderResult.socachesToUnload = 0;
   return self;
 }
 - (BOOL) hasSocachesLoading {
-  return result.hasSocachesLoading;
+  return _builderResult.hasSocachesLoading;
 }
 - (uint32_t) socachesLoading {
-  return result.socachesLoading;
+  return _builderResult.socachesLoading;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) setSocachesLoading:(uint32_t) value {
-  result.hasSocachesLoading = YES;
-  result.socachesLoading = value;
+  _builderResult.hasSocachesLoading = YES;
+  _builderResult.socachesLoading = value;
   return self;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) clearSocachesLoading {
-  result.hasSocachesLoading = NO;
-  result.socachesLoading = 0;
+  _builderResult.hasSocachesLoading = NO;
+  _builderResult.socachesLoading = 0;
   return self;
 }
 - (BOOL) hasWritebackQueue {
-  return result.hasWritebackQueue;
+  return _builderResult.hasWritebackQueue;
 }
 - (uint32_t) writebackQueue {
-  return result.writebackQueue;
+  return _builderResult.writebackQueue;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) setWritebackQueue:(uint32_t) value {
-  result.hasWritebackQueue = YES;
-  result.writebackQueue = value;
+  _builderResult.hasWritebackQueue = YES;
+  _builderResult.writebackQueue = value;
   return self;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) clearWritebackQueue {
-  result.hasWritebackQueue = NO;
-  result.writebackQueue = 0;
+  _builderResult.hasWritebackQueue = NO;
+  _builderResult.writebackQueue = 0;
   return self;
 }
 - (BOOL) hasSteamidLocks {
-  return result.hasSteamidLocks;
+  return _builderResult.hasSteamidLocks;
 }
 - (uint32_t) steamidLocks {
-  return result.steamidLocks;
+  return _builderResult.steamidLocks;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) setSteamidLocks:(uint32_t) value {
-  result.hasSteamidLocks = YES;
-  result.steamidLocks = value;
+  _builderResult.hasSteamidLocks = YES;
+  _builderResult.steamidLocks = value;
   return self;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) clearSteamidLocks {
-  result.hasSteamidLocks = NO;
-  result.steamidLocks = 0;
+  _builderResult.hasSteamidLocks = NO;
+  _builderResult.steamidLocks = 0;
   return self;
 }
 - (BOOL) hasLogonQueue {
-  return result.hasLogonQueue;
+  return _builderResult.hasLogonQueue;
 }
 - (uint32_t) logonQueue {
-  return result.logonQueue;
+  return _builderResult.logonQueue;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) setLogonQueue:(uint32_t) value {
-  result.hasLogonQueue = YES;
-  result.logonQueue = value;
+  _builderResult.hasLogonQueue = YES;
+  _builderResult.logonQueue = value;
   return self;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) clearLogonQueue {
-  result.hasLogonQueue = NO;
-  result.logonQueue = 0;
+  _builderResult.hasLogonQueue = NO;
+  _builderResult.logonQueue = 0;
   return self;
 }
 - (BOOL) hasLogonJobs {
-  return result.hasLogonJobs;
+  return _builderResult.hasLogonJobs;
 }
 - (uint32_t) logonJobs {
-  return result.logonJobs;
+  return _builderResult.logonJobs;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) setLogonJobs:(uint32_t) value {
-  result.hasLogonJobs = YES;
-  result.logonJobs = value;
+  _builderResult.hasLogonJobs = YES;
+  _builderResult.logonJobs = value;
   return self;
 }
 - (CGCMsgGetSystemStatsResponse_Builder*) clearLogonJobs {
-  result.hasLogonJobs = NO;
-  result.logonJobs = 0;
+  _builderResult.hasLogonJobs = NO;
+  _builderResult.logonJobs = 0;
   return self;
 }
 @end
@@ -10696,35 +10696,35 @@ static CMsgAMSendEmail_ReplacementToken* defaultCMsgAMSendEmail_ReplacementToken
   }
 }
 - (BOOL) hasTokenName {
-  return result.hasTokenName;
+  return _builderResult.hasTokenName;
 }
 - (NSString*) tokenName {
-  return result.tokenName;
+  return _builderResult.tokenName;
 }
 - (CMsgAMSendEmail_ReplacementToken_Builder*) setTokenName:(NSString*) value {
-  result.hasTokenName = YES;
-  result.tokenName = value;
+  _builderResult.hasTokenName = YES;
+  _builderResult.tokenName = value;
   return self;
 }
 - (CMsgAMSendEmail_ReplacementToken_Builder*) clearTokenName {
-  result.hasTokenName = NO;
-  result.tokenName = @"";
+  _builderResult.hasTokenName = NO;
+  _builderResult.tokenName = @"";
   return self;
 }
 - (BOOL) hasTokenValue {
-  return result.hasTokenValue;
+  return _builderResult.hasTokenValue;
 }
 - (NSString*) tokenValue {
-  return result.tokenValue;
+  return _builderResult.tokenValue;
 }
 - (CMsgAMSendEmail_ReplacementToken_Builder*) setTokenValue:(NSString*) value {
-  result.hasTokenValue = YES;
-  result.tokenValue = value;
+  _builderResult.hasTokenValue = YES;
+  _builderResult.tokenValue = value;
   return self;
 }
 - (CMsgAMSendEmail_ReplacementToken_Builder*) clearTokenValue {
-  result.hasTokenValue = NO;
-  result.tokenValue = @"";
+  _builderResult.hasTokenValue = NO;
+  _builderResult.tokenValue = @"";
   return self;
 }
 @end
@@ -10950,35 +10950,35 @@ static CMsgAMSendEmail_PersonaNameReplacementToken* defaultCMsgAMSendEmail_Perso
   }
 }
 - (BOOL) hasSteamid {
-  return result.hasSteamid;
+  return _builderResult.hasSteamid;
 }
 - (uint64_t) steamid {
-  return result.steamid;
+  return _builderResult.steamid;
 }
 - (CMsgAMSendEmail_PersonaNameReplacementToken_Builder*) setSteamid:(uint64_t) value {
-  result.hasSteamid = YES;
-  result.steamid = value;
+  _builderResult.hasSteamid = YES;
+  _builderResult.steamid = value;
   return self;
 }
 - (CMsgAMSendEmail_PersonaNameReplacementToken_Builder*) clearSteamid {
-  result.hasSteamid = NO;
-  result.steamid = 0L;
+  _builderResult.hasSteamid = NO;
+  _builderResult.steamid = 0L;
   return self;
 }
 - (BOOL) hasTokenName {
-  return result.hasTokenName;
+  return _builderResult.hasTokenName;
 }
 - (NSString*) tokenName {
-  return result.tokenName;
+  return _builderResult.tokenName;
 }
 - (CMsgAMSendEmail_PersonaNameReplacementToken_Builder*) setTokenName:(NSString*) value {
-  result.hasTokenName = YES;
-  result.tokenName = value;
+  _builderResult.hasTokenName = YES;
+  _builderResult.tokenName = value;
   return self;
 }
 - (CMsgAMSendEmail_PersonaNameReplacementToken_Builder*) clearTokenName {
-  result.hasTokenName = NO;
-  result.tokenName = @"";
+  _builderResult.hasTokenName = NO;
+  _builderResult.tokenName = @"";
   return self;
 }
 @end
@@ -11035,20 +11035,20 @@ static CMsgAMSendEmail_PersonaNameReplacementToken* defaultCMsgAMSendEmail_Perso
     [self setEmailFormat:other.emailFormat];
   }
   if (other.personaNameTokensArray.count > 0) {
-    if (result.personaNameTokensArray == nil) {
-      result.personaNameTokensArray = [[other.personaNameTokensArray copyWithZone:[other.personaNameTokensArray zone]] autorelease];
+    if (_builderResult.personaNameTokensArray == nil) {
+      _builderResult.personaNameTokensArray = [[other.personaNameTokensArray copyWithZone:[other.personaNameTokensArray zone]] autorelease];
     } else {
-      [result.personaNameTokensArray appendArray:other.personaNameTokensArray];
+      [_builderResult.personaNameTokensArray appendArray:other.personaNameTokensArray];
     }
   }
   if (other.hasSourceGc) {
     [self setSourceGc:other.sourceGc];
   }
   if (other.tokensArray.count > 0) {
-    if (result.tokensArray == nil) {
-      result.tokensArray = [[other.tokensArray copyWithZone:[other.tokensArray zone]] autorelease];
+    if (_builderResult.tokensArray == nil) {
+      _builderResult.tokensArray = [[other.tokensArray copyWithZone:[other.tokensArray zone]] autorelease];
     } else {
-      [result.tokensArray appendArray:other.tokensArray];
+      [_builderResult.tokensArray appendArray:other.tokensArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -11104,117 +11104,117 @@ static CMsgAMSendEmail_PersonaNameReplacementToken* defaultCMsgAMSendEmail_Perso
   }
 }
 - (BOOL) hasSteamid {
-  return result.hasSteamid;
+  return _builderResult.hasSteamid;
 }
 - (uint64_t) steamid {
-  return result.steamid;
+  return _builderResult.steamid;
 }
 - (CMsgAMSendEmail_Builder*) setSteamid:(uint64_t) value {
-  result.hasSteamid = YES;
-  result.steamid = value;
+  _builderResult.hasSteamid = YES;
+  _builderResult.steamid = value;
   return self;
 }
 - (CMsgAMSendEmail_Builder*) clearSteamid {
-  result.hasSteamid = NO;
-  result.steamid = 0L;
+  _builderResult.hasSteamid = NO;
+  _builderResult.steamid = 0L;
   return self;
 }
 - (BOOL) hasEmailMsgType {
-  return result.hasEmailMsgType;
+  return _builderResult.hasEmailMsgType;
 }
 - (uint32_t) emailMsgType {
-  return result.emailMsgType;
+  return _builderResult.emailMsgType;
 }
 - (CMsgAMSendEmail_Builder*) setEmailMsgType:(uint32_t) value {
-  result.hasEmailMsgType = YES;
-  result.emailMsgType = value;
+  _builderResult.hasEmailMsgType = YES;
+  _builderResult.emailMsgType = value;
   return self;
 }
 - (CMsgAMSendEmail_Builder*) clearEmailMsgType {
-  result.hasEmailMsgType = NO;
-  result.emailMsgType = 0;
+  _builderResult.hasEmailMsgType = NO;
+  _builderResult.emailMsgType = 0;
   return self;
 }
 - (BOOL) hasEmailFormat {
-  return result.hasEmailFormat;
+  return _builderResult.hasEmailFormat;
 }
 - (uint32_t) emailFormat {
-  return result.emailFormat;
+  return _builderResult.emailFormat;
 }
 - (CMsgAMSendEmail_Builder*) setEmailFormat:(uint32_t) value {
-  result.hasEmailFormat = YES;
-  result.emailFormat = value;
+  _builderResult.hasEmailFormat = YES;
+  _builderResult.emailFormat = value;
   return self;
 }
 - (CMsgAMSendEmail_Builder*) clearEmailFormat {
-  result.hasEmailFormat = NO;
-  result.emailFormat = 0;
+  _builderResult.hasEmailFormat = NO;
+  _builderResult.emailFormat = 0;
   return self;
 }
 - (PBAppendableArray *)personaNameTokens {
-  return result.personaNameTokensArray;
+  return _builderResult.personaNameTokensArray;
 }
 - (CMsgAMSendEmail_PersonaNameReplacementToken*)personaNameTokensAtIndex:(NSUInteger)index {
-  return [result personaNameTokensAtIndex:index];
+  return [_builderResult personaNameTokensAtIndex:index];
 }
 - (CMsgAMSendEmail_Builder *)addPersonaNameTokens:(CMsgAMSendEmail_PersonaNameReplacementToken*)value {
-  if (result.personaNameTokensArray == nil) {
-    result.personaNameTokensArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.personaNameTokensArray == nil) {
+    _builderResult.personaNameTokensArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.personaNameTokensArray addObject:value];
+  [_builderResult.personaNameTokensArray addObject:value];
   return self;
 }
 - (CMsgAMSendEmail_Builder *)setPersonaNameTokensArray:(NSArray *)array {
-  result.personaNameTokensArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.personaNameTokensArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgAMSendEmail_Builder *)setPersonaNameTokensValues:(const CMsgAMSendEmail_PersonaNameReplacementToken* *)values count:(NSUInteger)count {
-  result.personaNameTokensArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.personaNameTokensArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgAMSendEmail_Builder *)clearPersonaNameTokens {
-  result.personaNameTokensArray = nil;
+  _builderResult.personaNameTokensArray = nil;
   return self;
 }
 - (BOOL) hasSourceGc {
-  return result.hasSourceGc;
+  return _builderResult.hasSourceGc;
 }
 - (uint32_t) sourceGc {
-  return result.sourceGc;
+  return _builderResult.sourceGc;
 }
 - (CMsgAMSendEmail_Builder*) setSourceGc:(uint32_t) value {
-  result.hasSourceGc = YES;
-  result.sourceGc = value;
+  _builderResult.hasSourceGc = YES;
+  _builderResult.sourceGc = value;
   return self;
 }
 - (CMsgAMSendEmail_Builder*) clearSourceGc {
-  result.hasSourceGc = NO;
-  result.sourceGc = 0;
+  _builderResult.hasSourceGc = NO;
+  _builderResult.sourceGc = 0;
   return self;
 }
 - (PBAppendableArray *)tokens {
-  return result.tokensArray;
+  return _builderResult.tokensArray;
 }
 - (CMsgAMSendEmail_ReplacementToken*)tokensAtIndex:(NSUInteger)index {
-  return [result tokensAtIndex:index];
+  return [_builderResult tokensAtIndex:index];
 }
 - (CMsgAMSendEmail_Builder *)addTokens:(CMsgAMSendEmail_ReplacementToken*)value {
-  if (result.tokensArray == nil) {
-    result.tokensArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.tokensArray == nil) {
+    _builderResult.tokensArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.tokensArray addObject:value];
+  [_builderResult.tokensArray addObject:value];
   return self;
 }
 - (CMsgAMSendEmail_Builder *)setTokensArray:(NSArray *)array {
-  result.tokensArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.tokensArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgAMSendEmail_Builder *)setTokensValues:(const CMsgAMSendEmail_ReplacementToken* *)values count:(NSUInteger)count {
-  result.tokensArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.tokensArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgAMSendEmail_Builder *)clearTokens {
-  result.tokensArray = nil;
+  _builderResult.tokensArray = nil;
   return self;
 }
 @end
@@ -11409,19 +11409,19 @@ static CMsgAMSendEmailResponse* defaultCMsgAMSendEmailResponseInstance = nil;
   }
 }
 - (BOOL) hasEresult {
-  return result.hasEresult;
+  return _builderResult.hasEresult;
 }
 - (uint32_t) eresult {
-  return result.eresult;
+  return _builderResult.eresult;
 }
 - (CMsgAMSendEmailResponse_Builder*) setEresult:(uint32_t) value {
-  result.hasEresult = YES;
-  result.eresult = value;
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
   return self;
 }
 - (CMsgAMSendEmailResponse_Builder*) clearEresult {
-  result.hasEresult = NO;
-  result.eresult = 2;
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
   return self;
 }
 @end
@@ -11706,67 +11706,67 @@ static CMsgGCGetEmailTemplate* defaultCMsgGCGetEmailTemplateInstance = nil;
   }
 }
 - (BOOL) hasAppId {
-  return result.hasAppId;
+  return _builderResult.hasAppId;
 }
 - (uint32_t) appId {
-  return result.appId;
+  return _builderResult.appId;
 }
 - (CMsgGCGetEmailTemplate_Builder*) setAppId:(uint32_t) value {
-  result.hasAppId = YES;
-  result.appId = value;
+  _builderResult.hasAppId = YES;
+  _builderResult.appId = value;
   return self;
 }
 - (CMsgGCGetEmailTemplate_Builder*) clearAppId {
-  result.hasAppId = NO;
-  result.appId = 0;
+  _builderResult.hasAppId = NO;
+  _builderResult.appId = 0;
   return self;
 }
 - (BOOL) hasEmailMsgType {
-  return result.hasEmailMsgType;
+  return _builderResult.hasEmailMsgType;
 }
 - (uint32_t) emailMsgType {
-  return result.emailMsgType;
+  return _builderResult.emailMsgType;
 }
 - (CMsgGCGetEmailTemplate_Builder*) setEmailMsgType:(uint32_t) value {
-  result.hasEmailMsgType = YES;
-  result.emailMsgType = value;
+  _builderResult.hasEmailMsgType = YES;
+  _builderResult.emailMsgType = value;
   return self;
 }
 - (CMsgGCGetEmailTemplate_Builder*) clearEmailMsgType {
-  result.hasEmailMsgType = NO;
-  result.emailMsgType = 0;
+  _builderResult.hasEmailMsgType = NO;
+  _builderResult.emailMsgType = 0;
   return self;
 }
 - (BOOL) hasEmailLang {
-  return result.hasEmailLang;
+  return _builderResult.hasEmailLang;
 }
 - (int32_t) emailLang {
-  return result.emailLang;
+  return _builderResult.emailLang;
 }
 - (CMsgGCGetEmailTemplate_Builder*) setEmailLang:(int32_t) value {
-  result.hasEmailLang = YES;
-  result.emailLang = value;
+  _builderResult.hasEmailLang = YES;
+  _builderResult.emailLang = value;
   return self;
 }
 - (CMsgGCGetEmailTemplate_Builder*) clearEmailLang {
-  result.hasEmailLang = NO;
-  result.emailLang = 0;
+  _builderResult.hasEmailLang = NO;
+  _builderResult.emailLang = 0;
   return self;
 }
 - (BOOL) hasEmailFormat {
-  return result.hasEmailFormat;
+  return _builderResult.hasEmailFormat;
 }
 - (int32_t) emailFormat {
-  return result.emailFormat;
+  return _builderResult.emailFormat;
 }
 - (CMsgGCGetEmailTemplate_Builder*) setEmailFormat:(int32_t) value {
-  result.hasEmailFormat = YES;
-  result.emailFormat = value;
+  _builderResult.hasEmailFormat = YES;
+  _builderResult.emailFormat = value;
   return self;
 }
 - (CMsgGCGetEmailTemplate_Builder*) clearEmailFormat {
-  result.hasEmailFormat = NO;
-  result.emailFormat = 0;
+  _builderResult.hasEmailFormat = NO;
+  _builderResult.emailFormat = 0;
   return self;
 }
 @end
@@ -12027,51 +12027,51 @@ static CMsgGCGetEmailTemplateResponse* defaultCMsgGCGetEmailTemplateResponseInst
   }
 }
 - (BOOL) hasEresult {
-  return result.hasEresult;
+  return _builderResult.hasEresult;
 }
 - (uint32_t) eresult {
-  return result.eresult;
+  return _builderResult.eresult;
 }
 - (CMsgGCGetEmailTemplateResponse_Builder*) setEresult:(uint32_t) value {
-  result.hasEresult = YES;
-  result.eresult = value;
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
   return self;
 }
 - (CMsgGCGetEmailTemplateResponse_Builder*) clearEresult {
-  result.hasEresult = NO;
-  result.eresult = 2;
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
   return self;
 }
 - (BOOL) hasTemplateExists {
-  return result.hasTemplateExists;
+  return _builderResult.hasTemplateExists;
 }
 - (BOOL) templateExists {
-  return result.templateExists;
+  return _builderResult.templateExists;
 }
 - (CMsgGCGetEmailTemplateResponse_Builder*) setTemplateExists:(BOOL) value {
-  result.hasTemplateExists = YES;
-  result.templateExists = value;
+  _builderResult.hasTemplateExists = YES;
+  _builderResult.templateExists = value;
   return self;
 }
 - (CMsgGCGetEmailTemplateResponse_Builder*) clearTemplateExists {
-  result.hasTemplateExists = NO;
-  result.templateExists = NO;
+  _builderResult.hasTemplateExists = NO;
+  _builderResult.templateExists = NO;
   return self;
 }
 - (BOOL) hasTemplate {
-  return result.hasTemplate;
+  return _builderResult.hasTemplate;
 }
 - (NSString*) template {
-  return result.template;
+  return _builderResult.template;
 }
 - (CMsgGCGetEmailTemplateResponse_Builder*) setTemplate:(NSString*) value {
-  result.hasTemplate = YES;
-  result.template = value;
+  _builderResult.hasTemplate = YES;
+  _builderResult.template = value;
   return self;
 }
 - (CMsgGCGetEmailTemplateResponse_Builder*) clearTemplate {
-  result.hasTemplate = NO;
-  result.template = @"";
+  _builderResult.hasTemplate = NO;
+  _builderResult.template = @"";
   return self;
 }
 @end
@@ -12386,83 +12386,83 @@ static CMsgAMGrantGuestPasses2* defaultCMsgAMGrantGuestPasses2Instance = nil;
   }
 }
 - (BOOL) hasSteamId {
-  return result.hasSteamId;
+  return _builderResult.hasSteamId;
 }
 - (uint64_t) steamId {
-  return result.steamId;
+  return _builderResult.steamId;
 }
 - (CMsgAMGrantGuestPasses2_Builder*) setSteamId:(uint64_t) value {
-  result.hasSteamId = YES;
-  result.steamId = value;
+  _builderResult.hasSteamId = YES;
+  _builderResult.steamId = value;
   return self;
 }
 - (CMsgAMGrantGuestPasses2_Builder*) clearSteamId {
-  result.hasSteamId = NO;
-  result.steamId = 0L;
+  _builderResult.hasSteamId = NO;
+  _builderResult.steamId = 0L;
   return self;
 }
 - (BOOL) hasPackageId {
-  return result.hasPackageId;
+  return _builderResult.hasPackageId;
 }
 - (uint32_t) packageId {
-  return result.packageId;
+  return _builderResult.packageId;
 }
 - (CMsgAMGrantGuestPasses2_Builder*) setPackageId:(uint32_t) value {
-  result.hasPackageId = YES;
-  result.packageId = value;
+  _builderResult.hasPackageId = YES;
+  _builderResult.packageId = value;
   return self;
 }
 - (CMsgAMGrantGuestPasses2_Builder*) clearPackageId {
-  result.hasPackageId = NO;
-  result.packageId = 0;
+  _builderResult.hasPackageId = NO;
+  _builderResult.packageId = 0;
   return self;
 }
 - (BOOL) hasPassesToGrant {
-  return result.hasPassesToGrant;
+  return _builderResult.hasPassesToGrant;
 }
 - (int32_t) passesToGrant {
-  return result.passesToGrant;
+  return _builderResult.passesToGrant;
 }
 - (CMsgAMGrantGuestPasses2_Builder*) setPassesToGrant:(int32_t) value {
-  result.hasPassesToGrant = YES;
-  result.passesToGrant = value;
+  _builderResult.hasPassesToGrant = YES;
+  _builderResult.passesToGrant = value;
   return self;
 }
 - (CMsgAMGrantGuestPasses2_Builder*) clearPassesToGrant {
-  result.hasPassesToGrant = NO;
-  result.passesToGrant = 0;
+  _builderResult.hasPassesToGrant = NO;
+  _builderResult.passesToGrant = 0;
   return self;
 }
 - (BOOL) hasDaysToExpiration {
-  return result.hasDaysToExpiration;
+  return _builderResult.hasDaysToExpiration;
 }
 - (int32_t) daysToExpiration {
-  return result.daysToExpiration;
+  return _builderResult.daysToExpiration;
 }
 - (CMsgAMGrantGuestPasses2_Builder*) setDaysToExpiration:(int32_t) value {
-  result.hasDaysToExpiration = YES;
-  result.daysToExpiration = value;
+  _builderResult.hasDaysToExpiration = YES;
+  _builderResult.daysToExpiration = value;
   return self;
 }
 - (CMsgAMGrantGuestPasses2_Builder*) clearDaysToExpiration {
-  result.hasDaysToExpiration = NO;
-  result.daysToExpiration = 0;
+  _builderResult.hasDaysToExpiration = NO;
+  _builderResult.daysToExpiration = 0;
   return self;
 }
 - (BOOL) hasAction {
-  return result.hasAction;
+  return _builderResult.hasAction;
 }
 - (int32_t) action {
-  return result.action;
+  return _builderResult.action;
 }
 - (CMsgAMGrantGuestPasses2_Builder*) setAction:(int32_t) value {
-  result.hasAction = YES;
-  result.action = value;
+  _builderResult.hasAction = YES;
+  _builderResult.action = value;
   return self;
 }
 - (CMsgAMGrantGuestPasses2_Builder*) clearAction {
-  result.hasAction = NO;
-  result.action = 0;
+  _builderResult.hasAction = NO;
+  _builderResult.action = 0;
   return self;
 }
 @end
@@ -12687,35 +12687,35 @@ static CMsgAMGrantGuestPasses2Response* defaultCMsgAMGrantGuestPasses2ResponseIn
   }
 }
 - (BOOL) hasEresult {
-  return result.hasEresult;
+  return _builderResult.hasEresult;
 }
 - (int32_t) eresult {
-  return result.eresult;
+  return _builderResult.eresult;
 }
 - (CMsgAMGrantGuestPasses2Response_Builder*) setEresult:(int32_t) value {
-  result.hasEresult = YES;
-  result.eresult = value;
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
   return self;
 }
 - (CMsgAMGrantGuestPasses2Response_Builder*) clearEresult {
-  result.hasEresult = NO;
-  result.eresult = 2;
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
   return self;
 }
 - (BOOL) hasPassesGranted {
-  return result.hasPassesGranted;
+  return _builderResult.hasPassesGranted;
 }
 - (int32_t) passesGranted {
-  return result.passesGranted;
+  return _builderResult.passesGranted;
 }
 - (CMsgAMGrantGuestPasses2Response_Builder*) setPassesGranted:(int32_t) value {
-  result.hasPassesGranted = YES;
-  result.passesGranted = value;
+  _builderResult.hasPassesGranted = YES;
+  _builderResult.passesGranted = value;
   return self;
 }
 - (CMsgAMGrantGuestPasses2Response_Builder*) clearPassesGranted {
-  result.hasPassesGranted = NO;
-  result.passesGranted = 0;
+  _builderResult.hasPassesGranted = NO;
+  _builderResult.passesGranted = 0;
   return self;
 }
 @end
@@ -12940,35 +12940,35 @@ static CGCSystemMsg_GetAccountDetails* defaultCGCSystemMsg_GetAccountDetailsInst
   }
 }
 - (BOOL) hasSteamid {
-  return result.hasSteamid;
+  return _builderResult.hasSteamid;
 }
 - (uint64_t) steamid {
-  return result.steamid;
+  return _builderResult.steamid;
 }
 - (CGCSystemMsg_GetAccountDetails_Builder*) setSteamid:(uint64_t) value {
-  result.hasSteamid = YES;
-  result.steamid = value;
+  _builderResult.hasSteamid = YES;
+  _builderResult.steamid = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Builder*) clearSteamid {
-  result.hasSteamid = NO;
-  result.steamid = 0L;
+  _builderResult.hasSteamid = NO;
+  _builderResult.steamid = 0L;
   return self;
 }
 - (BOOL) hasAppid {
-  return result.hasAppid;
+  return _builderResult.hasAppid;
 }
 - (uint32_t) appid {
-  return result.appid;
+  return _builderResult.appid;
 }
 - (CGCSystemMsg_GetAccountDetails_Builder*) setAppid:(uint32_t) value {
-  result.hasAppid = YES;
-  result.appid = value;
+  _builderResult.hasAppid = YES;
+  _builderResult.appid = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Builder*) clearAppid {
-  result.hasAppid = NO;
-  result.appid = 0;
+  _builderResult.hasAppid = NO;
+  _builderResult.appid = 0;
   return self;
 }
 @end
@@ -13635,243 +13635,243 @@ static CGCSystemMsg_GetAccountDetails_Response* defaultCGCSystemMsg_GetAccountDe
   }
 }
 - (BOOL) hasEresult {
-  return result.hasEresult;
+  return _builderResult.hasEresult;
 }
 - (uint32_t) eresult {
-  return result.eresult;
+  return _builderResult.eresult;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) setEresult:(uint32_t) value {
-  result.hasEresult = YES;
-  result.eresult = value;
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) clearEresult {
-  result.hasEresult = NO;
-  result.eresult = 2;
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
   return self;
 }
 - (BOOL) hasAccountName {
-  return result.hasAccountName;
+  return _builderResult.hasAccountName;
 }
 - (NSString*) accountName {
-  return result.accountName;
+  return _builderResult.accountName;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) setAccountName:(NSString*) value {
-  result.hasAccountName = YES;
-  result.accountName = value;
+  _builderResult.hasAccountName = YES;
+  _builderResult.accountName = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) clearAccountName {
-  result.hasAccountName = NO;
-  result.accountName = @"";
+  _builderResult.hasAccountName = NO;
+  _builderResult.accountName = @"";
   return self;
 }
 - (BOOL) hasPersonaName {
-  return result.hasPersonaName;
+  return _builderResult.hasPersonaName;
 }
 - (NSString*) personaName {
-  return result.personaName;
+  return _builderResult.personaName;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) setPersonaName:(NSString*) value {
-  result.hasPersonaName = YES;
-  result.personaName = value;
+  _builderResult.hasPersonaName = YES;
+  _builderResult.personaName = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) clearPersonaName {
-  result.hasPersonaName = NO;
-  result.personaName = @"";
+  _builderResult.hasPersonaName = NO;
+  _builderResult.personaName = @"";
   return self;
 }
 - (BOOL) hasIsProfilePublic {
-  return result.hasIsProfilePublic;
+  return _builderResult.hasIsProfilePublic;
 }
 - (BOOL) isProfilePublic {
-  return result.isProfilePublic;
+  return _builderResult.isProfilePublic;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) setIsProfilePublic:(BOOL) value {
-  result.hasIsProfilePublic = YES;
-  result.isProfilePublic = value;
+  _builderResult.hasIsProfilePublic = YES;
+  _builderResult.isProfilePublic = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) clearIsProfilePublic {
-  result.hasIsProfilePublic = NO;
-  result.isProfilePublic = NO;
+  _builderResult.hasIsProfilePublic = NO;
+  _builderResult.isProfilePublic = NO;
   return self;
 }
 - (BOOL) hasIsInventoryPublic {
-  return result.hasIsInventoryPublic;
+  return _builderResult.hasIsInventoryPublic;
 }
 - (BOOL) isInventoryPublic {
-  return result.isInventoryPublic;
+  return _builderResult.isInventoryPublic;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) setIsInventoryPublic:(BOOL) value {
-  result.hasIsInventoryPublic = YES;
-  result.isInventoryPublic = value;
+  _builderResult.hasIsInventoryPublic = YES;
+  _builderResult.isInventoryPublic = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) clearIsInventoryPublic {
-  result.hasIsInventoryPublic = NO;
-  result.isInventoryPublic = NO;
+  _builderResult.hasIsInventoryPublic = NO;
+  _builderResult.isInventoryPublic = NO;
   return self;
 }
 - (BOOL) hasIsTrusted {
-  return result.hasIsTrusted;
+  return _builderResult.hasIsTrusted;
 }
 - (BOOL) isTrusted {
-  return result.isTrusted;
+  return _builderResult.isTrusted;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) setIsTrusted:(BOOL) value {
-  result.hasIsTrusted = YES;
-  result.isTrusted = value;
+  _builderResult.hasIsTrusted = YES;
+  _builderResult.isTrusted = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) clearIsTrusted {
-  result.hasIsTrusted = NO;
-  result.isTrusted = NO;
+  _builderResult.hasIsTrusted = NO;
+  _builderResult.isTrusted = NO;
   return self;
 }
 - (BOOL) hasIsVacBanned {
-  return result.hasIsVacBanned;
+  return _builderResult.hasIsVacBanned;
 }
 - (BOOL) isVacBanned {
-  return result.isVacBanned;
+  return _builderResult.isVacBanned;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) setIsVacBanned:(BOOL) value {
-  result.hasIsVacBanned = YES;
-  result.isVacBanned = value;
+  _builderResult.hasIsVacBanned = YES;
+  _builderResult.isVacBanned = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) clearIsVacBanned {
-  result.hasIsVacBanned = NO;
-  result.isVacBanned = NO;
+  _builderResult.hasIsVacBanned = NO;
+  _builderResult.isVacBanned = NO;
   return self;
 }
 - (BOOL) hasIsCyberCafe {
-  return result.hasIsCyberCafe;
+  return _builderResult.hasIsCyberCafe;
 }
 - (BOOL) isCyberCafe {
-  return result.isCyberCafe;
+  return _builderResult.isCyberCafe;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) setIsCyberCafe:(BOOL) value {
-  result.hasIsCyberCafe = YES;
-  result.isCyberCafe = value;
+  _builderResult.hasIsCyberCafe = YES;
+  _builderResult.isCyberCafe = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) clearIsCyberCafe {
-  result.hasIsCyberCafe = NO;
-  result.isCyberCafe = NO;
+  _builderResult.hasIsCyberCafe = NO;
+  _builderResult.isCyberCafe = NO;
   return self;
 }
 - (BOOL) hasIsSchoolAccount {
-  return result.hasIsSchoolAccount;
+  return _builderResult.hasIsSchoolAccount;
 }
 - (BOOL) isSchoolAccount {
-  return result.isSchoolAccount;
+  return _builderResult.isSchoolAccount;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) setIsSchoolAccount:(BOOL) value {
-  result.hasIsSchoolAccount = YES;
-  result.isSchoolAccount = value;
+  _builderResult.hasIsSchoolAccount = YES;
+  _builderResult.isSchoolAccount = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) clearIsSchoolAccount {
-  result.hasIsSchoolAccount = NO;
-  result.isSchoolAccount = NO;
+  _builderResult.hasIsSchoolAccount = NO;
+  _builderResult.isSchoolAccount = NO;
   return self;
 }
 - (BOOL) hasIsLimited {
-  return result.hasIsLimited;
+  return _builderResult.hasIsLimited;
 }
 - (BOOL) isLimited {
-  return result.isLimited;
+  return _builderResult.isLimited;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) setIsLimited:(BOOL) value {
-  result.hasIsLimited = YES;
-  result.isLimited = value;
+  _builderResult.hasIsLimited = YES;
+  _builderResult.isLimited = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) clearIsLimited {
-  result.hasIsLimited = NO;
-  result.isLimited = NO;
+  _builderResult.hasIsLimited = NO;
+  _builderResult.isLimited = NO;
   return self;
 }
 - (BOOL) hasIsSubscribed {
-  return result.hasIsSubscribed;
+  return _builderResult.hasIsSubscribed;
 }
 - (BOOL) isSubscribed {
-  return result.isSubscribed;
+  return _builderResult.isSubscribed;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) setIsSubscribed:(BOOL) value {
-  result.hasIsSubscribed = YES;
-  result.isSubscribed = value;
+  _builderResult.hasIsSubscribed = YES;
+  _builderResult.isSubscribed = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) clearIsSubscribed {
-  result.hasIsSubscribed = NO;
-  result.isSubscribed = NO;
+  _builderResult.hasIsSubscribed = NO;
+  _builderResult.isSubscribed = NO;
   return self;
 }
 - (BOOL) hasPackage {
-  return result.hasPackage;
+  return _builderResult.hasPackage;
 }
 - (uint32_t) package {
-  return result.package;
+  return _builderResult.package;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) setPackage:(uint32_t) value {
-  result.hasPackage = YES;
-  result.package = value;
+  _builderResult.hasPackage = YES;
+  _builderResult.package = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) clearPackage {
-  result.hasPackage = NO;
-  result.package = 0;
+  _builderResult.hasPackage = NO;
+  _builderResult.package = 0;
   return self;
 }
 - (BOOL) hasIsFreeTrialAccount {
-  return result.hasIsFreeTrialAccount;
+  return _builderResult.hasIsFreeTrialAccount;
 }
 - (BOOL) isFreeTrialAccount {
-  return result.isFreeTrialAccount;
+  return _builderResult.isFreeTrialAccount;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) setIsFreeTrialAccount:(BOOL) value {
-  result.hasIsFreeTrialAccount = YES;
-  result.isFreeTrialAccount = value;
+  _builderResult.hasIsFreeTrialAccount = YES;
+  _builderResult.isFreeTrialAccount = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) clearIsFreeTrialAccount {
-  result.hasIsFreeTrialAccount = NO;
-  result.isFreeTrialAccount = NO;
+  _builderResult.hasIsFreeTrialAccount = NO;
+  _builderResult.isFreeTrialAccount = NO;
   return self;
 }
 - (BOOL) hasFreeTrialExpiration {
-  return result.hasFreeTrialExpiration;
+  return _builderResult.hasFreeTrialExpiration;
 }
 - (uint32_t) freeTrialExpiration {
-  return result.freeTrialExpiration;
+  return _builderResult.freeTrialExpiration;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) setFreeTrialExpiration:(uint32_t) value {
-  result.hasFreeTrialExpiration = YES;
-  result.freeTrialExpiration = value;
+  _builderResult.hasFreeTrialExpiration = YES;
+  _builderResult.freeTrialExpiration = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) clearFreeTrialExpiration {
-  result.hasFreeTrialExpiration = NO;
-  result.freeTrialExpiration = 0;
+  _builderResult.hasFreeTrialExpiration = NO;
+  _builderResult.freeTrialExpiration = 0;
   return self;
 }
 - (BOOL) hasIsLowViolence {
-  return result.hasIsLowViolence;
+  return _builderResult.hasIsLowViolence;
 }
 - (BOOL) isLowViolence {
-  return result.isLowViolence;
+  return _builderResult.isLowViolence;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) setIsLowViolence:(BOOL) value {
-  result.hasIsLowViolence = YES;
-  result.isLowViolence = value;
+  _builderResult.hasIsLowViolence = YES;
+  _builderResult.isLowViolence = value;
   return self;
 }
 - (CGCSystemMsg_GetAccountDetails_Response_Builder*) clearIsLowViolence {
-  result.hasIsLowViolence = NO;
-  result.isLowViolence = NO;
+  _builderResult.hasIsLowViolence = NO;
+  _builderResult.isLowViolence = NO;
   return self;
 }
 @end
@@ -14043,10 +14043,10 @@ static CMsgGCGetPersonaNames* defaultCMsgGCGetPersonaNamesInstance = nil;
     return self;
   }
   if (other.steamidsArray.count > 0) {
-    if (result.steamidsArray == nil) {
-      result.steamidsArray = [[other.steamidsArray copyWithZone:[other.steamidsArray zone]] autorelease];
+    if (_builderResult.steamidsArray == nil) {
+      _builderResult.steamidsArray = [[other.steamidsArray copyWithZone:[other.steamidsArray zone]] autorelease];
     } else {
-      [result.steamidsArray appendArray:other.steamidsArray];
+      [_builderResult.steamidsArray appendArray:other.steamidsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -14078,28 +14078,28 @@ static CMsgGCGetPersonaNames* defaultCMsgGCGetPersonaNamesInstance = nil;
   }
 }
 - (PBAppendableArray *)steamids {
-  return result.steamidsArray;
+  return _builderResult.steamidsArray;
 }
 - (uint64_t)steamidsAtIndex:(NSUInteger)index {
-  return [result steamidsAtIndex:index];
+  return [_builderResult steamidsAtIndex:index];
 }
 - (CMsgGCGetPersonaNames_Builder *)addSteamids:(uint64_t)value {
-  if (result.steamidsArray == nil) {
-    result.steamidsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
+  if (_builderResult.steamidsArray == nil) {
+    _builderResult.steamidsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
   }
-  [result.steamidsArray addUint64:value];
+  [_builderResult.steamidsArray addUint64:value];
   return self;
 }
 - (CMsgGCGetPersonaNames_Builder *)setSteamidsArray:(NSArray *)array {
-  result.steamidsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
+  _builderResult.steamidsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgGCGetPersonaNames_Builder *)setSteamidsValues:(const uint64_t *)values count:(NSUInteger)count {
-  result.steamidsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
+  _builderResult.steamidsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgGCGetPersonaNames_Builder *)clearSteamids {
-  result.steamidsArray = nil;
+  _builderResult.steamidsArray = nil;
   return self;
 }
 @end
@@ -14475,35 +14475,35 @@ static CMsgGCGetPersonaNames_Response_PersonaName* defaultCMsgGCGetPersonaNames_
   }
 }
 - (BOOL) hasSteamid {
-  return result.hasSteamid;
+  return _builderResult.hasSteamid;
 }
 - (uint64_t) steamid {
-  return result.steamid;
+  return _builderResult.steamid;
 }
 - (CMsgGCGetPersonaNames_Response_PersonaName_Builder*) setSteamid:(uint64_t) value {
-  result.hasSteamid = YES;
-  result.steamid = value;
+  _builderResult.hasSteamid = YES;
+  _builderResult.steamid = value;
   return self;
 }
 - (CMsgGCGetPersonaNames_Response_PersonaName_Builder*) clearSteamid {
-  result.hasSteamid = NO;
-  result.steamid = 0L;
+  _builderResult.hasSteamid = NO;
+  _builderResult.steamid = 0L;
   return self;
 }
 - (BOOL) hasPersonaName {
-  return result.hasPersonaName;
+  return _builderResult.hasPersonaName;
 }
 - (NSString*) personaName {
-  return result.personaName;
+  return _builderResult.personaName;
 }
 - (CMsgGCGetPersonaNames_Response_PersonaName_Builder*) setPersonaName:(NSString*) value {
-  result.hasPersonaName = YES;
-  result.personaName = value;
+  _builderResult.hasPersonaName = YES;
+  _builderResult.personaName = value;
   return self;
 }
 - (CMsgGCGetPersonaNames_Response_PersonaName_Builder*) clearPersonaName {
-  result.hasPersonaName = NO;
-  result.personaName = @"";
+  _builderResult.hasPersonaName = NO;
+  _builderResult.personaName = @"";
   return self;
 }
 @end
@@ -14551,17 +14551,17 @@ static CMsgGCGetPersonaNames_Response_PersonaName* defaultCMsgGCGetPersonaNames_
     return self;
   }
   if (other.succeededLookupsArray.count > 0) {
-    if (result.succeededLookupsArray == nil) {
-      result.succeededLookupsArray = [[other.succeededLookupsArray copyWithZone:[other.succeededLookupsArray zone]] autorelease];
+    if (_builderResult.succeededLookupsArray == nil) {
+      _builderResult.succeededLookupsArray = [[other.succeededLookupsArray copyWithZone:[other.succeededLookupsArray zone]] autorelease];
     } else {
-      [result.succeededLookupsArray appendArray:other.succeededLookupsArray];
+      [_builderResult.succeededLookupsArray appendArray:other.succeededLookupsArray];
     }
   }
   if (other.failedLookupSteamidsArray.count > 0) {
-    if (result.failedLookupSteamidsArray == nil) {
-      result.failedLookupSteamidsArray = [[other.failedLookupSteamidsArray copyWithZone:[other.failedLookupSteamidsArray zone]] autorelease];
+    if (_builderResult.failedLookupSteamidsArray == nil) {
+      _builderResult.failedLookupSteamidsArray = [[other.failedLookupSteamidsArray copyWithZone:[other.failedLookupSteamidsArray zone]] autorelease];
     } else {
-      [result.failedLookupSteamidsArray appendArray:other.failedLookupSteamidsArray];
+      [_builderResult.failedLookupSteamidsArray appendArray:other.failedLookupSteamidsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -14599,53 +14599,53 @@ static CMsgGCGetPersonaNames_Response_PersonaName* defaultCMsgGCGetPersonaNames_
   }
 }
 - (PBAppendableArray *)succeededLookups {
-  return result.succeededLookupsArray;
+  return _builderResult.succeededLookupsArray;
 }
 - (CMsgGCGetPersonaNames_Response_PersonaName*)succeededLookupsAtIndex:(NSUInteger)index {
-  return [result succeededLookupsAtIndex:index];
+  return [_builderResult succeededLookupsAtIndex:index];
 }
 - (CMsgGCGetPersonaNames_Response_Builder *)addSucceededLookups:(CMsgGCGetPersonaNames_Response_PersonaName*)value {
-  if (result.succeededLookupsArray == nil) {
-    result.succeededLookupsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.succeededLookupsArray == nil) {
+    _builderResult.succeededLookupsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.succeededLookupsArray addObject:value];
+  [_builderResult.succeededLookupsArray addObject:value];
   return self;
 }
 - (CMsgGCGetPersonaNames_Response_Builder *)setSucceededLookupsArray:(NSArray *)array {
-  result.succeededLookupsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.succeededLookupsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgGCGetPersonaNames_Response_Builder *)setSucceededLookupsValues:(const CMsgGCGetPersonaNames_Response_PersonaName* *)values count:(NSUInteger)count {
-  result.succeededLookupsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.succeededLookupsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgGCGetPersonaNames_Response_Builder *)clearSucceededLookups {
-  result.succeededLookupsArray = nil;
+  _builderResult.succeededLookupsArray = nil;
   return self;
 }
 - (PBAppendableArray *)failedLookupSteamids {
-  return result.failedLookupSteamidsArray;
+  return _builderResult.failedLookupSteamidsArray;
 }
 - (uint64_t)failedLookupSteamidsAtIndex:(NSUInteger)index {
-  return [result failedLookupSteamidsAtIndex:index];
+  return [_builderResult failedLookupSteamidsAtIndex:index];
 }
 - (CMsgGCGetPersonaNames_Response_Builder *)addFailedLookupSteamids:(uint64_t)value {
-  if (result.failedLookupSteamidsArray == nil) {
-    result.failedLookupSteamidsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
+  if (_builderResult.failedLookupSteamidsArray == nil) {
+    _builderResult.failedLookupSteamidsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
   }
-  [result.failedLookupSteamidsArray addUint64:value];
+  [_builderResult.failedLookupSteamidsArray addUint64:value];
   return self;
 }
 - (CMsgGCGetPersonaNames_Response_Builder *)setFailedLookupSteamidsArray:(NSArray *)array {
-  result.failedLookupSteamidsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
+  _builderResult.failedLookupSteamidsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgGCGetPersonaNames_Response_Builder *)setFailedLookupSteamidsValues:(const uint64_t *)values count:(NSUInteger)count {
-  result.failedLookupSteamidsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
+  _builderResult.failedLookupSteamidsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgGCGetPersonaNames_Response_Builder *)clearFailedLookupSteamids {
-  result.failedLookupSteamidsArray = nil;
+  _builderResult.failedLookupSteamidsArray = nil;
   return self;
 }
 @end

@@ -83,7 +83,7 @@
 
 @interface CMsgSOSingleObject_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSOSingleObject* result;
+  CMsgSOSingleObject* _builderResult;
 }
 
 - (CMsgSOSingleObject*) defaultInstance;
@@ -190,7 +190,7 @@
 
 @interface CMsgSOMultipleObjects_SingleObject_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSOMultipleObjects_SingleObject* result;
+  CMsgSOMultipleObjects_SingleObject* _builderResult;
 }
 
 - (CMsgSOMultipleObjects_SingleObject*) defaultInstance;
@@ -218,7 +218,7 @@
 
 @interface CMsgSOMultipleObjects_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSOMultipleObjects* result;
+  CMsgSOMultipleObjects* _builderResult;
 }
 
 - (CMsgSOMultipleObjects*) defaultInstance;
@@ -329,7 +329,7 @@
 
 @interface CMsgSOCacheSubscribed_SubscribedType_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSOCacheSubscribed_SubscribedType* result;
+  CMsgSOCacheSubscribed_SubscribedType* _builderResult;
 }
 
 - (CMsgSOCacheSubscribed_SubscribedType*) defaultInstance;
@@ -359,7 +359,7 @@
 
 @interface CMsgSOCacheSubscribed_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSOCacheSubscribed* result;
+  CMsgSOCacheSubscribed* _builderResult;
 }
 
 - (CMsgSOCacheSubscribed*) defaultInstance;
@@ -420,7 +420,7 @@
 
 @interface CMsgSOCacheUnsubscribed_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSOCacheUnsubscribed* result;
+  CMsgSOCacheUnsubscribed* _builderResult;
 }
 
 - (CMsgSOCacheUnsubscribed*) defaultInstance;
@@ -473,7 +473,7 @@
 
 @interface CMsgSOCacheSubscriptionCheck_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSOCacheSubscriptionCheck* result;
+  CMsgSOCacheSubscriptionCheck* _builderResult;
 }
 
 - (CMsgSOCacheSubscriptionCheck*) defaultInstance;
@@ -527,7 +527,7 @@
 
 @interface CMsgSOCacheSubscriptionRefresh_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSOCacheSubscriptionRefresh* result;
+  CMsgSOCacheSubscriptionRefresh* _builderResult;
 }
 
 - (CMsgSOCacheSubscriptionRefresh*) defaultInstance;
@@ -576,7 +576,7 @@
 
 @interface CMsgSOCacheVersion_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSOCacheVersion* result;
+  CMsgSOCacheVersion* _builderResult;
 }
 
 - (CMsgSOCacheVersion*) defaultInstance;
@@ -677,7 +677,7 @@
 
 @interface CMsgAccountDetails_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAccountDetails* result;
+  CMsgAccountDetails* _builderResult;
 }
 
 - (CMsgAccountDetails*) defaultInstance;
@@ -798,7 +798,7 @@
 
 @interface CMsgGCMultiplexMessage_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCMultiplexMessage* result;
+  CMsgGCMultiplexMessage* _builderResult;
 }
 
 - (CMsgGCMultiplexMessage*) defaultInstance;

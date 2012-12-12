@@ -300,67 +300,67 @@ static CMsgSOSingleObject* defaultCMsgSOSingleObjectInstance = nil;
   }
 }
 - (BOOL) hasOwner {
-  return result.hasOwner;
+  return _builderResult.hasOwner;
 }
 - (uint64_t) owner {
-  return result.owner;
+  return _builderResult.owner;
 }
 - (CMsgSOSingleObject_Builder*) setOwner:(uint64_t) value {
-  result.hasOwner = YES;
-  result.owner = value;
+  _builderResult.hasOwner = YES;
+  _builderResult.owner = value;
   return self;
 }
 - (CMsgSOSingleObject_Builder*) clearOwner {
-  result.hasOwner = NO;
-  result.owner = 0L;
+  _builderResult.hasOwner = NO;
+  _builderResult.owner = 0L;
   return self;
 }
 - (BOOL) hasTypeId {
-  return result.hasTypeId;
+  return _builderResult.hasTypeId;
 }
 - (int32_t) typeId {
-  return result.typeId;
+  return _builderResult.typeId;
 }
 - (CMsgSOSingleObject_Builder*) setTypeId:(int32_t) value {
-  result.hasTypeId = YES;
-  result.typeId = value;
+  _builderResult.hasTypeId = YES;
+  _builderResult.typeId = value;
   return self;
 }
 - (CMsgSOSingleObject_Builder*) clearTypeId {
-  result.hasTypeId = NO;
-  result.typeId = 0;
+  _builderResult.hasTypeId = NO;
+  _builderResult.typeId = 0;
   return self;
 }
 - (BOOL) hasObjectData {
-  return result.hasObjectData;
+  return _builderResult.hasObjectData;
 }
 - (NSData*) objectData {
-  return result.objectData;
+  return _builderResult.objectData;
 }
 - (CMsgSOSingleObject_Builder*) setObjectData:(NSData*) value {
-  result.hasObjectData = YES;
-  result.objectData = value;
+  _builderResult.hasObjectData = YES;
+  _builderResult.objectData = value;
   return self;
 }
 - (CMsgSOSingleObject_Builder*) clearObjectData {
-  result.hasObjectData = NO;
-  result.objectData = [NSData data];
+  _builderResult.hasObjectData = NO;
+  _builderResult.objectData = [NSData data];
   return self;
 }
 - (BOOL) hasVersion {
-  return result.hasVersion;
+  return _builderResult.hasVersion;
 }
 - (uint64_t) version {
-  return result.version;
+  return _builderResult.version;
 }
 - (CMsgSOSingleObject_Builder*) setVersion:(uint64_t) value {
-  result.hasVersion = YES;
-  result.version = value;
+  _builderResult.hasVersion = YES;
+  _builderResult.version = value;
   return self;
 }
 - (CMsgSOSingleObject_Builder*) clearVersion {
-  result.hasVersion = NO;
-  result.version = 0L;
+  _builderResult.hasVersion = NO;
+  _builderResult.version = 0L;
   return self;
 }
 @end
@@ -803,35 +803,35 @@ static CMsgSOMultipleObjects_SingleObject* defaultCMsgSOMultipleObjects_SingleOb
   }
 }
 - (BOOL) hasTypeId {
-  return result.hasTypeId;
+  return _builderResult.hasTypeId;
 }
 - (int32_t) typeId {
-  return result.typeId;
+  return _builderResult.typeId;
 }
 - (CMsgSOMultipleObjects_SingleObject_Builder*) setTypeId:(int32_t) value {
-  result.hasTypeId = YES;
-  result.typeId = value;
+  _builderResult.hasTypeId = YES;
+  _builderResult.typeId = value;
   return self;
 }
 - (CMsgSOMultipleObjects_SingleObject_Builder*) clearTypeId {
-  result.hasTypeId = NO;
-  result.typeId = 0;
+  _builderResult.hasTypeId = NO;
+  _builderResult.typeId = 0;
   return self;
 }
 - (BOOL) hasObjectData {
-  return result.hasObjectData;
+  return _builderResult.hasObjectData;
 }
 - (NSData*) objectData {
-  return result.objectData;
+  return _builderResult.objectData;
 }
 - (CMsgSOMultipleObjects_SingleObject_Builder*) setObjectData:(NSData*) value {
-  result.hasObjectData = YES;
-  result.objectData = value;
+  _builderResult.hasObjectData = YES;
+  _builderResult.objectData = value;
   return self;
 }
 - (CMsgSOMultipleObjects_SingleObject_Builder*) clearObjectData {
-  result.hasObjectData = NO;
-  result.objectData = [NSData data];
+  _builderResult.hasObjectData = NO;
+  _builderResult.objectData = [NSData data];
   return self;
 }
 @end
@@ -882,27 +882,27 @@ static CMsgSOMultipleObjects_SingleObject* defaultCMsgSOMultipleObjects_SingleOb
     [self setOwner:other.owner];
   }
   if (other.objectsModifiedArray.count > 0) {
-    if (result.objectsModifiedArray == nil) {
-      result.objectsModifiedArray = [[other.objectsModifiedArray copyWithZone:[other.objectsModifiedArray zone]] autorelease];
+    if (_builderResult.objectsModifiedArray == nil) {
+      _builderResult.objectsModifiedArray = [[other.objectsModifiedArray copyWithZone:[other.objectsModifiedArray zone]] autorelease];
     } else {
-      [result.objectsModifiedArray appendArray:other.objectsModifiedArray];
+      [_builderResult.objectsModifiedArray appendArray:other.objectsModifiedArray];
     }
   }
   if (other.hasVersion) {
     [self setVersion:other.version];
   }
   if (other.objectsAddedArray.count > 0) {
-    if (result.objectsAddedArray == nil) {
-      result.objectsAddedArray = [[other.objectsAddedArray copyWithZone:[other.objectsAddedArray zone]] autorelease];
+    if (_builderResult.objectsAddedArray == nil) {
+      _builderResult.objectsAddedArray = [[other.objectsAddedArray copyWithZone:[other.objectsAddedArray zone]] autorelease];
     } else {
-      [result.objectsAddedArray appendArray:other.objectsAddedArray];
+      [_builderResult.objectsAddedArray appendArray:other.objectsAddedArray];
     }
   }
   if (other.objectsRemovedArray.count > 0) {
-    if (result.objectsRemovedArray == nil) {
-      result.objectsRemovedArray = [[other.objectsRemovedArray copyWithZone:[other.objectsRemovedArray zone]] autorelease];
+    if (_builderResult.objectsRemovedArray == nil) {
+      _builderResult.objectsRemovedArray = [[other.objectsRemovedArray copyWithZone:[other.objectsRemovedArray zone]] autorelease];
     } else {
-      [result.objectsRemovedArray appendArray:other.objectsRemovedArray];
+      [_builderResult.objectsRemovedArray appendArray:other.objectsRemovedArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -956,110 +956,110 @@ static CMsgSOMultipleObjects_SingleObject* defaultCMsgSOMultipleObjects_SingleOb
   }
 }
 - (BOOL) hasOwner {
-  return result.hasOwner;
+  return _builderResult.hasOwner;
 }
 - (uint64_t) owner {
-  return result.owner;
+  return _builderResult.owner;
 }
 - (CMsgSOMultipleObjects_Builder*) setOwner:(uint64_t) value {
-  result.hasOwner = YES;
-  result.owner = value;
+  _builderResult.hasOwner = YES;
+  _builderResult.owner = value;
   return self;
 }
 - (CMsgSOMultipleObjects_Builder*) clearOwner {
-  result.hasOwner = NO;
-  result.owner = 0L;
+  _builderResult.hasOwner = NO;
+  _builderResult.owner = 0L;
   return self;
 }
 - (PBAppendableArray *)objectsModified {
-  return result.objectsModifiedArray;
+  return _builderResult.objectsModifiedArray;
 }
 - (CMsgSOMultipleObjects_SingleObject*)objectsModifiedAtIndex:(NSUInteger)index {
-  return [result objectsModifiedAtIndex:index];
+  return [_builderResult objectsModifiedAtIndex:index];
 }
 - (CMsgSOMultipleObjects_Builder *)addObjectsModified:(CMsgSOMultipleObjects_SingleObject*)value {
-  if (result.objectsModifiedArray == nil) {
-    result.objectsModifiedArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.objectsModifiedArray == nil) {
+    _builderResult.objectsModifiedArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.objectsModifiedArray addObject:value];
+  [_builderResult.objectsModifiedArray addObject:value];
   return self;
 }
 - (CMsgSOMultipleObjects_Builder *)setObjectsModifiedArray:(NSArray *)array {
-  result.objectsModifiedArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.objectsModifiedArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgSOMultipleObjects_Builder *)setObjectsModifiedValues:(const CMsgSOMultipleObjects_SingleObject* *)values count:(NSUInteger)count {
-  result.objectsModifiedArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.objectsModifiedArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgSOMultipleObjects_Builder *)clearObjectsModified {
-  result.objectsModifiedArray = nil;
+  _builderResult.objectsModifiedArray = nil;
   return self;
 }
 - (BOOL) hasVersion {
-  return result.hasVersion;
+  return _builderResult.hasVersion;
 }
 - (uint64_t) version {
-  return result.version;
+  return _builderResult.version;
 }
 - (CMsgSOMultipleObjects_Builder*) setVersion:(uint64_t) value {
-  result.hasVersion = YES;
-  result.version = value;
+  _builderResult.hasVersion = YES;
+  _builderResult.version = value;
   return self;
 }
 - (CMsgSOMultipleObjects_Builder*) clearVersion {
-  result.hasVersion = NO;
-  result.version = 0L;
+  _builderResult.hasVersion = NO;
+  _builderResult.version = 0L;
   return self;
 }
 - (PBAppendableArray *)objectsAdded {
-  return result.objectsAddedArray;
+  return _builderResult.objectsAddedArray;
 }
 - (CMsgSOMultipleObjects_SingleObject*)objectsAddedAtIndex:(NSUInteger)index {
-  return [result objectsAddedAtIndex:index];
+  return [_builderResult objectsAddedAtIndex:index];
 }
 - (CMsgSOMultipleObjects_Builder *)addObjectsAdded:(CMsgSOMultipleObjects_SingleObject*)value {
-  if (result.objectsAddedArray == nil) {
-    result.objectsAddedArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.objectsAddedArray == nil) {
+    _builderResult.objectsAddedArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.objectsAddedArray addObject:value];
+  [_builderResult.objectsAddedArray addObject:value];
   return self;
 }
 - (CMsgSOMultipleObjects_Builder *)setObjectsAddedArray:(NSArray *)array {
-  result.objectsAddedArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.objectsAddedArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgSOMultipleObjects_Builder *)setObjectsAddedValues:(const CMsgSOMultipleObjects_SingleObject* *)values count:(NSUInteger)count {
-  result.objectsAddedArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.objectsAddedArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgSOMultipleObjects_Builder *)clearObjectsAdded {
-  result.objectsAddedArray = nil;
+  _builderResult.objectsAddedArray = nil;
   return self;
 }
 - (PBAppendableArray *)objectsRemoved {
-  return result.objectsRemovedArray;
+  return _builderResult.objectsRemovedArray;
 }
 - (CMsgSOMultipleObjects_SingleObject*)objectsRemovedAtIndex:(NSUInteger)index {
-  return [result objectsRemovedAtIndex:index];
+  return [_builderResult objectsRemovedAtIndex:index];
 }
 - (CMsgSOMultipleObjects_Builder *)addObjectsRemoved:(CMsgSOMultipleObjects_SingleObject*)value {
-  if (result.objectsRemovedArray == nil) {
-    result.objectsRemovedArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.objectsRemovedArray == nil) {
+    _builderResult.objectsRemovedArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.objectsRemovedArray addObject:value];
+  [_builderResult.objectsRemovedArray addObject:value];
   return self;
 }
 - (CMsgSOMultipleObjects_Builder *)setObjectsRemovedArray:(NSArray *)array {
-  result.objectsRemovedArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.objectsRemovedArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgSOMultipleObjects_Builder *)setObjectsRemovedValues:(const CMsgSOMultipleObjects_SingleObject* *)values count:(NSUInteger)count {
-  result.objectsRemovedArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.objectsRemovedArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgSOMultipleObjects_Builder *)clearObjectsRemoved {
-  result.objectsRemovedArray = nil;
+  _builderResult.objectsRemovedArray = nil;
   return self;
 }
 @end
@@ -1425,10 +1425,10 @@ static CMsgSOCacheSubscribed_SubscribedType* defaultCMsgSOCacheSubscribed_Subscr
     [self setTypeId:other.typeId];
   }
   if (other.objectDataArray.count > 0) {
-    if (result.objectDataArray == nil) {
-      result.objectDataArray = [[other.objectDataArray copyWithZone:[other.objectDataArray zone]] autorelease];
+    if (_builderResult.objectDataArray == nil) {
+      _builderResult.objectDataArray = [[other.objectDataArray copyWithZone:[other.objectDataArray zone]] autorelease];
     } else {
-      [result.objectDataArray appendArray:other.objectDataArray];
+      [_builderResult.objectDataArray appendArray:other.objectDataArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -1464,44 +1464,44 @@ static CMsgSOCacheSubscribed_SubscribedType* defaultCMsgSOCacheSubscribed_Subscr
   }
 }
 - (BOOL) hasTypeId {
-  return result.hasTypeId;
+  return _builderResult.hasTypeId;
 }
 - (int32_t) typeId {
-  return result.typeId;
+  return _builderResult.typeId;
 }
 - (CMsgSOCacheSubscribed_SubscribedType_Builder*) setTypeId:(int32_t) value {
-  result.hasTypeId = YES;
-  result.typeId = value;
+  _builderResult.hasTypeId = YES;
+  _builderResult.typeId = value;
   return self;
 }
 - (CMsgSOCacheSubscribed_SubscribedType_Builder*) clearTypeId {
-  result.hasTypeId = NO;
-  result.typeId = 0;
+  _builderResult.hasTypeId = NO;
+  _builderResult.typeId = 0;
   return self;
 }
 - (PBAppendableArray *)objectData {
-  return result.objectDataArray;
+  return _builderResult.objectDataArray;
 }
 - (NSData*)objectDataAtIndex:(NSUInteger)index {
-  return [result objectDataAtIndex:index];
+  return [_builderResult objectDataAtIndex:index];
 }
 - (CMsgSOCacheSubscribed_SubscribedType_Builder *)addObjectData:(NSData*)value {
-  if (result.objectDataArray == nil) {
-    result.objectDataArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.objectDataArray == nil) {
+    _builderResult.objectDataArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.objectDataArray addObject:value];
+  [_builderResult.objectDataArray addObject:value];
   return self;
 }
 - (CMsgSOCacheSubscribed_SubscribedType_Builder *)setObjectDataArray:(NSArray *)array {
-  result.objectDataArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.objectDataArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgSOCacheSubscribed_SubscribedType_Builder *)setObjectDataValues:(const NSData* *)values count:(NSUInteger)count {
-  result.objectDataArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.objectDataArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgSOCacheSubscribed_SubscribedType_Builder *)clearObjectData {
-  result.objectDataArray = nil;
+  _builderResult.objectDataArray = nil;
   return self;
 }
 @end
@@ -1552,10 +1552,10 @@ static CMsgSOCacheSubscribed_SubscribedType* defaultCMsgSOCacheSubscribed_Subscr
     [self setOwner:other.owner];
   }
   if (other.objectsArray.count > 0) {
-    if (result.objectsArray == nil) {
-      result.objectsArray = [[other.objectsArray copyWithZone:[other.objectsArray zone]] autorelease];
+    if (_builderResult.objectsArray == nil) {
+      _builderResult.objectsArray = [[other.objectsArray copyWithZone:[other.objectsArray zone]] autorelease];
     } else {
-      [result.objectsArray appendArray:other.objectsArray];
+      [_builderResult.objectsArray appendArray:other.objectsArray];
     }
   }
   if (other.hasVersion) {
@@ -1600,60 +1600,60 @@ static CMsgSOCacheSubscribed_SubscribedType* defaultCMsgSOCacheSubscribed_Subscr
   }
 }
 - (BOOL) hasOwner {
-  return result.hasOwner;
+  return _builderResult.hasOwner;
 }
 - (uint64_t) owner {
-  return result.owner;
+  return _builderResult.owner;
 }
 - (CMsgSOCacheSubscribed_Builder*) setOwner:(uint64_t) value {
-  result.hasOwner = YES;
-  result.owner = value;
+  _builderResult.hasOwner = YES;
+  _builderResult.owner = value;
   return self;
 }
 - (CMsgSOCacheSubscribed_Builder*) clearOwner {
-  result.hasOwner = NO;
-  result.owner = 0L;
+  _builderResult.hasOwner = NO;
+  _builderResult.owner = 0L;
   return self;
 }
 - (PBAppendableArray *)objects {
-  return result.objectsArray;
+  return _builderResult.objectsArray;
 }
 - (CMsgSOCacheSubscribed_SubscribedType*)objectsAtIndex:(NSUInteger)index {
-  return [result objectsAtIndex:index];
+  return [_builderResult objectsAtIndex:index];
 }
 - (CMsgSOCacheSubscribed_Builder *)addObjects:(CMsgSOCacheSubscribed_SubscribedType*)value {
-  if (result.objectsArray == nil) {
-    result.objectsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  if (_builderResult.objectsArray == nil) {
+    _builderResult.objectsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
   }
-  [result.objectsArray addObject:value];
+  [_builderResult.objectsArray addObject:value];
   return self;
 }
 - (CMsgSOCacheSubscribed_Builder *)setObjectsArray:(NSArray *)array {
-  result.objectsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  _builderResult.objectsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgSOCacheSubscribed_Builder *)setObjectsValues:(const CMsgSOCacheSubscribed_SubscribedType* *)values count:(NSUInteger)count {
-  result.objectsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  _builderResult.objectsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
   return self;
 }
 - (CMsgSOCacheSubscribed_Builder *)clearObjects {
-  result.objectsArray = nil;
+  _builderResult.objectsArray = nil;
   return self;
 }
 - (BOOL) hasVersion {
-  return result.hasVersion;
+  return _builderResult.hasVersion;
 }
 - (uint64_t) version {
-  return result.version;
+  return _builderResult.version;
 }
 - (CMsgSOCacheSubscribed_Builder*) setVersion:(uint64_t) value {
-  result.hasVersion = YES;
-  result.version = value;
+  _builderResult.hasVersion = YES;
+  _builderResult.version = value;
   return self;
 }
 - (CMsgSOCacheSubscribed_Builder*) clearVersion {
-  result.hasVersion = NO;
-  result.version = 0L;
+  _builderResult.hasVersion = NO;
+  _builderResult.version = 0L;
   return self;
 }
 @end
@@ -1848,19 +1848,19 @@ static CMsgSOCacheUnsubscribed* defaultCMsgSOCacheUnsubscribedInstance = nil;
   }
 }
 - (BOOL) hasOwner {
-  return result.hasOwner;
+  return _builderResult.hasOwner;
 }
 - (uint64_t) owner {
-  return result.owner;
+  return _builderResult.owner;
 }
 - (CMsgSOCacheUnsubscribed_Builder*) setOwner:(uint64_t) value {
-  result.hasOwner = YES;
-  result.owner = value;
+  _builderResult.hasOwner = YES;
+  _builderResult.owner = value;
   return self;
 }
 - (CMsgSOCacheUnsubscribed_Builder*) clearOwner {
-  result.hasOwner = NO;
-  result.owner = 0L;
+  _builderResult.hasOwner = NO;
+  _builderResult.owner = 0L;
   return self;
 }
 @end
@@ -2085,35 +2085,35 @@ static CMsgSOCacheSubscriptionCheck* defaultCMsgSOCacheSubscriptionCheckInstance
   }
 }
 - (BOOL) hasOwner {
-  return result.hasOwner;
+  return _builderResult.hasOwner;
 }
 - (uint64_t) owner {
-  return result.owner;
+  return _builderResult.owner;
 }
 - (CMsgSOCacheSubscriptionCheck_Builder*) setOwner:(uint64_t) value {
-  result.hasOwner = YES;
-  result.owner = value;
+  _builderResult.hasOwner = YES;
+  _builderResult.owner = value;
   return self;
 }
 - (CMsgSOCacheSubscriptionCheck_Builder*) clearOwner {
-  result.hasOwner = NO;
-  result.owner = 0L;
+  _builderResult.hasOwner = NO;
+  _builderResult.owner = 0L;
   return self;
 }
 - (BOOL) hasVersion {
-  return result.hasVersion;
+  return _builderResult.hasVersion;
 }
 - (uint64_t) version {
-  return result.version;
+  return _builderResult.version;
 }
 - (CMsgSOCacheSubscriptionCheck_Builder*) setVersion:(uint64_t) value {
-  result.hasVersion = YES;
-  result.version = value;
+  _builderResult.hasVersion = YES;
+  _builderResult.version = value;
   return self;
 }
 - (CMsgSOCacheSubscriptionCheck_Builder*) clearVersion {
-  result.hasVersion = NO;
-  result.version = 0L;
+  _builderResult.hasVersion = NO;
+  _builderResult.version = 0L;
   return self;
 }
 @end
@@ -2308,19 +2308,19 @@ static CMsgSOCacheSubscriptionRefresh* defaultCMsgSOCacheSubscriptionRefreshInst
   }
 }
 - (BOOL) hasOwner {
-  return result.hasOwner;
+  return _builderResult.hasOwner;
 }
 - (uint64_t) owner {
-  return result.owner;
+  return _builderResult.owner;
 }
 - (CMsgSOCacheSubscriptionRefresh_Builder*) setOwner:(uint64_t) value {
-  result.hasOwner = YES;
-  result.owner = value;
+  _builderResult.hasOwner = YES;
+  _builderResult.owner = value;
   return self;
 }
 - (CMsgSOCacheSubscriptionRefresh_Builder*) clearOwner {
-  result.hasOwner = NO;
-  result.owner = 0L;
+  _builderResult.hasOwner = NO;
+  _builderResult.owner = 0L;
   return self;
 }
 @end
@@ -2515,19 +2515,19 @@ static CMsgSOCacheVersion* defaultCMsgSOCacheVersionInstance = nil;
   }
 }
 - (BOOL) hasVersion {
-  return result.hasVersion;
+  return _builderResult.hasVersion;
 }
 - (uint64_t) version {
-  return result.version;
+  return _builderResult.version;
 }
 - (CMsgSOCacheVersion_Builder*) setVersion:(uint64_t) value {
-  result.hasVersion = YES;
-  result.version = value;
+  _builderResult.hasVersion = YES;
+  _builderResult.version = value;
   return self;
 }
 - (CMsgSOCacheVersion_Builder*) clearVersion {
-  result.hasVersion = NO;
-  result.version = 0L;
+  _builderResult.hasVersion = NO;
+  _builderResult.version = 0L;
   return self;
 }
 @end
@@ -3168,227 +3168,227 @@ static CMsgAccountDetails* defaultCMsgAccountDetailsInstance = nil;
   }
 }
 - (BOOL) hasValid {
-  return result.hasValid;
+  return _builderResult.hasValid;
 }
 - (BOOL) valid {
-  return result.valid;
+  return _builderResult.valid;
 }
 - (CMsgAccountDetails_Builder*) setValid:(BOOL) value {
-  result.hasValid = YES;
-  result.valid = value;
+  _builderResult.hasValid = YES;
+  _builderResult.valid = value;
   return self;
 }
 - (CMsgAccountDetails_Builder*) clearValid {
-  result.hasValid = NO;
-  result.valid = NO;
+  _builderResult.hasValid = NO;
+  _builderResult.valid = NO;
   return self;
 }
 - (BOOL) hasAccountName {
-  return result.hasAccountName;
+  return _builderResult.hasAccountName;
 }
 - (NSString*) accountName {
-  return result.accountName;
+  return _builderResult.accountName;
 }
 - (CMsgAccountDetails_Builder*) setAccountName:(NSString*) value {
-  result.hasAccountName = YES;
-  result.accountName = value;
+  _builderResult.hasAccountName = YES;
+  _builderResult.accountName = value;
   return self;
 }
 - (CMsgAccountDetails_Builder*) clearAccountName {
-  result.hasAccountName = NO;
-  result.accountName = @"";
+  _builderResult.hasAccountName = NO;
+  _builderResult.accountName = @"";
   return self;
 }
 - (BOOL) hasPublicProfile {
-  return result.hasPublicProfile;
+  return _builderResult.hasPublicProfile;
 }
 - (BOOL) publicProfile {
-  return result.publicProfile;
+  return _builderResult.publicProfile;
 }
 - (CMsgAccountDetails_Builder*) setPublicProfile:(BOOL) value {
-  result.hasPublicProfile = YES;
-  result.publicProfile = value;
+  _builderResult.hasPublicProfile = YES;
+  _builderResult.publicProfile = value;
   return self;
 }
 - (CMsgAccountDetails_Builder*) clearPublicProfile {
-  result.hasPublicProfile = NO;
-  result.publicProfile = NO;
+  _builderResult.hasPublicProfile = NO;
+  _builderResult.publicProfile = NO;
   return self;
 }
 - (BOOL) hasPublicInventory {
-  return result.hasPublicInventory;
+  return _builderResult.hasPublicInventory;
 }
 - (BOOL) publicInventory {
-  return result.publicInventory;
+  return _builderResult.publicInventory;
 }
 - (CMsgAccountDetails_Builder*) setPublicInventory:(BOOL) value {
-  result.hasPublicInventory = YES;
-  result.publicInventory = value;
+  _builderResult.hasPublicInventory = YES;
+  _builderResult.publicInventory = value;
   return self;
 }
 - (CMsgAccountDetails_Builder*) clearPublicInventory {
-  result.hasPublicInventory = NO;
-  result.publicInventory = NO;
+  _builderResult.hasPublicInventory = NO;
+  _builderResult.publicInventory = NO;
   return self;
 }
 - (BOOL) hasVacBanned {
-  return result.hasVacBanned;
+  return _builderResult.hasVacBanned;
 }
 - (BOOL) vacBanned {
-  return result.vacBanned;
+  return _builderResult.vacBanned;
 }
 - (CMsgAccountDetails_Builder*) setVacBanned:(BOOL) value {
-  result.hasVacBanned = YES;
-  result.vacBanned = value;
+  _builderResult.hasVacBanned = YES;
+  _builderResult.vacBanned = value;
   return self;
 }
 - (CMsgAccountDetails_Builder*) clearVacBanned {
-  result.hasVacBanned = NO;
-  result.vacBanned = NO;
+  _builderResult.hasVacBanned = NO;
+  _builderResult.vacBanned = NO;
   return self;
 }
 - (BOOL) hasCyberCafe {
-  return result.hasCyberCafe;
+  return _builderResult.hasCyberCafe;
 }
 - (BOOL) cyberCafe {
-  return result.cyberCafe;
+  return _builderResult.cyberCafe;
 }
 - (CMsgAccountDetails_Builder*) setCyberCafe:(BOOL) value {
-  result.hasCyberCafe = YES;
-  result.cyberCafe = value;
+  _builderResult.hasCyberCafe = YES;
+  _builderResult.cyberCafe = value;
   return self;
 }
 - (CMsgAccountDetails_Builder*) clearCyberCafe {
-  result.hasCyberCafe = NO;
-  result.cyberCafe = NO;
+  _builderResult.hasCyberCafe = NO;
+  _builderResult.cyberCafe = NO;
   return self;
 }
 - (BOOL) hasSchoolAccount {
-  return result.hasSchoolAccount;
+  return _builderResult.hasSchoolAccount;
 }
 - (BOOL) schoolAccount {
-  return result.schoolAccount;
+  return _builderResult.schoolAccount;
 }
 - (CMsgAccountDetails_Builder*) setSchoolAccount:(BOOL) value {
-  result.hasSchoolAccount = YES;
-  result.schoolAccount = value;
+  _builderResult.hasSchoolAccount = YES;
+  _builderResult.schoolAccount = value;
   return self;
 }
 - (CMsgAccountDetails_Builder*) clearSchoolAccount {
-  result.hasSchoolAccount = NO;
-  result.schoolAccount = NO;
+  _builderResult.hasSchoolAccount = NO;
+  _builderResult.schoolAccount = NO;
   return self;
 }
 - (BOOL) hasFreeTrialAccount {
-  return result.hasFreeTrialAccount;
+  return _builderResult.hasFreeTrialAccount;
 }
 - (BOOL) freeTrialAccount {
-  return result.freeTrialAccount;
+  return _builderResult.freeTrialAccount;
 }
 - (CMsgAccountDetails_Builder*) setFreeTrialAccount:(BOOL) value {
-  result.hasFreeTrialAccount = YES;
-  result.freeTrialAccount = value;
+  _builderResult.hasFreeTrialAccount = YES;
+  _builderResult.freeTrialAccount = value;
   return self;
 }
 - (CMsgAccountDetails_Builder*) clearFreeTrialAccount {
-  result.hasFreeTrialAccount = NO;
-  result.freeTrialAccount = NO;
+  _builderResult.hasFreeTrialAccount = NO;
+  _builderResult.freeTrialAccount = NO;
   return self;
 }
 - (BOOL) hasSubscribed {
-  return result.hasSubscribed;
+  return _builderResult.hasSubscribed;
 }
 - (BOOL) subscribed {
-  return result.subscribed;
+  return _builderResult.subscribed;
 }
 - (CMsgAccountDetails_Builder*) setSubscribed:(BOOL) value {
-  result.hasSubscribed = YES;
-  result.subscribed = value;
+  _builderResult.hasSubscribed = YES;
+  _builderResult.subscribed = value;
   return self;
 }
 - (CMsgAccountDetails_Builder*) clearSubscribed {
-  result.hasSubscribed = NO;
-  result.subscribed = NO;
+  _builderResult.hasSubscribed = NO;
+  _builderResult.subscribed = NO;
   return self;
 }
 - (BOOL) hasLowViolence {
-  return result.hasLowViolence;
+  return _builderResult.hasLowViolence;
 }
 - (BOOL) lowViolence {
-  return result.lowViolence;
+  return _builderResult.lowViolence;
 }
 - (CMsgAccountDetails_Builder*) setLowViolence:(BOOL) value {
-  result.hasLowViolence = YES;
-  result.lowViolence = value;
+  _builderResult.hasLowViolence = YES;
+  _builderResult.lowViolence = value;
   return self;
 }
 - (CMsgAccountDetails_Builder*) clearLowViolence {
-  result.hasLowViolence = NO;
-  result.lowViolence = NO;
+  _builderResult.hasLowViolence = NO;
+  _builderResult.lowViolence = NO;
   return self;
 }
 - (BOOL) hasLimited {
-  return result.hasLimited;
+  return _builderResult.hasLimited;
 }
 - (BOOL) limited {
-  return result.limited;
+  return _builderResult.limited;
 }
 - (CMsgAccountDetails_Builder*) setLimited:(BOOL) value {
-  result.hasLimited = YES;
-  result.limited = value;
+  _builderResult.hasLimited = YES;
+  _builderResult.limited = value;
   return self;
 }
 - (CMsgAccountDetails_Builder*) clearLimited {
-  result.hasLimited = NO;
-  result.limited = NO;
+  _builderResult.hasLimited = NO;
+  _builderResult.limited = NO;
   return self;
 }
 - (BOOL) hasTrusted {
-  return result.hasTrusted;
+  return _builderResult.hasTrusted;
 }
 - (BOOL) trusted {
-  return result.trusted;
+  return _builderResult.trusted;
 }
 - (CMsgAccountDetails_Builder*) setTrusted:(BOOL) value {
-  result.hasTrusted = YES;
-  result.trusted = value;
+  _builderResult.hasTrusted = YES;
+  _builderResult.trusted = value;
   return self;
 }
 - (CMsgAccountDetails_Builder*) clearTrusted {
-  result.hasTrusted = NO;
-  result.trusted = NO;
+  _builderResult.hasTrusted = NO;
+  _builderResult.trusted = NO;
   return self;
 }
 - (BOOL) hasPackage {
-  return result.hasPackage;
+  return _builderResult.hasPackage;
 }
 - (uint32_t) package {
-  return result.package;
+  return _builderResult.package;
 }
 - (CMsgAccountDetails_Builder*) setPackage:(uint32_t) value {
-  result.hasPackage = YES;
-  result.package = value;
+  _builderResult.hasPackage = YES;
+  _builderResult.package = value;
   return self;
 }
 - (CMsgAccountDetails_Builder*) clearPackage {
-  result.hasPackage = NO;
-  result.package = 0;
+  _builderResult.hasPackage = NO;
+  _builderResult.package = 0;
   return self;
 }
 - (BOOL) hasTimeCached {
-  return result.hasTimeCached;
+  return _builderResult.hasTimeCached;
 }
 - (uint32_t) timeCached {
-  return result.timeCached;
+  return _builderResult.timeCached;
 }
 - (CMsgAccountDetails_Builder*) setTimeCached:(uint32_t) value {
-  result.hasTimeCached = YES;
-  result.timeCached = value;
+  _builderResult.hasTimeCached = YES;
+  _builderResult.timeCached = value;
   return self;
 }
 - (CMsgAccountDetails_Builder*) clearTimeCached {
-  result.hasTimeCached = NO;
-  result.timeCached = 0;
+  _builderResult.hasTimeCached = NO;
+  _builderResult.timeCached = 0;
   return self;
 }
 @end
@@ -3613,10 +3613,10 @@ static CMsgGCMultiplexMessage* defaultCMsgGCMultiplexMessageInstance = nil;
     [self setPayload:other.payload];
   }
   if (other.steamidsArray.count > 0) {
-    if (result.steamidsArray == nil) {
-      result.steamidsArray = [[other.steamidsArray copyWithZone:[other.steamidsArray zone]] autorelease];
+    if (_builderResult.steamidsArray == nil) {
+      _builderResult.steamidsArray = [[other.steamidsArray copyWithZone:[other.steamidsArray zone]] autorelease];
     } else {
-      [result.steamidsArray appendArray:other.steamidsArray];
+      [_builderResult.steamidsArray appendArray:other.steamidsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -3656,60 +3656,60 @@ static CMsgGCMultiplexMessage* defaultCMsgGCMultiplexMessageInstance = nil;
   }
 }
 - (BOOL) hasMsgtype {
-  return result.hasMsgtype;
+  return _builderResult.hasMsgtype;
 }
 - (uint32_t) msgtype {
-  return result.msgtype;
+  return _builderResult.msgtype;
 }
 - (CMsgGCMultiplexMessage_Builder*) setMsgtype:(uint32_t) value {
-  result.hasMsgtype = YES;
-  result.msgtype = value;
+  _builderResult.hasMsgtype = YES;
+  _builderResult.msgtype = value;
   return self;
 }
 - (CMsgGCMultiplexMessage_Builder*) clearMsgtype {
-  result.hasMsgtype = NO;
-  result.msgtype = 0;
+  _builderResult.hasMsgtype = NO;
+  _builderResult.msgtype = 0;
   return self;
 }
 - (BOOL) hasPayload {
-  return result.hasPayload;
+  return _builderResult.hasPayload;
 }
 - (NSData*) payload {
-  return result.payload;
+  return _builderResult.payload;
 }
 - (CMsgGCMultiplexMessage_Builder*) setPayload:(NSData*) value {
-  result.hasPayload = YES;
-  result.payload = value;
+  _builderResult.hasPayload = YES;
+  _builderResult.payload = value;
   return self;
 }
 - (CMsgGCMultiplexMessage_Builder*) clearPayload {
-  result.hasPayload = NO;
-  result.payload = [NSData data];
+  _builderResult.hasPayload = NO;
+  _builderResult.payload = [NSData data];
   return self;
 }
 - (PBAppendableArray *)steamids {
-  return result.steamidsArray;
+  return _builderResult.steamidsArray;
 }
 - (uint64_t)steamidsAtIndex:(NSUInteger)index {
-  return [result steamidsAtIndex:index];
+  return [_builderResult steamidsAtIndex:index];
 }
 - (CMsgGCMultiplexMessage_Builder *)addSteamids:(uint64_t)value {
-  if (result.steamidsArray == nil) {
-    result.steamidsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
+  if (_builderResult.steamidsArray == nil) {
+    _builderResult.steamidsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
   }
-  [result.steamidsArray addUint64:value];
+  [_builderResult.steamidsArray addUint64:value];
   return self;
 }
 - (CMsgGCMultiplexMessage_Builder *)setSteamidsArray:(NSArray *)array {
-  result.steamidsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
+  _builderResult.steamidsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgGCMultiplexMessage_Builder *)setSteamidsValues:(const uint64_t *)values count:(NSUInteger)count {
-  result.steamidsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
+  _builderResult.steamidsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
   return self;
 }
 - (CMsgGCMultiplexMessage_Builder *)clearSteamids {
-  result.steamidsArray = nil;
+  _builderResult.steamidsArray = nil;
   return self;
 }
 @end

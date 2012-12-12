@@ -1222,7 +1222,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CSODOTAGameAccountClient_Builder : PBGeneratedMessage_Builder {
 @private
-  CSODOTAGameAccountClient* result;
+  CSODOTAGameAccountClient* _builderResult;
 }
 
 - (CSODOTAGameAccountClient*) defaultInstance;
@@ -1452,7 +1452,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CSODOTAGameAccountClientInternal_Builder : PBGeneratedMessage_Builder {
 @private
-  CSODOTAGameAccountClientInternal* result;
+  CSODOTAGameAccountClientInternal* _builderResult;
 }
 
 - (CSODOTAGameAccountClientInternal*) defaultInstance;
@@ -1591,7 +1591,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CSODOTAGameHeroStandings_Builder : PBGeneratedMessage_Builder {
 @private
-  CSODOTAGameHeroStandings* result;
+  CSODOTAGameHeroStandings* _builderResult;
 }
 
 - (CSODOTAGameHeroStandings*) defaultInstance;
@@ -1723,7 +1723,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CSODOTAParty_Builder : PBGeneratedMessage_Builder {
 @private
-  CSODOTAParty* result;
+  CSODOTAParty* _builderResult;
 }
 
 - (CSODOTAParty*) defaultInstance;
@@ -1851,7 +1851,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CSODOTAPartyInternal_Builder : PBGeneratedMessage_Builder {
 @private
-  CSODOTAPartyInternal* result;
+  CSODOTAPartyInternal* _builderResult;
 }
 
 - (CSODOTAPartyInternal*) defaultInstance;
@@ -1904,7 +1904,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CSODOTAPartyMemcached_Builder : PBGeneratedMessage_Builder {
 @private
-  CSODOTAPartyMemcached* result;
+  CSODOTAPartyMemcached* _builderResult;
 }
 
 - (CSODOTAPartyMemcached*) defaultInstance;
@@ -2007,7 +2007,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CSODOTAPartyInvite_PartyMember_Builder : PBGeneratedMessage_Builder {
 @private
-  CSODOTAPartyInvite_PartyMember* result;
+  CSODOTAPartyInvite_PartyMember* _builderResult;
 }
 
 - (CSODOTAPartyInvite_PartyMember*) defaultInstance;
@@ -2040,7 +2040,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CSODOTAPartyInvite_Builder : PBGeneratedMessage_Builder {
 @private
-  CSODOTAPartyInvite* result;
+  CSODOTAPartyInvite* _builderResult;
 }
 
 - (CSODOTAPartyInvite*) defaultInstance;
@@ -2170,7 +2170,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CDOTALobbyMember_Builder : PBGeneratedMessage_Builder {
 @private
-  CDOTALobbyMember* result;
+  CDOTALobbyMember* _builderResult;
 }
 
 - (CDOTALobbyMember*) defaultInstance;
@@ -2323,7 +2323,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CLobbyTeamDetails_Builder : PBGeneratedMessage_Builder {
 @private
-  CLobbyTeamDetails* result;
+  CLobbyTeamDetails* _builderResult;
 }
 
 - (CLobbyTeamDetails*) defaultInstance;
@@ -2406,7 +2406,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CLobbyPendingPlayerReport_Builder : PBGeneratedMessage_Builder {
 @private
-  CLobbyPendingPlayerReport* result;
+  CLobbyPendingPlayerReport* _builderResult;
 }
 
 - (CLobbyPendingPlayerReport*) defaultInstance;
@@ -2476,7 +2476,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CLobbyTimedRewardDetails_Builder : PBGeneratedMessage_Builder {
 @private
-  CLobbyTimedRewardDetails* result;
+  CLobbyTimedRewardDetails* _builderResult;
 }
 
 - (CLobbyTimedRewardDetails*) defaultInstance;
@@ -2703,7 +2703,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CSODOTALobby_Builder : PBGeneratedMessage_Builder {
 @private
-  CSODOTALobby* result;
+  CSODOTALobby* _builderResult;
 }
 
 - (CSODOTALobby*) defaultInstance;
@@ -2996,7 +2996,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CSODOTALobbyInternal_Builder : PBGeneratedMessage_Builder {
 @private
-  CSODOTALobbyInternal* result;
+  CSODOTALobbyInternal* _builderResult;
 }
 
 - (CSODOTALobbyInternal*) defaultInstance;
@@ -3086,7 +3086,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CSODOTALobbyMemcached_Builder : PBGeneratedMessage_Builder {
 @private
-  CSODOTALobbyMemcached* result;
+  CSODOTALobbyMemcached* _builderResult;
 }
 
 - (CSODOTALobbyMemcached*) defaultInstance;
@@ -3185,7 +3185,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgConnectedPlayers_Player_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgConnectedPlayers_Player* result;
+  CMsgConnectedPlayers_Player* _builderResult;
 }
 
 - (CMsgConnectedPlayers_Player*) defaultInstance;
@@ -3213,7 +3213,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgConnectedPlayers_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgConnectedPlayers* result;
+  CMsgConnectedPlayers* _builderResult;
 }
 
 - (CMsgConnectedPlayers*) defaultInstance;
@@ -3299,7 +3299,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgStartFindingMatch_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgStartFindingMatch* result;
+  CMsgStartFindingMatch* _builderResult;
 }
 
 - (CMsgStartFindingMatch*) defaultInstance;
@@ -3369,7 +3369,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgStopFindingMatch_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgStopFindingMatch* result;
+  CMsgStopFindingMatch* _builderResult;
 }
 
 - (CMsgStopFindingMatch*) defaultInstance;
@@ -3413,7 +3413,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgReadyUp_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgReadyUp* result;
+  CMsgReadyUp* _builderResult;
 }
 
 - (CMsgReadyUp*) defaultInstance;
@@ -3468,7 +3468,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgReadyUpStatus_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgReadyUpStatus* result;
+  CMsgReadyUpStatus* _builderResult;
 }
 
 - (CMsgReadyUpStatus*) defaultInstance;
@@ -3527,7 +3527,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgMatchmakingSearchCountRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMatchmakingSearchCountRequest* result;
+  CMsgMatchmakingSearchCountRequest* _builderResult;
 }
 
 - (CMsgMatchmakingSearchCountRequest*) defaultInstance;
@@ -3570,7 +3570,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgMatchmakingSearchCountResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMatchmakingSearchCountResponse* result;
+  CMsgMatchmakingSearchCountResponse* _builderResult;
 }
 
 - (CMsgMatchmakingSearchCountResponse*) defaultInstance;
@@ -3711,7 +3711,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CSourceTVGame_Player_Builder : PBGeneratedMessage_Builder {
 @private
-  CSourceTVGame_Player* result;
+  CSourceTVGame_Player* _builderResult;
 }
 
 - (CSourceTVGame_Player*) defaultInstance;
@@ -3744,7 +3744,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CSourceTVGame_Builder : PBGeneratedMessage_Builder {
 @private
-  CSourceTVGame* result;
+  CSourceTVGame* _builderResult;
 }
 
 - (CSourceTVGame*) defaultInstance;
@@ -3879,7 +3879,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgSourceTVGamesResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSourceTVGamesResponse* result;
+  CMsgSourceTVGamesResponse* _builderResult;
 }
 
 - (CMsgSourceTVGamesResponse*) defaultInstance;
@@ -3959,7 +3959,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgFindSourceTVGames_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgFindSourceTVGames* result;
+  CMsgFindSourceTVGames* _builderResult;
 }
 
 - (CMsgFindSourceTVGames*) defaultInstance;
@@ -4038,7 +4038,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgSpectateFriendGame_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSpectateFriendGame* result;
+  CMsgSpectateFriendGame* _builderResult;
 }
 
 - (CMsgSpectateFriendGame*) defaultInstance;
@@ -4087,7 +4087,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgSpectateFriendGameResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSpectateFriendGameResponse* result;
+  CMsgSpectateFriendGameResponse* _builderResult;
 }
 
 - (CMsgSpectateFriendGameResponse*) defaultInstance;
@@ -4132,7 +4132,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgAbandonCurrentGame_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAbandonCurrentGame* result;
+  CMsgAbandonCurrentGame* _builderResult;
 }
 
 - (CMsgAbandonCurrentGame*) defaultInstance;
@@ -4244,7 +4244,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGameServerInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameServerInfo* result;
+  CMsgGameServerInfo* _builderResult;
 }
 
 - (CMsgGameServerInfo*) defaultInstance;
@@ -4382,7 +4382,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgLeaverDetected_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgLeaverDetected* result;
+  CMsgLeaverDetected* _builderResult;
 }
 
 - (CMsgLeaverDetected*) defaultInstance;
@@ -4436,7 +4436,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgLeaverDetectedResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgLeaverDetectedResponse* result;
+  CMsgLeaverDetectedResponse* _builderResult;
 }
 
 - (CMsgLeaverDetectedResponse*) defaultInstance;
@@ -4481,7 +4481,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgForceSOCacheResend_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgForceSOCacheResend* result;
+  CMsgForceSOCacheResend* _builderResult;
 }
 
 - (CMsgForceSOCacheResend*) defaultInstance;
@@ -4600,7 +4600,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgPracticeLobbySetDetails_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPracticeLobbySetDetails* result;
+  CMsgPracticeLobbySetDetails* _builderResult;
 }
 
 - (CMsgPracticeLobbySetDetails*) defaultInstance;
@@ -4770,7 +4770,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgPracticeLobbyCreate_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPracticeLobbyCreate* result;
+  CMsgPracticeLobbyCreate* _builderResult;
 }
 
 - (CMsgPracticeLobbyCreate*) defaultInstance;
@@ -4859,7 +4859,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgPracticeLobbySetTeamSlot_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPracticeLobbySetTeamSlot* result;
+  CMsgPracticeLobbySetTeamSlot* _builderResult;
 }
 
 - (CMsgPracticeLobbySetTeamSlot*) defaultInstance;
@@ -4918,7 +4918,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgPracticeLobbyJoinBroadcastChannel_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPracticeLobbyJoinBroadcastChannel* result;
+  CMsgPracticeLobbyJoinBroadcastChannel* _builderResult;
 }
 
 - (CMsgPracticeLobbyJoinBroadcastChannel*) defaultInstance;
@@ -4967,7 +4967,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgPracticeLobbyKick_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPracticeLobbyKick* result;
+  CMsgPracticeLobbyKick* _builderResult;
 }
 
 - (CMsgPracticeLobbyKick*) defaultInstance;
@@ -5012,7 +5012,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgPracticeLobbyLeave_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPracticeLobbyLeave* result;
+  CMsgPracticeLobbyLeave* _builderResult;
 }
 
 - (CMsgPracticeLobbyLeave*) defaultInstance;
@@ -5056,7 +5056,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgPracticeLobbyLaunch_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPracticeLobbyLaunch* result;
+  CMsgPracticeLobbyLaunch* _builderResult;
 }
 
 - (CMsgPracticeLobbyLaunch*) defaultInstance;
@@ -5101,7 +5101,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgApplyTeamToPracticeLobby_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgApplyTeamToPracticeLobby* result;
+  CMsgApplyTeamToPracticeLobby* _builderResult;
 }
 
 - (CMsgApplyTeamToPracticeLobby*) defaultInstance;
@@ -5149,7 +5149,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgPracticeLobbyList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPracticeLobbyList* result;
+  CMsgPracticeLobbyList* _builderResult;
 }
 
 - (CMsgPracticeLobbyList*) defaultInstance;
@@ -5252,7 +5252,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgPracticeLobbyListResponseEntry_CLobbyMember_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPracticeLobbyListResponseEntry_CLobbyMember* result;
+  CMsgPracticeLobbyListResponseEntry_CLobbyMember* _builderResult;
 }
 
 - (CMsgPracticeLobbyListResponseEntry_CLobbyMember*) defaultInstance;
@@ -5280,7 +5280,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgPracticeLobbyListResponseEntry_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPracticeLobbyListResponseEntry* result;
+  CMsgPracticeLobbyListResponseEntry* _builderResult;
 }
 
 - (CMsgPracticeLobbyListResponseEntry*) defaultInstance;
@@ -5359,7 +5359,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgPracticeLobbyListResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPracticeLobbyListResponse* result;
+  CMsgPracticeLobbyListResponse* _builderResult;
 }
 
 - (CMsgPracticeLobbyListResponse*) defaultInstance;
@@ -5423,7 +5423,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgPracticeLobbyJoin_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPracticeLobbyJoin* result;
+  CMsgPracticeLobbyJoin* _builderResult;
 }
 
 - (CMsgPracticeLobbyJoin*) defaultInstance;
@@ -5482,7 +5482,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgPracticeLobbyJoinResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPracticeLobbyJoinResponse* result;
+  CMsgPracticeLobbyJoinResponse* _builderResult;
 }
 
 - (CMsgPracticeLobbyJoinResponse*) defaultInstance;
@@ -5530,7 +5530,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgFriendPracticeLobbyListRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgFriendPracticeLobbyListRequest* result;
+  CMsgFriendPracticeLobbyListRequest* _builderResult;
 }
 
 - (CMsgFriendPracticeLobbyListRequest*) defaultInstance;
@@ -5580,7 +5580,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgFriendPracticeLobbyListResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgFriendPracticeLobbyListResponse* result;
+  CMsgFriendPracticeLobbyListResponse* _builderResult;
 }
 
 - (CMsgFriendPracticeLobbyListResponse*) defaultInstance;
@@ -5631,7 +5631,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgSetAvatar_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSetAvatar* result;
+  CMsgSetAvatar* _builderResult;
 }
 
 - (CMsgSetAvatar*) defaultInstance;
@@ -5676,7 +5676,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgRequestInternationalTicket_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgRequestInternationalTicket* result;
+  CMsgRequestInternationalTicket* _builderResult;
 }
 
 - (CMsgRequestInternationalTicket*) defaultInstance;
@@ -5750,7 +5750,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgTrackedEvent_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTrackedEvent* result;
+  CMsgTrackedEvent* _builderResult;
 }
 
 - (CMsgTrackedEvent*) defaultInstance;
@@ -5855,7 +5855,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgSendTrackedEvents_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSendTrackedEvents* result;
+  CMsgSendTrackedEvents* _builderResult;
 }
 
 - (CMsgSendTrackedEvents*) defaultInstance;
@@ -6116,7 +6116,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGameMatchSignOut_CTeam_CPlayer_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameMatchSignOut_CTeam_CPlayer* result;
+  CMsgGameMatchSignOut_CTeam_CPlayer* _builderResult;
 }
 
 - (CMsgGameMatchSignOut_CTeam_CPlayer*) defaultInstance;
@@ -6281,7 +6281,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGameMatchSignOut_CTeam_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameMatchSignOut_CTeam* result;
+  CMsgGameMatchSignOut_CTeam* _builderResult;
 }
 
 - (CMsgGameMatchSignOut_CTeam*) defaultInstance;
@@ -6306,7 +6306,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGameMatchSignOut_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameMatchSignOut* result;
+  CMsgGameMatchSignOut* _builderResult;
 }
 
 - (CMsgGameMatchSignOut*) defaultInstance;
@@ -6442,7 +6442,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGameMatchSignoutResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameMatchSignoutResponse* result;
+  CMsgGameMatchSignoutResponse* _builderResult;
 }
 
 - (CMsgGameMatchSignoutResponse*) defaultInstance;
@@ -6556,7 +6556,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGameChatLog_CChatLine_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameChatLog_CChatLine* result;
+  CMsgGameChatLog_CChatLine* _builderResult;
 }
 
 - (CMsgGameChatLog_CChatLine*) defaultInstance;
@@ -6594,7 +6594,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGameChatLog_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameChatLog* result;
+  CMsgGameChatLog* _builderResult;
 }
 
 - (CMsgGameChatLog*) defaultInstance;
@@ -6658,7 +6658,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgTutorialLobbyCreate_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTutorialLobbyCreate* result;
+  CMsgTutorialLobbyCreate* _builderResult;
 }
 
 - (CMsgTutorialLobbyCreate*) defaultInstance;
@@ -6717,7 +6717,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgInitialQuestionnaireResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgInitialQuestionnaireResponse* result;
+  CMsgInitialQuestionnaireResponse* _builderResult;
 }
 
 - (CMsgInitialQuestionnaireResponse*) defaultInstance;
@@ -6762,7 +6762,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgInterGCSurgeTest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgInterGCSurgeTest* result;
+  CMsgInterGCSurgeTest* _builderResult;
 }
 
 - (CMsgInterGCSurgeTest*) defaultInstance;
@@ -6806,7 +6806,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgInterGCProfile_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgInterGCProfile* result;
+  CMsgInterGCProfile* _builderResult;
 }
 
 - (CMsgInterGCProfile*) defaultInstance;
@@ -6906,7 +6906,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATournament_Team_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATournament_Team* result;
+  CMsgDOTATournament_Team* _builderResult;
 }
 
 - (CMsgDOTATournament_Team*) defaultInstance;
@@ -7055,7 +7055,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATournament_Game_ReplayURL_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATournament_Game_ReplayURL* result;
+  CMsgDOTATournament_Game_ReplayURL* _builderResult;
 }
 
 - (CMsgDOTATournament_Game_ReplayURL*) defaultInstance;
@@ -7093,7 +7093,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATournament_Game_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATournament_Game* result;
+  CMsgDOTATournament_Game* _builderResult;
 }
 
 - (CMsgDOTATournament_Game*) defaultInstance;
@@ -7163,7 +7163,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATournament_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATournament* result;
+  CMsgDOTATournament* _builderResult;
 }
 
 - (CMsgDOTATournament*) defaultInstance;
@@ -7230,7 +7230,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATournamentRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATournamentRequest* result;
+  CMsgDOTATournamentRequest* _builderResult;
 }
 
 - (CMsgDOTATournamentRequest*) defaultInstance;
@@ -7288,7 +7288,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATournamentResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATournamentResponse* result;
+  CMsgDOTATournamentResponse* _builderResult;
 }
 
 - (CMsgDOTATournamentResponse*) defaultInstance;
@@ -7348,7 +7348,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAClearTournamentGame_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAClearTournamentGame* result;
+  CMsgDOTAClearTournamentGame* _builderResult;
 }
 
 - (CMsgDOTAClearTournamentGame*) defaultInstance;
@@ -7709,7 +7709,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAMatch_Player_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAMatch_Player* result;
+  CMsgDOTAMatch_Player* _builderResult;
 }
 
 - (CMsgDOTAMatch_Player*) defaultInstance;
@@ -7947,7 +7947,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAMatch_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAMatch* result;
+  CMsgDOTAMatch* _builderResult;
 }
 
 - (CMsgDOTAMatch*) defaultInstance;
@@ -8141,7 +8141,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAPlayerMatchHistory_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAPlayerMatchHistory* result;
+  CMsgDOTAPlayerMatchHistory* _builderResult;
 }
 
 - (CMsgDOTAPlayerMatchHistory*) defaultInstance;
@@ -8199,7 +8199,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAMatchHistoryFilter_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAMatchHistoryFilter* result;
+  CMsgDOTAMatchHistoryFilter* _builderResult;
 }
 
 - (CMsgDOTAMatchHistoryFilter*) defaultInstance;
@@ -8316,7 +8316,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestMatches_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestMatches* result;
+  CMsgDOTARequestMatches* _builderResult;
 }
 
 - (CMsgDOTARequestMatches*) defaultInstance;
@@ -8446,7 +8446,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestMatchesResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestMatchesResponse* result;
+  CMsgDOTARequestMatchesResponse* _builderResult;
 }
 
 - (CMsgDOTARequestMatchesResponse*) defaultInstance;
@@ -8516,7 +8516,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAPopup_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAPopup* result;
+  CMsgDOTAPopup* _builderResult;
 }
 
 - (CMsgDOTAPopup*) defaultInstance;
@@ -8574,7 +8574,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATeamMemberSDO_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATeamMemberSDO* result;
+  CMsgDOTATeamMemberSDO* _builderResult;
 }
 
 - (CMsgDOTATeamMemberSDO*) defaultInstance;
@@ -8640,7 +8640,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATeamMember_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATeamMember* result;
+  CMsgDOTATeamMember* _builderResult;
 }
 
 - (CMsgDOTATeamMember*) defaultInstance;
@@ -8770,7 +8770,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATeam_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATeam* result;
+  CMsgDOTATeam* _builderResult;
 }
 
 - (CMsgDOTATeam*) defaultInstance;
@@ -8936,7 +8936,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTACreateTeam_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTACreateTeam* result;
+  CMsgDOTACreateTeam* _builderResult;
 }
 
 - (CMsgDOTACreateTeam*) defaultInstance;
@@ -9019,7 +9019,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTACreateTeamResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTACreateTeamResponse* result;
+  CMsgDOTACreateTeamResponse* _builderResult;
 }
 
 - (CMsgDOTACreateTeamResponse*) defaultInstance;
@@ -9082,7 +9082,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAEditTeamLogo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAEditTeamLogo* result;
+  CMsgDOTAEditTeamLogo* _builderResult;
 }
 
 - (CMsgDOTAEditTeamLogo*) defaultInstance;
@@ -9145,7 +9145,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAEditTeamLogoResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAEditTeamLogoResponse* result;
+  CMsgDOTAEditTeamLogoResponse* _builderResult;
 }
 
 - (CMsgDOTAEditTeamLogoResponse*) defaultInstance;
@@ -9200,7 +9200,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAEditTeamDetails_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAEditTeamDetails* result;
+  CMsgDOTAEditTeamDetails* _builderResult;
 }
 
 - (CMsgDOTAEditTeamDetails*) defaultInstance;
@@ -9253,7 +9253,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAEditTeamDetailsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAEditTeamDetailsResponse* result;
+  CMsgDOTAEditTeamDetailsResponse* _builderResult;
 }
 
 - (CMsgDOTAEditTeamDetailsResponse*) defaultInstance;
@@ -9300,7 +9300,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTADisbandTeam_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTADisbandTeam* result;
+  CMsgDOTADisbandTeam* _builderResult;
 }
 
 - (CMsgDOTADisbandTeam*) defaultInstance;
@@ -9348,7 +9348,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTADisbandTeamResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTADisbandTeamResponse* result;
+  CMsgDOTADisbandTeamResponse* _builderResult;
 }
 
 - (CMsgDOTADisbandTeamResponse*) defaultInstance;
@@ -9398,7 +9398,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestTeamData_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestTeamData* result;
+  CMsgDOTARequestTeamData* _builderResult;
 }
 
 - (CMsgDOTARequestTeamData*) defaultInstance;
@@ -9446,7 +9446,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestTeamDataResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestTeamDataResponse* result;
+  CMsgDOTARequestTeamDataResponse* _builderResult;
 }
 
 - (CMsgDOTARequestTeamDataResponse*) defaultInstance;
@@ -9506,7 +9506,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATeamData_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATeamData* result;
+  CMsgDOTATeamData* _builderResult;
 }
 
 - (CMsgDOTATeamData*) defaultInstance;
@@ -9562,7 +9562,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATeamProfileRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATeamProfileRequest* result;
+  CMsgDOTATeamProfileRequest* _builderResult;
 }
 
 - (CMsgDOTATeamProfileRequest*) defaultInstance;
@@ -9615,7 +9615,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATeamProfileResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATeamProfileResponse* result;
+  CMsgDOTATeamProfileResponse* _builderResult;
 }
 
 - (CMsgDOTATeamProfileResponse*) defaultInstance;
@@ -9667,7 +9667,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAProTeamListRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAProTeamListRequest* result;
+  CMsgDOTAProTeamListRequest* _builderResult;
 }
 
 - (CMsgDOTAProTeamListRequest*) defaultInstance;
@@ -9756,7 +9756,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAProTeamListResponse_TeamEntry_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAProTeamListResponse_TeamEntry* result;
+  CMsgDOTAProTeamListResponse_TeamEntry* _builderResult;
 }
 
 - (CMsgDOTAProTeamListResponse_TeamEntry*) defaultInstance;
@@ -9799,7 +9799,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAProTeamListResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAProTeamListResponse* result;
+  CMsgDOTAProTeamListResponse* _builderResult;
 }
 
 - (CMsgDOTAProTeamListResponse*) defaultInstance;
@@ -9855,7 +9855,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAInitiateTeamInvite_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAInitiateTeamInvite* result;
+  CMsgDOTAInitiateTeamInvite* _builderResult;
 }
 
 - (CMsgDOTAInitiateTeamInvite*) defaultInstance;
@@ -9908,7 +9908,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAInitiateTeamInviteResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAInitiateTeamInviteResponse* result;
+  CMsgDOTAInitiateTeamInviteResponse* _builderResult;
 }
 
 - (CMsgDOTAInitiateTeamInviteResponse*) defaultInstance;
@@ -9974,7 +9974,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATeamInvite_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATeamInvite* result;
+  CMsgDOTATeamInvite* _builderResult;
 }
 
 - (CMsgDOTATeamInvite*) defaultInstance;
@@ -10038,7 +10038,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATeamInviteReply_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATeamInviteReply* result;
+  CMsgDOTATeamInviteReply* _builderResult;
 }
 
 - (CMsgDOTATeamInviteReply*) defaultInstance;
@@ -10091,7 +10091,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATeamInviteReplyResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATeamInviteReplyResponse* result;
+  CMsgDOTATeamInviteReplyResponse* _builderResult;
 }
 
 - (CMsgDOTATeamInviteReplyResponse*) defaultInstance;
@@ -10149,7 +10149,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATeamInviteComplete_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATeamInviteComplete* result;
+  CMsgDOTATeamInviteComplete* _builderResult;
 }
 
 - (CMsgDOTATeamInviteComplete*) defaultInstance;
@@ -10203,7 +10203,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAKickTeamMember_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAKickTeamMember* result;
+  CMsgDOTAKickTeamMember* _builderResult;
 }
 
 - (CMsgDOTAKickTeamMember*) defaultInstance;
@@ -10252,7 +10252,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAKickTeamMemberResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAKickTeamMemberResponse* result;
+  CMsgDOTAKickTeamMemberResponse* _builderResult;
 }
 
 - (CMsgDOTAKickTeamMemberResponse*) defaultInstance;
@@ -10301,7 +10301,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTATransferTeamAdmin_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTATransferTeamAdmin* result;
+  CMsgDOTATransferTeamAdmin* _builderResult;
 }
 
 - (CMsgDOTATransferTeamAdmin*) defaultInstance;
@@ -10346,7 +10346,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTALeaveTeam_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTALeaveTeam* result;
+  CMsgDOTALeaveTeam* _builderResult;
 }
 
 - (CMsgDOTALeaveTeam*) defaultInstance;
@@ -10394,7 +10394,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTALeaveTeamResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTALeaveTeamResponse* result;
+  CMsgDOTALeaveTeamResponse* _builderResult;
 }
 
 - (CMsgDOTALeaveTeamResponse*) defaultInstance;
@@ -10448,7 +10448,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTASuggestTeamMatchmaking_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTASuggestTeamMatchmaking* result;
+  CMsgDOTASuggestTeamMatchmaking* _builderResult;
 }
 
 - (CMsgDOTASuggestTeamMatchmaking*) defaultInstance;
@@ -10493,7 +10493,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTABetaParticipationRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTABetaParticipationRequest* result;
+  CMsgDOTABetaParticipationRequest* _builderResult;
 }
 
 - (CMsgDOTABetaParticipationRequest*) defaultInstance;
@@ -10541,7 +10541,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTABetaParticipation_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTABetaParticipation* result;
+  CMsgDOTABetaParticipation* _builderResult;
 }
 
 - (CMsgDOTABetaParticipation*) defaultInstance;
@@ -10595,7 +10595,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAGenericResult_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAGenericResult* result;
+  CMsgDOTAGenericResult* _builderResult;
 }
 
 - (CMsgDOTAGenericResult*) defaultInstance;
@@ -10644,7 +10644,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTABroadcastNotification_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTABroadcastNotification* result;
+  CMsgDOTABroadcastNotification* _builderResult;
 }
 
 - (CMsgDOTABroadcastNotification*) defaultInstance;
@@ -10856,7 +10856,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTALiveScoreboardUpdate_Team_Player_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTALiveScoreboardUpdate_Team_Player* result;
+  CMsgDOTALiveScoreboardUpdate_Team_Player* _builderResult;
 }
 
 - (CMsgDOTALiveScoreboardUpdate_Team_Player*) defaultInstance;
@@ -10984,7 +10984,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTALiveScoreboardUpdate_Team_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTALiveScoreboardUpdate_Team* result;
+  CMsgDOTALiveScoreboardUpdate_Team* _builderResult;
 }
 
 - (CMsgDOTALiveScoreboardUpdate_Team*) defaultInstance;
@@ -11014,7 +11014,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTALiveScoreboardUpdate_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTALiveScoreboardUpdate* result;
+  CMsgDOTALiveScoreboardUpdate* _builderResult;
 }
 
 - (CMsgDOTALiveScoreboardUpdate*) defaultInstance;
@@ -11109,7 +11109,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAJoinChatChannel_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAJoinChatChannel* result;
+  CMsgDOTAJoinChatChannel* _builderResult;
 }
 
 - (CMsgDOTAJoinChatChannel*) defaultInstance;
@@ -11173,7 +11173,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTALeaveChatChannel_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTALeaveChatChannel* result;
+  CMsgDOTALeaveChatChannel* _builderResult;
 }
 
 - (CMsgDOTALeaveChatChannel*) defaultInstance;
@@ -11246,7 +11246,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAChatMessage_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAChatMessage* result;
+  CMsgDOTAChatMessage* _builderResult;
 }
 
 - (CMsgDOTAChatMessage*) defaultInstance;
@@ -11354,7 +11354,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTASetChatChannelVerbosity_ChannelVerbosity_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTASetChatChannelVerbosity_ChannelVerbosity* result;
+  CMsgDOTASetChatChannelVerbosity_ChannelVerbosity* _builderResult;
 }
 
 - (CMsgDOTASetChatChannelVerbosity_ChannelVerbosity*) defaultInstance;
@@ -11382,7 +11382,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTASetChatChannelVerbosity_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTASetChatChannelVerbosity* result;
+  CMsgDOTASetChatChannelVerbosity* _builderResult;
 }
 
 - (CMsgDOTASetChatChannelVerbosity*) defaultInstance;
@@ -11437,7 +11437,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAChatMember_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAChatMember* result;
+  CMsgDOTAChatMember* _builderResult;
 }
 
 - (CMsgDOTAChatMember*) defaultInstance;
@@ -11506,7 +11506,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAJoinChatChannelResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAJoinChatChannelResponse* result;
+  CMsgDOTAJoinChatChannelResponse* _builderResult;
 }
 
 - (CMsgDOTAJoinChatChannelResponse*) defaultInstance;
@@ -11580,7 +11580,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAChatChannelFullUpdate_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAChatChannelFullUpdate* result;
+  CMsgDOTAChatChannelFullUpdate* _builderResult;
 }
 
 - (CMsgDOTAChatChannelFullUpdate*) defaultInstance;
@@ -11644,7 +11644,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAOtherJoinedChatChannel_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAOtherJoinedChatChannel* result;
+  CMsgDOTAOtherJoinedChatChannel* _builderResult;
 }
 
 - (CMsgDOTAOtherJoinedChatChannel*) defaultInstance;
@@ -11707,7 +11707,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAOtherLeftChatChannel_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAOtherLeftChatChannel* result;
+  CMsgDOTAOtherLeftChatChannel* _builderResult;
 }
 
 - (CMsgDOTAOtherLeftChatChannel*) defaultInstance;
@@ -11757,7 +11757,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestDefaultChatChannel_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestDefaultChatChannel* result;
+  CMsgDOTARequestDefaultChatChannel* _builderResult;
 }
 
 - (CMsgDOTARequestDefaultChatChannel*) defaultInstance;
@@ -11805,7 +11805,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestDefaultChatChannelResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestDefaultChatChannelResponse* result;
+  CMsgDOTARequestDefaultChatChannelResponse* _builderResult;
 }
 
 - (CMsgDOTARequestDefaultChatChannelResponse*) defaultInstance;
@@ -11855,7 +11855,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestChatChannelList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestChatChannelList* result;
+  CMsgDOTARequestChatChannelList* _builderResult;
 }
 
 - (CMsgDOTARequestChatChannelList*) defaultInstance;
@@ -11932,7 +11932,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestChatChannelListResponse_ChatChannel_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestChatChannelListResponse_ChatChannel* result;
+  CMsgDOTARequestChatChannelListResponse_ChatChannel* _builderResult;
 }
 
 - (CMsgDOTARequestChatChannelListResponse_ChatChannel*) defaultInstance;
@@ -11965,7 +11965,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestChatChannelListResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestChatChannelListResponse* result;
+  CMsgDOTARequestChatChannelListResponse* _builderResult;
 }
 
 - (CMsgDOTARequestChatChannelListResponse*) defaultInstance;
@@ -12065,7 +12065,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAPlayerReports_PlayerReport_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAPlayerReports_PlayerReport* result;
+  CMsgDOTAPlayerReports_PlayerReport* _builderResult;
 }
 
 - (CMsgDOTAPlayerReports_PlayerReport*) defaultInstance;
@@ -12118,7 +12118,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAPlayerReports_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAPlayerReports* result;
+  CMsgDOTAPlayerReports* _builderResult;
 }
 
 - (CMsgDOTAPlayerReports*) defaultInstance;
@@ -12165,7 +12165,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAReportsRemainingRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAReportsRemainingRequest* result;
+  CMsgDOTAReportsRemainingRequest* _builderResult;
 }
 
 - (CMsgDOTAReportsRemainingRequest*) defaultInstance;
@@ -12221,7 +12221,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAReportsRemainingResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAReportsRemainingResponse* result;
+  CMsgDOTAReportsRemainingResponse* _builderResult;
 }
 
 - (CMsgDOTAReportsRemainingResponse*) defaultInstance;
@@ -12293,7 +12293,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTASubmitPlayerReport_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTASubmitPlayerReport* result;
+  CMsgDOTASubmitPlayerReport* _builderResult;
 }
 
 - (CMsgDOTASubmitPlayerReport*) defaultInstance;
@@ -12360,7 +12360,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTASubmitPlayerReportResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTASubmitPlayerReportResponse* result;
+  CMsgDOTASubmitPlayerReportResponse* _builderResult;
 }
 
 - (CMsgDOTASubmitPlayerReportResponse*) defaultInstance;
@@ -12419,7 +12419,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAReportCountsRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAReportCountsRequest* result;
+  CMsgDOTAReportCountsRequest* _builderResult;
 }
 
 - (CMsgDOTAReportCountsRequest*) defaultInstance;
@@ -12484,7 +12484,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAReportCountsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAReportCountsResponse* result;
+  CMsgDOTAReportCountsResponse* _builderResult;
 }
 
 - (CMsgDOTAReportCountsResponse*) defaultInstance;
@@ -12557,7 +12557,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestPlayerResources_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestPlayerResources* result;
+  CMsgDOTARequestPlayerResources* _builderResult;
 }
 
 - (CMsgDOTARequestPlayerResources*) defaultInstance;
@@ -12631,7 +12631,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestPlayerResourcesResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestPlayerResourcesResponse* result;
+  CMsgDOTARequestPlayerResourcesResponse* _builderResult;
 }
 
 - (CMsgDOTARequestPlayerResourcesResponse*) defaultInstance;
@@ -12705,7 +12705,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAKickedFromMatchmakingQueue_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAKickedFromMatchmakingQueue* result;
+  CMsgDOTAKickedFromMatchmakingQueue* _builderResult;
 }
 
 - (CMsgDOTAKickedFromMatchmakingQueue*) defaultInstance;
@@ -12754,7 +12754,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestSaveGames_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestSaveGames* result;
+  CMsgDOTARequestSaveGames* _builderResult;
 }
 
 - (CMsgDOTARequestSaveGames*) defaultInstance;
@@ -12803,7 +12803,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestSaveGamesServer_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestSaveGamesServer* result;
+  CMsgDOTARequestSaveGamesServer* _builderResult;
 }
 
 - (CMsgDOTARequestSaveGamesServer*) defaultInstance;
@@ -12925,7 +12925,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestSaveGamesResponse_SaveGame_Player_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestSaveGamesResponse_SaveGame_Player* result;
+  CMsgDOTARequestSaveGamesResponse_SaveGame_Player* _builderResult;
 }
 
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_Player*) defaultInstance;
@@ -13033,7 +13033,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions* result;
+  CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions* _builderResult;
 }
 
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_PlayerPositions*) defaultInstance;
@@ -13061,7 +13061,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance* result;
+  CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance* _builderResult;
 }
 
 - (CMsgDOTARequestSaveGamesResponse_SaveGame_SaveInstance*) defaultInstance;
@@ -13111,7 +13111,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestSaveGamesResponse_SaveGame_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestSaveGamesResponse_SaveGame* result;
+  CMsgDOTARequestSaveGamesResponse_SaveGame* _builderResult;
 }
 
 - (CMsgDOTARequestSaveGamesResponse_SaveGame*) defaultInstance;
@@ -13153,7 +13153,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestSaveGamesResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestSaveGamesResponse* result;
+  CMsgDOTARequestSaveGamesResponse* _builderResult;
 }
 
 - (CMsgDOTARequestSaveGamesResponse*) defaultInstance;
@@ -13208,7 +13208,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAPlayerFailedToConnect_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAPlayerFailedToConnect* result;
+  CMsgDOTAPlayerFailedToConnect* _builderResult;
 }
 
 - (CMsgDOTAPlayerFailedToConnect*) defaultInstance;
@@ -13279,7 +13279,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGCToRelayConnect_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCToRelayConnect* result;
+  CMsgGCToRelayConnect* _builderResult;
 }
 
 - (CMsgGCToRelayConnect*) defaultInstance;
@@ -13349,7 +13349,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGCToRelayConnectResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCToRelayConnectResponse* result;
+  CMsgGCToRelayConnectResponse* _builderResult;
 }
 
 - (CMsgGCToRelayConnectResponse*) defaultInstance;
@@ -13405,7 +13405,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgWatchGame_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgWatchGame* result;
+  CMsgWatchGame* _builderResult;
 }
 
 - (CMsgWatchGame*) defaultInstance;
@@ -13465,7 +13465,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgCancelWatchGame_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCancelWatchGame* result;
+  CMsgCancelWatchGame* _builderResult;
 }
 
 - (CMsgCancelWatchGame*) defaultInstance;
@@ -13533,7 +13533,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgWatchGameResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgWatchGameResponse* result;
+  CMsgWatchGameResponse* _builderResult;
 }
 
 - (CMsgWatchGameResponse*) defaultInstance;
@@ -13612,7 +13612,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGCBanStatusRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCBanStatusRequest* result;
+  CMsgGCBanStatusRequest* _builderResult;
 }
 
 - (CMsgGCBanStatusRequest*) defaultInstance;
@@ -13673,7 +13673,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGCBanStatusResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCBanStatusResponse* result;
+  CMsgGCBanStatusResponse* _builderResult;
 }
 
 - (CMsgGCBanStatusResponse*) defaultInstance;
@@ -13745,7 +13745,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTADailyStats_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTADailyStats* result;
+  CMsgDOTADailyStats* _builderResult;
 }
 
 - (CMsgDOTADailyStats*) defaultInstance;
@@ -13800,7 +13800,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARequestDailyStats_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARequestDailyStats* result;
+  CMsgDOTARequestDailyStats* _builderResult;
 }
 
 - (CMsgDOTARequestDailyStats*) defaultInstance;
@@ -13844,7 +13844,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGCMatchDetailsRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCMatchDetailsRequest* result;
+  CMsgGCMatchDetailsRequest* _builderResult;
 }
 
 - (CMsgGCMatchDetailsRequest*) defaultInstance;
@@ -13901,7 +13901,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGCMatchDetailsResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCMatchDetailsResponse* result;
+  CMsgGCMatchDetailsResponse* _builderResult;
 }
 
 - (CMsgGCMatchDetailsResponse*) defaultInstance;
@@ -13966,7 +13966,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAProfileRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAProfileRequest* result;
+  CMsgDOTAProfileRequest* _builderResult;
 }
 
 - (CMsgDOTAProfileRequest*) defaultInstance;
@@ -14090,7 +14090,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAProfileResponse_PlayedHero_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAProfileResponse_PlayedHero* result;
+  CMsgDOTAProfileResponse_PlayedHero* _builderResult;
 }
 
 - (CMsgDOTAProfileResponse_PlayedHero*) defaultInstance;
@@ -14147,7 +14147,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAProfileResponse_ShowcaseHero_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAProfileResponse_ShowcaseHero* result;
+  CMsgDOTAProfileResponse_ShowcaseHero* _builderResult;
 }
 
 - (CMsgDOTAProfileResponse_ShowcaseHero*) defaultInstance;
@@ -14207,7 +14207,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAProfileResponse_LeaguePass_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAProfileResponse_LeaguePass* result;
+  CMsgDOTAProfileResponse_LeaguePass* _builderResult;
 }
 
 - (CMsgDOTAProfileResponse_LeaguePass*) defaultInstance;
@@ -14261,7 +14261,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAProfileResponse_EventTicket_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAProfileResponse_EventTicket* result;
+  CMsgDOTAProfileResponse_EventTicket* _builderResult;
 }
 
 - (CMsgDOTAProfileResponse_EventTicket*) defaultInstance;
@@ -14284,7 +14284,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAProfileResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAProfileResponse* result;
+  CMsgDOTAProfileResponse* _builderResult;
 }
 
 - (CMsgDOTAProfileResponse*) defaultInstance;
@@ -14400,7 +14400,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAIntraGCRankRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAIntraGCRankRequest* result;
+  CMsgDOTAIntraGCRankRequest* _builderResult;
 }
 
 - (CMsgDOTAIntraGCRankRequest*) defaultInstance;
@@ -14449,7 +14449,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAIntraGCRankResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAIntraGCRankResponse* result;
+  CMsgDOTAIntraGCRankResponse* _builderResult;
 }
 
 - (CMsgDOTAIntraGCRankResponse*) defaultInstance;
@@ -14494,7 +14494,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTANotifySuccessfulReport_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTANotifySuccessfulReport* result;
+  CMsgDOTANotifySuccessfulReport* _builderResult;
 }
 
 - (CMsgDOTANotifySuccessfulReport*) defaultInstance;
@@ -14534,7 +14534,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAClearNotifySuccessfulReport_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAClearNotifySuccessfulReport* result;
+  CMsgDOTAClearNotifySuccessfulReport* _builderResult;
 }
 
 - (CMsgDOTAClearNotifySuccessfulReport*) defaultInstance;
@@ -14574,7 +14574,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgUnpickedHeroListRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgUnpickedHeroListRequest* result;
+  CMsgUnpickedHeroListRequest* _builderResult;
 }
 
 - (CMsgUnpickedHeroListRequest*) defaultInstance;
@@ -14617,7 +14617,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgUnpickedHeroListResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgUnpickedHeroListResponse* result;
+  CMsgUnpickedHeroListResponse* _builderResult;
 }
 
 - (CMsgUnpickedHeroListResponse*) defaultInstance;
@@ -14668,7 +14668,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgRemoveFromUnpickedHeroList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgRemoveFromUnpickedHeroList* result;
+  CMsgRemoveFromUnpickedHeroList* _builderResult;
 }
 
 - (CMsgRemoveFromUnpickedHeroList*) defaultInstance;
@@ -14713,7 +14713,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAMatchGroupWaitTimesRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAMatchGroupWaitTimesRequest* result;
+  CMsgDOTAMatchGroupWaitTimesRequest* _builderResult;
 }
 
 - (CMsgDOTAMatchGroupWaitTimesRequest*) defaultInstance;
@@ -14756,7 +14756,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAMatchGroupWaitTimesResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAMatchGroupWaitTimesResponse* result;
+  CMsgDOTAMatchGroupWaitTimesResponse* _builderResult;
 }
 
 - (CMsgDOTAMatchGroupWaitTimesResponse*) defaultInstance;
@@ -14863,7 +14863,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CItemDropEvent_Builder : PBGeneratedMessage_Builder {
 @private
-  CItemDropEvent* result;
+  CItemDropEvent* _builderResult;
 }
 
 - (CItemDropEvent*) defaultInstance;
@@ -15018,7 +15018,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CXPGainEvent_Builder : PBGeneratedMessage_Builder {
 @private
-  CXPGainEvent* result;
+  CXPGainEvent* _builderResult;
 }
 
 - (CXPGainEvent*) defaultInstance;
@@ -15168,7 +15168,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CLowPriPenalty_Builder : PBGeneratedMessage_Builder {
 @private
-  CLowPriPenalty* result;
+  CLowPriPenalty* _builderResult;
 }
 
 - (CLowPriPenalty*) defaultInstance;
@@ -15303,7 +15303,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAWelcome_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAWelcome* result;
+  CMsgDOTAWelcome* _builderResult;
 }
 
 - (CMsgDOTAWelcome*) defaultInstance;
@@ -15376,7 +15376,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CSODOTAGameHeroFavorites_Builder : PBGeneratedMessage_Builder {
 @private
-  CSODOTAGameHeroFavorites* result;
+  CSODOTAGameHeroFavorites* _builderResult;
 }
 
 - (CSODOTAGameHeroFavorites*) defaultInstance;
@@ -15430,7 +15430,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAHeroFavoritesAdd_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAHeroFavoritesAdd* result;
+  CMsgDOTAHeroFavoritesAdd* _builderResult;
 }
 
 - (CMsgDOTAHeroFavoritesAdd*) defaultInstance;
@@ -15479,7 +15479,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAHeroFavoritesRemove_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAHeroFavoritesRemove* result;
+  CMsgDOTAHeroFavoritesRemove* _builderResult;
 }
 
 - (CMsgDOTAHeroFavoritesRemove*) defaultInstance;
@@ -15524,7 +15524,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAPlayerHeroesRecentRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAPlayerHeroesRecentRequest* result;
+  CMsgDOTAPlayerHeroesRecentRequest* _builderResult;
 }
 
 - (CMsgDOTAPlayerHeroesRecentRequest*) defaultInstance;
@@ -15571,7 +15571,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAPlayerHeroesRecentResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAPlayerHeroesRecentResponse* result;
+  CMsgDOTAPlayerHeroesRecentResponse* _builderResult;
 }
 
 - (CMsgDOTAPlayerHeroesRecentResponse*) defaultInstance;
@@ -15698,7 +15698,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CDOTAOverview_PlayersByRegion_Builder : PBGeneratedMessage_Builder {
 @private
-  CDOTAOverview_PlayersByRegion* result;
+  CDOTAOverview_PlayersByRegion* _builderResult;
 }
 
 - (CDOTAOverview_PlayersByRegion*) defaultInstance;
@@ -15805,7 +15805,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CDOTAOverview_ServersByRegion_Builder : PBGeneratedMessage_Builder {
 @private
-  CDOTAOverview_ServersByRegion* result;
+  CDOTAOverview_ServersByRegion* _builderResult;
 }
 
 - (CDOTAOverview_ServersByRegion*) defaultInstance;
@@ -15838,7 +15838,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CDOTAOverview_Builder : PBGeneratedMessage_Builder {
 @private
-  CDOTAOverview* result;
+  CDOTAOverview* _builderResult;
 }
 
 - (CDOTAOverview*) defaultInstance;
@@ -15903,7 +15903,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgSetShowcaseHero_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSetShowcaseHero* result;
+  CMsgSetShowcaseHero* _builderResult;
 }
 
 - (CMsgSetShowcaseHero*) defaultInstance;
@@ -15948,7 +15948,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgRequestLeagueInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgRequestLeagueInfo* result;
+  CMsgRequestLeagueInfo* _builderResult;
 }
 
 - (CMsgRequestLeagueInfo*) defaultInstance;
@@ -16000,7 +16000,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CLeague_Builder : PBGeneratedMessage_Builder {
 @private
-  CLeague* result;
+  CLeague* _builderResult;
 }
 
 - (CLeague*) defaultInstance;
@@ -16058,7 +16058,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgResponseLeagueInfo_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgResponseLeagueInfo* result;
+  CMsgResponseLeagueInfo* _builderResult;
 }
 
 - (CMsgResponseLeagueInfo*) defaultInstance;
@@ -16149,7 +16149,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgTournamentItemEvent_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTournamentItemEvent* result;
+  CMsgTournamentItemEvent* _builderResult;
 }
 
 - (CMsgTournamentItemEvent*) defaultInstance;
@@ -16252,7 +16252,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgTournamentItemEventResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTournamentItemEventResponse* result;
+  CMsgTournamentItemEventResponse* _builderResult;
 }
 
 - (CMsgTournamentItemEventResponse*) defaultInstance;
@@ -16339,7 +16339,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAMatchVotes_PlayerVote_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAMatchVotes_PlayerVote* result;
+  CMsgDOTAMatchVotes_PlayerVote* _builderResult;
 }
 
 - (CMsgDOTAMatchVotes_PlayerVote*) defaultInstance;
@@ -16367,7 +16367,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAMatchVotes_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAMatchVotes* result;
+  CMsgDOTAMatchVotes* _builderResult;
 }
 
 - (CMsgDOTAMatchVotes*) defaultInstance;
@@ -16427,7 +16427,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgCastMatchVote_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCastMatchVote* result;
+  CMsgCastMatchVote* _builderResult;
 }
 
 - (CMsgCastMatchVote*) defaultInstance;
@@ -16485,7 +16485,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgRetrieveMatchVote_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgRetrieveMatchVote* result;
+  CMsgRetrieveMatchVote* _builderResult;
 }
 
 - (CMsgRetrieveMatchVote*) defaultInstance;
@@ -16551,7 +16551,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgMatchVoteResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgMatchVoteResponse* result;
+  CMsgMatchVoteResponse* _builderResult;
 }
 
 - (CMsgMatchVoteResponse*) defaultInstance;
@@ -16615,7 +16615,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgTeamFanfare_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgTeamFanfare* result;
+  CMsgTeamFanfare* _builderResult;
 }
 
 - (CMsgTeamFanfare*) defaultInstance;
@@ -16668,7 +16668,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgResponseTeamFanfare_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgResponseTeamFanfare* result;
+  CMsgResponseTeamFanfare* _builderResult;
 }
 
 - (CMsgResponseTeamFanfare*) defaultInstance;
@@ -16722,7 +16722,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgSpectatorConnect_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSpectatorConnect* result;
+  CMsgSpectatorConnect* _builderResult;
 }
 
 - (CMsgSpectatorConnect*) defaultInstance;
@@ -16771,7 +16771,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgSpectatorDisconnect_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSpectatorDisconnect* result;
+  CMsgSpectatorDisconnect* _builderResult;
 }
 
 - (CMsgSpectatorDisconnect*) defaultInstance;
@@ -16831,7 +16831,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGameServerUploadSaveGame_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameServerUploadSaveGame* result;
+  CMsgGameServerUploadSaveGame* _builderResult;
 }
 
 - (CMsgGameServerUploadSaveGame*) defaultInstance;
@@ -16897,7 +16897,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGameServerSaveGameResult_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameServerSaveGameResult* result;
+  CMsgGameServerSaveGameResult* _builderResult;
 }
 
 - (CMsgGameServerSaveGameResult*) defaultInstance;
@@ -16946,7 +16946,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGameServerGetLoadGame_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameServerGetLoadGame* result;
+  CMsgGameServerGetLoadGame* _builderResult;
 }
 
 - (CMsgGameServerGetLoadGame*) defaultInstance;
@@ -16995,7 +16995,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgGameServerGetLoadGameResult_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGameServerGetLoadGameResult* result;
+  CMsgGameServerGetLoadGameResult* _builderResult;
 }
 
 - (CMsgGameServerGetLoadGameResult*) defaultInstance;
@@ -17040,7 +17040,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgCheckSpectatorOnly_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCheckSpectatorOnly* result;
+  CMsgCheckSpectatorOnly* _builderResult;
 }
 
 - (CMsgCheckSpectatorOnly*) defaultInstance;
@@ -17088,7 +17088,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgCheckSpectatorOnlyResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgCheckSpectatorOnlyResponse* result;
+  CMsgCheckSpectatorOnlyResponse* _builderResult;
 }
 
 - (CMsgCheckSpectatorOnlyResponse*) defaultInstance;
@@ -17187,7 +17187,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAHallOfFame_FeaturedPlayer_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAHallOfFame_FeaturedPlayer* result;
+  CMsgDOTAHallOfFame_FeaturedPlayer* _builderResult;
 }
 
 - (CMsgDOTAHallOfFame_FeaturedPlayer*) defaultInstance;
@@ -17263,7 +17263,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAHallOfFame_FeaturedFarmer_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAHallOfFame_FeaturedFarmer* result;
+  CMsgDOTAHallOfFame_FeaturedFarmer* _builderResult;
 }
 
 - (CMsgDOTAHallOfFame_FeaturedFarmer*) defaultInstance;
@@ -17301,7 +17301,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAHallOfFame_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAHallOfFame* result;
+  CMsgDOTAHallOfFame* _builderResult;
 }
 
 - (CMsgDOTAHallOfFame*) defaultInstance;
@@ -17364,7 +17364,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAHallOfFameRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAHallOfFameRequest* result;
+  CMsgDOTAHallOfFameRequest* _builderResult;
 }
 
 - (CMsgDOTAHallOfFameRequest*) defaultInstance;
@@ -17417,7 +17417,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAHallOfFameResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAHallOfFameResponse* result;
+  CMsgDOTAHallOfFameResponse* _builderResult;
 }
 
 - (CMsgDOTAHallOfFameResponse*) defaultInstance;
@@ -17473,7 +17473,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAGenerateDiretidePrizeList_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAGenerateDiretidePrizeList* result;
+  CMsgDOTAGenerateDiretidePrizeList* _builderResult;
 }
 
 - (CMsgDOTAGenerateDiretidePrizeList*) defaultInstance;
@@ -17528,7 +17528,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAGenerateDiretidePrizeListResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAGenerateDiretidePrizeListResponse* result;
+  CMsgDOTAGenerateDiretidePrizeListResponse* _builderResult;
 }
 
 - (CMsgDOTAGenerateDiretidePrizeListResponse*) defaultInstance;
@@ -17595,7 +17595,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTARewardDiretidePrizes_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTARewardDiretidePrizes* result;
+  CMsgDOTARewardDiretidePrizes* _builderResult;
 }
 
 - (CMsgDOTARewardDiretidePrizes*) defaultInstance;
@@ -17649,7 +17649,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTADiretidePrizesRewardedResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTADiretidePrizesRewardedResponse* result;
+  CMsgDOTADiretidePrizesRewardedResponse* _builderResult;
 }
 
 - (CMsgDOTADiretidePrizesRewardedResponse*) defaultInstance;
@@ -17702,7 +17702,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTADiretidePrizeResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTADiretidePrizeResponse* result;
+  CMsgDOTADiretidePrizeResponse* _builderResult;
 }
 
 - (CMsgDOTADiretidePrizeResponse*) defaultInstance;
@@ -17756,7 +17756,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAHalloweenHighScoreRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAHalloweenHighScoreRequest* result;
+  CMsgDOTAHalloweenHighScoreRequest* _builderResult;
 }
 
 - (CMsgDOTAHalloweenHighScoreRequest*) defaultInstance;
@@ -17817,7 +17817,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTAHalloweenHighScoreResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTAHalloweenHighScoreResponse* result;
+  CMsgDOTAHalloweenHighScoreResponse* _builderResult;
 }
 
 - (CMsgDOTAHalloweenHighScoreResponse*) defaultInstance;
@@ -17883,7 +17883,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgDOTANotifyResetKeybindings_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDOTANotifyResetKeybindings* result;
+  CMsgDOTANotifyResetKeybindings* _builderResult;
 }
 
 - (CMsgDOTANotifyResetKeybindings*) defaultInstance;

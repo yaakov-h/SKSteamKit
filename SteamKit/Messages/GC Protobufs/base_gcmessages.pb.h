@@ -360,7 +360,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CGCStorePurchaseInit_LineItem_Builder : PBGeneratedMessage_Builder {
 @private
-  CGCStorePurchaseInit_LineItem* result;
+  CGCStorePurchaseInit_LineItem* _builderResult;
 }
 
 - (CGCStorePurchaseInit_LineItem*) defaultInstance;
@@ -430,7 +430,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgGCStorePurchaseInit_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCStorePurchaseInit* result;
+  CMsgGCStorePurchaseInit* _builderResult;
 }
 
 - (CMsgGCStorePurchaseInit*) defaultInstance;
@@ -500,7 +500,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgGCStorePurchaseInitResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCStorePurchaseInitResponse* result;
+  CMsgGCStorePurchaseInitResponse* _builderResult;
 }
 
 - (CMsgGCStorePurchaseInitResponse*) defaultInstance;
@@ -562,7 +562,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOPartyInvite_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOPartyInvite* result;
+  CSOPartyInvite* _builderResult;
 }
 
 - (CSOPartyInvite*) defaultInstance;
@@ -629,7 +629,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOLobbyInvite_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOLobbyInvite* result;
+  CSOLobbyInvite* _builderResult;
 }
 
 - (CSOLobbyInvite*) defaultInstance;
@@ -688,7 +688,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgSystemBroadcast_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSystemBroadcast* result;
+  CMsgSystemBroadcast* _builderResult;
 }
 
 - (CMsgSystemBroadcast*) defaultInstance;
@@ -737,7 +737,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgClientHello_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientHello* result;
+  CMsgClientHello* _builderResult;
 }
 
 - (CMsgClientHello*) defaultInstance;
@@ -786,7 +786,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgServerHello_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgServerHello* result;
+  CMsgServerHello* _builderResult;
 }
 
 - (CMsgServerHello*) defaultInstance;
@@ -839,7 +839,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgClientWelcome_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientWelcome* result;
+  CMsgClientWelcome* _builderResult;
 }
 
 - (CMsgClientWelcome*) defaultInstance;
@@ -893,7 +893,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgServerWelcome_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgServerWelcome* result;
+  CMsgServerWelcome* _builderResult;
 }
 
 - (CMsgServerWelcome*) defaultInstance;
@@ -938,7 +938,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgClientGoodbye_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgClientGoodbye* result;
+  CMsgClientGoodbye* _builderResult;
 }
 
 - (CMsgClientGoodbye*) defaultInstance;
@@ -978,7 +978,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgServerGoodbye_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgServerGoodbye* result;
+  CMsgServerGoodbye* _builderResult;
 }
 
 - (CMsgServerGoodbye*) defaultInstance;
@@ -1034,7 +1034,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgInQueue_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgInQueue* result;
+  CMsgInQueue* _builderResult;
 }
 
 - (CMsgInQueue*) defaultInstance;
@@ -1102,7 +1102,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgInviteToParty_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgInviteToParty* result;
+  CMsgInviteToParty* _builderResult;
 }
 
 - (CMsgInviteToParty*) defaultInstance;
@@ -1160,7 +1160,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgInvitationCreated_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgInvitationCreated* result;
+  CMsgInvitationCreated* _builderResult;
 }
 
 - (CMsgInvitationCreated*) defaultInstance;
@@ -1222,7 +1222,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgPartyInviteResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgPartyInviteResponse* result;
+  CMsgPartyInviteResponse* _builderResult;
 }
 
 - (CMsgPartyInviteResponse*) defaultInstance;
@@ -1281,7 +1281,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgKickFromParty_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgKickFromParty* result;
+  CMsgKickFromParty* _builderResult;
 }
 
 - (CMsgKickFromParty*) defaultInstance;
@@ -1326,7 +1326,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgLeaveParty_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgLeaveParty* result;
+  CMsgLeaveParty* _builderResult;
 }
 
 - (CMsgLeaveParty*) defaultInstance;
@@ -1366,7 +1366,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgServerAvailable_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgServerAvailable* result;
+  CMsgServerAvailable* _builderResult;
 }
 
 - (CMsgServerAvailable*) defaultInstance;
@@ -1442,7 +1442,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOEconGameAccountClient_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOEconGameAccountClient* result;
+  CSOEconGameAccountClient* _builderResult;
 }
 
 - (CSOEconGameAccountClient*) defaultInstance;
@@ -1547,7 +1547,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOItemCriteriaCondition_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOItemCriteriaCondition* result;
+  CSOItemCriteriaCondition* _builderResult;
 }
 
 - (CSOItemCriteriaCondition*) defaultInstance;
@@ -1647,7 +1647,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOItemCriteria_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOItemCriteria* result;
+  CSOItemCriteria* _builderResult;
 }
 
 - (CSOItemCriteria*) defaultInstance;
@@ -1807,7 +1807,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOItemRecipe_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOItemRecipe* result;
+  CSOItemRecipe* _builderResult;
 }
 
 - (CSOItemRecipe*) defaultInstance;
@@ -1956,7 +1956,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgDevNewItemRequest_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgDevNewItemRequest* result;
+  CMsgDevNewItemRequest* _builderResult;
 }
 
 - (CMsgDevNewItemRequest*) defaultInstance;
@@ -2028,7 +2028,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgIncrementKillCountAttribute_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgIncrementKillCountAttribute* result;
+  CMsgIncrementKillCountAttribute* _builderResult;
 }
 
 - (CMsgIncrementKillCountAttribute*) defaultInstance;
@@ -2101,7 +2101,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgApplyStrangePart_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgApplyStrangePart* result;
+  CMsgApplyStrangePart* _builderResult;
 }
 
 - (CMsgApplyStrangePart*) defaultInstance;
@@ -2159,7 +2159,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgApplyPennantUpgrade_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgApplyPennantUpgrade* result;
+  CMsgApplyPennantUpgrade* _builderResult;
 }
 
 - (CMsgApplyPennantUpgrade*) defaultInstance;
@@ -2217,7 +2217,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgApplyEggEssence_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgApplyEggEssence* result;
+  CMsgApplyEggEssence* _builderResult;
 }
 
 - (CMsgApplyEggEssence*) defaultInstance;
@@ -2275,7 +2275,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOEconItemAttribute_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOEconItemAttribute* result;
+  CSOEconItemAttribute* _builderResult;
 }
 
 - (CSOEconItemAttribute*) defaultInstance;
@@ -2333,7 +2333,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOEconItemEquipped_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOEconItemEquipped* result;
+  CSOEconItemEquipped* _builderResult;
 }
 
 - (CSOEconItemEquipped*) defaultInstance;
@@ -2453,7 +2453,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOEconItem_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOEconItem* result;
+  CSOEconItem* _builderResult;
 }
 
 - (CSOEconItem*) defaultInstance;
@@ -2601,7 +2601,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgAdjustItemEquippedState_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgAdjustItemEquippedState* result;
+  CMsgAdjustItemEquippedState* _builderResult;
 }
 
 - (CMsgAdjustItemEquippedState*) defaultInstance;
@@ -2660,7 +2660,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgSortItems_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSortItems* result;
+  CMsgSortItems* _builderResult;
 }
 
 - (CMsgSortItems*) defaultInstance;
@@ -2721,7 +2721,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOEconClaimCode_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOEconClaimCode* result;
+  CSOEconClaimCode* _builderResult;
 }
 
 - (CSOEconClaimCode*) defaultInstance;
@@ -2785,7 +2785,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgStoreGetUserData_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgStoreGetUserData* result;
+  CMsgStoreGetUserData* _builderResult;
 }
 
 - (CMsgStoreGetUserData*) defaultInstance;
@@ -2869,7 +2869,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgStoreGetUserDataResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgStoreGetUserDataResponse* result;
+  CMsgStoreGetUserDataResponse* _builderResult;
 }
 
 - (CMsgStoreGetUserDataResponse*) defaultInstance;
@@ -2973,7 +2973,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgUpdateItemSchema_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgUpdateItemSchema* result;
+  CMsgUpdateItemSchema* _builderResult;
 }
 
 - (CMsgUpdateItemSchema*) defaultInstance;
@@ -3028,7 +3028,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgRequestItemSchemaData_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgRequestItemSchemaData* result;
+  CMsgRequestItemSchemaData* _builderResult;
 }
 
 - (CMsgRequestItemSchemaData*) defaultInstance;
@@ -3072,7 +3072,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgGCError_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCError* result;
+  CMsgGCError* _builderResult;
 }
 
 - (CMsgGCError*) defaultInstance;
@@ -3117,7 +3117,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgRequestInventoryRefresh_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgRequestInventoryRefresh* result;
+  CMsgRequestInventoryRefresh* _builderResult;
 }
 
 - (CMsgRequestInventoryRefresh*) defaultInstance;
@@ -3165,7 +3165,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgConVarValue_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgConVarValue* result;
+  CMsgConVarValue* _builderResult;
 }
 
 - (CMsgConVarValue*) defaultInstance;
@@ -3218,7 +3218,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgReplicateConVars_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgReplicateConVars* result;
+  CMsgReplicateConVars* _builderResult;
 }
 
 - (CMsgReplicateConVars*) defaultInstance;
@@ -3284,7 +3284,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgUseItem_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgUseItem* result;
+  CMsgUseItem* _builderResult;
 }
 
 - (CMsgUseItem*) defaultInstance;
@@ -3363,7 +3363,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgReplayUploadedToYouTube_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgReplayUploadedToYouTube* result;
+  CMsgReplayUploadedToYouTube* _builderResult;
 }
 
 - (CMsgReplayUploadedToYouTube*) defaultInstance;
@@ -3422,7 +3422,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgConsumableExhausted_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgConsumableExhausted* result;
+  CMsgConsumableExhausted* _builderResult;
 }
 
 - (CMsgConsumableExhausted*) defaultInstance;
@@ -3491,7 +3491,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgItemAcknowledged_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgItemAcknowledged* result;
+  CMsgItemAcknowledged* _builderResult;
 }
 
 - (CMsgItemAcknowledged*) defaultInstance;
@@ -3577,7 +3577,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgSetPresetItemPosition_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSetPresetItemPosition* result;
+  CMsgSetPresetItemPosition* _builderResult;
 }
 
 - (CMsgSetPresetItemPosition*) defaultInstance;
@@ -3670,7 +3670,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgSetItemPositions_ItemPosition_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSetItemPositions_ItemPosition* result;
+  CMsgSetItemPositions_ItemPosition* _builderResult;
 }
 
 - (CMsgSetItemPositions_ItemPosition*) defaultInstance;
@@ -3698,7 +3698,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgSetItemPositions_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSetItemPositions* result;
+  CMsgSetItemPositions* _builderResult;
 }
 
 - (CMsgSetItemPositions*) defaultInstance;
@@ -3761,7 +3761,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOEconItemPresetInstance_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOEconItemPresetInstance* result;
+  CSOEconItemPresetInstance* _builderResult;
 }
 
 - (CSOEconItemPresetInstance*) defaultInstance;
@@ -3829,7 +3829,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgSelectItemPresetForClass_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSelectItemPresetForClass* result;
+  CMsgSelectItemPresetForClass* _builderResult;
 }
 
 - (CMsgSelectItemPresetForClass*) defaultInstance;
@@ -3883,7 +3883,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgSelectItemPresetForClassReply_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgSelectItemPresetForClassReply* result;
+  CMsgSelectItemPresetForClassReply* _builderResult;
 }
 
 - (CMsgSelectItemPresetForClassReply*) defaultInstance;
@@ -3940,7 +3940,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOSelectedItemPreset_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOSelectedItemPreset* result;
+  CSOSelectedItemPreset* _builderResult;
 }
 
 - (CSOSelectedItemPreset*) defaultInstance;
@@ -4023,7 +4023,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgGCReportAbuse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCReportAbuse* result;
+  CMsgGCReportAbuse* _builderResult;
 }
 
 - (CMsgGCReportAbuse*) defaultInstance;
@@ -4110,7 +4110,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgGCReportAbuseResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCReportAbuseResponse* result;
+  CMsgGCReportAbuseResponse* _builderResult;
 }
 
 - (CMsgGCReportAbuseResponse*) defaultInstance;
@@ -4177,7 +4177,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgGCNameItemNotification_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCNameItemNotification* result;
+  CMsgGCNameItemNotification* _builderResult;
 }
 
 - (CMsgGCNameItemNotification*) defaultInstance;
@@ -4246,7 +4246,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgGCClientDisplayNotification_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCClientDisplayNotification* result;
+  CMsgGCClientDisplayNotification* _builderResult;
 }
 
 - (CMsgGCClientDisplayNotification*) defaultInstance;
@@ -4314,7 +4314,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgGCShowItemsPickedUp_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCShowItemsPickedUp* result;
+  CMsgGCShowItemsPickedUp* _builderResult;
 }
 
 - (CMsgGCShowItemsPickedUp*) defaultInstance;
@@ -4375,7 +4375,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CMsgGCIncrementKillCountResponse_Builder : PBGeneratedMessage_Builder {
 @private
-  CMsgGCIncrementKillCountResponse* result;
+  CMsgGCIncrementKillCountResponse* _builderResult;
 }
 
 - (CMsgGCIncrementKillCountResponse*) defaultInstance;
@@ -4459,7 +4459,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOEconItemDropRateBonus_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOEconItemDropRateBonus* result;
+  CSOEconItemDropRateBonus* _builderResult;
 }
 
 - (CSOEconItemDropRateBonus*) defaultInstance;
@@ -4545,7 +4545,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOEconItemLeagueViewPass_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOEconItemLeagueViewPass* result;
+  CSOEconItemLeagueViewPass* _builderResult;
 }
 
 - (CSOEconItemLeagueViewPass*) defaultInstance;
@@ -4617,7 +4617,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOEconItemEventTicket_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOEconItemEventTicket* result;
+  CSOEconItemEventTicket* _builderResult;
 }
 
 - (CSOEconItemEventTicket*) defaultInstance;
@@ -4716,7 +4716,7 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 
 @interface CSOEconItemHalloweenEgg_Builder : PBGeneratedMessage_Builder {
 @private
-  CSOEconItemHalloweenEgg* result;
+  CSOEconItemHalloweenEgg* _builderResult;
 }
 
 - (CSOEconItemHalloweenEgg*) defaultInstance;
