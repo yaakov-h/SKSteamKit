@@ -6,8 +6,13 @@
 //
 
 #import "SteamLanguage.h"
-#import "Steammessages_base.pb.h"
-#import "Steammessages_clientserver.pb.h"
+#import <CRBoilerplate/CRBoilerplate.h>
+
+#ifndef _SK_EGCMSG
+#define _SK_EGCMSG
+typedef uint32_t EGCMsg; // Temp hack, not yet defined
+#endif
+@class CRDataReader; // Temp hack, not yet defined
 
 @protocol _SKSteamSerializable <NSObject>
 
@@ -916,3 +921,4 @@
 
 	- (void) deserializeWithReader:(CRDataReader *)reader;
 @end
+

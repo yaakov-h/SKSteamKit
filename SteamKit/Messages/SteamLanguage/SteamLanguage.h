@@ -5,12 +5,16 @@
 // This file was automatically generated. Do not edit it.
 //
 
-#import <Foundation/Foundation.h>
-#import <CRBoilerplate/CRBoilerplate.h>
+#import "steammessages_base.pb.h"
+#import "steammessages_clientserver.pb.h"
 
+#ifndef _SK_EGCMSG
+#define _SK_EGCMSG
 typedef uint32_t EGCMsg; // Temp hack, not yet defined
+#endif
+@class CRDataReader; // Temp hack, not yet defined
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EMsg) {
 	EMsgInvalid = 0,
 	EMsgMulti = 1,
 	EMsgBaseGeneral = 100,
@@ -1290,9 +1294,9 @@ typedef enum {
 	EMsgPICSAccessTokenRequest = 8905,
 	EMsgPICSAccessTokenResponse = 8906,
 	EMsgMax = 8907,
-} EMsg;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EResult) {
 	EResultInvalid = 0,
 	EResultOK = 1,
 	EResultFail = 2,
@@ -1368,9 +1372,9 @@ typedef enum {
 	EResultAccountLocked = 73,
 	EResultAccountLogonDeniedVerifiedEmailRequired = 74,
 	EResultMax = 75,
-} EResult;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EUniverse) {
 	EUniverseInvalid = 0,
 	EUniversePublic = 1,
 	EUniverseBeta = 2,
@@ -1378,9 +1382,9 @@ typedef enum {
 	EUniverseDev = 4,
 	EUniverseRC = 5,
 	EUniverseMax = 6,
-} EUniverse;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EChatEntryType) {
 	EChatEntryTypeInvalid = 0,
 	EChatEntryTypeChatMsg = 1,
 	EChatEntryTypeTyping = 2,
@@ -1389,9 +1393,9 @@ typedef enum {
 	EChatEntryTypeLobbyGameStart = 5,
 	EChatEntryTypeLeftConversation = 6,
 	EChatEntryTypeMax = 7,
-} EChatEntryType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EPersonaState) {
 	EPersonaStateOffline = 0,
 	EPersonaStateOnline = 1,
 	EPersonaStateBusy = 2,
@@ -1400,9 +1404,9 @@ typedef enum {
 	EPersonaStateLookingToTrade = 5,
 	EPersonaStateLookingToPlay = 6,
 	EPersonaStateMax = 7,
-} EPersonaState;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EAccountType) {
 	EAccountTypeInvalid = 0,
 	EAccountTypeIndividual = 1,
 	EAccountTypeMultiseat = 2,
@@ -1415,9 +1419,9 @@ typedef enum {
 	EAccountTypeConsoleUser = 9,
 	EAccountTypeAnonUser = 10,
 	EAccountTypeMax = 11,
-} EAccountType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EFriendRelationship) {
 	EFriendRelationshipNone = 0,
 	EFriendRelationshipBlocked = 1,
 	EFriendRelationshipPendingInvitee = 2,
@@ -1429,9 +1433,9 @@ typedef enum {
 	EFriendRelationshipIgnoredFriend = 6,
 	EFriendRelationshipSuggestedFriend = 7,
 	EFriendRelationshipMax = 8,
-} EFriendRelationship;
+};
 
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, EAccountFlags) {
 	EAccountFlagsNormalUser = 0,
 	EAccountFlagsPersonaNameSet = 1,
 	EAccountFlagsUnbannable = 2,
@@ -1454,20 +1458,18 @@ typedef enum {
 	EAccountFlagsForceEmailVerification = 262144,
 	EAccountFlagsLogonExtraSecurity = 524288,
 	EAccountFlagsLogonExtraSecurityDisabled = 1048576,
-	EAccountFlagsMax = 1048577,
-} EAccountFlags;
+};
 
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, EClanPermission) {
 	EClanPermissionNobody = 0,
 	EClanPermissionOwner = 1,
 	EClanPermissionOfficer = 2,
 	EClanPermissionOwnerAndOfficer = 3,
 	EClanPermissionMember = 4,
 	EClanPermissionModerator = 8,
-	EClanPermissionMax = 9,
-} EClanPermission;
+};
 
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, EChatPermission) {
 	EChatPermissionClose = 1,
 	EChatPermissionInvite = 2,
 	EChatPermissionTalk = 8,
@@ -1483,10 +1485,9 @@ typedef enum {
 	EChatPermissionOfficerDefault = 282,
 	EChatPermissionOwnerDefault = 891,
 	EChatPermissionMask = 1019,
-	EChatPermissionMax = 1020,
-} EChatPermission;
+};
 
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, EFriendFlags) {
 	EFriendFlagsNone = 0,
 	EFriendFlagsBlocked = 1,
 	EFriendFlagsFriendshipRequested = 2,
@@ -1499,10 +1500,9 @@ typedef enum {
 	EFriendFlagsIgnored = 512,
 	EFriendFlagsIgnoredFriend = 1024,
 	EFriendFlagsFlagAll = 65535,
-	EFriendFlagsMax = 65536,
-} EFriendFlags;
+};
 
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, EClientPersonaStateFlag) {
 	EClientPersonaStateFlagStatus = 1,
 	EClientPersonaStateFlagPlayerName = 2,
 	EClientPersonaStateFlagQueryPort = 4,
@@ -1514,10 +1514,9 @@ typedef enum {
 	EClientPersonaStateFlagGameExtraInfo = 256,
 	EClientPersonaStateFlagGameDataBlob = 512,
 	EClientPersonaStateFlagClanTag = 1024,
-	EClientPersonaStateFlagMax = 1025,
-} EClientPersonaStateFlag;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EAppUsageEvent) {
 	EAppUsageEventGameLaunch = 1,
 	EAppUsageEventGameLaunchTrial = 2,
 	EAppUsageEventMedia = 3,
@@ -1527,9 +1526,9 @@ typedef enum {
 	EAppUsageEventInGameAdViewed = 7,
 	EAppUsageEventGameLaunchFreeWeekend = 8,
 	EAppUsageEventMax = 9,
-} EAppUsageEvent;
+};
 
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, ELicenseFlags) {
 	ELicenseFlagsNone = 0,
 	ELicenseFlagsRenew = 0x01,
 	ELicenseFlagsRenewalFailed = 0x02,
@@ -1538,10 +1537,9 @@ typedef enum {
 	ELicenseFlagsCancelledByUser = 0x10,
 	ELicenseFlagsCancelledByAdmin = 0x20,
 	ELicenseFlagsLowViolenceContent = 0x40,
-	ELicenseFlagsMax = 65,
-} ELicenseFlags;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, ELicenseType) {
 	ELicenseTypeNoLicense = 0,
 	ELicenseTypeSinglePurchase = 1,
 	ELicenseTypeSinglePurchaseLimitedUse = 2,
@@ -1549,9 +1547,9 @@ typedef enum {
 	ELicenseTypeRecurringChargeLimitedUse = 4,
 	ELicenseTypeRecurringChargeLimitedUseWithOverages = 5,
 	ELicenseTypeMax = 6,
-} ELicenseType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EPaymentMethod) {
 	EPaymentMethodNone = 0,
 	EPaymentMethodActivationCode = 1,
 	EPaymentMethodCreditCard = 2,
@@ -1570,16 +1568,16 @@ typedef enum {
 	EPaymentMethodSplit = 512,
 	EPaymentMethodComplimentary = 1024,
 	EPaymentMethodMax = 1025,
-} EPaymentMethod;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EIntroducerRouting) {
 	EIntroducerRoutingFileShare = 0,
 	EIntroducerRoutingP2PVoiceChat = 1,
 	EIntroducerRoutingP2PNetworking = 2,
 	EIntroducerRoutingMax = 3,
-} EIntroducerRouting;
+};
 
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, EServerFlags) {
 	EServerFlagsNone = 0,
 	EServerFlagsActive = 1,
 	EServerFlagsSecure = 2,
@@ -1587,10 +1585,9 @@ typedef enum {
 	EServerFlagsLinux = 8,
 	EServerFlagsPassworded = 16,
 	EServerFlagsPrivate = 32,
-	EServerFlagsMax = 33,
-} EServerFlags;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EDenyReason) {
 	EDenyReasonInvalidVersion = 1,
 	EDenyReasonGeneric = 2,
 	EDenyReasonNotLoggedOn = 3,
@@ -1607,26 +1604,26 @@ typedef enum {
 	EDenyReasonSteamValidationStalled = 14,
 	EDenyReasonSteamOwnerLeftGuestUser = 15,
 	EDenyReasonMax = 16,
-} EDenyReason;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EClanRank) {
 	EClanRankNone = 0,
 	EClanRankOwner = 1,
 	EClanRankOfficer = 2,
 	EClanRankMember = 3,
 	EClanRankMax = 4,
-} EClanRank;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EClanRelationship) {
 	EClanRelationshipNone = 0,
 	EClanRelationshipBlocked = 1,
 	EClanRelationshipInvited = 2,
 	EClanRelationshipMember = 3,
 	EClanRelationshipKicked = 4,
 	EClanRelationshipMax = 5,
-} EClanRelationship;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EAuthSessionResponse) {
 	EAuthSessionResponseOK = 0,
 	EAuthSessionResponseUserNotConnectedToSteam = 1,
 	EAuthSessionResponseNoLicenseOrExpired = 2,
@@ -1637,9 +1634,9 @@ typedef enum {
 	EAuthSessionResponseAuthTicketInvalidAlreadyUsed = 7,
 	EAuthSessionResponseAuthTicketInvalid = 8,
 	EAuthSessionResponseMax = 9,
-} EAuthSessionResponse;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EChatRoomEnterResponse) {
 	EChatRoomEnterResponseSuccess = 1,
 	EChatRoomEnterResponseDoesntExist = 2,
 	EChatRoomEnterResponseNotAllowed = 3,
@@ -1655,23 +1652,23 @@ typedef enum {
 	EChatRoomEnterResponseNoRankingDataUser = 13,
 	EChatRoomEnterResponseRankOutOfRange = 14,
 	EChatRoomEnterResponseMax = 15,
-} EChatRoomEnterResponse;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EChatRoomType) {
 	EChatRoomTypeFriend = 1,
 	EChatRoomTypeMUC = 2,
 	EChatRoomTypeLobby = 3,
 	EChatRoomTypeMax = 4,
-} EChatRoomType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EChatInfoType) {
 	EChatInfoTypeStateChange = 1,
 	EChatInfoTypeInfoUpdate = 2,
 	EChatInfoTypeMemberLimitChange = 3,
 	EChatInfoTypeMax = 4,
-} EChatInfoType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EChatAction) {
 	EChatActionInviteChat = 1,
 	EChatActionKick = 2,
 	EChatActionBan = 3,
@@ -1689,9 +1686,9 @@ typedef enum {
 	EChatActionSetModerated = 15,
 	EChatActionSetUnmoderated = 16,
 	EChatActionMax = 17,
-} EChatAction;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EChatActionResult) {
 	EChatActionResultSuccess = 1,
 	EChatActionResultError = 2,
 	EChatActionResultNotPermitted = 3,
@@ -1703,9 +1700,9 @@ typedef enum {
 	EChatActionResultChatFull = 9,
 	EChatActionResultVoiceSlotsFull = 10,
 	EChatActionResultMax = 11,
-} EChatActionResult;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EAppInfoSection) {
 	EAppInfoSectionUnknown = 0,
 	EAppInfoSectionAll = 1,
 	EAppInfoSectionFirst = 2,
@@ -1724,18 +1721,18 @@ typedef enum {
 	EAppInfoSectionSysReqs = 14,
 	EAppInfoSectionCommunity = 15,
 	EAppInfoSectionMax = 16,
-} EAppInfoSection;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EContentDownloadSourceType) {
 	EContentDownloadSourceTypeInvalid = 0,
 	EContentDownloadSourceTypeCS = 1,
 	EContentDownloadSourceTypeCDN = 2,
 	EContentDownloadSourceTypeLCS = 3,
 	EContentDownloadSourceTypeProxy = 4,
 	EContentDownloadSourceTypeMax = 5,
-} EContentDownloadSourceType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EPlatformType) {
 	EPlatformTypeUnknown = 0,
 	EPlatformTypeWin32 = 1,
 	EPlatformTypeWin64 = 2,
@@ -1743,9 +1740,9 @@ typedef enum {
 	EPlatformTypeOSX = 4,
 	EPlatformTypePS3 = 5,
 	EPlatformTypeMax = 6,
-} EPlatformType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EOSType) {
 	EOSTypeUnknown = -1,
 	EOSTypePS3 = -300,
 	EOSTypeMacOSUnknown = -102,
@@ -1775,9 +1772,9 @@ typedef enum {
 	EOSTypeWin2008 = 11,
 	EOSTypeWinMAX = 12,
 	EOSTypeMax = 23,
-} EOSType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EServerType) {
 	EServerTypeInvalid = -1,
 	EServerTypeFirst = 0,
 	EServerTypeShell = 0,
@@ -1829,9 +1826,9 @@ typedef enum {
 	EServerTypeEcon = 48,
 	EServerTypeBackpack = 49,
 	EServerTypeMax = 50,
-} EServerType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EBillingType) {
 	EBillingTypeNoCost = 0,
 	EBillingTypeBillOnceOnly = 1,
 	EBillingTypeBillMonthly = 2,
@@ -1843,9 +1840,9 @@ typedef enum {
 	EBillingTypeOEMTicket = 8,
 	EBillingTypeNumBillingTypes = 9,
 	EBillingTypeMax = 10,
-} EBillingType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EActivationCodeClass) {
 	EActivationCodeClassWonCDKey = 0,
 	EActivationCodeClassValveCDKey = 1,
 	EActivationCodeClassDoom3CDKey = 2,
@@ -1854,18 +1851,17 @@ typedef enum {
 	EActivationCodeClassMax = 5,
 	EActivationCodeClassTest = 2147483647,
 	EActivationCodeClassInvalid = 4294967295,
-} EActivationCodeClass;
+};
 
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, EChatMemberStateChange) {
 	EChatMemberStateChangeEntered = 0x01,
 	EChatMemberStateChangeLeft = 0x02,
 	EChatMemberStateChangeDisconnected = 0x04,
 	EChatMemberStateChangeKicked = 0x08,
 	EChatMemberStateChangeBanned = 0x10,
-	EChatMemberStateChangeMax = 17,
-} EChatMemberStateChange;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, ERegionCode) {
 	ERegionCodeUSEast = 0x00,
 	ERegionCodeUSWest = 0x01,
 	ERegionCodeSouthAmerica = 0x02,
@@ -1876,9 +1872,9 @@ typedef enum {
 	ERegionCodeAfrica = 0x07,
 	ERegionCodeWorld = 0xFF,
 	ERegionCodeMax = 256,
-} ERegionCode;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, ECurrencyCode) {
 	ECurrencyCodeInvalid = 0,
 	ECurrencyCodeUSD = 1,
 	ECurrencyCodeGBP = 2,
@@ -1888,9 +1884,9 @@ typedef enum {
 	ECurrencyCodePLN = 6,
 	ECurrencyCodeBRL = 7,
 	ECurrencyCodeMax = 8,
-} ECurrencyCode;
+};
 
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, EDepotFileFlag) {
 	EDepotFileFlagUserConfig = 1,
 	EDepotFileFlagVersionedUserConfig = 2,
 	EDepotFileFlagEncrypted = 4,
@@ -1898,10 +1894,9 @@ typedef enum {
 	EDepotFileFlagHidden = 16,
 	EDepotFileFlagExecutable = 32,
 	EDepotFileFlagDirectory = 64,
-	EDepotFileFlagMax = 65,
-} EDepotFileFlag;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EWorkshopEnumerationType) {
 	EWorkshopEnumerationTypeRankedByVote = 0,
 	EWorkshopEnumerationTypeRecent = 1,
 	EWorkshopEnumerationTypeTrending = 2,
@@ -1910,22 +1905,22 @@ typedef enum {
 	EWorkshopEnumerationTypeContentByFriends = 5,
 	EWorkshopEnumerationTypeRecentFromFollowedUsers = 6,
 	EWorkshopEnumerationTypeMax = 7,
-} EWorkshopEnumerationType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EPublishedFileVisibility) {
 	EPublishedFileVisibilityPublic = 0,
 	EPublishedFileVisibilityFriendsOnly = 1,
 	EPublishedFileVisibilityPrivate = 2,
 	EPublishedFileVisibilityMax = 3,
-} EPublishedFileVisibility;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EWorkshopFileAction) {
 	EWorkshopFileActionPlayed = 0,
 	EWorkshopFileActionCompleted = 1,
 	EWorkshopFileActionMax = 2,
-} EWorkshopFileAction;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EEconTradeResponse) {
 	EEconTradeResponseAccepted = 0,
 	EEconTradeResponseDeclined = 1,
 	EEconTradeResponseVacBannedInitiator = 2,
@@ -1941,27 +1936,26 @@ typedef enum {
 	EEconTradeResponseError = 12,
 	EEconTradeResponseTimeout = 13,
 	EEconTradeResponseMax = 14,
-} EEconTradeResponse;
+};
 
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, EMarketingMessageFlags) {
 	EMarketingMessageFlagsNone = 0,
 	EMarketingMessageFlagsHighPriority = 1,
 	EMarketingMessageFlagsPlatformWindows = 2,
 	EMarketingMessageFlagsPlatformMac = 4,
 	EMarketingMessageFlagsPlatformRestrictions = 6,
-	EMarketingMessageFlagsMax = 7,
-} EMarketingMessageFlags;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, ENewsUpdateType) {
 	ENewsUpdateTypeAppNews = 0,
 	ENewsUpdateTypeSteamAds = 1,
 	ENewsUpdateTypeSteamNews = 2,
 	ENewsUpdateTypeCDDBUpdate = 3,
 	ENewsUpdateTypeClientUpdate = 4,
 	ENewsUpdateTypeMax = 5,
-} ENewsUpdateType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, ESystemIMType) {
 	ESystemIMTypeRawText = 0,
 	ESystemIMTypeInvalidCard = 1,
 	ESystemIMTypeRecurringPurchaseFailed = 2,
@@ -1971,17 +1965,16 @@ typedef enum {
 	ESystemIMTypeGuestPassGranted = 6,
 	ESystemIMTypeGiftRevoked = 7,
 	ESystemIMTypeMax = 8,
-} ESystemIMType;
+};
 
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, EChatFlags) {
 	EChatFlagsLocked = 1,
 	EChatFlagsInvisibleToFriends = 2,
 	EChatFlagsModerated = 4,
 	EChatFlagsUnjoinable = 8,
-	EChatFlagsMax = 9,
-} EChatFlags;
+};
 
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, ERemoteStoragePlatform) {
 	ERemoteStoragePlatformNone = 0,
 	ERemoteStoragePlatformWindows = 1,
 	ERemoteStoragePlatformOSX = 2,
@@ -1989,10 +1982,9 @@ typedef enum {
 	ERemoteStoragePlatformReserved1 = 8,
 	ERemoteStoragePlatformReserved2 = 16,
 	ERemoteStoragePlatformAll = 4294967295,
-	ERemoteStoragePlatformMax = 4294967296,
-} ERemoteStoragePlatform;
+};
 
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, EDRMBlobDownloadType) {
 	EDRMBlobDownloadTypeError = 0,
 	EDRMBlobDownloadTypeFile = 1,
 	EDRMBlobDownloadTypeParts = 2,
@@ -2002,10 +1994,9 @@ typedef enum {
 	EDRMBlobDownloadTypeHighPriority = 16,
 	EDRMBlobDownloadTypeAddTimestamp = 32,
 	EDRMBlobDownloadTypeLowPriority = 64,
-	EDRMBlobDownloadTypeMax = 65,
-} EDRMBlobDownloadType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EDRMBlobDownloadErrorDetail) {
 	EDRMBlobDownloadErrorDetailNone = 0,
 	EDRMBlobDownloadErrorDetailDownloadFailed = 1,
 	EDRMBlobDownloadErrorDetailTargetLocked = 2,
@@ -2030,48 +2021,48 @@ typedef enum {
 	EDRMBlobDownloadErrorDetailTargetLocked_Max = 131071,
 	EDRMBlobDownloadErrorDetailNextBase = 131072,
 	EDRMBlobDownloadErrorDetailMax = 131073,
-} EDRMBlobDownloadErrorDetail;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EClientStat) {
 	EClientStatP2PConnectionsUDP = 0,
 	EClientStatP2PConnectionsRelay = 1,
 	EClientStatP2PGameConnections = 2,
 	EClientStatP2PVoiceConnections = 3,
 	EClientStatBytesDownloaded = 4,
 	EClientStatMax = 5,
-} EClientStat;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EClientStatAggregateMethod) {
 	EClientStatAggregateMethodLatestOnly = 0,
 	EClientStatAggregateMethodSum = 1,
 	EClientStatAggregateMethodEvent = 2,
 	EClientStatAggregateMethodScalar = 3,
 	EClientStatAggregateMethodMax = 4,
-} EClientStatAggregateMethod;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, ELeaderboardDataRequest) {
 	ELeaderboardDataRequestGlobal = 0,
 	ELeaderboardDataRequestGlobalAroundUser = 1,
 	ELeaderboardDataRequestFriends = 2,
 	ELeaderboardDataRequestUsers = 3,
 	ELeaderboardDataRequestMax = 4,
-} ELeaderboardDataRequest;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, ELeaderboardSortMethod) {
 	ELeaderboardSortMethodNone = 0,
 	ELeaderboardSortMethodAscending = 1,
 	ELeaderboardSortMethodDescending = 2,
 	ELeaderboardSortMethodMax = 3,
-} ELeaderboardSortMethod;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, ELeaderboardUploadScoreMethod) {
 	ELeaderboardUploadScoreMethodNone = 0,
 	ELeaderboardUploadScoreMethodKeepBest = 1,
 	ELeaderboardUploadScoreMethodForceUpdate = 2,
 	ELeaderboardUploadScoreMethodMax = 3,
-} ELeaderboardUploadScoreMethod;
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, EUdpPacketType) {
 	EUdpPacketTypeInvalid = 0,
 	EUdpPacketTypeChallengeReq = 1,
 	EUdpPacketTypeChallenge = 2,
@@ -2081,4 +2072,5 @@ typedef enum {
 	EUdpPacketTypeData = 6,
 	EUdpPacketTypeDatagram = 7,
 	EUdpPacketTypeMax = 8,
-} EUdpPacketType;
+};
+

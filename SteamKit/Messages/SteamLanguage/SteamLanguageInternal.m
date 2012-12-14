@@ -2221,3 +2221,4 @@
 		self.result = (EResult)[reader readInt32];
 	}
 @end
+

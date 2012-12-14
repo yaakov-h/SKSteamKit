@@ -12,6 +12,7 @@
 #import "SKPackage.h"
 #import "SKLicence.h"
 #import "SKApp.h"
+#import <CRBoilerplate/CRBoilerplate.h>
 
 @implementation SKSteamApps
 
