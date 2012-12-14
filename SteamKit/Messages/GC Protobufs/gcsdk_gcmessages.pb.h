@@ -2,6 +2,14 @@
 
 #import <ProtocolBuffers/ProtocolBuffers.h>
 
+@class CGCToGCMsgMasterAck;
+@class CGCToGCMsgMasterAck_Builder;
+@class CGCToGCMsgMasterAck_Response;
+@class CGCToGCMsgMasterAck_Response_Builder;
+@class CGCToGCMsgRouted;
+@class CGCToGCMsgRoutedReply;
+@class CGCToGCMsgRoutedReply_Builder;
+@class CGCToGCMsgRouted_Builder;
 @class CMsgAccountDetails;
 @class CMsgAccountDetails_Builder;
 @class CMsgGCMultiplexMessage;
@@ -829,5 +837,237 @@
 - (CMsgGCMultiplexMessage_Builder *)setSteamidsArray:(NSArray *)array;
 - (CMsgGCMultiplexMessage_Builder *)setSteamidsValues:(const uint64_t *)values count:(NSUInteger)count;
 - (CMsgGCMultiplexMessage_Builder *)clearSteamids;
+@end
+
+@interface CGCToGCMsgMasterAck : PBGeneratedMessage {
+@private
+  BOOL hasDirIndex_:1;
+  BOOL hasGcType_:1;
+  uint32_t dirIndex;
+  uint32_t gcType;
+}
+- (BOOL) hasDirIndex;
+- (BOOL) hasGcType;
+@property (readonly) uint32_t dirIndex;
+@property (readonly) uint32_t gcType;
+
++ (CGCToGCMsgMasterAck*) defaultInstance;
+- (CGCToGCMsgMasterAck*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CGCToGCMsgMasterAck_Builder*) builder;
++ (CGCToGCMsgMasterAck_Builder*) builder;
++ (CGCToGCMsgMasterAck_Builder*) builderWithPrototype:(CGCToGCMsgMasterAck*) prototype;
+- (CGCToGCMsgMasterAck_Builder*) toBuilder;
+
++ (CGCToGCMsgMasterAck*) parseFromData:(NSData*) data;
++ (CGCToGCMsgMasterAck*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CGCToGCMsgMasterAck*) parseFromInputStream:(NSInputStream*) input;
++ (CGCToGCMsgMasterAck*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CGCToGCMsgMasterAck*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CGCToGCMsgMasterAck*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CGCToGCMsgMasterAck_Builder : PBGeneratedMessage_Builder {
+@private
+  CGCToGCMsgMasterAck* _builderResult;
+}
+
+- (CGCToGCMsgMasterAck*) defaultInstance;
+
+- (CGCToGCMsgMasterAck_Builder*) clear;
+- (CGCToGCMsgMasterAck_Builder*) clone;
+
+- (CGCToGCMsgMasterAck*) build;
+- (CGCToGCMsgMasterAck*) buildPartial;
+
+- (CGCToGCMsgMasterAck_Builder*) mergeFrom:(CGCToGCMsgMasterAck*) other;
+- (CGCToGCMsgMasterAck_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CGCToGCMsgMasterAck_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasDirIndex;
+- (uint32_t) dirIndex;
+- (CGCToGCMsgMasterAck_Builder*) setDirIndex:(uint32_t) value;
+- (CGCToGCMsgMasterAck_Builder*) clearDirIndex;
+
+- (BOOL) hasGcType;
+- (uint32_t) gcType;
+- (CGCToGCMsgMasterAck_Builder*) setGcType:(uint32_t) value;
+- (CGCToGCMsgMasterAck_Builder*) clearGcType;
+@end
+
+@interface CGCToGCMsgMasterAck_Response : PBGeneratedMessage {
+@private
+  BOOL hasEresult_:1;
+  int32_t eresult;
+}
+- (BOOL) hasEresult;
+@property (readonly) int32_t eresult;
+
++ (CGCToGCMsgMasterAck_Response*) defaultInstance;
+- (CGCToGCMsgMasterAck_Response*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CGCToGCMsgMasterAck_Response_Builder*) builder;
++ (CGCToGCMsgMasterAck_Response_Builder*) builder;
++ (CGCToGCMsgMasterAck_Response_Builder*) builderWithPrototype:(CGCToGCMsgMasterAck_Response*) prototype;
+- (CGCToGCMsgMasterAck_Response_Builder*) toBuilder;
+
++ (CGCToGCMsgMasterAck_Response*) parseFromData:(NSData*) data;
++ (CGCToGCMsgMasterAck_Response*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CGCToGCMsgMasterAck_Response*) parseFromInputStream:(NSInputStream*) input;
++ (CGCToGCMsgMasterAck_Response*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CGCToGCMsgMasterAck_Response*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CGCToGCMsgMasterAck_Response*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CGCToGCMsgMasterAck_Response_Builder : PBGeneratedMessage_Builder {
+@private
+  CGCToGCMsgMasterAck_Response* _builderResult;
+}
+
+- (CGCToGCMsgMasterAck_Response*) defaultInstance;
+
+- (CGCToGCMsgMasterAck_Response_Builder*) clear;
+- (CGCToGCMsgMasterAck_Response_Builder*) clone;
+
+- (CGCToGCMsgMasterAck_Response*) build;
+- (CGCToGCMsgMasterAck_Response*) buildPartial;
+
+- (CGCToGCMsgMasterAck_Response_Builder*) mergeFrom:(CGCToGCMsgMasterAck_Response*) other;
+- (CGCToGCMsgMasterAck_Response_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CGCToGCMsgMasterAck_Response_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasEresult;
+- (int32_t) eresult;
+- (CGCToGCMsgMasterAck_Response_Builder*) setEresult:(int32_t) value;
+- (CGCToGCMsgMasterAck_Response_Builder*) clearEresult;
+@end
+
+@interface CGCToGCMsgRouted : PBGeneratedMessage {
+@private
+  BOOL hasSenderId_:1;
+  BOOL hasNetMessage_:1;
+  BOOL hasMsgType_:1;
+  uint64_t senderId;
+  NSData* netMessage;
+  uint32_t msgType;
+}
+- (BOOL) hasMsgType;
+- (BOOL) hasSenderId;
+- (BOOL) hasNetMessage;
+@property (readonly) uint32_t msgType;
+@property (readonly) uint64_t senderId;
+@property (readonly, retain) NSData* netMessage;
+
++ (CGCToGCMsgRouted*) defaultInstance;
+- (CGCToGCMsgRouted*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CGCToGCMsgRouted_Builder*) builder;
++ (CGCToGCMsgRouted_Builder*) builder;
++ (CGCToGCMsgRouted_Builder*) builderWithPrototype:(CGCToGCMsgRouted*) prototype;
+- (CGCToGCMsgRouted_Builder*) toBuilder;
+
++ (CGCToGCMsgRouted*) parseFromData:(NSData*) data;
++ (CGCToGCMsgRouted*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CGCToGCMsgRouted*) parseFromInputStream:(NSInputStream*) input;
++ (CGCToGCMsgRouted*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CGCToGCMsgRouted*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CGCToGCMsgRouted*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CGCToGCMsgRouted_Builder : PBGeneratedMessage_Builder {
+@private
+  CGCToGCMsgRouted* _builderResult;
+}
+
+- (CGCToGCMsgRouted*) defaultInstance;
+
+- (CGCToGCMsgRouted_Builder*) clear;
+- (CGCToGCMsgRouted_Builder*) clone;
+
+- (CGCToGCMsgRouted*) build;
+- (CGCToGCMsgRouted*) buildPartial;
+
+- (CGCToGCMsgRouted_Builder*) mergeFrom:(CGCToGCMsgRouted*) other;
+- (CGCToGCMsgRouted_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CGCToGCMsgRouted_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasMsgType;
+- (uint32_t) msgType;
+- (CGCToGCMsgRouted_Builder*) setMsgType:(uint32_t) value;
+- (CGCToGCMsgRouted_Builder*) clearMsgType;
+
+- (BOOL) hasSenderId;
+- (uint64_t) senderId;
+- (CGCToGCMsgRouted_Builder*) setSenderId:(uint64_t) value;
+- (CGCToGCMsgRouted_Builder*) clearSenderId;
+
+- (BOOL) hasNetMessage;
+- (NSData*) netMessage;
+- (CGCToGCMsgRouted_Builder*) setNetMessage:(NSData*) value;
+- (CGCToGCMsgRouted_Builder*) clearNetMessage;
+@end
+
+@interface CGCToGCMsgRoutedReply : PBGeneratedMessage {
+@private
+  BOOL hasNetMessage_:1;
+  BOOL hasMsgType_:1;
+  NSData* netMessage;
+  uint32_t msgType;
+}
+- (BOOL) hasMsgType;
+- (BOOL) hasNetMessage;
+@property (readonly) uint32_t msgType;
+@property (readonly, retain) NSData* netMessage;
+
++ (CGCToGCMsgRoutedReply*) defaultInstance;
+- (CGCToGCMsgRoutedReply*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CGCToGCMsgRoutedReply_Builder*) builder;
++ (CGCToGCMsgRoutedReply_Builder*) builder;
++ (CGCToGCMsgRoutedReply_Builder*) builderWithPrototype:(CGCToGCMsgRoutedReply*) prototype;
+- (CGCToGCMsgRoutedReply_Builder*) toBuilder;
+
++ (CGCToGCMsgRoutedReply*) parseFromData:(NSData*) data;
++ (CGCToGCMsgRoutedReply*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CGCToGCMsgRoutedReply*) parseFromInputStream:(NSInputStream*) input;
++ (CGCToGCMsgRoutedReply*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CGCToGCMsgRoutedReply*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CGCToGCMsgRoutedReply*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CGCToGCMsgRoutedReply_Builder : PBGeneratedMessage_Builder {
+@private
+  CGCToGCMsgRoutedReply* _builderResult;
+}
+
+- (CGCToGCMsgRoutedReply*) defaultInstance;
+
+- (CGCToGCMsgRoutedReply_Builder*) clear;
+- (CGCToGCMsgRoutedReply_Builder*) clone;
+
+- (CGCToGCMsgRoutedReply*) build;
+- (CGCToGCMsgRoutedReply*) buildPartial;
+
+- (CGCToGCMsgRoutedReply_Builder*) mergeFrom:(CGCToGCMsgRoutedReply*) other;
+- (CGCToGCMsgRoutedReply_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CGCToGCMsgRoutedReply_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasMsgType;
+- (uint32_t) msgType;
+- (CGCToGCMsgRoutedReply_Builder*) setMsgType:(uint32_t) value;
+- (CGCToGCMsgRoutedReply_Builder*) clearMsgType;
+
+- (BOOL) hasNetMessage;
+- (NSData*) netMessage;
+- (CGCToGCMsgRoutedReply_Builder*) setNetMessage:(NSData*) value;
+- (CGCToGCMsgRoutedReply_Builder*) clearNetMessage;
 @end
 

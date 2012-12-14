@@ -62,6 +62,18 @@ static PBExtensionRegistry* extensionRegistry = nil;
 }
 @end
 
+BOOL GCProtoBufMsgSrcIsValidValue(GCProtoBufMsgSrc value) {
+  switch (value) {
+    case GCProtoBufMsgSrcGCProtoBufMsgSrc_Unspecified:
+    case GCProtoBufMsgSrcGCProtoBufMsgSrc_FromSystem:
+    case GCProtoBufMsgSrcGCProtoBufMsgSrc_FromSteamID:
+    case GCProtoBufMsgSrcGCProtoBufMsgSrc_FromGC:
+    case GCProtoBufMsgSrcGCProtoBufMsgSrc_ReplySystem:
+      return YES;
+    default:
+      return NO;
+  }
+}
 @interface CMsgWebAPIKey ()
 @property uint32_t status;
 @property uint32_t accountId;
@@ -14646,6 +14658,785 @@ static CMsgGCGetPersonaNames_Response_PersonaName* defaultCMsgGCGetPersonaNames_
 }
 - (CMsgGCGetPersonaNames_Response_Builder *)clearFailedLookupSteamids {
   _builderResult.failedLookupSteamidsArray = nil;
+  return self;
+}
+@end
+
+@interface CMsgGCMsgMasterSetDirectory ()
+@property uint32_t masterDirIndex;
+@property (retain) PBAppendableArray * dirArray;
+@end
+
+@implementation CMsgGCMsgMasterSetDirectory
+
+- (BOOL) hasMasterDirIndex {
+  return !!hasMasterDirIndex_;
+}
+- (void) setHasMasterDirIndex:(BOOL) value_ {
+  hasMasterDirIndex_ = !!value_;
+}
+@synthesize masterDirIndex;
+@synthesize dirArray;
+@dynamic dir;
+- (void) dealloc {
+  self.dirArray = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.masterDirIndex = 0;
+  }
+  return self;
+}
+static CMsgGCMsgMasterSetDirectory* defaultCMsgGCMsgMasterSetDirectoryInstance = nil;
++ (void) initialize {
+  if (self == [CMsgGCMsgMasterSetDirectory class]) {
+    defaultCMsgGCMsgMasterSetDirectoryInstance = [[CMsgGCMsgMasterSetDirectory alloc] init];
+  }
+}
++ (CMsgGCMsgMasterSetDirectory*) defaultInstance {
+  return defaultCMsgGCMsgMasterSetDirectoryInstance;
+}
+- (CMsgGCMsgMasterSetDirectory*) defaultInstance {
+  return defaultCMsgGCMsgMasterSetDirectoryInstance;
+}
+- (PBArray *)dir {
+  return dirArray;
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC*)dirAtIndex:(NSUInteger)index {
+  return [dirArray objectAtIndex:index];
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasMasterDirIndex) {
+    [output writeUInt32:1 value:self.masterDirIndex];
+  }
+  for (CMsgGCMsgMasterSetDirectory_SubGC *element in self.dirArray) {
+    [output writeMessage:2 value:element];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasMasterDirIndex) {
+    size_ += computeUInt32Size(1, self.masterDirIndex);
+  }
+  for (CMsgGCMsgMasterSetDirectory_SubGC *element in self.dirArray) {
+    size_ += computeMessageSize(2, element);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgGCMsgMasterSetDirectory*) parseFromData:(NSData*) data {
+  return (CMsgGCMsgMasterSetDirectory*)[[[CMsgGCMsgMasterSetDirectory builder] mergeFromData:data] build];
+}
++ (CMsgGCMsgMasterSetDirectory*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCMsgMasterSetDirectory*)[[[CMsgGCMsgMasterSetDirectory builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCMsgMasterSetDirectory*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgGCMsgMasterSetDirectory*)[[[CMsgGCMsgMasterSetDirectory builder] mergeFromInputStream:input] build];
+}
++ (CMsgGCMsgMasterSetDirectory*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCMsgMasterSetDirectory*)[[[CMsgGCMsgMasterSetDirectory builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCMsgMasterSetDirectory*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgGCMsgMasterSetDirectory*)[[[CMsgGCMsgMasterSetDirectory builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgGCMsgMasterSetDirectory*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCMsgMasterSetDirectory*)[[[CMsgGCMsgMasterSetDirectory builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCMsgMasterSetDirectory_Builder*) builder {
+  return [[[CMsgGCMsgMasterSetDirectory_Builder alloc] init] autorelease];
+}
++ (CMsgGCMsgMasterSetDirectory_Builder*) builderWithPrototype:(CMsgGCMsgMasterSetDirectory*) prototype {
+  return [[CMsgGCMsgMasterSetDirectory builder] mergeFrom:prototype];
+}
+- (CMsgGCMsgMasterSetDirectory_Builder*) builder {
+  return [CMsgGCMsgMasterSetDirectory builder];
+}
+- (CMsgGCMsgMasterSetDirectory_Builder*) toBuilder {
+  return [CMsgGCMsgMasterSetDirectory builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasMasterDirIndex) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"masterDirIndex", [NSNumber numberWithInt:self.masterDirIndex]];
+  }
+  for (CMsgGCMsgMasterSetDirectory_SubGC* element in self.dirArray) {
+    [output appendFormat:@"%@%@ {\n", indent, @"dir"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgGCMsgMasterSetDirectory class]]) {
+    return NO;
+  }
+  CMsgGCMsgMasterSetDirectory *otherMessage = other;
+  return
+      self.hasMasterDirIndex == otherMessage.hasMasterDirIndex &&
+      (!self.hasMasterDirIndex || self.masterDirIndex == otherMessage.masterDirIndex) &&
+      [self.dirArray isEqualToArray:otherMessage.dirArray] &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasMasterDirIndex) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.masterDirIndex] hash];
+  }
+  for (CMsgGCMsgMasterSetDirectory_SubGC* element in self.dirArray) {
+    hashCode = hashCode * 31 + [element hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgGCMsgMasterSetDirectory_SubGC ()
+@property uint32_t dirIndex;
+@property (retain) NSString* name;
+@property (retain) NSString* box;
+@end
+
+@implementation CMsgGCMsgMasterSetDirectory_SubGC
+
+- (BOOL) hasDirIndex {
+  return !!hasDirIndex_;
+}
+- (void) setHasDirIndex:(BOOL) value_ {
+  hasDirIndex_ = !!value_;
+}
+@synthesize dirIndex;
+- (BOOL) hasName {
+  return !!hasName_;
+}
+- (void) setHasName:(BOOL) value_ {
+  hasName_ = !!value_;
+}
+@synthesize name;
+- (BOOL) hasBox {
+  return !!hasBox_;
+}
+- (void) setHasBox:(BOOL) value_ {
+  hasBox_ = !!value_;
+}
+@synthesize box;
+- (void) dealloc {
+  self.name = nil;
+  self.box = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.dirIndex = 0;
+    self.name = @"";
+    self.box = @"";
+  }
+  return self;
+}
+static CMsgGCMsgMasterSetDirectory_SubGC* defaultCMsgGCMsgMasterSetDirectory_SubGCInstance = nil;
++ (void) initialize {
+  if (self == [CMsgGCMsgMasterSetDirectory_SubGC class]) {
+    defaultCMsgGCMsgMasterSetDirectory_SubGCInstance = [[CMsgGCMsgMasterSetDirectory_SubGC alloc] init];
+  }
+}
++ (CMsgGCMsgMasterSetDirectory_SubGC*) defaultInstance {
+  return defaultCMsgGCMsgMasterSetDirectory_SubGCInstance;
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC*) defaultInstance {
+  return defaultCMsgGCMsgMasterSetDirectory_SubGCInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasDirIndex) {
+    [output writeUInt32:1 value:self.dirIndex];
+  }
+  if (self.hasName) {
+    [output writeString:2 value:self.name];
+  }
+  if (self.hasBox) {
+    [output writeString:3 value:self.box];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasDirIndex) {
+    size_ += computeUInt32Size(1, self.dirIndex);
+  }
+  if (self.hasName) {
+    size_ += computeStringSize(2, self.name);
+  }
+  if (self.hasBox) {
+    size_ += computeStringSize(3, self.box);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgGCMsgMasterSetDirectory_SubGC*) parseFromData:(NSData*) data {
+  return (CMsgGCMsgMasterSetDirectory_SubGC*)[[[CMsgGCMsgMasterSetDirectory_SubGC builder] mergeFromData:data] build];
+}
++ (CMsgGCMsgMasterSetDirectory_SubGC*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCMsgMasterSetDirectory_SubGC*)[[[CMsgGCMsgMasterSetDirectory_SubGC builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCMsgMasterSetDirectory_SubGC*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgGCMsgMasterSetDirectory_SubGC*)[[[CMsgGCMsgMasterSetDirectory_SubGC builder] mergeFromInputStream:input] build];
+}
++ (CMsgGCMsgMasterSetDirectory_SubGC*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCMsgMasterSetDirectory_SubGC*)[[[CMsgGCMsgMasterSetDirectory_SubGC builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCMsgMasterSetDirectory_SubGC*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgGCMsgMasterSetDirectory_SubGC*)[[[CMsgGCMsgMasterSetDirectory_SubGC builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgGCMsgMasterSetDirectory_SubGC*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCMsgMasterSetDirectory_SubGC*)[[[CMsgGCMsgMasterSetDirectory_SubGC builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) builder {
+  return [[[CMsgGCMsgMasterSetDirectory_SubGC_Builder alloc] init] autorelease];
+}
++ (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) builderWithPrototype:(CMsgGCMsgMasterSetDirectory_SubGC*) prototype {
+  return [[CMsgGCMsgMasterSetDirectory_SubGC builder] mergeFrom:prototype];
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) builder {
+  return [CMsgGCMsgMasterSetDirectory_SubGC builder];
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) toBuilder {
+  return [CMsgGCMsgMasterSetDirectory_SubGC builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasDirIndex) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"dirIndex", [NSNumber numberWithInt:self.dirIndex]];
+  }
+  if (self.hasName) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"name", self.name];
+  }
+  if (self.hasBox) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"box", self.box];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgGCMsgMasterSetDirectory_SubGC class]]) {
+    return NO;
+  }
+  CMsgGCMsgMasterSetDirectory_SubGC *otherMessage = other;
+  return
+      self.hasDirIndex == otherMessage.hasDirIndex &&
+      (!self.hasDirIndex || self.dirIndex == otherMessage.dirIndex) &&
+      self.hasName == otherMessage.hasName &&
+      (!self.hasName || [self.name isEqual:otherMessage.name]) &&
+      self.hasBox == otherMessage.hasBox &&
+      (!self.hasBox || [self.box isEqual:otherMessage.box]) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasDirIndex) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.dirIndex] hash];
+  }
+  if (self.hasName) {
+    hashCode = hashCode * 31 + [self.name hash];
+  }
+  if (self.hasBox) {
+    hashCode = hashCode * 31 + [self.box hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgGCMsgMasterSetDirectory_SubGC_Builder()
+@property (retain) CMsgGCMsgMasterSetDirectory_SubGC* _builderResult;
+@end
+
+@implementation CMsgGCMsgMasterSetDirectory_SubGC_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgGCMsgMasterSetDirectory_SubGC alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) clear {
+  _builderResult = [[[CMsgGCMsgMasterSetDirectory_SubGC alloc] init] autorelease];
+  return self;
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) clone {
+  return [CMsgGCMsgMasterSetDirectory_SubGC builderWithPrototype:_builderResult];
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC*) defaultInstance {
+  return [CMsgGCMsgMasterSetDirectory_SubGC defaultInstance];
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC*) buildPartial {
+  CMsgGCMsgMasterSetDirectory_SubGC* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) mergeFrom:(CMsgGCMsgMasterSetDirectory_SubGC*) other {
+  if (other == [CMsgGCMsgMasterSetDirectory_SubGC defaultInstance]) {
+    return self;
+  }
+  if (other.hasDirIndex) {
+    [self setDirIndex:other.dirIndex];
+  }
+  if (other.hasName) {
+    [self setName:other.name];
+  }
+  if (other.hasBox) {
+    [self setBox:other.box];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setDirIndex:[input readUInt32]];
+        break;
+      }
+      case 18: {
+        [self setName:[input readString]];
+        break;
+      }
+      case 26: {
+        [self setBox:[input readString]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasDirIndex {
+  return _builderResult.hasDirIndex;
+}
+- (uint32_t) dirIndex {
+  return _builderResult.dirIndex;
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) setDirIndex:(uint32_t) value {
+  _builderResult.hasDirIndex = YES;
+  _builderResult.dirIndex = value;
+  return self;
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) clearDirIndex {
+  _builderResult.hasDirIndex = NO;
+  _builderResult.dirIndex = 0;
+  return self;
+}
+- (BOOL) hasName {
+  return _builderResult.hasName;
+}
+- (NSString*) name {
+  return _builderResult.name;
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) setName:(NSString*) value {
+  _builderResult.hasName = YES;
+  _builderResult.name = value;
+  return self;
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) clearName {
+  _builderResult.hasName = NO;
+  _builderResult.name = @"";
+  return self;
+}
+- (BOOL) hasBox {
+  return _builderResult.hasBox;
+}
+- (NSString*) box {
+  return _builderResult.box;
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) setBox:(NSString*) value {
+  _builderResult.hasBox = YES;
+  _builderResult.box = value;
+  return self;
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) clearBox {
+  _builderResult.hasBox = NO;
+  _builderResult.box = @"";
+  return self;
+}
+@end
+
+@interface CMsgGCMsgMasterSetDirectory_Builder()
+@property (retain) CMsgGCMsgMasterSetDirectory* _builderResult;
+@end
+
+@implementation CMsgGCMsgMasterSetDirectory_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgGCMsgMasterSetDirectory alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgGCMsgMasterSetDirectory_Builder*) clear {
+  _builderResult = [[[CMsgGCMsgMasterSetDirectory alloc] init] autorelease];
+  return self;
+}
+- (CMsgGCMsgMasterSetDirectory_Builder*) clone {
+  return [CMsgGCMsgMasterSetDirectory builderWithPrototype:_builderResult];
+}
+- (CMsgGCMsgMasterSetDirectory*) defaultInstance {
+  return [CMsgGCMsgMasterSetDirectory defaultInstance];
+}
+- (CMsgGCMsgMasterSetDirectory*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgGCMsgMasterSetDirectory*) buildPartial {
+  CMsgGCMsgMasterSetDirectory* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgGCMsgMasterSetDirectory_Builder*) mergeFrom:(CMsgGCMsgMasterSetDirectory*) other {
+  if (other == [CMsgGCMsgMasterSetDirectory defaultInstance]) {
+    return self;
+  }
+  if (other.hasMasterDirIndex) {
+    [self setMasterDirIndex:other.masterDirIndex];
+  }
+  if (other.dirArray.count > 0) {
+    if (_builderResult.dirArray == nil) {
+      _builderResult.dirArray = [[other.dirArray copyWithZone:[other.dirArray zone]] autorelease];
+    } else {
+      [_builderResult.dirArray appendArray:other.dirArray];
+    }
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgGCMsgMasterSetDirectory_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgGCMsgMasterSetDirectory_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setMasterDirIndex:[input readUInt32]];
+        break;
+      }
+      case 18: {
+        CMsgGCMsgMasterSetDirectory_SubGC_Builder* subBuilder = [CMsgGCMsgMasterSetDirectory_SubGC builder];
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self addDir:[subBuilder buildPartial]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasMasterDirIndex {
+  return _builderResult.hasMasterDirIndex;
+}
+- (uint32_t) masterDirIndex {
+  return _builderResult.masterDirIndex;
+}
+- (CMsgGCMsgMasterSetDirectory_Builder*) setMasterDirIndex:(uint32_t) value {
+  _builderResult.hasMasterDirIndex = YES;
+  _builderResult.masterDirIndex = value;
+  return self;
+}
+- (CMsgGCMsgMasterSetDirectory_Builder*) clearMasterDirIndex {
+  _builderResult.hasMasterDirIndex = NO;
+  _builderResult.masterDirIndex = 0;
+  return self;
+}
+- (PBAppendableArray *)dir {
+  return _builderResult.dirArray;
+}
+- (CMsgGCMsgMasterSetDirectory_SubGC*)dirAtIndex:(NSUInteger)index {
+  return [_builderResult dirAtIndex:index];
+}
+- (CMsgGCMsgMasterSetDirectory_Builder *)addDir:(CMsgGCMsgMasterSetDirectory_SubGC*)value {
+  if (_builderResult.dirArray == nil) {
+    _builderResult.dirArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  }
+  [_builderResult.dirArray addObject:value];
+  return self;
+}
+- (CMsgGCMsgMasterSetDirectory_Builder *)setDirArray:(NSArray *)array {
+  _builderResult.dirArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgGCMsgMasterSetDirectory_Builder *)setDirValues:(const CMsgGCMsgMasterSetDirectory_SubGC* *)values count:(NSUInteger)count {
+  _builderResult.dirArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgGCMsgMasterSetDirectory_Builder *)clearDir {
+  _builderResult.dirArray = nil;
+  return self;
+}
+@end
+
+@interface CMsgGCMsgMasterSetDirectory_Response ()
+@property int32_t eresult;
+@end
+
+@implementation CMsgGCMsgMasterSetDirectory_Response
+
+- (BOOL) hasEresult {
+  return !!hasEresult_;
+}
+- (void) setHasEresult:(BOOL) value_ {
+  hasEresult_ = !!value_;
+}
+@synthesize eresult;
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.eresult = 2;
+  }
+  return self;
+}
+static CMsgGCMsgMasterSetDirectory_Response* defaultCMsgGCMsgMasterSetDirectory_ResponseInstance = nil;
++ (void) initialize {
+  if (self == [CMsgGCMsgMasterSetDirectory_Response class]) {
+    defaultCMsgGCMsgMasterSetDirectory_ResponseInstance = [[CMsgGCMsgMasterSetDirectory_Response alloc] init];
+  }
+}
++ (CMsgGCMsgMasterSetDirectory_Response*) defaultInstance {
+  return defaultCMsgGCMsgMasterSetDirectory_ResponseInstance;
+}
+- (CMsgGCMsgMasterSetDirectory_Response*) defaultInstance {
+  return defaultCMsgGCMsgMasterSetDirectory_ResponseInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasEresult) {
+    [output writeInt32:1 value:self.eresult];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasEresult) {
+    size_ += computeInt32Size(1, self.eresult);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgGCMsgMasterSetDirectory_Response*) parseFromData:(NSData*) data {
+  return (CMsgGCMsgMasterSetDirectory_Response*)[[[CMsgGCMsgMasterSetDirectory_Response builder] mergeFromData:data] build];
+}
++ (CMsgGCMsgMasterSetDirectory_Response*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCMsgMasterSetDirectory_Response*)[[[CMsgGCMsgMasterSetDirectory_Response builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCMsgMasterSetDirectory_Response*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgGCMsgMasterSetDirectory_Response*)[[[CMsgGCMsgMasterSetDirectory_Response builder] mergeFromInputStream:input] build];
+}
++ (CMsgGCMsgMasterSetDirectory_Response*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCMsgMasterSetDirectory_Response*)[[[CMsgGCMsgMasterSetDirectory_Response builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCMsgMasterSetDirectory_Response*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgGCMsgMasterSetDirectory_Response*)[[[CMsgGCMsgMasterSetDirectory_Response builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgGCMsgMasterSetDirectory_Response*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCMsgMasterSetDirectory_Response*)[[[CMsgGCMsgMasterSetDirectory_Response builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCMsgMasterSetDirectory_Response_Builder*) builder {
+  return [[[CMsgGCMsgMasterSetDirectory_Response_Builder alloc] init] autorelease];
+}
++ (CMsgGCMsgMasterSetDirectory_Response_Builder*) builderWithPrototype:(CMsgGCMsgMasterSetDirectory_Response*) prototype {
+  return [[CMsgGCMsgMasterSetDirectory_Response builder] mergeFrom:prototype];
+}
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) builder {
+  return [CMsgGCMsgMasterSetDirectory_Response builder];
+}
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) toBuilder {
+  return [CMsgGCMsgMasterSetDirectory_Response builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasEresult) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"eresult", [NSNumber numberWithInt:self.eresult]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgGCMsgMasterSetDirectory_Response class]]) {
+    return NO;
+  }
+  CMsgGCMsgMasterSetDirectory_Response *otherMessage = other;
+  return
+      self.hasEresult == otherMessage.hasEresult &&
+      (!self.hasEresult || self.eresult == otherMessage.eresult) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasEresult) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.eresult] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgGCMsgMasterSetDirectory_Response_Builder()
+@property (retain) CMsgGCMsgMasterSetDirectory_Response* _builderResult;
+@end
+
+@implementation CMsgGCMsgMasterSetDirectory_Response_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgGCMsgMasterSetDirectory_Response alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) clear {
+  _builderResult = [[[CMsgGCMsgMasterSetDirectory_Response alloc] init] autorelease];
+  return self;
+}
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) clone {
+  return [CMsgGCMsgMasterSetDirectory_Response builderWithPrototype:_builderResult];
+}
+- (CMsgGCMsgMasterSetDirectory_Response*) defaultInstance {
+  return [CMsgGCMsgMasterSetDirectory_Response defaultInstance];
+}
+- (CMsgGCMsgMasterSetDirectory_Response*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgGCMsgMasterSetDirectory_Response*) buildPartial {
+  CMsgGCMsgMasterSetDirectory_Response* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) mergeFrom:(CMsgGCMsgMasterSetDirectory_Response*) other {
+  if (other == [CMsgGCMsgMasterSetDirectory_Response defaultInstance]) {
+    return self;
+  }
+  if (other.hasEresult) {
+    [self setEresult:other.eresult];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setEresult:[input readInt32]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasEresult {
+  return _builderResult.hasEresult;
+}
+- (int32_t) eresult {
+  return _builderResult.eresult;
+}
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) setEresult:(int32_t) value {
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
+  return self;
+}
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) clearEresult {
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
   return self;
 }
 @end

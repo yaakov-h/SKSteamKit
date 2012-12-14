@@ -106,6 +106,12 @@
 @class CMsgGCGetPersonaNames_Response_PersonaName_Builder;
 @class CMsgGCIncrementKillCountResponse;
 @class CMsgGCIncrementKillCountResponse_Builder;
+@class CMsgGCMsgMasterSetDirectory;
+@class CMsgGCMsgMasterSetDirectory_Builder;
+@class CMsgGCMsgMasterSetDirectory_Response;
+@class CMsgGCMsgMasterSetDirectory_Response_Builder;
+@class CMsgGCMsgMasterSetDirectory_SubGC;
+@class CMsgGCMsgMasterSetDirectory_SubGC_Builder;
 @class CMsgGCNameItemNotification;
 @class CMsgGCNameItemNotification_Builder;
 @class CMsgGCReportAbuse;
@@ -298,17 +304,6 @@ typedef enum {
 } EGCBaseMsg;
 
 BOOL EGCBaseMsgIsValidValue(EGCBaseMsg value);
-
-typedef enum {
-  EGCSharedMsgk_EMsgInterGCAchievementAwarded = 7001,
-  EGCSharedMsgk_EMsgInterGCAchievementAwardedResponse = 7002,
-  EGCSharedMsgk_EMsgInterGCLoadAchievements = 7003,
-  EGCSharedMsgk_EMsgInterGCLoadAchievementResponse = 7004,
-  EGCSharedMsgk_EMsgInterGCSurgeTest = 7005,
-  EGCSharedMsgk_EMsgInterGCProfile = 7006,
-} EGCSharedMsg;
-
-BOOL EGCSharedMsgIsValidValue(EGCSharedMsg value);
 
 typedef enum {
   EGCBaseProtoObjectTypesk_EProtoObjectPartyInvite = 1001,

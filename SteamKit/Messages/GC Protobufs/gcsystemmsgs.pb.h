@@ -40,7 +40,6 @@ typedef enum {
   EGCSystemMsgk_EGCMsgPreTestSetup = 69,
   EGCSystemMsgk_EGCMsgRecordSupportAction = 70,
   EGCSystemMsgk_EGCMsgGetAccountDetails_DEPRECATED = 71,
-  EGCSystemMsgk_EGCMsgSendInterAppMessage = 72,
   EGCSystemMsgk_EGCMsgReceiveInterAppMessage = 73,
   EGCSystemMsgk_EGCMsgFindAccounts = 74,
   EGCSystemMsgk_EGCMsgPostAlert = 75,
@@ -73,6 +72,8 @@ typedef enum {
   EGCSystemMsgk_EGCMsgMemCachedGetResponse = 201,
   EGCSystemMsgk_EGCMsgMemCachedSet = 202,
   EGCSystemMsgk_EGCMsgMemCachedDelete = 203,
+  EGCSystemMsgk_EGCMsgMasterSetDirectory = 220,
+  EGCSystemMsgk_EGCMsgMasterSetDirectoryResponse = 221,
 } EGCSystemMsg;
 
 BOOL EGCSystemMsgIsValidValue(EGCSystemMsg value);
@@ -89,6 +90,15 @@ typedef enum {
 } ESOMsg;
 
 BOOL ESOMsgIsValidValue(ESOMsg value);
+
+typedef enum {
+  EGCToGCMsgk_EGCToGCMsgMasterAck = 150,
+  EGCToGCMsgk_EGCToGCMsgMasterAckResponse = 151,
+  EGCToGCMsgk_EGCToGCMsgRouted = 152,
+  EGCToGCMsgk_EGCToGCMsgRoutedReply = 153,
+} EGCToGCMsg;
+
+BOOL EGCToGCMsgIsValidValue(EGCToGCMsg value);
 
 
 @interface GcsystemmsgsRoot : NSObject {

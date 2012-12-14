@@ -9,6 +9,14 @@ extend .google.protobuf.MessageOptions {
 	optional int32 msgpool_hard_limit = 50001 [default = 384];
 }
 
+enum GCProtoBufMsgSrc {
+	GCProtoBufMsgSrc_Unspecified = 0;
+	GCProtoBufMsgSrc_FromSystem = 1;
+	GCProtoBufMsgSrc_FromSteamID = 2;
+	GCProtoBufMsgSrc_FromGC = 3;
+	GCProtoBufMsgSrc_ReplySystem = 4;
+}
+
 message CMsgWebAPIKey {
 	optional uint32 status = 1 [default = 255];
 	optional uint32 account_id = 2 [default = 0];
@@ -289,5 +297,20 @@ message CMsgGCGetPersonaNames_Response {
 
 	repeated .CMsgGCGetPersonaNames_Response.PersonaName succeeded_lookups = 1;
 	repeated fixed64 failed_lookup_steamids = 2;
+}
+
+message CMsgGCMsgMasterSetDirectory {
+	message SubGC {
+		optional uint32 dir_index = 1;
+		optional string name = 2;
+		optional string box = 3;
+	}
+
+	optional uint32 master_dir_index = 1;
+	repeated .CMsgGCMsgMasterSetDirectory.SubGC dir = 2;
+}
+
+message CMsgGCMsgMasterSetDirectory_Response {
+	optional int32 eresult = 1 [default = 2];
 }
 

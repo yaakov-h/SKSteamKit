@@ -46,7 +46,6 @@ BOOL EGCSystemMsgIsValidValue(EGCSystemMsg value) {
     case EGCSystemMsgk_EGCMsgPreTestSetup:
     case EGCSystemMsgk_EGCMsgRecordSupportAction:
     case EGCSystemMsgk_EGCMsgGetAccountDetails_DEPRECATED:
-    case EGCSystemMsgk_EGCMsgSendInterAppMessage:
     case EGCSystemMsgk_EGCMsgReceiveInterAppMessage:
     case EGCSystemMsgk_EGCMsgFindAccounts:
     case EGCSystemMsgk_EGCMsgPostAlert:
@@ -79,6 +78,8 @@ BOOL EGCSystemMsgIsValidValue(EGCSystemMsg value) {
     case EGCSystemMsgk_EGCMsgMemCachedGetResponse:
     case EGCSystemMsgk_EGCMsgMemCachedSet:
     case EGCSystemMsgk_EGCMsgMemCachedDelete:
+    case EGCSystemMsgk_EGCMsgMasterSetDirectory:
+    case EGCSystemMsgk_EGCMsgMasterSetDirectoryResponse:
       return YES;
     default:
       return NO;
@@ -94,6 +95,17 @@ BOOL ESOMsgIsValidValue(ESOMsg value) {
     case ESOMsgk_ESOMsg_UpdateMultiple:
     case ESOMsgk_ESOMsg_CacheSubscriptionCheck:
     case ESOMsgk_ESOMsg_CacheSubscriptionRefresh:
+      return YES;
+    default:
+      return NO;
+  }
+}
+BOOL EGCToGCMsgIsValidValue(EGCToGCMsg value) {
+  switch (value) {
+    case EGCToGCMsgk_EGCToGCMsgMasterAck:
+    case EGCToGCMsgk_EGCToGCMsgMasterAckResponse:
+    case EGCToGCMsgk_EGCToGCMsgRouted:
+    case EGCToGCMsgk_EGCToGCMsgRoutedReply:
       return YES;
     default:
       return NO;

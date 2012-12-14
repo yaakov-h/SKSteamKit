@@ -3714,3 +3714,1017 @@ static CMsgGCMultiplexMessage* defaultCMsgGCMultiplexMessageInstance = nil;
 }
 @end
 
+@interface CGCToGCMsgMasterAck ()
+@property uint32_t dirIndex;
+@property uint32_t gcType;
+@end
+
+@implementation CGCToGCMsgMasterAck
+
+- (BOOL) hasDirIndex {
+  return !!hasDirIndex_;
+}
+- (void) setHasDirIndex:(BOOL) value_ {
+  hasDirIndex_ = !!value_;
+}
+@synthesize dirIndex;
+- (BOOL) hasGcType {
+  return !!hasGcType_;
+}
+- (void) setHasGcType:(BOOL) value_ {
+  hasGcType_ = !!value_;
+}
+@synthesize gcType;
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.dirIndex = 0;
+    self.gcType = 0;
+  }
+  return self;
+}
+static CGCToGCMsgMasterAck* defaultCGCToGCMsgMasterAckInstance = nil;
++ (void) initialize {
+  if (self == [CGCToGCMsgMasterAck class]) {
+    defaultCGCToGCMsgMasterAckInstance = [[CGCToGCMsgMasterAck alloc] init];
+  }
+}
++ (CGCToGCMsgMasterAck*) defaultInstance {
+  return defaultCGCToGCMsgMasterAckInstance;
+}
+- (CGCToGCMsgMasterAck*) defaultInstance {
+  return defaultCGCToGCMsgMasterAckInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasDirIndex) {
+    [output writeUInt32:1 value:self.dirIndex];
+  }
+  if (self.hasGcType) {
+    [output writeUInt32:2 value:self.gcType];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasDirIndex) {
+    size_ += computeUInt32Size(1, self.dirIndex);
+  }
+  if (self.hasGcType) {
+    size_ += computeUInt32Size(2, self.gcType);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CGCToGCMsgMasterAck*) parseFromData:(NSData*) data {
+  return (CGCToGCMsgMasterAck*)[[[CGCToGCMsgMasterAck builder] mergeFromData:data] build];
+}
++ (CGCToGCMsgMasterAck*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CGCToGCMsgMasterAck*)[[[CGCToGCMsgMasterAck builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CGCToGCMsgMasterAck*) parseFromInputStream:(NSInputStream*) input {
+  return (CGCToGCMsgMasterAck*)[[[CGCToGCMsgMasterAck builder] mergeFromInputStream:input] build];
+}
++ (CGCToGCMsgMasterAck*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CGCToGCMsgMasterAck*)[[[CGCToGCMsgMasterAck builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CGCToGCMsgMasterAck*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CGCToGCMsgMasterAck*)[[[CGCToGCMsgMasterAck builder] mergeFromCodedInputStream:input] build];
+}
++ (CGCToGCMsgMasterAck*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CGCToGCMsgMasterAck*)[[[CGCToGCMsgMasterAck builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CGCToGCMsgMasterAck_Builder*) builder {
+  return [[[CGCToGCMsgMasterAck_Builder alloc] init] autorelease];
+}
++ (CGCToGCMsgMasterAck_Builder*) builderWithPrototype:(CGCToGCMsgMasterAck*) prototype {
+  return [[CGCToGCMsgMasterAck builder] mergeFrom:prototype];
+}
+- (CGCToGCMsgMasterAck_Builder*) builder {
+  return [CGCToGCMsgMasterAck builder];
+}
+- (CGCToGCMsgMasterAck_Builder*) toBuilder {
+  return [CGCToGCMsgMasterAck builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasDirIndex) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"dirIndex", [NSNumber numberWithInt:self.dirIndex]];
+  }
+  if (self.hasGcType) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"gcType", [NSNumber numberWithInt:self.gcType]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CGCToGCMsgMasterAck class]]) {
+    return NO;
+  }
+  CGCToGCMsgMasterAck *otherMessage = other;
+  return
+      self.hasDirIndex == otherMessage.hasDirIndex &&
+      (!self.hasDirIndex || self.dirIndex == otherMessage.dirIndex) &&
+      self.hasGcType == otherMessage.hasGcType &&
+      (!self.hasGcType || self.gcType == otherMessage.gcType) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasDirIndex) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.dirIndex] hash];
+  }
+  if (self.hasGcType) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.gcType] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CGCToGCMsgMasterAck_Builder()
+@property (retain) CGCToGCMsgMasterAck* _builderResult;
+@end
+
+@implementation CGCToGCMsgMasterAck_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CGCToGCMsgMasterAck alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CGCToGCMsgMasterAck_Builder*) clear {
+  _builderResult = [[[CGCToGCMsgMasterAck alloc] init] autorelease];
+  return self;
+}
+- (CGCToGCMsgMasterAck_Builder*) clone {
+  return [CGCToGCMsgMasterAck builderWithPrototype:_builderResult];
+}
+- (CGCToGCMsgMasterAck*) defaultInstance {
+  return [CGCToGCMsgMasterAck defaultInstance];
+}
+- (CGCToGCMsgMasterAck*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CGCToGCMsgMasterAck*) buildPartial {
+  CGCToGCMsgMasterAck* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CGCToGCMsgMasterAck_Builder*) mergeFrom:(CGCToGCMsgMasterAck*) other {
+  if (other == [CGCToGCMsgMasterAck defaultInstance]) {
+    return self;
+  }
+  if (other.hasDirIndex) {
+    [self setDirIndex:other.dirIndex];
+  }
+  if (other.hasGcType) {
+    [self setGcType:other.gcType];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CGCToGCMsgMasterAck_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CGCToGCMsgMasterAck_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setDirIndex:[input readUInt32]];
+        break;
+      }
+      case 16: {
+        [self setGcType:[input readUInt32]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasDirIndex {
+  return _builderResult.hasDirIndex;
+}
+- (uint32_t) dirIndex {
+  return _builderResult.dirIndex;
+}
+- (CGCToGCMsgMasterAck_Builder*) setDirIndex:(uint32_t) value {
+  _builderResult.hasDirIndex = YES;
+  _builderResult.dirIndex = value;
+  return self;
+}
+- (CGCToGCMsgMasterAck_Builder*) clearDirIndex {
+  _builderResult.hasDirIndex = NO;
+  _builderResult.dirIndex = 0;
+  return self;
+}
+- (BOOL) hasGcType {
+  return _builderResult.hasGcType;
+}
+- (uint32_t) gcType {
+  return _builderResult.gcType;
+}
+- (CGCToGCMsgMasterAck_Builder*) setGcType:(uint32_t) value {
+  _builderResult.hasGcType = YES;
+  _builderResult.gcType = value;
+  return self;
+}
+- (CGCToGCMsgMasterAck_Builder*) clearGcType {
+  _builderResult.hasGcType = NO;
+  _builderResult.gcType = 0;
+  return self;
+}
+@end
+
+@interface CGCToGCMsgMasterAck_Response ()
+@property int32_t eresult;
+@end
+
+@implementation CGCToGCMsgMasterAck_Response
+
+- (BOOL) hasEresult {
+  return !!hasEresult_;
+}
+- (void) setHasEresult:(BOOL) value_ {
+  hasEresult_ = !!value_;
+}
+@synthesize eresult;
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.eresult = 2;
+  }
+  return self;
+}
+static CGCToGCMsgMasterAck_Response* defaultCGCToGCMsgMasterAck_ResponseInstance = nil;
++ (void) initialize {
+  if (self == [CGCToGCMsgMasterAck_Response class]) {
+    defaultCGCToGCMsgMasterAck_ResponseInstance = [[CGCToGCMsgMasterAck_Response alloc] init];
+  }
+}
++ (CGCToGCMsgMasterAck_Response*) defaultInstance {
+  return defaultCGCToGCMsgMasterAck_ResponseInstance;
+}
+- (CGCToGCMsgMasterAck_Response*) defaultInstance {
+  return defaultCGCToGCMsgMasterAck_ResponseInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasEresult) {
+    [output writeInt32:1 value:self.eresult];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasEresult) {
+    size_ += computeInt32Size(1, self.eresult);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CGCToGCMsgMasterAck_Response*) parseFromData:(NSData*) data {
+  return (CGCToGCMsgMasterAck_Response*)[[[CGCToGCMsgMasterAck_Response builder] mergeFromData:data] build];
+}
++ (CGCToGCMsgMasterAck_Response*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CGCToGCMsgMasterAck_Response*)[[[CGCToGCMsgMasterAck_Response builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CGCToGCMsgMasterAck_Response*) parseFromInputStream:(NSInputStream*) input {
+  return (CGCToGCMsgMasterAck_Response*)[[[CGCToGCMsgMasterAck_Response builder] mergeFromInputStream:input] build];
+}
++ (CGCToGCMsgMasterAck_Response*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CGCToGCMsgMasterAck_Response*)[[[CGCToGCMsgMasterAck_Response builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CGCToGCMsgMasterAck_Response*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CGCToGCMsgMasterAck_Response*)[[[CGCToGCMsgMasterAck_Response builder] mergeFromCodedInputStream:input] build];
+}
++ (CGCToGCMsgMasterAck_Response*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CGCToGCMsgMasterAck_Response*)[[[CGCToGCMsgMasterAck_Response builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CGCToGCMsgMasterAck_Response_Builder*) builder {
+  return [[[CGCToGCMsgMasterAck_Response_Builder alloc] init] autorelease];
+}
++ (CGCToGCMsgMasterAck_Response_Builder*) builderWithPrototype:(CGCToGCMsgMasterAck_Response*) prototype {
+  return [[CGCToGCMsgMasterAck_Response builder] mergeFrom:prototype];
+}
+- (CGCToGCMsgMasterAck_Response_Builder*) builder {
+  return [CGCToGCMsgMasterAck_Response builder];
+}
+- (CGCToGCMsgMasterAck_Response_Builder*) toBuilder {
+  return [CGCToGCMsgMasterAck_Response builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasEresult) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"eresult", [NSNumber numberWithInt:self.eresult]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CGCToGCMsgMasterAck_Response class]]) {
+    return NO;
+  }
+  CGCToGCMsgMasterAck_Response *otherMessage = other;
+  return
+      self.hasEresult == otherMessage.hasEresult &&
+      (!self.hasEresult || self.eresult == otherMessage.eresult) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasEresult) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.eresult] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CGCToGCMsgMasterAck_Response_Builder()
+@property (retain) CGCToGCMsgMasterAck_Response* _builderResult;
+@end
+
+@implementation CGCToGCMsgMasterAck_Response_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CGCToGCMsgMasterAck_Response alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CGCToGCMsgMasterAck_Response_Builder*) clear {
+  _builderResult = [[[CGCToGCMsgMasterAck_Response alloc] init] autorelease];
+  return self;
+}
+- (CGCToGCMsgMasterAck_Response_Builder*) clone {
+  return [CGCToGCMsgMasterAck_Response builderWithPrototype:_builderResult];
+}
+- (CGCToGCMsgMasterAck_Response*) defaultInstance {
+  return [CGCToGCMsgMasterAck_Response defaultInstance];
+}
+- (CGCToGCMsgMasterAck_Response*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CGCToGCMsgMasterAck_Response*) buildPartial {
+  CGCToGCMsgMasterAck_Response* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CGCToGCMsgMasterAck_Response_Builder*) mergeFrom:(CGCToGCMsgMasterAck_Response*) other {
+  if (other == [CGCToGCMsgMasterAck_Response defaultInstance]) {
+    return self;
+  }
+  if (other.hasEresult) {
+    [self setEresult:other.eresult];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CGCToGCMsgMasterAck_Response_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CGCToGCMsgMasterAck_Response_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setEresult:[input readInt32]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasEresult {
+  return _builderResult.hasEresult;
+}
+- (int32_t) eresult {
+  return _builderResult.eresult;
+}
+- (CGCToGCMsgMasterAck_Response_Builder*) setEresult:(int32_t) value {
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
+  return self;
+}
+- (CGCToGCMsgMasterAck_Response_Builder*) clearEresult {
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
+  return self;
+}
+@end
+
+@interface CGCToGCMsgRouted ()
+@property uint32_t msgType;
+@property uint64_t senderId;
+@property (retain) NSData* netMessage;
+@end
+
+@implementation CGCToGCMsgRouted
+
+- (BOOL) hasMsgType {
+  return !!hasMsgType_;
+}
+- (void) setHasMsgType:(BOOL) value_ {
+  hasMsgType_ = !!value_;
+}
+@synthesize msgType;
+- (BOOL) hasSenderId {
+  return !!hasSenderId_;
+}
+- (void) setHasSenderId:(BOOL) value_ {
+  hasSenderId_ = !!value_;
+}
+@synthesize senderId;
+- (BOOL) hasNetMessage {
+  return !!hasNetMessage_;
+}
+- (void) setHasNetMessage:(BOOL) value_ {
+  hasNetMessage_ = !!value_;
+}
+@synthesize netMessage;
+- (void) dealloc {
+  self.netMessage = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.msgType = 0;
+    self.senderId = 0L;
+    self.netMessage = [NSData data];
+  }
+  return self;
+}
+static CGCToGCMsgRouted* defaultCGCToGCMsgRoutedInstance = nil;
++ (void) initialize {
+  if (self == [CGCToGCMsgRouted class]) {
+    defaultCGCToGCMsgRoutedInstance = [[CGCToGCMsgRouted alloc] init];
+  }
+}
++ (CGCToGCMsgRouted*) defaultInstance {
+  return defaultCGCToGCMsgRoutedInstance;
+}
+- (CGCToGCMsgRouted*) defaultInstance {
+  return defaultCGCToGCMsgRoutedInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasMsgType) {
+    [output writeUInt32:1 value:self.msgType];
+  }
+  if (self.hasSenderId) {
+    [output writeFixed64:2 value:self.senderId];
+  }
+  if (self.hasNetMessage) {
+    [output writeData:3 value:self.netMessage];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasMsgType) {
+    size_ += computeUInt32Size(1, self.msgType);
+  }
+  if (self.hasSenderId) {
+    size_ += computeFixed64Size(2, self.senderId);
+  }
+  if (self.hasNetMessage) {
+    size_ += computeDataSize(3, self.netMessage);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CGCToGCMsgRouted*) parseFromData:(NSData*) data {
+  return (CGCToGCMsgRouted*)[[[CGCToGCMsgRouted builder] mergeFromData:data] build];
+}
++ (CGCToGCMsgRouted*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CGCToGCMsgRouted*)[[[CGCToGCMsgRouted builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CGCToGCMsgRouted*) parseFromInputStream:(NSInputStream*) input {
+  return (CGCToGCMsgRouted*)[[[CGCToGCMsgRouted builder] mergeFromInputStream:input] build];
+}
++ (CGCToGCMsgRouted*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CGCToGCMsgRouted*)[[[CGCToGCMsgRouted builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CGCToGCMsgRouted*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CGCToGCMsgRouted*)[[[CGCToGCMsgRouted builder] mergeFromCodedInputStream:input] build];
+}
++ (CGCToGCMsgRouted*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CGCToGCMsgRouted*)[[[CGCToGCMsgRouted builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CGCToGCMsgRouted_Builder*) builder {
+  return [[[CGCToGCMsgRouted_Builder alloc] init] autorelease];
+}
++ (CGCToGCMsgRouted_Builder*) builderWithPrototype:(CGCToGCMsgRouted*) prototype {
+  return [[CGCToGCMsgRouted builder] mergeFrom:prototype];
+}
+- (CGCToGCMsgRouted_Builder*) builder {
+  return [CGCToGCMsgRouted builder];
+}
+- (CGCToGCMsgRouted_Builder*) toBuilder {
+  return [CGCToGCMsgRouted builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasMsgType) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"msgType", [NSNumber numberWithInt:self.msgType]];
+  }
+  if (self.hasSenderId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"senderId", [NSNumber numberWithLongLong:self.senderId]];
+  }
+  if (self.hasNetMessage) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"netMessage", self.netMessage];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CGCToGCMsgRouted class]]) {
+    return NO;
+  }
+  CGCToGCMsgRouted *otherMessage = other;
+  return
+      self.hasMsgType == otherMessage.hasMsgType &&
+      (!self.hasMsgType || self.msgType == otherMessage.msgType) &&
+      self.hasSenderId == otherMessage.hasSenderId &&
+      (!self.hasSenderId || self.senderId == otherMessage.senderId) &&
+      self.hasNetMessage == otherMessage.hasNetMessage &&
+      (!self.hasNetMessage || [self.netMessage isEqual:otherMessage.netMessage]) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasMsgType) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.msgType] hash];
+  }
+  if (self.hasSenderId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithLongLong:self.senderId] hash];
+  }
+  if (self.hasNetMessage) {
+    hashCode = hashCode * 31 + [self.netMessage hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CGCToGCMsgRouted_Builder()
+@property (retain) CGCToGCMsgRouted* _builderResult;
+@end
+
+@implementation CGCToGCMsgRouted_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CGCToGCMsgRouted alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CGCToGCMsgRouted_Builder*) clear {
+  _builderResult = [[[CGCToGCMsgRouted alloc] init] autorelease];
+  return self;
+}
+- (CGCToGCMsgRouted_Builder*) clone {
+  return [CGCToGCMsgRouted builderWithPrototype:_builderResult];
+}
+- (CGCToGCMsgRouted*) defaultInstance {
+  return [CGCToGCMsgRouted defaultInstance];
+}
+- (CGCToGCMsgRouted*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CGCToGCMsgRouted*) buildPartial {
+  CGCToGCMsgRouted* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CGCToGCMsgRouted_Builder*) mergeFrom:(CGCToGCMsgRouted*) other {
+  if (other == [CGCToGCMsgRouted defaultInstance]) {
+    return self;
+  }
+  if (other.hasMsgType) {
+    [self setMsgType:other.msgType];
+  }
+  if (other.hasSenderId) {
+    [self setSenderId:other.senderId];
+  }
+  if (other.hasNetMessage) {
+    [self setNetMessage:other.netMessage];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CGCToGCMsgRouted_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CGCToGCMsgRouted_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setMsgType:[input readUInt32]];
+        break;
+      }
+      case 17: {
+        [self setSenderId:[input readFixed64]];
+        break;
+      }
+      case 26: {
+        [self setNetMessage:[input readData]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasMsgType {
+  return _builderResult.hasMsgType;
+}
+- (uint32_t) msgType {
+  return _builderResult.msgType;
+}
+- (CGCToGCMsgRouted_Builder*) setMsgType:(uint32_t) value {
+  _builderResult.hasMsgType = YES;
+  _builderResult.msgType = value;
+  return self;
+}
+- (CGCToGCMsgRouted_Builder*) clearMsgType {
+  _builderResult.hasMsgType = NO;
+  _builderResult.msgType = 0;
+  return self;
+}
+- (BOOL) hasSenderId {
+  return _builderResult.hasSenderId;
+}
+- (uint64_t) senderId {
+  return _builderResult.senderId;
+}
+- (CGCToGCMsgRouted_Builder*) setSenderId:(uint64_t) value {
+  _builderResult.hasSenderId = YES;
+  _builderResult.senderId = value;
+  return self;
+}
+- (CGCToGCMsgRouted_Builder*) clearSenderId {
+  _builderResult.hasSenderId = NO;
+  _builderResult.senderId = 0L;
+  return self;
+}
+- (BOOL) hasNetMessage {
+  return _builderResult.hasNetMessage;
+}
+- (NSData*) netMessage {
+  return _builderResult.netMessage;
+}
+- (CGCToGCMsgRouted_Builder*) setNetMessage:(NSData*) value {
+  _builderResult.hasNetMessage = YES;
+  _builderResult.netMessage = value;
+  return self;
+}
+- (CGCToGCMsgRouted_Builder*) clearNetMessage {
+  _builderResult.hasNetMessage = NO;
+  _builderResult.netMessage = [NSData data];
+  return self;
+}
+@end
+
+@interface CGCToGCMsgRoutedReply ()
+@property uint32_t msgType;
+@property (retain) NSData* netMessage;
+@end
+
+@implementation CGCToGCMsgRoutedReply
+
+- (BOOL) hasMsgType {
+  return !!hasMsgType_;
+}
+- (void) setHasMsgType:(BOOL) value_ {
+  hasMsgType_ = !!value_;
+}
+@synthesize msgType;
+- (BOOL) hasNetMessage {
+  return !!hasNetMessage_;
+}
+- (void) setHasNetMessage:(BOOL) value_ {
+  hasNetMessage_ = !!value_;
+}
+@synthesize netMessage;
+- (void) dealloc {
+  self.netMessage = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.msgType = 0;
+    self.netMessage = [NSData data];
+  }
+  return self;
+}
+static CGCToGCMsgRoutedReply* defaultCGCToGCMsgRoutedReplyInstance = nil;
++ (void) initialize {
+  if (self == [CGCToGCMsgRoutedReply class]) {
+    defaultCGCToGCMsgRoutedReplyInstance = [[CGCToGCMsgRoutedReply alloc] init];
+  }
+}
++ (CGCToGCMsgRoutedReply*) defaultInstance {
+  return defaultCGCToGCMsgRoutedReplyInstance;
+}
+- (CGCToGCMsgRoutedReply*) defaultInstance {
+  return defaultCGCToGCMsgRoutedReplyInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasMsgType) {
+    [output writeUInt32:1 value:self.msgType];
+  }
+  if (self.hasNetMessage) {
+    [output writeData:2 value:self.netMessage];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasMsgType) {
+    size_ += computeUInt32Size(1, self.msgType);
+  }
+  if (self.hasNetMessage) {
+    size_ += computeDataSize(2, self.netMessage);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CGCToGCMsgRoutedReply*) parseFromData:(NSData*) data {
+  return (CGCToGCMsgRoutedReply*)[[[CGCToGCMsgRoutedReply builder] mergeFromData:data] build];
+}
++ (CGCToGCMsgRoutedReply*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CGCToGCMsgRoutedReply*)[[[CGCToGCMsgRoutedReply builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CGCToGCMsgRoutedReply*) parseFromInputStream:(NSInputStream*) input {
+  return (CGCToGCMsgRoutedReply*)[[[CGCToGCMsgRoutedReply builder] mergeFromInputStream:input] build];
+}
++ (CGCToGCMsgRoutedReply*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CGCToGCMsgRoutedReply*)[[[CGCToGCMsgRoutedReply builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CGCToGCMsgRoutedReply*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CGCToGCMsgRoutedReply*)[[[CGCToGCMsgRoutedReply builder] mergeFromCodedInputStream:input] build];
+}
++ (CGCToGCMsgRoutedReply*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CGCToGCMsgRoutedReply*)[[[CGCToGCMsgRoutedReply builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CGCToGCMsgRoutedReply_Builder*) builder {
+  return [[[CGCToGCMsgRoutedReply_Builder alloc] init] autorelease];
+}
++ (CGCToGCMsgRoutedReply_Builder*) builderWithPrototype:(CGCToGCMsgRoutedReply*) prototype {
+  return [[CGCToGCMsgRoutedReply builder] mergeFrom:prototype];
+}
+- (CGCToGCMsgRoutedReply_Builder*) builder {
+  return [CGCToGCMsgRoutedReply builder];
+}
+- (CGCToGCMsgRoutedReply_Builder*) toBuilder {
+  return [CGCToGCMsgRoutedReply builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasMsgType) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"msgType", [NSNumber numberWithInt:self.msgType]];
+  }
+  if (self.hasNetMessage) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"netMessage", self.netMessage];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CGCToGCMsgRoutedReply class]]) {
+    return NO;
+  }
+  CGCToGCMsgRoutedReply *otherMessage = other;
+  return
+      self.hasMsgType == otherMessage.hasMsgType &&
+      (!self.hasMsgType || self.msgType == otherMessage.msgType) &&
+      self.hasNetMessage == otherMessage.hasNetMessage &&
+      (!self.hasNetMessage || [self.netMessage isEqual:otherMessage.netMessage]) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasMsgType) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.msgType] hash];
+  }
+  if (self.hasNetMessage) {
+    hashCode = hashCode * 31 + [self.netMessage hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CGCToGCMsgRoutedReply_Builder()
+@property (retain) CGCToGCMsgRoutedReply* _builderResult;
+@end
+
+@implementation CGCToGCMsgRoutedReply_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CGCToGCMsgRoutedReply alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CGCToGCMsgRoutedReply_Builder*) clear {
+  _builderResult = [[[CGCToGCMsgRoutedReply alloc] init] autorelease];
+  return self;
+}
+- (CGCToGCMsgRoutedReply_Builder*) clone {
+  return [CGCToGCMsgRoutedReply builderWithPrototype:_builderResult];
+}
+- (CGCToGCMsgRoutedReply*) defaultInstance {
+  return [CGCToGCMsgRoutedReply defaultInstance];
+}
+- (CGCToGCMsgRoutedReply*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CGCToGCMsgRoutedReply*) buildPartial {
+  CGCToGCMsgRoutedReply* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CGCToGCMsgRoutedReply_Builder*) mergeFrom:(CGCToGCMsgRoutedReply*) other {
+  if (other == [CGCToGCMsgRoutedReply defaultInstance]) {
+    return self;
+  }
+  if (other.hasMsgType) {
+    [self setMsgType:other.msgType];
+  }
+  if (other.hasNetMessage) {
+    [self setNetMessage:other.netMessage];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CGCToGCMsgRoutedReply_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CGCToGCMsgRoutedReply_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setMsgType:[input readUInt32]];
+        break;
+      }
+      case 18: {
+        [self setNetMessage:[input readData]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasMsgType {
+  return _builderResult.hasMsgType;
+}
+- (uint32_t) msgType {
+  return _builderResult.msgType;
+}
+- (CGCToGCMsgRoutedReply_Builder*) setMsgType:(uint32_t) value {
+  _builderResult.hasMsgType = YES;
+  _builderResult.msgType = value;
+  return self;
+}
+- (CGCToGCMsgRoutedReply_Builder*) clearMsgType {
+  _builderResult.hasMsgType = NO;
+  _builderResult.msgType = 0;
+  return self;
+}
+- (BOOL) hasNetMessage {
+  return _builderResult.hasNetMessage;
+}
+- (NSData*) netMessage {
+  return _builderResult.netMessage;
+}
+- (CGCToGCMsgRoutedReply_Builder*) setNetMessage:(NSData*) value {
+  _builderResult.hasNetMessage = YES;
+  _builderResult.netMessage = value;
+  return self;
+}
+- (CGCToGCMsgRoutedReply_Builder*) clearNetMessage {
+  _builderResult.hasNetMessage = NO;
+  _builderResult.netMessage = [NSData data];
+  return self;
+}
+@end
+

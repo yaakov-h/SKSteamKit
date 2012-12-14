@@ -84,8 +84,6 @@ enum EDOTAGCMsg {
 	k_EMsgGCCancelWatchGame = 7097;
 	k_EMsgGCProfileRequest = 7098;
 	k_EMsgGCProfileResponse = 7099;
-	k_EMsgGCDOTAIntraGCRankRequest = 7100;
-	k_EMsgGCDOTAIntraGCRankResponse = 7101;
 	k_EMsgGCPopup = 7102;
 	k_EMsgGCDOTANotifySuccessfulReport = 7103;
 	k_EMsgGCDOTAClearNotifySuccessfulReport = 7104;
@@ -164,6 +162,11 @@ enum EDOTAGCMsg {
 	k_EMsgGCHalloweenHighScoreResponse = 7179;
 	k_EMsgGCGenerateDiretidePrizeListResponse = 7180;
 	k_EMsgGCNotifyResetKeybindings = 7181;
+	k_EMsgGCStorePromoPagesRequest = 7182;
+	k_EMsgGCStorePromoPagesResponse = 7183;
+	k_EMsgGCSpawnLootGreevil = 7184;
+	k_EMsgGCDismissLootGreevil = 7185;
+	k_EMsgGCToGCMatchCompleted = 7186;
 	k_EMsgGCDev_GrantWarKill = 8001;
 }
 
@@ -178,6 +181,7 @@ enum DOTA_GameMode {
 	DOTA_GAMEMODE_HW = 7;
 	DOTA_GAMEMODE_REVERSE_CM = 8;
 	DOTA_GAMEMODE_XMAS = 9;
+	DOTA_GAMEMODE_TUTORIAL = 10;
 }
 
 enum DOTA_GameState {
@@ -521,6 +525,14 @@ message CMsgReadyUpStatus {
 	optional fixed64 lobby_id = 1;
 	repeated uint32 accepted_ids = 2;
 	repeated uint32 declined_ids = 3;
+}
+
+message CMsgSpawnLootGreevil {
+}
+
+message CMsgDismissLootGreevil {
+	optional fixed64 lobby_id = 1;
+	optional bool killed = 2;
 }
 
 message CMsgMatchmakingSearchCountRequest {
@@ -1058,6 +1070,7 @@ message CMsgDOTATeam {
 	optional string url = 16;
 	optional uint32 fullgamesplayed = 17;
 	repeated uint32 leagues = 18;
+	optional uint32 gamesplayed = 19;
 }
 
 message CMsgDOTACreateTeam {
@@ -1531,6 +1544,7 @@ message CMsgDOTARequestSaveGamesResponse {
 
 message CMsgDOTAPlayerFailedToConnect {
 	repeated fixed64 failed_loaders = 1;
+	repeated fixed64 abandoned_loaders = 2;
 }
 
 message CMsgGCToRelayConnect {
@@ -1643,14 +1657,6 @@ message CMsgDOTAProfileResponse {
 	repeated .CMsgDOTAProfileResponse.LeaguePass league_passes = 10;
 	repeated .CMsgDOTAProfileResponse.EventTicket event_tickets = 11;
 	optional uint32 team_id = 12;
-}
-
-message CMsgDOTAIntraGCRankRequest {
-	optional uint32 account_id = 1;
-}
-
-message CMsgDOTAIntraGCRankResponse {
-	optional uint32 rank = 1;
 }
 
 message CMsgDOTANotifySuccessfulReport {
@@ -1961,5 +1967,23 @@ message CMsgDOTAHalloweenHighScoreResponse {
 
 message CMsgDOTANotifyResetKeybindings {
 	optional uint32 keybind_template = 1;
+}
+
+message CMsgDOTAStorePromoPagesRequest {
+	optional uint32 version_seen = 1;
+}
+
+message CMsgDOTAStorePromoPagesResponse {
+	message PromoPage {
+		optional uint32 promo_id = 1;
+		optional string title = 2;
+		optional string url = 3;
+	}
+
+	repeated .CMsgDOTAStorePromoPagesResponse.PromoPage pages = 1;
+}
+
+message CMsgDOTAGCToGCMatchCompleted {
+	optional uint32 match_id = 1;
 }
 

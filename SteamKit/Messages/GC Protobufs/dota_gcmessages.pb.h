@@ -139,6 +139,8 @@
 @class CMsgDOTAEditTeamLogoResponse;
 @class CMsgDOTAEditTeamLogoResponse_Builder;
 @class CMsgDOTAEditTeamLogo_Builder;
+@class CMsgDOTAGCToGCMatchCompleted;
+@class CMsgDOTAGCToGCMatchCompleted_Builder;
 @class CMsgDOTAGenerateDiretidePrizeList;
 @class CMsgDOTAGenerateDiretidePrizeListResponse;
 @class CMsgDOTAGenerateDiretidePrizeListResponse_Builder;
@@ -167,10 +169,6 @@
 @class CMsgDOTAInitiateTeamInviteResponse;
 @class CMsgDOTAInitiateTeamInviteResponse_Builder;
 @class CMsgDOTAInitiateTeamInvite_Builder;
-@class CMsgDOTAIntraGCRankRequest;
-@class CMsgDOTAIntraGCRankRequest_Builder;
-@class CMsgDOTAIntraGCRankResponse;
-@class CMsgDOTAIntraGCRankResponse_Builder;
 @class CMsgDOTAJoinChatChannel;
 @class CMsgDOTAJoinChatChannelResponse;
 @class CMsgDOTAJoinChatChannelResponse_Builder;
@@ -299,6 +297,12 @@
 @class CMsgDOTASetChatChannelVerbosity_Builder;
 @class CMsgDOTASetChatChannelVerbosity_ChannelVerbosity;
 @class CMsgDOTASetChatChannelVerbosity_ChannelVerbosity_Builder;
+@class CMsgDOTAStorePromoPagesRequest;
+@class CMsgDOTAStorePromoPagesRequest_Builder;
+@class CMsgDOTAStorePromoPagesResponse;
+@class CMsgDOTAStorePromoPagesResponse_Builder;
+@class CMsgDOTAStorePromoPagesResponse_PromoPage;
+@class CMsgDOTAStorePromoPagesResponse_PromoPage_Builder;
 @class CMsgDOTASubmitPlayerReport;
 @class CMsgDOTASubmitPlayerReportResponse;
 @class CMsgDOTASubmitPlayerReportResponse_Builder;
@@ -341,6 +345,8 @@
 @class CMsgDOTATransferTeamAdmin_Builder;
 @class CMsgDOTAWelcome;
 @class CMsgDOTAWelcome_Builder;
+@class CMsgDismissLootGreevil;
+@class CMsgDismissLootGreevil_Builder;
 @class CMsgFindSourceTVGames;
 @class CMsgFindSourceTVGames_Builder;
 @class CMsgForceSOCacheResend;
@@ -371,6 +377,12 @@
 @class CMsgGCMatchDetailsRequest_Builder;
 @class CMsgGCMatchDetailsResponse;
 @class CMsgGCMatchDetailsResponse_Builder;
+@class CMsgGCMsgMasterSetDirectory;
+@class CMsgGCMsgMasterSetDirectory_Builder;
+@class CMsgGCMsgMasterSetDirectory_Response;
+@class CMsgGCMsgMasterSetDirectory_Response_Builder;
+@class CMsgGCMsgMasterSetDirectory_SubGC;
+@class CMsgGCMsgMasterSetDirectory_SubGC_Builder;
 @class CMsgGCToRelayConnect;
 @class CMsgGCToRelayConnectResponse;
 @class CMsgGCToRelayConnectResponse_Builder;
@@ -477,6 +489,8 @@
 @class CMsgSetShowcaseHero_Builder;
 @class CMsgSourceTVGamesResponse;
 @class CMsgSourceTVGamesResponse_Builder;
+@class CMsgSpawnLootGreevil;
+@class CMsgSpawnLootGreevil_Builder;
 @class CMsgSpectateFriendGame;
 @class CMsgSpectateFriendGameResponse;
 @class CMsgSpectateFriendGameResponse_Builder;
@@ -676,8 +690,6 @@ typedef enum {
   EDOTAGCMsgk_EMsgGCCancelWatchGame = 7097,
   EDOTAGCMsgk_EMsgGCProfileRequest = 7098,
   EDOTAGCMsgk_EMsgGCProfileResponse = 7099,
-  EDOTAGCMsgk_EMsgGCDOTAIntraGCRankRequest = 7100,
-  EDOTAGCMsgk_EMsgGCDOTAIntraGCRankResponse = 7101,
   EDOTAGCMsgk_EMsgGCPopup = 7102,
   EDOTAGCMsgk_EMsgGCDOTANotifySuccessfulReport = 7103,
   EDOTAGCMsgk_EMsgGCDOTAClearNotifySuccessfulReport = 7104,
@@ -756,6 +768,11 @@ typedef enum {
   EDOTAGCMsgk_EMsgGCHalloweenHighScoreResponse = 7179,
   EDOTAGCMsgk_EMsgGCGenerateDiretidePrizeListResponse = 7180,
   EDOTAGCMsgk_EMsgGCNotifyResetKeybindings = 7181,
+  EDOTAGCMsgk_EMsgGCStorePromoPagesRequest = 7182,
+  EDOTAGCMsgk_EMsgGCStorePromoPagesResponse = 7183,
+  EDOTAGCMsgk_EMsgGCSpawnLootGreevil = 7184,
+  EDOTAGCMsgk_EMsgGCDismissLootGreevil = 7185,
+  EDOTAGCMsgk_EMsgGCToGCMatchCompleted = 7186,
   EDOTAGCMsgk_EMsgGCDev_GrantWarKill = 8001,
 } EDOTAGCMsg;
 
@@ -772,6 +789,7 @@ typedef enum {
   DOTA_GameModeDOTA_GAMEMODE_HW = 7,
   DOTA_GameModeDOTA_GAMEMODE_REVERSE_CM = 8,
   DOTA_GameModeDOTA_GAMEMODE_XMAS = 9,
+  DOTA_GameModeDOTA_GAMEMODE_TUTORIAL = 10,
 } DOTA_GameMode;
 
 BOOL DOTA_GameModeIsValidValue(DOTA_GameMode value);
@@ -3501,6 +3519,104 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 - (CMsgReadyUpStatus_Builder *)setDeclinedIdsArray:(NSArray *)array;
 - (CMsgReadyUpStatus_Builder *)setDeclinedIdsValues:(const uint32_t *)values count:(NSUInteger)count;
 - (CMsgReadyUpStatus_Builder *)clearDeclinedIds;
+@end
+
+@interface CMsgSpawnLootGreevil : PBGeneratedMessage {
+@private
+}
+
++ (CMsgSpawnLootGreevil*) defaultInstance;
+- (CMsgSpawnLootGreevil*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgSpawnLootGreevil_Builder*) builder;
++ (CMsgSpawnLootGreevil_Builder*) builder;
++ (CMsgSpawnLootGreevil_Builder*) builderWithPrototype:(CMsgSpawnLootGreevil*) prototype;
+- (CMsgSpawnLootGreevil_Builder*) toBuilder;
+
++ (CMsgSpawnLootGreevil*) parseFromData:(NSData*) data;
++ (CMsgSpawnLootGreevil*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgSpawnLootGreevil*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgSpawnLootGreevil*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgSpawnLootGreevil*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgSpawnLootGreevil*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgSpawnLootGreevil_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgSpawnLootGreevil* _builderResult;
+}
+
+- (CMsgSpawnLootGreevil*) defaultInstance;
+
+- (CMsgSpawnLootGreevil_Builder*) clear;
+- (CMsgSpawnLootGreevil_Builder*) clone;
+
+- (CMsgSpawnLootGreevil*) build;
+- (CMsgSpawnLootGreevil*) buildPartial;
+
+- (CMsgSpawnLootGreevil_Builder*) mergeFrom:(CMsgSpawnLootGreevil*) other;
+- (CMsgSpawnLootGreevil_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgSpawnLootGreevil_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgDismissLootGreevil : PBGeneratedMessage {
+@private
+  BOOL hasKilled_:1;
+  BOOL hasLobbyId_:1;
+  BOOL killed_:1;
+  uint64_t lobbyId;
+}
+- (BOOL) hasLobbyId;
+- (BOOL) hasKilled;
+@property (readonly) uint64_t lobbyId;
+- (BOOL) killed;
+
++ (CMsgDismissLootGreevil*) defaultInstance;
+- (CMsgDismissLootGreevil*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgDismissLootGreevil_Builder*) builder;
++ (CMsgDismissLootGreevil_Builder*) builder;
++ (CMsgDismissLootGreevil_Builder*) builderWithPrototype:(CMsgDismissLootGreevil*) prototype;
+- (CMsgDismissLootGreevil_Builder*) toBuilder;
+
++ (CMsgDismissLootGreevil*) parseFromData:(NSData*) data;
++ (CMsgDismissLootGreevil*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgDismissLootGreevil*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgDismissLootGreevil*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgDismissLootGreevil*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgDismissLootGreevil*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgDismissLootGreevil_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgDismissLootGreevil* _builderResult;
+}
+
+- (CMsgDismissLootGreevil*) defaultInstance;
+
+- (CMsgDismissLootGreevil_Builder*) clear;
+- (CMsgDismissLootGreevil_Builder*) clone;
+
+- (CMsgDismissLootGreevil*) build;
+- (CMsgDismissLootGreevil*) buildPartial;
+
+- (CMsgDismissLootGreevil_Builder*) mergeFrom:(CMsgDismissLootGreevil*) other;
+- (CMsgDismissLootGreevil_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgDismissLootGreevil_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasLobbyId;
+- (uint64_t) lobbyId;
+- (CMsgDismissLootGreevil_Builder*) setLobbyId:(uint64_t) value;
+- (CMsgDismissLootGreevil_Builder*) clearLobbyId;
+
+- (BOOL) hasKilled;
+- (BOOL) killed;
+- (CMsgDismissLootGreevil_Builder*) setKilled:(BOOL) value;
+- (CMsgDismissLootGreevil_Builder*) clearKilled;
 @end
 
 @interface CMsgMatchmakingSearchCountRequest : PBGeneratedMessage {
@@ -8679,37 +8795,39 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 @interface CMsgDOTATeam : PBGeneratedMessage {
 @private
   BOOL hasDisbanded_:1;
-  BOOL hasLogo_:1;
-  BOOL hasBaseLogo_:1;
-  BOOL hasBannerLogo_:1;
   BOOL hasSponsorLogo_:1;
+  BOOL hasBannerLogo_:1;
+  BOOL hasBaseLogo_:1;
+  BOOL hasLogo_:1;
   BOOL hasName_:1;
   BOOL hasTag_:1;
-  BOOL hasCountryCode_:1;
   BOOL hasUrl_:1;
+  BOOL hasCountryCode_:1;
+  BOOL hasGamesplayed_:1;
   BOOL hasFullgamesplayed_:1;
-  BOOL hasTeamId_:1;
-  BOOL hasAdminId_:1;
-  BOOL hasTimeCreated_:1;
-  BOOL hasWins_:1;
-  BOOL hasLosses_:1;
   BOOL hasRank_:1;
+  BOOL hasLosses_:1;
+  BOOL hasWins_:1;
+  BOOL hasTimeCreated_:1;
+  BOOL hasAdminId_:1;
+  BOOL hasTeamId_:1;
   BOOL disbanded_:1;
-  uint64_t logo;
-  uint64_t baseLogo;
-  uint64_t bannerLogo;
   uint64_t sponsorLogo;
+  uint64_t bannerLogo;
+  uint64_t baseLogo;
+  uint64_t logo;
   NSString* name;
   NSString* tag;
-  NSString* countryCode;
   NSString* url;
+  NSString* countryCode;
+  uint32_t gamesplayed;
   uint32_t fullgamesplayed;
-  uint32_t teamId;
-  uint32_t adminId;
-  uint32_t timeCreated;
-  uint32_t wins;
-  uint32_t losses;
   uint32_t rank;
+  uint32_t losses;
+  uint32_t wins;
+  uint32_t timeCreated;
+  uint32_t adminId;
+  uint32_t teamId;
   PBAppendableArray * membersArray;
   PBAppendableArray * leaguesArray;
 }
@@ -8729,6 +8847,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 - (BOOL) hasCountryCode;
 - (BOOL) hasUrl;
 - (BOOL) hasFullgamesplayed;
+- (BOOL) hasGamesplayed;
 @property (readonly, retain) PBArray * members;
 @property (readonly) uint32_t teamId;
 @property (readonly, retain) NSString* name;
@@ -8747,6 +8866,7 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 @property (readonly, retain) NSString* url;
 @property (readonly) uint32_t fullgamesplayed;
 @property (readonly, retain) PBArray * leagues;
+@property (readonly) uint32_t gamesplayed;
 - (CMsgDOTATeamMember*)membersAtIndex:(NSUInteger)index;
 - (uint32_t)leaguesAtIndex:(NSUInteger)index;
 
@@ -8878,6 +8998,11 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 - (CMsgDOTATeam_Builder *)setLeaguesArray:(NSArray *)array;
 - (CMsgDOTATeam_Builder *)setLeaguesValues:(const uint32_t *)values count:(NSUInteger)count;
 - (CMsgDOTATeam_Builder *)clearLeagues;
+
+- (BOOL) hasGamesplayed;
+- (uint32_t) gamesplayed;
+- (CMsgDOTATeam_Builder*) setGamesplayed:(uint32_t) value;
+- (CMsgDOTATeam_Builder*) clearGamesplayed;
 @end
 
 @interface CMsgDOTACreateTeam : PBGeneratedMessage {
@@ -13184,9 +13309,12 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 @interface CMsgDOTAPlayerFailedToConnect : PBGeneratedMessage {
 @private
   PBAppendableArray * failedLoadersArray;
+  PBAppendableArray * abandonedLoadersArray;
 }
 @property (readonly, retain) PBArray * failedLoaders;
+@property (readonly, retain) PBArray * abandonedLoaders;
 - (uint64_t)failedLoadersAtIndex:(NSUInteger)index;
+- (uint64_t)abandonedLoadersAtIndex:(NSUInteger)index;
 
 + (CMsgDOTAPlayerFailedToConnect*) defaultInstance;
 - (CMsgDOTAPlayerFailedToConnect*) defaultInstance;
@@ -13229,6 +13357,13 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 - (CMsgDOTAPlayerFailedToConnect_Builder *)setFailedLoadersArray:(NSArray *)array;
 - (CMsgDOTAPlayerFailedToConnect_Builder *)setFailedLoadersValues:(const uint64_t *)values count:(NSUInteger)count;
 - (CMsgDOTAPlayerFailedToConnect_Builder *)clearFailedLoaders;
+
+- (PBAppendableArray *)abandonedLoaders;
+- (uint64_t)abandonedLoadersAtIndex:(NSUInteger)index;
+- (CMsgDOTAPlayerFailedToConnect_Builder *)addAbandonedLoaders:(uint64_t)value;
+- (CMsgDOTAPlayerFailedToConnect_Builder *)setAbandonedLoadersArray:(NSArray *)array;
+- (CMsgDOTAPlayerFailedToConnect_Builder *)setAbandonedLoadersValues:(const uint64_t *)values count:(NSUInteger)count;
+- (CMsgDOTAPlayerFailedToConnect_Builder *)clearAbandonedLoaders;
 @end
 
 @interface CMsgGCToRelayConnect : PBGeneratedMessage {
@@ -14370,104 +14505,6 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 - (uint32_t) teamId;
 - (CMsgDOTAProfileResponse_Builder*) setTeamId:(uint32_t) value;
 - (CMsgDOTAProfileResponse_Builder*) clearTeamId;
-@end
-
-@interface CMsgDOTAIntraGCRankRequest : PBGeneratedMessage {
-@private
-  BOOL hasAccountId_:1;
-  uint32_t accountId;
-}
-- (BOOL) hasAccountId;
-@property (readonly) uint32_t accountId;
-
-+ (CMsgDOTAIntraGCRankRequest*) defaultInstance;
-- (CMsgDOTAIntraGCRankRequest*) defaultInstance;
-
-- (BOOL) isInitialized;
-- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
-- (CMsgDOTAIntraGCRankRequest_Builder*) builder;
-+ (CMsgDOTAIntraGCRankRequest_Builder*) builder;
-+ (CMsgDOTAIntraGCRankRequest_Builder*) builderWithPrototype:(CMsgDOTAIntraGCRankRequest*) prototype;
-- (CMsgDOTAIntraGCRankRequest_Builder*) toBuilder;
-
-+ (CMsgDOTAIntraGCRankRequest*) parseFromData:(NSData*) data;
-+ (CMsgDOTAIntraGCRankRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-+ (CMsgDOTAIntraGCRankRequest*) parseFromInputStream:(NSInputStream*) input;
-+ (CMsgDOTAIntraGCRankRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-+ (CMsgDOTAIntraGCRankRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input;
-+ (CMsgDOTAIntraGCRankRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-@end
-
-@interface CMsgDOTAIntraGCRankRequest_Builder : PBGeneratedMessage_Builder {
-@private
-  CMsgDOTAIntraGCRankRequest* _builderResult;
-}
-
-- (CMsgDOTAIntraGCRankRequest*) defaultInstance;
-
-- (CMsgDOTAIntraGCRankRequest_Builder*) clear;
-- (CMsgDOTAIntraGCRankRequest_Builder*) clone;
-
-- (CMsgDOTAIntraGCRankRequest*) build;
-- (CMsgDOTAIntraGCRankRequest*) buildPartial;
-
-- (CMsgDOTAIntraGCRankRequest_Builder*) mergeFrom:(CMsgDOTAIntraGCRankRequest*) other;
-- (CMsgDOTAIntraGCRankRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
-- (CMsgDOTAIntraGCRankRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-
-- (BOOL) hasAccountId;
-- (uint32_t) accountId;
-- (CMsgDOTAIntraGCRankRequest_Builder*) setAccountId:(uint32_t) value;
-- (CMsgDOTAIntraGCRankRequest_Builder*) clearAccountId;
-@end
-
-@interface CMsgDOTAIntraGCRankResponse : PBGeneratedMessage {
-@private
-  BOOL hasRank_:1;
-  uint32_t rank;
-}
-- (BOOL) hasRank;
-@property (readonly) uint32_t rank;
-
-+ (CMsgDOTAIntraGCRankResponse*) defaultInstance;
-- (CMsgDOTAIntraGCRankResponse*) defaultInstance;
-
-- (BOOL) isInitialized;
-- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
-- (CMsgDOTAIntraGCRankResponse_Builder*) builder;
-+ (CMsgDOTAIntraGCRankResponse_Builder*) builder;
-+ (CMsgDOTAIntraGCRankResponse_Builder*) builderWithPrototype:(CMsgDOTAIntraGCRankResponse*) prototype;
-- (CMsgDOTAIntraGCRankResponse_Builder*) toBuilder;
-
-+ (CMsgDOTAIntraGCRankResponse*) parseFromData:(NSData*) data;
-+ (CMsgDOTAIntraGCRankResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-+ (CMsgDOTAIntraGCRankResponse*) parseFromInputStream:(NSInputStream*) input;
-+ (CMsgDOTAIntraGCRankResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-+ (CMsgDOTAIntraGCRankResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input;
-+ (CMsgDOTAIntraGCRankResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-@end
-
-@interface CMsgDOTAIntraGCRankResponse_Builder : PBGeneratedMessage_Builder {
-@private
-  CMsgDOTAIntraGCRankResponse* _builderResult;
-}
-
-- (CMsgDOTAIntraGCRankResponse*) defaultInstance;
-
-- (CMsgDOTAIntraGCRankResponse_Builder*) clear;
-- (CMsgDOTAIntraGCRankResponse_Builder*) clone;
-
-- (CMsgDOTAIntraGCRankResponse*) build;
-- (CMsgDOTAIntraGCRankResponse*) buildPartial;
-
-- (CMsgDOTAIntraGCRankResponse_Builder*) mergeFrom:(CMsgDOTAIntraGCRankResponse*) other;
-- (CMsgDOTAIntraGCRankResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
-- (CMsgDOTAIntraGCRankResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-
-- (BOOL) hasRank;
-- (uint32_t) rank;
-- (CMsgDOTAIntraGCRankResponse_Builder*) setRank:(uint32_t) value;
-- (CMsgDOTAIntraGCRankResponse_Builder*) clearRank;
 @end
 
 @interface CMsgDOTANotifySuccessfulReport : PBGeneratedMessage {
@@ -17902,5 +17939,220 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 - (uint32_t) keybindTemplate;
 - (CMsgDOTANotifyResetKeybindings_Builder*) setKeybindTemplate:(uint32_t) value;
 - (CMsgDOTANotifyResetKeybindings_Builder*) clearKeybindTemplate;
+@end
+
+@interface CMsgDOTAStorePromoPagesRequest : PBGeneratedMessage {
+@private
+  BOOL hasVersionSeen_:1;
+  uint32_t versionSeen;
+}
+- (BOOL) hasVersionSeen;
+@property (readonly) uint32_t versionSeen;
+
++ (CMsgDOTAStorePromoPagesRequest*) defaultInstance;
+- (CMsgDOTAStorePromoPagesRequest*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgDOTAStorePromoPagesRequest_Builder*) builder;
++ (CMsgDOTAStorePromoPagesRequest_Builder*) builder;
++ (CMsgDOTAStorePromoPagesRequest_Builder*) builderWithPrototype:(CMsgDOTAStorePromoPagesRequest*) prototype;
+- (CMsgDOTAStorePromoPagesRequest_Builder*) toBuilder;
+
++ (CMsgDOTAStorePromoPagesRequest*) parseFromData:(NSData*) data;
++ (CMsgDOTAStorePromoPagesRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgDOTAStorePromoPagesRequest*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgDOTAStorePromoPagesRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgDOTAStorePromoPagesRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgDOTAStorePromoPagesRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgDOTAStorePromoPagesRequest_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgDOTAStorePromoPagesRequest* _builderResult;
+}
+
+- (CMsgDOTAStorePromoPagesRequest*) defaultInstance;
+
+- (CMsgDOTAStorePromoPagesRequest_Builder*) clear;
+- (CMsgDOTAStorePromoPagesRequest_Builder*) clone;
+
+- (CMsgDOTAStorePromoPagesRequest*) build;
+- (CMsgDOTAStorePromoPagesRequest*) buildPartial;
+
+- (CMsgDOTAStorePromoPagesRequest_Builder*) mergeFrom:(CMsgDOTAStorePromoPagesRequest*) other;
+- (CMsgDOTAStorePromoPagesRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgDOTAStorePromoPagesRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasVersionSeen;
+- (uint32_t) versionSeen;
+- (CMsgDOTAStorePromoPagesRequest_Builder*) setVersionSeen:(uint32_t) value;
+- (CMsgDOTAStorePromoPagesRequest_Builder*) clearVersionSeen;
+@end
+
+@interface CMsgDOTAStorePromoPagesResponse : PBGeneratedMessage {
+@private
+  PBAppendableArray * pagesArray;
+}
+@property (readonly, retain) PBArray * pages;
+- (CMsgDOTAStorePromoPagesResponse_PromoPage*)pagesAtIndex:(NSUInteger)index;
+
++ (CMsgDOTAStorePromoPagesResponse*) defaultInstance;
+- (CMsgDOTAStorePromoPagesResponse*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgDOTAStorePromoPagesResponse_Builder*) builder;
++ (CMsgDOTAStorePromoPagesResponse_Builder*) builder;
++ (CMsgDOTAStorePromoPagesResponse_Builder*) builderWithPrototype:(CMsgDOTAStorePromoPagesResponse*) prototype;
+- (CMsgDOTAStorePromoPagesResponse_Builder*) toBuilder;
+
++ (CMsgDOTAStorePromoPagesResponse*) parseFromData:(NSData*) data;
++ (CMsgDOTAStorePromoPagesResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgDOTAStorePromoPagesResponse*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgDOTAStorePromoPagesResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgDOTAStorePromoPagesResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgDOTAStorePromoPagesResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgDOTAStorePromoPagesResponse_PromoPage : PBGeneratedMessage {
+@private
+  BOOL hasTitle_:1;
+  BOOL hasUrl_:1;
+  BOOL hasPromoId_:1;
+  NSString* title;
+  NSString* url;
+  uint32_t promoId;
+}
+- (BOOL) hasPromoId;
+- (BOOL) hasTitle;
+- (BOOL) hasUrl;
+@property (readonly) uint32_t promoId;
+@property (readonly, retain) NSString* title;
+@property (readonly, retain) NSString* url;
+
++ (CMsgDOTAStorePromoPagesResponse_PromoPage*) defaultInstance;
+- (CMsgDOTAStorePromoPagesResponse_PromoPage*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgDOTAStorePromoPagesResponse_PromoPage_Builder*) builder;
++ (CMsgDOTAStorePromoPagesResponse_PromoPage_Builder*) builder;
++ (CMsgDOTAStorePromoPagesResponse_PromoPage_Builder*) builderWithPrototype:(CMsgDOTAStorePromoPagesResponse_PromoPage*) prototype;
+- (CMsgDOTAStorePromoPagesResponse_PromoPage_Builder*) toBuilder;
+
++ (CMsgDOTAStorePromoPagesResponse_PromoPage*) parseFromData:(NSData*) data;
++ (CMsgDOTAStorePromoPagesResponse_PromoPage*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgDOTAStorePromoPagesResponse_PromoPage*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgDOTAStorePromoPagesResponse_PromoPage*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgDOTAStorePromoPagesResponse_PromoPage*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgDOTAStorePromoPagesResponse_PromoPage*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgDOTAStorePromoPagesResponse_PromoPage_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgDOTAStorePromoPagesResponse_PromoPage* _builderResult;
+}
+
+- (CMsgDOTAStorePromoPagesResponse_PromoPage*) defaultInstance;
+
+- (CMsgDOTAStorePromoPagesResponse_PromoPage_Builder*) clear;
+- (CMsgDOTAStorePromoPagesResponse_PromoPage_Builder*) clone;
+
+- (CMsgDOTAStorePromoPagesResponse_PromoPage*) build;
+- (CMsgDOTAStorePromoPagesResponse_PromoPage*) buildPartial;
+
+- (CMsgDOTAStorePromoPagesResponse_PromoPage_Builder*) mergeFrom:(CMsgDOTAStorePromoPagesResponse_PromoPage*) other;
+- (CMsgDOTAStorePromoPagesResponse_PromoPage_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgDOTAStorePromoPagesResponse_PromoPage_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasPromoId;
+- (uint32_t) promoId;
+- (CMsgDOTAStorePromoPagesResponse_PromoPage_Builder*) setPromoId:(uint32_t) value;
+- (CMsgDOTAStorePromoPagesResponse_PromoPage_Builder*) clearPromoId;
+
+- (BOOL) hasTitle;
+- (NSString*) title;
+- (CMsgDOTAStorePromoPagesResponse_PromoPage_Builder*) setTitle:(NSString*) value;
+- (CMsgDOTAStorePromoPagesResponse_PromoPage_Builder*) clearTitle;
+
+- (BOOL) hasUrl;
+- (NSString*) url;
+- (CMsgDOTAStorePromoPagesResponse_PromoPage_Builder*) setUrl:(NSString*) value;
+- (CMsgDOTAStorePromoPagesResponse_PromoPage_Builder*) clearUrl;
+@end
+
+@interface CMsgDOTAStorePromoPagesResponse_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgDOTAStorePromoPagesResponse* _builderResult;
+}
+
+- (CMsgDOTAStorePromoPagesResponse*) defaultInstance;
+
+- (CMsgDOTAStorePromoPagesResponse_Builder*) clear;
+- (CMsgDOTAStorePromoPagesResponse_Builder*) clone;
+
+- (CMsgDOTAStorePromoPagesResponse*) build;
+- (CMsgDOTAStorePromoPagesResponse*) buildPartial;
+
+- (CMsgDOTAStorePromoPagesResponse_Builder*) mergeFrom:(CMsgDOTAStorePromoPagesResponse*) other;
+- (CMsgDOTAStorePromoPagesResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgDOTAStorePromoPagesResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (PBAppendableArray *)pages;
+- (CMsgDOTAStorePromoPagesResponse_PromoPage*)pagesAtIndex:(NSUInteger)index;
+- (CMsgDOTAStorePromoPagesResponse_Builder *)addPages:(CMsgDOTAStorePromoPagesResponse_PromoPage*)value;
+- (CMsgDOTAStorePromoPagesResponse_Builder *)setPagesArray:(NSArray *)array;
+- (CMsgDOTAStorePromoPagesResponse_Builder *)setPagesValues:(const CMsgDOTAStorePromoPagesResponse_PromoPage* *)values count:(NSUInteger)count;
+- (CMsgDOTAStorePromoPagesResponse_Builder *)clearPages;
+@end
+
+@interface CMsgDOTAGCToGCMatchCompleted : PBGeneratedMessage {
+@private
+  BOOL hasMatchId_:1;
+  uint32_t matchId;
+}
+- (BOOL) hasMatchId;
+@property (readonly) uint32_t matchId;
+
++ (CMsgDOTAGCToGCMatchCompleted*) defaultInstance;
+- (CMsgDOTAGCToGCMatchCompleted*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgDOTAGCToGCMatchCompleted_Builder*) builder;
++ (CMsgDOTAGCToGCMatchCompleted_Builder*) builder;
++ (CMsgDOTAGCToGCMatchCompleted_Builder*) builderWithPrototype:(CMsgDOTAGCToGCMatchCompleted*) prototype;
+- (CMsgDOTAGCToGCMatchCompleted_Builder*) toBuilder;
+
++ (CMsgDOTAGCToGCMatchCompleted*) parseFromData:(NSData*) data;
++ (CMsgDOTAGCToGCMatchCompleted*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgDOTAGCToGCMatchCompleted*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgDOTAGCToGCMatchCompleted*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgDOTAGCToGCMatchCompleted*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgDOTAGCToGCMatchCompleted*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgDOTAGCToGCMatchCompleted_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgDOTAGCToGCMatchCompleted* _builderResult;
+}
+
+- (CMsgDOTAGCToGCMatchCompleted*) defaultInstance;
+
+- (CMsgDOTAGCToGCMatchCompleted_Builder*) clear;
+- (CMsgDOTAGCToGCMatchCompleted_Builder*) clone;
+
+- (CMsgDOTAGCToGCMatchCompleted*) build;
+- (CMsgDOTAGCToGCMatchCompleted*) buildPartial;
+
+- (CMsgDOTAGCToGCMatchCompleted_Builder*) mergeFrom:(CMsgDOTAGCToGCMatchCompleted*) other;
+- (CMsgDOTAGCToGCMatchCompleted_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgDOTAGCToGCMatchCompleted_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasMatchId;
+- (uint32_t) matchId;
+- (CMsgDOTAGCToGCMatchCompleted_Builder*) setMatchId:(uint32_t) value;
+- (CMsgDOTAGCToGCMatchCompleted_Builder*) clearMatchId;
 @end
 

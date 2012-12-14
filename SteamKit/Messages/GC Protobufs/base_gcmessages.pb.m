@@ -47,19 +47,6 @@ BOOL EGCBaseMsgIsValidValue(EGCBaseMsg value) {
       return NO;
   }
 }
-BOOL EGCSharedMsgIsValidValue(EGCSharedMsg value) {
-  switch (value) {
-    case EGCSharedMsgk_EMsgInterGCAchievementAwarded:
-    case EGCSharedMsgk_EMsgInterGCAchievementAwardedResponse:
-    case EGCSharedMsgk_EMsgInterGCLoadAchievements:
-    case EGCSharedMsgk_EMsgInterGCLoadAchievementResponse:
-    case EGCSharedMsgk_EMsgInterGCSurgeTest:
-    case EGCSharedMsgk_EMsgInterGCProfile:
-      return YES;
-    default:
-      return NO;
-  }
-}
 BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value) {
   switch (value) {
     case EGCBaseProtoObjectTypesk_EProtoObjectPartyInvite:

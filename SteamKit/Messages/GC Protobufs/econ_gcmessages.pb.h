@@ -78,6 +78,12 @@
 @class CMsgGCGetPersonaNames_Response_Builder;
 @class CMsgGCGetPersonaNames_Response_PersonaName;
 @class CMsgGCGetPersonaNames_Response_PersonaName_Builder;
+@class CMsgGCMsgMasterSetDirectory;
+@class CMsgGCMsgMasterSetDirectory_Builder;
+@class CMsgGCMsgMasterSetDirectory_Response;
+@class CMsgGCMsgMasterSetDirectory_Response_Builder;
+@class CMsgGCMsgMasterSetDirectory_SubGC;
+@class CMsgGCMsgMasterSetDirectory_SubGC_Builder;
 @class CMsgHttpRequest;
 @class CMsgHttpRequest_Builder;
 @class CMsgHttpRequest_QueryParam;

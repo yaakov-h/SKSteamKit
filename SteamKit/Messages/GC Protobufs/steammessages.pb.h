@@ -78,6 +78,12 @@
 @class CMsgGCGetPersonaNames_Response_Builder;
 @class CMsgGCGetPersonaNames_Response_PersonaName;
 @class CMsgGCGetPersonaNames_Response_PersonaName_Builder;
+@class CMsgGCMsgMasterSetDirectory;
+@class CMsgGCMsgMasterSetDirectory_Builder;
+@class CMsgGCMsgMasterSetDirectory_Response;
+@class CMsgGCMsgMasterSetDirectory_Response_Builder;
+@class CMsgGCMsgMasterSetDirectory_SubGC;
+@class CMsgGCMsgMasterSetDirectory_SubGC_Builder;
 @class CMsgHttpRequest;
 @class CMsgHttpRequest_Builder;
 @class CMsgHttpRequest_QueryParam;
@@ -147,6 +153,16 @@
     #define NS_RETURNS_NOT_RETAINED
   #endif
 #endif
+
+typedef enum {
+  GCProtoBufMsgSrcGCProtoBufMsgSrc_Unspecified = 0,
+  GCProtoBufMsgSrcGCProtoBufMsgSrc_FromSystem = 1,
+  GCProtoBufMsgSrcGCProtoBufMsgSrc_FromSteamID = 2,
+  GCProtoBufMsgSrcGCProtoBufMsgSrc_FromGC = 3,
+  GCProtoBufMsgSrcGCProtoBufMsgSrc_ReplySystem = 4,
+} GCProtoBufMsgSrc;
+
+BOOL GCProtoBufMsgSrcIsValidValue(GCProtoBufMsgSrc value);
 
 
 @interface SteammessagesRoot : NSObject {
@@ -3317,5 +3333,180 @@
 - (CMsgGCGetPersonaNames_Response_Builder *)setFailedLookupSteamidsArray:(NSArray *)array;
 - (CMsgGCGetPersonaNames_Response_Builder *)setFailedLookupSteamidsValues:(const uint64_t *)values count:(NSUInteger)count;
 - (CMsgGCGetPersonaNames_Response_Builder *)clearFailedLookupSteamids;
+@end
+
+@interface CMsgGCMsgMasterSetDirectory : PBGeneratedMessage {
+@private
+  BOOL hasMasterDirIndex_:1;
+  uint32_t masterDirIndex;
+  PBAppendableArray * dirArray;
+}
+- (BOOL) hasMasterDirIndex;
+@property (readonly) uint32_t masterDirIndex;
+@property (readonly, retain) PBArray * dir;
+- (CMsgGCMsgMasterSetDirectory_SubGC*)dirAtIndex:(NSUInteger)index;
+
++ (CMsgGCMsgMasterSetDirectory*) defaultInstance;
+- (CMsgGCMsgMasterSetDirectory*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgGCMsgMasterSetDirectory_Builder*) builder;
++ (CMsgGCMsgMasterSetDirectory_Builder*) builder;
++ (CMsgGCMsgMasterSetDirectory_Builder*) builderWithPrototype:(CMsgGCMsgMasterSetDirectory*) prototype;
+- (CMsgGCMsgMasterSetDirectory_Builder*) toBuilder;
+
++ (CMsgGCMsgMasterSetDirectory*) parseFromData:(NSData*) data;
++ (CMsgGCMsgMasterSetDirectory*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCMsgMasterSetDirectory*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgGCMsgMasterSetDirectory*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCMsgMasterSetDirectory*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgGCMsgMasterSetDirectory*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgGCMsgMasterSetDirectory_SubGC : PBGeneratedMessage {
+@private
+  BOOL hasName_:1;
+  BOOL hasBox_:1;
+  BOOL hasDirIndex_:1;
+  NSString* name;
+  NSString* box;
+  uint32_t dirIndex;
+}
+- (BOOL) hasDirIndex;
+- (BOOL) hasName;
+- (BOOL) hasBox;
+@property (readonly) uint32_t dirIndex;
+@property (readonly, retain) NSString* name;
+@property (readonly, retain) NSString* box;
+
++ (CMsgGCMsgMasterSetDirectory_SubGC*) defaultInstance;
+- (CMsgGCMsgMasterSetDirectory_SubGC*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) builder;
++ (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) builder;
++ (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) builderWithPrototype:(CMsgGCMsgMasterSetDirectory_SubGC*) prototype;
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) toBuilder;
+
++ (CMsgGCMsgMasterSetDirectory_SubGC*) parseFromData:(NSData*) data;
++ (CMsgGCMsgMasterSetDirectory_SubGC*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCMsgMasterSetDirectory_SubGC*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgGCMsgMasterSetDirectory_SubGC*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCMsgMasterSetDirectory_SubGC*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgGCMsgMasterSetDirectory_SubGC*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgGCMsgMasterSetDirectory_SubGC_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgGCMsgMasterSetDirectory_SubGC* _builderResult;
+}
+
+- (CMsgGCMsgMasterSetDirectory_SubGC*) defaultInstance;
+
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) clear;
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) clone;
+
+- (CMsgGCMsgMasterSetDirectory_SubGC*) build;
+- (CMsgGCMsgMasterSetDirectory_SubGC*) buildPartial;
+
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) mergeFrom:(CMsgGCMsgMasterSetDirectory_SubGC*) other;
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasDirIndex;
+- (uint32_t) dirIndex;
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) setDirIndex:(uint32_t) value;
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) clearDirIndex;
+
+- (BOOL) hasName;
+- (NSString*) name;
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) setName:(NSString*) value;
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) clearName;
+
+- (BOOL) hasBox;
+- (NSString*) box;
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) setBox:(NSString*) value;
+- (CMsgGCMsgMasterSetDirectory_SubGC_Builder*) clearBox;
+@end
+
+@interface CMsgGCMsgMasterSetDirectory_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgGCMsgMasterSetDirectory* _builderResult;
+}
+
+- (CMsgGCMsgMasterSetDirectory*) defaultInstance;
+
+- (CMsgGCMsgMasterSetDirectory_Builder*) clear;
+- (CMsgGCMsgMasterSetDirectory_Builder*) clone;
+
+- (CMsgGCMsgMasterSetDirectory*) build;
+- (CMsgGCMsgMasterSetDirectory*) buildPartial;
+
+- (CMsgGCMsgMasterSetDirectory_Builder*) mergeFrom:(CMsgGCMsgMasterSetDirectory*) other;
+- (CMsgGCMsgMasterSetDirectory_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgGCMsgMasterSetDirectory_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasMasterDirIndex;
+- (uint32_t) masterDirIndex;
+- (CMsgGCMsgMasterSetDirectory_Builder*) setMasterDirIndex:(uint32_t) value;
+- (CMsgGCMsgMasterSetDirectory_Builder*) clearMasterDirIndex;
+
+- (PBAppendableArray *)dir;
+- (CMsgGCMsgMasterSetDirectory_SubGC*)dirAtIndex:(NSUInteger)index;
+- (CMsgGCMsgMasterSetDirectory_Builder *)addDir:(CMsgGCMsgMasterSetDirectory_SubGC*)value;
+- (CMsgGCMsgMasterSetDirectory_Builder *)setDirArray:(NSArray *)array;
+- (CMsgGCMsgMasterSetDirectory_Builder *)setDirValues:(const CMsgGCMsgMasterSetDirectory_SubGC* *)values count:(NSUInteger)count;
+- (CMsgGCMsgMasterSetDirectory_Builder *)clearDir;
+@end
+
+@interface CMsgGCMsgMasterSetDirectory_Response : PBGeneratedMessage {
+@private
+  BOOL hasEresult_:1;
+  int32_t eresult;
+}
+- (BOOL) hasEresult;
+@property (readonly) int32_t eresult;
+
++ (CMsgGCMsgMasterSetDirectory_Response*) defaultInstance;
+- (CMsgGCMsgMasterSetDirectory_Response*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) builder;
++ (CMsgGCMsgMasterSetDirectory_Response_Builder*) builder;
++ (CMsgGCMsgMasterSetDirectory_Response_Builder*) builderWithPrototype:(CMsgGCMsgMasterSetDirectory_Response*) prototype;
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) toBuilder;
+
++ (CMsgGCMsgMasterSetDirectory_Response*) parseFromData:(NSData*) data;
++ (CMsgGCMsgMasterSetDirectory_Response*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCMsgMasterSetDirectory_Response*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgGCMsgMasterSetDirectory_Response*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCMsgMasterSetDirectory_Response*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgGCMsgMasterSetDirectory_Response*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgGCMsgMasterSetDirectory_Response_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgGCMsgMasterSetDirectory_Response* _builderResult;
+}
+
+- (CMsgGCMsgMasterSetDirectory_Response*) defaultInstance;
+
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) clear;
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) clone;
+
+- (CMsgGCMsgMasterSetDirectory_Response*) build;
+- (CMsgGCMsgMasterSetDirectory_Response*) buildPartial;
+
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) mergeFrom:(CMsgGCMsgMasterSetDirectory_Response*) other;
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasEresult;
+- (int32_t) eresult;
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) setEresult:(int32_t) value;
+- (CMsgGCMsgMasterSetDirectory_Response_Builder*) clearEresult;
 @end
 
