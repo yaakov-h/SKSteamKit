@@ -158,7 +158,7 @@ NSString * const SKLogonDetailLoginKey = @"SKLogonDetailLoginKey";
 {
 	NSArray * cacheDirectories = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	NSString * cacheDir = cacheDirectories[0];
-	NSURL * cacheDirUrl = [[NSURL fileURLWithPath:cacheDir] URLByAppendingPathComponent:@"com.opensteamworks.steamchat"];
+	NSURL * cacheDirUrl = [[NSURL fileURLWithPath:cacheDir] URLByAppendingPathComponent:@"org.opensteamworks.steamkit"];
 	NSURL * sentryFileUrl = [cacheDirUrl URLByAppendingPathComponent:fileName];
 	
 	NSFileManager * fileManager = [NSFileManager defaultManager];

@@ -30,7 +30,7 @@ static const uint32_t _SKTCPHeaderAndMagicSize = 2 * sizeof(uint32_t);
     self = [super init];
     if (self)
     {
-        _queue = dispatch_queue_create("com.opensteamworks.tcpqueue", 0);
+        _queue = dispatch_queue_create("org.opensteamworks.steamkit.tcpqueue", 0);
         _socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue() socketQueue:_queue];
 		
 		// 'VOIP' backgrounding
