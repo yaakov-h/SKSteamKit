@@ -7,6 +7,13 @@
 
 @interface CRDataReader (SKCRDataReaderExtensions)
 
-- (NSDictionary *) sk_readKeyValues;
+- (NSDictionary *) sk_readBinaryKeyValues;
+- (NSDictionary *) sk_readTextKeyValues;
+
+- (uint8_t) kv_peek;
+- (BOOL) kv_isAtEndOfData;
+
+- (NSString *) kv_readTokenQuoted:(BOOL *)wasQuoted conditional:(BOOL *)wasConditional;
+- (void) kv_eatWhitespace;
 
 @end

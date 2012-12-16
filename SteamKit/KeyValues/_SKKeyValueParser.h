@@ -9,6 +9,7 @@
 
 @interface _SKKeyValueParser : NSObject
 
-+ (NSDictionary *) readKeyValues:(CRDataReader *)reader;
++ (NSDictionary *) readBinaryKeyValues:(CRDataReader *)reader;
++ (NSDictionary *) readTextKeyValues:(CRDataReader *)reader;
 
 @end

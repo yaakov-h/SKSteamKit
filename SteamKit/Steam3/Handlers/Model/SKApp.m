@@ -26,7 +26,7 @@
 		for(CMsgClientAppInfoResponse_App_Section * section in info.sections)
 		{
 			CRDataReader * reader = [[CRDataReader alloc] initWithData:section.sectionKv];
-			NSDictionary * sectionKV = [reader sk_readKeyValues];
+			NSDictionary * sectionKV = [reader sk_readBinaryKeyValues];
 			
 			EAppInfoSection sectionID = section.sectionId;
 			
