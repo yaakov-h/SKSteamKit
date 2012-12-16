@@ -69,16 +69,18 @@
 	}
 }
 
-- (void) requestPackageInfoForPackagesWithIDs:(NSArray *)packageIDs
+- (CRPromise *) requestPackageInfoForPackagesWithIDs:(NSArray *)packageIDs
 {
 	CMsgClientPackageInfoRequest_Builder * builder = [[CMsgClientPackageInfoRequest_Builder alloc] init];
 	[builder setPackageIdsArray:packageIDs];
+	[builder setMetaDataOnly:NO];
 	_SKClientMsgProtobuf * msgOut = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientPackageInfoRequest class] messageType:EMsgClientPackageInfoRequest];
 	msgOut.body = [builder build];
-	[self.steamClient sendMessage:msgOut];
+	
+	return [self.steamClient sendJobMessage:msgOut];
 }
 
-- (void) requestAppInfoForAppsWithIDs:(NSArray *)appIDs
+- (CRPromise *) requestAppInfoForAppsWithIDs:(NSArray *)appIDs
 {
 	CMsgClientAppInfoRequest_Builder * builder = [[CMsgClientAppInfoRequest_Builder alloc] init];
 	
@@ -93,7 +95,7 @@
 	
 	_SKClientMsgProtobuf * msgOut = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientAppInfoRequest class] messageType:EMsgClientAppInfoRequest];
 	msgOut.body = [builder build];
-	[self.steamClient sendMessage:msgOut];
+	return [self.steamClient sendJobMessage:msgOut];
 }
 
 - (void) setGameBeingPlayed:(uint32_t)gameID
@@ -264,14 +266,15 @@
 		[mutApps addObject:app];
 	}
 	
-	for(CMsgClientAppInfoResponse_App * appInfo in response.apps)
+	for(CMsgClientAppInfoResponse_App * appInfo in response.appsUnknown)
 	{
 		SKApp * app = [[SKApp alloc] initWithAppInfo:appInfo status:SKAppInfoStatusUnknown];
 		[mutApps addObject:app];
 	}
 	
-	// TODO: Do something with apps. Job callback / notifications
 	NSArray * apps = [mutApps copy];
+	
+	[self.steamClient resolveJobMessageWithJobId:packetMessage.targetJobID result:[apps copy]];
 }
 
 - (void) handleClientPackageInfoResponse:(_SKPacketMsg *)packetMessage
@@ -293,12 +296,13 @@
 		[mutItems addObject:pkg];
 	}
 	
-	// TODO: Do something with items. Job callback / notifications
 	NSArray * items = [mutItems copy];
 	
-	// In the meantime, just request app info for all apps in packages we just loaded
-	NSArray * allAppIDs = [[[items valueForKeyPath:@"appIds"] cr_selectMany] allObjects];
-	[self requestAppInfoForAppsWithIDs:allAppIDs];
+//	// In the meantime, just request app info for all apps in packages we just loaded
+//	NSArray * allAppIDs = [[[items valueForKeyPath:@"appIds"] cr_selectMany] allObjects];
+//	[self requestAppInfoForAppsWithIDs:allAppIDs];
+	
+	[self.steamClient resolveJobMessageWithJobId:packetMessage.targetJobID result:[items copy]];
 }
 
 #pragma mark PICS
