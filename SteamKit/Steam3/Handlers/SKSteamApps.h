@@ -10,8 +10,8 @@
 
 - (id) init;
 
-- (void) requestPackageInfoForPackagesWithIDs:(NSArray *)packageIDs;
-- (void) requestAppInfoForAppsWithIDs:(NSArray *)appIDs;
+- (CRPromise *) requestPackageInfoForPackagesWithIDs:(NSArray *)packageIDs;
+- (CRPromise *) requestAppInfoForAppsWithIDs:(NSArray *)appIDs;
 
 - (void) setGameBeingPlayed:(uint32_t)gameID;
 - (void) setGamesBeingPlayed:(NSArray *)gameIDs;

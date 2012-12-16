@@ -23,6 +23,7 @@
 #import "dota_gcmessages.pb.h"
 #import "SKSteamGameCoordinator.h"
 #import "Base_gcmessages.pb.h"
+#import "SKSteamUserStats.h"
 
 @implementation SKSteamKitTests
 
@@ -58,24 +59,60 @@ static uint64_t steamClanSteamID = 0LLU; // Replace with Steam Group SteamID
     {
         NSLog(@"Connected to Steam3: %@", data);
         
-        NSDictionary * details = @{SKLogonDetailUsername: @"[REDACTED]", SKLogonDetailPassword:@"[REDACTED]"};
-        
-        [[[steamClient.steamUser logOnWithDetails:details] addFailureHandler:^(NSError *error)
+        NSDictionary * details = @{SKLogonDetailUsername: @"netshroud_test", SKLogonDetailPassword:@"netshroud", SKLogonDetailRememberMe: @YES};
+		CRPromise * loginPromise = [steamClient.steamUser logOnWithDetails:details];
+		
+		//CRPromise * loginPromise = [steamClient.steamUser logOnAnonymously];
+		
+		/*if (![steamClient.steamUser hasRememberedPassword])
+		{
+			STAssertFalse(true, @"Fail.");
+			return;
+		}
+		
+		CRPromise * loginPromise = [steamClient.steamUser logOnWithStoredDetails];
+		*/
+		
+        [[loginPromise addFailureHandler:^(NSError *error)
         {
             NSLog(@"Failed to log in: %@", error);
             
         }] addSuccessHandler:^(id data)
         {
             NSLog(@"Logged in to Steam: %@", data);
-			steamClient.steamFriends.personaState = EPersonaStateOnline;
+//			steamClient.steamFriends.personaState = EPersonaStateOnline;
 			
-			[steamClient.steamApps setGameBeingPlayed:570];
-			[steamClient.steamGameCoordinator sendClientHelloWithVersion:212 forApp:570];
+//			[steamClient.steamApps setGameBeingPlayed:570];
+//			[steamClient.steamGameCoordinator sendClientHelloWithVersion:212 forApp:570];
+//			
+//			_SKClientGCMsgProtobuf * msg = [[_SKClientGCMsgProtobuf alloc] initWithBodyClass:[CMsgInitialQuestionnaireResponse class] messageType:EDOTAGCMsgk_EMsgGCInitialQuestionnaireResponse];
+//			CMsgInitialQuestionnaireResponse_Builder * qb = [[CMsgInitialQuestionnaireResponse_Builder alloc] init];
+//			[qb setInitialSkill:CMsgDOTARequestMatches_SkillLevelNormal];
+//			msg.body = [qb build];
+//			[steamClient.steamGameCoordinator sendGCMessage:msg forApp:570];
 			
-			if (steamClanSteamID > 0)
-			{
-				[steamClient.steamFriends enterChatRoomForClanID:steamClanSteamID];
-			}
+			
+//			if (steamClanSteamID > 0)
+//			{
+//				[steamClient.steamFriends enterChatRoomForClanID:steamClanSteamID];
+//			}
+			
+			//CRPromise * tokensPromise = [steamClient.steamApps PICSGetAccessTokensForApps:@[ @740 ] packages:nil];
+			CRPromise * pr = [steamClient.steamUserStats getNumberOfCurrentPlayersForGame:570];
+			[pr addSuccessHandler:^(id data) {
+				NSLog(@">>> %@ users playing Dota 2", data);
+			}];
+			
+			[[steamClient.steamApps requestPackageInfoForPackagesWithIDs:@[ @0 ]] addSuccessHandler:^(id data) {
+				NSLog(@"packages: %@", data);
+			}];
+			
+			CRPromise * promise = [steamClient.steamApps PICSGetProductInfoForApp:740];
+			[[promise addSuccessHandler:^(id data) {
+				NSLog(@"got tokens: %@", data);
+			}] addFailureHandler:^(NSError *error) {
+				NSLog(@"failed to get tokens: %@", error);
+			}];
         }];
     }];
     
