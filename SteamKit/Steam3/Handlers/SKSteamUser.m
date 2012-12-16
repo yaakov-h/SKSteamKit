@@ -13,6 +13,7 @@
 #import "SKSteamWalletInfo.h"
 #import "SKSteamAccountInfo.h"
 #import "SKSteamLoggedOffInfo.h"
+#import "SKSteamID.h"
 
 NSString * const SKLogonDetailUsername = @"SKLogonDetailUsername";
 NSString * const SKLogonDetailPassword = @"SKLogonDetailPassword";
@@ -83,7 +84,7 @@ NSString * const SKLogonDetailLoginKey = @"SKLogonDetailLoginKey";
     _SKClientMsgProtobuf * loginMessage = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientLogon class] messageType:EMsgClientLogon];
     
     loginMessage.sessionID = 0;
-    loginMessage.steamID = 76561197960265728LU; // Public universe, Individual, 1 instance, 0 account
+    loginMessage.steamID = [[[SKSteamID alloc] initWithUniverse:self.steamClient.connectedUniverse accountType:EAccountTypeIndividual instance:1 accountID:0] unsignedLongLongValue];
     
     CMsgClientLogon_Builder * builder = [[CMsgClientLogon_Builder alloc] init];
     
@@ -136,6 +137,36 @@ NSString * const SKLogonDetailLoginKey = @"SKLogonDetailLoginKey";
 	
 	_userName = username;
     
+    [self.steamClient sendMessage:loginMessage];
+    
+    return [_loginDeferred promise];
+}
+
+- (CRPromise *) logOnAnonymously
+{
+    _SKClientMsgProtobuf * loginMessage = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientLogon class] messageType:EMsgClientLogon];
+    
+    loginMessage.sessionID = 0;
+    loginMessage.steamID = [[[SKSteamID alloc] initWithUniverse:self.steamClient.connectedUniverse accountType:EAccountTypeAnonUser instance:0 accountID:0] unsignedLongLongValue];
+    
+    CMsgClientLogon_Builder * builder = [[CMsgClientLogon_Builder alloc] init];
+	
+    [builder setProtocolVersion:[_SKMsgClientLogon CurrentProtocol]];
+    [builder setClientOsType:EOSTypeMacOSUnknown];
+	
+    [builder setClientPackageVersion:1771];
+    [builder setClientLanguage:@"english"];
+    
+	NSUUID * uniqueId = [[UIDevice currentDevice] identifierForVendor];
+	NSString * uniqueIdString = [uniqueId UUIDString];
+	NSData * uniqueIdData = [uniqueIdString dataUsingEncoding:NSUTF8StringEncoding];
+	NSData * uniqueIdHash = [uniqueIdData cr_sha1HashValue];
+	[builder setMachineId:uniqueIdHash];
+	
+    loginMessage.body = [builder build];
+    
+    _loginDeferred = [[CRDeferred alloc] init];
+	_userName = nil;
     [self.steamClient sendMessage:loginMessage];
     
     return [_loginDeferred promise];

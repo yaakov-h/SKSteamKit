@@ -6,6 +6,7 @@
 #import <Foundation/Foundation.h>
 #import "_SKConnectionDelegate.h"
 #import "_SKCMClientDelegate.h"
+#import "SteamLanguage.h"
 
 @class _SKMsgBase;
 
@@ -13,6 +14,7 @@
 
 @property (nonatomic, weak) id <_SKCMClientDelegate> delegate;
 @property (nonatomic, readonly) uint64_t steamID;
+@property (nonatomic, readonly) EUniverse connectedUniverse;
 
 - (BOOL) connectToServer:(NSNumber *)server error:(NSError *__autoreleasing *)error;
 - (void) disconnect;

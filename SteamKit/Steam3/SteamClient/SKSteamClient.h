@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SteamLanguage.h"
 
 @class SKClientMsgHandler;
 @class _SKCMClient;
@@ -22,6 +23,7 @@ extern NSString * SKSteamClientDisconnectedNotification;
 
 @property (nonatomic, readonly) _SKCMClient * client;
 @property (nonatomic, readonly) NSArray * handlers;
+@property (nonatomic, readonly) EUniverse connectedUniverse;
 
 @property (nonatomic, readonly) SKSteamUser * steamUser;
 @property (nonatomic, readonly) SKSteamFriends * steamFriends;

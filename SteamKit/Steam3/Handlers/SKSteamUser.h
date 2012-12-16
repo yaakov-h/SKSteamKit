@@ -25,5 +25,6 @@ extern NSString * const SKLogonDetailRememberMe;
 - (CRPromise *) logOnWithDetails:(NSDictionary *)logonDetails;
 - (BOOL) hasRememberedPassword;
 - (CRPromise *) logOnWithStoredDetails;
+- (CRPromise *) logOnAnonymously;
 
 @end

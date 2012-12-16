@@ -33,7 +33,6 @@ typedef enum
 @implementation _SKCMClient
 {
     _SKConnection * _connection;
-    EUniverse _connectedUniverse;
     NSNumber * _sessionId;
     NSNumber * _steamId;
     
