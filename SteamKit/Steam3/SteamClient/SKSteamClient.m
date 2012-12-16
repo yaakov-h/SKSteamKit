@@ -12,6 +12,7 @@
 #import "SKSteamApps.h"
 #import "SKSteamGameCoordinator.h"
 #import <CRBoilerplate/CRBoilerplate.h>
+#import "_SKMsgBase.h"
 
 NSString * SKSteamClientDisconnectedNotification = @"SKSteamClientDisconnectedNotification";
 
@@ -23,6 +24,8 @@ NSString * SKSteamClientDisconnectedNotification = @"SKSteamClientDisconnectedNo
     NSMutableArray * _handlers;
     CRDeferred * _connectDeferred;
 	NSNotificationCenter * _notificationCenter;
+	NSMutableDictionary * _jobPromises;
+	uint64_t _nextJobId;
 }
 
 - (id) init
@@ -40,6 +43,8 @@ NSString * SKSteamClientDisconnectedNotification = @"SKSteamClientDisconnectedNo
 		[self addHandler:[[SKSteamGameCoordinator alloc] init]];
 		
 		_notificationCenter = [NSNotificationCenter defaultCenter];
+		_jobPromises = [@{} mutableCopy];
+		_nextJobId = 0;
     }
     return self;
 }
@@ -155,6 +160,26 @@ NSString * SKSteamClientDisconnectedNotification = @"SKSteamClientDisconnectedNo
 {
 	NSDictionary * infoDict = info == nil ? nil : @{@"SKNotificationInfo":info};
 	[_notificationCenter postNotificationName:notificationName object:self userInfo:infoDict];
+}
+
+- (CRPromise *) sendJobMessage:(_SKMsgBase *)message
+{
+	uint64_t jobId = ++_nextJobId;
+	[message setSourceJobID:jobId];
+	CRDeferred * deferred = [[CRDeferred alloc] init];
+	_jobPromises[@(jobId)] = deferred;
+	
+	[self sendMessage:message];
+	
+	return [deferred promise];
+}
+
+- (void) resolveJobMessageWithJobId:(uint64_t)jobId result:(id)result
+{
+	id key = @(jobId);
+	CRDeferred * dfd = _jobPromises[key];
+	[dfd resolveWithResult:result];
+	[_jobPromises removeObjectForKey:key];
 }
 
 @end

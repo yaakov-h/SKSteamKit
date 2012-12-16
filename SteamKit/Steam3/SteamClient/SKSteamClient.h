@@ -39,4 +39,7 @@ extern NSString * SKSteamClientDisconnectedNotification;
 - (void) sendMessage:(_SKMsgBase *)message;
 - (void) postNotification:(NSString *)notificationName withInfo:(NSObject *)info;
 
+- (CRPromise *) sendJobMessage:(_SKMsgBase *)message;
+- (void) resolveJobMessageWithJobId:(uint64_t)jobId result:(id)result;
+
 @end
