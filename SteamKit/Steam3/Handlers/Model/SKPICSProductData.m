@@ -21,9 +21,8 @@
 		_shaHash = msg.sha;
 		_onlyPublic = msg.onlyPublic;
 		
-		// TODO: KeyValues from text (not binary)
-		// CRDataReader * kvReader = [[CRDataReader alloc] initWithData:msg.buffer];
-		// _keyValues = [kvReader sk_readKeyValues];
+		 CRDataReader * kvReader = [[CRDataReader alloc] initWithData:msg.buffer];
+		 _keyValues = [kvReader sk_readTextKeyValues];
 	}
 	return self;
 }
@@ -38,9 +37,8 @@
 		_isMissingToken = msg.missingToken;
 		_shaHash = msg.sha;
 		
-		// TODO: KeyValues from text (not binary)
-		// CRDataReader * kvReader = [[CRDataReader alloc] initWithData:msg.buffer];
-		// _keyValues = [kvReader sk_readKeyValues];
+		CRDataReader * kvReader = [[CRDataReader alloc] initWithData:msg.buffer];
+		_keyValues = [kvReader sk_readBinaryKeyValues];
 	}
 	return self;
 }

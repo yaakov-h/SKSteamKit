@@ -22,7 +22,7 @@
 		
 		CRDataReader * reader = [[CRDataReader alloc] initWithData:details.buffer];
 		[reader readUInt32]; // Unknown
-		_data = [reader sk_readKeyValues][[NSString stringWithFormat:@"%u", _packageId]];
+		_data = [reader sk_readBinaryKeyValues][[NSString stringWithFormat:@"%u", _packageId]];
 	}
 	return self;
 }

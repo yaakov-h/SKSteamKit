@@ -471,7 +471,7 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 	NSMutableArray * kvObjects = [@[] mutableCopy];
 	for (uint i = 0; i < numKeyValueObjects; i++)
 	{
-		[kvObjects addObject:[reader sk_readKeyValues]];
+		[kvObjects addObject:[reader sk_readBinaryKeyValues]];
 	}
 	NSUInteger maxMembers = [reader readUInt32];
 	
@@ -514,7 +514,7 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 			
 			if (stateChange == EChatMemberStateChangeEntered)
 			{
-				messageKv = [reader sk_readKeyValues];
+				messageKv = [reader sk_readBinaryKeyValues];
 				[chatRoom handleMessageKeyValuesObject:messageKv];
 			}
 			
