@@ -13,6 +13,7 @@
 #import "SKSteamGameCoordinator.h"
 #import <CRBoilerplate/CRBoilerplate.h>
 #import "_SKMsgBase.h"
+#import "SKSteamUserStats.h"
 
 NSString * SKSteamClientDisconnectedNotification = @"SKSteamClientDisconnectedNotification";
 
@@ -41,6 +42,7 @@ NSString * SKSteamClientDisconnectedNotification = @"SKSteamClientDisconnectedNo
         [self addHandler:[[SKSteamFriends alloc] init]];
         [self addHandler:[[SKSteamApps alloc] init]];
 		[self addHandler:[[SKSteamGameCoordinator alloc] init]];
+		[self addHandler:[[SKSteamUserStats alloc] init]];
 		
 		_notificationCenter = [NSNotificationCenter defaultCenter];
 		_jobPromises = [@{} mutableCopy];
@@ -101,6 +103,11 @@ NSString * SKSteamClientDisconnectedNotification = @"SKSteamClientDisconnectedNo
 - (SKSteamGameCoordinator *) steamGameCoordinator
 {
     return [self handlerOfClass:[SKSteamGameCoordinator class]];
+}
+
+- (SKSteamUserStats *) steamUserStats
+{
+    return [self handlerOfClass:[SKSteamUserStats class]];
 }
 
 - (NSArray *) handlers

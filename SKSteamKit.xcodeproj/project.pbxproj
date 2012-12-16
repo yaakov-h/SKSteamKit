@@ -82,6 +82,7 @@
 		D7B4D4D0167D7E8500701D41 /* SKPICSProductInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B4D4CF167D7E8500701D41 /* SKPICSProductInfo.m */; };
 		D7B4D4D3167D7E8F00701D41 /* SKPICSProductData.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B4D4D2167D7E8F00701D41 /* SKPICSProductData.m */; };
 		D7B4D4D6167D866300701D41 /* SKPICSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B4D4D5167D866300701D41 /* SKPICSRequest.m */; };
+		D7B4D4D9167D8C2C00701D41 /* SKSteamUserStats.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B4D4D8167D8C2B00701D41 /* SKSteamUserStats.m */; };
 		D7EF39ED1655141A0090A8F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7EF39EC1655141A0090A8F4 /* Foundation.framework */; };
 		D7EF39F21655141A0090A8F4 /* SKSteamKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7EF39F11655141A0090A8F4 /* SKSteamKit.h */; };
 		D7EF39FC1655141A0090A8F4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7EF39FB1655141A0090A8F4 /* SenTestingKit.framework */; };
@@ -265,6 +266,8 @@
 		D7B4D4D2167D7E8F00701D41 /* SKPICSProductData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPICSProductData.m; sourceTree = "<group>"; };
 		D7B4D4D4167D866200701D41 /* SKPICSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPICSRequest.h; sourceTree = "<group>"; };
 		D7B4D4D5167D866300701D41 /* SKPICSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPICSRequest.m; sourceTree = "<group>"; };
+		D7B4D4D7167D8C2B00701D41 /* SKSteamUserStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamUserStats.h; sourceTree = "<group>"; };
+		D7B4D4D8167D8C2B00701D41 /* SKSteamUserStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamUserStats.m; sourceTree = "<group>"; };
 		D7EF39E91655141A0090A8F4 /* libSteamKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSteamKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7EF39EC1655141A0090A8F4 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D7EF39F01655141A0090A8F4 /* SteamKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SteamKit-Prefix.pch"; sourceTree = "<group>"; };
@@ -336,6 +339,8 @@
 				D79BDC8C165F072E005171EA /* SKSteamApps.m */,
 				D79ABEE116735B7D003A8885 /* SKSteamGameCoordinator.h */,
 				D79ABEE216735B7D003A8885 /* SKSteamGameCoordinator.m */,
+				D7B4D4D7167D8C2B00701D41 /* SKSteamUserStats.h */,
+				D7B4D4D8167D8C2B00701D41 /* SKSteamUserStats.m */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -880,6 +885,7 @@
 				D7B4D4D0167D7E8500701D41 /* SKPICSProductInfo.m in Sources */,
 				D7B4D4D3167D7E8F00701D41 /* SKPICSProductData.m in Sources */,
 				D7B4D4D6167D866300701D41 /* SKPICSRequest.m in Sources */,
+				D7B4D4D9167D8C2C00701D41 /* SKSteamUserStats.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
