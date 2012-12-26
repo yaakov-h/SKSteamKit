@@ -346,6 +346,8 @@
 @class CMsgDOTAWelcome;
 @class CMsgDOTAWelcome_Builder;
 @class CMsgDismissLootGreevil;
+@class CMsgDismissLootGreevilResponse;
+@class CMsgDismissLootGreevilResponse_Builder;
 @class CMsgDismissLootGreevil_Builder;
 @class CMsgFindSourceTVGames;
 @class CMsgFindSourceTVGames_Builder;
@@ -773,6 +775,7 @@ typedef enum {
   EDOTAGCMsgk_EMsgGCSpawnLootGreevil = 7184,
   EDOTAGCMsgk_EMsgGCDismissLootGreevil = 7185,
   EDOTAGCMsgk_EMsgGCToGCMatchCompleted = 7186,
+  EDOTAGCMsgk_EMsgGCDismissLootGreevilResponse = 7187,
   EDOTAGCMsgk_EMsgGCDev_GrantWarKill = 8001,
 } EDOTAGCMsg;
 
@@ -3523,7 +3526,11 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 
 @interface CMsgSpawnLootGreevil : PBGeneratedMessage {
 @private
+  BOOL hasRare_:1;
+  BOOL rare_:1;
 }
+- (BOOL) hasRare;
+- (BOOL) rare;
 
 + (CMsgSpawnLootGreevil*) defaultInstance;
 - (CMsgSpawnLootGreevil*) defaultInstance;
@@ -3559,19 +3566,24 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 - (CMsgSpawnLootGreevil_Builder*) mergeFrom:(CMsgSpawnLootGreevil*) other;
 - (CMsgSpawnLootGreevil_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
 - (CMsgSpawnLootGreevil_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasRare;
+- (BOOL) rare;
+- (CMsgSpawnLootGreevil_Builder*) setRare:(BOOL) value;
+- (CMsgSpawnLootGreevil_Builder*) clearRare;
 @end
 
 @interface CMsgDismissLootGreevil : PBGeneratedMessage {
 @private
   BOOL hasKilled_:1;
-  BOOL hasLobbyId_:1;
+  BOOL hasRare_:1;
   BOOL killed_:1;
-  uint64_t lobbyId;
+  BOOL rare_:1;
 }
-- (BOOL) hasLobbyId;
 - (BOOL) hasKilled;
-@property (readonly) uint64_t lobbyId;
+- (BOOL) hasRare;
 - (BOOL) killed;
+- (BOOL) rare;
 
 + (CMsgDismissLootGreevil*) defaultInstance;
 - (CMsgDismissLootGreevil*) defaultInstance;
@@ -3608,15 +3620,55 @@ BOOL CMsgGameServerSaveGameResult_ResultIsValidValue(CMsgGameServerSaveGameResul
 - (CMsgDismissLootGreevil_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
 - (CMsgDismissLootGreevil_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
 
-- (BOOL) hasLobbyId;
-- (uint64_t) lobbyId;
-- (CMsgDismissLootGreevil_Builder*) setLobbyId:(uint64_t) value;
-- (CMsgDismissLootGreevil_Builder*) clearLobbyId;
-
 - (BOOL) hasKilled;
 - (BOOL) killed;
 - (CMsgDismissLootGreevil_Builder*) setKilled:(BOOL) value;
 - (CMsgDismissLootGreevil_Builder*) clearKilled;
+
+- (BOOL) hasRare;
+- (BOOL) rare;
+- (CMsgDismissLootGreevil_Builder*) setRare:(BOOL) value;
+- (CMsgDismissLootGreevil_Builder*) clearRare;
+@end
+
+@interface CMsgDismissLootGreevilResponse : PBGeneratedMessage {
+@private
+}
+
++ (CMsgDismissLootGreevilResponse*) defaultInstance;
+- (CMsgDismissLootGreevilResponse*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgDismissLootGreevilResponse_Builder*) builder;
++ (CMsgDismissLootGreevilResponse_Builder*) builder;
++ (CMsgDismissLootGreevilResponse_Builder*) builderWithPrototype:(CMsgDismissLootGreevilResponse*) prototype;
+- (CMsgDismissLootGreevilResponse_Builder*) toBuilder;
+
++ (CMsgDismissLootGreevilResponse*) parseFromData:(NSData*) data;
++ (CMsgDismissLootGreevilResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgDismissLootGreevilResponse*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgDismissLootGreevilResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgDismissLootGreevilResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgDismissLootGreevilResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgDismissLootGreevilResponse_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgDismissLootGreevilResponse* _builderResult;
+}
+
+- (CMsgDismissLootGreevilResponse*) defaultInstance;
+
+- (CMsgDismissLootGreevilResponse_Builder*) clear;
+- (CMsgDismissLootGreevilResponse_Builder*) clone;
+
+- (CMsgDismissLootGreevilResponse*) build;
+- (CMsgDismissLootGreevilResponse*) buildPartial;
+
+- (CMsgDismissLootGreevilResponse_Builder*) mergeFrom:(CMsgDismissLootGreevilResponse*) other;
+- (CMsgDismissLootGreevilResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgDismissLootGreevilResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
 @end
 
 @interface CMsgMatchmakingSearchCountRequest : PBGeneratedMessage {
