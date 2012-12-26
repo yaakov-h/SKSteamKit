@@ -91,6 +91,7 @@
 		D7EF3A021655141A0090A8F4 /* libSteamKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7EF39E91655141A0090A8F4 /* libSteamKit.a */; };
 		D7EF3A081655141A0090A8F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7EF3A061655141A0090A8F4 /* InfoPlist.strings */; };
 		D7EF3A0B1655141A0090A8F4 /* SKSteamKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7EF3A0A1655141A0090A8F4 /* SKSteamKitTests.m */; };
+		D7F39331168A837B000DB2E6 /* SKSteamLoggedOnInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F39330168A837B000DB2E6 /* SKSteamLoggedOnInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -279,6 +280,8 @@
 		D7EF3A071655141A0090A8F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D7EF3A091655141A0090A8F4 /* SKSteamKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKSteamKitTests.h; sourceTree = "<group>"; };
 		D7EF3A0A1655141A0090A8F4 /* SKSteamKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSteamKitTests.m; sourceTree = "<group>"; };
+		D7F3932F168A837B000DB2E6 /* SKSteamLoggedOnInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSteamLoggedOnInfo.h; sourceTree = "<group>"; };
+		D7F39330168A837B000DB2E6 /* SKSteamLoggedOnInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSteamLoggedOnInfo.m; sourceTree = "<group>"; };
 		FE689AFF86AD40838BC97832 /* libPods-SKSteamKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SKSteamKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -576,6 +579,8 @@
 				D7A4D2D2165DE69700DBFBE6 /* SKSteamAccountInfo.m */,
 				D7A4D2D7165DE9EF00DBFBE6 /* SKSteamLoggedOffInfo.h */,
 				D7A4D2D8165DE9EF00DBFBE6 /* SKSteamLoggedOffInfo.m */,
+				D7F3932F168A837B000DB2E6 /* SKSteamLoggedOnInfo.h */,
+				D7F39330168A837B000DB2E6 /* SKSteamLoggedOnInfo.m */,
 			);
 			name = SteamUser;
 			sourceTree = "<group>";
@@ -886,6 +891,7 @@
 				D7B4D4D3167D7E8F00701D41 /* SKPICSProductData.m in Sources */,
 				D7B4D4D6167D866300701D41 /* SKPICSRequest.m in Sources */,
 				D7B4D4D9167D8C2C00701D41 /* SKSteamUserStats.m in Sources */,
+				D7F39331168A837B000DB2E6 /* SKSteamLoggedOnInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

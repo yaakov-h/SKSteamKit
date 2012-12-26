@@ -188,6 +188,7 @@ BOOL EDOTAGCMsgIsValidValue(EDOTAGCMsg value) {
     case EDOTAGCMsgk_EMsgGCSpawnLootGreevil:
     case EDOTAGCMsgk_EMsgGCDismissLootGreevil:
     case EDOTAGCMsgk_EMsgGCToGCMatchCompleted:
+    case EDOTAGCMsgk_EMsgGCDismissLootGreevilResponse:
     case EDOTAGCMsgk_EMsgGCDev_GrantWarKill:
       return YES;
     default:
@@ -12173,15 +12174,29 @@ static CMsgReadyUpStatus* defaultCMsgReadyUpStatusInstance = nil;
 @end
 
 @interface CMsgSpawnLootGreevil ()
+@property BOOL rare;
 @end
 
 @implementation CMsgSpawnLootGreevil
 
+- (BOOL) hasRare {
+  return !!hasRare_;
+}
+- (void) setHasRare:(BOOL) value_ {
+  hasRare_ = !!value_;
+}
+- (BOOL) rare {
+  return !!rare_;
+}
+- (void) setRare:(BOOL) value_ {
+  rare_ = !!value_;
+}
 - (void) dealloc {
   [super dealloc];
 }
 - (id) init {
   if ((self = [super init])) {
+    self.rare = NO;
   }
   return self;
 }
@@ -12201,6 +12216,9 @@ static CMsgSpawnLootGreevil* defaultCMsgSpawnLootGreevilInstance = nil;
   return YES;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasRare) {
+    [output writeBool:1 value:self.rare];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (int32_t) serializedSize {
@@ -12210,6 +12228,9 @@ static CMsgSpawnLootGreevil* defaultCMsgSpawnLootGreevilInstance = nil;
   }
 
   size_ = 0;
+  if (self.hasRare) {
+    size_ += computeBoolSize(1, self.rare);
+  }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -12245,6 +12266,9 @@ static CMsgSpawnLootGreevil* defaultCMsgSpawnLootGreevilInstance = nil;
   return [CMsgSpawnLootGreevil builderWithPrototype:self];
 }
 - (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasRare) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rare", [NSNumber numberWithBool:self.rare]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -12256,10 +12280,15 @@ static CMsgSpawnLootGreevil* defaultCMsgSpawnLootGreevilInstance = nil;
   }
   CMsgSpawnLootGreevil *otherMessage = other;
   return
+      self.hasRare == otherMessage.hasRare &&
+      (!self.hasRare || self.rare == otherMessage.rare) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
   NSUInteger hashCode = 7;
+  if (self.hasRare) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.rare] hash];
+  }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
 }
@@ -12307,6 +12336,9 @@ static CMsgSpawnLootGreevil* defaultCMsgSpawnLootGreevilInstance = nil;
   if (other == [CMsgSpawnLootGreevil defaultInstance]) {
     return self;
   }
+  if (other.hasRare) {
+    [self setRare:other.rare];
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -12328,25 +12360,38 @@ static CMsgSpawnLootGreevil* defaultCMsgSpawnLootGreevilInstance = nil;
         }
         break;
       }
+      case 8: {
+        [self setRare:[input readBool]];
+        break;
+      }
     }
   }
+}
+- (BOOL) hasRare {
+  return _builderResult.hasRare;
+}
+- (BOOL) rare {
+  return _builderResult.rare;
+}
+- (CMsgSpawnLootGreevil_Builder*) setRare:(BOOL) value {
+  _builderResult.hasRare = YES;
+  _builderResult.rare = value;
+  return self;
+}
+- (CMsgSpawnLootGreevil_Builder*) clearRare {
+  _builderResult.hasRare = NO;
+  _builderResult.rare = NO;
+  return self;
 }
 @end
 
 @interface CMsgDismissLootGreevil ()
-@property uint64_t lobbyId;
 @property BOOL killed;
+@property BOOL rare;
 @end
 
 @implementation CMsgDismissLootGreevil
 
-- (BOOL) hasLobbyId {
-  return !!hasLobbyId_;
-}
-- (void) setHasLobbyId:(BOOL) value_ {
-  hasLobbyId_ = !!value_;
-}
-@synthesize lobbyId;
 - (BOOL) hasKilled {
   return !!hasKilled_;
 }
@@ -12359,13 +12404,25 @@ static CMsgSpawnLootGreevil* defaultCMsgSpawnLootGreevilInstance = nil;
 - (void) setKilled:(BOOL) value_ {
   killed_ = !!value_;
 }
+- (BOOL) hasRare {
+  return !!hasRare_;
+}
+- (void) setHasRare:(BOOL) value_ {
+  hasRare_ = !!value_;
+}
+- (BOOL) rare {
+  return !!rare_;
+}
+- (void) setRare:(BOOL) value_ {
+  rare_ = !!value_;
+}
 - (void) dealloc {
   [super dealloc];
 }
 - (id) init {
   if ((self = [super init])) {
-    self.lobbyId = 0L;
     self.killed = NO;
+    self.rare = NO;
   }
   return self;
 }
@@ -12385,11 +12442,11 @@ static CMsgDismissLootGreevil* defaultCMsgDismissLootGreevilInstance = nil;
   return YES;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  if (self.hasLobbyId) {
-    [output writeFixed64:1 value:self.lobbyId];
-  }
   if (self.hasKilled) {
     [output writeBool:2 value:self.killed];
+  }
+  if (self.hasRare) {
+    [output writeBool:3 value:self.rare];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -12400,11 +12457,11 @@ static CMsgDismissLootGreevil* defaultCMsgDismissLootGreevilInstance = nil;
   }
 
   size_ = 0;
-  if (self.hasLobbyId) {
-    size_ += computeFixed64Size(1, self.lobbyId);
-  }
   if (self.hasKilled) {
     size_ += computeBoolSize(2, self.killed);
+  }
+  if (self.hasRare) {
+    size_ += computeBoolSize(3, self.rare);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -12441,11 +12498,11 @@ static CMsgDismissLootGreevil* defaultCMsgDismissLootGreevilInstance = nil;
   return [CMsgDismissLootGreevil builderWithPrototype:self];
 }
 - (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  if (self.hasLobbyId) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"lobbyId", [NSNumber numberWithLongLong:self.lobbyId]];
-  }
   if (self.hasKilled) {
     [output appendFormat:@"%@%@: %@\n", indent, @"killed", [NSNumber numberWithBool:self.killed]];
+  }
+  if (self.hasRare) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rare", [NSNumber numberWithBool:self.rare]];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -12458,19 +12515,19 @@ static CMsgDismissLootGreevil* defaultCMsgDismissLootGreevilInstance = nil;
   }
   CMsgDismissLootGreevil *otherMessage = other;
   return
-      self.hasLobbyId == otherMessage.hasLobbyId &&
-      (!self.hasLobbyId || self.lobbyId == otherMessage.lobbyId) &&
       self.hasKilled == otherMessage.hasKilled &&
       (!self.hasKilled || self.killed == otherMessage.killed) &&
+      self.hasRare == otherMessage.hasRare &&
+      (!self.hasRare || self.rare == otherMessage.rare) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
   NSUInteger hashCode = 7;
-  if (self.hasLobbyId) {
-    hashCode = hashCode * 31 + [[NSNumber numberWithLongLong:self.lobbyId] hash];
-  }
   if (self.hasKilled) {
     hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.killed] hash];
+  }
+  if (self.hasRare) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.rare] hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -12519,11 +12576,11 @@ static CMsgDismissLootGreevil* defaultCMsgDismissLootGreevilInstance = nil;
   if (other == [CMsgDismissLootGreevil defaultInstance]) {
     return self;
   }
-  if (other.hasLobbyId) {
-    [self setLobbyId:other.lobbyId];
-  }
   if (other.hasKilled) {
     [self setKilled:other.killed];
+  }
+  if (other.hasRare) {
+    [self setRare:other.rare];
   }
   [self mergeUnknownFields:other.unknownFields];
   return self;
@@ -12546,32 +12603,16 @@ static CMsgDismissLootGreevil* defaultCMsgDismissLootGreevilInstance = nil;
         }
         break;
       }
-      case 9: {
-        [self setLobbyId:[input readFixed64]];
-        break;
-      }
       case 16: {
         [self setKilled:[input readBool]];
         break;
       }
+      case 24: {
+        [self setRare:[input readBool]];
+        break;
+      }
     }
   }
-}
-- (BOOL) hasLobbyId {
-  return _builderResult.hasLobbyId;
-}
-- (uint64_t) lobbyId {
-  return _builderResult.lobbyId;
-}
-- (CMsgDismissLootGreevil_Builder*) setLobbyId:(uint64_t) value {
-  _builderResult.hasLobbyId = YES;
-  _builderResult.lobbyId = value;
-  return self;
-}
-- (CMsgDismissLootGreevil_Builder*) clearLobbyId {
-  _builderResult.hasLobbyId = NO;
-  _builderResult.lobbyId = 0L;
-  return self;
 }
 - (BOOL) hasKilled {
   return _builderResult.hasKilled;
@@ -12588,6 +12629,183 @@ static CMsgDismissLootGreevil* defaultCMsgDismissLootGreevilInstance = nil;
   _builderResult.hasKilled = NO;
   _builderResult.killed = NO;
   return self;
+}
+- (BOOL) hasRare {
+  return _builderResult.hasRare;
+}
+- (BOOL) rare {
+  return _builderResult.rare;
+}
+- (CMsgDismissLootGreevil_Builder*) setRare:(BOOL) value {
+  _builderResult.hasRare = YES;
+  _builderResult.rare = value;
+  return self;
+}
+- (CMsgDismissLootGreevil_Builder*) clearRare {
+  _builderResult.hasRare = NO;
+  _builderResult.rare = NO;
+  return self;
+}
+@end
+
+@interface CMsgDismissLootGreevilResponse ()
+@end
+
+@implementation CMsgDismissLootGreevilResponse
+
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+  }
+  return self;
+}
+static CMsgDismissLootGreevilResponse* defaultCMsgDismissLootGreevilResponseInstance = nil;
++ (void) initialize {
+  if (self == [CMsgDismissLootGreevilResponse class]) {
+    defaultCMsgDismissLootGreevilResponseInstance = [[CMsgDismissLootGreevilResponse alloc] init];
+  }
+}
++ (CMsgDismissLootGreevilResponse*) defaultInstance {
+  return defaultCMsgDismissLootGreevilResponseInstance;
+}
+- (CMsgDismissLootGreevilResponse*) defaultInstance {
+  return defaultCMsgDismissLootGreevilResponseInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgDismissLootGreevilResponse*) parseFromData:(NSData*) data {
+  return (CMsgDismissLootGreevilResponse*)[[[CMsgDismissLootGreevilResponse builder] mergeFromData:data] build];
+}
++ (CMsgDismissLootGreevilResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDismissLootGreevilResponse*)[[[CMsgDismissLootGreevilResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDismissLootGreevilResponse*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgDismissLootGreevilResponse*)[[[CMsgDismissLootGreevilResponse builder] mergeFromInputStream:input] build];
+}
++ (CMsgDismissLootGreevilResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDismissLootGreevilResponse*)[[[CMsgDismissLootGreevilResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDismissLootGreevilResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgDismissLootGreevilResponse*)[[[CMsgDismissLootGreevilResponse builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgDismissLootGreevilResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDismissLootGreevilResponse*)[[[CMsgDismissLootGreevilResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDismissLootGreevilResponse_Builder*) builder {
+  return [[[CMsgDismissLootGreevilResponse_Builder alloc] init] autorelease];
+}
++ (CMsgDismissLootGreevilResponse_Builder*) builderWithPrototype:(CMsgDismissLootGreevilResponse*) prototype {
+  return [[CMsgDismissLootGreevilResponse builder] mergeFrom:prototype];
+}
+- (CMsgDismissLootGreevilResponse_Builder*) builder {
+  return [CMsgDismissLootGreevilResponse builder];
+}
+- (CMsgDismissLootGreevilResponse_Builder*) toBuilder {
+  return [CMsgDismissLootGreevilResponse builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgDismissLootGreevilResponse class]]) {
+    return NO;
+  }
+  CMsgDismissLootGreevilResponse *otherMessage = other;
+  return
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgDismissLootGreevilResponse_Builder()
+@property (retain) CMsgDismissLootGreevilResponse* _builderResult;
+@end
+
+@implementation CMsgDismissLootGreevilResponse_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgDismissLootGreevilResponse alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgDismissLootGreevilResponse_Builder*) clear {
+  _builderResult = [[[CMsgDismissLootGreevilResponse alloc] init] autorelease];
+  return self;
+}
+- (CMsgDismissLootGreevilResponse_Builder*) clone {
+  return [CMsgDismissLootGreevilResponse builderWithPrototype:_builderResult];
+}
+- (CMsgDismissLootGreevilResponse*) defaultInstance {
+  return [CMsgDismissLootGreevilResponse defaultInstance];
+}
+- (CMsgDismissLootGreevilResponse*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgDismissLootGreevilResponse*) buildPartial {
+  CMsgDismissLootGreevilResponse* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgDismissLootGreevilResponse_Builder*) mergeFrom:(CMsgDismissLootGreevilResponse*) other {
+  if (other == [CMsgDismissLootGreevilResponse defaultInstance]) {
+    return self;
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgDismissLootGreevilResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgDismissLootGreevilResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+    }
+  }
 }
 @end
 

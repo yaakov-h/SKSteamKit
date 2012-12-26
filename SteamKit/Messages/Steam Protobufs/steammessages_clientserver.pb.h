@@ -1698,6 +1698,7 @@
 
 @interface CMsgClientLogonResponse : PBGeneratedMessage {
 @private
+  BOOL hasUsePics_:1;
   BOOL hasEresult_:1;
   BOOL hasOutOfGameHeartbeatSeconds_:1;
   BOOL hasInGameHeartbeatSeconds_:1;
@@ -1712,6 +1713,7 @@
   BOOL hasAccountFlags_:1;
   BOOL hasCellId_:1;
   BOOL hasCellIdPingThreshold_:1;
+  BOOL usePics_:1;
   int32_t eresult;
   int32_t outOfGameHeartbeatSeconds;
   int32_t inGameHeartbeatSeconds;
@@ -1739,6 +1741,7 @@
 - (BOOL) hasEresultExtended;
 - (BOOL) hasWebapiAuthenticateUserNonce;
 - (BOOL) hasCellIdPingThreshold;
+- (BOOL) hasUsePics;
 - (BOOL) hasClientSuppliedSteamid;
 - (BOOL) hasIpCountryCode;
 @property (readonly) int32_t eresult;
@@ -1753,6 +1756,7 @@
 @property (readonly) int32_t eresultExtended;
 @property (readonly, retain) NSString* webapiAuthenticateUserNonce;
 @property (readonly) uint32_t cellIdPingThreshold;
+- (BOOL) usePics;
 @property (readonly) uint64_t clientSuppliedSteamid;
 @property (readonly, retain) NSString* ipCountryCode;
 
@@ -1850,6 +1854,11 @@
 - (uint32_t) cellIdPingThreshold;
 - (CMsgClientLogonResponse_Builder*) setCellIdPingThreshold:(uint32_t) value;
 - (CMsgClientLogonResponse_Builder*) clearCellIdPingThreshold;
+
+- (BOOL) hasUsePics;
+- (BOOL) usePics;
+- (CMsgClientLogonResponse_Builder*) setUsePics:(BOOL) value;
+- (CMsgClientLogonResponse_Builder*) clearUsePics;
 
 - (BOOL) hasClientSuppliedSteamid;
 - (uint64_t) clientSuppliedSteamid;

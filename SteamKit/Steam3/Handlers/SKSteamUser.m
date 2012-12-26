@@ -12,6 +12,7 @@
 #import <CRBoilerplate/CRBoilerplate.h>
 #import "SKSteamWalletInfo.h"
 #import "SKSteamAccountInfo.h"
+#import "SKSteamLoggedOnInfo.h"
 #import "SKSteamLoggedOffInfo.h"
 #import "SKSteamID.h"
 
@@ -282,7 +283,8 @@ static NSString * const _SKSteamLoginKeyKey = @"SKSteamLoginKey";
     if (result == EResultOK)
     {
 		[self setLastLoginUserName:_userName];
-        [_loginDeferred resolveWithResult:logonResponse.body];
+		SKSteamLoggedOnInfo * info = [[SKSteamLoggedOnInfo alloc] initWithMessage:logonResponse.body username:_userName];
+        [_loginDeferred resolveWithResult:info];
     }
     else
     {
