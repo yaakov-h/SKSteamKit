@@ -98,7 +98,7 @@ EClientPersonaStateFlag SKSteamFriendsDefaultFriendInfoRequest =
 
 - (void) setPersonaName:(NSString *)personaName
 {
-	// Cache right away, so that early class to SetPersonaState don't reset the set name.
+	// Cache right away, so that early calls to SetPersonaState don't reset the set name.
 	_cache.localUser.personaName = personaName;
 	
 	_SKClientMsgProtobuf * clientChangeStatusMessage = [[_SKClientMsgProtobuf alloc] initWithBodyClass:[CMsgClientChangeStatus class] messageType:EMsgClientChangeStatus];
