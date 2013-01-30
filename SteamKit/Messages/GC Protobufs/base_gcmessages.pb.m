@@ -56,6 +56,15 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value) {
       return NO;
   }
 }
+BOOL GC_BannedWordTypeIsValidValue(GC_BannedWordType value) {
+  switch (value) {
+    case GC_BannedWordTypeGC_BANNED_WORD_DISABLE_WORD:
+    case GC_BannedWordTypeGC_BANNED_WORD_ENABLE_WORD:
+      return YES;
+    default:
+      return NO;
+  }
+}
 @interface CGCStorePurchaseInit_LineItem ()
 @property uint32_t itemDefId;
 @property uint32_t quantity;
@@ -2197,6 +2206,8 @@ static CMsgServerHello* defaultCMsgServerHelloInstance = nil;
 @interface CMsgClientWelcome ()
 @property uint32_t version;
 @property (retain) NSData* gameData;
+@property uint32_t bannedWordSet;
+@property uint32_t wordId;
 @end
 
 @implementation CMsgClientWelcome
@@ -2215,6 +2226,20 @@ static CMsgServerHello* defaultCMsgServerHelloInstance = nil;
   hasGameData_ = !!value_;
 }
 @synthesize gameData;
+- (BOOL) hasBannedWordSet {
+  return !!hasBannedWordSet_;
+}
+- (void) setHasBannedWordSet:(BOOL) value_ {
+  hasBannedWordSet_ = !!value_;
+}
+@synthesize bannedWordSet;
+- (BOOL) hasWordId {
+  return !!hasWordId_;
+}
+- (void) setHasWordId:(BOOL) value_ {
+  hasWordId_ = !!value_;
+}
+@synthesize wordId;
 - (void) dealloc {
   self.gameData = nil;
   [super dealloc];
@@ -2223,6 +2248,8 @@ static CMsgServerHello* defaultCMsgServerHelloInstance = nil;
   if ((self = [super init])) {
     self.version = 0;
     self.gameData = [NSData data];
+    self.bannedWordSet = 0;
+    self.wordId = 0;
   }
   return self;
 }
@@ -2248,6 +2275,12 @@ static CMsgClientWelcome* defaultCMsgClientWelcomeInstance = nil;
   if (self.hasGameData) {
     [output writeData:2 value:self.gameData];
   }
+  if (self.hasBannedWordSet) {
+    [output writeUInt32:3 value:self.bannedWordSet];
+  }
+  if (self.hasWordId) {
+    [output writeUInt32:4 value:self.wordId];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (int32_t) serializedSize {
@@ -2262,6 +2295,12 @@ static CMsgClientWelcome* defaultCMsgClientWelcomeInstance = nil;
   }
   if (self.hasGameData) {
     size_ += computeDataSize(2, self.gameData);
+  }
+  if (self.hasBannedWordSet) {
+    size_ += computeUInt32Size(3, self.bannedWordSet);
+  }
+  if (self.hasWordId) {
+    size_ += computeUInt32Size(4, self.wordId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -2304,6 +2343,12 @@ static CMsgClientWelcome* defaultCMsgClientWelcomeInstance = nil;
   if (self.hasGameData) {
     [output appendFormat:@"%@%@: %@\n", indent, @"gameData", self.gameData];
   }
+  if (self.hasBannedWordSet) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"bannedWordSet", [NSNumber numberWithInt:self.bannedWordSet]];
+  }
+  if (self.hasWordId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"wordId", [NSNumber numberWithInt:self.wordId]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -2319,6 +2364,10 @@ static CMsgClientWelcome* defaultCMsgClientWelcomeInstance = nil;
       (!self.hasVersion || self.version == otherMessage.version) &&
       self.hasGameData == otherMessage.hasGameData &&
       (!self.hasGameData || [self.gameData isEqual:otherMessage.gameData]) &&
+      self.hasBannedWordSet == otherMessage.hasBannedWordSet &&
+      (!self.hasBannedWordSet || self.bannedWordSet == otherMessage.bannedWordSet) &&
+      self.hasWordId == otherMessage.hasWordId &&
+      (!self.hasWordId || self.wordId == otherMessage.wordId) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -2328,6 +2377,12 @@ static CMsgClientWelcome* defaultCMsgClientWelcomeInstance = nil;
   }
   if (self.hasGameData) {
     hashCode = hashCode * 31 + [self.gameData hash];
+  }
+  if (self.hasBannedWordSet) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.bannedWordSet] hash];
+  }
+  if (self.hasWordId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.wordId] hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -2382,6 +2437,12 @@ static CMsgClientWelcome* defaultCMsgClientWelcomeInstance = nil;
   if (other.hasGameData) {
     [self setGameData:other.gameData];
   }
+  if (other.hasBannedWordSet) {
+    [self setBannedWordSet:other.bannedWordSet];
+  }
+  if (other.hasWordId) {
+    [self setWordId:other.wordId];
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -2409,6 +2470,14 @@ static CMsgClientWelcome* defaultCMsgClientWelcomeInstance = nil;
       }
       case 18: {
         [self setGameData:[input readData]];
+        break;
+      }
+      case 24: {
+        [self setBannedWordSet:[input readUInt32]];
+        break;
+      }
+      case 32: {
+        [self setWordId:[input readUInt32]];
         break;
       }
     }
@@ -2444,6 +2513,38 @@ static CMsgClientWelcome* defaultCMsgClientWelcomeInstance = nil;
 - (CMsgClientWelcome_Builder*) clearGameData {
   _builderResult.hasGameData = NO;
   _builderResult.gameData = [NSData data];
+  return self;
+}
+- (BOOL) hasBannedWordSet {
+  return _builderResult.hasBannedWordSet;
+}
+- (uint32_t) bannedWordSet {
+  return _builderResult.bannedWordSet;
+}
+- (CMsgClientWelcome_Builder*) setBannedWordSet:(uint32_t) value {
+  _builderResult.hasBannedWordSet = YES;
+  _builderResult.bannedWordSet = value;
+  return self;
+}
+- (CMsgClientWelcome_Builder*) clearBannedWordSet {
+  _builderResult.hasBannedWordSet = NO;
+  _builderResult.bannedWordSet = 0;
+  return self;
+}
+- (BOOL) hasWordId {
+  return _builderResult.hasWordId;
+}
+- (uint32_t) wordId {
+  return _builderResult.wordId;
+}
+- (CMsgClientWelcome_Builder*) setWordId:(uint32_t) value {
+  _builderResult.hasWordId = YES;
+  _builderResult.wordId = value;
+  return self;
+}
+- (CMsgClientWelcome_Builder*) clearWordId {
+  _builderResult.hasWordId = NO;
+  _builderResult.wordId = 0;
   return self;
 }
 @end
@@ -3832,6 +3933,7 @@ static CMsgInvitationCreated* defaultCMsgInvitationCreatedInstance = nil;
 @property uint64_t partyId;
 @property BOOL accept;
 @property uint32_t clientVersion;
+@property BOOL teamInvite;
 @end
 
 @implementation CMsgPartyInviteResponse
@@ -3862,6 +3964,18 @@ static CMsgInvitationCreated* defaultCMsgInvitationCreatedInstance = nil;
   hasClientVersion_ = !!value_;
 }
 @synthesize clientVersion;
+- (BOOL) hasTeamInvite {
+  return !!hasTeamInvite_;
+}
+- (void) setHasTeamInvite:(BOOL) value_ {
+  hasTeamInvite_ = !!value_;
+}
+- (BOOL) teamInvite {
+  return !!teamInvite_;
+}
+- (void) setTeamInvite:(BOOL) value_ {
+  teamInvite_ = !!value_;
+}
 - (void) dealloc {
   [super dealloc];
 }
@@ -3870,6 +3984,7 @@ static CMsgInvitationCreated* defaultCMsgInvitationCreatedInstance = nil;
     self.partyId = 0L;
     self.accept = NO;
     self.clientVersion = 0;
+    self.teamInvite = NO;
   }
   return self;
 }
@@ -3898,6 +4013,9 @@ static CMsgPartyInviteResponse* defaultCMsgPartyInviteResponseInstance = nil;
   if (self.hasClientVersion) {
     [output writeUInt32:3 value:self.clientVersion];
   }
+  if (self.hasTeamInvite) {
+    [output writeBool:4 value:self.teamInvite];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (int32_t) serializedSize {
@@ -3915,6 +4033,9 @@ static CMsgPartyInviteResponse* defaultCMsgPartyInviteResponseInstance = nil;
   }
   if (self.hasClientVersion) {
     size_ += computeUInt32Size(3, self.clientVersion);
+  }
+  if (self.hasTeamInvite) {
+    size_ += computeBoolSize(4, self.teamInvite);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -3960,6 +4081,9 @@ static CMsgPartyInviteResponse* defaultCMsgPartyInviteResponseInstance = nil;
   if (self.hasClientVersion) {
     [output appendFormat:@"%@%@: %@\n", indent, @"clientVersion", [NSNumber numberWithInt:self.clientVersion]];
   }
+  if (self.hasTeamInvite) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"teamInvite", [NSNumber numberWithBool:self.teamInvite]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -3977,6 +4101,8 @@ static CMsgPartyInviteResponse* defaultCMsgPartyInviteResponseInstance = nil;
       (!self.hasAccept || self.accept == otherMessage.accept) &&
       self.hasClientVersion == otherMessage.hasClientVersion &&
       (!self.hasClientVersion || self.clientVersion == otherMessage.clientVersion) &&
+      self.hasTeamInvite == otherMessage.hasTeamInvite &&
+      (!self.hasTeamInvite || self.teamInvite == otherMessage.teamInvite) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -3989,6 +4115,9 @@ static CMsgPartyInviteResponse* defaultCMsgPartyInviteResponseInstance = nil;
   }
   if (self.hasClientVersion) {
     hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.clientVersion] hash];
+  }
+  if (self.hasTeamInvite) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.teamInvite] hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -4046,6 +4175,9 @@ static CMsgPartyInviteResponse* defaultCMsgPartyInviteResponseInstance = nil;
   if (other.hasClientVersion) {
     [self setClientVersion:other.clientVersion];
   }
+  if (other.hasTeamInvite) {
+    [self setTeamInvite:other.teamInvite];
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -4077,6 +4209,10 @@ static CMsgPartyInviteResponse* defaultCMsgPartyInviteResponseInstance = nil;
       }
       case 24: {
         [self setClientVersion:[input readUInt32]];
+        break;
+      }
+      case 32: {
+        [self setTeamInvite:[input readBool]];
         break;
       }
     }
@@ -4128,6 +4264,22 @@ static CMsgPartyInviteResponse* defaultCMsgPartyInviteResponseInstance = nil;
 - (CMsgPartyInviteResponse_Builder*) clearClientVersion {
   _builderResult.hasClientVersion = NO;
   _builderResult.clientVersion = 0;
+  return self;
+}
+- (BOOL) hasTeamInvite {
+  return _builderResult.hasTeamInvite;
+}
+- (BOOL) teamInvite {
+  return _builderResult.teamInvite;
+}
+- (CMsgPartyInviteResponse_Builder*) setTeamInvite:(BOOL) value {
+  _builderResult.hasTeamInvite = YES;
+  _builderResult.teamInvite = value;
+  return self;
+}
+- (CMsgPartyInviteResponse_Builder*) clearTeamInvite {
+  _builderResult.hasTeamInvite = NO;
+  _builderResult.teamInvite = NO;
   return self;
 }
 @end
@@ -12391,167 +12543,6 @@ static CMsgUpdateItemSchema* defaultCMsgUpdateItemSchemaInstance = nil;
 }
 @end
 
-@interface CMsgRequestItemSchemaData ()
-@end
-
-@implementation CMsgRequestItemSchemaData
-
-- (void) dealloc {
-  [super dealloc];
-}
-- (id) init {
-  if ((self = [super init])) {
-  }
-  return self;
-}
-static CMsgRequestItemSchemaData* defaultCMsgRequestItemSchemaDataInstance = nil;
-+ (void) initialize {
-  if (self == [CMsgRequestItemSchemaData class]) {
-    defaultCMsgRequestItemSchemaDataInstance = [[CMsgRequestItemSchemaData alloc] init];
-  }
-}
-+ (CMsgRequestItemSchemaData*) defaultInstance {
-  return defaultCMsgRequestItemSchemaDataInstance;
-}
-- (CMsgRequestItemSchemaData*) defaultInstance {
-  return defaultCMsgRequestItemSchemaDataInstance;
-}
-- (BOOL) isInitialized {
-  return YES;
-}
-- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  [self.unknownFields writeToCodedOutputStream:output];
-}
-- (int32_t) serializedSize {
-  int32_t size_ = memoizedSerializedSize;
-  if (size_ != -1) {
-    return size_;
-  }
-
-  size_ = 0;
-  size_ += self.unknownFields.serializedSize;
-  memoizedSerializedSize = size_;
-  return size_;
-}
-+ (CMsgRequestItemSchemaData*) parseFromData:(NSData*) data {
-  return (CMsgRequestItemSchemaData*)[[[CMsgRequestItemSchemaData builder] mergeFromData:data] build];
-}
-+ (CMsgRequestItemSchemaData*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgRequestItemSchemaData*)[[[CMsgRequestItemSchemaData builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgRequestItemSchemaData*) parseFromInputStream:(NSInputStream*) input {
-  return (CMsgRequestItemSchemaData*)[[[CMsgRequestItemSchemaData builder] mergeFromInputStream:input] build];
-}
-+ (CMsgRequestItemSchemaData*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgRequestItemSchemaData*)[[[CMsgRequestItemSchemaData builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgRequestItemSchemaData*) parseFromCodedInputStream:(PBCodedInputStream*) input {
-  return (CMsgRequestItemSchemaData*)[[[CMsgRequestItemSchemaData builder] mergeFromCodedInputStream:input] build];
-}
-+ (CMsgRequestItemSchemaData*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgRequestItemSchemaData*)[[[CMsgRequestItemSchemaData builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgRequestItemSchemaData_Builder*) builder {
-  return [[[CMsgRequestItemSchemaData_Builder alloc] init] autorelease];
-}
-+ (CMsgRequestItemSchemaData_Builder*) builderWithPrototype:(CMsgRequestItemSchemaData*) prototype {
-  return [[CMsgRequestItemSchemaData builder] mergeFrom:prototype];
-}
-- (CMsgRequestItemSchemaData_Builder*) builder {
-  return [CMsgRequestItemSchemaData builder];
-}
-- (CMsgRequestItemSchemaData_Builder*) toBuilder {
-  return [CMsgRequestItemSchemaData builderWithPrototype:self];
-}
-- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  [self.unknownFields writeDescriptionTo:output withIndent:indent];
-}
-- (BOOL) isEqual:(id)other {
-  if (other == self) {
-    return YES;
-  }
-  if (![other isKindOfClass:[CMsgRequestItemSchemaData class]]) {
-    return NO;
-  }
-  CMsgRequestItemSchemaData *otherMessage = other;
-  return
-      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
-}
-- (NSUInteger) hash {
-  NSUInteger hashCode = 7;
-  hashCode = hashCode * 31 + [self.unknownFields hash];
-  return hashCode;
-}
-@end
-
-@interface CMsgRequestItemSchemaData_Builder()
-@property (retain) CMsgRequestItemSchemaData* _builderResult;
-@end
-
-@implementation CMsgRequestItemSchemaData_Builder
-@synthesize _builderResult;
-- (void) dealloc {
-  self._builderResult = nil;
-  [super dealloc];
-}
-- (id) init {
-  if ((self = [super init])) {
-    self._builderResult = [[[CMsgRequestItemSchemaData alloc] init] autorelease];
-  }
-  return self;
-}
-- (PBGeneratedMessage*) internalGetResult {
-  return _builderResult;
-}
-- (CMsgRequestItemSchemaData_Builder*) clear {
-  _builderResult = [[[CMsgRequestItemSchemaData alloc] init] autorelease];
-  return self;
-}
-- (CMsgRequestItemSchemaData_Builder*) clone {
-  return [CMsgRequestItemSchemaData builderWithPrototype:_builderResult];
-}
-- (CMsgRequestItemSchemaData*) defaultInstance {
-  return [CMsgRequestItemSchemaData defaultInstance];
-}
-- (CMsgRequestItemSchemaData*) build {
-  [self checkInitialized];
-  return [self buildPartial];
-}
-- (CMsgRequestItemSchemaData*) buildPartial {
-  CMsgRequestItemSchemaData* returnMe = [[_builderResult retain] autorelease];
-  self._builderResult = nil;
-  return returnMe;
-}
-- (CMsgRequestItemSchemaData_Builder*) mergeFrom:(CMsgRequestItemSchemaData*) other {
-  if (other == [CMsgRequestItemSchemaData defaultInstance]) {
-    return self;
-  }
-  [self mergeUnknownFields:other.unknownFields];
-  return self;
-}
-- (CMsgRequestItemSchemaData_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
-  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
-}
-- (CMsgRequestItemSchemaData_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
-  while (YES) {
-    int32_t tag = [input readTag];
-    switch (tag) {
-      case 0:
-        [self setUnknownFields:[unknownFields build]];
-        return self;
-      default: {
-        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
-          [self setUnknownFields:[unknownFields build]];
-          return self;
-        }
-        break;
-      }
-    }
-  }
-}
-@end
-
 @interface CMsgGCError ()
 @property (retain) NSString* errorText;
 @end
@@ -20468,6 +20459,1065 @@ static CSOEconItemHalloweenEgg* defaultCSOEconItemHalloweenEggInstance = nil;
 - (CSOEconItemHalloweenEgg_Builder*) clearSkin {
   _builderResult.hasSkin = NO;
   _builderResult.skin = 0;
+  return self;
+}
+@end
+
+@interface CMsgGCBannedWordListRequest ()
+@property uint32_t banListGroupId;
+@property uint32_t wordId;
+@end
+
+@implementation CMsgGCBannedWordListRequest
+
+- (BOOL) hasBanListGroupId {
+  return !!hasBanListGroupId_;
+}
+- (void) setHasBanListGroupId:(BOOL) value_ {
+  hasBanListGroupId_ = !!value_;
+}
+@synthesize banListGroupId;
+- (BOOL) hasWordId {
+  return !!hasWordId_;
+}
+- (void) setHasWordId:(BOOL) value_ {
+  hasWordId_ = !!value_;
+}
+@synthesize wordId;
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.banListGroupId = 0;
+    self.wordId = 0;
+  }
+  return self;
+}
+static CMsgGCBannedWordListRequest* defaultCMsgGCBannedWordListRequestInstance = nil;
++ (void) initialize {
+  if (self == [CMsgGCBannedWordListRequest class]) {
+    defaultCMsgGCBannedWordListRequestInstance = [[CMsgGCBannedWordListRequest alloc] init];
+  }
+}
++ (CMsgGCBannedWordListRequest*) defaultInstance {
+  return defaultCMsgGCBannedWordListRequestInstance;
+}
+- (CMsgGCBannedWordListRequest*) defaultInstance {
+  return defaultCMsgGCBannedWordListRequestInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasBanListGroupId) {
+    [output writeUInt32:1 value:self.banListGroupId];
+  }
+  if (self.hasWordId) {
+    [output writeUInt32:2 value:self.wordId];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasBanListGroupId) {
+    size_ += computeUInt32Size(1, self.banListGroupId);
+  }
+  if (self.hasWordId) {
+    size_ += computeUInt32Size(2, self.wordId);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgGCBannedWordListRequest*) parseFromData:(NSData*) data {
+  return (CMsgGCBannedWordListRequest*)[[[CMsgGCBannedWordListRequest builder] mergeFromData:data] build];
+}
++ (CMsgGCBannedWordListRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCBannedWordListRequest*)[[[CMsgGCBannedWordListRequest builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCBannedWordListRequest*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgGCBannedWordListRequest*)[[[CMsgGCBannedWordListRequest builder] mergeFromInputStream:input] build];
+}
++ (CMsgGCBannedWordListRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCBannedWordListRequest*)[[[CMsgGCBannedWordListRequest builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCBannedWordListRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgGCBannedWordListRequest*)[[[CMsgGCBannedWordListRequest builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgGCBannedWordListRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCBannedWordListRequest*)[[[CMsgGCBannedWordListRequest builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCBannedWordListRequest_Builder*) builder {
+  return [[[CMsgGCBannedWordListRequest_Builder alloc] init] autorelease];
+}
++ (CMsgGCBannedWordListRequest_Builder*) builderWithPrototype:(CMsgGCBannedWordListRequest*) prototype {
+  return [[CMsgGCBannedWordListRequest builder] mergeFrom:prototype];
+}
+- (CMsgGCBannedWordListRequest_Builder*) builder {
+  return [CMsgGCBannedWordListRequest builder];
+}
+- (CMsgGCBannedWordListRequest_Builder*) toBuilder {
+  return [CMsgGCBannedWordListRequest builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasBanListGroupId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"banListGroupId", [NSNumber numberWithInt:self.banListGroupId]];
+  }
+  if (self.hasWordId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"wordId", [NSNumber numberWithInt:self.wordId]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgGCBannedWordListRequest class]]) {
+    return NO;
+  }
+  CMsgGCBannedWordListRequest *otherMessage = other;
+  return
+      self.hasBanListGroupId == otherMessage.hasBanListGroupId &&
+      (!self.hasBanListGroupId || self.banListGroupId == otherMessage.banListGroupId) &&
+      self.hasWordId == otherMessage.hasWordId &&
+      (!self.hasWordId || self.wordId == otherMessage.wordId) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasBanListGroupId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.banListGroupId] hash];
+  }
+  if (self.hasWordId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.wordId] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgGCBannedWordListRequest_Builder()
+@property (retain) CMsgGCBannedWordListRequest* _builderResult;
+@end
+
+@implementation CMsgGCBannedWordListRequest_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgGCBannedWordListRequest alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgGCBannedWordListRequest_Builder*) clear {
+  _builderResult = [[[CMsgGCBannedWordListRequest alloc] init] autorelease];
+  return self;
+}
+- (CMsgGCBannedWordListRequest_Builder*) clone {
+  return [CMsgGCBannedWordListRequest builderWithPrototype:_builderResult];
+}
+- (CMsgGCBannedWordListRequest*) defaultInstance {
+  return [CMsgGCBannedWordListRequest defaultInstance];
+}
+- (CMsgGCBannedWordListRequest*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgGCBannedWordListRequest*) buildPartial {
+  CMsgGCBannedWordListRequest* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgGCBannedWordListRequest_Builder*) mergeFrom:(CMsgGCBannedWordListRequest*) other {
+  if (other == [CMsgGCBannedWordListRequest defaultInstance]) {
+    return self;
+  }
+  if (other.hasBanListGroupId) {
+    [self setBanListGroupId:other.banListGroupId];
+  }
+  if (other.hasWordId) {
+    [self setWordId:other.wordId];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgGCBannedWordListRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgGCBannedWordListRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setBanListGroupId:[input readUInt32]];
+        break;
+      }
+      case 16: {
+        [self setWordId:[input readUInt32]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasBanListGroupId {
+  return _builderResult.hasBanListGroupId;
+}
+- (uint32_t) banListGroupId {
+  return _builderResult.banListGroupId;
+}
+- (CMsgGCBannedWordListRequest_Builder*) setBanListGroupId:(uint32_t) value {
+  _builderResult.hasBanListGroupId = YES;
+  _builderResult.banListGroupId = value;
+  return self;
+}
+- (CMsgGCBannedWordListRequest_Builder*) clearBanListGroupId {
+  _builderResult.hasBanListGroupId = NO;
+  _builderResult.banListGroupId = 0;
+  return self;
+}
+- (BOOL) hasWordId {
+  return _builderResult.hasWordId;
+}
+- (uint32_t) wordId {
+  return _builderResult.wordId;
+}
+- (CMsgGCBannedWordListRequest_Builder*) setWordId:(uint32_t) value {
+  _builderResult.hasWordId = YES;
+  _builderResult.wordId = value;
+  return self;
+}
+- (CMsgGCBannedWordListRequest_Builder*) clearWordId {
+  _builderResult.hasWordId = NO;
+  _builderResult.wordId = 0;
+  return self;
+}
+@end
+
+@interface CMsgGCBannedWord ()
+@property uint32_t wordId;
+@property GC_BannedWordType word_type;
+@property (retain) NSString* word;
+@end
+
+@implementation CMsgGCBannedWord
+
+- (BOOL) hasWordId {
+  return !!hasWordId_;
+}
+- (void) setHasWordId:(BOOL) value_ {
+  hasWordId_ = !!value_;
+}
+@synthesize wordId;
+- (BOOL) hasword_type {
+  return !!hasword_type_;
+}
+- (void) setHasword_type:(BOOL) value_ {
+  hasword_type_ = !!value_;
+}
+@synthesize word_type;
+- (BOOL) hasWord {
+  return !!hasWord_;
+}
+- (void) setHasWord:(BOOL) value_ {
+  hasWord_ = !!value_;
+}
+@synthesize word;
+- (void) dealloc {
+  self.word = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.wordId = 0;
+    self.word_type = GC_BannedWordTypeGC_BANNED_WORD_DISABLE_WORD;
+    self.word = @"";
+  }
+  return self;
+}
+static CMsgGCBannedWord* defaultCMsgGCBannedWordInstance = nil;
++ (void) initialize {
+  if (self == [CMsgGCBannedWord class]) {
+    defaultCMsgGCBannedWordInstance = [[CMsgGCBannedWord alloc] init];
+  }
+}
++ (CMsgGCBannedWord*) defaultInstance {
+  return defaultCMsgGCBannedWordInstance;
+}
+- (CMsgGCBannedWord*) defaultInstance {
+  return defaultCMsgGCBannedWordInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasWordId) {
+    [output writeUInt32:1 value:self.wordId];
+  }
+  if (self.hasword_type) {
+    [output writeEnum:2 value:self.word_type];
+  }
+  if (self.hasWord) {
+    [output writeString:3 value:self.word];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasWordId) {
+    size_ += computeUInt32Size(1, self.wordId);
+  }
+  if (self.hasword_type) {
+    size_ += computeEnumSize(2, self.word_type);
+  }
+  if (self.hasWord) {
+    size_ += computeStringSize(3, self.word);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgGCBannedWord*) parseFromData:(NSData*) data {
+  return (CMsgGCBannedWord*)[[[CMsgGCBannedWord builder] mergeFromData:data] build];
+}
++ (CMsgGCBannedWord*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCBannedWord*)[[[CMsgGCBannedWord builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCBannedWord*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgGCBannedWord*)[[[CMsgGCBannedWord builder] mergeFromInputStream:input] build];
+}
++ (CMsgGCBannedWord*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCBannedWord*)[[[CMsgGCBannedWord builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCBannedWord*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgGCBannedWord*)[[[CMsgGCBannedWord builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgGCBannedWord*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCBannedWord*)[[[CMsgGCBannedWord builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCBannedWord_Builder*) builder {
+  return [[[CMsgGCBannedWord_Builder alloc] init] autorelease];
+}
++ (CMsgGCBannedWord_Builder*) builderWithPrototype:(CMsgGCBannedWord*) prototype {
+  return [[CMsgGCBannedWord builder] mergeFrom:prototype];
+}
+- (CMsgGCBannedWord_Builder*) builder {
+  return [CMsgGCBannedWord builder];
+}
+- (CMsgGCBannedWord_Builder*) toBuilder {
+  return [CMsgGCBannedWord builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasWordId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"wordId", [NSNumber numberWithInt:self.wordId]];
+  }
+  if (self.hasword_type) {
+    [output appendFormat:@"%@%@: %d\n", indent, @"word_type", self.word_type];
+  }
+  if (self.hasWord) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"word", self.word];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgGCBannedWord class]]) {
+    return NO;
+  }
+  CMsgGCBannedWord *otherMessage = other;
+  return
+      self.hasWordId == otherMessage.hasWordId &&
+      (!self.hasWordId || self.wordId == otherMessage.wordId) &&
+      self.hasword_type == otherMessage.hasword_type &&
+      (!self.hasword_type || self.word_type == otherMessage.word_type) &&
+      self.hasWord == otherMessage.hasWord &&
+      (!self.hasWord || [self.word isEqual:otherMessage.word]) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasWordId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.wordId] hash];
+  }
+  if (self.hasword_type) {
+    hashCode = hashCode * 31 + self.word_type;
+  }
+  if (self.hasWord) {
+    hashCode = hashCode * 31 + [self.word hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgGCBannedWord_Builder()
+@property (retain) CMsgGCBannedWord* _builderResult;
+@end
+
+@implementation CMsgGCBannedWord_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgGCBannedWord alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgGCBannedWord_Builder*) clear {
+  _builderResult = [[[CMsgGCBannedWord alloc] init] autorelease];
+  return self;
+}
+- (CMsgGCBannedWord_Builder*) clone {
+  return [CMsgGCBannedWord builderWithPrototype:_builderResult];
+}
+- (CMsgGCBannedWord*) defaultInstance {
+  return [CMsgGCBannedWord defaultInstance];
+}
+- (CMsgGCBannedWord*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgGCBannedWord*) buildPartial {
+  CMsgGCBannedWord* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgGCBannedWord_Builder*) mergeFrom:(CMsgGCBannedWord*) other {
+  if (other == [CMsgGCBannedWord defaultInstance]) {
+    return self;
+  }
+  if (other.hasWordId) {
+    [self setWordId:other.wordId];
+  }
+  if (other.hasword_type) {
+    [self setword_type:other.word_type];
+  }
+  if (other.hasWord) {
+    [self setWord:other.word];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgGCBannedWord_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgGCBannedWord_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setWordId:[input readUInt32]];
+        break;
+      }
+      case 16: {
+        int32_t value = [input readEnum];
+        if (GC_BannedWordTypeIsValidValue(value)) {
+          [self setword_type:value];
+        } else {
+          [unknownFields mergeVarintField:2 value:value];
+        }
+        break;
+      }
+      case 26: {
+        [self setWord:[input readString]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasWordId {
+  return _builderResult.hasWordId;
+}
+- (uint32_t) wordId {
+  return _builderResult.wordId;
+}
+- (CMsgGCBannedWord_Builder*) setWordId:(uint32_t) value {
+  _builderResult.hasWordId = YES;
+  _builderResult.wordId = value;
+  return self;
+}
+- (CMsgGCBannedWord_Builder*) clearWordId {
+  _builderResult.hasWordId = NO;
+  _builderResult.wordId = 0;
+  return self;
+}
+- (BOOL) hasword_type {
+  return _builderResult.hasword_type;
+}
+- (GC_BannedWordType) word_type {
+  return _builderResult.word_type;
+}
+- (CMsgGCBannedWord_Builder*) setword_type:(GC_BannedWordType) value {
+  _builderResult.hasword_type = YES;
+  _builderResult.word_type = value;
+  return self;
+}
+- (CMsgGCBannedWord_Builder*) clearword_type {
+  _builderResult.hasword_type = NO;
+  _builderResult.word_type = GC_BannedWordTypeGC_BANNED_WORD_DISABLE_WORD;
+  return self;
+}
+- (BOOL) hasWord {
+  return _builderResult.hasWord;
+}
+- (NSString*) word {
+  return _builderResult.word;
+}
+- (CMsgGCBannedWord_Builder*) setWord:(NSString*) value {
+  _builderResult.hasWord = YES;
+  _builderResult.word = value;
+  return self;
+}
+- (CMsgGCBannedWord_Builder*) clearWord {
+  _builderResult.hasWord = NO;
+  _builderResult.word = @"";
+  return self;
+}
+@end
+
+@interface CMsgGCBannedWordListResponse ()
+@property uint32_t banListGroupId;
+@property (retain) PBAppendableArray * wordListArray;
+@end
+
+@implementation CMsgGCBannedWordListResponse
+
+- (BOOL) hasBanListGroupId {
+  return !!hasBanListGroupId_;
+}
+- (void) setHasBanListGroupId:(BOOL) value_ {
+  hasBanListGroupId_ = !!value_;
+}
+@synthesize banListGroupId;
+@synthesize wordListArray;
+@dynamic wordList;
+- (void) dealloc {
+  self.wordListArray = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.banListGroupId = 0;
+  }
+  return self;
+}
+static CMsgGCBannedWordListResponse* defaultCMsgGCBannedWordListResponseInstance = nil;
++ (void) initialize {
+  if (self == [CMsgGCBannedWordListResponse class]) {
+    defaultCMsgGCBannedWordListResponseInstance = [[CMsgGCBannedWordListResponse alloc] init];
+  }
+}
++ (CMsgGCBannedWordListResponse*) defaultInstance {
+  return defaultCMsgGCBannedWordListResponseInstance;
+}
+- (CMsgGCBannedWordListResponse*) defaultInstance {
+  return defaultCMsgGCBannedWordListResponseInstance;
+}
+- (PBArray *)wordList {
+  return wordListArray;
+}
+- (CMsgGCBannedWord*)wordListAtIndex:(NSUInteger)index {
+  return [wordListArray objectAtIndex:index];
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasBanListGroupId) {
+    [output writeUInt32:1 value:self.banListGroupId];
+  }
+  for (CMsgGCBannedWord *element in self.wordListArray) {
+    [output writeMessage:2 value:element];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasBanListGroupId) {
+    size_ += computeUInt32Size(1, self.banListGroupId);
+  }
+  for (CMsgGCBannedWord *element in self.wordListArray) {
+    size_ += computeMessageSize(2, element);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgGCBannedWordListResponse*) parseFromData:(NSData*) data {
+  return (CMsgGCBannedWordListResponse*)[[[CMsgGCBannedWordListResponse builder] mergeFromData:data] build];
+}
++ (CMsgGCBannedWordListResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCBannedWordListResponse*)[[[CMsgGCBannedWordListResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCBannedWordListResponse*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgGCBannedWordListResponse*)[[[CMsgGCBannedWordListResponse builder] mergeFromInputStream:input] build];
+}
++ (CMsgGCBannedWordListResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCBannedWordListResponse*)[[[CMsgGCBannedWordListResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCBannedWordListResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgGCBannedWordListResponse*)[[[CMsgGCBannedWordListResponse builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgGCBannedWordListResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCBannedWordListResponse*)[[[CMsgGCBannedWordListResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCBannedWordListResponse_Builder*) builder {
+  return [[[CMsgGCBannedWordListResponse_Builder alloc] init] autorelease];
+}
++ (CMsgGCBannedWordListResponse_Builder*) builderWithPrototype:(CMsgGCBannedWordListResponse*) prototype {
+  return [[CMsgGCBannedWordListResponse builder] mergeFrom:prototype];
+}
+- (CMsgGCBannedWordListResponse_Builder*) builder {
+  return [CMsgGCBannedWordListResponse builder];
+}
+- (CMsgGCBannedWordListResponse_Builder*) toBuilder {
+  return [CMsgGCBannedWordListResponse builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasBanListGroupId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"banListGroupId", [NSNumber numberWithInt:self.banListGroupId]];
+  }
+  for (CMsgGCBannedWord* element in self.wordListArray) {
+    [output appendFormat:@"%@%@ {\n", indent, @"wordList"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgGCBannedWordListResponse class]]) {
+    return NO;
+  }
+  CMsgGCBannedWordListResponse *otherMessage = other;
+  return
+      self.hasBanListGroupId == otherMessage.hasBanListGroupId &&
+      (!self.hasBanListGroupId || self.banListGroupId == otherMessage.banListGroupId) &&
+      [self.wordListArray isEqualToArray:otherMessage.wordListArray] &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasBanListGroupId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.banListGroupId] hash];
+  }
+  for (CMsgGCBannedWord* element in self.wordListArray) {
+    hashCode = hashCode * 31 + [element hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgGCBannedWordListResponse_Builder()
+@property (retain) CMsgGCBannedWordListResponse* _builderResult;
+@end
+
+@implementation CMsgGCBannedWordListResponse_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgGCBannedWordListResponse alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgGCBannedWordListResponse_Builder*) clear {
+  _builderResult = [[[CMsgGCBannedWordListResponse alloc] init] autorelease];
+  return self;
+}
+- (CMsgGCBannedWordListResponse_Builder*) clone {
+  return [CMsgGCBannedWordListResponse builderWithPrototype:_builderResult];
+}
+- (CMsgGCBannedWordListResponse*) defaultInstance {
+  return [CMsgGCBannedWordListResponse defaultInstance];
+}
+- (CMsgGCBannedWordListResponse*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgGCBannedWordListResponse*) buildPartial {
+  CMsgGCBannedWordListResponse* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgGCBannedWordListResponse_Builder*) mergeFrom:(CMsgGCBannedWordListResponse*) other {
+  if (other == [CMsgGCBannedWordListResponse defaultInstance]) {
+    return self;
+  }
+  if (other.hasBanListGroupId) {
+    [self setBanListGroupId:other.banListGroupId];
+  }
+  if (other.wordListArray.count > 0) {
+    if (_builderResult.wordListArray == nil) {
+      _builderResult.wordListArray = [[other.wordListArray copyWithZone:[other.wordListArray zone]] autorelease];
+    } else {
+      [_builderResult.wordListArray appendArray:other.wordListArray];
+    }
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgGCBannedWordListResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgGCBannedWordListResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setBanListGroupId:[input readUInt32]];
+        break;
+      }
+      case 18: {
+        CMsgGCBannedWord_Builder* subBuilder = [CMsgGCBannedWord builder];
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self addWordList:[subBuilder buildPartial]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasBanListGroupId {
+  return _builderResult.hasBanListGroupId;
+}
+- (uint32_t) banListGroupId {
+  return _builderResult.banListGroupId;
+}
+- (CMsgGCBannedWordListResponse_Builder*) setBanListGroupId:(uint32_t) value {
+  _builderResult.hasBanListGroupId = YES;
+  _builderResult.banListGroupId = value;
+  return self;
+}
+- (CMsgGCBannedWordListResponse_Builder*) clearBanListGroupId {
+  _builderResult.hasBanListGroupId = NO;
+  _builderResult.banListGroupId = 0;
+  return self;
+}
+- (PBAppendableArray *)wordList {
+  return _builderResult.wordListArray;
+}
+- (CMsgGCBannedWord*)wordListAtIndex:(NSUInteger)index {
+  return [_builderResult wordListAtIndex:index];
+}
+- (CMsgGCBannedWordListResponse_Builder *)addWordList:(CMsgGCBannedWord*)value {
+  if (_builderResult.wordListArray == nil) {
+    _builderResult.wordListArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  }
+  [_builderResult.wordListArray addObject:value];
+  return self;
+}
+- (CMsgGCBannedWordListResponse_Builder *)setWordListArray:(NSArray *)array {
+  _builderResult.wordListArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgGCBannedWordListResponse_Builder *)setWordListValues:(const CMsgGCBannedWord* *)values count:(NSUInteger)count {
+  _builderResult.wordListArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgGCBannedWordListResponse_Builder *)clearWordList {
+  _builderResult.wordListArray = nil;
+  return self;
+}
+@end
+
+@interface CMsgGCToGCBannedWordListBroadcast ()
+@property (retain) CMsgGCBannedWordListResponse* broadcast;
+@end
+
+@implementation CMsgGCToGCBannedWordListBroadcast
+
+- (BOOL) hasBroadcast {
+  return !!hasBroadcast_;
+}
+- (void) setHasBroadcast:(BOOL) value_ {
+  hasBroadcast_ = !!value_;
+}
+@synthesize broadcast;
+- (void) dealloc {
+  self.broadcast = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.broadcast = [CMsgGCBannedWordListResponse defaultInstance];
+  }
+  return self;
+}
+static CMsgGCToGCBannedWordListBroadcast* defaultCMsgGCToGCBannedWordListBroadcastInstance = nil;
++ (void) initialize {
+  if (self == [CMsgGCToGCBannedWordListBroadcast class]) {
+    defaultCMsgGCToGCBannedWordListBroadcastInstance = [[CMsgGCToGCBannedWordListBroadcast alloc] init];
+  }
+}
++ (CMsgGCToGCBannedWordListBroadcast*) defaultInstance {
+  return defaultCMsgGCToGCBannedWordListBroadcastInstance;
+}
+- (CMsgGCToGCBannedWordListBroadcast*) defaultInstance {
+  return defaultCMsgGCToGCBannedWordListBroadcastInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasBroadcast) {
+    [output writeMessage:1 value:self.broadcast];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasBroadcast) {
+    size_ += computeMessageSize(1, self.broadcast);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgGCToGCBannedWordListBroadcast*) parseFromData:(NSData*) data {
+  return (CMsgGCToGCBannedWordListBroadcast*)[[[CMsgGCToGCBannedWordListBroadcast builder] mergeFromData:data] build];
+}
++ (CMsgGCToGCBannedWordListBroadcast*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCToGCBannedWordListBroadcast*)[[[CMsgGCToGCBannedWordListBroadcast builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCToGCBannedWordListBroadcast*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgGCToGCBannedWordListBroadcast*)[[[CMsgGCToGCBannedWordListBroadcast builder] mergeFromInputStream:input] build];
+}
++ (CMsgGCToGCBannedWordListBroadcast*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCToGCBannedWordListBroadcast*)[[[CMsgGCToGCBannedWordListBroadcast builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCToGCBannedWordListBroadcast*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgGCToGCBannedWordListBroadcast*)[[[CMsgGCToGCBannedWordListBroadcast builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgGCToGCBannedWordListBroadcast*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCToGCBannedWordListBroadcast*)[[[CMsgGCToGCBannedWordListBroadcast builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCToGCBannedWordListBroadcast_Builder*) builder {
+  return [[[CMsgGCToGCBannedWordListBroadcast_Builder alloc] init] autorelease];
+}
++ (CMsgGCToGCBannedWordListBroadcast_Builder*) builderWithPrototype:(CMsgGCToGCBannedWordListBroadcast*) prototype {
+  return [[CMsgGCToGCBannedWordListBroadcast builder] mergeFrom:prototype];
+}
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) builder {
+  return [CMsgGCToGCBannedWordListBroadcast builder];
+}
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) toBuilder {
+  return [CMsgGCToGCBannedWordListBroadcast builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasBroadcast) {
+    [output appendFormat:@"%@%@ {\n", indent, @"broadcast"];
+    [self.broadcast writeDescriptionTo:output
+                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgGCToGCBannedWordListBroadcast class]]) {
+    return NO;
+  }
+  CMsgGCToGCBannedWordListBroadcast *otherMessage = other;
+  return
+      self.hasBroadcast == otherMessage.hasBroadcast &&
+      (!self.hasBroadcast || [self.broadcast isEqual:otherMessage.broadcast]) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasBroadcast) {
+    hashCode = hashCode * 31 + [self.broadcast hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgGCToGCBannedWordListBroadcast_Builder()
+@property (retain) CMsgGCToGCBannedWordListBroadcast* _builderResult;
+@end
+
+@implementation CMsgGCToGCBannedWordListBroadcast_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgGCToGCBannedWordListBroadcast alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) clear {
+  _builderResult = [[[CMsgGCToGCBannedWordListBroadcast alloc] init] autorelease];
+  return self;
+}
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) clone {
+  return [CMsgGCToGCBannedWordListBroadcast builderWithPrototype:_builderResult];
+}
+- (CMsgGCToGCBannedWordListBroadcast*) defaultInstance {
+  return [CMsgGCToGCBannedWordListBroadcast defaultInstance];
+}
+- (CMsgGCToGCBannedWordListBroadcast*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgGCToGCBannedWordListBroadcast*) buildPartial {
+  CMsgGCToGCBannedWordListBroadcast* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) mergeFrom:(CMsgGCToGCBannedWordListBroadcast*) other {
+  if (other == [CMsgGCToGCBannedWordListBroadcast defaultInstance]) {
+    return self;
+  }
+  if (other.hasBroadcast) {
+    [self mergeBroadcast:other.broadcast];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 10: {
+        CMsgGCBannedWordListResponse_Builder* subBuilder = [CMsgGCBannedWordListResponse builder];
+        if (self.hasBroadcast) {
+          [subBuilder mergeFrom:self.broadcast];
+        }
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self setBroadcast:[subBuilder buildPartial]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasBroadcast {
+  return _builderResult.hasBroadcast;
+}
+- (CMsgGCBannedWordListResponse*) broadcast {
+  return _builderResult.broadcast;
+}
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) setBroadcast:(CMsgGCBannedWordListResponse*) value {
+  _builderResult.hasBroadcast = YES;
+  _builderResult.broadcast = value;
+  return self;
+}
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) setBroadcastBuilder:(CMsgGCBannedWordListResponse_Builder*) builderForValue {
+  return [self setBroadcast:[builderForValue build]];
+}
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) mergeBroadcast:(CMsgGCBannedWordListResponse*) value {
+  if (_builderResult.hasBroadcast &&
+      _builderResult.broadcast != [CMsgGCBannedWordListResponse defaultInstance]) {
+    _builderResult.broadcast =
+      [[[CMsgGCBannedWordListResponse builderWithPrototype:_builderResult.broadcast] mergeFrom:value] buildPartial];
+  } else {
+    _builderResult.broadcast = value;
+  }
+  _builderResult.hasBroadcast = YES;
+  return self;
+}
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) clearBroadcast {
+  _builderResult.hasBroadcast = NO;
+  _builderResult.broadcast = [CMsgGCBannedWordListResponse defaultInstance];
   return self;
 }
 @end

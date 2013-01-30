@@ -59,7 +59,6 @@ enum EGCItemMsg {
 	k_EMsgGCSaxxyBroadcast = 1057;
 	k_EMsgGCBackpackSortFinished = 1058;
 	k_EMsgGCAdjustItemEquippedState = 1059;
-	k_EMsgGCRequestItemSchemaData = 1060;
 	k_EMsgGCCollectItem = 1061;
 	k_EMsgGCItemAcknowledged = 1062;
 	k_EMsgGCPresets_SelectPresetForClass = 1063;
@@ -117,6 +116,9 @@ enum EGCItemMsg {
 	k_EMsgGCStorePurchaseQueryTxnResponse = 2509;
 	k_EMsgGCStorePurchaseInit = 2510;
 	k_EMsgGCStorePurchaseInitResponse = 2511;
+	k_EMsgGCBannedWordListRequest = 2512;
+	k_EMsgGCBannedWordListResponse = 2513;
+	k_EMsgGCToGCBannedWordListBroadcast = 2514;
 }
 
 enum EGCMsgResponse {

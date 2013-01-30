@@ -153,6 +153,20 @@
 @class CMsgClientEmailChangeResponse;
 @class CMsgClientEmailChangeResponse_Builder;
 @class CMsgClientEmailChange_Builder;
+@class CMsgClientFSGetFriendMessageHistory;
+@class CMsgClientFSGetFriendMessageHistoryForOfflineMessages;
+@class CMsgClientFSGetFriendMessageHistoryForOfflineMessages_Builder;
+@class CMsgClientFSGetFriendMessageHistoryResponse;
+@class CMsgClientFSGetFriendMessageHistoryResponse_Builder;
+@class CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage;
+@class CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder;
+@class CMsgClientFSGetFriendMessageHistory_Builder;
+@class CMsgClientFSGetFriendsSteamLevels;
+@class CMsgClientFSGetFriendsSteamLevelsResponse;
+@class CMsgClientFSGetFriendsSteamLevelsResponse_Builder;
+@class CMsgClientFSGetFriendsSteamLevelsResponse_Friend;
+@class CMsgClientFSGetFriendsSteamLevelsResponse_Friend_Builder;
+@class CMsgClientFSGetFriendsSteamLevels_Builder;
 @class CMsgClientFriendMsg;
 @class CMsgClientFriendMsgIncoming;
 @class CMsgClientFriendMsgIncoming_Builder;
@@ -285,6 +299,10 @@
 @class CMsgClientMDSRegisterAppBuildResponse;
 @class CMsgClientMDSRegisterAppBuildResponse_Builder;
 @class CMsgClientMDSRegisterAppBuild_Builder;
+@class CMsgClientMDSSignInstallScript;
+@class CMsgClientMDSSignInstallScriptResponse;
+@class CMsgClientMDSSignInstallScriptResponse_Builder;
+@class CMsgClientMDSSignInstallScript_Builder;
 @class CMsgClientMDSTransmitManifestDataChunk;
 @class CMsgClientMDSTransmitManifestDataChunk_Builder;
 @class CMsgClientMDSUploadDepotChunks;
@@ -361,6 +379,8 @@
 @class CMsgClientOGSReportBug_Builder;
 @class CMsgClientOGSReportString;
 @class CMsgClientOGSReportString_Builder;
+@class CMsgClientOfflineMessageNotification;
+@class CMsgClientOfflineMessageNotification_Builder;
 @class CMsgClientP2PConnectionFailInfo;
 @class CMsgClientP2PConnectionFailInfo_Builder;
 @class CMsgClientP2PConnectionInfo;
@@ -437,6 +457,8 @@
 @class CMsgClientRequestOAuthTokenForAppResponse;
 @class CMsgClientRequestOAuthTokenForAppResponse_Builder;
 @class CMsgClientRequestOAuthTokenForApp_Builder;
+@class CMsgClientRequestOfflineMessageCount;
+@class CMsgClientRequestOfflineMessageCount_Builder;
 @class CMsgClientRequestWebAPIAuthenticateUserNonce;
 @class CMsgClientRequestWebAPIAuthenticateUserNonceResponse;
 @class CMsgClientRequestWebAPIAuthenticateUserNonceResponse_Builder;
@@ -9905,10 +9927,10 @@
 
 @interface CMsgClientReportOverlayDetourFailure : PBGeneratedMessage {
 @private
-  PBAppendableArray * failureStringArray;
+  PBAppendableArray * failureStringsArray;
 }
-@property (readonly, retain) PBArray * failureString;
-- (NSString*)failureStringAtIndex:(NSUInteger)index;
+@property (readonly, retain) PBArray * failureStrings;
+- (NSString*)failureStringsAtIndex:(NSUInteger)index;
 
 + (CMsgClientReportOverlayDetourFailure*) defaultInstance;
 - (CMsgClientReportOverlayDetourFailure*) defaultInstance;
@@ -9945,12 +9967,12 @@
 - (CMsgClientReportOverlayDetourFailure_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
 - (CMsgClientReportOverlayDetourFailure_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
 
-- (PBAppendableArray *)failureString;
-- (NSString*)failureStringAtIndex:(NSUInteger)index;
-- (CMsgClientReportOverlayDetourFailure_Builder *)addFailureString:(NSString*)value;
-- (CMsgClientReportOverlayDetourFailure_Builder *)setFailureStringArray:(NSArray *)array;
-- (CMsgClientReportOverlayDetourFailure_Builder *)setFailureStringValues:(const NSString* *)values count:(NSUInteger)count;
-- (CMsgClientReportOverlayDetourFailure_Builder *)clearFailureString;
+- (PBAppendableArray *)failureStrings;
+- (NSString*)failureStringsAtIndex:(NSUInteger)index;
+- (CMsgClientReportOverlayDetourFailure_Builder *)addFailureStrings:(NSString*)value;
+- (CMsgClientReportOverlayDetourFailure_Builder *)setFailureStringsArray:(NSArray *)array;
+- (CMsgClientReportOverlayDetourFailure_Builder *)setFailureStringsValues:(const NSString* *)values count:(NSUInteger)count;
+- (CMsgClientReportOverlayDetourFailure_Builder *)clearFailureStrings;
 @end
 
 @interface CMsgClientGetClientDetailsResponse : PBGeneratedMessage {
@@ -15451,6 +15473,7 @@
   uint32_t width;
   uint32_t height;
   uint32_t permissions;
+  PBAppendableArray * taggedPublishedfileidArray;
   PBAppendableArray * taggedSteamidArray;
   PBAppendableArray * tagArray;
 }
@@ -15476,8 +15499,10 @@
 @property (readonly, retain) PBArray * tag;
 @property (readonly, retain) PBArray * taggedSteamid;
 - (BOOL) spoilerTag;
+@property (readonly, retain) PBArray * taggedPublishedfileid;
 - (CMsgClientUCMAddScreenshot_Tag*)tagAtIndex:(NSUInteger)index;
 - (uint64_t)taggedSteamidAtIndex:(NSUInteger)index;
+- (uint64_t)taggedPublishedfileidAtIndex:(NSUInteger)index;
 
 + (CMsgClientUCMAddScreenshot*) defaultInstance;
 - (CMsgClientUCMAddScreenshot*) defaultInstance;
@@ -15635,6 +15660,13 @@
 - (BOOL) spoilerTag;
 - (CMsgClientUCMAddScreenshot_Builder*) setSpoilerTag:(BOOL) value;
 - (CMsgClientUCMAddScreenshot_Builder*) clearSpoilerTag;
+
+- (PBAppendableArray *)taggedPublishedfileid;
+- (uint64_t)taggedPublishedfileidAtIndex:(NSUInteger)index;
+- (CMsgClientUCMAddScreenshot_Builder *)addTaggedPublishedfileid:(uint64_t)value;
+- (CMsgClientUCMAddScreenshot_Builder *)setTaggedPublishedfileidArray:(NSArray *)array;
+- (CMsgClientUCMAddScreenshot_Builder *)setTaggedPublishedfileidValues:(const uint64_t *)values count:(NSUInteger)count;
+- (CMsgClientUCMAddScreenshot_Builder *)clearTaggedPublishedfileid;
 @end
 
 @interface CMsgClientUCMAddScreenshotResponse : PBGeneratedMessage {
@@ -16915,13 +16947,21 @@
 @private
   BOOL hasAppId_:1;
   BOOL hasStartIndex_:1;
+  BOOL hasListType_:1;
+  BOOL hasMatchingFileType_:1;
   uint32_t appId;
   uint32_t startIndex;
+  uint32_t listType;
+  uint32_t matchingFileType;
 }
 - (BOOL) hasAppId;
 - (BOOL) hasStartIndex;
+- (BOOL) hasListType;
+- (BOOL) hasMatchingFileType;
 @property (readonly) uint32_t appId;
 @property (readonly) uint32_t startIndex;
+@property (readonly) uint32_t listType;
+@property (readonly) uint32_t matchingFileType;
 
 + (CMsgClientUCMEnumerateUserSubscribedFiles*) defaultInstance;
 - (CMsgClientUCMEnumerateUserSubscribedFiles*) defaultInstance;
@@ -16967,6 +17007,16 @@
 - (uint32_t) startIndex;
 - (CMsgClientUCMEnumerateUserSubscribedFiles_Builder*) setStartIndex:(uint32_t) value;
 - (CMsgClientUCMEnumerateUserSubscribedFiles_Builder*) clearStartIndex;
+
+- (BOOL) hasListType;
+- (uint32_t) listType;
+- (CMsgClientUCMEnumerateUserSubscribedFiles_Builder*) setListType:(uint32_t) value;
+- (CMsgClientUCMEnumerateUserSubscribedFiles_Builder*) clearListType;
+
+- (BOOL) hasMatchingFileType;
+- (uint32_t) matchingFileType;
+- (CMsgClientUCMEnumerateUserSubscribedFiles_Builder*) setMatchingFileType:(uint32_t) value;
+- (CMsgClientUCMEnumerateUserSubscribedFiles_Builder*) clearMatchingFileType;
 @end
 
 @interface CMsgClientUCMEnumerateUserSubscribedFilesResponse : PBGeneratedMessage {
@@ -21736,6 +21786,131 @@
 - (CMsgMDSSetAppBuildLiveResponse_Builder*) clearErrorString;
 @end
 
+@interface CMsgClientMDSSignInstallScript : PBGeneratedMessage {
+@private
+  BOOL hasDepotId_:1;
+  BOOL hasData_:1;
+  int32_t depotId;
+  NSString* data;
+}
+- (BOOL) hasDepotId;
+- (BOOL) hasData;
+@property (readonly) int32_t depotId;
+@property (readonly, retain) NSString* data;
+
++ (CMsgClientMDSSignInstallScript*) defaultInstance;
+- (CMsgClientMDSSignInstallScript*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgClientMDSSignInstallScript_Builder*) builder;
++ (CMsgClientMDSSignInstallScript_Builder*) builder;
++ (CMsgClientMDSSignInstallScript_Builder*) builderWithPrototype:(CMsgClientMDSSignInstallScript*) prototype;
+- (CMsgClientMDSSignInstallScript_Builder*) toBuilder;
+
++ (CMsgClientMDSSignInstallScript*) parseFromData:(NSData*) data;
++ (CMsgClientMDSSignInstallScript*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientMDSSignInstallScript*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgClientMDSSignInstallScript*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientMDSSignInstallScript*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgClientMDSSignInstallScript*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgClientMDSSignInstallScript_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgClientMDSSignInstallScript* _builderResult;
+}
+
+- (CMsgClientMDSSignInstallScript*) defaultInstance;
+
+- (CMsgClientMDSSignInstallScript_Builder*) clear;
+- (CMsgClientMDSSignInstallScript_Builder*) clone;
+
+- (CMsgClientMDSSignInstallScript*) build;
+- (CMsgClientMDSSignInstallScript*) buildPartial;
+
+- (CMsgClientMDSSignInstallScript_Builder*) mergeFrom:(CMsgClientMDSSignInstallScript*) other;
+- (CMsgClientMDSSignInstallScript_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgClientMDSSignInstallScript_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasDepotId;
+- (int32_t) depotId;
+- (CMsgClientMDSSignInstallScript_Builder*) setDepotId:(int32_t) value;
+- (CMsgClientMDSSignInstallScript_Builder*) clearDepotId;
+
+- (BOOL) hasData;
+- (NSString*) data;
+- (CMsgClientMDSSignInstallScript_Builder*) setData:(NSString*) value;
+- (CMsgClientMDSSignInstallScript_Builder*) clearData;
+@end
+
+@interface CMsgClientMDSSignInstallScriptResponse : PBGeneratedMessage {
+@private
+  BOOL hasEresult_:1;
+  BOOL hasErrorString_:1;
+  BOOL hasData_:1;
+  int32_t eresult;
+  NSString* errorString;
+  NSString* data;
+}
+- (BOOL) hasEresult;
+- (BOOL) hasErrorString;
+- (BOOL) hasData;
+@property (readonly) int32_t eresult;
+@property (readonly, retain) NSString* errorString;
+@property (readonly, retain) NSString* data;
+
++ (CMsgClientMDSSignInstallScriptResponse*) defaultInstance;
+- (CMsgClientMDSSignInstallScriptResponse*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgClientMDSSignInstallScriptResponse_Builder*) builder;
++ (CMsgClientMDSSignInstallScriptResponse_Builder*) builder;
++ (CMsgClientMDSSignInstallScriptResponse_Builder*) builderWithPrototype:(CMsgClientMDSSignInstallScriptResponse*) prototype;
+- (CMsgClientMDSSignInstallScriptResponse_Builder*) toBuilder;
+
++ (CMsgClientMDSSignInstallScriptResponse*) parseFromData:(NSData*) data;
++ (CMsgClientMDSSignInstallScriptResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientMDSSignInstallScriptResponse*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgClientMDSSignInstallScriptResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientMDSSignInstallScriptResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgClientMDSSignInstallScriptResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgClientMDSSignInstallScriptResponse_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgClientMDSSignInstallScriptResponse* _builderResult;
+}
+
+- (CMsgClientMDSSignInstallScriptResponse*) defaultInstance;
+
+- (CMsgClientMDSSignInstallScriptResponse_Builder*) clear;
+- (CMsgClientMDSSignInstallScriptResponse_Builder*) clone;
+
+- (CMsgClientMDSSignInstallScriptResponse*) build;
+- (CMsgClientMDSSignInstallScriptResponse*) buildPartial;
+
+- (CMsgClientMDSSignInstallScriptResponse_Builder*) mergeFrom:(CMsgClientMDSSignInstallScriptResponse*) other;
+- (CMsgClientMDSSignInstallScriptResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgClientMDSSignInstallScriptResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasEresult;
+- (int32_t) eresult;
+- (CMsgClientMDSSignInstallScriptResponse_Builder*) setEresult:(int32_t) value;
+- (CMsgClientMDSSignInstallScriptResponse_Builder*) clearEresult;
+
+- (BOOL) hasErrorString;
+- (NSString*) errorString;
+- (CMsgClientMDSSignInstallScriptResponse_Builder*) setErrorString:(NSString*) value;
+- (CMsgClientMDSSignInstallScriptResponse_Builder*) clearErrorString;
+
+- (BOOL) hasData;
+- (NSString*) data;
+- (CMsgClientMDSSignInstallScriptResponse_Builder*) setData:(NSString*) value;
+- (CMsgClientMDSSignInstallScriptResponse_Builder*) clearData;
+@end
+
 @interface CMsgClientEmailChange : PBGeneratedMessage {
 @private
   BOOL hasFinal_:1;
@@ -23452,9 +23627,13 @@
 
 @interface CMsgGMSClientServerQueryResponse : PBGeneratedMessage {
 @private
+  BOOL hasError_:1;
+  NSString* error;
   PBAppendableArray * serversArray;
 }
+- (BOOL) hasError;
 @property (readonly, retain) PBArray * servers;
+@property (readonly, retain) NSString* error;
 - (CMsgGMSClientServerQueryResponse_Server*)serversAtIndex:(NSUInteger)index;
 
 + (CMsgGMSClientServerQueryResponse*) defaultInstance;
@@ -23565,6 +23744,11 @@
 - (CMsgGMSClientServerQueryResponse_Builder *)setServersArray:(NSArray *)array;
 - (CMsgGMSClientServerQueryResponse_Builder *)setServersValues:(const CMsgGMSClientServerQueryResponse_Server* *)values count:(NSUInteger)count;
 - (CMsgGMSClientServerQueryResponse_Builder *)clearServers;
+
+- (BOOL) hasError;
+- (NSString*) error;
+- (CMsgGMSClientServerQueryResponse_Builder*) setError:(NSString*) value;
+- (CMsgGMSClientServerQueryResponse_Builder*) clearError;
 @end
 
 @interface CMsgGameServerOutOfDate : PBGeneratedMessage {
@@ -25388,6 +25572,486 @@
 - (CMsgClientRequestCommentNotifications_Builder*) mergeFrom:(CMsgClientRequestCommentNotifications*) other;
 - (CMsgClientRequestCommentNotifications_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
 - (CMsgClientRequestCommentNotifications_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgClientOfflineMessageNotification : PBGeneratedMessage {
+@private
+  BOOL hasOfflineMessages_:1;
+  uint32_t offlineMessages;
+}
+- (BOOL) hasOfflineMessages;
+@property (readonly) uint32_t offlineMessages;
+
++ (CMsgClientOfflineMessageNotification*) defaultInstance;
+- (CMsgClientOfflineMessageNotification*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgClientOfflineMessageNotification_Builder*) builder;
++ (CMsgClientOfflineMessageNotification_Builder*) builder;
++ (CMsgClientOfflineMessageNotification_Builder*) builderWithPrototype:(CMsgClientOfflineMessageNotification*) prototype;
+- (CMsgClientOfflineMessageNotification_Builder*) toBuilder;
+
++ (CMsgClientOfflineMessageNotification*) parseFromData:(NSData*) data;
++ (CMsgClientOfflineMessageNotification*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientOfflineMessageNotification*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgClientOfflineMessageNotification*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientOfflineMessageNotification*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgClientOfflineMessageNotification*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgClientOfflineMessageNotification_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgClientOfflineMessageNotification* _builderResult;
+}
+
+- (CMsgClientOfflineMessageNotification*) defaultInstance;
+
+- (CMsgClientOfflineMessageNotification_Builder*) clear;
+- (CMsgClientOfflineMessageNotification_Builder*) clone;
+
+- (CMsgClientOfflineMessageNotification*) build;
+- (CMsgClientOfflineMessageNotification*) buildPartial;
+
+- (CMsgClientOfflineMessageNotification_Builder*) mergeFrom:(CMsgClientOfflineMessageNotification*) other;
+- (CMsgClientOfflineMessageNotification_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgClientOfflineMessageNotification_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasOfflineMessages;
+- (uint32_t) offlineMessages;
+- (CMsgClientOfflineMessageNotification_Builder*) setOfflineMessages:(uint32_t) value;
+- (CMsgClientOfflineMessageNotification_Builder*) clearOfflineMessages;
+@end
+
+@interface CMsgClientRequestOfflineMessageCount : PBGeneratedMessage {
+@private
+}
+
++ (CMsgClientRequestOfflineMessageCount*) defaultInstance;
+- (CMsgClientRequestOfflineMessageCount*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgClientRequestOfflineMessageCount_Builder*) builder;
++ (CMsgClientRequestOfflineMessageCount_Builder*) builder;
++ (CMsgClientRequestOfflineMessageCount_Builder*) builderWithPrototype:(CMsgClientRequestOfflineMessageCount*) prototype;
+- (CMsgClientRequestOfflineMessageCount_Builder*) toBuilder;
+
++ (CMsgClientRequestOfflineMessageCount*) parseFromData:(NSData*) data;
++ (CMsgClientRequestOfflineMessageCount*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientRequestOfflineMessageCount*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgClientRequestOfflineMessageCount*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientRequestOfflineMessageCount*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgClientRequestOfflineMessageCount*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgClientRequestOfflineMessageCount_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgClientRequestOfflineMessageCount* _builderResult;
+}
+
+- (CMsgClientRequestOfflineMessageCount*) defaultInstance;
+
+- (CMsgClientRequestOfflineMessageCount_Builder*) clear;
+- (CMsgClientRequestOfflineMessageCount_Builder*) clone;
+
+- (CMsgClientRequestOfflineMessageCount*) build;
+- (CMsgClientRequestOfflineMessageCount*) buildPartial;
+
+- (CMsgClientRequestOfflineMessageCount_Builder*) mergeFrom:(CMsgClientRequestOfflineMessageCount*) other;
+- (CMsgClientRequestOfflineMessageCount_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgClientRequestOfflineMessageCount_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgClientFSGetFriendMessageHistory : PBGeneratedMessage {
+@private
+  BOOL hasSteamid_:1;
+  uint64_t steamid;
+}
+- (BOOL) hasSteamid;
+@property (readonly) uint64_t steamid;
+
++ (CMsgClientFSGetFriendMessageHistory*) defaultInstance;
+- (CMsgClientFSGetFriendMessageHistory*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgClientFSGetFriendMessageHistory_Builder*) builder;
++ (CMsgClientFSGetFriendMessageHistory_Builder*) builder;
++ (CMsgClientFSGetFriendMessageHistory_Builder*) builderWithPrototype:(CMsgClientFSGetFriendMessageHistory*) prototype;
+- (CMsgClientFSGetFriendMessageHistory_Builder*) toBuilder;
+
++ (CMsgClientFSGetFriendMessageHistory*) parseFromData:(NSData*) data;
++ (CMsgClientFSGetFriendMessageHistory*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientFSGetFriendMessageHistory*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgClientFSGetFriendMessageHistory*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientFSGetFriendMessageHistory*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgClientFSGetFriendMessageHistory*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgClientFSGetFriendMessageHistory_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgClientFSGetFriendMessageHistory* _builderResult;
+}
+
+- (CMsgClientFSGetFriendMessageHistory*) defaultInstance;
+
+- (CMsgClientFSGetFriendMessageHistory_Builder*) clear;
+- (CMsgClientFSGetFriendMessageHistory_Builder*) clone;
+
+- (CMsgClientFSGetFriendMessageHistory*) build;
+- (CMsgClientFSGetFriendMessageHistory*) buildPartial;
+
+- (CMsgClientFSGetFriendMessageHistory_Builder*) mergeFrom:(CMsgClientFSGetFriendMessageHistory*) other;
+- (CMsgClientFSGetFriendMessageHistory_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgClientFSGetFriendMessageHistory_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasSteamid;
+- (uint64_t) steamid;
+- (CMsgClientFSGetFriendMessageHistory_Builder*) setSteamid:(uint64_t) value;
+- (CMsgClientFSGetFriendMessageHistory_Builder*) clearSteamid;
+@end
+
+@interface CMsgClientFSGetFriendMessageHistoryResponse : PBGeneratedMessage {
+@private
+  BOOL hasSteamid_:1;
+  BOOL hasSuccess_:1;
+  uint64_t steamid;
+  uint32_t success;
+  PBAppendableArray * messagesArray;
+}
+- (BOOL) hasSteamid;
+- (BOOL) hasSuccess;
+@property (readonly) uint64_t steamid;
+@property (readonly) uint32_t success;
+@property (readonly, retain) PBArray * messages;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*)messagesAtIndex:(NSUInteger)index;
+
++ (CMsgClientFSGetFriendMessageHistoryResponse*) defaultInstance;
+- (CMsgClientFSGetFriendMessageHistoryResponse*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgClientFSGetFriendMessageHistoryResponse_Builder*) builder;
++ (CMsgClientFSGetFriendMessageHistoryResponse_Builder*) builder;
++ (CMsgClientFSGetFriendMessageHistoryResponse_Builder*) builderWithPrototype:(CMsgClientFSGetFriendMessageHistoryResponse*) prototype;
+- (CMsgClientFSGetFriendMessageHistoryResponse_Builder*) toBuilder;
+
++ (CMsgClientFSGetFriendMessageHistoryResponse*) parseFromData:(NSData*) data;
++ (CMsgClientFSGetFriendMessageHistoryResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientFSGetFriendMessageHistoryResponse*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgClientFSGetFriendMessageHistoryResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientFSGetFriendMessageHistoryResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgClientFSGetFriendMessageHistoryResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage : PBGeneratedMessage {
+@private
+  BOOL hasUnread_:1;
+  BOOL hasMessage_:1;
+  BOOL hasAccountid_:1;
+  BOOL hasTimestamp_:1;
+  BOOL unread_:1;
+  NSString* message;
+  uint32_t accountid;
+  uint32_t timestamp;
+}
+- (BOOL) hasAccountid;
+- (BOOL) hasTimestamp;
+- (BOOL) hasMessage;
+- (BOOL) hasUnread;
+@property (readonly) uint32_t accountid;
+@property (readonly) uint32_t timestamp;
+@property (readonly, retain) NSString* message;
+- (BOOL) unread;
+
++ (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*) defaultInstance;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) builder;
++ (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) builder;
++ (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) builderWithPrototype:(CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*) prototype;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) toBuilder;
+
++ (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*) parseFromData:(NSData*) data;
++ (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage* _builderResult;
+}
+
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*) defaultInstance;
+
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) clear;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) clone;
+
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*) build;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*) buildPartial;
+
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) mergeFrom:(CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*) other;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasAccountid;
+- (uint32_t) accountid;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) setAccountid:(uint32_t) value;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) clearAccountid;
+
+- (BOOL) hasTimestamp;
+- (uint32_t) timestamp;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) setTimestamp:(uint32_t) value;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) clearTimestamp;
+
+- (BOOL) hasMessage;
+- (NSString*) message;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) setMessage:(NSString*) value;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) clearMessage;
+
+- (BOOL) hasUnread;
+- (BOOL) unread;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) setUnread:(BOOL) value;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage_Builder*) clearUnread;
+@end
+
+@interface CMsgClientFSGetFriendMessageHistoryResponse_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgClientFSGetFriendMessageHistoryResponse* _builderResult;
+}
+
+- (CMsgClientFSGetFriendMessageHistoryResponse*) defaultInstance;
+
+- (CMsgClientFSGetFriendMessageHistoryResponse_Builder*) clear;
+- (CMsgClientFSGetFriendMessageHistoryResponse_Builder*) clone;
+
+- (CMsgClientFSGetFriendMessageHistoryResponse*) build;
+- (CMsgClientFSGetFriendMessageHistoryResponse*) buildPartial;
+
+- (CMsgClientFSGetFriendMessageHistoryResponse_Builder*) mergeFrom:(CMsgClientFSGetFriendMessageHistoryResponse*) other;
+- (CMsgClientFSGetFriendMessageHistoryResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgClientFSGetFriendMessageHistoryResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasSteamid;
+- (uint64_t) steamid;
+- (CMsgClientFSGetFriendMessageHistoryResponse_Builder*) setSteamid:(uint64_t) value;
+- (CMsgClientFSGetFriendMessageHistoryResponse_Builder*) clearSteamid;
+
+- (BOOL) hasSuccess;
+- (uint32_t) success;
+- (CMsgClientFSGetFriendMessageHistoryResponse_Builder*) setSuccess:(uint32_t) value;
+- (CMsgClientFSGetFriendMessageHistoryResponse_Builder*) clearSuccess;
+
+- (PBAppendableArray *)messages;
+- (CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*)messagesAtIndex:(NSUInteger)index;
+- (CMsgClientFSGetFriendMessageHistoryResponse_Builder *)addMessages:(CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage*)value;
+- (CMsgClientFSGetFriendMessageHistoryResponse_Builder *)setMessagesArray:(NSArray *)array;
+- (CMsgClientFSGetFriendMessageHistoryResponse_Builder *)setMessagesValues:(const CMsgClientFSGetFriendMessageHistoryResponse_FriendMessage* *)values count:(NSUInteger)count;
+- (CMsgClientFSGetFriendMessageHistoryResponse_Builder *)clearMessages;
+@end
+
+@interface CMsgClientFSGetFriendMessageHistoryForOfflineMessages : PBGeneratedMessage {
+@private
+}
+
++ (CMsgClientFSGetFriendMessageHistoryForOfflineMessages*) defaultInstance;
+- (CMsgClientFSGetFriendMessageHistoryForOfflineMessages*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgClientFSGetFriendMessageHistoryForOfflineMessages_Builder*) builder;
++ (CMsgClientFSGetFriendMessageHistoryForOfflineMessages_Builder*) builder;
++ (CMsgClientFSGetFriendMessageHistoryForOfflineMessages_Builder*) builderWithPrototype:(CMsgClientFSGetFriendMessageHistoryForOfflineMessages*) prototype;
+- (CMsgClientFSGetFriendMessageHistoryForOfflineMessages_Builder*) toBuilder;
+
++ (CMsgClientFSGetFriendMessageHistoryForOfflineMessages*) parseFromData:(NSData*) data;
++ (CMsgClientFSGetFriendMessageHistoryForOfflineMessages*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientFSGetFriendMessageHistoryForOfflineMessages*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgClientFSGetFriendMessageHistoryForOfflineMessages*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientFSGetFriendMessageHistoryForOfflineMessages*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgClientFSGetFriendMessageHistoryForOfflineMessages*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgClientFSGetFriendMessageHistoryForOfflineMessages_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgClientFSGetFriendMessageHistoryForOfflineMessages* _builderResult;
+}
+
+- (CMsgClientFSGetFriendMessageHistoryForOfflineMessages*) defaultInstance;
+
+- (CMsgClientFSGetFriendMessageHistoryForOfflineMessages_Builder*) clear;
+- (CMsgClientFSGetFriendMessageHistoryForOfflineMessages_Builder*) clone;
+
+- (CMsgClientFSGetFriendMessageHistoryForOfflineMessages*) build;
+- (CMsgClientFSGetFriendMessageHistoryForOfflineMessages*) buildPartial;
+
+- (CMsgClientFSGetFriendMessageHistoryForOfflineMessages_Builder*) mergeFrom:(CMsgClientFSGetFriendMessageHistoryForOfflineMessages*) other;
+- (CMsgClientFSGetFriendMessageHistoryForOfflineMessages_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgClientFSGetFriendMessageHistoryForOfflineMessages_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgClientFSGetFriendsSteamLevels : PBGeneratedMessage {
+@private
+  PBAppendableArray * accountidsArray;
+}
+@property (readonly, retain) PBArray * accountids;
+- (uint32_t)accountidsAtIndex:(NSUInteger)index;
+
++ (CMsgClientFSGetFriendsSteamLevels*) defaultInstance;
+- (CMsgClientFSGetFriendsSteamLevels*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgClientFSGetFriendsSteamLevels_Builder*) builder;
++ (CMsgClientFSGetFriendsSteamLevels_Builder*) builder;
++ (CMsgClientFSGetFriendsSteamLevels_Builder*) builderWithPrototype:(CMsgClientFSGetFriendsSteamLevels*) prototype;
+- (CMsgClientFSGetFriendsSteamLevels_Builder*) toBuilder;
+
++ (CMsgClientFSGetFriendsSteamLevels*) parseFromData:(NSData*) data;
++ (CMsgClientFSGetFriendsSteamLevels*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientFSGetFriendsSteamLevels*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgClientFSGetFriendsSteamLevels*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientFSGetFriendsSteamLevels*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgClientFSGetFriendsSteamLevels*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgClientFSGetFriendsSteamLevels_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgClientFSGetFriendsSteamLevels* _builderResult;
+}
+
+- (CMsgClientFSGetFriendsSteamLevels*) defaultInstance;
+
+- (CMsgClientFSGetFriendsSteamLevels_Builder*) clear;
+- (CMsgClientFSGetFriendsSteamLevels_Builder*) clone;
+
+- (CMsgClientFSGetFriendsSteamLevels*) build;
+- (CMsgClientFSGetFriendsSteamLevels*) buildPartial;
+
+- (CMsgClientFSGetFriendsSteamLevels_Builder*) mergeFrom:(CMsgClientFSGetFriendsSteamLevels*) other;
+- (CMsgClientFSGetFriendsSteamLevels_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgClientFSGetFriendsSteamLevels_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (PBAppendableArray *)accountids;
+- (uint32_t)accountidsAtIndex:(NSUInteger)index;
+- (CMsgClientFSGetFriendsSteamLevels_Builder *)addAccountids:(uint32_t)value;
+- (CMsgClientFSGetFriendsSteamLevels_Builder *)setAccountidsArray:(NSArray *)array;
+- (CMsgClientFSGetFriendsSteamLevels_Builder *)setAccountidsValues:(const uint32_t *)values count:(NSUInteger)count;
+- (CMsgClientFSGetFriendsSteamLevels_Builder *)clearAccountids;
+@end
+
+@interface CMsgClientFSGetFriendsSteamLevelsResponse : PBGeneratedMessage {
+@private
+  PBAppendableArray * friendsArray;
+}
+@property (readonly, retain) PBArray * friends;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend*)friendsAtIndex:(NSUInteger)index;
+
++ (CMsgClientFSGetFriendsSteamLevelsResponse*) defaultInstance;
+- (CMsgClientFSGetFriendsSteamLevelsResponse*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Builder*) builder;
++ (CMsgClientFSGetFriendsSteamLevelsResponse_Builder*) builder;
++ (CMsgClientFSGetFriendsSteamLevelsResponse_Builder*) builderWithPrototype:(CMsgClientFSGetFriendsSteamLevelsResponse*) prototype;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Builder*) toBuilder;
+
++ (CMsgClientFSGetFriendsSteamLevelsResponse*) parseFromData:(NSData*) data;
++ (CMsgClientFSGetFriendsSteamLevelsResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientFSGetFriendsSteamLevelsResponse*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgClientFSGetFriendsSteamLevelsResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientFSGetFriendsSteamLevelsResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgClientFSGetFriendsSteamLevelsResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgClientFSGetFriendsSteamLevelsResponse_Friend : PBGeneratedMessage {
+@private
+  BOOL hasAccountid_:1;
+  BOOL hasLevel_:1;
+  uint32_t accountid;
+  uint32_t level;
+}
+- (BOOL) hasAccountid;
+- (BOOL) hasLevel;
+@property (readonly) uint32_t accountid;
+@property (readonly) uint32_t level;
+
++ (CMsgClientFSGetFriendsSteamLevelsResponse_Friend*) defaultInstance;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend_Builder*) builder;
++ (CMsgClientFSGetFriendsSteamLevelsResponse_Friend_Builder*) builder;
++ (CMsgClientFSGetFriendsSteamLevelsResponse_Friend_Builder*) builderWithPrototype:(CMsgClientFSGetFriendsSteamLevelsResponse_Friend*) prototype;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend_Builder*) toBuilder;
+
++ (CMsgClientFSGetFriendsSteamLevelsResponse_Friend*) parseFromData:(NSData*) data;
++ (CMsgClientFSGetFriendsSteamLevelsResponse_Friend*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientFSGetFriendsSteamLevelsResponse_Friend*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgClientFSGetFriendsSteamLevelsResponse_Friend*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgClientFSGetFriendsSteamLevelsResponse_Friend*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgClientFSGetFriendsSteamLevelsResponse_Friend*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgClientFSGetFriendsSteamLevelsResponse_Friend_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgClientFSGetFriendsSteamLevelsResponse_Friend* _builderResult;
+}
+
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend*) defaultInstance;
+
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend_Builder*) clear;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend_Builder*) clone;
+
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend*) build;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend*) buildPartial;
+
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend_Builder*) mergeFrom:(CMsgClientFSGetFriendsSteamLevelsResponse_Friend*) other;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasAccountid;
+- (uint32_t) accountid;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend_Builder*) setAccountid:(uint32_t) value;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend_Builder*) clearAccountid;
+
+- (BOOL) hasLevel;
+- (uint32_t) level;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend_Builder*) setLevel:(uint32_t) value;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend_Builder*) clearLevel;
+@end
+
+@interface CMsgClientFSGetFriendsSteamLevelsResponse_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgClientFSGetFriendsSteamLevelsResponse* _builderResult;
+}
+
+- (CMsgClientFSGetFriendsSteamLevelsResponse*) defaultInstance;
+
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Builder*) clear;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Builder*) clone;
+
+- (CMsgClientFSGetFriendsSteamLevelsResponse*) build;
+- (CMsgClientFSGetFriendsSteamLevelsResponse*) buildPartial;
+
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Builder*) mergeFrom:(CMsgClientFSGetFriendsSteamLevelsResponse*) other;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (PBAppendableArray *)friends;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Friend*)friendsAtIndex:(NSUInteger)index;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Builder *)addFriends:(CMsgClientFSGetFriendsSteamLevelsResponse_Friend*)value;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Builder *)setFriendsArray:(NSArray *)array;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Builder *)setFriendsValues:(const CMsgClientFSGetFriendsSteamLevelsResponse_Friend* *)values count:(NSUInteger)count;
+- (CMsgClientFSGetFriendsSteamLevelsResponse_Builder *)clearFriends;
 @end
 
 @interface CMsgClientEmailAddrInfo : PBGeneratedMessage {
@@ -27439,19 +28103,19 @@
 
 @interface CMsgClientServiceMethod : PBGeneratedMessage {
 @private
-  BOOL hasOneWay_:1;
+  BOOL hasIsNotification_:1;
   BOOL hasMethodName_:1;
   BOOL hasSerializedMethod_:1;
-  BOOL oneWay_:1;
+  BOOL isNotification_:1;
   NSString* methodName;
   NSString* serializedMethod;
 }
 - (BOOL) hasMethodName;
 - (BOOL) hasSerializedMethod;
-- (BOOL) hasOneWay;
+- (BOOL) hasIsNotification;
 @property (readonly, retain) NSString* methodName;
 @property (readonly, retain) NSString* serializedMethod;
-- (BOOL) oneWay;
+- (BOOL) isNotification;
 
 + (CMsgClientServiceMethod*) defaultInstance;
 - (CMsgClientServiceMethod*) defaultInstance;
@@ -27498,10 +28162,10 @@
 - (CMsgClientServiceMethod_Builder*) setSerializedMethod:(NSString*) value;
 - (CMsgClientServiceMethod_Builder*) clearSerializedMethod;
 
-- (BOOL) hasOneWay;
-- (BOOL) oneWay;
-- (CMsgClientServiceMethod_Builder*) setOneWay:(BOOL) value;
-- (CMsgClientServiceMethod_Builder*) clearOneWay;
+- (BOOL) hasIsNotification;
+- (BOOL) isNotification;
+- (CMsgClientServiceMethod_Builder*) setIsNotification:(BOOL) value;
+- (CMsgClientServiceMethod_Builder*) clearIsNotification;
 @end
 
 @interface CMsgClientServiceMethodResponse : PBGeneratedMessage {

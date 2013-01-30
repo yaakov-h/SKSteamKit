@@ -106,6 +106,9 @@ BOOL EGCToGCMsgIsValidValue(EGCToGCMsg value) {
     case EGCToGCMsgk_EGCToGCMsgMasterAckResponse:
     case EGCToGCMsgk_EGCToGCMsgRouted:
     case EGCToGCMsgk_EGCToGCMsgRoutedReply:
+    case EGCToGCMsgk_EMsgUpdateSessionIP:
+    case EGCToGCMsgk_EMsgRequestSessionIP:
+    case EGCToGCMsgk_EMsgRequestSessionIPResponse:
       return YES;
     default:
       return NO;

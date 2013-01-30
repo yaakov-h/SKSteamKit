@@ -1,3 +1,5 @@
+import "steammessages.proto";
+
 message CMsgSOSingleObject {
 	optional fixed64 owner = 1;
 	optional int32 type_id = 2;
@@ -7,6 +9,8 @@ message CMsgSOSingleObject {
 
 message CMsgSOMultipleObjects {
 	message SingleObject {
+		option (msgpool_soft_limit) = 256;
+		option (msgpool_hard_limit) = 1024;
 		optional int32 type_id = 1;
 		optional bytes object_data = 2;
 	}
@@ -87,5 +91,18 @@ message CGCToGCMsgRouted {
 message CGCToGCMsgRoutedReply {
 	optional uint32 msg_type = 1;
 	optional bytes net_message = 2;
+}
+
+message CMsgGCUpdateSessionIP {
+	optional fixed64 steamid = 1;
+	optional fixed32 ip = 2;
+}
+
+message CMsgGCRequestSessionIP {
+	optional fixed64 steamid = 1;
+}
+
+message CMsgGCRequestSessionIPResponse {
+	optional fixed32 ip = 1;
 }
 

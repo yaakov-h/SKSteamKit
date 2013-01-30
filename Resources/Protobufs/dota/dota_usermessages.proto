@@ -42,6 +42,9 @@ enum EDotaUserMessages {
 	DOTA_UM_HalloweenDrops = 100;
 	DOTA_UM_ChatWheel = 101;
 	DOTA_UM_ReceivedXmasGift = 102;
+	DOTA_UM_UpdateSharedContent = 103;
+	DOTA_UM_TutorialRequestExp = 104;
+	DOTA_UM_TutorialPingMinimap = 105;
 }
 
 enum DOTA_CHAT_MESSAGE {
@@ -518,5 +521,20 @@ message CDOTAUserMsg_ReceivedXmasGift {
 	optional int32 player_id = 1;
 	optional string item_name = 2;
 	optional int32 inventory_slot = 3;
+}
+
+message CDOTAUserMsg_UpdateSharedContent {
+	optional int32 slot_type = 1;
+}
+
+message CDOTAUserMsg_TutorialRequestExp {
+}
+
+message CDOTAUserMsg_TutorialPingMinimap {
+	optional uint32 player_id = 1;
+	optional float pos_x = 2;
+	optional float pos_y = 3;
+	optional float pos_z = 4;
+	optional int32 entity_index = 5;
 }
 

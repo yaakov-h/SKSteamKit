@@ -80,7 +80,6 @@ BOOL EGCItemMsgIsValidValue(EGCItemMsg value) {
     case EGCItemMsgk_EMsgGCSaxxyBroadcast:
     case EGCItemMsgk_EMsgGCBackpackSortFinished:
     case EGCItemMsgk_EMsgGCAdjustItemEquippedState:
-    case EGCItemMsgk_EMsgGCRequestItemSchemaData:
     case EGCItemMsgk_EMsgGCCollectItem:
     case EGCItemMsgk_EMsgGCItemAcknowledged:
     case EGCItemMsgk_EMsgGCPresets_SelectPresetForClass:
@@ -138,6 +137,9 @@ BOOL EGCItemMsgIsValidValue(EGCItemMsg value) {
     case EGCItemMsgk_EMsgGCStorePurchaseQueryTxnResponse:
     case EGCItemMsgk_EMsgGCStorePurchaseInit:
     case EGCItemMsgk_EMsgGCStorePurchaseInitResponse:
+    case EGCItemMsgk_EMsgGCBannedWordListRequest:
+    case EGCItemMsgk_EMsgGCBannedWordListResponse:
+    case EGCItemMsgk_EMsgGCToGCBannedWordListBroadcast:
       return YES;
     default:
       return NO;

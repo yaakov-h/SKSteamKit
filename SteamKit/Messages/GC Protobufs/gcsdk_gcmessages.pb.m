@@ -12,6 +12,7 @@ static PBExtensionRegistry* extensionRegistry = nil;
   if (self == [GcsdkGcmessagesRoot class]) {
     PBMutableExtensionRegistry* registry = [PBMutableExtensionRegistry registry];
     [self registerAllExtensions:registry];
+    [SteammessagesRoot registerAllExtensions:registry];
     extensionRegistry = [registry retain];
   }
 }
@@ -4724,6 +4725,673 @@ static CGCToGCMsgRoutedReply* defaultCGCToGCMsgRoutedReplyInstance = nil;
 - (CGCToGCMsgRoutedReply_Builder*) clearNetMessage {
   _builderResult.hasNetMessage = NO;
   _builderResult.netMessage = [NSData data];
+  return self;
+}
+@end
+
+@interface CMsgGCUpdateSessionIP ()
+@property uint64_t steamid;
+@property uint32_t ip;
+@end
+
+@implementation CMsgGCUpdateSessionIP
+
+- (BOOL) hasSteamid {
+  return !!hasSteamid_;
+}
+- (void) setHasSteamid:(BOOL) value_ {
+  hasSteamid_ = !!value_;
+}
+@synthesize steamid;
+- (BOOL) hasIp {
+  return !!hasIp_;
+}
+- (void) setHasIp:(BOOL) value_ {
+  hasIp_ = !!value_;
+}
+@synthesize ip;
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.steamid = 0L;
+    self.ip = 0;
+  }
+  return self;
+}
+static CMsgGCUpdateSessionIP* defaultCMsgGCUpdateSessionIPInstance = nil;
++ (void) initialize {
+  if (self == [CMsgGCUpdateSessionIP class]) {
+    defaultCMsgGCUpdateSessionIPInstance = [[CMsgGCUpdateSessionIP alloc] init];
+  }
+}
++ (CMsgGCUpdateSessionIP*) defaultInstance {
+  return defaultCMsgGCUpdateSessionIPInstance;
+}
+- (CMsgGCUpdateSessionIP*) defaultInstance {
+  return defaultCMsgGCUpdateSessionIPInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasSteamid) {
+    [output writeFixed64:1 value:self.steamid];
+  }
+  if (self.hasIp) {
+    [output writeFixed32:2 value:self.ip];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasSteamid) {
+    size_ += computeFixed64Size(1, self.steamid);
+  }
+  if (self.hasIp) {
+    size_ += computeFixed32Size(2, self.ip);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgGCUpdateSessionIP*) parseFromData:(NSData*) data {
+  return (CMsgGCUpdateSessionIP*)[[[CMsgGCUpdateSessionIP builder] mergeFromData:data] build];
+}
++ (CMsgGCUpdateSessionIP*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCUpdateSessionIP*)[[[CMsgGCUpdateSessionIP builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCUpdateSessionIP*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgGCUpdateSessionIP*)[[[CMsgGCUpdateSessionIP builder] mergeFromInputStream:input] build];
+}
++ (CMsgGCUpdateSessionIP*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCUpdateSessionIP*)[[[CMsgGCUpdateSessionIP builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCUpdateSessionIP*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgGCUpdateSessionIP*)[[[CMsgGCUpdateSessionIP builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgGCUpdateSessionIP*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCUpdateSessionIP*)[[[CMsgGCUpdateSessionIP builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCUpdateSessionIP_Builder*) builder {
+  return [[[CMsgGCUpdateSessionIP_Builder alloc] init] autorelease];
+}
++ (CMsgGCUpdateSessionIP_Builder*) builderWithPrototype:(CMsgGCUpdateSessionIP*) prototype {
+  return [[CMsgGCUpdateSessionIP builder] mergeFrom:prototype];
+}
+- (CMsgGCUpdateSessionIP_Builder*) builder {
+  return [CMsgGCUpdateSessionIP builder];
+}
+- (CMsgGCUpdateSessionIP_Builder*) toBuilder {
+  return [CMsgGCUpdateSessionIP builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasSteamid) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"steamid", [NSNumber numberWithLongLong:self.steamid]];
+  }
+  if (self.hasIp) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"ip", [NSNumber numberWithInt:self.ip]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgGCUpdateSessionIP class]]) {
+    return NO;
+  }
+  CMsgGCUpdateSessionIP *otherMessage = other;
+  return
+      self.hasSteamid == otherMessage.hasSteamid &&
+      (!self.hasSteamid || self.steamid == otherMessage.steamid) &&
+      self.hasIp == otherMessage.hasIp &&
+      (!self.hasIp || self.ip == otherMessage.ip) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasSteamid) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithLongLong:self.steamid] hash];
+  }
+  if (self.hasIp) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.ip] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgGCUpdateSessionIP_Builder()
+@property (retain) CMsgGCUpdateSessionIP* _builderResult;
+@end
+
+@implementation CMsgGCUpdateSessionIP_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgGCUpdateSessionIP alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgGCUpdateSessionIP_Builder*) clear {
+  _builderResult = [[[CMsgGCUpdateSessionIP alloc] init] autorelease];
+  return self;
+}
+- (CMsgGCUpdateSessionIP_Builder*) clone {
+  return [CMsgGCUpdateSessionIP builderWithPrototype:_builderResult];
+}
+- (CMsgGCUpdateSessionIP*) defaultInstance {
+  return [CMsgGCUpdateSessionIP defaultInstance];
+}
+- (CMsgGCUpdateSessionIP*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgGCUpdateSessionIP*) buildPartial {
+  CMsgGCUpdateSessionIP* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgGCUpdateSessionIP_Builder*) mergeFrom:(CMsgGCUpdateSessionIP*) other {
+  if (other == [CMsgGCUpdateSessionIP defaultInstance]) {
+    return self;
+  }
+  if (other.hasSteamid) {
+    [self setSteamid:other.steamid];
+  }
+  if (other.hasIp) {
+    [self setIp:other.ip];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgGCUpdateSessionIP_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgGCUpdateSessionIP_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 9: {
+        [self setSteamid:[input readFixed64]];
+        break;
+      }
+      case 21: {
+        [self setIp:[input readFixed32]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasSteamid {
+  return _builderResult.hasSteamid;
+}
+- (uint64_t) steamid {
+  return _builderResult.steamid;
+}
+- (CMsgGCUpdateSessionIP_Builder*) setSteamid:(uint64_t) value {
+  _builderResult.hasSteamid = YES;
+  _builderResult.steamid = value;
+  return self;
+}
+- (CMsgGCUpdateSessionIP_Builder*) clearSteamid {
+  _builderResult.hasSteamid = NO;
+  _builderResult.steamid = 0L;
+  return self;
+}
+- (BOOL) hasIp {
+  return _builderResult.hasIp;
+}
+- (uint32_t) ip {
+  return _builderResult.ip;
+}
+- (CMsgGCUpdateSessionIP_Builder*) setIp:(uint32_t) value {
+  _builderResult.hasIp = YES;
+  _builderResult.ip = value;
+  return self;
+}
+- (CMsgGCUpdateSessionIP_Builder*) clearIp {
+  _builderResult.hasIp = NO;
+  _builderResult.ip = 0;
+  return self;
+}
+@end
+
+@interface CMsgGCRequestSessionIP ()
+@property uint64_t steamid;
+@end
+
+@implementation CMsgGCRequestSessionIP
+
+- (BOOL) hasSteamid {
+  return !!hasSteamid_;
+}
+- (void) setHasSteamid:(BOOL) value_ {
+  hasSteamid_ = !!value_;
+}
+@synthesize steamid;
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.steamid = 0L;
+  }
+  return self;
+}
+static CMsgGCRequestSessionIP* defaultCMsgGCRequestSessionIPInstance = nil;
++ (void) initialize {
+  if (self == [CMsgGCRequestSessionIP class]) {
+    defaultCMsgGCRequestSessionIPInstance = [[CMsgGCRequestSessionIP alloc] init];
+  }
+}
++ (CMsgGCRequestSessionIP*) defaultInstance {
+  return defaultCMsgGCRequestSessionIPInstance;
+}
+- (CMsgGCRequestSessionIP*) defaultInstance {
+  return defaultCMsgGCRequestSessionIPInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasSteamid) {
+    [output writeFixed64:1 value:self.steamid];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasSteamid) {
+    size_ += computeFixed64Size(1, self.steamid);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgGCRequestSessionIP*) parseFromData:(NSData*) data {
+  return (CMsgGCRequestSessionIP*)[[[CMsgGCRequestSessionIP builder] mergeFromData:data] build];
+}
++ (CMsgGCRequestSessionIP*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCRequestSessionIP*)[[[CMsgGCRequestSessionIP builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCRequestSessionIP*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgGCRequestSessionIP*)[[[CMsgGCRequestSessionIP builder] mergeFromInputStream:input] build];
+}
++ (CMsgGCRequestSessionIP*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCRequestSessionIP*)[[[CMsgGCRequestSessionIP builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCRequestSessionIP*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgGCRequestSessionIP*)[[[CMsgGCRequestSessionIP builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgGCRequestSessionIP*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCRequestSessionIP*)[[[CMsgGCRequestSessionIP builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCRequestSessionIP_Builder*) builder {
+  return [[[CMsgGCRequestSessionIP_Builder alloc] init] autorelease];
+}
++ (CMsgGCRequestSessionIP_Builder*) builderWithPrototype:(CMsgGCRequestSessionIP*) prototype {
+  return [[CMsgGCRequestSessionIP builder] mergeFrom:prototype];
+}
+- (CMsgGCRequestSessionIP_Builder*) builder {
+  return [CMsgGCRequestSessionIP builder];
+}
+- (CMsgGCRequestSessionIP_Builder*) toBuilder {
+  return [CMsgGCRequestSessionIP builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasSteamid) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"steamid", [NSNumber numberWithLongLong:self.steamid]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgGCRequestSessionIP class]]) {
+    return NO;
+  }
+  CMsgGCRequestSessionIP *otherMessage = other;
+  return
+      self.hasSteamid == otherMessage.hasSteamid &&
+      (!self.hasSteamid || self.steamid == otherMessage.steamid) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasSteamid) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithLongLong:self.steamid] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgGCRequestSessionIP_Builder()
+@property (retain) CMsgGCRequestSessionIP* _builderResult;
+@end
+
+@implementation CMsgGCRequestSessionIP_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgGCRequestSessionIP alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgGCRequestSessionIP_Builder*) clear {
+  _builderResult = [[[CMsgGCRequestSessionIP alloc] init] autorelease];
+  return self;
+}
+- (CMsgGCRequestSessionIP_Builder*) clone {
+  return [CMsgGCRequestSessionIP builderWithPrototype:_builderResult];
+}
+- (CMsgGCRequestSessionIP*) defaultInstance {
+  return [CMsgGCRequestSessionIP defaultInstance];
+}
+- (CMsgGCRequestSessionIP*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgGCRequestSessionIP*) buildPartial {
+  CMsgGCRequestSessionIP* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgGCRequestSessionIP_Builder*) mergeFrom:(CMsgGCRequestSessionIP*) other {
+  if (other == [CMsgGCRequestSessionIP defaultInstance]) {
+    return self;
+  }
+  if (other.hasSteamid) {
+    [self setSteamid:other.steamid];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgGCRequestSessionIP_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgGCRequestSessionIP_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 9: {
+        [self setSteamid:[input readFixed64]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasSteamid {
+  return _builderResult.hasSteamid;
+}
+- (uint64_t) steamid {
+  return _builderResult.steamid;
+}
+- (CMsgGCRequestSessionIP_Builder*) setSteamid:(uint64_t) value {
+  _builderResult.hasSteamid = YES;
+  _builderResult.steamid = value;
+  return self;
+}
+- (CMsgGCRequestSessionIP_Builder*) clearSteamid {
+  _builderResult.hasSteamid = NO;
+  _builderResult.steamid = 0L;
+  return self;
+}
+@end
+
+@interface CMsgGCRequestSessionIPResponse ()
+@property uint32_t ip;
+@end
+
+@implementation CMsgGCRequestSessionIPResponse
+
+- (BOOL) hasIp {
+  return !!hasIp_;
+}
+- (void) setHasIp:(BOOL) value_ {
+  hasIp_ = !!value_;
+}
+@synthesize ip;
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.ip = 0;
+  }
+  return self;
+}
+static CMsgGCRequestSessionIPResponse* defaultCMsgGCRequestSessionIPResponseInstance = nil;
++ (void) initialize {
+  if (self == [CMsgGCRequestSessionIPResponse class]) {
+    defaultCMsgGCRequestSessionIPResponseInstance = [[CMsgGCRequestSessionIPResponse alloc] init];
+  }
+}
++ (CMsgGCRequestSessionIPResponse*) defaultInstance {
+  return defaultCMsgGCRequestSessionIPResponseInstance;
+}
+- (CMsgGCRequestSessionIPResponse*) defaultInstance {
+  return defaultCMsgGCRequestSessionIPResponseInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasIp) {
+    [output writeFixed32:1 value:self.ip];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasIp) {
+    size_ += computeFixed32Size(1, self.ip);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgGCRequestSessionIPResponse*) parseFromData:(NSData*) data {
+  return (CMsgGCRequestSessionIPResponse*)[[[CMsgGCRequestSessionIPResponse builder] mergeFromData:data] build];
+}
++ (CMsgGCRequestSessionIPResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCRequestSessionIPResponse*)[[[CMsgGCRequestSessionIPResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCRequestSessionIPResponse*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgGCRequestSessionIPResponse*)[[[CMsgGCRequestSessionIPResponse builder] mergeFromInputStream:input] build];
+}
++ (CMsgGCRequestSessionIPResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCRequestSessionIPResponse*)[[[CMsgGCRequestSessionIPResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCRequestSessionIPResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgGCRequestSessionIPResponse*)[[[CMsgGCRequestSessionIPResponse builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgGCRequestSessionIPResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCRequestSessionIPResponse*)[[[CMsgGCRequestSessionIPResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCRequestSessionIPResponse_Builder*) builder {
+  return [[[CMsgGCRequestSessionIPResponse_Builder alloc] init] autorelease];
+}
++ (CMsgGCRequestSessionIPResponse_Builder*) builderWithPrototype:(CMsgGCRequestSessionIPResponse*) prototype {
+  return [[CMsgGCRequestSessionIPResponse builder] mergeFrom:prototype];
+}
+- (CMsgGCRequestSessionIPResponse_Builder*) builder {
+  return [CMsgGCRequestSessionIPResponse builder];
+}
+- (CMsgGCRequestSessionIPResponse_Builder*) toBuilder {
+  return [CMsgGCRequestSessionIPResponse builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasIp) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"ip", [NSNumber numberWithInt:self.ip]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgGCRequestSessionIPResponse class]]) {
+    return NO;
+  }
+  CMsgGCRequestSessionIPResponse *otherMessage = other;
+  return
+      self.hasIp == otherMessage.hasIp &&
+      (!self.hasIp || self.ip == otherMessage.ip) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasIp) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.ip] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgGCRequestSessionIPResponse_Builder()
+@property (retain) CMsgGCRequestSessionIPResponse* _builderResult;
+@end
+
+@implementation CMsgGCRequestSessionIPResponse_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgGCRequestSessionIPResponse alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgGCRequestSessionIPResponse_Builder*) clear {
+  _builderResult = [[[CMsgGCRequestSessionIPResponse alloc] init] autorelease];
+  return self;
+}
+- (CMsgGCRequestSessionIPResponse_Builder*) clone {
+  return [CMsgGCRequestSessionIPResponse builderWithPrototype:_builderResult];
+}
+- (CMsgGCRequestSessionIPResponse*) defaultInstance {
+  return [CMsgGCRequestSessionIPResponse defaultInstance];
+}
+- (CMsgGCRequestSessionIPResponse*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgGCRequestSessionIPResponse*) buildPartial {
+  CMsgGCRequestSessionIPResponse* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgGCRequestSessionIPResponse_Builder*) mergeFrom:(CMsgGCRequestSessionIPResponse*) other {
+  if (other == [CMsgGCRequestSessionIPResponse defaultInstance]) {
+    return self;
+  }
+  if (other.hasIp) {
+    [self setIp:other.ip];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgGCRequestSessionIPResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgGCRequestSessionIPResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 13: {
+        [self setIp:[input readFixed32]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasIp {
+  return _builderResult.hasIp;
+}
+- (uint32_t) ip {
+  return _builderResult.ip;
+}
+- (CMsgGCRequestSessionIPResponse_Builder*) setIp:(uint32_t) value {
+  _builderResult.hasIp = YES;
+  _builderResult.ip = value;
+  return self;
+}
+- (CMsgGCRequestSessionIPResponse_Builder*) clearIp {
+  _builderResult.hasIp = NO;
+  _builderResult.ip = 0;
   return self;
 }
 @end

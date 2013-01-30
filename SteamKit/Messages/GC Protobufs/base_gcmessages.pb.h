@@ -86,6 +86,12 @@
 @class CMsgConsumableExhausted_Builder;
 @class CMsgDevNewItemRequest;
 @class CMsgDevNewItemRequest_Builder;
+@class CMsgGCBannedWord;
+@class CMsgGCBannedWordListRequest;
+@class CMsgGCBannedWordListRequest_Builder;
+@class CMsgGCBannedWordListResponse;
+@class CMsgGCBannedWordListResponse_Builder;
+@class CMsgGCBannedWord_Builder;
 @class CMsgGCClientDisplayNotification;
 @class CMsgGCClientDisplayNotification_Builder;
 @class CMsgGCError;
@@ -124,6 +130,8 @@
 @class CMsgGCStorePurchaseInitResponse;
 @class CMsgGCStorePurchaseInitResponse_Builder;
 @class CMsgGCStorePurchaseInit_Builder;
+@class CMsgGCToGCBannedWordListBroadcast;
+@class CMsgGCToGCBannedWordListBroadcast_Builder;
 @class CMsgHttpRequest;
 @class CMsgHttpRequest_Builder;
 @class CMsgHttpRequest_QueryParam;
@@ -154,14 +162,14 @@
 @class CMsgPackageLicense_Builder;
 @class CMsgPartyInviteResponse;
 @class CMsgPartyInviteResponse_Builder;
+@class CMsgProtoBufHeader;
+@class CMsgProtoBufHeader_Builder;
 @class CMsgReplayUploadedToYouTube;
 @class CMsgReplayUploadedToYouTube_Builder;
 @class CMsgReplicateConVars;
 @class CMsgReplicateConVars_Builder;
 @class CMsgRequestInventoryRefresh;
 @class CMsgRequestInventoryRefresh_Builder;
-@class CMsgRequestItemSchemaData;
-@class CMsgRequestItemSchemaData_Builder;
 @class CMsgSelectItemPresetForClass;
 @class CMsgSelectItemPresetForClassReply;
 @class CMsgSelectItemPresetForClassReply_Builder;
@@ -311,6 +319,13 @@ typedef enum {
 } EGCBaseProtoObjectTypes;
 
 BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
+
+typedef enum {
+  GC_BannedWordTypeGC_BANNED_WORD_DISABLE_WORD = 0,
+  GC_BannedWordTypeGC_BANNED_WORD_ENABLE_WORD = 1,
+} GC_BannedWordType;
+
+BOOL GC_BannedWordTypeIsValidValue(GC_BannedWordType value);
 
 
 @interface BaseGcmessagesRoot : NSObject {
@@ -806,13 +821,21 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 @private
   BOOL hasGameData_:1;
   BOOL hasVersion_:1;
+  BOOL hasBannedWordSet_:1;
+  BOOL hasWordId_:1;
   NSData* gameData;
   uint32_t version;
+  uint32_t bannedWordSet;
+  uint32_t wordId;
 }
 - (BOOL) hasVersion;
 - (BOOL) hasGameData;
+- (BOOL) hasBannedWordSet;
+- (BOOL) hasWordId;
 @property (readonly) uint32_t version;
 @property (readonly, retain) NSData* gameData;
+@property (readonly) uint32_t bannedWordSet;
+@property (readonly) uint32_t wordId;
 
 + (CMsgClientWelcome*) defaultInstance;
 - (CMsgClientWelcome*) defaultInstance;
@@ -858,6 +881,16 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 - (NSData*) gameData;
 - (CMsgClientWelcome_Builder*) setGameData:(NSData*) value;
 - (CMsgClientWelcome_Builder*) clearGameData;
+
+- (BOOL) hasBannedWordSet;
+- (uint32_t) bannedWordSet;
+- (CMsgClientWelcome_Builder*) setBannedWordSet:(uint32_t) value;
+- (CMsgClientWelcome_Builder*) clearBannedWordSet;
+
+- (BOOL) hasWordId;
+- (uint32_t) wordId;
+- (CMsgClientWelcome_Builder*) setWordId:(uint32_t) value;
+- (CMsgClientWelcome_Builder*) clearWordId;
 @end
 
 @interface CMsgServerWelcome : PBGeneratedMessage {
@@ -1184,18 +1217,22 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 @interface CMsgPartyInviteResponse : PBGeneratedMessage {
 @private
   BOOL hasAccept_:1;
+  BOOL hasTeamInvite_:1;
   BOOL hasPartyId_:1;
   BOOL hasClientVersion_:1;
   BOOL accept_:1;
+  BOOL teamInvite_:1;
   uint64_t partyId;
   uint32_t clientVersion;
 }
 - (BOOL) hasPartyId;
 - (BOOL) hasAccept;
 - (BOOL) hasClientVersion;
+- (BOOL) hasTeamInvite;
 @property (readonly) uint64_t partyId;
 - (BOOL) accept;
 @property (readonly) uint32_t clientVersion;
+- (BOOL) teamInvite;
 
 + (CMsgPartyInviteResponse*) defaultInstance;
 - (CMsgPartyInviteResponse*) defaultInstance;
@@ -1246,6 +1283,11 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 - (uint32_t) clientVersion;
 - (CMsgPartyInviteResponse_Builder*) setClientVersion:(uint32_t) value;
 - (CMsgPartyInviteResponse_Builder*) clearClientVersion;
+
+- (BOOL) hasTeamInvite;
+- (BOOL) teamInvite;
+- (CMsgPartyInviteResponse_Builder*) setTeamInvite:(BOOL) value;
+- (CMsgPartyInviteResponse_Builder*) clearTeamInvite;
 @end
 
 @interface CMsgKickFromParty : PBGeneratedMessage {
@@ -2999,46 +3041,6 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 - (CMsgUpdateItemSchema_Builder*) clearItemsGameUrl;
 @end
 
-@interface CMsgRequestItemSchemaData : PBGeneratedMessage {
-@private
-}
-
-+ (CMsgRequestItemSchemaData*) defaultInstance;
-- (CMsgRequestItemSchemaData*) defaultInstance;
-
-- (BOOL) isInitialized;
-- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
-- (CMsgRequestItemSchemaData_Builder*) builder;
-+ (CMsgRequestItemSchemaData_Builder*) builder;
-+ (CMsgRequestItemSchemaData_Builder*) builderWithPrototype:(CMsgRequestItemSchemaData*) prototype;
-- (CMsgRequestItemSchemaData_Builder*) toBuilder;
-
-+ (CMsgRequestItemSchemaData*) parseFromData:(NSData*) data;
-+ (CMsgRequestItemSchemaData*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-+ (CMsgRequestItemSchemaData*) parseFromInputStream:(NSInputStream*) input;
-+ (CMsgRequestItemSchemaData*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-+ (CMsgRequestItemSchemaData*) parseFromCodedInputStream:(PBCodedInputStream*) input;
-+ (CMsgRequestItemSchemaData*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-@end
-
-@interface CMsgRequestItemSchemaData_Builder : PBGeneratedMessage_Builder {
-@private
-  CMsgRequestItemSchemaData* _builderResult;
-}
-
-- (CMsgRequestItemSchemaData*) defaultInstance;
-
-- (CMsgRequestItemSchemaData_Builder*) clear;
-- (CMsgRequestItemSchemaData_Builder*) clone;
-
-- (CMsgRequestItemSchemaData*) build;
-- (CMsgRequestItemSchemaData*) buildPartial;
-
-- (CMsgRequestItemSchemaData_Builder*) mergeFrom:(CMsgRequestItemSchemaData*) other;
-- (CMsgRequestItemSchemaData_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
-- (CMsgRequestItemSchemaData_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-@end
-
 @interface CMsgGCError : PBGeneratedMessage {
 @private
   BOOL hasErrorText_:1;
@@ -4780,5 +4782,240 @@ BOOL EGCBaseProtoObjectTypesIsValidValue(EGCBaseProtoObjectTypes value);
 - (uint32_t) skin;
 - (CSOEconItemHalloweenEgg_Builder*) setSkin:(uint32_t) value;
 - (CSOEconItemHalloweenEgg_Builder*) clearSkin;
+@end
+
+@interface CMsgGCBannedWordListRequest : PBGeneratedMessage {
+@private
+  BOOL hasBanListGroupId_:1;
+  BOOL hasWordId_:1;
+  uint32_t banListGroupId;
+  uint32_t wordId;
+}
+- (BOOL) hasBanListGroupId;
+- (BOOL) hasWordId;
+@property (readonly) uint32_t banListGroupId;
+@property (readonly) uint32_t wordId;
+
++ (CMsgGCBannedWordListRequest*) defaultInstance;
+- (CMsgGCBannedWordListRequest*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgGCBannedWordListRequest_Builder*) builder;
++ (CMsgGCBannedWordListRequest_Builder*) builder;
++ (CMsgGCBannedWordListRequest_Builder*) builderWithPrototype:(CMsgGCBannedWordListRequest*) prototype;
+- (CMsgGCBannedWordListRequest_Builder*) toBuilder;
+
++ (CMsgGCBannedWordListRequest*) parseFromData:(NSData*) data;
++ (CMsgGCBannedWordListRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCBannedWordListRequest*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgGCBannedWordListRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCBannedWordListRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgGCBannedWordListRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgGCBannedWordListRequest_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgGCBannedWordListRequest* _builderResult;
+}
+
+- (CMsgGCBannedWordListRequest*) defaultInstance;
+
+- (CMsgGCBannedWordListRequest_Builder*) clear;
+- (CMsgGCBannedWordListRequest_Builder*) clone;
+
+- (CMsgGCBannedWordListRequest*) build;
+- (CMsgGCBannedWordListRequest*) buildPartial;
+
+- (CMsgGCBannedWordListRequest_Builder*) mergeFrom:(CMsgGCBannedWordListRequest*) other;
+- (CMsgGCBannedWordListRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgGCBannedWordListRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasBanListGroupId;
+- (uint32_t) banListGroupId;
+- (CMsgGCBannedWordListRequest_Builder*) setBanListGroupId:(uint32_t) value;
+- (CMsgGCBannedWordListRequest_Builder*) clearBanListGroupId;
+
+- (BOOL) hasWordId;
+- (uint32_t) wordId;
+- (CMsgGCBannedWordListRequest_Builder*) setWordId:(uint32_t) value;
+- (CMsgGCBannedWordListRequest_Builder*) clearWordId;
+@end
+
+@interface CMsgGCBannedWord : PBGeneratedMessage {
+@private
+  BOOL hasWord_:1;
+  BOOL hasWordId_:1;
+  BOOL hasword_type_:1;
+  NSString* word;
+  uint32_t wordId;
+  GC_BannedWordType word_type;
+}
+- (BOOL) hasWordId;
+- (BOOL) hasword_type;
+- (BOOL) hasWord;
+@property (readonly) uint32_t wordId;
+@property (readonly) GC_BannedWordType word_type;
+@property (readonly, retain) NSString* word;
+
++ (CMsgGCBannedWord*) defaultInstance;
+- (CMsgGCBannedWord*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgGCBannedWord_Builder*) builder;
++ (CMsgGCBannedWord_Builder*) builder;
++ (CMsgGCBannedWord_Builder*) builderWithPrototype:(CMsgGCBannedWord*) prototype;
+- (CMsgGCBannedWord_Builder*) toBuilder;
+
++ (CMsgGCBannedWord*) parseFromData:(NSData*) data;
++ (CMsgGCBannedWord*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCBannedWord*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgGCBannedWord*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCBannedWord*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgGCBannedWord*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgGCBannedWord_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgGCBannedWord* _builderResult;
+}
+
+- (CMsgGCBannedWord*) defaultInstance;
+
+- (CMsgGCBannedWord_Builder*) clear;
+- (CMsgGCBannedWord_Builder*) clone;
+
+- (CMsgGCBannedWord*) build;
+- (CMsgGCBannedWord*) buildPartial;
+
+- (CMsgGCBannedWord_Builder*) mergeFrom:(CMsgGCBannedWord*) other;
+- (CMsgGCBannedWord_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgGCBannedWord_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasWordId;
+- (uint32_t) wordId;
+- (CMsgGCBannedWord_Builder*) setWordId:(uint32_t) value;
+- (CMsgGCBannedWord_Builder*) clearWordId;
+
+- (BOOL) hasword_type;
+- (GC_BannedWordType) word_type;
+- (CMsgGCBannedWord_Builder*) setword_type:(GC_BannedWordType) value;
+- (CMsgGCBannedWord_Builder*) clearword_type;
+
+- (BOOL) hasWord;
+- (NSString*) word;
+- (CMsgGCBannedWord_Builder*) setWord:(NSString*) value;
+- (CMsgGCBannedWord_Builder*) clearWord;
+@end
+
+@interface CMsgGCBannedWordListResponse : PBGeneratedMessage {
+@private
+  BOOL hasBanListGroupId_:1;
+  uint32_t banListGroupId;
+  PBAppendableArray * wordListArray;
+}
+- (BOOL) hasBanListGroupId;
+@property (readonly) uint32_t banListGroupId;
+@property (readonly, retain) PBArray * wordList;
+- (CMsgGCBannedWord*)wordListAtIndex:(NSUInteger)index;
+
++ (CMsgGCBannedWordListResponse*) defaultInstance;
+- (CMsgGCBannedWordListResponse*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgGCBannedWordListResponse_Builder*) builder;
++ (CMsgGCBannedWordListResponse_Builder*) builder;
++ (CMsgGCBannedWordListResponse_Builder*) builderWithPrototype:(CMsgGCBannedWordListResponse*) prototype;
+- (CMsgGCBannedWordListResponse_Builder*) toBuilder;
+
++ (CMsgGCBannedWordListResponse*) parseFromData:(NSData*) data;
++ (CMsgGCBannedWordListResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCBannedWordListResponse*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgGCBannedWordListResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCBannedWordListResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgGCBannedWordListResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgGCBannedWordListResponse_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgGCBannedWordListResponse* _builderResult;
+}
+
+- (CMsgGCBannedWordListResponse*) defaultInstance;
+
+- (CMsgGCBannedWordListResponse_Builder*) clear;
+- (CMsgGCBannedWordListResponse_Builder*) clone;
+
+- (CMsgGCBannedWordListResponse*) build;
+- (CMsgGCBannedWordListResponse*) buildPartial;
+
+- (CMsgGCBannedWordListResponse_Builder*) mergeFrom:(CMsgGCBannedWordListResponse*) other;
+- (CMsgGCBannedWordListResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgGCBannedWordListResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasBanListGroupId;
+- (uint32_t) banListGroupId;
+- (CMsgGCBannedWordListResponse_Builder*) setBanListGroupId:(uint32_t) value;
+- (CMsgGCBannedWordListResponse_Builder*) clearBanListGroupId;
+
+- (PBAppendableArray *)wordList;
+- (CMsgGCBannedWord*)wordListAtIndex:(NSUInteger)index;
+- (CMsgGCBannedWordListResponse_Builder *)addWordList:(CMsgGCBannedWord*)value;
+- (CMsgGCBannedWordListResponse_Builder *)setWordListArray:(NSArray *)array;
+- (CMsgGCBannedWordListResponse_Builder *)setWordListValues:(const CMsgGCBannedWord* *)values count:(NSUInteger)count;
+- (CMsgGCBannedWordListResponse_Builder *)clearWordList;
+@end
+
+@interface CMsgGCToGCBannedWordListBroadcast : PBGeneratedMessage {
+@private
+  BOOL hasBroadcast_:1;
+  CMsgGCBannedWordListResponse* broadcast;
+}
+- (BOOL) hasBroadcast;
+@property (readonly, retain) CMsgGCBannedWordListResponse* broadcast;
+
++ (CMsgGCToGCBannedWordListBroadcast*) defaultInstance;
+- (CMsgGCToGCBannedWordListBroadcast*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) builder;
++ (CMsgGCToGCBannedWordListBroadcast_Builder*) builder;
++ (CMsgGCToGCBannedWordListBroadcast_Builder*) builderWithPrototype:(CMsgGCToGCBannedWordListBroadcast*) prototype;
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) toBuilder;
+
++ (CMsgGCToGCBannedWordListBroadcast*) parseFromData:(NSData*) data;
++ (CMsgGCToGCBannedWordListBroadcast*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCToGCBannedWordListBroadcast*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgGCToGCBannedWordListBroadcast*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCToGCBannedWordListBroadcast*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgGCToGCBannedWordListBroadcast*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgGCToGCBannedWordListBroadcast_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgGCToGCBannedWordListBroadcast* _builderResult;
+}
+
+- (CMsgGCToGCBannedWordListBroadcast*) defaultInstance;
+
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) clear;
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) clone;
+
+- (CMsgGCToGCBannedWordListBroadcast*) build;
+- (CMsgGCToGCBannedWordListBroadcast*) buildPartial;
+
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) mergeFrom:(CMsgGCToGCBannedWordListBroadcast*) other;
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasBroadcast;
+- (CMsgGCBannedWordListResponse*) broadcast;
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) setBroadcast:(CMsgGCBannedWordListResponse*) value;
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) setBroadcastBuilder:(CMsgGCBannedWordListResponse_Builder*) builderForValue;
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) mergeBroadcast:(CMsgGCBannedWordListResponse*) value;
+- (CMsgGCToGCBannedWordListBroadcast_Builder*) clearBroadcast;
 @end
 

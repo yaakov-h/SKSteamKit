@@ -24,6 +24,7 @@
 #import "SKSteamGameCoordinator.h"
 #import "Base_gcmessages.pb.h"
 #import "SKSteamUserStats.h"
+#import "SKSteamLoggedOnInfo.h"
 
 @implementation SKSteamKitTests
 
@@ -60,9 +61,9 @@ static uint64_t steamClanSteamID = 0LLU; // Replace with Steam Group SteamID
         NSLog(@"Connected to Steam3: %@", data);
         
         NSDictionary * details = @{SKLogonDetailUsername: @"USERNAME", SKLogonDetailPassword:@"PASSWORD", SKLogonDetailRememberMe: @YES};
-		CRPromise * loginPromise = [steamClient.steamUser logOnWithDetails:details];
+		//CRPromise * loginPromise = [steamClient.steamUser logOnWithDetails:details];
 		
-		//CRPromise * loginPromise = [steamClient.steamUser logOnAnonymously];
+		CRPromise * loginPromise = [steamClient.steamUser logOnAnonymously];
 		
 		/*if (![steamClient.steamUser hasRememberedPassword])
 		{
@@ -98,16 +99,16 @@ static uint64_t steamClanSteamID = 0LLU; // Replace with Steam Group SteamID
 //			}
 			
 			//CRPromise * tokensPromise = [steamClient.steamApps PICSGetAccessTokensForApps:@[ @740 ] packages:nil];
-			CRPromise * pr = [steamClient.steamUserStats getNumberOfCurrentPlayersForGame:570];
-			[pr addSuccessHandler:^(id data) {
-				NSLog(@">>> %@ users playing Dota 2", data);
-			}];
+//			CRPromise * pr = [steamClient.steamUserStats getNumberOfCurrentPlayersForGame:570];
+//			[pr addSuccessHandler:^(id data) {
+//				NSLog(@">>> %@ users playing Dota 2", data);
+//			}];
 			
 			[[steamClient.steamApps requestPackageInfoForPackagesWithIDs:@[ @0 ]] addSuccessHandler:^(id data) {
 				NSLog(@"packages: %@", data);
 			}];
 			
-			CRPromise * promise = [steamClient.steamApps PICSGetProductInfoForApp:740];
+			CRPromise * promise = [steamClient.steamApps PICSGetProductInfoForPackage:0];
 			[[promise addSuccessHandler:^(id data) {
 				NSLog(@"got tokens: %@", data);
 			}] addFailureHandler:^(NSError *error) {

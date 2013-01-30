@@ -106,6 +106,7 @@ static const uint32_t _SKTCPHeaderAndMagicSize = 2 * sizeof(uint32_t);
             if (magic != _SKTCPMagic)
             {
                 CRLog(@"ERROR: \"There's no such thing as magic\" - Vernon Dursley");
+                CRLog(@"Received magic: %u", magic);
                 [self disconnect];
                 return;
             }

@@ -2,6 +2,34 @@
 
 #import <ProtocolBuffers/ProtocolBuffers.h>
 
+#import "steammessages.pb.h"
+
+@class CGCMsgGetIPLocation;
+@class CGCMsgGetIPLocationResponse;
+@class CGCMsgGetIPLocationResponse_Builder;
+@class CGCMsgGetIPLocation_Builder;
+@class CGCMsgGetSystemStats;
+@class CGCMsgGetSystemStatsResponse;
+@class CGCMsgGetSystemStatsResponse_Builder;
+@class CGCMsgGetSystemStats_Builder;
+@class CGCMsgMemCachedDelete;
+@class CGCMsgMemCachedDelete_Builder;
+@class CGCMsgMemCachedGet;
+@class CGCMsgMemCachedGetResponse;
+@class CGCMsgMemCachedGetResponse_Builder;
+@class CGCMsgMemCachedGetResponse_ValueTag;
+@class CGCMsgMemCachedGetResponse_ValueTag_Builder;
+@class CGCMsgMemCachedGet_Builder;
+@class CGCMsgMemCachedSet;
+@class CGCMsgMemCachedSet_Builder;
+@class CGCMsgMemCachedSet_KeyPair;
+@class CGCMsgMemCachedSet_KeyPair_Builder;
+@class CGCMsgSystemStatsSchema;
+@class CGCMsgSystemStatsSchema_Builder;
+@class CGCSystemMsg_GetAccountDetails;
+@class CGCSystemMsg_GetAccountDetails_Builder;
+@class CGCSystemMsg_GetAccountDetails_Response;
+@class CGCSystemMsg_GetAccountDetails_Response_Builder;
 @class CGCToGCMsgMasterAck;
 @class CGCToGCMsgMasterAck_Builder;
 @class CGCToGCMsgMasterAck_Response;
@@ -10,10 +38,86 @@
 @class CGCToGCMsgRoutedReply;
 @class CGCToGCMsgRoutedReply_Builder;
 @class CGCToGCMsgRouted_Builder;
+@class CIPLocationInfo;
+@class CIPLocationInfo_Builder;
+@class CMsgAMAddFreeLicense;
+@class CMsgAMAddFreeLicenseResponse;
+@class CMsgAMAddFreeLicenseResponse_Builder;
+@class CMsgAMAddFreeLicense_Builder;
+@class CMsgAMFindAccounts;
+@class CMsgAMFindAccountsResponse;
+@class CMsgAMFindAccountsResponse_Builder;
+@class CMsgAMFindAccounts_Builder;
+@class CMsgAMGetLicenses;
+@class CMsgAMGetLicensesResponse;
+@class CMsgAMGetLicensesResponse_Builder;
+@class CMsgAMGetLicenses_Builder;
+@class CMsgAMGetUserGameStats;
+@class CMsgAMGetUserGameStatsResponse;
+@class CMsgAMGetUserGameStatsResponse_Achievement_Blocks;
+@class CMsgAMGetUserGameStatsResponse_Achievement_Blocks_Builder;
+@class CMsgAMGetUserGameStatsResponse_Builder;
+@class CMsgAMGetUserGameStatsResponse_Stats;
+@class CMsgAMGetUserGameStatsResponse_Stats_Builder;
+@class CMsgAMGetUserGameStats_Builder;
+@class CMsgAMGrantGuestPasses2;
+@class CMsgAMGrantGuestPasses2Response;
+@class CMsgAMGrantGuestPasses2Response_Builder;
+@class CMsgAMGrantGuestPasses2_Builder;
+@class CMsgAMSendEmail;
+@class CMsgAMSendEmailResponse;
+@class CMsgAMSendEmailResponse_Builder;
+@class CMsgAMSendEmail_Builder;
+@class CMsgAMSendEmail_PersonaNameReplacementToken;
+@class CMsgAMSendEmail_PersonaNameReplacementToken_Builder;
+@class CMsgAMSendEmail_ReplacementToken;
+@class CMsgAMSendEmail_ReplacementToken_Builder;
 @class CMsgAccountDetails;
 @class CMsgAccountDetails_Builder;
+@class CMsgGCGetCommandList;
+@class CMsgGCGetCommandListResponse;
+@class CMsgGCGetCommandListResponse_Builder;
+@class CMsgGCGetCommandList_Builder;
+@class CMsgGCGetEmailTemplate;
+@class CMsgGCGetEmailTemplateResponse;
+@class CMsgGCGetEmailTemplateResponse_Builder;
+@class CMsgGCGetEmailTemplate_Builder;
+@class CMsgGCGetPersonaNames;
+@class CMsgGCGetPersonaNames_Builder;
+@class CMsgGCGetPersonaNames_Response;
+@class CMsgGCGetPersonaNames_Response_Builder;
+@class CMsgGCGetPersonaNames_Response_PersonaName;
+@class CMsgGCGetPersonaNames_Response_PersonaName_Builder;
+@class CMsgGCMsgMasterSetDirectory;
+@class CMsgGCMsgMasterSetDirectory_Builder;
+@class CMsgGCMsgMasterSetDirectory_Response;
+@class CMsgGCMsgMasterSetDirectory_Response_Builder;
+@class CMsgGCMsgMasterSetDirectory_SubGC;
+@class CMsgGCMsgMasterSetDirectory_SubGC_Builder;
 @class CMsgGCMultiplexMessage;
 @class CMsgGCMultiplexMessage_Builder;
+@class CMsgGCRequestSessionIP;
+@class CMsgGCRequestSessionIPResponse;
+@class CMsgGCRequestSessionIPResponse_Builder;
+@class CMsgGCRequestSessionIP_Builder;
+@class CMsgGCUpdateSessionIP;
+@class CMsgGCUpdateSessionIP_Builder;
+@class CMsgHttpRequest;
+@class CMsgHttpRequest_Builder;
+@class CMsgHttpRequest_QueryParam;
+@class CMsgHttpRequest_QueryParam_Builder;
+@class CMsgHttpRequest_RequestHeader;
+@class CMsgHttpRequest_RequestHeader_Builder;
+@class CMsgHttpResponse;
+@class CMsgHttpResponse_Builder;
+@class CMsgHttpResponse_ResponseHeader;
+@class CMsgHttpResponse_ResponseHeader_Builder;
+@class CMsgNotifyWatchdog;
+@class CMsgNotifyWatchdog_Builder;
+@class CMsgPackageLicense;
+@class CMsgPackageLicense_Builder;
+@class CMsgProtoBufHeader;
+@class CMsgProtoBufHeader_Builder;
 @class CMsgSOCacheSubscribed;
 @class CMsgSOCacheSubscribed_Builder;
 @class CMsgSOCacheSubscribed_SubscribedType;
@@ -32,6 +136,50 @@
 @class CMsgSOMultipleObjects_SingleObject_Builder;
 @class CMsgSOSingleObject;
 @class CMsgSOSingleObject_Builder;
+@class CMsgWebAPIKey;
+@class CMsgWebAPIKey_Builder;
+@class CMsgWebAPIRequest;
+@class CMsgWebAPIRequest_Builder;
+@class PBDescriptorProto;
+@class PBDescriptorProto_Builder;
+@class PBDescriptorProto_ExtensionRange;
+@class PBDescriptorProto_ExtensionRange_Builder;
+@class PBEnumDescriptorProto;
+@class PBEnumDescriptorProto_Builder;
+@class PBEnumOptions;
+@class PBEnumOptions_Builder;
+@class PBEnumValueDescriptorProto;
+@class PBEnumValueDescriptorProto_Builder;
+@class PBEnumValueOptions;
+@class PBEnumValueOptions_Builder;
+@class PBFieldDescriptorProto;
+@class PBFieldDescriptorProto_Builder;
+@class PBFieldOptions;
+@class PBFieldOptions_Builder;
+@class PBFileDescriptorProto;
+@class PBFileDescriptorProto_Builder;
+@class PBFileDescriptorSet;
+@class PBFileDescriptorSet_Builder;
+@class PBFileOptions;
+@class PBFileOptions_Builder;
+@class PBMessageOptions;
+@class PBMessageOptions_Builder;
+@class PBMethodDescriptorProto;
+@class PBMethodDescriptorProto_Builder;
+@class PBMethodOptions;
+@class PBMethodOptions_Builder;
+@class PBServiceDescriptorProto;
+@class PBServiceDescriptorProto_Builder;
+@class PBServiceOptions;
+@class PBServiceOptions_Builder;
+@class PBSourceCodeInfo;
+@class PBSourceCodeInfo_Builder;
+@class PBSourceCodeInfo_Location;
+@class PBSourceCodeInfo_Location_Builder;
+@class PBUninterpretedOption;
+@class PBUninterpretedOption_Builder;
+@class PBUninterpretedOption_NamePart;
+@class PBUninterpretedOption_NamePart_Builder;
 #ifndef __has_feature
   #define __has_feature(x) 0 // Compatibility with non-clang compilers.
 #endif // __has_feature
@@ -1069,5 +1217,161 @@
 - (NSData*) netMessage;
 - (CGCToGCMsgRoutedReply_Builder*) setNetMessage:(NSData*) value;
 - (CGCToGCMsgRoutedReply_Builder*) clearNetMessage;
+@end
+
+@interface CMsgGCUpdateSessionIP : PBGeneratedMessage {
+@private
+  BOOL hasSteamid_:1;
+  BOOL hasIp_:1;
+  uint64_t steamid;
+  uint32_t ip;
+}
+- (BOOL) hasSteamid;
+- (BOOL) hasIp;
+@property (readonly) uint64_t steamid;
+@property (readonly) uint32_t ip;
+
++ (CMsgGCUpdateSessionIP*) defaultInstance;
+- (CMsgGCUpdateSessionIP*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgGCUpdateSessionIP_Builder*) builder;
++ (CMsgGCUpdateSessionIP_Builder*) builder;
++ (CMsgGCUpdateSessionIP_Builder*) builderWithPrototype:(CMsgGCUpdateSessionIP*) prototype;
+- (CMsgGCUpdateSessionIP_Builder*) toBuilder;
+
++ (CMsgGCUpdateSessionIP*) parseFromData:(NSData*) data;
++ (CMsgGCUpdateSessionIP*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCUpdateSessionIP*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgGCUpdateSessionIP*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCUpdateSessionIP*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgGCUpdateSessionIP*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgGCUpdateSessionIP_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgGCUpdateSessionIP* _builderResult;
+}
+
+- (CMsgGCUpdateSessionIP*) defaultInstance;
+
+- (CMsgGCUpdateSessionIP_Builder*) clear;
+- (CMsgGCUpdateSessionIP_Builder*) clone;
+
+- (CMsgGCUpdateSessionIP*) build;
+- (CMsgGCUpdateSessionIP*) buildPartial;
+
+- (CMsgGCUpdateSessionIP_Builder*) mergeFrom:(CMsgGCUpdateSessionIP*) other;
+- (CMsgGCUpdateSessionIP_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgGCUpdateSessionIP_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasSteamid;
+- (uint64_t) steamid;
+- (CMsgGCUpdateSessionIP_Builder*) setSteamid:(uint64_t) value;
+- (CMsgGCUpdateSessionIP_Builder*) clearSteamid;
+
+- (BOOL) hasIp;
+- (uint32_t) ip;
+- (CMsgGCUpdateSessionIP_Builder*) setIp:(uint32_t) value;
+- (CMsgGCUpdateSessionIP_Builder*) clearIp;
+@end
+
+@interface CMsgGCRequestSessionIP : PBGeneratedMessage {
+@private
+  BOOL hasSteamid_:1;
+  uint64_t steamid;
+}
+- (BOOL) hasSteamid;
+@property (readonly) uint64_t steamid;
+
++ (CMsgGCRequestSessionIP*) defaultInstance;
+- (CMsgGCRequestSessionIP*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgGCRequestSessionIP_Builder*) builder;
++ (CMsgGCRequestSessionIP_Builder*) builder;
++ (CMsgGCRequestSessionIP_Builder*) builderWithPrototype:(CMsgGCRequestSessionIP*) prototype;
+- (CMsgGCRequestSessionIP_Builder*) toBuilder;
+
++ (CMsgGCRequestSessionIP*) parseFromData:(NSData*) data;
++ (CMsgGCRequestSessionIP*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCRequestSessionIP*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgGCRequestSessionIP*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCRequestSessionIP*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgGCRequestSessionIP*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgGCRequestSessionIP_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgGCRequestSessionIP* _builderResult;
+}
+
+- (CMsgGCRequestSessionIP*) defaultInstance;
+
+- (CMsgGCRequestSessionIP_Builder*) clear;
+- (CMsgGCRequestSessionIP_Builder*) clone;
+
+- (CMsgGCRequestSessionIP*) build;
+- (CMsgGCRequestSessionIP*) buildPartial;
+
+- (CMsgGCRequestSessionIP_Builder*) mergeFrom:(CMsgGCRequestSessionIP*) other;
+- (CMsgGCRequestSessionIP_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgGCRequestSessionIP_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasSteamid;
+- (uint64_t) steamid;
+- (CMsgGCRequestSessionIP_Builder*) setSteamid:(uint64_t) value;
+- (CMsgGCRequestSessionIP_Builder*) clearSteamid;
+@end
+
+@interface CMsgGCRequestSessionIPResponse : PBGeneratedMessage {
+@private
+  BOOL hasIp_:1;
+  uint32_t ip;
+}
+- (BOOL) hasIp;
+@property (readonly) uint32_t ip;
+
++ (CMsgGCRequestSessionIPResponse*) defaultInstance;
+- (CMsgGCRequestSessionIPResponse*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgGCRequestSessionIPResponse_Builder*) builder;
++ (CMsgGCRequestSessionIPResponse_Builder*) builder;
++ (CMsgGCRequestSessionIPResponse_Builder*) builderWithPrototype:(CMsgGCRequestSessionIPResponse*) prototype;
+- (CMsgGCRequestSessionIPResponse_Builder*) toBuilder;
+
++ (CMsgGCRequestSessionIPResponse*) parseFromData:(NSData*) data;
++ (CMsgGCRequestSessionIPResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCRequestSessionIPResponse*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgGCRequestSessionIPResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgGCRequestSessionIPResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgGCRequestSessionIPResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgGCRequestSessionIPResponse_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgGCRequestSessionIPResponse* _builderResult;
+}
+
+- (CMsgGCRequestSessionIPResponse*) defaultInstance;
+
+- (CMsgGCRequestSessionIPResponse_Builder*) clear;
+- (CMsgGCRequestSessionIPResponse_Builder*) clone;
+
+- (CMsgGCRequestSessionIPResponse*) build;
+- (CMsgGCRequestSessionIPResponse*) buildPartial;
+
+- (CMsgGCRequestSessionIPResponse_Builder*) mergeFrom:(CMsgGCRequestSessionIPResponse*) other;
+- (CMsgGCRequestSessionIPResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgGCRequestSessionIPResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasIp;
+- (uint32_t) ip;
+- (CMsgGCRequestSessionIPResponse_Builder*) setIp:(uint32_t) value;
+- (CMsgGCRequestSessionIPResponse_Builder*) clearIp;
 @end
 

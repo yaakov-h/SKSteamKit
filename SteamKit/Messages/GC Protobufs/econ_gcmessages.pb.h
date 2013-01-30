@@ -98,6 +98,8 @@
 @class CMsgNotifyWatchdog_Builder;
 @class CMsgPackageLicense;
 @class CMsgPackageLicense_Builder;
+@class CMsgProtoBufHeader;
+@class CMsgProtoBufHeader_Builder;
 @class CMsgWebAPIKey;
 @class CMsgWebAPIKey_Builder;
 @class CMsgWebAPIRequest;
@@ -213,7 +215,6 @@ typedef enum {
   EGCItemMsgk_EMsgGCSaxxyBroadcast = 1057,
   EGCItemMsgk_EMsgGCBackpackSortFinished = 1058,
   EGCItemMsgk_EMsgGCAdjustItemEquippedState = 1059,
-  EGCItemMsgk_EMsgGCRequestItemSchemaData = 1060,
   EGCItemMsgk_EMsgGCCollectItem = 1061,
   EGCItemMsgk_EMsgGCItemAcknowledged = 1062,
   EGCItemMsgk_EMsgGCPresets_SelectPresetForClass = 1063,
@@ -271,6 +272,9 @@ typedef enum {
   EGCItemMsgk_EMsgGCStorePurchaseQueryTxnResponse = 2509,
   EGCItemMsgk_EMsgGCStorePurchaseInit = 2510,
   EGCItemMsgk_EMsgGCStorePurchaseInitResponse = 2511,
+  EGCItemMsgk_EMsgGCBannedWordListRequest = 2512,
+  EGCItemMsgk_EMsgGCBannedWordListResponse = 2513,
+  EGCItemMsgk_EMsgGCToGCBannedWordListBroadcast = 2514,
 } EGCItemMsg;
 
 BOOL EGCItemMsgIsValidValue(EGCItemMsg value);

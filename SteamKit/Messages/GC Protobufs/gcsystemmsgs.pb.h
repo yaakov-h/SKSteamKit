@@ -96,6 +96,9 @@ typedef enum {
   EGCToGCMsgk_EGCToGCMsgMasterAckResponse = 151,
   EGCToGCMsgk_EGCToGCMsgRouted = 152,
   EGCToGCMsgk_EGCToGCMsgRoutedReply = 153,
+  EGCToGCMsgk_EMsgUpdateSessionIP = 154,
+  EGCToGCMsgk_EMsgRequestSessionIP = 155,
+  EGCToGCMsgk_EMsgRequestSessionIPResponse = 156,
 } EGCToGCMsg;
 
 BOOL EGCToGCMsgIsValidValue(EGCToGCMsg value);

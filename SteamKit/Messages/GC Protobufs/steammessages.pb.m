@@ -74,6 +74,541 @@ BOOL GCProtoBufMsgSrcIsValidValue(GCProtoBufMsgSrc value) {
       return NO;
   }
 }
+@interface CMsgProtoBufHeader ()
+@property uint64_t clientSteamId;
+@property int32_t clientSessionId;
+@property uint32_t sourceAppId;
+@property uint64_t jobIdSource;
+@property uint64_t jobIdTarget;
+@property (retain) NSString* targetJobName;
+@property GCProtoBufMsgSrc gc_msg_src;
+@property uint32_t gcDirIndexSource;
+@end
+
+@implementation CMsgProtoBufHeader
+
+- (BOOL) hasClientSteamId {
+  return !!hasClientSteamId_;
+}
+- (void) setHasClientSteamId:(BOOL) value_ {
+  hasClientSteamId_ = !!value_;
+}
+@synthesize clientSteamId;
+- (BOOL) hasClientSessionId {
+  return !!hasClientSessionId_;
+}
+- (void) setHasClientSessionId:(BOOL) value_ {
+  hasClientSessionId_ = !!value_;
+}
+@synthesize clientSessionId;
+- (BOOL) hasSourceAppId {
+  return !!hasSourceAppId_;
+}
+- (void) setHasSourceAppId:(BOOL) value_ {
+  hasSourceAppId_ = !!value_;
+}
+@synthesize sourceAppId;
+- (BOOL) hasJobIdSource {
+  return !!hasJobIdSource_;
+}
+- (void) setHasJobIdSource:(BOOL) value_ {
+  hasJobIdSource_ = !!value_;
+}
+@synthesize jobIdSource;
+- (BOOL) hasJobIdTarget {
+  return !!hasJobIdTarget_;
+}
+- (void) setHasJobIdTarget:(BOOL) value_ {
+  hasJobIdTarget_ = !!value_;
+}
+@synthesize jobIdTarget;
+- (BOOL) hasTargetJobName {
+  return !!hasTargetJobName_;
+}
+- (void) setHasTargetJobName:(BOOL) value_ {
+  hasTargetJobName_ = !!value_;
+}
+@synthesize targetJobName;
+- (BOOL) hasgc_msg_src {
+  return !!hasgc_msg_src_;
+}
+- (void) setHasgc_msg_src:(BOOL) value_ {
+  hasgc_msg_src_ = !!value_;
+}
+@synthesize gc_msg_src;
+- (BOOL) hasGcDirIndexSource {
+  return !!hasGcDirIndexSource_;
+}
+- (void) setHasGcDirIndexSource:(BOOL) value_ {
+  hasGcDirIndexSource_ = !!value_;
+}
+@synthesize gcDirIndexSource;
+- (void) dealloc {
+  self.targetJobName = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.clientSteamId = 0L;
+    self.clientSessionId = 0;
+    self.sourceAppId = 0;
+    self.jobIdSource = -1L;
+    self.jobIdTarget = -1L;
+    self.targetJobName = @"";
+    self.gc_msg_src = GCProtoBufMsgSrcGCProtoBufMsgSrc_Unspecified;
+    self.gcDirIndexSource = 0;
+  }
+  return self;
+}
+static CMsgProtoBufHeader* defaultCMsgProtoBufHeaderInstance = nil;
++ (void) initialize {
+  if (self == [CMsgProtoBufHeader class]) {
+    defaultCMsgProtoBufHeaderInstance = [[CMsgProtoBufHeader alloc] init];
+  }
+}
++ (CMsgProtoBufHeader*) defaultInstance {
+  return defaultCMsgProtoBufHeaderInstance;
+}
+- (CMsgProtoBufHeader*) defaultInstance {
+  return defaultCMsgProtoBufHeaderInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasClientSteamId) {
+    [output writeFixed64:1 value:self.clientSteamId];
+  }
+  if (self.hasClientSessionId) {
+    [output writeInt32:2 value:self.clientSessionId];
+  }
+  if (self.hasSourceAppId) {
+    [output writeUInt32:3 value:self.sourceAppId];
+  }
+  if (self.hasJobIdSource) {
+    [output writeFixed64:10 value:self.jobIdSource];
+  }
+  if (self.hasJobIdTarget) {
+    [output writeFixed64:11 value:self.jobIdTarget];
+  }
+  if (self.hasTargetJobName) {
+    [output writeString:12 value:self.targetJobName];
+  }
+  if (self.hasgc_msg_src) {
+    [output writeEnum:200 value:self.gc_msg_src];
+  }
+  if (self.hasGcDirIndexSource) {
+    [output writeUInt32:201 value:self.gcDirIndexSource];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasClientSteamId) {
+    size_ += computeFixed64Size(1, self.clientSteamId);
+  }
+  if (self.hasClientSessionId) {
+    size_ += computeInt32Size(2, self.clientSessionId);
+  }
+  if (self.hasSourceAppId) {
+    size_ += computeUInt32Size(3, self.sourceAppId);
+  }
+  if (self.hasJobIdSource) {
+    size_ += computeFixed64Size(10, self.jobIdSource);
+  }
+  if (self.hasJobIdTarget) {
+    size_ += computeFixed64Size(11, self.jobIdTarget);
+  }
+  if (self.hasTargetJobName) {
+    size_ += computeStringSize(12, self.targetJobName);
+  }
+  if (self.hasgc_msg_src) {
+    size_ += computeEnumSize(200, self.gc_msg_src);
+  }
+  if (self.hasGcDirIndexSource) {
+    size_ += computeUInt32Size(201, self.gcDirIndexSource);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgProtoBufHeader*) parseFromData:(NSData*) data {
+  return (CMsgProtoBufHeader*)[[[CMsgProtoBufHeader builder] mergeFromData:data] build];
+}
++ (CMsgProtoBufHeader*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgProtoBufHeader*)[[[CMsgProtoBufHeader builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgProtoBufHeader*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgProtoBufHeader*)[[[CMsgProtoBufHeader builder] mergeFromInputStream:input] build];
+}
++ (CMsgProtoBufHeader*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgProtoBufHeader*)[[[CMsgProtoBufHeader builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgProtoBufHeader*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgProtoBufHeader*)[[[CMsgProtoBufHeader builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgProtoBufHeader*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgProtoBufHeader*)[[[CMsgProtoBufHeader builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgProtoBufHeader_Builder*) builder {
+  return [[[CMsgProtoBufHeader_Builder alloc] init] autorelease];
+}
++ (CMsgProtoBufHeader_Builder*) builderWithPrototype:(CMsgProtoBufHeader*) prototype {
+  return [[CMsgProtoBufHeader builder] mergeFrom:prototype];
+}
+- (CMsgProtoBufHeader_Builder*) builder {
+  return [CMsgProtoBufHeader builder];
+}
+- (CMsgProtoBufHeader_Builder*) toBuilder {
+  return [CMsgProtoBufHeader builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasClientSteamId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"clientSteamId", [NSNumber numberWithLongLong:self.clientSteamId]];
+  }
+  if (self.hasClientSessionId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"clientSessionId", [NSNumber numberWithInt:self.clientSessionId]];
+  }
+  if (self.hasSourceAppId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"sourceAppId", [NSNumber numberWithInt:self.sourceAppId]];
+  }
+  if (self.hasJobIdSource) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"jobIdSource", [NSNumber numberWithLongLong:self.jobIdSource]];
+  }
+  if (self.hasJobIdTarget) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"jobIdTarget", [NSNumber numberWithLongLong:self.jobIdTarget]];
+  }
+  if (self.hasTargetJobName) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"targetJobName", self.targetJobName];
+  }
+  if (self.hasgc_msg_src) {
+    [output appendFormat:@"%@%@: %d\n", indent, @"gc_msg_src", self.gc_msg_src];
+  }
+  if (self.hasGcDirIndexSource) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"gcDirIndexSource", [NSNumber numberWithInt:self.gcDirIndexSource]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgProtoBufHeader class]]) {
+    return NO;
+  }
+  CMsgProtoBufHeader *otherMessage = other;
+  return
+      self.hasClientSteamId == otherMessage.hasClientSteamId &&
+      (!self.hasClientSteamId || self.clientSteamId == otherMessage.clientSteamId) &&
+      self.hasClientSessionId == otherMessage.hasClientSessionId &&
+      (!self.hasClientSessionId || self.clientSessionId == otherMessage.clientSessionId) &&
+      self.hasSourceAppId == otherMessage.hasSourceAppId &&
+      (!self.hasSourceAppId || self.sourceAppId == otherMessage.sourceAppId) &&
+      self.hasJobIdSource == otherMessage.hasJobIdSource &&
+      (!self.hasJobIdSource || self.jobIdSource == otherMessage.jobIdSource) &&
+      self.hasJobIdTarget == otherMessage.hasJobIdTarget &&
+      (!self.hasJobIdTarget || self.jobIdTarget == otherMessage.jobIdTarget) &&
+      self.hasTargetJobName == otherMessage.hasTargetJobName &&
+      (!self.hasTargetJobName || [self.targetJobName isEqual:otherMessage.targetJobName]) &&
+      self.hasgc_msg_src == otherMessage.hasgc_msg_src &&
+      (!self.hasgc_msg_src || self.gc_msg_src == otherMessage.gc_msg_src) &&
+      self.hasGcDirIndexSource == otherMessage.hasGcDirIndexSource &&
+      (!self.hasGcDirIndexSource || self.gcDirIndexSource == otherMessage.gcDirIndexSource) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasClientSteamId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithLongLong:self.clientSteamId] hash];
+  }
+  if (self.hasClientSessionId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.clientSessionId] hash];
+  }
+  if (self.hasSourceAppId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.sourceAppId] hash];
+  }
+  if (self.hasJobIdSource) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithLongLong:self.jobIdSource] hash];
+  }
+  if (self.hasJobIdTarget) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithLongLong:self.jobIdTarget] hash];
+  }
+  if (self.hasTargetJobName) {
+    hashCode = hashCode * 31 + [self.targetJobName hash];
+  }
+  if (self.hasgc_msg_src) {
+    hashCode = hashCode * 31 + self.gc_msg_src;
+  }
+  if (self.hasGcDirIndexSource) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.gcDirIndexSource] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgProtoBufHeader_Builder()
+@property (retain) CMsgProtoBufHeader* _builderResult;
+@end
+
+@implementation CMsgProtoBufHeader_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgProtoBufHeader alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgProtoBufHeader_Builder*) clear {
+  _builderResult = [[[CMsgProtoBufHeader alloc] init] autorelease];
+  return self;
+}
+- (CMsgProtoBufHeader_Builder*) clone {
+  return [CMsgProtoBufHeader builderWithPrototype:_builderResult];
+}
+- (CMsgProtoBufHeader*) defaultInstance {
+  return [CMsgProtoBufHeader defaultInstance];
+}
+- (CMsgProtoBufHeader*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgProtoBufHeader*) buildPartial {
+  CMsgProtoBufHeader* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgProtoBufHeader_Builder*) mergeFrom:(CMsgProtoBufHeader*) other {
+  if (other == [CMsgProtoBufHeader defaultInstance]) {
+    return self;
+  }
+  if (other.hasClientSteamId) {
+    [self setClientSteamId:other.clientSteamId];
+  }
+  if (other.hasClientSessionId) {
+    [self setClientSessionId:other.clientSessionId];
+  }
+  if (other.hasSourceAppId) {
+    [self setSourceAppId:other.sourceAppId];
+  }
+  if (other.hasJobIdSource) {
+    [self setJobIdSource:other.jobIdSource];
+  }
+  if (other.hasJobIdTarget) {
+    [self setJobIdTarget:other.jobIdTarget];
+  }
+  if (other.hasTargetJobName) {
+    [self setTargetJobName:other.targetJobName];
+  }
+  if (other.hasgc_msg_src) {
+    [self setgc_msg_src:other.gc_msg_src];
+  }
+  if (other.hasGcDirIndexSource) {
+    [self setGcDirIndexSource:other.gcDirIndexSource];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgProtoBufHeader_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgProtoBufHeader_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 9: {
+        [self setClientSteamId:[input readFixed64]];
+        break;
+      }
+      case 16: {
+        [self setClientSessionId:[input readInt32]];
+        break;
+      }
+      case 24: {
+        [self setSourceAppId:[input readUInt32]];
+        break;
+      }
+      case 81: {
+        [self setJobIdSource:[input readFixed64]];
+        break;
+      }
+      case 89: {
+        [self setJobIdTarget:[input readFixed64]];
+        break;
+      }
+      case 98: {
+        [self setTargetJobName:[input readString]];
+        break;
+      }
+      case 1600: {
+        int32_t value = [input readEnum];
+        if (GCProtoBufMsgSrcIsValidValue(value)) {
+          [self setgc_msg_src:value];
+        } else {
+          [unknownFields mergeVarintField:200 value:value];
+        }
+        break;
+      }
+      case 1608: {
+        [self setGcDirIndexSource:[input readUInt32]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasClientSteamId {
+  return _builderResult.hasClientSteamId;
+}
+- (uint64_t) clientSteamId {
+  return _builderResult.clientSteamId;
+}
+- (CMsgProtoBufHeader_Builder*) setClientSteamId:(uint64_t) value {
+  _builderResult.hasClientSteamId = YES;
+  _builderResult.clientSteamId = value;
+  return self;
+}
+- (CMsgProtoBufHeader_Builder*) clearClientSteamId {
+  _builderResult.hasClientSteamId = NO;
+  _builderResult.clientSteamId = 0L;
+  return self;
+}
+- (BOOL) hasClientSessionId {
+  return _builderResult.hasClientSessionId;
+}
+- (int32_t) clientSessionId {
+  return _builderResult.clientSessionId;
+}
+- (CMsgProtoBufHeader_Builder*) setClientSessionId:(int32_t) value {
+  _builderResult.hasClientSessionId = YES;
+  _builderResult.clientSessionId = value;
+  return self;
+}
+- (CMsgProtoBufHeader_Builder*) clearClientSessionId {
+  _builderResult.hasClientSessionId = NO;
+  _builderResult.clientSessionId = 0;
+  return self;
+}
+- (BOOL) hasSourceAppId {
+  return _builderResult.hasSourceAppId;
+}
+- (uint32_t) sourceAppId {
+  return _builderResult.sourceAppId;
+}
+- (CMsgProtoBufHeader_Builder*) setSourceAppId:(uint32_t) value {
+  _builderResult.hasSourceAppId = YES;
+  _builderResult.sourceAppId = value;
+  return self;
+}
+- (CMsgProtoBufHeader_Builder*) clearSourceAppId {
+  _builderResult.hasSourceAppId = NO;
+  _builderResult.sourceAppId = 0;
+  return self;
+}
+- (BOOL) hasJobIdSource {
+  return _builderResult.hasJobIdSource;
+}
+- (uint64_t) jobIdSource {
+  return _builderResult.jobIdSource;
+}
+- (CMsgProtoBufHeader_Builder*) setJobIdSource:(uint64_t) value {
+  _builderResult.hasJobIdSource = YES;
+  _builderResult.jobIdSource = value;
+  return self;
+}
+- (CMsgProtoBufHeader_Builder*) clearJobIdSource {
+  _builderResult.hasJobIdSource = NO;
+  _builderResult.jobIdSource = -1L;
+  return self;
+}
+- (BOOL) hasJobIdTarget {
+  return _builderResult.hasJobIdTarget;
+}
+- (uint64_t) jobIdTarget {
+  return _builderResult.jobIdTarget;
+}
+- (CMsgProtoBufHeader_Builder*) setJobIdTarget:(uint64_t) value {
+  _builderResult.hasJobIdTarget = YES;
+  _builderResult.jobIdTarget = value;
+  return self;
+}
+- (CMsgProtoBufHeader_Builder*) clearJobIdTarget {
+  _builderResult.hasJobIdTarget = NO;
+  _builderResult.jobIdTarget = -1L;
+  return self;
+}
+- (BOOL) hasTargetJobName {
+  return _builderResult.hasTargetJobName;
+}
+- (NSString*) targetJobName {
+  return _builderResult.targetJobName;
+}
+- (CMsgProtoBufHeader_Builder*) setTargetJobName:(NSString*) value {
+  _builderResult.hasTargetJobName = YES;
+  _builderResult.targetJobName = value;
+  return self;
+}
+- (CMsgProtoBufHeader_Builder*) clearTargetJobName {
+  _builderResult.hasTargetJobName = NO;
+  _builderResult.targetJobName = @"";
+  return self;
+}
+- (BOOL) hasgc_msg_src {
+  return _builderResult.hasgc_msg_src;
+}
+- (GCProtoBufMsgSrc) gc_msg_src {
+  return _builderResult.gc_msg_src;
+}
+- (CMsgProtoBufHeader_Builder*) setgc_msg_src:(GCProtoBufMsgSrc) value {
+  _builderResult.hasgc_msg_src = YES;
+  _builderResult.gc_msg_src = value;
+  return self;
+}
+- (CMsgProtoBufHeader_Builder*) cleargc_msg_src {
+  _builderResult.hasgc_msg_src = NO;
+  _builderResult.gc_msg_src = GCProtoBufMsgSrcGCProtoBufMsgSrc_Unspecified;
+  return self;
+}
+- (BOOL) hasGcDirIndexSource {
+  return _builderResult.hasGcDirIndexSource;
+}
+- (uint32_t) gcDirIndexSource {
+  return _builderResult.gcDirIndexSource;
+}
+- (CMsgProtoBufHeader_Builder*) setGcDirIndexSource:(uint32_t) value {
+  _builderResult.hasGcDirIndexSource = YES;
+  _builderResult.gcDirIndexSource = value;
+  return self;
+}
+- (CMsgProtoBufHeader_Builder*) clearGcDirIndexSource {
+  _builderResult.hasGcDirIndexSource = NO;
+  _builderResult.gcDirIndexSource = 0;
+  return self;
+}
+@end
+
 @interface CMsgWebAPIKey ()
 @property uint32_t status;
 @property uint32_t accountId;

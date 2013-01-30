@@ -32,7 +32,6 @@ BOOL EDOTAGCMsgIsValidValue(EDOTAGCMsg value) {
     case EDOTAGCMsgk_EMsgGCLeaveChatChannel:
     case EDOTAGCMsgk_EMsgGCOtherJoinedChannel:
     case EDOTAGCMsgk_EMsgGCOtherLeftChannel:
-    case EDOTAGCMsgk_EMsgGCRequestMatchHistoryList:
     case EDOTAGCMsgk_EMsgGCMatchHistoryList:
     case EDOTAGCMsgk_EMsgGCGetNews:
     case EDOTAGCMsgk_EMsgGCNewsResponse:
@@ -57,7 +56,6 @@ BOOL EDOTAGCMsgIsValidValue(EDOTAGCMsg value) {
     case EDOTAGCMsgk_EMsgGCPracticeLobbySetTeamSlot:
     case EDOTAGCMsgk_EMsgGCTutorialLobbyCreate:
     case EDOTAGCMsgk_EMsgGCInitialQuestionnaireResponse:
-    case EDOTAGCMsgk_EMsgGCGCTrackedEvent:
     case EDOTAGCMsgk_EMsgGCTournamentRequest:
     case EDOTAGCMsgk_EMsgGCTournamentResponse:
     case EDOTAGCMsgk_EMsgGCBetaParticiaptionRequest:
@@ -71,8 +69,6 @@ BOOL EDOTAGCMsgIsValidValue(EDOTAGCMsg value) {
     case EDOTAGCMsgk_EMsgGCRequestChatChannelListResponse:
     case EDOTAGCMsgk_EMsgGCRequestMatches:
     case EDOTAGCMsgk_EMsgGCRequestMatchesResponse:
-    case EDOTAGCMsgk_EMsgGCMatchmakingSearchCountRequest:
-    case EDOTAGCMsgk_EMsgGCMatchmakingSearchCountResponse:
     case EDOTAGCMsgk_EMsgGCRequestPlayerResources:
     case EDOTAGCMsgk_EMsgGCRequestPlayerResourcesResponse:
     case EDOTAGCMsgk_EMsgGCReadyUp:
@@ -112,8 +108,6 @@ BOOL EDOTAGCMsgIsValidValue(EDOTAGCMsg value) {
     case EDOTAGCMsgk_EMsgGCUnpickedHeroListResponse:
     case EDOTAGCMsgk_EMsgGCRemoveFromUnpickedHeroList:
     case EDOTAGCMsgk_EMsgGCGenericResult:
-    case EDOTAGCMsgk_EMsgGCMatchGroupWaitTimesRequest:
-    case EDOTAGCMsgk_EMsgGCMatchGroupWaitTimesResponse:
     case EDOTAGCMsgk_EMsgGCFriendPracticeLobbyListRequest:
     case EDOTAGCMsgk_EMsgGCFriendPracticeLobbyListResponse:
     case EDOTAGCMsgk_EMsgGCPracticeLobbyJoinResponse:
@@ -189,6 +183,23 @@ BOOL EDOTAGCMsgIsValidValue(EDOTAGCMsg value) {
     case EDOTAGCMsgk_EMsgGCDismissLootGreevil:
     case EDOTAGCMsgk_EMsgGCToGCMatchCompleted:
     case EDOTAGCMsgk_EMsgGCDismissLootGreevilResponse:
+    case EDOTAGCMsgk_EMsgGCBalancedShuffleLobby:
+    case EDOTAGCMsgk_EMsgGCToGCCheckLeaguePermission:
+    case EDOTAGCMsgk_EMsgGCToGCCheckLeaguePermissionResponse:
+    case EDOTAGCMsgk_EMsgGCLeagueScheduleRequest:
+    case EDOTAGCMsgk_EMsgGCLeagueScheduleResponse:
+    case EDOTAGCMsgk_EMsgGCLeagueScheduleEdit:
+    case EDOTAGCMsgk_EMsgGCLeagueScheduleEditResponse:
+    case EDOTAGCMsgk_EMsgGCLeaguesInMonthRequest:
+    case EDOTAGCMsgk_EMsgGCLeaguesInMonthResponse:
+    case EDOTAGCMsgk_EMsgGCMatchmakingStatsRequest:
+    case EDOTAGCMsgk_EMsgGCMatchmakingStatsResponse:
+    case EDOTAGCMsgk_EMsgGCBotGameCreate:
+    case EDOTAGCMsgk_EMsgGCSetMatchHistoryAccess:
+    case EDOTAGCMsgk_EMsgGCSetMatchHistoryAccessResponse:
+    case EDOTAGCMsgk_EMsgGCNotifyMatchHistoryAccessChange:
+    case EDOTAGCMsgk_EMsgUpgradeLeagueItem:
+    case EDOTAGCMsgk_EMsgUpgradeLeagueItemResponse:
     case EDOTAGCMsgk_EMsgGCDev_GrantWarKill:
       return YES;
     default:
@@ -208,6 +219,9 @@ BOOL DOTA_GameModeIsValidValue(DOTA_GameMode value) {
     case DOTA_GameModeDOTA_GAMEMODE_REVERSE_CM:
     case DOTA_GameModeDOTA_GAMEMODE_XMAS:
     case DOTA_GameModeDOTA_GAMEMODE_TUTORIAL:
+    case DOTA_GameModeDOTA_GAMEMODE_MO:
+    case DOTA_GameModeDOTA_GAMEMODE_LP:
+    case DOTA_GameModeDOTA_GAMEMODE_POOL1:
       return YES;
     default:
       return NO;
@@ -1708,6 +1722,8 @@ static CSODOTAGameAccountClient* defaultCSODOTAGameAccountClientInstance = nil;
 @property uint32_t pendingInGameReports;
 @property uint32_t pendingOutOfGameReports;
 @property uint32_t automatedPenaltyDate;
+@property uint32_t lastReportedMatchId;
+@property uint32_t pendingReportedGames;
 @end
 
 @implementation CSODOTAGameAccountClientInternal
@@ -1817,6 +1833,20 @@ static CSODOTAGameAccountClient* defaultCSODOTAGameAccountClientInstance = nil;
   hasAutomatedPenaltyDate_ = !!value_;
 }
 @synthesize automatedPenaltyDate;
+- (BOOL) hasLastReportedMatchId {
+  return !!hasLastReportedMatchId_;
+}
+- (void) setHasLastReportedMatchId:(BOOL) value_ {
+  hasLastReportedMatchId_ = !!value_;
+}
+@synthesize lastReportedMatchId;
+- (BOOL) hasPendingReportedGames {
+  return !!hasPendingReportedGames_;
+}
+- (void) setHasPendingReportedGames:(BOOL) value_ {
+  hasPendingReportedGames_ = !!value_;
+}
+@synthesize pendingReportedGames;
 - (void) dealloc {
   [super dealloc];
 }
@@ -1837,6 +1867,8 @@ static CSODOTAGameAccountClient* defaultCSODOTAGameAccountClientInstance = nil;
     self.pendingInGameReports = 0;
     self.pendingOutOfGameReports = 0;
     self.automatedPenaltyDate = 0;
+    self.lastReportedMatchId = 0;
+    self.pendingReportedGames = 0;
   }
   return self;
 }
@@ -1901,6 +1933,12 @@ static CSODOTAGameAccountClientInternal* defaultCSODOTAGameAccountClientInternal
   if (self.hasAutomatedPenaltyDate) {
     [output writeUInt32:17 value:self.automatedPenaltyDate];
   }
+  if (self.hasLastReportedMatchId) {
+    [output writeUInt32:18 value:self.lastReportedMatchId];
+  }
+  if (self.hasPendingReportedGames) {
+    [output writeUInt32:19 value:self.pendingReportedGames];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (int32_t) serializedSize {
@@ -1954,6 +1992,12 @@ static CSODOTAGameAccountClientInternal* defaultCSODOTAGameAccountClientInternal
   }
   if (self.hasAutomatedPenaltyDate) {
     size_ += computeUInt32Size(17, self.automatedPenaltyDate);
+  }
+  if (self.hasLastReportedMatchId) {
+    size_ += computeUInt32Size(18, self.lastReportedMatchId);
+  }
+  if (self.hasPendingReportedGames) {
+    size_ += computeUInt32Size(19, self.pendingReportedGames);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -2035,6 +2079,12 @@ static CSODOTAGameAccountClientInternal* defaultCSODOTAGameAccountClientInternal
   if (self.hasAutomatedPenaltyDate) {
     [output appendFormat:@"%@%@: %@\n", indent, @"automatedPenaltyDate", [NSNumber numberWithInt:self.automatedPenaltyDate]];
   }
+  if (self.hasLastReportedMatchId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"lastReportedMatchId", [NSNumber numberWithInt:self.lastReportedMatchId]];
+  }
+  if (self.hasPendingReportedGames) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"pendingReportedGames", [NSNumber numberWithInt:self.pendingReportedGames]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -2076,6 +2126,10 @@ static CSODOTAGameAccountClientInternal* defaultCSODOTAGameAccountClientInternal
       (!self.hasPendingOutOfGameReports || self.pendingOutOfGameReports == otherMessage.pendingOutOfGameReports) &&
       self.hasAutomatedPenaltyDate == otherMessage.hasAutomatedPenaltyDate &&
       (!self.hasAutomatedPenaltyDate || self.automatedPenaltyDate == otherMessage.automatedPenaltyDate) &&
+      self.hasLastReportedMatchId == otherMessage.hasLastReportedMatchId &&
+      (!self.hasLastReportedMatchId || self.lastReportedMatchId == otherMessage.lastReportedMatchId) &&
+      self.hasPendingReportedGames == otherMessage.hasPendingReportedGames &&
+      (!self.hasPendingReportedGames || self.pendingReportedGames == otherMessage.pendingReportedGames) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -2124,6 +2178,12 @@ static CSODOTAGameAccountClientInternal* defaultCSODOTAGameAccountClientInternal
   }
   if (self.hasAutomatedPenaltyDate) {
     hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.automatedPenaltyDate] hash];
+  }
+  if (self.hasLastReportedMatchId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.lastReportedMatchId] hash];
+  }
+  if (self.hasPendingReportedGames) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.pendingReportedGames] hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -2217,6 +2277,12 @@ static CSODOTAGameAccountClientInternal* defaultCSODOTAGameAccountClientInternal
   if (other.hasAutomatedPenaltyDate) {
     [self setAutomatedPenaltyDate:other.automatedPenaltyDate];
   }
+  if (other.hasLastReportedMatchId) {
+    [self setLastReportedMatchId:other.lastReportedMatchId];
+  }
+  if (other.hasPendingReportedGames) {
+    [self setPendingReportedGames:other.pendingReportedGames];
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -2296,6 +2362,14 @@ static CSODOTAGameAccountClientInternal* defaultCSODOTAGameAccountClientInternal
       }
       case 136: {
         [self setAutomatedPenaltyDate:[input readUInt32]];
+        break;
+      }
+      case 144: {
+        [self setLastReportedMatchId:[input readUInt32]];
+        break;
+      }
+      case 152: {
+        [self setPendingReportedGames:[input readUInt32]];
         break;
       }
     }
@@ -2539,6 +2613,38 @@ static CSODOTAGameAccountClientInternal* defaultCSODOTAGameAccountClientInternal
 - (CSODOTAGameAccountClientInternal_Builder*) clearAutomatedPenaltyDate {
   _builderResult.hasAutomatedPenaltyDate = NO;
   _builderResult.automatedPenaltyDate = 0;
+  return self;
+}
+- (BOOL) hasLastReportedMatchId {
+  return _builderResult.hasLastReportedMatchId;
+}
+- (uint32_t) lastReportedMatchId {
+  return _builderResult.lastReportedMatchId;
+}
+- (CSODOTAGameAccountClientInternal_Builder*) setLastReportedMatchId:(uint32_t) value {
+  _builderResult.hasLastReportedMatchId = YES;
+  _builderResult.lastReportedMatchId = value;
+  return self;
+}
+- (CSODOTAGameAccountClientInternal_Builder*) clearLastReportedMatchId {
+  _builderResult.hasLastReportedMatchId = NO;
+  _builderResult.lastReportedMatchId = 0;
+  return self;
+}
+- (BOOL) hasPendingReportedGames {
+  return _builderResult.hasPendingReportedGames;
+}
+- (uint32_t) pendingReportedGames {
+  return _builderResult.pendingReportedGames;
+}
+- (CSODOTAGameAccountClientInternal_Builder*) setPendingReportedGames:(uint32_t) value {
+  _builderResult.hasPendingReportedGames = YES;
+  _builderResult.pendingReportedGames = value;
+  return self;
+}
+- (CSODOTAGameAccountClientInternal_Builder*) clearPendingReportedGames {
+  _builderResult.hasPendingReportedGames = NO;
+  _builderResult.pendingReportedGames = 0;
   return self;
 }
 @end
@@ -4456,6 +4562,7 @@ static CSODOTAPartyMemcached* defaultCSODOTAPartyMemcachedInstance = nil;
 @property uint64_t senderId;
 @property (retain) NSString* senderName;
 @property (retain) PBAppendableArray * membersArray;
+@property BOOL teamInvite;
 @end
 
 @implementation CSODOTAPartyInvite
@@ -4483,6 +4590,18 @@ static CSODOTAPartyMemcached* defaultCSODOTAPartyMemcachedInstance = nil;
 @synthesize senderName;
 @synthesize membersArray;
 @dynamic members;
+- (BOOL) hasTeamInvite {
+  return !!hasTeamInvite_;
+}
+- (void) setHasTeamInvite:(BOOL) value_ {
+  hasTeamInvite_ = !!value_;
+}
+- (BOOL) teamInvite {
+  return !!teamInvite_;
+}
+- (void) setTeamInvite:(BOOL) value_ {
+  teamInvite_ = !!value_;
+}
 - (void) dealloc {
   self.senderName = nil;
   self.membersArray = nil;
@@ -4493,6 +4612,7 @@ static CSODOTAPartyMemcached* defaultCSODOTAPartyMemcachedInstance = nil;
     self.groupId = 0L;
     self.senderId = 0L;
     self.senderName = @"";
+    self.teamInvite = NO;
   }
   return self;
 }
@@ -4530,6 +4650,9 @@ static CSODOTAPartyInvite* defaultCSODOTAPartyInviteInstance = nil;
   for (CSODOTAPartyInvite_PartyMember *element in self.membersArray) {
     [output writeMessage:4 value:element];
   }
+  if (self.hasTeamInvite) {
+    [output writeBool:5 value:self.teamInvite];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (int32_t) serializedSize {
@@ -4550,6 +4673,9 @@ static CSODOTAPartyInvite* defaultCSODOTAPartyInviteInstance = nil;
   }
   for (CSODOTAPartyInvite_PartyMember *element in self.membersArray) {
     size_ += computeMessageSize(4, element);
+  }
+  if (self.hasTeamInvite) {
+    size_ += computeBoolSize(5, self.teamInvite);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -4601,6 +4727,9 @@ static CSODOTAPartyInvite* defaultCSODOTAPartyInviteInstance = nil;
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
   }
+  if (self.hasTeamInvite) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"teamInvite", [NSNumber numberWithBool:self.teamInvite]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -4619,6 +4748,8 @@ static CSODOTAPartyInvite* defaultCSODOTAPartyInviteInstance = nil;
       self.hasSenderName == otherMessage.hasSenderName &&
       (!self.hasSenderName || [self.senderName isEqual:otherMessage.senderName]) &&
       [self.membersArray isEqualToArray:otherMessage.membersArray] &&
+      self.hasTeamInvite == otherMessage.hasTeamInvite &&
+      (!self.hasTeamInvite || self.teamInvite == otherMessage.teamInvite) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -4634,6 +4765,9 @@ static CSODOTAPartyInvite* defaultCSODOTAPartyInviteInstance = nil;
   }
   for (CSODOTAPartyInvite_PartyMember* element in self.membersArray) {
     hashCode = hashCode * 31 + [element hash];
+  }
+  if (self.hasTeamInvite) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.teamInvite] hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -4998,6 +5132,9 @@ static CSODOTAPartyInvite_PartyMember* defaultCSODOTAPartyInvite_PartyMemberInst
       [_builderResult.membersArray appendArray:other.membersArray];
     }
   }
+  if (other.hasTeamInvite) {
+    [self setTeamInvite:other.teamInvite];
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -5035,6 +5172,10 @@ static CSODOTAPartyInvite_PartyMember* defaultCSODOTAPartyInvite_PartyMemberInst
         CSODOTAPartyInvite_PartyMember_Builder* subBuilder = [CSODOTAPartyInvite_PartyMember builder];
         [input readMessage:subBuilder extensionRegistry:extensionRegistry];
         [self addMembers:[subBuilder buildPartial]];
+        break;
+      }
+      case 40: {
+        [self setTeamInvite:[input readBool]];
         break;
       }
     }
@@ -5113,6 +5254,22 @@ static CSODOTAPartyInvite_PartyMember* defaultCSODOTAPartyInvite_PartyMemberInst
   _builderResult.membersArray = nil;
   return self;
 }
+- (BOOL) hasTeamInvite {
+  return _builderResult.hasTeamInvite;
+}
+- (BOOL) teamInvite {
+  return _builderResult.teamInvite;
+}
+- (CSODOTAPartyInvite_Builder*) setTeamInvite:(BOOL) value {
+  _builderResult.hasTeamInvite = YES;
+  _builderResult.teamInvite = value;
+  return self;
+}
+- (CSODOTAPartyInvite_Builder*) clearTeamInvite {
+  _builderResult.hasTeamInvite = NO;
+  _builderResult.teamInvite = NO;
+  return self;
+}
 @end
 
 @interface CDOTALobbyMember ()
@@ -5133,6 +5290,7 @@ static CSODOTAPartyInvite_PartyMember* defaultCSODOTAPartyInvite_PartyMemberInst
 @property uint32_t channel;
 @property uint32_t prizeDefIndex;
 @property uint32_t metaXpBonusRate;
+@property (retain) PBAppendableArray * disabledHeroIdArray;
 @end
 
 @implementation CDOTALobbyMember
@@ -5261,8 +5419,11 @@ static CSODOTAPartyInvite_PartyMember* defaultCSODOTAPartyInvite_PartyMemberInst
   hasMetaXpBonusRate_ = !!value_;
 }
 @synthesize metaXpBonusRate;
+@synthesize disabledHeroIdArray;
+@dynamic disabledHeroId;
 - (void) dealloc {
   self.name = nil;
+  self.disabledHeroIdArray = nil;
   [super dealloc];
 }
 - (id) init {
@@ -5298,6 +5459,12 @@ static CDOTALobbyMember* defaultCDOTALobbyMemberInstance = nil;
 }
 - (CDOTALobbyMember*) defaultInstance {
   return defaultCDOTALobbyMemberInstance;
+}
+- (PBArray *)disabledHeroId {
+  return disabledHeroIdArray;
+}
+- (uint32_t)disabledHeroIdAtIndex:(NSUInteger)index {
+  return [disabledHeroIdArray uint32AtIndex:index];
 }
 - (BOOL) isInitialized {
   return YES;
@@ -5353,6 +5520,13 @@ static CDOTALobbyMember* defaultCDOTALobbyMemberInstance = nil;
   }
   if (self.hasMetaXpBonusRate) {
     [output writeUInt32:19 value:self.metaXpBonusRate];
+  }
+  const NSUInteger disabledHeroIdArrayCount = self.disabledHeroIdArray.count;
+  if (disabledHeroIdArrayCount > 0) {
+    const uint32_t *values = (const uint32_t *)self.disabledHeroIdArray.data;
+    for (NSUInteger i = 0; i < disabledHeroIdArrayCount; ++i) {
+      [output writeUInt32:20 value:values[i]];
+    }
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -5413,6 +5587,16 @@ static CDOTALobbyMember* defaultCDOTALobbyMemberInstance = nil;
   }
   if (self.hasMetaXpBonusRate) {
     size_ += computeUInt32Size(19, self.metaXpBonusRate);
+  }
+  {
+    int32_t dataSize = 0;
+    const NSUInteger count = self.disabledHeroIdArray.count;
+    const uint32_t *values = (const uint32_t *)self.disabledHeroIdArray.data;
+    for (NSUInteger i = 0; i < count; ++i) {
+      dataSize += computeUInt32SizeNoTag(values[i]);
+    }
+    size_ += dataSize;
+    size_ += 2 * count;
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -5500,6 +5684,9 @@ static CDOTALobbyMember* defaultCDOTALobbyMemberInstance = nil;
   if (self.hasMetaXpBonusRate) {
     [output appendFormat:@"%@%@: %@\n", indent, @"metaXpBonusRate", [NSNumber numberWithInt:self.metaXpBonusRate]];
   }
+  for (NSNumber* value in self.disabledHeroIdArray) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"disabledHeroId", value];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -5545,6 +5732,7 @@ static CDOTALobbyMember* defaultCDOTALobbyMemberInstance = nil;
       (!self.hasPrizeDefIndex || self.prizeDefIndex == otherMessage.prizeDefIndex) &&
       self.hasMetaXpBonusRate == otherMessage.hasMetaXpBonusRate &&
       (!self.hasMetaXpBonusRate || self.metaXpBonusRate == otherMessage.metaXpBonusRate) &&
+      [self.disabledHeroIdArray isEqualToArray:otherMessage.disabledHeroIdArray] &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -5599,6 +5787,9 @@ static CDOTALobbyMember* defaultCDOTALobbyMemberInstance = nil;
   }
   if (self.hasMetaXpBonusRate) {
     hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.metaXpBonusRate] hash];
+  }
+  for (NSNumber* value in self.disabledHeroIdArray) {
+    hashCode = hashCode * 31 + [value intValue];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -5697,6 +5888,13 @@ static CDOTALobbyMember* defaultCDOTALobbyMemberInstance = nil;
   }
   if (other.hasMetaXpBonusRate) {
     [self setMetaXpBonusRate:other.metaXpBonusRate];
+  }
+  if (other.disabledHeroIdArray.count > 0) {
+    if (_builderResult.disabledHeroIdArray == nil) {
+      _builderResult.disabledHeroIdArray = [[other.disabledHeroIdArray copyWithZone:[other.disabledHeroIdArray zone]] autorelease];
+    } else {
+      [_builderResult.disabledHeroIdArray appendArray:other.disabledHeroIdArray];
+    }
   }
   [self mergeUnknownFields:other.unknownFields];
   return self;
@@ -5800,6 +5998,10 @@ static CDOTALobbyMember* defaultCDOTALobbyMemberInstance = nil;
       }
       case 152: {
         [self setMetaXpBonusRate:[input readUInt32]];
+        break;
+      }
+      case 160: {
+        [self addDisabledHeroId:[input readUInt32]];
         break;
       }
     }
@@ -6075,6 +6277,31 @@ static CDOTALobbyMember* defaultCDOTALobbyMemberInstance = nil;
 - (CDOTALobbyMember_Builder*) clearMetaXpBonusRate {
   _builderResult.hasMetaXpBonusRate = NO;
   _builderResult.metaXpBonusRate = 0;
+  return self;
+}
+- (PBAppendableArray *)disabledHeroId {
+  return _builderResult.disabledHeroIdArray;
+}
+- (uint32_t)disabledHeroIdAtIndex:(NSUInteger)index {
+  return [_builderResult disabledHeroIdAtIndex:index];
+}
+- (CDOTALobbyMember_Builder *)addDisabledHeroId:(uint32_t)value {
+  if (_builderResult.disabledHeroIdArray == nil) {
+    _builderResult.disabledHeroIdArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  }
+  [_builderResult.disabledHeroIdArray addUint32:value];
+  return self;
+}
+- (CDOTALobbyMember_Builder *)setDisabledHeroIdArray:(NSArray *)array {
+  _builderResult.disabledHeroIdArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  return self;
+}
+- (CDOTALobbyMember_Builder *)setDisabledHeroIdValues:(const uint32_t *)values count:(NSUInteger)count {
+  _builderResult.disabledHeroIdArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  return self;
+}
+- (CDOTALobbyMember_Builder *)clearDisabledHeroId {
+  _builderResult.disabledHeroIdArray = nil;
   return self;
 }
 @end
@@ -7266,6 +7493,8 @@ static CLobbyTimedRewardDetails* defaultCLobbyTimedRewardDetailsInstance = nil;
 @property uint32_t direSeriesWins;
 @property uint32_t lootGenerated;
 @property uint32_t lootAwarded;
+@property BOOL allchat;
+@property uint32_t rankChange;
 @end
 
 @implementation CSODOTALobby
@@ -7559,6 +7788,25 @@ static CLobbyTimedRewardDetails* defaultCLobbyTimedRewardDetailsInstance = nil;
   hasLootAwarded_ = !!value_;
 }
 @synthesize lootAwarded;
+- (BOOL) hasAllchat {
+  return !!hasAllchat_;
+}
+- (void) setHasAllchat:(BOOL) value_ {
+  hasAllchat_ = !!value_;
+}
+- (BOOL) allchat {
+  return !!allchat_;
+}
+- (void) setAllchat:(BOOL) value_ {
+  allchat_ = !!value_;
+}
+- (BOOL) hasRankChange {
+  return !!hasRankChange_;
+}
+- (void) setHasRankChange:(BOOL) value_ {
+  hasRankChange_ = !!value_;
+}
+@synthesize rankChange;
 - (void) dealloc {
   self.membersArray = nil;
   self.leftMembersArray = nil;
@@ -7609,6 +7857,8 @@ static CLobbyTimedRewardDetails* defaultCLobbyTimedRewardDetailsInstance = nil;
     self.direSeriesWins = 0;
     self.lootGenerated = 0;
     self.lootAwarded = 0;
+    self.allchat = NO;
+    self.rankChange = 0;
   }
   return self;
 }
@@ -7796,6 +8046,12 @@ static CSODOTALobby* defaultCSODOTALobbyInstance = nil;
   if (self.hasLootAwarded) {
     [output writeUInt32:50 value:self.lootAwarded];
   }
+  if (self.hasAllchat) {
+    [output writeBool:51 value:self.allchat];
+  }
+  if (self.hasRankChange) {
+    [output writeUInt32:52 value:self.rankChange];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (int32_t) serializedSize {
@@ -7941,6 +8197,12 @@ static CSODOTALobby* defaultCSODOTALobbyInstance = nil;
   }
   if (self.hasLootAwarded) {
     size_ += computeUInt32Size(50, self.lootAwarded);
+  }
+  if (self.hasAllchat) {
+    size_ += computeBoolSize(51, self.allchat);
+  }
+  if (self.hasRankChange) {
+    size_ += computeUInt32Size(52, self.rankChange);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -8115,6 +8377,12 @@ static CSODOTALobby* defaultCSODOTALobbyInstance = nil;
   if (self.hasLootAwarded) {
     [output appendFormat:@"%@%@: %@\n", indent, @"lootAwarded", [NSNumber numberWithInt:self.lootAwarded]];
   }
+  if (self.hasAllchat) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"allchat", [NSNumber numberWithBool:self.allchat]];
+  }
+  if (self.hasRankChange) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"rankChange", [NSNumber numberWithInt:self.rankChange]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -8204,6 +8472,10 @@ static CSODOTALobby* defaultCSODOTALobbyInstance = nil;
       (!self.hasLootGenerated || self.lootGenerated == otherMessage.lootGenerated) &&
       self.hasLootAwarded == otherMessage.hasLootAwarded &&
       (!self.hasLootAwarded || self.lootAwarded == otherMessage.lootAwarded) &&
+      self.hasAllchat == otherMessage.hasAllchat &&
+      (!self.hasAllchat || self.allchat == otherMessage.allchat) &&
+      self.hasRankChange == otherMessage.hasRankChange &&
+      (!self.hasRankChange || self.rankChange == otherMessage.rankChange) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -8333,6 +8605,12 @@ static CSODOTALobby* defaultCSODOTALobbyInstance = nil;
   }
   if (self.hasLootAwarded) {
     hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.lootAwarded] hash];
+  }
+  if (self.hasAllchat) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.allchat] hash];
+  }
+  if (self.hasRankChange) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.rankChange] hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -8558,6 +8836,12 @@ BOOL CSODOTALobby_LobbyTypeIsValidValue(CSODOTALobby_LobbyType value) {
   }
   if (other.hasLootAwarded) {
     [self setLootAwarded:other.lootAwarded];
+  }
+  if (other.hasAllchat) {
+    [self setAllchat:other.allchat];
+  }
+  if (other.hasRankChange) {
+    [self setRankChange:other.rankChange];
   }
   [self mergeUnknownFields:other.unknownFields];
   return self;
@@ -8789,6 +9073,14 @@ BOOL CSODOTALobby_LobbyTypeIsValidValue(CSODOTALobby_LobbyType value) {
       }
       case 400: {
         [self setLootAwarded:[input readUInt32]];
+        break;
+      }
+      case 408: {
+        [self setAllchat:[input readBool]];
+        break;
+      }
+      case 416: {
+        [self setRankChange:[input readUInt32]];
         break;
       }
     }
@@ -9518,6 +9810,38 @@ BOOL CSODOTALobby_LobbyTypeIsValidValue(CSODOTALobby_LobbyType value) {
 - (CSODOTALobby_Builder*) clearLootAwarded {
   _builderResult.hasLootAwarded = NO;
   _builderResult.lootAwarded = 0;
+  return self;
+}
+- (BOOL) hasAllchat {
+  return _builderResult.hasAllchat;
+}
+- (BOOL) allchat {
+  return _builderResult.allchat;
+}
+- (CSODOTALobby_Builder*) setAllchat:(BOOL) value {
+  _builderResult.hasAllchat = YES;
+  _builderResult.allchat = value;
+  return self;
+}
+- (CSODOTALobby_Builder*) clearAllchat {
+  _builderResult.hasAllchat = NO;
+  _builderResult.allchat = NO;
+  return self;
+}
+- (BOOL) hasRankChange {
+  return _builderResult.hasRankChange;
+}
+- (uint32_t) rankChange {
+  return _builderResult.rankChange;
+}
+- (CSODOTALobby_Builder*) setRankChange:(uint32_t) value {
+  _builderResult.hasRankChange = YES;
+  _builderResult.rankChange = value;
+  return self;
+}
+- (CSODOTALobby_Builder*) clearRankChange {
+  _builderResult.hasRankChange = NO;
+  _builderResult.rankChange = 0;
   return self;
 }
 @end
@@ -12806,398 +13130,6 @@ static CMsgDismissLootGreevilResponse* defaultCMsgDismissLootGreevilResponseInst
       }
     }
   }
-}
-@end
-
-@interface CMsgMatchmakingSearchCountRequest ()
-@end
-
-@implementation CMsgMatchmakingSearchCountRequest
-
-- (void) dealloc {
-  [super dealloc];
-}
-- (id) init {
-  if ((self = [super init])) {
-  }
-  return self;
-}
-static CMsgMatchmakingSearchCountRequest* defaultCMsgMatchmakingSearchCountRequestInstance = nil;
-+ (void) initialize {
-  if (self == [CMsgMatchmakingSearchCountRequest class]) {
-    defaultCMsgMatchmakingSearchCountRequestInstance = [[CMsgMatchmakingSearchCountRequest alloc] init];
-  }
-}
-+ (CMsgMatchmakingSearchCountRequest*) defaultInstance {
-  return defaultCMsgMatchmakingSearchCountRequestInstance;
-}
-- (CMsgMatchmakingSearchCountRequest*) defaultInstance {
-  return defaultCMsgMatchmakingSearchCountRequestInstance;
-}
-- (BOOL) isInitialized {
-  return YES;
-}
-- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  [self.unknownFields writeToCodedOutputStream:output];
-}
-- (int32_t) serializedSize {
-  int32_t size_ = memoizedSerializedSize;
-  if (size_ != -1) {
-    return size_;
-  }
-
-  size_ = 0;
-  size_ += self.unknownFields.serializedSize;
-  memoizedSerializedSize = size_;
-  return size_;
-}
-+ (CMsgMatchmakingSearchCountRequest*) parseFromData:(NSData*) data {
-  return (CMsgMatchmakingSearchCountRequest*)[[[CMsgMatchmakingSearchCountRequest builder] mergeFromData:data] build];
-}
-+ (CMsgMatchmakingSearchCountRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgMatchmakingSearchCountRequest*)[[[CMsgMatchmakingSearchCountRequest builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgMatchmakingSearchCountRequest*) parseFromInputStream:(NSInputStream*) input {
-  return (CMsgMatchmakingSearchCountRequest*)[[[CMsgMatchmakingSearchCountRequest builder] mergeFromInputStream:input] build];
-}
-+ (CMsgMatchmakingSearchCountRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgMatchmakingSearchCountRequest*)[[[CMsgMatchmakingSearchCountRequest builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgMatchmakingSearchCountRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input {
-  return (CMsgMatchmakingSearchCountRequest*)[[[CMsgMatchmakingSearchCountRequest builder] mergeFromCodedInputStream:input] build];
-}
-+ (CMsgMatchmakingSearchCountRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgMatchmakingSearchCountRequest*)[[[CMsgMatchmakingSearchCountRequest builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgMatchmakingSearchCountRequest_Builder*) builder {
-  return [[[CMsgMatchmakingSearchCountRequest_Builder alloc] init] autorelease];
-}
-+ (CMsgMatchmakingSearchCountRequest_Builder*) builderWithPrototype:(CMsgMatchmakingSearchCountRequest*) prototype {
-  return [[CMsgMatchmakingSearchCountRequest builder] mergeFrom:prototype];
-}
-- (CMsgMatchmakingSearchCountRequest_Builder*) builder {
-  return [CMsgMatchmakingSearchCountRequest builder];
-}
-- (CMsgMatchmakingSearchCountRequest_Builder*) toBuilder {
-  return [CMsgMatchmakingSearchCountRequest builderWithPrototype:self];
-}
-- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  [self.unknownFields writeDescriptionTo:output withIndent:indent];
-}
-- (BOOL) isEqual:(id)other {
-  if (other == self) {
-    return YES;
-  }
-  if (![other isKindOfClass:[CMsgMatchmakingSearchCountRequest class]]) {
-    return NO;
-  }
-  CMsgMatchmakingSearchCountRequest *otherMessage = other;
-  return
-      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
-}
-- (NSUInteger) hash {
-  NSUInteger hashCode = 7;
-  hashCode = hashCode * 31 + [self.unknownFields hash];
-  return hashCode;
-}
-@end
-
-@interface CMsgMatchmakingSearchCountRequest_Builder()
-@property (retain) CMsgMatchmakingSearchCountRequest* _builderResult;
-@end
-
-@implementation CMsgMatchmakingSearchCountRequest_Builder
-@synthesize _builderResult;
-- (void) dealloc {
-  self._builderResult = nil;
-  [super dealloc];
-}
-- (id) init {
-  if ((self = [super init])) {
-    self._builderResult = [[[CMsgMatchmakingSearchCountRequest alloc] init] autorelease];
-  }
-  return self;
-}
-- (PBGeneratedMessage*) internalGetResult {
-  return _builderResult;
-}
-- (CMsgMatchmakingSearchCountRequest_Builder*) clear {
-  _builderResult = [[[CMsgMatchmakingSearchCountRequest alloc] init] autorelease];
-  return self;
-}
-- (CMsgMatchmakingSearchCountRequest_Builder*) clone {
-  return [CMsgMatchmakingSearchCountRequest builderWithPrototype:_builderResult];
-}
-- (CMsgMatchmakingSearchCountRequest*) defaultInstance {
-  return [CMsgMatchmakingSearchCountRequest defaultInstance];
-}
-- (CMsgMatchmakingSearchCountRequest*) build {
-  [self checkInitialized];
-  return [self buildPartial];
-}
-- (CMsgMatchmakingSearchCountRequest*) buildPartial {
-  CMsgMatchmakingSearchCountRequest* returnMe = [[_builderResult retain] autorelease];
-  self._builderResult = nil;
-  return returnMe;
-}
-- (CMsgMatchmakingSearchCountRequest_Builder*) mergeFrom:(CMsgMatchmakingSearchCountRequest*) other {
-  if (other == [CMsgMatchmakingSearchCountRequest defaultInstance]) {
-    return self;
-  }
-  [self mergeUnknownFields:other.unknownFields];
-  return self;
-}
-- (CMsgMatchmakingSearchCountRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
-  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
-}
-- (CMsgMatchmakingSearchCountRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
-  while (YES) {
-    int32_t tag = [input readTag];
-    switch (tag) {
-      case 0:
-        [self setUnknownFields:[unknownFields build]];
-        return self;
-      default: {
-        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
-          [self setUnknownFields:[unknownFields build]];
-          return self;
-        }
-        break;
-      }
-    }
-  }
-}
-@end
-
-@interface CMsgMatchmakingSearchCountResponse ()
-@property (retain) PBAppendableArray * searchingPlayersByGroupArray;
-@end
-
-@implementation CMsgMatchmakingSearchCountResponse
-
-@synthesize searchingPlayersByGroupArray;
-@dynamic searchingPlayersByGroup;
-- (void) dealloc {
-  self.searchingPlayersByGroupArray = nil;
-  [super dealloc];
-}
-- (id) init {
-  if ((self = [super init])) {
-  }
-  return self;
-}
-static CMsgMatchmakingSearchCountResponse* defaultCMsgMatchmakingSearchCountResponseInstance = nil;
-+ (void) initialize {
-  if (self == [CMsgMatchmakingSearchCountResponse class]) {
-    defaultCMsgMatchmakingSearchCountResponseInstance = [[CMsgMatchmakingSearchCountResponse alloc] init];
-  }
-}
-+ (CMsgMatchmakingSearchCountResponse*) defaultInstance {
-  return defaultCMsgMatchmakingSearchCountResponseInstance;
-}
-- (CMsgMatchmakingSearchCountResponse*) defaultInstance {
-  return defaultCMsgMatchmakingSearchCountResponseInstance;
-}
-- (PBArray *)searchingPlayersByGroup {
-  return searchingPlayersByGroupArray;
-}
-- (uint32_t)searchingPlayersByGroupAtIndex:(NSUInteger)index {
-  return [searchingPlayersByGroupArray uint32AtIndex:index];
-}
-- (BOOL) isInitialized {
-  return YES;
-}
-- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  const NSUInteger searchingPlayersByGroupArrayCount = self.searchingPlayersByGroupArray.count;
-  if (searchingPlayersByGroupArrayCount > 0) {
-    const uint32_t *values = (const uint32_t *)self.searchingPlayersByGroupArray.data;
-    for (NSUInteger i = 0; i < searchingPlayersByGroupArrayCount; ++i) {
-      [output writeUInt32:1 value:values[i]];
-    }
-  }
-  [self.unknownFields writeToCodedOutputStream:output];
-}
-- (int32_t) serializedSize {
-  int32_t size_ = memoizedSerializedSize;
-  if (size_ != -1) {
-    return size_;
-  }
-
-  size_ = 0;
-  {
-    int32_t dataSize = 0;
-    const NSUInteger count = self.searchingPlayersByGroupArray.count;
-    const uint32_t *values = (const uint32_t *)self.searchingPlayersByGroupArray.data;
-    for (NSUInteger i = 0; i < count; ++i) {
-      dataSize += computeUInt32SizeNoTag(values[i]);
-    }
-    size_ += dataSize;
-    size_ += 1 * count;
-  }
-  size_ += self.unknownFields.serializedSize;
-  memoizedSerializedSize = size_;
-  return size_;
-}
-+ (CMsgMatchmakingSearchCountResponse*) parseFromData:(NSData*) data {
-  return (CMsgMatchmakingSearchCountResponse*)[[[CMsgMatchmakingSearchCountResponse builder] mergeFromData:data] build];
-}
-+ (CMsgMatchmakingSearchCountResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgMatchmakingSearchCountResponse*)[[[CMsgMatchmakingSearchCountResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgMatchmakingSearchCountResponse*) parseFromInputStream:(NSInputStream*) input {
-  return (CMsgMatchmakingSearchCountResponse*)[[[CMsgMatchmakingSearchCountResponse builder] mergeFromInputStream:input] build];
-}
-+ (CMsgMatchmakingSearchCountResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgMatchmakingSearchCountResponse*)[[[CMsgMatchmakingSearchCountResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgMatchmakingSearchCountResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
-  return (CMsgMatchmakingSearchCountResponse*)[[[CMsgMatchmakingSearchCountResponse builder] mergeFromCodedInputStream:input] build];
-}
-+ (CMsgMatchmakingSearchCountResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgMatchmakingSearchCountResponse*)[[[CMsgMatchmakingSearchCountResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgMatchmakingSearchCountResponse_Builder*) builder {
-  return [[[CMsgMatchmakingSearchCountResponse_Builder alloc] init] autorelease];
-}
-+ (CMsgMatchmakingSearchCountResponse_Builder*) builderWithPrototype:(CMsgMatchmakingSearchCountResponse*) prototype {
-  return [[CMsgMatchmakingSearchCountResponse builder] mergeFrom:prototype];
-}
-- (CMsgMatchmakingSearchCountResponse_Builder*) builder {
-  return [CMsgMatchmakingSearchCountResponse builder];
-}
-- (CMsgMatchmakingSearchCountResponse_Builder*) toBuilder {
-  return [CMsgMatchmakingSearchCountResponse builderWithPrototype:self];
-}
-- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  for (NSNumber* value in self.searchingPlayersByGroupArray) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"searchingPlayersByGroup", value];
-  }
-  [self.unknownFields writeDescriptionTo:output withIndent:indent];
-}
-- (BOOL) isEqual:(id)other {
-  if (other == self) {
-    return YES;
-  }
-  if (![other isKindOfClass:[CMsgMatchmakingSearchCountResponse class]]) {
-    return NO;
-  }
-  CMsgMatchmakingSearchCountResponse *otherMessage = other;
-  return
-      [self.searchingPlayersByGroupArray isEqualToArray:otherMessage.searchingPlayersByGroupArray] &&
-      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
-}
-- (NSUInteger) hash {
-  NSUInteger hashCode = 7;
-  for (NSNumber* value in self.searchingPlayersByGroupArray) {
-    hashCode = hashCode * 31 + [value intValue];
-  }
-  hashCode = hashCode * 31 + [self.unknownFields hash];
-  return hashCode;
-}
-@end
-
-@interface CMsgMatchmakingSearchCountResponse_Builder()
-@property (retain) CMsgMatchmakingSearchCountResponse* _builderResult;
-@end
-
-@implementation CMsgMatchmakingSearchCountResponse_Builder
-@synthesize _builderResult;
-- (void) dealloc {
-  self._builderResult = nil;
-  [super dealloc];
-}
-- (id) init {
-  if ((self = [super init])) {
-    self._builderResult = [[[CMsgMatchmakingSearchCountResponse alloc] init] autorelease];
-  }
-  return self;
-}
-- (PBGeneratedMessage*) internalGetResult {
-  return _builderResult;
-}
-- (CMsgMatchmakingSearchCountResponse_Builder*) clear {
-  _builderResult = [[[CMsgMatchmakingSearchCountResponse alloc] init] autorelease];
-  return self;
-}
-- (CMsgMatchmakingSearchCountResponse_Builder*) clone {
-  return [CMsgMatchmakingSearchCountResponse builderWithPrototype:_builderResult];
-}
-- (CMsgMatchmakingSearchCountResponse*) defaultInstance {
-  return [CMsgMatchmakingSearchCountResponse defaultInstance];
-}
-- (CMsgMatchmakingSearchCountResponse*) build {
-  [self checkInitialized];
-  return [self buildPartial];
-}
-- (CMsgMatchmakingSearchCountResponse*) buildPartial {
-  CMsgMatchmakingSearchCountResponse* returnMe = [[_builderResult retain] autorelease];
-  self._builderResult = nil;
-  return returnMe;
-}
-- (CMsgMatchmakingSearchCountResponse_Builder*) mergeFrom:(CMsgMatchmakingSearchCountResponse*) other {
-  if (other == [CMsgMatchmakingSearchCountResponse defaultInstance]) {
-    return self;
-  }
-  if (other.searchingPlayersByGroupArray.count > 0) {
-    if (_builderResult.searchingPlayersByGroupArray == nil) {
-      _builderResult.searchingPlayersByGroupArray = [[other.searchingPlayersByGroupArray copyWithZone:[other.searchingPlayersByGroupArray zone]] autorelease];
-    } else {
-      [_builderResult.searchingPlayersByGroupArray appendArray:other.searchingPlayersByGroupArray];
-    }
-  }
-  [self mergeUnknownFields:other.unknownFields];
-  return self;
-}
-- (CMsgMatchmakingSearchCountResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
-  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
-}
-- (CMsgMatchmakingSearchCountResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
-  while (YES) {
-    int32_t tag = [input readTag];
-    switch (tag) {
-      case 0:
-        [self setUnknownFields:[unknownFields build]];
-        return self;
-      default: {
-        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
-          [self setUnknownFields:[unknownFields build]];
-          return self;
-        }
-        break;
-      }
-      case 8: {
-        [self addSearchingPlayersByGroup:[input readUInt32]];
-        break;
-      }
-    }
-  }
-}
-- (PBAppendableArray *)searchingPlayersByGroup {
-  return _builderResult.searchingPlayersByGroupArray;
-}
-- (uint32_t)searchingPlayersByGroupAtIndex:(NSUInteger)index {
-  return [_builderResult searchingPlayersByGroupAtIndex:index];
-}
-- (CMsgMatchmakingSearchCountResponse_Builder *)addSearchingPlayersByGroup:(uint32_t)value {
-  if (_builderResult.searchingPlayersByGroupArray == nil) {
-    _builderResult.searchingPlayersByGroupArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
-  }
-  [_builderResult.searchingPlayersByGroupArray addUint32:value];
-  return self;
-}
-- (CMsgMatchmakingSearchCountResponse_Builder *)setSearchingPlayersByGroupArray:(NSArray *)array {
-  _builderResult.searchingPlayersByGroupArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
-  return self;
-}
-- (CMsgMatchmakingSearchCountResponse_Builder *)setSearchingPlayersByGroupValues:(const uint32_t *)values count:(NSUInteger)count {
-  _builderResult.searchingPlayersByGroupArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
-  return self;
-}
-- (CMsgMatchmakingSearchCountResponse_Builder *)clearSearchingPlayersByGroup {
-  _builderResult.searchingPlayersByGroupArray = nil;
-  return self;
 }
 @end
 
@@ -17463,6 +17395,7 @@ static CMsgForceSOCacheResend* defaultCMsgForceSOCacheResendInstance = nil;
 @property uint32_t seriesType;
 @property uint32_t radiantSeriesWins;
 @property uint32_t direSeriesWins;
+@property BOOL allchat;
 @end
 
 @implementation CMsgPracticeLobbySetDetails
@@ -17622,6 +17555,18 @@ static CMsgForceSOCacheResend* defaultCMsgForceSOCacheResendInstance = nil;
   hasDireSeriesWins_ = !!value_;
 }
 @synthesize direSeriesWins;
+- (BOOL) hasAllchat {
+  return !!hasAllchat_;
+}
+- (void) setHasAllchat:(BOOL) value_ {
+  hasAllchat_ = !!value_;
+}
+- (BOOL) allchat {
+  return !!allchat_;
+}
+- (void) setAllchat:(BOOL) value_ {
+  allchat_ = !!value_;
+}
 - (void) dealloc {
   self.gameName = nil;
   self.teamDetailsArray = nil;
@@ -17649,6 +17594,7 @@ static CMsgForceSOCacheResend* defaultCMsgForceSOCacheResendInstance = nil;
     self.seriesType = 0;
     self.radiantSeriesWins = 0;
     self.direSeriesWins = 0;
+    self.allchat = NO;
   }
   return self;
 }
@@ -17734,6 +17680,9 @@ static CMsgPracticeLobbySetDetails* defaultCMsgPracticeLobbySetDetailsInstance =
   if (self.hasDireSeriesWins) {
     [output writeUInt32:22 value:self.direSeriesWins];
   }
+  if (self.hasAllchat) {
+    [output writeBool:23 value:self.allchat];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (int32_t) serializedSize {
@@ -17802,6 +17751,9 @@ static CMsgPracticeLobbySetDetails* defaultCMsgPracticeLobbySetDetailsInstance =
   }
   if (self.hasDireSeriesWins) {
     size_ += computeUInt32Size(22, self.direSeriesWins);
+  }
+  if (self.hasAllchat) {
+    size_ += computeBoolSize(23, self.allchat);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -17901,6 +17853,9 @@ static CMsgPracticeLobbySetDetails* defaultCMsgPracticeLobbySetDetailsInstance =
   if (self.hasDireSeriesWins) {
     [output appendFormat:@"%@%@: %@\n", indent, @"direSeriesWins", [NSNumber numberWithInt:self.direSeriesWins]];
   }
+  if (self.hasAllchat) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"allchat", [NSNumber numberWithBool:self.allchat]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -17951,6 +17906,8 @@ static CMsgPracticeLobbySetDetails* defaultCMsgPracticeLobbySetDetailsInstance =
       (!self.hasRadiantSeriesWins || self.radiantSeriesWins == otherMessage.radiantSeriesWins) &&
       self.hasDireSeriesWins == otherMessage.hasDireSeriesWins &&
       (!self.hasDireSeriesWins || self.direSeriesWins == otherMessage.direSeriesWins) &&
+      self.hasAllchat == otherMessage.hasAllchat &&
+      (!self.hasAllchat || self.allchat == otherMessage.allchat) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -18014,6 +17971,9 @@ static CMsgPracticeLobbySetDetails* defaultCMsgPracticeLobbySetDetailsInstance =
   }
   if (self.hasDireSeriesWins) {
     hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.direSeriesWins] hash];
+  }
+  if (self.hasAllchat) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.allchat] hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -18125,6 +18085,9 @@ static CMsgPracticeLobbySetDetails* defaultCMsgPracticeLobbySetDetailsInstance =
   }
   if (other.hasDireSeriesWins) {
     [self setDireSeriesWins:other.direSeriesWins];
+  }
+  if (other.hasAllchat) {
+    [self setAllchat:other.allchat];
   }
   [self mergeUnknownFields:other.unknownFields];
   return self;
@@ -18242,6 +18205,10 @@ static CMsgPracticeLobbySetDetails* defaultCMsgPracticeLobbySetDetailsInstance =
       }
       case 176: {
         [self setDireSeriesWins:[input readUInt32]];
+        break;
+      }
+      case 184: {
+        [self setAllchat:[input readBool]];
         break;
       }
     }
@@ -18574,6 +18541,22 @@ static CMsgPracticeLobbySetDetails* defaultCMsgPracticeLobbySetDetailsInstance =
 - (CMsgPracticeLobbySetDetails_Builder*) clearDireSeriesWins {
   _builderResult.hasDireSeriesWins = NO;
   _builderResult.direSeriesWins = 0;
+  return self;
+}
+- (BOOL) hasAllchat {
+  return _builderResult.hasAllchat;
+}
+- (BOOL) allchat {
+  return _builderResult.allchat;
+}
+- (CMsgPracticeLobbySetDetails_Builder*) setAllchat:(BOOL) value {
+  _builderResult.hasAllchat = YES;
+  _builderResult.allchat = value;
+  return self;
+}
+- (CMsgPracticeLobbySetDetails_Builder*) clearAllchat {
+  _builderResult.hasAllchat = NO;
+  _builderResult.allchat = NO;
   return self;
 }
 @end
@@ -22560,6 +22543,362 @@ static CMsgFriendPracticeLobbyListResponse* defaultCMsgFriendPracticeLobbyListRe
 }
 @end
 
+@interface CMsgBotGameCreate ()
+@property (retain) NSString* searchKey;
+@property uint32_t clientVersion;
+@property DOTABotDifficulty difficulty;
+@property DOTA_GC_TEAM team;
+@end
+
+@implementation CMsgBotGameCreate
+
+- (BOOL) hasSearchKey {
+  return !!hasSearchKey_;
+}
+- (void) setHasSearchKey:(BOOL) value_ {
+  hasSearchKey_ = !!value_;
+}
+@synthesize searchKey;
+- (BOOL) hasClientVersion {
+  return !!hasClientVersion_;
+}
+- (void) setHasClientVersion:(BOOL) value_ {
+  hasClientVersion_ = !!value_;
+}
+@synthesize clientVersion;
+- (BOOL) hasdifficulty {
+  return !!hasdifficulty_;
+}
+- (void) setHasdifficulty:(BOOL) value_ {
+  hasdifficulty_ = !!value_;
+}
+@synthesize difficulty;
+- (BOOL) hasteam {
+  return !!hasteam_;
+}
+- (void) setHasteam:(BOOL) value_ {
+  hasteam_ = !!value_;
+}
+@synthesize team;
+- (void) dealloc {
+  self.searchKey = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.searchKey = @"";
+    self.clientVersion = 0;
+    self.difficulty = DOTABotDifficultyBOT_DIFFICULTY_PASSIVE;
+    self.team = DOTA_GC_TEAMDOTA_GC_TEAM_GOOD_GUYS;
+  }
+  return self;
+}
+static CMsgBotGameCreate* defaultCMsgBotGameCreateInstance = nil;
++ (void) initialize {
+  if (self == [CMsgBotGameCreate class]) {
+    defaultCMsgBotGameCreateInstance = [[CMsgBotGameCreate alloc] init];
+  }
+}
++ (CMsgBotGameCreate*) defaultInstance {
+  return defaultCMsgBotGameCreateInstance;
+}
+- (CMsgBotGameCreate*) defaultInstance {
+  return defaultCMsgBotGameCreateInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasSearchKey) {
+    [output writeString:1 value:self.searchKey];
+  }
+  if (self.hasClientVersion) {
+    [output writeUInt32:2 value:self.clientVersion];
+  }
+  if (self.hasdifficulty) {
+    [output writeEnum:3 value:self.difficulty];
+  }
+  if (self.hasteam) {
+    [output writeEnum:4 value:self.team];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasSearchKey) {
+    size_ += computeStringSize(1, self.searchKey);
+  }
+  if (self.hasClientVersion) {
+    size_ += computeUInt32Size(2, self.clientVersion);
+  }
+  if (self.hasdifficulty) {
+    size_ += computeEnumSize(3, self.difficulty);
+  }
+  if (self.hasteam) {
+    size_ += computeEnumSize(4, self.team);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgBotGameCreate*) parseFromData:(NSData*) data {
+  return (CMsgBotGameCreate*)[[[CMsgBotGameCreate builder] mergeFromData:data] build];
+}
++ (CMsgBotGameCreate*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgBotGameCreate*)[[[CMsgBotGameCreate builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgBotGameCreate*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgBotGameCreate*)[[[CMsgBotGameCreate builder] mergeFromInputStream:input] build];
+}
++ (CMsgBotGameCreate*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgBotGameCreate*)[[[CMsgBotGameCreate builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgBotGameCreate*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgBotGameCreate*)[[[CMsgBotGameCreate builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgBotGameCreate*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgBotGameCreate*)[[[CMsgBotGameCreate builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgBotGameCreate_Builder*) builder {
+  return [[[CMsgBotGameCreate_Builder alloc] init] autorelease];
+}
++ (CMsgBotGameCreate_Builder*) builderWithPrototype:(CMsgBotGameCreate*) prototype {
+  return [[CMsgBotGameCreate builder] mergeFrom:prototype];
+}
+- (CMsgBotGameCreate_Builder*) builder {
+  return [CMsgBotGameCreate builder];
+}
+- (CMsgBotGameCreate_Builder*) toBuilder {
+  return [CMsgBotGameCreate builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasSearchKey) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"searchKey", self.searchKey];
+  }
+  if (self.hasClientVersion) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"clientVersion", [NSNumber numberWithInt:self.clientVersion]];
+  }
+  if (self.hasdifficulty) {
+    [output appendFormat:@"%@%@: %d\n", indent, @"difficulty", self.difficulty];
+  }
+  if (self.hasteam) {
+    [output appendFormat:@"%@%@: %d\n", indent, @"team", self.team];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgBotGameCreate class]]) {
+    return NO;
+  }
+  CMsgBotGameCreate *otherMessage = other;
+  return
+      self.hasSearchKey == otherMessage.hasSearchKey &&
+      (!self.hasSearchKey || [self.searchKey isEqual:otherMessage.searchKey]) &&
+      self.hasClientVersion == otherMessage.hasClientVersion &&
+      (!self.hasClientVersion || self.clientVersion == otherMessage.clientVersion) &&
+      self.hasdifficulty == otherMessage.hasdifficulty &&
+      (!self.hasdifficulty || self.difficulty == otherMessage.difficulty) &&
+      self.hasteam == otherMessage.hasteam &&
+      (!self.hasteam || self.team == otherMessage.team) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasSearchKey) {
+    hashCode = hashCode * 31 + [self.searchKey hash];
+  }
+  if (self.hasClientVersion) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.clientVersion] hash];
+  }
+  if (self.hasdifficulty) {
+    hashCode = hashCode * 31 + self.difficulty;
+  }
+  if (self.hasteam) {
+    hashCode = hashCode * 31 + self.team;
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgBotGameCreate_Builder()
+@property (retain) CMsgBotGameCreate* _builderResult;
+@end
+
+@implementation CMsgBotGameCreate_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgBotGameCreate alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgBotGameCreate_Builder*) clear {
+  _builderResult = [[[CMsgBotGameCreate alloc] init] autorelease];
+  return self;
+}
+- (CMsgBotGameCreate_Builder*) clone {
+  return [CMsgBotGameCreate builderWithPrototype:_builderResult];
+}
+- (CMsgBotGameCreate*) defaultInstance {
+  return [CMsgBotGameCreate defaultInstance];
+}
+- (CMsgBotGameCreate*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgBotGameCreate*) buildPartial {
+  CMsgBotGameCreate* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgBotGameCreate_Builder*) mergeFrom:(CMsgBotGameCreate*) other {
+  if (other == [CMsgBotGameCreate defaultInstance]) {
+    return self;
+  }
+  if (other.hasSearchKey) {
+    [self setSearchKey:other.searchKey];
+  }
+  if (other.hasClientVersion) {
+    [self setClientVersion:other.clientVersion];
+  }
+  if (other.hasdifficulty) {
+    [self setdifficulty:other.difficulty];
+  }
+  if (other.hasteam) {
+    [self setteam:other.team];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgBotGameCreate_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgBotGameCreate_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 10: {
+        [self setSearchKey:[input readString]];
+        break;
+      }
+      case 16: {
+        [self setClientVersion:[input readUInt32]];
+        break;
+      }
+      case 24: {
+        int32_t value = [input readEnum];
+        if (DOTABotDifficultyIsValidValue(value)) {
+          [self setdifficulty:value];
+        } else {
+          [unknownFields mergeVarintField:3 value:value];
+        }
+        break;
+      }
+      case 32: {
+        int32_t value = [input readEnum];
+        if (DOTA_GC_TEAMIsValidValue(value)) {
+          [self setteam:value];
+        } else {
+          [unknownFields mergeVarintField:4 value:value];
+        }
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasSearchKey {
+  return _builderResult.hasSearchKey;
+}
+- (NSString*) searchKey {
+  return _builderResult.searchKey;
+}
+- (CMsgBotGameCreate_Builder*) setSearchKey:(NSString*) value {
+  _builderResult.hasSearchKey = YES;
+  _builderResult.searchKey = value;
+  return self;
+}
+- (CMsgBotGameCreate_Builder*) clearSearchKey {
+  _builderResult.hasSearchKey = NO;
+  _builderResult.searchKey = @"";
+  return self;
+}
+- (BOOL) hasClientVersion {
+  return _builderResult.hasClientVersion;
+}
+- (uint32_t) clientVersion {
+  return _builderResult.clientVersion;
+}
+- (CMsgBotGameCreate_Builder*) setClientVersion:(uint32_t) value {
+  _builderResult.hasClientVersion = YES;
+  _builderResult.clientVersion = value;
+  return self;
+}
+- (CMsgBotGameCreate_Builder*) clearClientVersion {
+  _builderResult.hasClientVersion = NO;
+  _builderResult.clientVersion = 0;
+  return self;
+}
+- (BOOL) hasdifficulty {
+  return _builderResult.hasdifficulty;
+}
+- (DOTABotDifficulty) difficulty {
+  return _builderResult.difficulty;
+}
+- (CMsgBotGameCreate_Builder*) setdifficulty:(DOTABotDifficulty) value {
+  _builderResult.hasdifficulty = YES;
+  _builderResult.difficulty = value;
+  return self;
+}
+- (CMsgBotGameCreate_Builder*) cleardifficulty {
+  _builderResult.hasdifficulty = NO;
+  _builderResult.difficulty = DOTABotDifficultyBOT_DIFFICULTY_PASSIVE;
+  return self;
+}
+- (BOOL) hasteam {
+  return _builderResult.hasteam;
+}
+- (DOTA_GC_TEAM) team {
+  return _builderResult.team;
+}
+- (CMsgBotGameCreate_Builder*) setteam:(DOTA_GC_TEAM) value {
+  _builderResult.hasteam = YES;
+  _builderResult.team = value;
+  return self;
+}
+- (CMsgBotGameCreate_Builder*) clearteam {
+  _builderResult.hasteam = NO;
+  _builderResult.team = DOTA_GC_TEAMDOTA_GC_TEAM_GOOD_GUYS;
+  return self;
+}
+@end
+
 @interface CMsgSetAvatar ()
 @property uint32_t avatar;
 @end
@@ -22928,184 +23267,236 @@ static CMsgRequestInternationalTicket* defaultCMsgRequestInternationalTicketInst
 }
 @end
 
-@interface CMsgTrackedEvent ()
-@property uint64_t submitterId;
-@property uint32_t eventId;
-@property uint64_t timeSubmitted;
-@property uint32_t eventType;
-@property (retain) PBAppendableArray * varsUint32Array;
-@property (retain) PBAppendableArray * varsUint64Array;
-@property (retain) PBAppendableArray * varsInt32Array;
-@property (retain) PBAppendableArray * varsInt64Array;
-@property (retain) PBAppendableArray * varsFloatArray;
-@property (retain) PBAppendableArray * varsDoubleArray;
+@interface CMsgBalancedShuffleLobby ()
 @end
 
-@implementation CMsgTrackedEvent
+@implementation CMsgBalancedShuffleLobby
 
-- (BOOL) hasSubmitterId {
-  return !!hasSubmitterId_;
-}
-- (void) setHasSubmitterId:(BOOL) value_ {
-  hasSubmitterId_ = !!value_;
-}
-@synthesize submitterId;
-- (BOOL) hasEventId {
-  return !!hasEventId_;
-}
-- (void) setHasEventId:(BOOL) value_ {
-  hasEventId_ = !!value_;
-}
-@synthesize eventId;
-- (BOOL) hasTimeSubmitted {
-  return !!hasTimeSubmitted_;
-}
-- (void) setHasTimeSubmitted:(BOOL) value_ {
-  hasTimeSubmitted_ = !!value_;
-}
-@synthesize timeSubmitted;
-- (BOOL) hasEventType {
-  return !!hasEventType_;
-}
-- (void) setHasEventType:(BOOL) value_ {
-  hasEventType_ = !!value_;
-}
-@synthesize eventType;
-@synthesize varsUint32Array;
-@dynamic varsUint32;
-@synthesize varsUint64Array;
-@dynamic varsUint64;
-@synthesize varsInt32Array;
-@dynamic varsInt32;
-@synthesize varsInt64Array;
-@dynamic varsInt64;
-@synthesize varsFloatArray;
-@dynamic varsFloat;
-@synthesize varsDoubleArray;
-@dynamic varsDouble;
 - (void) dealloc {
-  self.varsUint32Array = nil;
-  self.varsUint64Array = nil;
-  self.varsInt32Array = nil;
-  self.varsInt64Array = nil;
-  self.varsFloatArray = nil;
-  self.varsDoubleArray = nil;
   [super dealloc];
 }
 - (id) init {
   if ((self = [super init])) {
-    self.submitterId = 0L;
-    self.eventId = 0;
-    self.timeSubmitted = 0L;
-    self.eventType = 0;
   }
   return self;
 }
-static CMsgTrackedEvent* defaultCMsgTrackedEventInstance = nil;
+static CMsgBalancedShuffleLobby* defaultCMsgBalancedShuffleLobbyInstance = nil;
 + (void) initialize {
-  if (self == [CMsgTrackedEvent class]) {
-    defaultCMsgTrackedEventInstance = [[CMsgTrackedEvent alloc] init];
+  if (self == [CMsgBalancedShuffleLobby class]) {
+    defaultCMsgBalancedShuffleLobbyInstance = [[CMsgBalancedShuffleLobby alloc] init];
   }
 }
-+ (CMsgTrackedEvent*) defaultInstance {
-  return defaultCMsgTrackedEventInstance;
++ (CMsgBalancedShuffleLobby*) defaultInstance {
+  return defaultCMsgBalancedShuffleLobbyInstance;
 }
-- (CMsgTrackedEvent*) defaultInstance {
-  return defaultCMsgTrackedEventInstance;
-}
-- (PBArray *)varsUint32 {
-  return varsUint32Array;
-}
-- (uint32_t)varsUint32AtIndex:(NSUInteger)index {
-  return [varsUint32Array uint32AtIndex:index];
-}
-- (PBArray *)varsUint64 {
-  return varsUint64Array;
-}
-- (uint64_t)varsUint64AtIndex:(NSUInteger)index {
-  return [varsUint64Array uint64AtIndex:index];
-}
-- (PBArray *)varsInt32 {
-  return varsInt32Array;
-}
-- (int32_t)varsInt32AtIndex:(NSUInteger)index {
-  return [varsInt32Array int32AtIndex:index];
-}
-- (PBArray *)varsInt64 {
-  return varsInt64Array;
-}
-- (int64_t)varsInt64AtIndex:(NSUInteger)index {
-  return [varsInt64Array int64AtIndex:index];
-}
-- (PBArray *)varsFloat {
-  return varsFloatArray;
-}
-- (Float32)varsFloatAtIndex:(NSUInteger)index {
-  return [varsFloatArray floatAtIndex:index];
-}
-- (PBArray *)varsDouble {
-  return varsDoubleArray;
-}
-- (Float64)varsDoubleAtIndex:(NSUInteger)index {
-  return [varsDoubleArray doubleAtIndex:index];
+- (CMsgBalancedShuffleLobby*) defaultInstance {
+  return defaultCMsgBalancedShuffleLobbyInstance;
 }
 - (BOOL) isInitialized {
   return YES;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  if (self.hasSubmitterId) {
-    [output writeUInt64:1 value:self.submitterId];
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
   }
-  if (self.hasEventId) {
-    [output writeUInt32:2 value:self.eventId];
+
+  size_ = 0;
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgBalancedShuffleLobby*) parseFromData:(NSData*) data {
+  return (CMsgBalancedShuffleLobby*)[[[CMsgBalancedShuffleLobby builder] mergeFromData:data] build];
+}
++ (CMsgBalancedShuffleLobby*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgBalancedShuffleLobby*)[[[CMsgBalancedShuffleLobby builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgBalancedShuffleLobby*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgBalancedShuffleLobby*)[[[CMsgBalancedShuffleLobby builder] mergeFromInputStream:input] build];
+}
++ (CMsgBalancedShuffleLobby*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgBalancedShuffleLobby*)[[[CMsgBalancedShuffleLobby builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgBalancedShuffleLobby*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgBalancedShuffleLobby*)[[[CMsgBalancedShuffleLobby builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgBalancedShuffleLobby*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgBalancedShuffleLobby*)[[[CMsgBalancedShuffleLobby builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgBalancedShuffleLobby_Builder*) builder {
+  return [[[CMsgBalancedShuffleLobby_Builder alloc] init] autorelease];
+}
++ (CMsgBalancedShuffleLobby_Builder*) builderWithPrototype:(CMsgBalancedShuffleLobby*) prototype {
+  return [[CMsgBalancedShuffleLobby builder] mergeFrom:prototype];
+}
+- (CMsgBalancedShuffleLobby_Builder*) builder {
+  return [CMsgBalancedShuffleLobby builder];
+}
+- (CMsgBalancedShuffleLobby_Builder*) toBuilder {
+  return [CMsgBalancedShuffleLobby builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
   }
-  if (self.hasTimeSubmitted) {
-    [output writeFixed64:3 value:self.timeSubmitted];
+  if (![other isKindOfClass:[CMsgBalancedShuffleLobby class]]) {
+    return NO;
   }
-  if (self.hasEventType) {
-    [output writeUInt32:4 value:self.eventType];
+  CMsgBalancedShuffleLobby *otherMessage = other;
+  return
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgBalancedShuffleLobby_Builder()
+@property (retain) CMsgBalancedShuffleLobby* _builderResult;
+@end
+
+@implementation CMsgBalancedShuffleLobby_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgBalancedShuffleLobby alloc] init] autorelease];
   }
-  const NSUInteger varsUint32ArrayCount = self.varsUint32Array.count;
-  if (varsUint32ArrayCount > 0) {
-    const uint32_t *values = (const uint32_t *)self.varsUint32Array.data;
-    for (NSUInteger i = 0; i < varsUint32ArrayCount; ++i) {
-      [output writeUInt32:5 value:values[i]];
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgBalancedShuffleLobby_Builder*) clear {
+  _builderResult = [[[CMsgBalancedShuffleLobby alloc] init] autorelease];
+  return self;
+}
+- (CMsgBalancedShuffleLobby_Builder*) clone {
+  return [CMsgBalancedShuffleLobby builderWithPrototype:_builderResult];
+}
+- (CMsgBalancedShuffleLobby*) defaultInstance {
+  return [CMsgBalancedShuffleLobby defaultInstance];
+}
+- (CMsgBalancedShuffleLobby*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgBalancedShuffleLobby*) buildPartial {
+  CMsgBalancedShuffleLobby* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgBalancedShuffleLobby_Builder*) mergeFrom:(CMsgBalancedShuffleLobby*) other {
+  if (other == [CMsgBalancedShuffleLobby defaultInstance]) {
+    return self;
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgBalancedShuffleLobby_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgBalancedShuffleLobby_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
     }
   }
-  const NSUInteger varsUint64ArrayCount = self.varsUint64Array.count;
-  if (varsUint64ArrayCount > 0) {
-    const uint64_t *values = (const uint64_t *)self.varsUint64Array.data;
-    for (NSUInteger i = 0; i < varsUint64ArrayCount; ++i) {
-      [output writeUInt64:6 value:values[i]];
-    }
+}
+@end
+
+@interface CMatchHeroSelectEvent ()
+@property BOOL isPick;
+@property uint32_t team;
+@property uint32_t heroId;
+@end
+
+@implementation CMatchHeroSelectEvent
+
+- (BOOL) hasIsPick {
+  return !!hasIsPick_;
+}
+- (void) setHasIsPick:(BOOL) value_ {
+  hasIsPick_ = !!value_;
+}
+- (BOOL) isPick {
+  return !!isPick_;
+}
+- (void) setIsPick:(BOOL) value_ {
+  isPick_ = !!value_;
+}
+- (BOOL) hasTeam {
+  return !!hasTeam_;
+}
+- (void) setHasTeam:(BOOL) value_ {
+  hasTeam_ = !!value_;
+}
+@synthesize team;
+- (BOOL) hasHeroId {
+  return !!hasHeroId_;
+}
+- (void) setHasHeroId:(BOOL) value_ {
+  hasHeroId_ = !!value_;
+}
+@synthesize heroId;
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.isPick = NO;
+    self.team = 0;
+    self.heroId = 0;
   }
-  const NSUInteger varsInt32ArrayCount = self.varsInt32Array.count;
-  if (varsInt32ArrayCount > 0) {
-    const int32_t *values = (const int32_t *)self.varsInt32Array.data;
-    for (NSUInteger i = 0; i < varsInt32ArrayCount; ++i) {
-      [output writeInt32:7 value:values[i]];
-    }
+  return self;
+}
+static CMatchHeroSelectEvent* defaultCMatchHeroSelectEventInstance = nil;
++ (void) initialize {
+  if (self == [CMatchHeroSelectEvent class]) {
+    defaultCMatchHeroSelectEventInstance = [[CMatchHeroSelectEvent alloc] init];
   }
-  const NSUInteger varsInt64ArrayCount = self.varsInt64Array.count;
-  if (varsInt64ArrayCount > 0) {
-    const int64_t *values = (const int64_t *)self.varsInt64Array.data;
-    for (NSUInteger i = 0; i < varsInt64ArrayCount; ++i) {
-      [output writeInt64:8 value:values[i]];
-    }
+}
++ (CMatchHeroSelectEvent*) defaultInstance {
+  return defaultCMatchHeroSelectEventInstance;
+}
+- (CMatchHeroSelectEvent*) defaultInstance {
+  return defaultCMatchHeroSelectEventInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasIsPick) {
+    [output writeBool:1 value:self.isPick];
   }
-  const NSUInteger varsFloatArrayCount = self.varsFloatArray.count;
-  if (varsFloatArrayCount > 0) {
-    const Float32 *values = (const Float32 *)self.varsFloatArray.data;
-    for (NSUInteger i = 0; i < varsFloatArrayCount; ++i) {
-      [output writeFloat:9 value:values[i]];
-    }
+  if (self.hasTeam) {
+    [output writeUInt32:2 value:self.team];
   }
-  const NSUInteger varsDoubleArrayCount = self.varsDoubleArray.count;
-  if (varsDoubleArrayCount > 0) {
-    const Float64 *values = (const Float64 *)self.varsDoubleArray.data;
-    for (NSUInteger i = 0; i < varsDoubleArrayCount; ++i) {
-      [output writeDouble:10 value:values[i]];
-    }
+  if (self.hasHeroId) {
+    [output writeUInt32:3 value:self.heroId];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -23116,136 +23507,58 @@ static CMsgTrackedEvent* defaultCMsgTrackedEventInstance = nil;
   }
 
   size_ = 0;
-  if (self.hasSubmitterId) {
-    size_ += computeUInt64Size(1, self.submitterId);
+  if (self.hasIsPick) {
+    size_ += computeBoolSize(1, self.isPick);
   }
-  if (self.hasEventId) {
-    size_ += computeUInt32Size(2, self.eventId);
+  if (self.hasTeam) {
+    size_ += computeUInt32Size(2, self.team);
   }
-  if (self.hasTimeSubmitted) {
-    size_ += computeFixed64Size(3, self.timeSubmitted);
-  }
-  if (self.hasEventType) {
-    size_ += computeUInt32Size(4, self.eventType);
-  }
-  {
-    int32_t dataSize = 0;
-    const NSUInteger count = self.varsUint32Array.count;
-    const uint32_t *values = (const uint32_t *)self.varsUint32Array.data;
-    for (NSUInteger i = 0; i < count; ++i) {
-      dataSize += computeUInt32SizeNoTag(values[i]);
-    }
-    size_ += dataSize;
-    size_ += 1 * count;
-  }
-  {
-    int32_t dataSize = 0;
-    const NSUInteger count = self.varsUint64Array.count;
-    const uint64_t *values = (const uint64_t *)self.varsUint64Array.data;
-    for (NSUInteger i = 0; i < count; ++i) {
-      dataSize += computeUInt64SizeNoTag(values[i]);
-    }
-    size_ += dataSize;
-    size_ += 1 * count;
-  }
-  {
-    int32_t dataSize = 0;
-    const NSUInteger count = self.varsInt32Array.count;
-    const int32_t *values = (const int32_t *)self.varsInt32Array.data;
-    for (NSUInteger i = 0; i < count; ++i) {
-      dataSize += computeInt32SizeNoTag(values[i]);
-    }
-    size_ += dataSize;
-    size_ += 1 * count;
-  }
-  {
-    int32_t dataSize = 0;
-    const NSUInteger count = self.varsInt64Array.count;
-    const int64_t *values = (const int64_t *)self.varsInt64Array.data;
-    for (NSUInteger i = 0; i < count; ++i) {
-      dataSize += computeInt64SizeNoTag(values[i]);
-    }
-    size_ += dataSize;
-    size_ += 1 * count;
-  }
-  {
-    int32_t dataSize = 0;
-    const NSUInteger count = self.varsFloatArray.count;
-    dataSize = 4 * count;
-    size_ += dataSize;
-    size_ += 1 * count;
-  }
-  {
-    int32_t dataSize = 0;
-    const NSUInteger count = self.varsDoubleArray.count;
-    dataSize = 8 * count;
-    size_ += dataSize;
-    size_ += 1 * count;
+  if (self.hasHeroId) {
+    size_ += computeUInt32Size(3, self.heroId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
 }
-+ (CMsgTrackedEvent*) parseFromData:(NSData*) data {
-  return (CMsgTrackedEvent*)[[[CMsgTrackedEvent builder] mergeFromData:data] build];
++ (CMatchHeroSelectEvent*) parseFromData:(NSData*) data {
+  return (CMatchHeroSelectEvent*)[[[CMatchHeroSelectEvent builder] mergeFromData:data] build];
 }
-+ (CMsgTrackedEvent*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgTrackedEvent*)[[[CMsgTrackedEvent builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
++ (CMatchHeroSelectEvent*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMatchHeroSelectEvent*)[[[CMatchHeroSelectEvent builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
 }
-+ (CMsgTrackedEvent*) parseFromInputStream:(NSInputStream*) input {
-  return (CMsgTrackedEvent*)[[[CMsgTrackedEvent builder] mergeFromInputStream:input] build];
++ (CMatchHeroSelectEvent*) parseFromInputStream:(NSInputStream*) input {
+  return (CMatchHeroSelectEvent*)[[[CMatchHeroSelectEvent builder] mergeFromInputStream:input] build];
 }
-+ (CMsgTrackedEvent*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgTrackedEvent*)[[[CMsgTrackedEvent builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
++ (CMatchHeroSelectEvent*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMatchHeroSelectEvent*)[[[CMatchHeroSelectEvent builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
 }
-+ (CMsgTrackedEvent*) parseFromCodedInputStream:(PBCodedInputStream*) input {
-  return (CMsgTrackedEvent*)[[[CMsgTrackedEvent builder] mergeFromCodedInputStream:input] build];
++ (CMatchHeroSelectEvent*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMatchHeroSelectEvent*)[[[CMatchHeroSelectEvent builder] mergeFromCodedInputStream:input] build];
 }
-+ (CMsgTrackedEvent*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgTrackedEvent*)[[[CMsgTrackedEvent builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
++ (CMatchHeroSelectEvent*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMatchHeroSelectEvent*)[[[CMatchHeroSelectEvent builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
 }
-+ (CMsgTrackedEvent_Builder*) builder {
-  return [[[CMsgTrackedEvent_Builder alloc] init] autorelease];
++ (CMatchHeroSelectEvent_Builder*) builder {
+  return [[[CMatchHeroSelectEvent_Builder alloc] init] autorelease];
 }
-+ (CMsgTrackedEvent_Builder*) builderWithPrototype:(CMsgTrackedEvent*) prototype {
-  return [[CMsgTrackedEvent builder] mergeFrom:prototype];
++ (CMatchHeroSelectEvent_Builder*) builderWithPrototype:(CMatchHeroSelectEvent*) prototype {
+  return [[CMatchHeroSelectEvent builder] mergeFrom:prototype];
 }
-- (CMsgTrackedEvent_Builder*) builder {
-  return [CMsgTrackedEvent builder];
+- (CMatchHeroSelectEvent_Builder*) builder {
+  return [CMatchHeroSelectEvent builder];
 }
-- (CMsgTrackedEvent_Builder*) toBuilder {
-  return [CMsgTrackedEvent builderWithPrototype:self];
+- (CMatchHeroSelectEvent_Builder*) toBuilder {
+  return [CMatchHeroSelectEvent builderWithPrototype:self];
 }
 - (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  if (self.hasSubmitterId) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"submitterId", [NSNumber numberWithLongLong:self.submitterId]];
+  if (self.hasIsPick) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"isPick", [NSNumber numberWithBool:self.isPick]];
   }
-  if (self.hasEventId) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"eventId", [NSNumber numberWithInt:self.eventId]];
+  if (self.hasTeam) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"team", [NSNumber numberWithInt:self.team]];
   }
-  if (self.hasTimeSubmitted) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"timeSubmitted", [NSNumber numberWithLongLong:self.timeSubmitted]];
-  }
-  if (self.hasEventType) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"eventType", [NSNumber numberWithInt:self.eventType]];
-  }
-  for (NSNumber* value in self.varsUint32Array) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"varsUint32", value];
-  }
-  for (NSNumber* value in self.varsUint64Array) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"varsUint64", value];
-  }
-  for (NSNumber* value in self.varsInt32Array) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"varsInt32", value];
-  }
-  for (NSNumber* value in self.varsInt64Array) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"varsInt64", value];
-  }
-  for (NSNumber* value in self.varsFloatArray) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"varsFloat", value];
-  }
-  for (NSNumber* value in self.varsDoubleArray) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"varsDouble", value];
+  if (self.hasHeroId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"heroId", [NSNumber numberWithInt:self.heroId]];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -23253,69 +23566,40 @@ static CMsgTrackedEvent* defaultCMsgTrackedEventInstance = nil;
   if (other == self) {
     return YES;
   }
-  if (![other isKindOfClass:[CMsgTrackedEvent class]]) {
+  if (![other isKindOfClass:[CMatchHeroSelectEvent class]]) {
     return NO;
   }
-  CMsgTrackedEvent *otherMessage = other;
+  CMatchHeroSelectEvent *otherMessage = other;
   return
-      self.hasSubmitterId == otherMessage.hasSubmitterId &&
-      (!self.hasSubmitterId || self.submitterId == otherMessage.submitterId) &&
-      self.hasEventId == otherMessage.hasEventId &&
-      (!self.hasEventId || self.eventId == otherMessage.eventId) &&
-      self.hasTimeSubmitted == otherMessage.hasTimeSubmitted &&
-      (!self.hasTimeSubmitted || self.timeSubmitted == otherMessage.timeSubmitted) &&
-      self.hasEventType == otherMessage.hasEventType &&
-      (!self.hasEventType || self.eventType == otherMessage.eventType) &&
-      [self.varsUint32Array isEqualToArray:otherMessage.varsUint32Array] &&
-      [self.varsUint64Array isEqualToArray:otherMessage.varsUint64Array] &&
-      [self.varsInt32Array isEqualToArray:otherMessage.varsInt32Array] &&
-      [self.varsInt64Array isEqualToArray:otherMessage.varsInt64Array] &&
-      [self.varsFloatArray isEqualToArray:otherMessage.varsFloatArray] &&
-      [self.varsDoubleArray isEqualToArray:otherMessage.varsDoubleArray] &&
+      self.hasIsPick == otherMessage.hasIsPick &&
+      (!self.hasIsPick || self.isPick == otherMessage.isPick) &&
+      self.hasTeam == otherMessage.hasTeam &&
+      (!self.hasTeam || self.team == otherMessage.team) &&
+      self.hasHeroId == otherMessage.hasHeroId &&
+      (!self.hasHeroId || self.heroId == otherMessage.heroId) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
   NSUInteger hashCode = 7;
-  if (self.hasSubmitterId) {
-    hashCode = hashCode * 31 + [[NSNumber numberWithLongLong:self.submitterId] hash];
+  if (self.hasIsPick) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.isPick] hash];
   }
-  if (self.hasEventId) {
-    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.eventId] hash];
+  if (self.hasTeam) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.team] hash];
   }
-  if (self.hasTimeSubmitted) {
-    hashCode = hashCode * 31 + [[NSNumber numberWithLongLong:self.timeSubmitted] hash];
-  }
-  if (self.hasEventType) {
-    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.eventType] hash];
-  }
-  for (NSNumber* value in self.varsUint32Array) {
-    hashCode = hashCode * 31 + [value intValue];
-  }
-  for (NSNumber* value in self.varsUint64Array) {
-    hashCode = hashCode * 31 + [value intValue];
-  }
-  for (NSNumber* value in self.varsInt32Array) {
-    hashCode = hashCode * 31 + [value intValue];
-  }
-  for (NSNumber* value in self.varsInt64Array) {
-    hashCode = hashCode * 31 + [value intValue];
-  }
-  for (NSNumber* value in self.varsFloatArray) {
-    hashCode = hashCode * 31 + [value intValue];
-  }
-  for (NSNumber* value in self.varsDoubleArray) {
-    hashCode = hashCode * 31 + [value intValue];
+  if (self.hasHeroId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.heroId] hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
 }
 @end
 
-@interface CMsgTrackedEvent_Builder()
-@property (retain) CMsgTrackedEvent* _builderResult;
+@interface CMatchHeroSelectEvent_Builder()
+@property (retain) CMatchHeroSelectEvent* _builderResult;
 @end
 
-@implementation CMsgTrackedEvent_Builder
+@implementation CMatchHeroSelectEvent_Builder
 @synthesize _builderResult;
 - (void) dealloc {
   self._builderResult = nil;
@@ -23323,97 +23607,52 @@ static CMsgTrackedEvent* defaultCMsgTrackedEventInstance = nil;
 }
 - (id) init {
   if ((self = [super init])) {
-    self._builderResult = [[[CMsgTrackedEvent alloc] init] autorelease];
+    self._builderResult = [[[CMatchHeroSelectEvent alloc] init] autorelease];
   }
   return self;
 }
 - (PBGeneratedMessage*) internalGetResult {
   return _builderResult;
 }
-- (CMsgTrackedEvent_Builder*) clear {
-  _builderResult = [[[CMsgTrackedEvent alloc] init] autorelease];
+- (CMatchHeroSelectEvent_Builder*) clear {
+  _builderResult = [[[CMatchHeroSelectEvent alloc] init] autorelease];
   return self;
 }
-- (CMsgTrackedEvent_Builder*) clone {
-  return [CMsgTrackedEvent builderWithPrototype:_builderResult];
+- (CMatchHeroSelectEvent_Builder*) clone {
+  return [CMatchHeroSelectEvent builderWithPrototype:_builderResult];
 }
-- (CMsgTrackedEvent*) defaultInstance {
-  return [CMsgTrackedEvent defaultInstance];
+- (CMatchHeroSelectEvent*) defaultInstance {
+  return [CMatchHeroSelectEvent defaultInstance];
 }
-- (CMsgTrackedEvent*) build {
+- (CMatchHeroSelectEvent*) build {
   [self checkInitialized];
   return [self buildPartial];
 }
-- (CMsgTrackedEvent*) buildPartial {
-  CMsgTrackedEvent* returnMe = [[_builderResult retain] autorelease];
+- (CMatchHeroSelectEvent*) buildPartial {
+  CMatchHeroSelectEvent* returnMe = [[_builderResult retain] autorelease];
   self._builderResult = nil;
   return returnMe;
 }
-- (CMsgTrackedEvent_Builder*) mergeFrom:(CMsgTrackedEvent*) other {
-  if (other == [CMsgTrackedEvent defaultInstance]) {
+- (CMatchHeroSelectEvent_Builder*) mergeFrom:(CMatchHeroSelectEvent*) other {
+  if (other == [CMatchHeroSelectEvent defaultInstance]) {
     return self;
   }
-  if (other.hasSubmitterId) {
-    [self setSubmitterId:other.submitterId];
+  if (other.hasIsPick) {
+    [self setIsPick:other.isPick];
   }
-  if (other.hasEventId) {
-    [self setEventId:other.eventId];
+  if (other.hasTeam) {
+    [self setTeam:other.team];
   }
-  if (other.hasTimeSubmitted) {
-    [self setTimeSubmitted:other.timeSubmitted];
-  }
-  if (other.hasEventType) {
-    [self setEventType:other.eventType];
-  }
-  if (other.varsUint32Array.count > 0) {
-    if (_builderResult.varsUint32Array == nil) {
-      _builderResult.varsUint32Array = [[other.varsUint32Array copyWithZone:[other.varsUint32Array zone]] autorelease];
-    } else {
-      [_builderResult.varsUint32Array appendArray:other.varsUint32Array];
-    }
-  }
-  if (other.varsUint64Array.count > 0) {
-    if (_builderResult.varsUint64Array == nil) {
-      _builderResult.varsUint64Array = [[other.varsUint64Array copyWithZone:[other.varsUint64Array zone]] autorelease];
-    } else {
-      [_builderResult.varsUint64Array appendArray:other.varsUint64Array];
-    }
-  }
-  if (other.varsInt32Array.count > 0) {
-    if (_builderResult.varsInt32Array == nil) {
-      _builderResult.varsInt32Array = [[other.varsInt32Array copyWithZone:[other.varsInt32Array zone]] autorelease];
-    } else {
-      [_builderResult.varsInt32Array appendArray:other.varsInt32Array];
-    }
-  }
-  if (other.varsInt64Array.count > 0) {
-    if (_builderResult.varsInt64Array == nil) {
-      _builderResult.varsInt64Array = [[other.varsInt64Array copyWithZone:[other.varsInt64Array zone]] autorelease];
-    } else {
-      [_builderResult.varsInt64Array appendArray:other.varsInt64Array];
-    }
-  }
-  if (other.varsFloatArray.count > 0) {
-    if (_builderResult.varsFloatArray == nil) {
-      _builderResult.varsFloatArray = [[other.varsFloatArray copyWithZone:[other.varsFloatArray zone]] autorelease];
-    } else {
-      [_builderResult.varsFloatArray appendArray:other.varsFloatArray];
-    }
-  }
-  if (other.varsDoubleArray.count > 0) {
-    if (_builderResult.varsDoubleArray == nil) {
-      _builderResult.varsDoubleArray = [[other.varsDoubleArray copyWithZone:[other.varsDoubleArray zone]] autorelease];
-    } else {
-      [_builderResult.varsDoubleArray appendArray:other.varsDoubleArray];
-    }
+  if (other.hasHeroId) {
+    [self setHeroId:other.heroId];
   }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
-- (CMsgTrackedEvent_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+- (CMatchHeroSelectEvent_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
   return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
 }
-- (CMsgTrackedEvent_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+- (CMatchHeroSelectEvent_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
   while (YES) {
     int32_t tag = [input readTag];
@@ -23429,305 +23668,122 @@ static CMsgTrackedEvent* defaultCMsgTrackedEventInstance = nil;
         break;
       }
       case 8: {
-        [self setSubmitterId:[input readUInt64]];
+        [self setIsPick:[input readBool]];
         break;
       }
       case 16: {
-        [self setEventId:[input readUInt32]];
+        [self setTeam:[input readUInt32]];
         break;
       }
-      case 25: {
-        [self setTimeSubmitted:[input readFixed64]];
-        break;
-      }
-      case 32: {
-        [self setEventType:[input readUInt32]];
-        break;
-      }
-      case 40: {
-        [self addVarsUint32:[input readUInt32]];
-        break;
-      }
-      case 48: {
-        [self addVarsUint64:[input readUInt64]];
-        break;
-      }
-      case 56: {
-        [self addVarsInt32:[input readInt32]];
-        break;
-      }
-      case 64: {
-        [self addVarsInt64:[input readInt64]];
-        break;
-      }
-      case 77: {
-        [self addVarsFloat:[input readFloat]];
-        break;
-      }
-      case 81: {
-        [self addVarsDouble:[input readDouble]];
+      case 24: {
+        [self setHeroId:[input readUInt32]];
         break;
       }
     }
   }
 }
-- (BOOL) hasSubmitterId {
-  return _builderResult.hasSubmitterId;
+- (BOOL) hasIsPick {
+  return _builderResult.hasIsPick;
 }
-- (uint64_t) submitterId {
-  return _builderResult.submitterId;
+- (BOOL) isPick {
+  return _builderResult.isPick;
 }
-- (CMsgTrackedEvent_Builder*) setSubmitterId:(uint64_t) value {
-  _builderResult.hasSubmitterId = YES;
-  _builderResult.submitterId = value;
+- (CMatchHeroSelectEvent_Builder*) setIsPick:(BOOL) value {
+  _builderResult.hasIsPick = YES;
+  _builderResult.isPick = value;
   return self;
 }
-- (CMsgTrackedEvent_Builder*) clearSubmitterId {
-  _builderResult.hasSubmitterId = NO;
-  _builderResult.submitterId = 0L;
+- (CMatchHeroSelectEvent_Builder*) clearIsPick {
+  _builderResult.hasIsPick = NO;
+  _builderResult.isPick = NO;
   return self;
 }
-- (BOOL) hasEventId {
-  return _builderResult.hasEventId;
+- (BOOL) hasTeam {
+  return _builderResult.hasTeam;
 }
-- (uint32_t) eventId {
-  return _builderResult.eventId;
+- (uint32_t) team {
+  return _builderResult.team;
 }
-- (CMsgTrackedEvent_Builder*) setEventId:(uint32_t) value {
-  _builderResult.hasEventId = YES;
-  _builderResult.eventId = value;
+- (CMatchHeroSelectEvent_Builder*) setTeam:(uint32_t) value {
+  _builderResult.hasTeam = YES;
+  _builderResult.team = value;
   return self;
 }
-- (CMsgTrackedEvent_Builder*) clearEventId {
-  _builderResult.hasEventId = NO;
-  _builderResult.eventId = 0;
+- (CMatchHeroSelectEvent_Builder*) clearTeam {
+  _builderResult.hasTeam = NO;
+  _builderResult.team = 0;
   return self;
 }
-- (BOOL) hasTimeSubmitted {
-  return _builderResult.hasTimeSubmitted;
+- (BOOL) hasHeroId {
+  return _builderResult.hasHeroId;
 }
-- (uint64_t) timeSubmitted {
-  return _builderResult.timeSubmitted;
+- (uint32_t) heroId {
+  return _builderResult.heroId;
 }
-- (CMsgTrackedEvent_Builder*) setTimeSubmitted:(uint64_t) value {
-  _builderResult.hasTimeSubmitted = YES;
-  _builderResult.timeSubmitted = value;
+- (CMatchHeroSelectEvent_Builder*) setHeroId:(uint32_t) value {
+  _builderResult.hasHeroId = YES;
+  _builderResult.heroId = value;
   return self;
 }
-- (CMsgTrackedEvent_Builder*) clearTimeSubmitted {
-  _builderResult.hasTimeSubmitted = NO;
-  _builderResult.timeSubmitted = 0L;
-  return self;
-}
-- (BOOL) hasEventType {
-  return _builderResult.hasEventType;
-}
-- (uint32_t) eventType {
-  return _builderResult.eventType;
-}
-- (CMsgTrackedEvent_Builder*) setEventType:(uint32_t) value {
-  _builderResult.hasEventType = YES;
-  _builderResult.eventType = value;
-  return self;
-}
-- (CMsgTrackedEvent_Builder*) clearEventType {
-  _builderResult.hasEventType = NO;
-  _builderResult.eventType = 0;
-  return self;
-}
-- (PBAppendableArray *)varsUint32 {
-  return _builderResult.varsUint32Array;
-}
-- (uint32_t)varsUint32AtIndex:(NSUInteger)index {
-  return [_builderResult varsUint32AtIndex:index];
-}
-- (CMsgTrackedEvent_Builder *)addVarsUint32:(uint32_t)value {
-  if (_builderResult.varsUint32Array == nil) {
-    _builderResult.varsUint32Array = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
-  }
-  [_builderResult.varsUint32Array addUint32:value];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)setVarsUint32Array:(NSArray *)array {
-  _builderResult.varsUint32Array = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)setVarsUint32Values:(const uint32_t *)values count:(NSUInteger)count {
-  _builderResult.varsUint32Array = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)clearVarsUint32 {
-  _builderResult.varsUint32Array = nil;
-  return self;
-}
-- (PBAppendableArray *)varsUint64 {
-  return _builderResult.varsUint64Array;
-}
-- (uint64_t)varsUint64AtIndex:(NSUInteger)index {
-  return [_builderResult varsUint64AtIndex:index];
-}
-- (CMsgTrackedEvent_Builder *)addVarsUint64:(uint64_t)value {
-  if (_builderResult.varsUint64Array == nil) {
-    _builderResult.varsUint64Array = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt64];
-  }
-  [_builderResult.varsUint64Array addUint64:value];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)setVarsUint64Array:(NSArray *)array {
-  _builderResult.varsUint64Array = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt64];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)setVarsUint64Values:(const uint64_t *)values count:(NSUInteger)count {
-  _builderResult.varsUint64Array = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt64];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)clearVarsUint64 {
-  _builderResult.varsUint64Array = nil;
-  return self;
-}
-- (PBAppendableArray *)varsInt32 {
-  return _builderResult.varsInt32Array;
-}
-- (int32_t)varsInt32AtIndex:(NSUInteger)index {
-  return [_builderResult varsInt32AtIndex:index];
-}
-- (CMsgTrackedEvent_Builder *)addVarsInt32:(int32_t)value {
-  if (_builderResult.varsInt32Array == nil) {
-    _builderResult.varsInt32Array = [PBAppendableArray arrayWithValueType:PBArrayValueTypeInt32];
-  }
-  [_builderResult.varsInt32Array addInt32:value];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)setVarsInt32Array:(NSArray *)array {
-  _builderResult.varsInt32Array = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeInt32];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)setVarsInt32Values:(const int32_t *)values count:(NSUInteger)count {
-  _builderResult.varsInt32Array = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeInt32];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)clearVarsInt32 {
-  _builderResult.varsInt32Array = nil;
-  return self;
-}
-- (PBAppendableArray *)varsInt64 {
-  return _builderResult.varsInt64Array;
-}
-- (int64_t)varsInt64AtIndex:(NSUInteger)index {
-  return [_builderResult varsInt64AtIndex:index];
-}
-- (CMsgTrackedEvent_Builder *)addVarsInt64:(int64_t)value {
-  if (_builderResult.varsInt64Array == nil) {
-    _builderResult.varsInt64Array = [PBAppendableArray arrayWithValueType:PBArrayValueTypeInt64];
-  }
-  [_builderResult.varsInt64Array addInt64:value];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)setVarsInt64Array:(NSArray *)array {
-  _builderResult.varsInt64Array = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeInt64];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)setVarsInt64Values:(const int64_t *)values count:(NSUInteger)count {
-  _builderResult.varsInt64Array = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeInt64];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)clearVarsInt64 {
-  _builderResult.varsInt64Array = nil;
-  return self;
-}
-- (PBAppendableArray *)varsFloat {
-  return _builderResult.varsFloatArray;
-}
-- (Float32)varsFloatAtIndex:(NSUInteger)index {
-  return [_builderResult varsFloatAtIndex:index];
-}
-- (CMsgTrackedEvent_Builder *)addVarsFloat:(Float32)value {
-  if (_builderResult.varsFloatArray == nil) {
-    _builderResult.varsFloatArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeFloat];
-  }
-  [_builderResult.varsFloatArray addFloat:value];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)setVarsFloatArray:(NSArray *)array {
-  _builderResult.varsFloatArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeFloat];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)setVarsFloatValues:(const Float32 *)values count:(NSUInteger)count {
-  _builderResult.varsFloatArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeFloat];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)clearVarsFloat {
-  _builderResult.varsFloatArray = nil;
-  return self;
-}
-- (PBAppendableArray *)varsDouble {
-  return _builderResult.varsDoubleArray;
-}
-- (Float64)varsDoubleAtIndex:(NSUInteger)index {
-  return [_builderResult varsDoubleAtIndex:index];
-}
-- (CMsgTrackedEvent_Builder *)addVarsDouble:(Float64)value {
-  if (_builderResult.varsDoubleArray == nil) {
-    _builderResult.varsDoubleArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeDouble];
-  }
-  [_builderResult.varsDoubleArray addDouble:value];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)setVarsDoubleArray:(NSArray *)array {
-  _builderResult.varsDoubleArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeDouble];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)setVarsDoubleValues:(const Float64 *)values count:(NSUInteger)count {
-  _builderResult.varsDoubleArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeDouble];
-  return self;
-}
-- (CMsgTrackedEvent_Builder *)clearVarsDouble {
-  _builderResult.varsDoubleArray = nil;
+- (CMatchHeroSelectEvent_Builder*) clearHeroId {
+  _builderResult.hasHeroId = NO;
+  _builderResult.heroId = 0;
   return self;
 }
 @end
 
-@interface CMsgSendTrackedEvents ()
-@property (retain) PBAppendableArray * eventsArray;
+@interface CMatchPlayerAbilityUpgrade ()
+@property uint32_t ability;
+@property uint32_t time;
 @end
 
-@implementation CMsgSendTrackedEvents
+@implementation CMatchPlayerAbilityUpgrade
 
-@synthesize eventsArray;
-@dynamic events;
+- (BOOL) hasAbility {
+  return !!hasAbility_;
+}
+- (void) setHasAbility:(BOOL) value_ {
+  hasAbility_ = !!value_;
+}
+@synthesize ability;
+- (BOOL) hasTime {
+  return !!hasTime_;
+}
+- (void) setHasTime:(BOOL) value_ {
+  hasTime_ = !!value_;
+}
+@synthesize time;
 - (void) dealloc {
-  self.eventsArray = nil;
   [super dealloc];
 }
 - (id) init {
   if ((self = [super init])) {
+    self.ability = 0;
+    self.time = 0;
   }
   return self;
 }
-static CMsgSendTrackedEvents* defaultCMsgSendTrackedEventsInstance = nil;
+static CMatchPlayerAbilityUpgrade* defaultCMatchPlayerAbilityUpgradeInstance = nil;
 + (void) initialize {
-  if (self == [CMsgSendTrackedEvents class]) {
-    defaultCMsgSendTrackedEventsInstance = [[CMsgSendTrackedEvents alloc] init];
+  if (self == [CMatchPlayerAbilityUpgrade class]) {
+    defaultCMatchPlayerAbilityUpgradeInstance = [[CMatchPlayerAbilityUpgrade alloc] init];
   }
 }
-+ (CMsgSendTrackedEvents*) defaultInstance {
-  return defaultCMsgSendTrackedEventsInstance;
++ (CMatchPlayerAbilityUpgrade*) defaultInstance {
+  return defaultCMatchPlayerAbilityUpgradeInstance;
 }
-- (CMsgSendTrackedEvents*) defaultInstance {
-  return defaultCMsgSendTrackedEventsInstance;
-}
-- (PBArray *)events {
-  return eventsArray;
-}
-- (CMsgTrackedEvent*)eventsAtIndex:(NSUInteger)index {
-  return [eventsArray objectAtIndex:index];
+- (CMatchPlayerAbilityUpgrade*) defaultInstance {
+  return defaultCMatchPlayerAbilityUpgradeInstance;
 }
 - (BOOL) isInitialized {
   return YES;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  for (CMsgTrackedEvent *element in self.eventsArray) {
-    [output writeMessage:1 value:element];
+  if (self.hasAbility) {
+    [output writeUInt32:1 value:self.ability];
+  }
+  if (self.hasTime) {
+    [output writeUInt32:2 value:self.time];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -23738,49 +23794,52 @@ static CMsgSendTrackedEvents* defaultCMsgSendTrackedEventsInstance = nil;
   }
 
   size_ = 0;
-  for (CMsgTrackedEvent *element in self.eventsArray) {
-    size_ += computeMessageSize(1, element);
+  if (self.hasAbility) {
+    size_ += computeUInt32Size(1, self.ability);
+  }
+  if (self.hasTime) {
+    size_ += computeUInt32Size(2, self.time);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
 }
-+ (CMsgSendTrackedEvents*) parseFromData:(NSData*) data {
-  return (CMsgSendTrackedEvents*)[[[CMsgSendTrackedEvents builder] mergeFromData:data] build];
++ (CMatchPlayerAbilityUpgrade*) parseFromData:(NSData*) data {
+  return (CMatchPlayerAbilityUpgrade*)[[[CMatchPlayerAbilityUpgrade builder] mergeFromData:data] build];
 }
-+ (CMsgSendTrackedEvents*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgSendTrackedEvents*)[[[CMsgSendTrackedEvents builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
++ (CMatchPlayerAbilityUpgrade*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMatchPlayerAbilityUpgrade*)[[[CMatchPlayerAbilityUpgrade builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
 }
-+ (CMsgSendTrackedEvents*) parseFromInputStream:(NSInputStream*) input {
-  return (CMsgSendTrackedEvents*)[[[CMsgSendTrackedEvents builder] mergeFromInputStream:input] build];
++ (CMatchPlayerAbilityUpgrade*) parseFromInputStream:(NSInputStream*) input {
+  return (CMatchPlayerAbilityUpgrade*)[[[CMatchPlayerAbilityUpgrade builder] mergeFromInputStream:input] build];
 }
-+ (CMsgSendTrackedEvents*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgSendTrackedEvents*)[[[CMsgSendTrackedEvents builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
++ (CMatchPlayerAbilityUpgrade*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMatchPlayerAbilityUpgrade*)[[[CMatchPlayerAbilityUpgrade builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
 }
-+ (CMsgSendTrackedEvents*) parseFromCodedInputStream:(PBCodedInputStream*) input {
-  return (CMsgSendTrackedEvents*)[[[CMsgSendTrackedEvents builder] mergeFromCodedInputStream:input] build];
++ (CMatchPlayerAbilityUpgrade*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMatchPlayerAbilityUpgrade*)[[[CMatchPlayerAbilityUpgrade builder] mergeFromCodedInputStream:input] build];
 }
-+ (CMsgSendTrackedEvents*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgSendTrackedEvents*)[[[CMsgSendTrackedEvents builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
++ (CMatchPlayerAbilityUpgrade*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMatchPlayerAbilityUpgrade*)[[[CMatchPlayerAbilityUpgrade builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
 }
-+ (CMsgSendTrackedEvents_Builder*) builder {
-  return [[[CMsgSendTrackedEvents_Builder alloc] init] autorelease];
++ (CMatchPlayerAbilityUpgrade_Builder*) builder {
+  return [[[CMatchPlayerAbilityUpgrade_Builder alloc] init] autorelease];
 }
-+ (CMsgSendTrackedEvents_Builder*) builderWithPrototype:(CMsgSendTrackedEvents*) prototype {
-  return [[CMsgSendTrackedEvents builder] mergeFrom:prototype];
++ (CMatchPlayerAbilityUpgrade_Builder*) builderWithPrototype:(CMatchPlayerAbilityUpgrade*) prototype {
+  return [[CMatchPlayerAbilityUpgrade builder] mergeFrom:prototype];
 }
-- (CMsgSendTrackedEvents_Builder*) builder {
-  return [CMsgSendTrackedEvents builder];
+- (CMatchPlayerAbilityUpgrade_Builder*) builder {
+  return [CMatchPlayerAbilityUpgrade builder];
 }
-- (CMsgSendTrackedEvents_Builder*) toBuilder {
-  return [CMsgSendTrackedEvents builderWithPrototype:self];
+- (CMatchPlayerAbilityUpgrade_Builder*) toBuilder {
+  return [CMatchPlayerAbilityUpgrade builderWithPrototype:self];
 }
 - (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  for (CMsgTrackedEvent* element in self.eventsArray) {
-    [output appendFormat:@"%@%@ {\n", indent, @"events"];
-    [element writeDescriptionTo:output
-                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
-    [output appendFormat:@"%@}\n", indent];
+  if (self.hasAbility) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"ability", [NSNumber numberWithInt:self.ability]];
+  }
+  if (self.hasTime) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"time", [NSNumber numberWithInt:self.time]];
   }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -23788,29 +23847,35 @@ static CMsgSendTrackedEvents* defaultCMsgSendTrackedEventsInstance = nil;
   if (other == self) {
     return YES;
   }
-  if (![other isKindOfClass:[CMsgSendTrackedEvents class]]) {
+  if (![other isKindOfClass:[CMatchPlayerAbilityUpgrade class]]) {
     return NO;
   }
-  CMsgSendTrackedEvents *otherMessage = other;
+  CMatchPlayerAbilityUpgrade *otherMessage = other;
   return
-      [self.eventsArray isEqualToArray:otherMessage.eventsArray] &&
+      self.hasAbility == otherMessage.hasAbility &&
+      (!self.hasAbility || self.ability == otherMessage.ability) &&
+      self.hasTime == otherMessage.hasTime &&
+      (!self.hasTime || self.time == otherMessage.time) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
   NSUInteger hashCode = 7;
-  for (CMsgTrackedEvent* element in self.eventsArray) {
-    hashCode = hashCode * 31 + [element hash];
+  if (self.hasAbility) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.ability] hash];
+  }
+  if (self.hasTime) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.time] hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
 }
 @end
 
-@interface CMsgSendTrackedEvents_Builder()
-@property (retain) CMsgSendTrackedEvents* _builderResult;
+@interface CMatchPlayerAbilityUpgrade_Builder()
+@property (retain) CMatchPlayerAbilityUpgrade* _builderResult;
 @end
 
-@implementation CMsgSendTrackedEvents_Builder
+@implementation CMatchPlayerAbilityUpgrade_Builder
 @synthesize _builderResult;
 - (void) dealloc {
   self._builderResult = nil;
@@ -23818,50 +23883,318 @@ static CMsgSendTrackedEvents* defaultCMsgSendTrackedEventsInstance = nil;
 }
 - (id) init {
   if ((self = [super init])) {
-    self._builderResult = [[[CMsgSendTrackedEvents alloc] init] autorelease];
+    self._builderResult = [[[CMatchPlayerAbilityUpgrade alloc] init] autorelease];
   }
   return self;
 }
 - (PBGeneratedMessage*) internalGetResult {
   return _builderResult;
 }
-- (CMsgSendTrackedEvents_Builder*) clear {
-  _builderResult = [[[CMsgSendTrackedEvents alloc] init] autorelease];
+- (CMatchPlayerAbilityUpgrade_Builder*) clear {
+  _builderResult = [[[CMatchPlayerAbilityUpgrade alloc] init] autorelease];
   return self;
 }
-- (CMsgSendTrackedEvents_Builder*) clone {
-  return [CMsgSendTrackedEvents builderWithPrototype:_builderResult];
+- (CMatchPlayerAbilityUpgrade_Builder*) clone {
+  return [CMatchPlayerAbilityUpgrade builderWithPrototype:_builderResult];
 }
-- (CMsgSendTrackedEvents*) defaultInstance {
-  return [CMsgSendTrackedEvents defaultInstance];
+- (CMatchPlayerAbilityUpgrade*) defaultInstance {
+  return [CMatchPlayerAbilityUpgrade defaultInstance];
 }
-- (CMsgSendTrackedEvents*) build {
+- (CMatchPlayerAbilityUpgrade*) build {
   [self checkInitialized];
   return [self buildPartial];
 }
-- (CMsgSendTrackedEvents*) buildPartial {
-  CMsgSendTrackedEvents* returnMe = [[_builderResult retain] autorelease];
+- (CMatchPlayerAbilityUpgrade*) buildPartial {
+  CMatchPlayerAbilityUpgrade* returnMe = [[_builderResult retain] autorelease];
   self._builderResult = nil;
   return returnMe;
 }
-- (CMsgSendTrackedEvents_Builder*) mergeFrom:(CMsgSendTrackedEvents*) other {
-  if (other == [CMsgSendTrackedEvents defaultInstance]) {
+- (CMatchPlayerAbilityUpgrade_Builder*) mergeFrom:(CMatchPlayerAbilityUpgrade*) other {
+  if (other == [CMatchPlayerAbilityUpgrade defaultInstance]) {
     return self;
   }
-  if (other.eventsArray.count > 0) {
-    if (_builderResult.eventsArray == nil) {
-      _builderResult.eventsArray = [[other.eventsArray copyWithZone:[other.eventsArray zone]] autorelease];
+  if (other.hasAbility) {
+    [self setAbility:other.ability];
+  }
+  if (other.hasTime) {
+    [self setTime:other.time];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMatchPlayerAbilityUpgrade_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMatchPlayerAbilityUpgrade_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setAbility:[input readUInt32]];
+        break;
+      }
+      case 16: {
+        [self setTime:[input readUInt32]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasAbility {
+  return _builderResult.hasAbility;
+}
+- (uint32_t) ability {
+  return _builderResult.ability;
+}
+- (CMatchPlayerAbilityUpgrade_Builder*) setAbility:(uint32_t) value {
+  _builderResult.hasAbility = YES;
+  _builderResult.ability = value;
+  return self;
+}
+- (CMatchPlayerAbilityUpgrade_Builder*) clearAbility {
+  _builderResult.hasAbility = NO;
+  _builderResult.ability = 0;
+  return self;
+}
+- (BOOL) hasTime {
+  return _builderResult.hasTime;
+}
+- (uint32_t) time {
+  return _builderResult.time;
+}
+- (CMatchPlayerAbilityUpgrade_Builder*) setTime:(uint32_t) value {
+  _builderResult.hasTime = YES;
+  _builderResult.time = value;
+  return self;
+}
+- (CMatchPlayerAbilityUpgrade_Builder*) clearTime {
+  _builderResult.hasTime = NO;
+  _builderResult.time = 0;
+  return self;
+}
+@end
+
+@interface CMatchAdditionalUnitInventory ()
+@property (retain) NSString* unitName;
+@property (retain) PBAppendableArray * itemsArray;
+@end
+
+@implementation CMatchAdditionalUnitInventory
+
+- (BOOL) hasUnitName {
+  return !!hasUnitName_;
+}
+- (void) setHasUnitName:(BOOL) value_ {
+  hasUnitName_ = !!value_;
+}
+@synthesize unitName;
+@synthesize itemsArray;
+@dynamic items;
+- (void) dealloc {
+  self.unitName = nil;
+  self.itemsArray = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.unitName = @"";
+  }
+  return self;
+}
+static CMatchAdditionalUnitInventory* defaultCMatchAdditionalUnitInventoryInstance = nil;
++ (void) initialize {
+  if (self == [CMatchAdditionalUnitInventory class]) {
+    defaultCMatchAdditionalUnitInventoryInstance = [[CMatchAdditionalUnitInventory alloc] init];
+  }
+}
++ (CMatchAdditionalUnitInventory*) defaultInstance {
+  return defaultCMatchAdditionalUnitInventoryInstance;
+}
+- (CMatchAdditionalUnitInventory*) defaultInstance {
+  return defaultCMatchAdditionalUnitInventoryInstance;
+}
+- (PBArray *)items {
+  return itemsArray;
+}
+- (uint32_t)itemsAtIndex:(NSUInteger)index {
+  return [itemsArray uint32AtIndex:index];
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasUnitName) {
+    [output writeString:1 value:self.unitName];
+  }
+  const NSUInteger itemsArrayCount = self.itemsArray.count;
+  if (itemsArrayCount > 0) {
+    const uint32_t *values = (const uint32_t *)self.itemsArray.data;
+    for (NSUInteger i = 0; i < itemsArrayCount; ++i) {
+      [output writeUInt32:2 value:values[i]];
+    }
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasUnitName) {
+    size_ += computeStringSize(1, self.unitName);
+  }
+  {
+    int32_t dataSize = 0;
+    const NSUInteger count = self.itemsArray.count;
+    const uint32_t *values = (const uint32_t *)self.itemsArray.data;
+    for (NSUInteger i = 0; i < count; ++i) {
+      dataSize += computeUInt32SizeNoTag(values[i]);
+    }
+    size_ += dataSize;
+    size_ += 1 * count;
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMatchAdditionalUnitInventory*) parseFromData:(NSData*) data {
+  return (CMatchAdditionalUnitInventory*)[[[CMatchAdditionalUnitInventory builder] mergeFromData:data] build];
+}
++ (CMatchAdditionalUnitInventory*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMatchAdditionalUnitInventory*)[[[CMatchAdditionalUnitInventory builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMatchAdditionalUnitInventory*) parseFromInputStream:(NSInputStream*) input {
+  return (CMatchAdditionalUnitInventory*)[[[CMatchAdditionalUnitInventory builder] mergeFromInputStream:input] build];
+}
++ (CMatchAdditionalUnitInventory*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMatchAdditionalUnitInventory*)[[[CMatchAdditionalUnitInventory builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMatchAdditionalUnitInventory*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMatchAdditionalUnitInventory*)[[[CMatchAdditionalUnitInventory builder] mergeFromCodedInputStream:input] build];
+}
++ (CMatchAdditionalUnitInventory*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMatchAdditionalUnitInventory*)[[[CMatchAdditionalUnitInventory builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMatchAdditionalUnitInventory_Builder*) builder {
+  return [[[CMatchAdditionalUnitInventory_Builder alloc] init] autorelease];
+}
++ (CMatchAdditionalUnitInventory_Builder*) builderWithPrototype:(CMatchAdditionalUnitInventory*) prototype {
+  return [[CMatchAdditionalUnitInventory builder] mergeFrom:prototype];
+}
+- (CMatchAdditionalUnitInventory_Builder*) builder {
+  return [CMatchAdditionalUnitInventory builder];
+}
+- (CMatchAdditionalUnitInventory_Builder*) toBuilder {
+  return [CMatchAdditionalUnitInventory builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasUnitName) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"unitName", self.unitName];
+  }
+  for (NSNumber* value in self.itemsArray) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"items", value];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMatchAdditionalUnitInventory class]]) {
+    return NO;
+  }
+  CMatchAdditionalUnitInventory *otherMessage = other;
+  return
+      self.hasUnitName == otherMessage.hasUnitName &&
+      (!self.hasUnitName || [self.unitName isEqual:otherMessage.unitName]) &&
+      [self.itemsArray isEqualToArray:otherMessage.itemsArray] &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasUnitName) {
+    hashCode = hashCode * 31 + [self.unitName hash];
+  }
+  for (NSNumber* value in self.itemsArray) {
+    hashCode = hashCode * 31 + [value intValue];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMatchAdditionalUnitInventory_Builder()
+@property (retain) CMatchAdditionalUnitInventory* _builderResult;
+@end
+
+@implementation CMatchAdditionalUnitInventory_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMatchAdditionalUnitInventory alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMatchAdditionalUnitInventory_Builder*) clear {
+  _builderResult = [[[CMatchAdditionalUnitInventory alloc] init] autorelease];
+  return self;
+}
+- (CMatchAdditionalUnitInventory_Builder*) clone {
+  return [CMatchAdditionalUnitInventory builderWithPrototype:_builderResult];
+}
+- (CMatchAdditionalUnitInventory*) defaultInstance {
+  return [CMatchAdditionalUnitInventory defaultInstance];
+}
+- (CMatchAdditionalUnitInventory*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMatchAdditionalUnitInventory*) buildPartial {
+  CMatchAdditionalUnitInventory* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMatchAdditionalUnitInventory_Builder*) mergeFrom:(CMatchAdditionalUnitInventory*) other {
+  if (other == [CMatchAdditionalUnitInventory defaultInstance]) {
+    return self;
+  }
+  if (other.hasUnitName) {
+    [self setUnitName:other.unitName];
+  }
+  if (other.itemsArray.count > 0) {
+    if (_builderResult.itemsArray == nil) {
+      _builderResult.itemsArray = [[other.itemsArray copyWithZone:[other.itemsArray zone]] autorelease];
     } else {
-      [_builderResult.eventsArray appendArray:other.eventsArray];
+      [_builderResult.itemsArray appendArray:other.itemsArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
-- (CMsgSendTrackedEvents_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+- (CMatchAdditionalUnitInventory_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
   return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
 }
-- (CMsgSendTrackedEvents_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+- (CMatchAdditionalUnitInventory_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
   PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
   while (YES) {
     int32_t tag = [input readTag];
@@ -23877,37 +24210,55 @@ static CMsgSendTrackedEvents* defaultCMsgSendTrackedEventsInstance = nil;
         break;
       }
       case 10: {
-        CMsgTrackedEvent_Builder* subBuilder = [CMsgTrackedEvent builder];
-        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
-        [self addEvents:[subBuilder buildPartial]];
+        [self setUnitName:[input readString]];
+        break;
+      }
+      case 16: {
+        [self addItems:[input readUInt32]];
         break;
       }
     }
   }
 }
-- (PBAppendableArray *)events {
-  return _builderResult.eventsArray;
+- (BOOL) hasUnitName {
+  return _builderResult.hasUnitName;
 }
-- (CMsgTrackedEvent*)eventsAtIndex:(NSUInteger)index {
-  return [_builderResult eventsAtIndex:index];
+- (NSString*) unitName {
+  return _builderResult.unitName;
 }
-- (CMsgSendTrackedEvents_Builder *)addEvents:(CMsgTrackedEvent*)value {
-  if (_builderResult.eventsArray == nil) {
-    _builderResult.eventsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+- (CMatchAdditionalUnitInventory_Builder*) setUnitName:(NSString*) value {
+  _builderResult.hasUnitName = YES;
+  _builderResult.unitName = value;
+  return self;
+}
+- (CMatchAdditionalUnitInventory_Builder*) clearUnitName {
+  _builderResult.hasUnitName = NO;
+  _builderResult.unitName = @"";
+  return self;
+}
+- (PBAppendableArray *)items {
+  return _builderResult.itemsArray;
+}
+- (uint32_t)itemsAtIndex:(NSUInteger)index {
+  return [_builderResult itemsAtIndex:index];
+}
+- (CMatchAdditionalUnitInventory_Builder *)addItems:(uint32_t)value {
+  if (_builderResult.itemsArray == nil) {
+    _builderResult.itemsArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
   }
-  [_builderResult.eventsArray addObject:value];
+  [_builderResult.itemsArray addUint32:value];
   return self;
 }
-- (CMsgSendTrackedEvents_Builder *)setEventsArray:(NSArray *)array {
-  _builderResult.eventsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+- (CMatchAdditionalUnitInventory_Builder *)setItemsArray:(NSArray *)array {
+  _builderResult.itemsArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
   return self;
 }
-- (CMsgSendTrackedEvents_Builder *)setEventsValues:(const CMsgTrackedEvent* *)values count:(NSUInteger)count {
-  _builderResult.eventsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+- (CMatchAdditionalUnitInventory_Builder *)setItemsValues:(const uint32_t *)values count:(NSUInteger)count {
+  _builderResult.itemsArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
   return self;
 }
-- (CMsgSendTrackedEvents_Builder *)clearEvents {
-  _builderResult.eventsArray = nil;
+- (CMatchAdditionalUnitInventory_Builder *)clearItems {
+  _builderResult.itemsArray = nil;
   return self;
 }
 @end
@@ -23927,6 +24278,7 @@ static CMsgSendTrackedEvents* defaultCMsgSendTrackedEventsInstance = nil;
 @property uint32_t firstBloodTime;
 @property Float32 gameBalance;
 @property uint32_t eventScore;
+@property (retain) PBAppendableArray * picksBansArray;
 @end
 
 @implementation CMsgGameMatchSignOut
@@ -24014,6 +24366,8 @@ static CMsgSendTrackedEvents* defaultCMsgSendTrackedEventsInstance = nil;
   hasEventScore_ = !!value_;
 }
 @synthesize eventScore;
+@synthesize picksBansArray;
+@dynamic picksBans;
 - (void) dealloc {
   self.numPlayersArray = nil;
   self.teamsArray = nil;
@@ -24021,6 +24375,7 @@ static CMsgSendTrackedEvents* defaultCMsgSendTrackedEventsInstance = nil;
   self.towerStatusArray = nil;
   self.barracksStatusArray = nil;
   self.serverAddr = nil;
+  self.picksBansArray = nil;
   [super dealloc];
 }
 - (id) init {
@@ -24073,6 +24428,12 @@ static CMsgGameMatchSignOut* defaultCMsgGameMatchSignOutInstance = nil;
 }
 - (uint32_t)barracksStatusAtIndex:(NSUInteger)index {
   return [barracksStatusArray uint32AtIndex:index];
+}
+- (PBArray *)picksBans {
+  return picksBansArray;
+}
+- (CMatchHeroSelectEvent*)picksBansAtIndex:(NSUInteger)index {
+  return [picksBansArray objectAtIndex:index];
 }
 - (BOOL) isInitialized {
   return YES;
@@ -24131,6 +24492,9 @@ static CMsgGameMatchSignOut* defaultCMsgGameMatchSignOutInstance = nil;
   }
   if (self.hasEventScore) {
     [output writeUInt32:14 value:self.eventScore];
+  }
+  for (CMatchHeroSelectEvent *element in self.picksBansArray) {
+    [output writeMessage:15 value:element];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -24203,6 +24567,9 @@ static CMsgGameMatchSignOut* defaultCMsgGameMatchSignOutInstance = nil;
   }
   if (self.hasEventScore) {
     size_ += computeUInt32Size(14, self.eventScore);
+  }
+  for (CMatchHeroSelectEvent *element in self.picksBansArray) {
+    size_ += computeMessageSize(15, element);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -24284,6 +24651,12 @@ static CMsgGameMatchSignOut* defaultCMsgGameMatchSignOutInstance = nil;
   if (self.hasEventScore) {
     [output appendFormat:@"%@%@: %@\n", indent, @"eventScore", [NSNumber numberWithInt:self.eventScore]];
   }
+  for (CMatchHeroSelectEvent* element in self.picksBansArray) {
+    [output appendFormat:@"%@%@ {\n", indent, @"picksBans"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -24319,6 +24692,7 @@ static CMsgGameMatchSignOut* defaultCMsgGameMatchSignOutInstance = nil;
       (!self.hasGameBalance || self.gameBalance == otherMessage.gameBalance) &&
       self.hasEventScore == otherMessage.hasEventScore &&
       (!self.hasEventScore || self.eventScore == otherMessage.eventScore) &&
+      [self.picksBansArray isEqualToArray:otherMessage.picksBansArray] &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -24364,6 +24738,9 @@ static CMsgGameMatchSignOut* defaultCMsgGameMatchSignOutInstance = nil;
   }
   if (self.hasEventScore) {
     hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.eventScore] hash];
+  }
+  for (CMatchHeroSelectEvent* element in self.picksBansArray) {
+    hashCode = hashCode * 31 + [element hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -24519,6 +24896,8 @@ static CMsgGameMatchSignOut_CTeam* defaultCMsgGameMatchSignOut_CTeamInstance = n
 @property uint32_t claimedDenies;
 @property uint32_t claimedMisses;
 @property uint32_t misses;
+@property (retain) PBAppendableArray * abilityUpgradesArray;
+@property (retain) PBAppendableArray * additionalUnitsInventoryArray;
 @end
 
 @implementation CMsgGameMatchSignOut_CTeam_CPlayer
@@ -24721,8 +25100,14 @@ static CMsgGameMatchSignOut_CTeam* defaultCMsgGameMatchSignOut_CTeamInstance = n
   hasMisses_ = !!value_;
 }
 @synthesize misses;
+@synthesize abilityUpgradesArray;
+@dynamic abilityUpgrades;
+@synthesize additionalUnitsInventoryArray;
+@dynamic additionalUnitsInventory;
 - (void) dealloc {
   self.itemsArray = nil;
+  self.abilityUpgradesArray = nil;
+  self.additionalUnitsInventoryArray = nil;
   [super dealloc];
 }
 - (id) init {
@@ -24775,6 +25160,18 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
 }
 - (uint32_t)itemsAtIndex:(NSUInteger)index {
   return [itemsArray uint32AtIndex:index];
+}
+- (PBArray *)abilityUpgrades {
+  return abilityUpgradesArray;
+}
+- (CMatchPlayerAbilityUpgrade*)abilityUpgradesAtIndex:(NSUInteger)index {
+  return [abilityUpgradesArray objectAtIndex:index];
+}
+- (PBArray *)additionalUnitsInventory {
+  return additionalUnitsInventoryArray;
+}
+- (CMatchAdditionalUnitInventory*)additionalUnitsInventoryAtIndex:(NSUInteger)index {
+  return [additionalUnitsInventoryArray objectAtIndex:index];
 }
 - (BOOL) isInitialized {
   return YES;
@@ -24870,6 +25267,12 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
   }
   if (self.hasMisses) {
     [output writeUInt32:31 value:self.misses];
+  }
+  for (CMatchPlayerAbilityUpgrade *element in self.abilityUpgradesArray) {
+    [output writeMessage:32 value:element];
+  }
+  for (CMatchAdditionalUnitInventory *element in self.additionalUnitsInventoryArray) {
+    [output writeMessage:33 value:element];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -24973,6 +25376,12 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
   }
   if (self.hasMisses) {
     size_ += computeUInt32Size(31, self.misses);
+  }
+  for (CMatchPlayerAbilityUpgrade *element in self.abilityUpgradesArray) {
+    size_ += computeMessageSize(32, element);
+  }
+  for (CMatchAdditionalUnitInventory *element in self.additionalUnitsInventoryArray) {
+    size_ += computeMessageSize(33, element);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -25096,6 +25505,18 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
   if (self.hasMisses) {
     [output appendFormat:@"%@%@: %@\n", indent, @"misses", [NSNumber numberWithInt:self.misses]];
   }
+  for (CMatchPlayerAbilityUpgrade* element in self.abilityUpgradesArray) {
+    [output appendFormat:@"%@%@ {\n", indent, @"abilityUpgrades"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  for (CMatchAdditionalUnitInventory* element in self.additionalUnitsInventoryArray) {
+    [output appendFormat:@"%@%@ {\n", indent, @"additionalUnitsInventory"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -25164,6 +25585,8 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
       (!self.hasClaimedMisses || self.claimedMisses == otherMessage.claimedMisses) &&
       self.hasMisses == otherMessage.hasMisses &&
       (!self.hasMisses || self.misses == otherMessage.misses) &&
+      [self.abilityUpgradesArray isEqualToArray:otherMessage.abilityUpgradesArray] &&
+      [self.additionalUnitsInventoryArray isEqualToArray:otherMessage.additionalUnitsInventoryArray] &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -25254,6 +25677,12 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
   }
   if (self.hasMisses) {
     hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.misses] hash];
+  }
+  for (CMatchPlayerAbilityUpgrade* element in self.abilityUpgradesArray) {
+    hashCode = hashCode * 31 + [element hash];
+  }
+  for (CMatchAdditionalUnitInventory* element in self.additionalUnitsInventoryArray) {
+    hashCode = hashCode * 31 + [element hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -25393,6 +25822,20 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
   if (other.hasMisses) {
     [self setMisses:other.misses];
   }
+  if (other.abilityUpgradesArray.count > 0) {
+    if (_builderResult.abilityUpgradesArray == nil) {
+      _builderResult.abilityUpgradesArray = [[other.abilityUpgradesArray copyWithZone:[other.abilityUpgradesArray zone]] autorelease];
+    } else {
+      [_builderResult.abilityUpgradesArray appendArray:other.abilityUpgradesArray];
+    }
+  }
+  if (other.additionalUnitsInventoryArray.count > 0) {
+    if (_builderResult.additionalUnitsInventoryArray == nil) {
+      _builderResult.additionalUnitsInventoryArray = [[other.additionalUnitsInventoryArray copyWithZone:[other.additionalUnitsInventoryArray zone]] autorelease];
+    } else {
+      [_builderResult.additionalUnitsInventoryArray appendArray:other.additionalUnitsInventoryArray];
+    }
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -25528,6 +25971,18 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
       }
       case 248: {
         [self setMisses:[input readUInt32]];
+        break;
+      }
+      case 258: {
+        CMatchPlayerAbilityUpgrade_Builder* subBuilder = [CMatchPlayerAbilityUpgrade builder];
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self addAbilityUpgrades:[subBuilder buildPartial]];
+        break;
+      }
+      case 266: {
+        CMatchAdditionalUnitInventory_Builder* subBuilder = [CMatchAdditionalUnitInventory builder];
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self addAdditionalUnitsInventory:[subBuilder buildPartial]];
         break;
       }
     }
@@ -26006,6 +26461,56 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
   _builderResult.misses = 0;
   return self;
 }
+- (PBAppendableArray *)abilityUpgrades {
+  return _builderResult.abilityUpgradesArray;
+}
+- (CMatchPlayerAbilityUpgrade*)abilityUpgradesAtIndex:(NSUInteger)index {
+  return [_builderResult abilityUpgradesAtIndex:index];
+}
+- (CMsgGameMatchSignOut_CTeam_CPlayer_Builder *)addAbilityUpgrades:(CMatchPlayerAbilityUpgrade*)value {
+  if (_builderResult.abilityUpgradesArray == nil) {
+    _builderResult.abilityUpgradesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  }
+  [_builderResult.abilityUpgradesArray addObject:value];
+  return self;
+}
+- (CMsgGameMatchSignOut_CTeam_CPlayer_Builder *)setAbilityUpgradesArray:(NSArray *)array {
+  _builderResult.abilityUpgradesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgGameMatchSignOut_CTeam_CPlayer_Builder *)setAbilityUpgradesValues:(const CMatchPlayerAbilityUpgrade* *)values count:(NSUInteger)count {
+  _builderResult.abilityUpgradesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgGameMatchSignOut_CTeam_CPlayer_Builder *)clearAbilityUpgrades {
+  _builderResult.abilityUpgradesArray = nil;
+  return self;
+}
+- (PBAppendableArray *)additionalUnitsInventory {
+  return _builderResult.additionalUnitsInventoryArray;
+}
+- (CMatchAdditionalUnitInventory*)additionalUnitsInventoryAtIndex:(NSUInteger)index {
+  return [_builderResult additionalUnitsInventoryAtIndex:index];
+}
+- (CMsgGameMatchSignOut_CTeam_CPlayer_Builder *)addAdditionalUnitsInventory:(CMatchAdditionalUnitInventory*)value {
+  if (_builderResult.additionalUnitsInventoryArray == nil) {
+    _builderResult.additionalUnitsInventoryArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  }
+  [_builderResult.additionalUnitsInventoryArray addObject:value];
+  return self;
+}
+- (CMsgGameMatchSignOut_CTeam_CPlayer_Builder *)setAdditionalUnitsInventoryArray:(NSArray *)array {
+  _builderResult.additionalUnitsInventoryArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgGameMatchSignOut_CTeam_CPlayer_Builder *)setAdditionalUnitsInventoryValues:(const CMatchAdditionalUnitInventory* *)values count:(NSUInteger)count {
+  _builderResult.additionalUnitsInventoryArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgGameMatchSignOut_CTeam_CPlayer_Builder *)clearAdditionalUnitsInventory {
+  _builderResult.additionalUnitsInventoryArray = nil;
+  return self;
+}
 @end
 
 @interface CMsgGameMatchSignOut_CTeam_Builder()
@@ -26214,6 +26719,13 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
   if (other.hasEventScore) {
     [self setEventScore:other.eventScore];
   }
+  if (other.picksBansArray.count > 0) {
+    if (_builderResult.picksBansArray == nil) {
+      _builderResult.picksBansArray = [[other.picksBansArray copyWithZone:[other.picksBansArray zone]] autorelease];
+    } else {
+      [_builderResult.picksBansArray appendArray:other.picksBansArray];
+    }
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -26291,6 +26803,12 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
       }
       case 112: {
         [self setEventScore:[input readUInt32]];
+        break;
+      }
+      case 122: {
+        CMatchHeroSelectEvent_Builder* subBuilder = [CMatchHeroSelectEvent builder];
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self addPicksBans:[subBuilder buildPartial]];
         break;
       }
     }
@@ -26554,6 +27072,31 @@ static CMsgGameMatchSignOut_CTeam_CPlayer* defaultCMsgGameMatchSignOut_CTeam_CPl
 - (CMsgGameMatchSignOut_Builder*) clearEventScore {
   _builderResult.hasEventScore = NO;
   _builderResult.eventScore = 0;
+  return self;
+}
+- (PBAppendableArray *)picksBans {
+  return _builderResult.picksBansArray;
+}
+- (CMatchHeroSelectEvent*)picksBansAtIndex:(NSUInteger)index {
+  return [_builderResult picksBansAtIndex:index];
+}
+- (CMsgGameMatchSignOut_Builder *)addPicksBans:(CMatchHeroSelectEvent*)value {
+  if (_builderResult.picksBansArray == nil) {
+    _builderResult.picksBansArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  }
+  [_builderResult.picksBansArray addObject:value];
+  return self;
+}
+- (CMsgGameMatchSignOut_Builder *)setPicksBansArray:(NSArray *)array {
+  _builderResult.picksBansArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgGameMatchSignOut_Builder *)setPicksBansValues:(const CMatchHeroSelectEvent* *)values count:(NSUInteger)count {
+  _builderResult.picksBansArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgGameMatchSignOut_Builder *)clearPicksBans {
+  _builderResult.picksBansArray = nil;
   return self;
 }
 @end
@@ -31090,6 +31633,7 @@ static CMsgDOTAClearTournamentGame* defaultCMsgDOTAClearTournamentGameInstance =
 @property uint32_t positiveVotes;
 @property uint32_t negativeVotes;
 @property DOTA_GameMode game_mode;
+@property (retain) PBAppendableArray * picksBansArray;
 @end
 
 @implementation CMsgDOTAMatch
@@ -31287,12 +31831,15 @@ static CMsgDOTAClearTournamentGame* defaultCMsgDOTAClearTournamentGameInstance =
   hasgame_mode_ = !!value_;
 }
 @synthesize game_mode;
+@synthesize picksBansArray;
+@dynamic picksBans;
 - (void) dealloc {
   self.playersArray = nil;
   self.towerStatusArray = nil;
   self.barracksStatusArray = nil;
   self.radiantName = nil;
   self.direName = nil;
+  self.picksBansArray = nil;
   [super dealloc];
 }
 - (id) init {
@@ -31355,6 +31902,12 @@ static CMsgDOTAMatch* defaultCMsgDOTAMatchInstance = nil;
 }
 - (uint32_t)barracksStatusAtIndex:(NSUInteger)index {
   return [barracksStatusArray uint32AtIndex:index];
+}
+- (PBArray *)picksBans {
+  return picksBansArray;
+}
+- (CMatchHeroSelectEvent*)picksBansAtIndex:(NSUInteger)index {
+  return [picksBansArray objectAtIndex:index];
 }
 - (BOOL) isInitialized {
   return YES;
@@ -31454,6 +32007,9 @@ static CMsgDOTAMatch* defaultCMsgDOTAMatchInstance = nil;
   }
   if (self.hasgame_mode) {
     [output writeEnum:31 value:self.game_mode];
+  }
+  for (CMatchHeroSelectEvent *element in self.picksBansArray) {
+    [output writeMessage:32 value:element];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -31564,6 +32120,9 @@ static CMsgDOTAMatch* defaultCMsgDOTAMatchInstance = nil;
   }
   if (self.hasgame_mode) {
     size_ += computeEnumSize(31, self.game_mode);
+  }
+  for (CMatchHeroSelectEvent *element in self.picksBansArray) {
+    size_ += computeMessageSize(32, element);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -31690,6 +32249,12 @@ static CMsgDOTAMatch* defaultCMsgDOTAMatchInstance = nil;
   if (self.hasgame_mode) {
     [output appendFormat:@"%@%@: %d\n", indent, @"game_mode", self.game_mode];
   }
+  for (CMatchHeroSelectEvent* element in self.picksBansArray) {
+    [output appendFormat:@"%@%@ {\n", indent, @"picksBans"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -31756,6 +32321,7 @@ static CMsgDOTAMatch* defaultCMsgDOTAMatchInstance = nil;
       (!self.hasNegativeVotes || self.negativeVotes == otherMessage.negativeVotes) &&
       self.hasgame_mode == otherMessage.hasgame_mode &&
       (!self.hasgame_mode || self.game_mode == otherMessage.game_mode) &&
+      [self.picksBansArray isEqualToArray:otherMessage.picksBansArray] &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -31847,6 +32413,9 @@ static CMsgDOTAMatch* defaultCMsgDOTAMatchInstance = nil;
   if (self.hasgame_mode) {
     hashCode = hashCode * 31 + self.game_mode;
   }
+  for (CMatchHeroSelectEvent* element in self.picksBansArray) {
+    hashCode = hashCode * 31 + [element hash];
+  }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
 }
@@ -31897,6 +32466,8 @@ static CMsgDOTAMatch* defaultCMsgDOTAMatchInstance = nil;
 @property uint32_t claimedDenies;
 @property uint32_t claimedMisses;
 @property uint32_t misses;
+@property (retain) PBAppendableArray * abilityUpgradesArray;
+@property (retain) PBAppendableArray * additionalUnitsInventoryArray;
 @end
 
 @implementation CMsgDOTAMatch_Player
@@ -32214,8 +32785,14 @@ static CMsgDOTAMatch* defaultCMsgDOTAMatchInstance = nil;
   hasMisses_ = !!value_;
 }
 @synthesize misses;
+@synthesize abilityUpgradesArray;
+@dynamic abilityUpgrades;
+@synthesize additionalUnitsInventoryArray;
+@dynamic additionalUnitsInventory;
 - (void) dealloc {
   self.playerName = nil;
+  self.abilityUpgradesArray = nil;
+  self.additionalUnitsInventoryArray = nil;
   [super dealloc];
 }
 - (id) init {
@@ -32278,6 +32855,18 @@ static CMsgDOTAMatch_Player* defaultCMsgDOTAMatch_PlayerInstance = nil;
 }
 - (CMsgDOTAMatch_Player*) defaultInstance {
   return defaultCMsgDOTAMatch_PlayerInstance;
+}
+- (PBArray *)abilityUpgrades {
+  return abilityUpgradesArray;
+}
+- (CMatchPlayerAbilityUpgrade*)abilityUpgradesAtIndex:(NSUInteger)index {
+  return [abilityUpgradesArray objectAtIndex:index];
+}
+- (PBArray *)additionalUnitsInventory {
+  return additionalUnitsInventoryArray;
+}
+- (CMatchAdditionalUnitInventory*)additionalUnitsInventoryAtIndex:(NSUInteger)index {
+  return [additionalUnitsInventoryArray objectAtIndex:index];
 }
 - (BOOL) isInitialized {
   return YES;
@@ -32414,6 +33003,12 @@ static CMsgDOTAMatch_Player* defaultCMsgDOTAMatch_PlayerInstance = nil;
   }
   if (self.hasMisses) {
     [output writeUInt32:46 value:self.misses];
+  }
+  for (CMatchPlayerAbilityUpgrade *element in self.abilityUpgradesArray) {
+    [output writeMessage:47 value:element];
+  }
+  for (CMatchAdditionalUnitInventory *element in self.additionalUnitsInventoryArray) {
+    [output writeMessage:48 value:element];
   }
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -32555,6 +33150,12 @@ static CMsgDOTAMatch_Player* defaultCMsgDOTAMatch_PlayerInstance = nil;
   }
   if (self.hasMisses) {
     size_ += computeUInt32Size(46, self.misses);
+  }
+  for (CMatchPlayerAbilityUpgrade *element in self.abilityUpgradesArray) {
+    size_ += computeMessageSize(47, element);
+  }
+  for (CMatchAdditionalUnitInventory *element in self.additionalUnitsInventoryArray) {
+    size_ += computeMessageSize(48, element);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -32723,6 +33324,18 @@ static CMsgDOTAMatch_Player* defaultCMsgDOTAMatch_PlayerInstance = nil;
   if (self.hasMisses) {
     [output appendFormat:@"%@%@: %@\n", indent, @"misses", [NSNumber numberWithInt:self.misses]];
   }
+  for (CMatchPlayerAbilityUpgrade* element in self.abilityUpgradesArray) {
+    [output appendFormat:@"%@%@ {\n", indent, @"abilityUpgrades"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  for (CMatchAdditionalUnitInventory* element in self.additionalUnitsInventoryArray) {
+    [output appendFormat:@"%@%@ {\n", indent, @"additionalUnitsInventory"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -32822,6 +33435,8 @@ static CMsgDOTAMatch_Player* defaultCMsgDOTAMatch_PlayerInstance = nil;
       (!self.hasClaimedMisses || self.claimedMisses == otherMessage.claimedMisses) &&
       self.hasMisses == otherMessage.hasMisses &&
       (!self.hasMisses || self.misses == otherMessage.misses) &&
+      [self.abilityUpgradesArray isEqualToArray:otherMessage.abilityUpgradesArray] &&
+      [self.additionalUnitsInventoryArray isEqualToArray:otherMessage.additionalUnitsInventoryArray] &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -32957,6 +33572,12 @@ static CMsgDOTAMatch_Player* defaultCMsgDOTAMatch_PlayerInstance = nil;
   }
   if (self.hasMisses) {
     hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.misses] hash];
+  }
+  for (CMatchPlayerAbilityUpgrade* element in self.abilityUpgradesArray) {
+    hashCode = hashCode * 31 + [element hash];
+  }
+  for (CMatchAdditionalUnitInventory* element in self.additionalUnitsInventoryArray) {
+    hashCode = hashCode * 31 + [element hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -33136,6 +33757,20 @@ static CMsgDOTAMatch_Player* defaultCMsgDOTAMatch_PlayerInstance = nil;
   }
   if (other.hasMisses) {
     [self setMisses:other.misses];
+  }
+  if (other.abilityUpgradesArray.count > 0) {
+    if (_builderResult.abilityUpgradesArray == nil) {
+      _builderResult.abilityUpgradesArray = [[other.abilityUpgradesArray copyWithZone:[other.abilityUpgradesArray zone]] autorelease];
+    } else {
+      [_builderResult.abilityUpgradesArray appendArray:other.abilityUpgradesArray];
+    }
+  }
+  if (other.additionalUnitsInventoryArray.count > 0) {
+    if (_builderResult.additionalUnitsInventoryArray == nil) {
+      _builderResult.additionalUnitsInventoryArray = [[other.additionalUnitsInventoryArray copyWithZone:[other.additionalUnitsInventoryArray zone]] autorelease];
+    } else {
+      [_builderResult.additionalUnitsInventoryArray appendArray:other.additionalUnitsInventoryArray];
+    }
   }
   [self mergeUnknownFields:other.unknownFields];
   return self;
@@ -33332,6 +33967,18 @@ static CMsgDOTAMatch_Player* defaultCMsgDOTAMatch_PlayerInstance = nil;
       }
       case 368: {
         [self setMisses:[input readUInt32]];
+        break;
+      }
+      case 378: {
+        CMatchPlayerAbilityUpgrade_Builder* subBuilder = [CMatchPlayerAbilityUpgrade builder];
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self addAbilityUpgrades:[subBuilder buildPartial]];
+        break;
+      }
+      case 386: {
+        CMatchAdditionalUnitInventory_Builder* subBuilder = [CMatchAdditionalUnitInventory builder];
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self addAdditionalUnitsInventory:[subBuilder buildPartial]];
         break;
       }
     }
@@ -34041,6 +34688,56 @@ static CMsgDOTAMatch_Player* defaultCMsgDOTAMatch_PlayerInstance = nil;
   _builderResult.misses = 0;
   return self;
 }
+- (PBAppendableArray *)abilityUpgrades {
+  return _builderResult.abilityUpgradesArray;
+}
+- (CMatchPlayerAbilityUpgrade*)abilityUpgradesAtIndex:(NSUInteger)index {
+  return [_builderResult abilityUpgradesAtIndex:index];
+}
+- (CMsgDOTAMatch_Player_Builder *)addAbilityUpgrades:(CMatchPlayerAbilityUpgrade*)value {
+  if (_builderResult.abilityUpgradesArray == nil) {
+    _builderResult.abilityUpgradesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  }
+  [_builderResult.abilityUpgradesArray addObject:value];
+  return self;
+}
+- (CMsgDOTAMatch_Player_Builder *)setAbilityUpgradesArray:(NSArray *)array {
+  _builderResult.abilityUpgradesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgDOTAMatch_Player_Builder *)setAbilityUpgradesValues:(const CMatchPlayerAbilityUpgrade* *)values count:(NSUInteger)count {
+  _builderResult.abilityUpgradesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgDOTAMatch_Player_Builder *)clearAbilityUpgrades {
+  _builderResult.abilityUpgradesArray = nil;
+  return self;
+}
+- (PBAppendableArray *)additionalUnitsInventory {
+  return _builderResult.additionalUnitsInventoryArray;
+}
+- (CMatchAdditionalUnitInventory*)additionalUnitsInventoryAtIndex:(NSUInteger)index {
+  return [_builderResult additionalUnitsInventoryAtIndex:index];
+}
+- (CMsgDOTAMatch_Player_Builder *)addAdditionalUnitsInventory:(CMatchAdditionalUnitInventory*)value {
+  if (_builderResult.additionalUnitsInventoryArray == nil) {
+    _builderResult.additionalUnitsInventoryArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  }
+  [_builderResult.additionalUnitsInventoryArray addObject:value];
+  return self;
+}
+- (CMsgDOTAMatch_Player_Builder *)setAdditionalUnitsInventoryArray:(NSArray *)array {
+  _builderResult.additionalUnitsInventoryArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgDOTAMatch_Player_Builder *)setAdditionalUnitsInventoryValues:(const CMatchAdditionalUnitInventory* *)values count:(NSUInteger)count {
+  _builderResult.additionalUnitsInventoryArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgDOTAMatch_Player_Builder *)clearAdditionalUnitsInventory {
+  _builderResult.additionalUnitsInventoryArray = nil;
+  return self;
+}
 @end
 
 @interface CMsgDOTAMatch_Builder()
@@ -34184,6 +34881,13 @@ static CMsgDOTAMatch_Player* defaultCMsgDOTAMatch_PlayerInstance = nil;
   if (other.hasgame_mode) {
     [self setgame_mode:other.game_mode];
   }
+  if (other.picksBansArray.count > 0) {
+    if (_builderResult.picksBansArray == nil) {
+      _builderResult.picksBansArray = [[other.picksBansArray copyWithZone:[other.picksBansArray zone]] autorelease];
+    } else {
+      [_builderResult.picksBansArray appendArray:other.picksBansArray];
+    }
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -34326,6 +35030,12 @@ static CMsgDOTAMatch_Player* defaultCMsgDOTAMatch_PlayerInstance = nil;
         } else {
           [unknownFields mergeVarintField:31 value:value];
         }
+        break;
+      }
+      case 258: {
+        CMatchHeroSelectEvent_Builder* subBuilder = [CMatchHeroSelectEvent builder];
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self addPicksBans:[subBuilder buildPartial]];
         break;
       }
     }
@@ -34820,6 +35530,31 @@ static CMsgDOTAMatch_Player* defaultCMsgDOTAMatch_PlayerInstance = nil;
 - (CMsgDOTAMatch_Builder*) cleargame_mode {
   _builderResult.hasgame_mode = NO;
   _builderResult.game_mode = DOTA_GameModeDOTA_GAMEMODE_NONE;
+  return self;
+}
+- (PBAppendableArray *)picksBans {
+  return _builderResult.picksBansArray;
+}
+- (CMatchHeroSelectEvent*)picksBansAtIndex:(NSUInteger)index {
+  return [_builderResult picksBansAtIndex:index];
+}
+- (CMsgDOTAMatch_Builder *)addPicksBans:(CMatchHeroSelectEvent*)value {
+  if (_builderResult.picksBansArray == nil) {
+    _builderResult.picksBansArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  }
+  [_builderResult.picksBansArray addObject:value];
+  return self;
+}
+- (CMsgDOTAMatch_Builder *)setPicksBansArray:(NSArray *)array {
+  _builderResult.picksBansArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgDOTAMatch_Builder *)setPicksBansValues:(const CMatchHeroSelectEvent* *)values count:(NSUInteger)count {
+  _builderResult.picksBansArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgDOTAMatch_Builder *)clearPicksBans {
+  _builderResult.picksBansArray = nil;
   return self;
 }
 @end
@@ -37163,6 +37898,7 @@ static CMsgDOTATeamMemberSDO* defaultCMsgDOTATeamMemberSDOInstance = nil;
 @property uint32_t teamId;
 @property uint32_t permissions;
 @property uint32_t timeJoined;
+@property BOOL isRankFactoredIntoTeam;
 @end
 
 @implementation CMsgDOTATeamMember
@@ -37195,6 +37931,18 @@ static CMsgDOTATeamMemberSDO* defaultCMsgDOTATeamMemberSDOInstance = nil;
   hasTimeJoined_ = !!value_;
 }
 @synthesize timeJoined;
+- (BOOL) hasIsRankFactoredIntoTeam {
+  return !!hasIsRankFactoredIntoTeam_;
+}
+- (void) setHasIsRankFactoredIntoTeam:(BOOL) value_ {
+  hasIsRankFactoredIntoTeam_ = !!value_;
+}
+- (BOOL) isRankFactoredIntoTeam {
+  return !!isRankFactoredIntoTeam_;
+}
+- (void) setIsRankFactoredIntoTeam:(BOOL) value_ {
+  isRankFactoredIntoTeam_ = !!value_;
+}
 - (void) dealloc {
   [super dealloc];
 }
@@ -37204,6 +37952,7 @@ static CMsgDOTATeamMemberSDO* defaultCMsgDOTATeamMemberSDOInstance = nil;
     self.teamId = 0;
     self.permissions = 0;
     self.timeJoined = 0;
+    self.isRankFactoredIntoTeam = NO;
   }
   return self;
 }
@@ -37235,6 +37984,9 @@ static CMsgDOTATeamMember* defaultCMsgDOTATeamMemberInstance = nil;
   if (self.hasTimeJoined) {
     [output writeUInt32:4 value:self.timeJoined];
   }
+  if (self.hasIsRankFactoredIntoTeam) {
+    [output writeBool:5 value:self.isRankFactoredIntoTeam];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (int32_t) serializedSize {
@@ -37255,6 +38007,9 @@ static CMsgDOTATeamMember* defaultCMsgDOTATeamMemberInstance = nil;
   }
   if (self.hasTimeJoined) {
     size_ += computeUInt32Size(4, self.timeJoined);
+  }
+  if (self.hasIsRankFactoredIntoTeam) {
+    size_ += computeBoolSize(5, self.isRankFactoredIntoTeam);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -37303,6 +38058,9 @@ static CMsgDOTATeamMember* defaultCMsgDOTATeamMemberInstance = nil;
   if (self.hasTimeJoined) {
     [output appendFormat:@"%@%@: %@\n", indent, @"timeJoined", [NSNumber numberWithInt:self.timeJoined]];
   }
+  if (self.hasIsRankFactoredIntoTeam) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"isRankFactoredIntoTeam", [NSNumber numberWithBool:self.isRankFactoredIntoTeam]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -37322,6 +38080,8 @@ static CMsgDOTATeamMember* defaultCMsgDOTATeamMemberInstance = nil;
       (!self.hasPermissions || self.permissions == otherMessage.permissions) &&
       self.hasTimeJoined == otherMessage.hasTimeJoined &&
       (!self.hasTimeJoined || self.timeJoined == otherMessage.timeJoined) &&
+      self.hasIsRankFactoredIntoTeam == otherMessage.hasIsRankFactoredIntoTeam &&
+      (!self.hasIsRankFactoredIntoTeam || self.isRankFactoredIntoTeam == otherMessage.isRankFactoredIntoTeam) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -37337,6 +38097,9 @@ static CMsgDOTATeamMember* defaultCMsgDOTATeamMemberInstance = nil;
   }
   if (self.hasTimeJoined) {
     hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.timeJoined] hash];
+  }
+  if (self.hasIsRankFactoredIntoTeam) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.isRankFactoredIntoTeam] hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -37397,6 +38160,9 @@ static CMsgDOTATeamMember* defaultCMsgDOTATeamMemberInstance = nil;
   if (other.hasTimeJoined) {
     [self setTimeJoined:other.timeJoined];
   }
+  if (other.hasIsRankFactoredIntoTeam) {
+    [self setIsRankFactoredIntoTeam:other.isRankFactoredIntoTeam];
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -37432,6 +38198,10 @@ static CMsgDOTATeamMember* defaultCMsgDOTATeamMemberInstance = nil;
       }
       case 32: {
         [self setTimeJoined:[input readUInt32]];
+        break;
+      }
+      case 40: {
+        [self setIsRankFactoredIntoTeam:[input readBool]];
         break;
       }
     }
@@ -37501,6 +38271,22 @@ static CMsgDOTATeamMember* defaultCMsgDOTATeamMemberInstance = nil;
   _builderResult.timeJoined = 0;
   return self;
 }
+- (BOOL) hasIsRankFactoredIntoTeam {
+  return _builderResult.hasIsRankFactoredIntoTeam;
+}
+- (BOOL) isRankFactoredIntoTeam {
+  return _builderResult.isRankFactoredIntoTeam;
+}
+- (CMsgDOTATeamMember_Builder*) setIsRankFactoredIntoTeam:(BOOL) value {
+  _builderResult.hasIsRankFactoredIntoTeam = YES;
+  _builderResult.isRankFactoredIntoTeam = value;
+  return self;
+}
+- (CMsgDOTATeamMember_Builder*) clearIsRankFactoredIntoTeam {
+  _builderResult.hasIsRankFactoredIntoTeam = NO;
+  _builderResult.isRankFactoredIntoTeam = NO;
+  return self;
+}
 @end
 
 @interface CMsgDOTATeam ()
@@ -37523,6 +38309,7 @@ static CMsgDOTATeamMember* defaultCMsgDOTATeamMemberInstance = nil;
 @property uint32_t fullgamesplayed;
 @property (retain) PBAppendableArray * leaguesArray;
 @property uint32_t gamesplayed;
+@property uint32_t gamesplayedwithcurrentroster;
 @end
 
 @implementation CMsgDOTATeam
@@ -37655,6 +38442,13 @@ static CMsgDOTATeamMember* defaultCMsgDOTATeamMemberInstance = nil;
   hasGamesplayed_ = !!value_;
 }
 @synthesize gamesplayed;
+- (BOOL) hasGamesplayedwithcurrentroster {
+  return !!hasGamesplayedwithcurrentroster_;
+}
+- (void) setHasGamesplayedwithcurrentroster:(BOOL) value_ {
+  hasGamesplayedwithcurrentroster_ = !!value_;
+}
+@synthesize gamesplayedwithcurrentroster;
 - (void) dealloc {
   self.membersArray = nil;
   self.name = nil;
@@ -37683,6 +38477,7 @@ static CMsgDOTATeamMember* defaultCMsgDOTATeamMemberInstance = nil;
     self.url = @"";
     self.fullgamesplayed = 0;
     self.gamesplayed = 0;
+    self.gamesplayedwithcurrentroster = 0;
   }
   return self;
 }
@@ -37775,6 +38570,9 @@ static CMsgDOTATeam* defaultCMsgDOTATeamInstance = nil;
   if (self.hasGamesplayed) {
     [output writeUInt32:19 value:self.gamesplayed];
   }
+  if (self.hasGamesplayedwithcurrentroster) {
+    [output writeUInt32:20 value:self.gamesplayedwithcurrentroster];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (int32_t) serializedSize {
@@ -37847,6 +38645,9 @@ static CMsgDOTATeam* defaultCMsgDOTATeamInstance = nil;
   }
   if (self.hasGamesplayed) {
     size_ += computeUInt32Size(19, self.gamesplayed);
+  }
+  if (self.hasGamesplayedwithcurrentroster) {
+    size_ += computeUInt32Size(20, self.gamesplayedwithcurrentroster);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -37943,6 +38744,9 @@ static CMsgDOTATeam* defaultCMsgDOTATeamInstance = nil;
   if (self.hasGamesplayed) {
     [output appendFormat:@"%@%@: %@\n", indent, @"gamesplayed", [NSNumber numberWithInt:self.gamesplayed]];
   }
+  if (self.hasGamesplayedwithcurrentroster) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"gamesplayedwithcurrentroster", [NSNumber numberWithInt:self.gamesplayedwithcurrentroster]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -37990,6 +38794,8 @@ static CMsgDOTATeam* defaultCMsgDOTATeamInstance = nil;
       [self.leaguesArray isEqualToArray:otherMessage.leaguesArray] &&
       self.hasGamesplayed == otherMessage.hasGamesplayed &&
       (!self.hasGamesplayed || self.gamesplayed == otherMessage.gamesplayed) &&
+      self.hasGamesplayedwithcurrentroster == otherMessage.hasGamesplayedwithcurrentroster &&
+      (!self.hasGamesplayedwithcurrentroster || self.gamesplayedwithcurrentroster == otherMessage.gamesplayedwithcurrentroster) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -38050,6 +38856,9 @@ static CMsgDOTATeam* defaultCMsgDOTATeamInstance = nil;
   }
   if (self.hasGamesplayed) {
     hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.gamesplayed] hash];
+  }
+  if (self.hasGamesplayedwithcurrentroster) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.gamesplayedwithcurrentroster] hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -38163,6 +38972,9 @@ static CMsgDOTATeam* defaultCMsgDOTATeamInstance = nil;
   if (other.hasGamesplayed) {
     [self setGamesplayed:other.gamesplayed];
   }
+  if (other.hasGamesplayedwithcurrentroster) {
+    [self setGamesplayedwithcurrentroster:other.gamesplayedwithcurrentroster];
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -38260,6 +39072,10 @@ static CMsgDOTATeam* defaultCMsgDOTATeamInstance = nil;
       }
       case 152: {
         [self setGamesplayed:[input readUInt32]];
+        break;
+      }
+      case 160: {
+        [self setGamesplayedwithcurrentroster:[input readUInt32]];
         break;
       }
     }
@@ -38585,6 +39401,22 @@ static CMsgDOTATeam* defaultCMsgDOTATeamInstance = nil;
 - (CMsgDOTATeam_Builder*) clearGamesplayed {
   _builderResult.hasGamesplayed = NO;
   _builderResult.gamesplayed = 0;
+  return self;
+}
+- (BOOL) hasGamesplayedwithcurrentroster {
+  return _builderResult.hasGamesplayedwithcurrentroster;
+}
+- (uint32_t) gamesplayedwithcurrentroster {
+  return _builderResult.gamesplayedwithcurrentroster;
+}
+- (CMsgDOTATeam_Builder*) setGamesplayedwithcurrentroster:(uint32_t) value {
+  _builderResult.hasGamesplayedwithcurrentroster = YES;
+  _builderResult.gamesplayedwithcurrentroster = value;
+  return self;
+}
+- (CMsgDOTATeam_Builder*) clearGamesplayedwithcurrentroster {
+  _builderResult.hasGamesplayedwithcurrentroster = NO;
+  _builderResult.gamesplayedwithcurrentroster = 0;
   return self;
 }
 @end
@@ -42422,6 +43254,7 @@ static CMsgDOTAProTeamListResponse* defaultCMsgDOTAProTeamListResponseInstance =
 @property uint32_t timeCreated;
 @property uint64_t logo;
 @property (retain) NSString* countryCode;
+@property uint32_t memberCount;
 @end
 
 @implementation CMsgDOTAProTeamListResponse_TeamEntry
@@ -42461,6 +43294,13 @@ static CMsgDOTAProTeamListResponse* defaultCMsgDOTAProTeamListResponseInstance =
   hasCountryCode_ = !!value_;
 }
 @synthesize countryCode;
+- (BOOL) hasMemberCount {
+  return !!hasMemberCount_;
+}
+- (void) setHasMemberCount:(BOOL) value_ {
+  hasMemberCount_ = !!value_;
+}
+@synthesize memberCount;
 - (void) dealloc {
   self.tag = nil;
   self.countryCode = nil;
@@ -42473,6 +43313,7 @@ static CMsgDOTAProTeamListResponse* defaultCMsgDOTAProTeamListResponseInstance =
     self.timeCreated = 0;
     self.logo = 0L;
     self.countryCode = @"";
+    self.memberCount = 0;
   }
   return self;
 }
@@ -42507,6 +43348,9 @@ static CMsgDOTAProTeamListResponse_TeamEntry* defaultCMsgDOTAProTeamListResponse
   if (self.hasCountryCode) {
     [output writeString:5 value:self.countryCode];
   }
+  if (self.hasMemberCount) {
+    [output writeUInt32:6 value:self.memberCount];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (int32_t) serializedSize {
@@ -42530,6 +43374,9 @@ static CMsgDOTAProTeamListResponse_TeamEntry* defaultCMsgDOTAProTeamListResponse
   }
   if (self.hasCountryCode) {
     size_ += computeStringSize(5, self.countryCode);
+  }
+  if (self.hasMemberCount) {
+    size_ += computeUInt32Size(6, self.memberCount);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -42581,6 +43428,9 @@ static CMsgDOTAProTeamListResponse_TeamEntry* defaultCMsgDOTAProTeamListResponse
   if (self.hasCountryCode) {
     [output appendFormat:@"%@%@: %@\n", indent, @"countryCode", self.countryCode];
   }
+  if (self.hasMemberCount) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"memberCount", [NSNumber numberWithInt:self.memberCount]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -42602,6 +43452,8 @@ static CMsgDOTAProTeamListResponse_TeamEntry* defaultCMsgDOTAProTeamListResponse
       (!self.hasLogo || self.logo == otherMessage.logo) &&
       self.hasCountryCode == otherMessage.hasCountryCode &&
       (!self.hasCountryCode || [self.countryCode isEqual:otherMessage.countryCode]) &&
+      self.hasMemberCount == otherMessage.hasMemberCount &&
+      (!self.hasMemberCount || self.memberCount == otherMessage.memberCount) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -42620,6 +43472,9 @@ static CMsgDOTAProTeamListResponse_TeamEntry* defaultCMsgDOTAProTeamListResponse
   }
   if (self.hasCountryCode) {
     hashCode = hashCode * 31 + [self.countryCode hash];
+  }
+  if (self.hasMemberCount) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.memberCount] hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -42683,6 +43538,9 @@ static CMsgDOTAProTeamListResponse_TeamEntry* defaultCMsgDOTAProTeamListResponse
   if (other.hasCountryCode) {
     [self setCountryCode:other.countryCode];
   }
+  if (other.hasMemberCount) {
+    [self setMemberCount:other.memberCount];
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -42722,6 +43580,10 @@ static CMsgDOTAProTeamListResponse_TeamEntry* defaultCMsgDOTAProTeamListResponse
       }
       case 42: {
         [self setCountryCode:[input readString]];
+        break;
+      }
+      case 48: {
+        [self setMemberCount:[input readUInt32]];
         break;
       }
     }
@@ -42805,6 +43667,22 @@ static CMsgDOTAProTeamListResponse_TeamEntry* defaultCMsgDOTAProTeamListResponse
 - (CMsgDOTAProTeamListResponse_TeamEntry_Builder*) clearCountryCode {
   _builderResult.hasCountryCode = NO;
   _builderResult.countryCode = @"";
+  return self;
+}
+- (BOOL) hasMemberCount {
+  return _builderResult.hasMemberCount;
+}
+- (uint32_t) memberCount {
+  return _builderResult.memberCount;
+}
+- (CMsgDOTAProTeamListResponse_TeamEntry_Builder*) setMemberCount:(uint32_t) value {
+  _builderResult.hasMemberCount = YES;
+  _builderResult.memberCount = value;
+  return self;
+}
+- (CMsgDOTAProTeamListResponse_TeamEntry_Builder*) clearMemberCount {
+  _builderResult.hasMemberCount = NO;
+  _builderResult.memberCount = 0;
   return self;
 }
 @end
@@ -45584,214 +46462,6 @@ BOOL CMsgDOTALeaveTeamResponse_ResultIsValidValue(CMsgDOTALeaveTeamResponse_Resu
 - (CMsgDOTALeaveTeamResponse_Builder*) clearTeamName {
   _builderResult.hasTeamName = NO;
   _builderResult.teamName = @"";
-  return self;
-}
-@end
-
-@interface CMsgDOTASuggestTeamMatchmaking ()
-@property (retain) NSString* teammateName;
-@end
-
-@implementation CMsgDOTASuggestTeamMatchmaking
-
-- (BOOL) hasTeammateName {
-  return !!hasTeammateName_;
-}
-- (void) setHasTeammateName:(BOOL) value_ {
-  hasTeammateName_ = !!value_;
-}
-@synthesize teammateName;
-- (void) dealloc {
-  self.teammateName = nil;
-  [super dealloc];
-}
-- (id) init {
-  if ((self = [super init])) {
-    self.teammateName = @"";
-  }
-  return self;
-}
-static CMsgDOTASuggestTeamMatchmaking* defaultCMsgDOTASuggestTeamMatchmakingInstance = nil;
-+ (void) initialize {
-  if (self == [CMsgDOTASuggestTeamMatchmaking class]) {
-    defaultCMsgDOTASuggestTeamMatchmakingInstance = [[CMsgDOTASuggestTeamMatchmaking alloc] init];
-  }
-}
-+ (CMsgDOTASuggestTeamMatchmaking*) defaultInstance {
-  return defaultCMsgDOTASuggestTeamMatchmakingInstance;
-}
-- (CMsgDOTASuggestTeamMatchmaking*) defaultInstance {
-  return defaultCMsgDOTASuggestTeamMatchmakingInstance;
-}
-- (BOOL) isInitialized {
-  return YES;
-}
-- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  if (self.hasTeammateName) {
-    [output writeString:1 value:self.teammateName];
-  }
-  [self.unknownFields writeToCodedOutputStream:output];
-}
-- (int32_t) serializedSize {
-  int32_t size_ = memoizedSerializedSize;
-  if (size_ != -1) {
-    return size_;
-  }
-
-  size_ = 0;
-  if (self.hasTeammateName) {
-    size_ += computeStringSize(1, self.teammateName);
-  }
-  size_ += self.unknownFields.serializedSize;
-  memoizedSerializedSize = size_;
-  return size_;
-}
-+ (CMsgDOTASuggestTeamMatchmaking*) parseFromData:(NSData*) data {
-  return (CMsgDOTASuggestTeamMatchmaking*)[[[CMsgDOTASuggestTeamMatchmaking builder] mergeFromData:data] build];
-}
-+ (CMsgDOTASuggestTeamMatchmaking*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgDOTASuggestTeamMatchmaking*)[[[CMsgDOTASuggestTeamMatchmaking builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgDOTASuggestTeamMatchmaking*) parseFromInputStream:(NSInputStream*) input {
-  return (CMsgDOTASuggestTeamMatchmaking*)[[[CMsgDOTASuggestTeamMatchmaking builder] mergeFromInputStream:input] build];
-}
-+ (CMsgDOTASuggestTeamMatchmaking*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgDOTASuggestTeamMatchmaking*)[[[CMsgDOTASuggestTeamMatchmaking builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgDOTASuggestTeamMatchmaking*) parseFromCodedInputStream:(PBCodedInputStream*) input {
-  return (CMsgDOTASuggestTeamMatchmaking*)[[[CMsgDOTASuggestTeamMatchmaking builder] mergeFromCodedInputStream:input] build];
-}
-+ (CMsgDOTASuggestTeamMatchmaking*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgDOTASuggestTeamMatchmaking*)[[[CMsgDOTASuggestTeamMatchmaking builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgDOTASuggestTeamMatchmaking_Builder*) builder {
-  return [[[CMsgDOTASuggestTeamMatchmaking_Builder alloc] init] autorelease];
-}
-+ (CMsgDOTASuggestTeamMatchmaking_Builder*) builderWithPrototype:(CMsgDOTASuggestTeamMatchmaking*) prototype {
-  return [[CMsgDOTASuggestTeamMatchmaking builder] mergeFrom:prototype];
-}
-- (CMsgDOTASuggestTeamMatchmaking_Builder*) builder {
-  return [CMsgDOTASuggestTeamMatchmaking builder];
-}
-- (CMsgDOTASuggestTeamMatchmaking_Builder*) toBuilder {
-  return [CMsgDOTASuggestTeamMatchmaking builderWithPrototype:self];
-}
-- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  if (self.hasTeammateName) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"teammateName", self.teammateName];
-  }
-  [self.unknownFields writeDescriptionTo:output withIndent:indent];
-}
-- (BOOL) isEqual:(id)other {
-  if (other == self) {
-    return YES;
-  }
-  if (![other isKindOfClass:[CMsgDOTASuggestTeamMatchmaking class]]) {
-    return NO;
-  }
-  CMsgDOTASuggestTeamMatchmaking *otherMessage = other;
-  return
-      self.hasTeammateName == otherMessage.hasTeammateName &&
-      (!self.hasTeammateName || [self.teammateName isEqual:otherMessage.teammateName]) &&
-      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
-}
-- (NSUInteger) hash {
-  NSUInteger hashCode = 7;
-  if (self.hasTeammateName) {
-    hashCode = hashCode * 31 + [self.teammateName hash];
-  }
-  hashCode = hashCode * 31 + [self.unknownFields hash];
-  return hashCode;
-}
-@end
-
-@interface CMsgDOTASuggestTeamMatchmaking_Builder()
-@property (retain) CMsgDOTASuggestTeamMatchmaking* _builderResult;
-@end
-
-@implementation CMsgDOTASuggestTeamMatchmaking_Builder
-@synthesize _builderResult;
-- (void) dealloc {
-  self._builderResult = nil;
-  [super dealloc];
-}
-- (id) init {
-  if ((self = [super init])) {
-    self._builderResult = [[[CMsgDOTASuggestTeamMatchmaking alloc] init] autorelease];
-  }
-  return self;
-}
-- (PBGeneratedMessage*) internalGetResult {
-  return _builderResult;
-}
-- (CMsgDOTASuggestTeamMatchmaking_Builder*) clear {
-  _builderResult = [[[CMsgDOTASuggestTeamMatchmaking alloc] init] autorelease];
-  return self;
-}
-- (CMsgDOTASuggestTeamMatchmaking_Builder*) clone {
-  return [CMsgDOTASuggestTeamMatchmaking builderWithPrototype:_builderResult];
-}
-- (CMsgDOTASuggestTeamMatchmaking*) defaultInstance {
-  return [CMsgDOTASuggestTeamMatchmaking defaultInstance];
-}
-- (CMsgDOTASuggestTeamMatchmaking*) build {
-  [self checkInitialized];
-  return [self buildPartial];
-}
-- (CMsgDOTASuggestTeamMatchmaking*) buildPartial {
-  CMsgDOTASuggestTeamMatchmaking* returnMe = [[_builderResult retain] autorelease];
-  self._builderResult = nil;
-  return returnMe;
-}
-- (CMsgDOTASuggestTeamMatchmaking_Builder*) mergeFrom:(CMsgDOTASuggestTeamMatchmaking*) other {
-  if (other == [CMsgDOTASuggestTeamMatchmaking defaultInstance]) {
-    return self;
-  }
-  if (other.hasTeammateName) {
-    [self setTeammateName:other.teammateName];
-  }
-  [self mergeUnknownFields:other.unknownFields];
-  return self;
-}
-- (CMsgDOTASuggestTeamMatchmaking_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
-  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
-}
-- (CMsgDOTASuggestTeamMatchmaking_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
-  while (YES) {
-    int32_t tag = [input readTag];
-    switch (tag) {
-      case 0:
-        [self setUnknownFields:[unknownFields build]];
-        return self;
-      default: {
-        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
-          [self setUnknownFields:[unknownFields build]];
-          return self;
-        }
-        break;
-      }
-      case 10: {
-        [self setTeammateName:[input readString]];
-        break;
-      }
-    }
-  }
-}
-- (BOOL) hasTeammateName {
-  return _builderResult.hasTeammateName;
-}
-- (NSString*) teammateName {
-  return _builderResult.teammateName;
-}
-- (CMsgDOTASuggestTeamMatchmaking_Builder*) setTeammateName:(NSString*) value {
-  _builderResult.hasTeammateName = YES;
-  _builderResult.teammateName = value;
-  return self;
-}
-- (CMsgDOTASuggestTeamMatchmaking_Builder*) clearTeammateName {
-  _builderResult.hasTeammateName = NO;
-  _builderResult.teammateName = @"";
   return self;
 }
 @end
@@ -64620,398 +65290,6 @@ static CMsgRemoveFromUnpickedHeroList* defaultCMsgRemoveFromUnpickedHeroListInst
 }
 @end
 
-@interface CMsgDOTAMatchGroupWaitTimesRequest ()
-@end
-
-@implementation CMsgDOTAMatchGroupWaitTimesRequest
-
-- (void) dealloc {
-  [super dealloc];
-}
-- (id) init {
-  if ((self = [super init])) {
-  }
-  return self;
-}
-static CMsgDOTAMatchGroupWaitTimesRequest* defaultCMsgDOTAMatchGroupWaitTimesRequestInstance = nil;
-+ (void) initialize {
-  if (self == [CMsgDOTAMatchGroupWaitTimesRequest class]) {
-    defaultCMsgDOTAMatchGroupWaitTimesRequestInstance = [[CMsgDOTAMatchGroupWaitTimesRequest alloc] init];
-  }
-}
-+ (CMsgDOTAMatchGroupWaitTimesRequest*) defaultInstance {
-  return defaultCMsgDOTAMatchGroupWaitTimesRequestInstance;
-}
-- (CMsgDOTAMatchGroupWaitTimesRequest*) defaultInstance {
-  return defaultCMsgDOTAMatchGroupWaitTimesRequestInstance;
-}
-- (BOOL) isInitialized {
-  return YES;
-}
-- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  [self.unknownFields writeToCodedOutputStream:output];
-}
-- (int32_t) serializedSize {
-  int32_t size_ = memoizedSerializedSize;
-  if (size_ != -1) {
-    return size_;
-  }
-
-  size_ = 0;
-  size_ += self.unknownFields.serializedSize;
-  memoizedSerializedSize = size_;
-  return size_;
-}
-+ (CMsgDOTAMatchGroupWaitTimesRequest*) parseFromData:(NSData*) data {
-  return (CMsgDOTAMatchGroupWaitTimesRequest*)[[[CMsgDOTAMatchGroupWaitTimesRequest builder] mergeFromData:data] build];
-}
-+ (CMsgDOTAMatchGroupWaitTimesRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgDOTAMatchGroupWaitTimesRequest*)[[[CMsgDOTAMatchGroupWaitTimesRequest builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgDOTAMatchGroupWaitTimesRequest*) parseFromInputStream:(NSInputStream*) input {
-  return (CMsgDOTAMatchGroupWaitTimesRequest*)[[[CMsgDOTAMatchGroupWaitTimesRequest builder] mergeFromInputStream:input] build];
-}
-+ (CMsgDOTAMatchGroupWaitTimesRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgDOTAMatchGroupWaitTimesRequest*)[[[CMsgDOTAMatchGroupWaitTimesRequest builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgDOTAMatchGroupWaitTimesRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input {
-  return (CMsgDOTAMatchGroupWaitTimesRequest*)[[[CMsgDOTAMatchGroupWaitTimesRequest builder] mergeFromCodedInputStream:input] build];
-}
-+ (CMsgDOTAMatchGroupWaitTimesRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgDOTAMatchGroupWaitTimesRequest*)[[[CMsgDOTAMatchGroupWaitTimesRequest builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgDOTAMatchGroupWaitTimesRequest_Builder*) builder {
-  return [[[CMsgDOTAMatchGroupWaitTimesRequest_Builder alloc] init] autorelease];
-}
-+ (CMsgDOTAMatchGroupWaitTimesRequest_Builder*) builderWithPrototype:(CMsgDOTAMatchGroupWaitTimesRequest*) prototype {
-  return [[CMsgDOTAMatchGroupWaitTimesRequest builder] mergeFrom:prototype];
-}
-- (CMsgDOTAMatchGroupWaitTimesRequest_Builder*) builder {
-  return [CMsgDOTAMatchGroupWaitTimesRequest builder];
-}
-- (CMsgDOTAMatchGroupWaitTimesRequest_Builder*) toBuilder {
-  return [CMsgDOTAMatchGroupWaitTimesRequest builderWithPrototype:self];
-}
-- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  [self.unknownFields writeDescriptionTo:output withIndent:indent];
-}
-- (BOOL) isEqual:(id)other {
-  if (other == self) {
-    return YES;
-  }
-  if (![other isKindOfClass:[CMsgDOTAMatchGroupWaitTimesRequest class]]) {
-    return NO;
-  }
-  CMsgDOTAMatchGroupWaitTimesRequest *otherMessage = other;
-  return
-      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
-}
-- (NSUInteger) hash {
-  NSUInteger hashCode = 7;
-  hashCode = hashCode * 31 + [self.unknownFields hash];
-  return hashCode;
-}
-@end
-
-@interface CMsgDOTAMatchGroupWaitTimesRequest_Builder()
-@property (retain) CMsgDOTAMatchGroupWaitTimesRequest* _builderResult;
-@end
-
-@implementation CMsgDOTAMatchGroupWaitTimesRequest_Builder
-@synthesize _builderResult;
-- (void) dealloc {
-  self._builderResult = nil;
-  [super dealloc];
-}
-- (id) init {
-  if ((self = [super init])) {
-    self._builderResult = [[[CMsgDOTAMatchGroupWaitTimesRequest alloc] init] autorelease];
-  }
-  return self;
-}
-- (PBGeneratedMessage*) internalGetResult {
-  return _builderResult;
-}
-- (CMsgDOTAMatchGroupWaitTimesRequest_Builder*) clear {
-  _builderResult = [[[CMsgDOTAMatchGroupWaitTimesRequest alloc] init] autorelease];
-  return self;
-}
-- (CMsgDOTAMatchGroupWaitTimesRequest_Builder*) clone {
-  return [CMsgDOTAMatchGroupWaitTimesRequest builderWithPrototype:_builderResult];
-}
-- (CMsgDOTAMatchGroupWaitTimesRequest*) defaultInstance {
-  return [CMsgDOTAMatchGroupWaitTimesRequest defaultInstance];
-}
-- (CMsgDOTAMatchGroupWaitTimesRequest*) build {
-  [self checkInitialized];
-  return [self buildPartial];
-}
-- (CMsgDOTAMatchGroupWaitTimesRequest*) buildPartial {
-  CMsgDOTAMatchGroupWaitTimesRequest* returnMe = [[_builderResult retain] autorelease];
-  self._builderResult = nil;
-  return returnMe;
-}
-- (CMsgDOTAMatchGroupWaitTimesRequest_Builder*) mergeFrom:(CMsgDOTAMatchGroupWaitTimesRequest*) other {
-  if (other == [CMsgDOTAMatchGroupWaitTimesRequest defaultInstance]) {
-    return self;
-  }
-  [self mergeUnknownFields:other.unknownFields];
-  return self;
-}
-- (CMsgDOTAMatchGroupWaitTimesRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
-  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
-}
-- (CMsgDOTAMatchGroupWaitTimesRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
-  while (YES) {
-    int32_t tag = [input readTag];
-    switch (tag) {
-      case 0:
-        [self setUnknownFields:[unknownFields build]];
-        return self;
-      default: {
-        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
-          [self setUnknownFields:[unknownFields build]];
-          return self;
-        }
-        break;
-      }
-    }
-  }
-}
-@end
-
-@interface CMsgDOTAMatchGroupWaitTimesResponse ()
-@property (retain) PBAppendableArray * waitTimesByGroupArray;
-@end
-
-@implementation CMsgDOTAMatchGroupWaitTimesResponse
-
-@synthesize waitTimesByGroupArray;
-@dynamic waitTimesByGroup;
-- (void) dealloc {
-  self.waitTimesByGroupArray = nil;
-  [super dealloc];
-}
-- (id) init {
-  if ((self = [super init])) {
-  }
-  return self;
-}
-static CMsgDOTAMatchGroupWaitTimesResponse* defaultCMsgDOTAMatchGroupWaitTimesResponseInstance = nil;
-+ (void) initialize {
-  if (self == [CMsgDOTAMatchGroupWaitTimesResponse class]) {
-    defaultCMsgDOTAMatchGroupWaitTimesResponseInstance = [[CMsgDOTAMatchGroupWaitTimesResponse alloc] init];
-  }
-}
-+ (CMsgDOTAMatchGroupWaitTimesResponse*) defaultInstance {
-  return defaultCMsgDOTAMatchGroupWaitTimesResponseInstance;
-}
-- (CMsgDOTAMatchGroupWaitTimesResponse*) defaultInstance {
-  return defaultCMsgDOTAMatchGroupWaitTimesResponseInstance;
-}
-- (PBArray *)waitTimesByGroup {
-  return waitTimesByGroupArray;
-}
-- (uint32_t)waitTimesByGroupAtIndex:(NSUInteger)index {
-  return [waitTimesByGroupArray uint32AtIndex:index];
-}
-- (BOOL) isInitialized {
-  return YES;
-}
-- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  const NSUInteger waitTimesByGroupArrayCount = self.waitTimesByGroupArray.count;
-  if (waitTimesByGroupArrayCount > 0) {
-    const uint32_t *values = (const uint32_t *)self.waitTimesByGroupArray.data;
-    for (NSUInteger i = 0; i < waitTimesByGroupArrayCount; ++i) {
-      [output writeUInt32:1 value:values[i]];
-    }
-  }
-  [self.unknownFields writeToCodedOutputStream:output];
-}
-- (int32_t) serializedSize {
-  int32_t size_ = memoizedSerializedSize;
-  if (size_ != -1) {
-    return size_;
-  }
-
-  size_ = 0;
-  {
-    int32_t dataSize = 0;
-    const NSUInteger count = self.waitTimesByGroupArray.count;
-    const uint32_t *values = (const uint32_t *)self.waitTimesByGroupArray.data;
-    for (NSUInteger i = 0; i < count; ++i) {
-      dataSize += computeUInt32SizeNoTag(values[i]);
-    }
-    size_ += dataSize;
-    size_ += 1 * count;
-  }
-  size_ += self.unknownFields.serializedSize;
-  memoizedSerializedSize = size_;
-  return size_;
-}
-+ (CMsgDOTAMatchGroupWaitTimesResponse*) parseFromData:(NSData*) data {
-  return (CMsgDOTAMatchGroupWaitTimesResponse*)[[[CMsgDOTAMatchGroupWaitTimesResponse builder] mergeFromData:data] build];
-}
-+ (CMsgDOTAMatchGroupWaitTimesResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgDOTAMatchGroupWaitTimesResponse*)[[[CMsgDOTAMatchGroupWaitTimesResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgDOTAMatchGroupWaitTimesResponse*) parseFromInputStream:(NSInputStream*) input {
-  return (CMsgDOTAMatchGroupWaitTimesResponse*)[[[CMsgDOTAMatchGroupWaitTimesResponse builder] mergeFromInputStream:input] build];
-}
-+ (CMsgDOTAMatchGroupWaitTimesResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgDOTAMatchGroupWaitTimesResponse*)[[[CMsgDOTAMatchGroupWaitTimesResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgDOTAMatchGroupWaitTimesResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
-  return (CMsgDOTAMatchGroupWaitTimesResponse*)[[[CMsgDOTAMatchGroupWaitTimesResponse builder] mergeFromCodedInputStream:input] build];
-}
-+ (CMsgDOTAMatchGroupWaitTimesResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (CMsgDOTAMatchGroupWaitTimesResponse*)[[[CMsgDOTAMatchGroupWaitTimesResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
-}
-+ (CMsgDOTAMatchGroupWaitTimesResponse_Builder*) builder {
-  return [[[CMsgDOTAMatchGroupWaitTimesResponse_Builder alloc] init] autorelease];
-}
-+ (CMsgDOTAMatchGroupWaitTimesResponse_Builder*) builderWithPrototype:(CMsgDOTAMatchGroupWaitTimesResponse*) prototype {
-  return [[CMsgDOTAMatchGroupWaitTimesResponse builder] mergeFrom:prototype];
-}
-- (CMsgDOTAMatchGroupWaitTimesResponse_Builder*) builder {
-  return [CMsgDOTAMatchGroupWaitTimesResponse builder];
-}
-- (CMsgDOTAMatchGroupWaitTimesResponse_Builder*) toBuilder {
-  return [CMsgDOTAMatchGroupWaitTimesResponse builderWithPrototype:self];
-}
-- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  for (NSNumber* value in self.waitTimesByGroupArray) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"waitTimesByGroup", value];
-  }
-  [self.unknownFields writeDescriptionTo:output withIndent:indent];
-}
-- (BOOL) isEqual:(id)other {
-  if (other == self) {
-    return YES;
-  }
-  if (![other isKindOfClass:[CMsgDOTAMatchGroupWaitTimesResponse class]]) {
-    return NO;
-  }
-  CMsgDOTAMatchGroupWaitTimesResponse *otherMessage = other;
-  return
-      [self.waitTimesByGroupArray isEqualToArray:otherMessage.waitTimesByGroupArray] &&
-      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
-}
-- (NSUInteger) hash {
-  NSUInteger hashCode = 7;
-  for (NSNumber* value in self.waitTimesByGroupArray) {
-    hashCode = hashCode * 31 + [value intValue];
-  }
-  hashCode = hashCode * 31 + [self.unknownFields hash];
-  return hashCode;
-}
-@end
-
-@interface CMsgDOTAMatchGroupWaitTimesResponse_Builder()
-@property (retain) CMsgDOTAMatchGroupWaitTimesResponse* _builderResult;
-@end
-
-@implementation CMsgDOTAMatchGroupWaitTimesResponse_Builder
-@synthesize _builderResult;
-- (void) dealloc {
-  self._builderResult = nil;
-  [super dealloc];
-}
-- (id) init {
-  if ((self = [super init])) {
-    self._builderResult = [[[CMsgDOTAMatchGroupWaitTimesResponse alloc] init] autorelease];
-  }
-  return self;
-}
-- (PBGeneratedMessage*) internalGetResult {
-  return _builderResult;
-}
-- (CMsgDOTAMatchGroupWaitTimesResponse_Builder*) clear {
-  _builderResult = [[[CMsgDOTAMatchGroupWaitTimesResponse alloc] init] autorelease];
-  return self;
-}
-- (CMsgDOTAMatchGroupWaitTimesResponse_Builder*) clone {
-  return [CMsgDOTAMatchGroupWaitTimesResponse builderWithPrototype:_builderResult];
-}
-- (CMsgDOTAMatchGroupWaitTimesResponse*) defaultInstance {
-  return [CMsgDOTAMatchGroupWaitTimesResponse defaultInstance];
-}
-- (CMsgDOTAMatchGroupWaitTimesResponse*) build {
-  [self checkInitialized];
-  return [self buildPartial];
-}
-- (CMsgDOTAMatchGroupWaitTimesResponse*) buildPartial {
-  CMsgDOTAMatchGroupWaitTimesResponse* returnMe = [[_builderResult retain] autorelease];
-  self._builderResult = nil;
-  return returnMe;
-}
-- (CMsgDOTAMatchGroupWaitTimesResponse_Builder*) mergeFrom:(CMsgDOTAMatchGroupWaitTimesResponse*) other {
-  if (other == [CMsgDOTAMatchGroupWaitTimesResponse defaultInstance]) {
-    return self;
-  }
-  if (other.waitTimesByGroupArray.count > 0) {
-    if (_builderResult.waitTimesByGroupArray == nil) {
-      _builderResult.waitTimesByGroupArray = [[other.waitTimesByGroupArray copyWithZone:[other.waitTimesByGroupArray zone]] autorelease];
-    } else {
-      [_builderResult.waitTimesByGroupArray appendArray:other.waitTimesByGroupArray];
-    }
-  }
-  [self mergeUnknownFields:other.unknownFields];
-  return self;
-}
-- (CMsgDOTAMatchGroupWaitTimesResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
-  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
-}
-- (CMsgDOTAMatchGroupWaitTimesResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
-  while (YES) {
-    int32_t tag = [input readTag];
-    switch (tag) {
-      case 0:
-        [self setUnknownFields:[unknownFields build]];
-        return self;
-      default: {
-        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
-          [self setUnknownFields:[unknownFields build]];
-          return self;
-        }
-        break;
-      }
-      case 8: {
-        [self addWaitTimesByGroup:[input readUInt32]];
-        break;
-      }
-    }
-  }
-}
-- (PBAppendableArray *)waitTimesByGroup {
-  return _builderResult.waitTimesByGroupArray;
-}
-- (uint32_t)waitTimesByGroupAtIndex:(NSUInteger)index {
-  return [_builderResult waitTimesByGroupAtIndex:index];
-}
-- (CMsgDOTAMatchGroupWaitTimesResponse_Builder *)addWaitTimesByGroup:(uint32_t)value {
-  if (_builderResult.waitTimesByGroupArray == nil) {
-    _builderResult.waitTimesByGroupArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
-  }
-  [_builderResult.waitTimesByGroupArray addUint32:value];
-  return self;
-}
-- (CMsgDOTAMatchGroupWaitTimesResponse_Builder *)setWaitTimesByGroupArray:(NSArray *)array {
-  _builderResult.waitTimesByGroupArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
-  return self;
-}
-- (CMsgDOTAMatchGroupWaitTimesResponse_Builder *)setWaitTimesByGroupValues:(const uint32_t *)values count:(NSUInteger)count {
-  _builderResult.waitTimesByGroupArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
-  return self;
-}
-- (CMsgDOTAMatchGroupWaitTimesResponse_Builder *)clearWaitTimesByGroup {
-  _builderResult.waitTimesByGroupArray = nil;
-  return self;
-}
-@end
-
 @interface CItemDropEvent ()
 @property uint32_t accountId;
 @property uint32_t timeStamp;
@@ -67356,6 +67634,8 @@ static CLowPriPenalty* defaultCLowPriPenaltyInstance = nil;
 @property BOOL tournamentAdmin;
 @property BOOL tournamentBroadcaster;
 @property uint32_t storeItemHash;
+@property uint32_t timeplayedconsecutively;
+@property BOOL allow3RdPartyMatchHistory;
 @end
 
 @implementation CMsgDOTAWelcome
@@ -67415,6 +67695,25 @@ static CLowPriPenalty* defaultCLowPriPenaltyInstance = nil;
   hasStoreItemHash_ = !!value_;
 }
 @synthesize storeItemHash;
+- (BOOL) hasTimeplayedconsecutively {
+  return !!hasTimeplayedconsecutively_;
+}
+- (void) setHasTimeplayedconsecutively:(BOOL) value_ {
+  hasTimeplayedconsecutively_ = !!value_;
+}
+@synthesize timeplayedconsecutively;
+- (BOOL) hasAllow3RdPartyMatchHistory {
+  return !!hasAllow3RdPartyMatchHistory_;
+}
+- (void) setHasAllow3RdPartyMatchHistory:(BOOL) value_ {
+  hasAllow3RdPartyMatchHistory_ = !!value_;
+}
+- (BOOL) allow3RdPartyMatchHistory {
+  return !!allow3RdPartyMatchHistory_;
+}
+- (void) setAllow3RdPartyMatchHistory:(BOOL) value_ {
+  allow3RdPartyMatchHistory_ = !!value_;
+}
 - (void) dealloc {
   [super dealloc];
 }
@@ -67425,6 +67724,8 @@ static CLowPriPenalty* defaultCLowPriPenaltyInstance = nil;
     self.tournamentAdmin = NO;
     self.tournamentBroadcaster = NO;
     self.storeItemHash = 0;
+    self.timeplayedconsecutively = 0;
+    self.allow3RdPartyMatchHistory = NO;
   }
   return self;
 }
@@ -67459,6 +67760,12 @@ static CMsgDOTAWelcome* defaultCMsgDOTAWelcomeInstance = nil;
   if (self.hasStoreItemHash) {
     [output writeUInt32:5 value:self.storeItemHash];
   }
+  if (self.hasTimeplayedconsecutively) {
+    [output writeUInt32:6 value:self.timeplayedconsecutively];
+  }
+  if (self.hasAllow3RdPartyMatchHistory) {
+    [output writeBool:7 value:self.allow3RdPartyMatchHistory];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (int32_t) serializedSize {
@@ -67482,6 +67789,12 @@ static CMsgDOTAWelcome* defaultCMsgDOTAWelcomeInstance = nil;
   }
   if (self.hasStoreItemHash) {
     size_ += computeUInt32Size(5, self.storeItemHash);
+  }
+  if (self.hasTimeplayedconsecutively) {
+    size_ += computeUInt32Size(6, self.timeplayedconsecutively);
+  }
+  if (self.hasAllow3RdPartyMatchHistory) {
+    size_ += computeBoolSize(7, self.allow3RdPartyMatchHistory);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -67533,6 +67846,12 @@ static CMsgDOTAWelcome* defaultCMsgDOTAWelcomeInstance = nil;
   if (self.hasStoreItemHash) {
     [output appendFormat:@"%@%@: %@\n", indent, @"storeItemHash", [NSNumber numberWithInt:self.storeItemHash]];
   }
+  if (self.hasTimeplayedconsecutively) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"timeplayedconsecutively", [NSNumber numberWithInt:self.timeplayedconsecutively]];
+  }
+  if (self.hasAllow3RdPartyMatchHistory) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"allow3RdPartyMatchHistory", [NSNumber numberWithBool:self.allow3RdPartyMatchHistory]];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -67554,6 +67873,10 @@ static CMsgDOTAWelcome* defaultCMsgDOTAWelcomeInstance = nil;
       (!self.hasTournamentBroadcaster || self.tournamentBroadcaster == otherMessage.tournamentBroadcaster) &&
       self.hasStoreItemHash == otherMessage.hasStoreItemHash &&
       (!self.hasStoreItemHash || self.storeItemHash == otherMessage.storeItemHash) &&
+      self.hasTimeplayedconsecutively == otherMessage.hasTimeplayedconsecutively &&
+      (!self.hasTimeplayedconsecutively || self.timeplayedconsecutively == otherMessage.timeplayedconsecutively) &&
+      self.hasAllow3RdPartyMatchHistory == otherMessage.hasAllow3RdPartyMatchHistory &&
+      (!self.hasAllow3RdPartyMatchHistory || self.allow3RdPartyMatchHistory == otherMessage.allow3RdPartyMatchHistory) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -67572,6 +67895,12 @@ static CMsgDOTAWelcome* defaultCMsgDOTAWelcomeInstance = nil;
   }
   if (self.hasStoreItemHash) {
     hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.storeItemHash] hash];
+  }
+  if (self.hasTimeplayedconsecutively) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.timeplayedconsecutively] hash];
+  }
+  if (self.hasAllow3RdPartyMatchHistory) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.allow3RdPartyMatchHistory] hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -67635,6 +67964,12 @@ static CMsgDOTAWelcome* defaultCMsgDOTAWelcomeInstance = nil;
   if (other.hasStoreItemHash) {
     [self setStoreItemHash:other.storeItemHash];
   }
+  if (other.hasTimeplayedconsecutively) {
+    [self setTimeplayedconsecutively:other.timeplayedconsecutively];
+  }
+  if (other.hasAllow3RdPartyMatchHistory) {
+    [self setAllow3RdPartyMatchHistory:other.allow3RdPartyMatchHistory];
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -67674,6 +68009,14 @@ static CMsgDOTAWelcome* defaultCMsgDOTAWelcomeInstance = nil;
       }
       case 40: {
         [self setStoreItemHash:[input readUInt32]];
+        break;
+      }
+      case 48: {
+        [self setTimeplayedconsecutively:[input readUInt32]];
+        break;
+      }
+      case 56: {
+        [self setAllow3RdPartyMatchHistory:[input readBool]];
         break;
       }
     }
@@ -67757,6 +68100,38 @@ static CMsgDOTAWelcome* defaultCMsgDOTAWelcomeInstance = nil;
 - (CMsgDOTAWelcome_Builder*) clearStoreItemHash {
   _builderResult.hasStoreItemHash = NO;
   _builderResult.storeItemHash = 0;
+  return self;
+}
+- (BOOL) hasTimeplayedconsecutively {
+  return _builderResult.hasTimeplayedconsecutively;
+}
+- (uint32_t) timeplayedconsecutively {
+  return _builderResult.timeplayedconsecutively;
+}
+- (CMsgDOTAWelcome_Builder*) setTimeplayedconsecutively:(uint32_t) value {
+  _builderResult.hasTimeplayedconsecutively = YES;
+  _builderResult.timeplayedconsecutively = value;
+  return self;
+}
+- (CMsgDOTAWelcome_Builder*) clearTimeplayedconsecutively {
+  _builderResult.hasTimeplayedconsecutively = NO;
+  _builderResult.timeplayedconsecutively = 0;
+  return self;
+}
+- (BOOL) hasAllow3RdPartyMatchHistory {
+  return _builderResult.hasAllow3RdPartyMatchHistory;
+}
+- (BOOL) allow3RdPartyMatchHistory {
+  return _builderResult.allow3RdPartyMatchHistory;
+}
+- (CMsgDOTAWelcome_Builder*) setAllow3RdPartyMatchHistory:(BOOL) value {
+  _builderResult.hasAllow3RdPartyMatchHistory = YES;
+  _builderResult.allow3RdPartyMatchHistory = value;
+  return self;
+}
+- (CMsgDOTAWelcome_Builder*) clearAllow3RdPartyMatchHistory {
+  _builderResult.hasAllow3RdPartyMatchHistory = NO;
+  _builderResult.allow3RdPartyMatchHistory = NO;
   return self;
 }
 @end
@@ -80201,6 +80576,4394 @@ static CMsgDOTAGCToGCMatchCompleted* defaultCMsgDOTAGCToGCMatchCompletedInstance
   _builderResult.hasMatchId = NO;
   _builderResult.matchId = 0;
   return self;
+}
+@end
+
+@interface CMsgGCToGCCheckLeaguePermission ()
+@property uint64_t userId;
+@property uint32_t leagueId;
+@end
+
+@implementation CMsgGCToGCCheckLeaguePermission
+
+- (BOOL) hasUserId {
+  return !!hasUserId_;
+}
+- (void) setHasUserId:(BOOL) value_ {
+  hasUserId_ = !!value_;
+}
+@synthesize userId;
+- (BOOL) hasLeagueId {
+  return !!hasLeagueId_;
+}
+- (void) setHasLeagueId:(BOOL) value_ {
+  hasLeagueId_ = !!value_;
+}
+@synthesize leagueId;
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.userId = 0L;
+    self.leagueId = 0;
+  }
+  return self;
+}
+static CMsgGCToGCCheckLeaguePermission* defaultCMsgGCToGCCheckLeaguePermissionInstance = nil;
++ (void) initialize {
+  if (self == [CMsgGCToGCCheckLeaguePermission class]) {
+    defaultCMsgGCToGCCheckLeaguePermissionInstance = [[CMsgGCToGCCheckLeaguePermission alloc] init];
+  }
+}
++ (CMsgGCToGCCheckLeaguePermission*) defaultInstance {
+  return defaultCMsgGCToGCCheckLeaguePermissionInstance;
+}
+- (CMsgGCToGCCheckLeaguePermission*) defaultInstance {
+  return defaultCMsgGCToGCCheckLeaguePermissionInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasUserId) {
+    [output writeFixed64:1 value:self.userId];
+  }
+  if (self.hasLeagueId) {
+    [output writeUInt32:2 value:self.leagueId];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasUserId) {
+    size_ += computeFixed64Size(1, self.userId);
+  }
+  if (self.hasLeagueId) {
+    size_ += computeUInt32Size(2, self.leagueId);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgGCToGCCheckLeaguePermission*) parseFromData:(NSData*) data {
+  return (CMsgGCToGCCheckLeaguePermission*)[[[CMsgGCToGCCheckLeaguePermission builder] mergeFromData:data] build];
+}
++ (CMsgGCToGCCheckLeaguePermission*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCToGCCheckLeaguePermission*)[[[CMsgGCToGCCheckLeaguePermission builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCToGCCheckLeaguePermission*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgGCToGCCheckLeaguePermission*)[[[CMsgGCToGCCheckLeaguePermission builder] mergeFromInputStream:input] build];
+}
++ (CMsgGCToGCCheckLeaguePermission*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCToGCCheckLeaguePermission*)[[[CMsgGCToGCCheckLeaguePermission builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCToGCCheckLeaguePermission*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgGCToGCCheckLeaguePermission*)[[[CMsgGCToGCCheckLeaguePermission builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgGCToGCCheckLeaguePermission*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCToGCCheckLeaguePermission*)[[[CMsgGCToGCCheckLeaguePermission builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCToGCCheckLeaguePermission_Builder*) builder {
+  return [[[CMsgGCToGCCheckLeaguePermission_Builder alloc] init] autorelease];
+}
++ (CMsgGCToGCCheckLeaguePermission_Builder*) builderWithPrototype:(CMsgGCToGCCheckLeaguePermission*) prototype {
+  return [[CMsgGCToGCCheckLeaguePermission builder] mergeFrom:prototype];
+}
+- (CMsgGCToGCCheckLeaguePermission_Builder*) builder {
+  return [CMsgGCToGCCheckLeaguePermission builder];
+}
+- (CMsgGCToGCCheckLeaguePermission_Builder*) toBuilder {
+  return [CMsgGCToGCCheckLeaguePermission builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasUserId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"userId", [NSNumber numberWithLongLong:self.userId]];
+  }
+  if (self.hasLeagueId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"leagueId", [NSNumber numberWithInt:self.leagueId]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgGCToGCCheckLeaguePermission class]]) {
+    return NO;
+  }
+  CMsgGCToGCCheckLeaguePermission *otherMessage = other;
+  return
+      self.hasUserId == otherMessage.hasUserId &&
+      (!self.hasUserId || self.userId == otherMessage.userId) &&
+      self.hasLeagueId == otherMessage.hasLeagueId &&
+      (!self.hasLeagueId || self.leagueId == otherMessage.leagueId) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasUserId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithLongLong:self.userId] hash];
+  }
+  if (self.hasLeagueId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.leagueId] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgGCToGCCheckLeaguePermission_Builder()
+@property (retain) CMsgGCToGCCheckLeaguePermission* _builderResult;
+@end
+
+@implementation CMsgGCToGCCheckLeaguePermission_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgGCToGCCheckLeaguePermission alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgGCToGCCheckLeaguePermission_Builder*) clear {
+  _builderResult = [[[CMsgGCToGCCheckLeaguePermission alloc] init] autorelease];
+  return self;
+}
+- (CMsgGCToGCCheckLeaguePermission_Builder*) clone {
+  return [CMsgGCToGCCheckLeaguePermission builderWithPrototype:_builderResult];
+}
+- (CMsgGCToGCCheckLeaguePermission*) defaultInstance {
+  return [CMsgGCToGCCheckLeaguePermission defaultInstance];
+}
+- (CMsgGCToGCCheckLeaguePermission*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgGCToGCCheckLeaguePermission*) buildPartial {
+  CMsgGCToGCCheckLeaguePermission* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgGCToGCCheckLeaguePermission_Builder*) mergeFrom:(CMsgGCToGCCheckLeaguePermission*) other {
+  if (other == [CMsgGCToGCCheckLeaguePermission defaultInstance]) {
+    return self;
+  }
+  if (other.hasUserId) {
+    [self setUserId:other.userId];
+  }
+  if (other.hasLeagueId) {
+    [self setLeagueId:other.leagueId];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgGCToGCCheckLeaguePermission_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgGCToGCCheckLeaguePermission_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 9: {
+        [self setUserId:[input readFixed64]];
+        break;
+      }
+      case 16: {
+        [self setLeagueId:[input readUInt32]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasUserId {
+  return _builderResult.hasUserId;
+}
+- (uint64_t) userId {
+  return _builderResult.userId;
+}
+- (CMsgGCToGCCheckLeaguePermission_Builder*) setUserId:(uint64_t) value {
+  _builderResult.hasUserId = YES;
+  _builderResult.userId = value;
+  return self;
+}
+- (CMsgGCToGCCheckLeaguePermission_Builder*) clearUserId {
+  _builderResult.hasUserId = NO;
+  _builderResult.userId = 0L;
+  return self;
+}
+- (BOOL) hasLeagueId {
+  return _builderResult.hasLeagueId;
+}
+- (uint32_t) leagueId {
+  return _builderResult.leagueId;
+}
+- (CMsgGCToGCCheckLeaguePermission_Builder*) setLeagueId:(uint32_t) value {
+  _builderResult.hasLeagueId = YES;
+  _builderResult.leagueId = value;
+  return self;
+}
+- (CMsgGCToGCCheckLeaguePermission_Builder*) clearLeagueId {
+  _builderResult.hasLeagueId = NO;
+  _builderResult.leagueId = 0;
+  return self;
+}
+@end
+
+@interface CMsgGCToGCCheckLeaguePermissionResponse ()
+@property BOOL hasAccess;
+@end
+
+@implementation CMsgGCToGCCheckLeaguePermissionResponse
+
+- (BOOL) hasHasAccess {
+  return !!hasHasAccess_;
+}
+- (void) setHasHasAccess:(BOOL) value_ {
+  hasHasAccess_ = !!value_;
+}
+- (BOOL) hasAccess {
+  return !!hasAccess_;
+}
+- (void) setHasAccess:(BOOL) value_ {
+  hasAccess_ = !!value_;
+}
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.hasAccess = NO;
+  }
+  return self;
+}
+static CMsgGCToGCCheckLeaguePermissionResponse* defaultCMsgGCToGCCheckLeaguePermissionResponseInstance = nil;
++ (void) initialize {
+  if (self == [CMsgGCToGCCheckLeaguePermissionResponse class]) {
+    defaultCMsgGCToGCCheckLeaguePermissionResponseInstance = [[CMsgGCToGCCheckLeaguePermissionResponse alloc] init];
+  }
+}
++ (CMsgGCToGCCheckLeaguePermissionResponse*) defaultInstance {
+  return defaultCMsgGCToGCCheckLeaguePermissionResponseInstance;
+}
+- (CMsgGCToGCCheckLeaguePermissionResponse*) defaultInstance {
+  return defaultCMsgGCToGCCheckLeaguePermissionResponseInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasHasAccess) {
+    [output writeBool:1 value:self.hasAccess];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasHasAccess) {
+    size_ += computeBoolSize(1, self.hasAccess);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgGCToGCCheckLeaguePermissionResponse*) parseFromData:(NSData*) data {
+  return (CMsgGCToGCCheckLeaguePermissionResponse*)[[[CMsgGCToGCCheckLeaguePermissionResponse builder] mergeFromData:data] build];
+}
++ (CMsgGCToGCCheckLeaguePermissionResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCToGCCheckLeaguePermissionResponse*)[[[CMsgGCToGCCheckLeaguePermissionResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCToGCCheckLeaguePermissionResponse*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgGCToGCCheckLeaguePermissionResponse*)[[[CMsgGCToGCCheckLeaguePermissionResponse builder] mergeFromInputStream:input] build];
+}
++ (CMsgGCToGCCheckLeaguePermissionResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCToGCCheckLeaguePermissionResponse*)[[[CMsgGCToGCCheckLeaguePermissionResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCToGCCheckLeaguePermissionResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgGCToGCCheckLeaguePermissionResponse*)[[[CMsgGCToGCCheckLeaguePermissionResponse builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgGCToGCCheckLeaguePermissionResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgGCToGCCheckLeaguePermissionResponse*)[[[CMsgGCToGCCheckLeaguePermissionResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgGCToGCCheckLeaguePermissionResponse_Builder*) builder {
+  return [[[CMsgGCToGCCheckLeaguePermissionResponse_Builder alloc] init] autorelease];
+}
++ (CMsgGCToGCCheckLeaguePermissionResponse_Builder*) builderWithPrototype:(CMsgGCToGCCheckLeaguePermissionResponse*) prototype {
+  return [[CMsgGCToGCCheckLeaguePermissionResponse builder] mergeFrom:prototype];
+}
+- (CMsgGCToGCCheckLeaguePermissionResponse_Builder*) builder {
+  return [CMsgGCToGCCheckLeaguePermissionResponse builder];
+}
+- (CMsgGCToGCCheckLeaguePermissionResponse_Builder*) toBuilder {
+  return [CMsgGCToGCCheckLeaguePermissionResponse builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasHasAccess) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"hasAccess", [NSNumber numberWithBool:self.hasAccess]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgGCToGCCheckLeaguePermissionResponse class]]) {
+    return NO;
+  }
+  CMsgGCToGCCheckLeaguePermissionResponse *otherMessage = other;
+  return
+      self.hasHasAccess == otherMessage.hasHasAccess &&
+      (!self.hasHasAccess || self.hasAccess == otherMessage.hasAccess) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasHasAccess) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.hasAccess] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgGCToGCCheckLeaguePermissionResponse_Builder()
+@property (retain) CMsgGCToGCCheckLeaguePermissionResponse* _builderResult;
+@end
+
+@implementation CMsgGCToGCCheckLeaguePermissionResponse_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgGCToGCCheckLeaguePermissionResponse alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgGCToGCCheckLeaguePermissionResponse_Builder*) clear {
+  _builderResult = [[[CMsgGCToGCCheckLeaguePermissionResponse alloc] init] autorelease];
+  return self;
+}
+- (CMsgGCToGCCheckLeaguePermissionResponse_Builder*) clone {
+  return [CMsgGCToGCCheckLeaguePermissionResponse builderWithPrototype:_builderResult];
+}
+- (CMsgGCToGCCheckLeaguePermissionResponse*) defaultInstance {
+  return [CMsgGCToGCCheckLeaguePermissionResponse defaultInstance];
+}
+- (CMsgGCToGCCheckLeaguePermissionResponse*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgGCToGCCheckLeaguePermissionResponse*) buildPartial {
+  CMsgGCToGCCheckLeaguePermissionResponse* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgGCToGCCheckLeaguePermissionResponse_Builder*) mergeFrom:(CMsgGCToGCCheckLeaguePermissionResponse*) other {
+  if (other == [CMsgGCToGCCheckLeaguePermissionResponse defaultInstance]) {
+    return self;
+  }
+  if (other.hasHasAccess) {
+    [self setHasAccess:other.hasAccess];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgGCToGCCheckLeaguePermissionResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgGCToGCCheckLeaguePermissionResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setHasAccess:[input readBool]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasHasAccess {
+  return _builderResult.hasHasAccess;
+}
+- (BOOL) hasAccess {
+  return _builderResult.hasAccess;
+}
+- (CMsgGCToGCCheckLeaguePermissionResponse_Builder*) setHasAccess:(BOOL) value {
+  _builderResult.hasHasAccess = YES;
+  _builderResult.hasAccess = value;
+  return self;
+}
+- (CMsgGCToGCCheckLeaguePermissionResponse_Builder*) clearHasAccess {
+  _builderResult.hasHasAccess = NO;
+  _builderResult.hasAccess = NO;
+  return self;
+}
+@end
+
+@interface CMsgLeagueScheduleBlock ()
+@property uint32_t blockId;
+@property uint32_t startTime;
+@property uint32_t endTime;
+@property BOOL finals;
+@property (retain) NSString* comment;
+@end
+
+@implementation CMsgLeagueScheduleBlock
+
+- (BOOL) hasBlockId {
+  return !!hasBlockId_;
+}
+- (void) setHasBlockId:(BOOL) value_ {
+  hasBlockId_ = !!value_;
+}
+@synthesize blockId;
+- (BOOL) hasStartTime {
+  return !!hasStartTime_;
+}
+- (void) setHasStartTime:(BOOL) value_ {
+  hasStartTime_ = !!value_;
+}
+@synthesize startTime;
+- (BOOL) hasEndTime {
+  return !!hasEndTime_;
+}
+- (void) setHasEndTime:(BOOL) value_ {
+  hasEndTime_ = !!value_;
+}
+@synthesize endTime;
+- (BOOL) hasFinals {
+  return !!hasFinals_;
+}
+- (void) setHasFinals:(BOOL) value_ {
+  hasFinals_ = !!value_;
+}
+- (BOOL) finals {
+  return !!finals_;
+}
+- (void) setFinals:(BOOL) value_ {
+  finals_ = !!value_;
+}
+- (BOOL) hasComment {
+  return !!hasComment_;
+}
+- (void) setHasComment:(BOOL) value_ {
+  hasComment_ = !!value_;
+}
+@synthesize comment;
+- (void) dealloc {
+  self.comment = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.blockId = 0;
+    self.startTime = 0;
+    self.endTime = 0;
+    self.finals = NO;
+    self.comment = @"";
+  }
+  return self;
+}
+static CMsgLeagueScheduleBlock* defaultCMsgLeagueScheduleBlockInstance = nil;
++ (void) initialize {
+  if (self == [CMsgLeagueScheduleBlock class]) {
+    defaultCMsgLeagueScheduleBlockInstance = [[CMsgLeagueScheduleBlock alloc] init];
+  }
+}
++ (CMsgLeagueScheduleBlock*) defaultInstance {
+  return defaultCMsgLeagueScheduleBlockInstance;
+}
+- (CMsgLeagueScheduleBlock*) defaultInstance {
+  return defaultCMsgLeagueScheduleBlockInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasBlockId) {
+    [output writeUInt32:1 value:self.blockId];
+  }
+  if (self.hasStartTime) {
+    [output writeUInt32:2 value:self.startTime];
+  }
+  if (self.hasEndTime) {
+    [output writeUInt32:3 value:self.endTime];
+  }
+  if (self.hasFinals) {
+    [output writeBool:4 value:self.finals];
+  }
+  if (self.hasComment) {
+    [output writeString:5 value:self.comment];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasBlockId) {
+    size_ += computeUInt32Size(1, self.blockId);
+  }
+  if (self.hasStartTime) {
+    size_ += computeUInt32Size(2, self.startTime);
+  }
+  if (self.hasEndTime) {
+    size_ += computeUInt32Size(3, self.endTime);
+  }
+  if (self.hasFinals) {
+    size_ += computeBoolSize(4, self.finals);
+  }
+  if (self.hasComment) {
+    size_ += computeStringSize(5, self.comment);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgLeagueScheduleBlock*) parseFromData:(NSData*) data {
+  return (CMsgLeagueScheduleBlock*)[[[CMsgLeagueScheduleBlock builder] mergeFromData:data] build];
+}
++ (CMsgLeagueScheduleBlock*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgLeagueScheduleBlock*)[[[CMsgLeagueScheduleBlock builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgLeagueScheduleBlock*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgLeagueScheduleBlock*)[[[CMsgLeagueScheduleBlock builder] mergeFromInputStream:input] build];
+}
++ (CMsgLeagueScheduleBlock*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgLeagueScheduleBlock*)[[[CMsgLeagueScheduleBlock builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgLeagueScheduleBlock*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgLeagueScheduleBlock*)[[[CMsgLeagueScheduleBlock builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgLeagueScheduleBlock*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgLeagueScheduleBlock*)[[[CMsgLeagueScheduleBlock builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgLeagueScheduleBlock_Builder*) builder {
+  return [[[CMsgLeagueScheduleBlock_Builder alloc] init] autorelease];
+}
++ (CMsgLeagueScheduleBlock_Builder*) builderWithPrototype:(CMsgLeagueScheduleBlock*) prototype {
+  return [[CMsgLeagueScheduleBlock builder] mergeFrom:prototype];
+}
+- (CMsgLeagueScheduleBlock_Builder*) builder {
+  return [CMsgLeagueScheduleBlock builder];
+}
+- (CMsgLeagueScheduleBlock_Builder*) toBuilder {
+  return [CMsgLeagueScheduleBlock builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasBlockId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"blockId", [NSNumber numberWithInt:self.blockId]];
+  }
+  if (self.hasStartTime) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"startTime", [NSNumber numberWithInt:self.startTime]];
+  }
+  if (self.hasEndTime) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"endTime", [NSNumber numberWithInt:self.endTime]];
+  }
+  if (self.hasFinals) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"finals", [NSNumber numberWithBool:self.finals]];
+  }
+  if (self.hasComment) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"comment", self.comment];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgLeagueScheduleBlock class]]) {
+    return NO;
+  }
+  CMsgLeagueScheduleBlock *otherMessage = other;
+  return
+      self.hasBlockId == otherMessage.hasBlockId &&
+      (!self.hasBlockId || self.blockId == otherMessage.blockId) &&
+      self.hasStartTime == otherMessage.hasStartTime &&
+      (!self.hasStartTime || self.startTime == otherMessage.startTime) &&
+      self.hasEndTime == otherMessage.hasEndTime &&
+      (!self.hasEndTime || self.endTime == otherMessage.endTime) &&
+      self.hasFinals == otherMessage.hasFinals &&
+      (!self.hasFinals || self.finals == otherMessage.finals) &&
+      self.hasComment == otherMessage.hasComment &&
+      (!self.hasComment || [self.comment isEqual:otherMessage.comment]) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasBlockId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.blockId] hash];
+  }
+  if (self.hasStartTime) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.startTime] hash];
+  }
+  if (self.hasEndTime) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.endTime] hash];
+  }
+  if (self.hasFinals) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.finals] hash];
+  }
+  if (self.hasComment) {
+    hashCode = hashCode * 31 + [self.comment hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgLeagueScheduleBlock_Builder()
+@property (retain) CMsgLeagueScheduleBlock* _builderResult;
+@end
+
+@implementation CMsgLeagueScheduleBlock_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgLeagueScheduleBlock alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgLeagueScheduleBlock_Builder*) clear {
+  _builderResult = [[[CMsgLeagueScheduleBlock alloc] init] autorelease];
+  return self;
+}
+- (CMsgLeagueScheduleBlock_Builder*) clone {
+  return [CMsgLeagueScheduleBlock builderWithPrototype:_builderResult];
+}
+- (CMsgLeagueScheduleBlock*) defaultInstance {
+  return [CMsgLeagueScheduleBlock defaultInstance];
+}
+- (CMsgLeagueScheduleBlock*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgLeagueScheduleBlock*) buildPartial {
+  CMsgLeagueScheduleBlock* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgLeagueScheduleBlock_Builder*) mergeFrom:(CMsgLeagueScheduleBlock*) other {
+  if (other == [CMsgLeagueScheduleBlock defaultInstance]) {
+    return self;
+  }
+  if (other.hasBlockId) {
+    [self setBlockId:other.blockId];
+  }
+  if (other.hasStartTime) {
+    [self setStartTime:other.startTime];
+  }
+  if (other.hasEndTime) {
+    [self setEndTime:other.endTime];
+  }
+  if (other.hasFinals) {
+    [self setFinals:other.finals];
+  }
+  if (other.hasComment) {
+    [self setComment:other.comment];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgLeagueScheduleBlock_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgLeagueScheduleBlock_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setBlockId:[input readUInt32]];
+        break;
+      }
+      case 16: {
+        [self setStartTime:[input readUInt32]];
+        break;
+      }
+      case 24: {
+        [self setEndTime:[input readUInt32]];
+        break;
+      }
+      case 32: {
+        [self setFinals:[input readBool]];
+        break;
+      }
+      case 42: {
+        [self setComment:[input readString]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasBlockId {
+  return _builderResult.hasBlockId;
+}
+- (uint32_t) blockId {
+  return _builderResult.blockId;
+}
+- (CMsgLeagueScheduleBlock_Builder*) setBlockId:(uint32_t) value {
+  _builderResult.hasBlockId = YES;
+  _builderResult.blockId = value;
+  return self;
+}
+- (CMsgLeagueScheduleBlock_Builder*) clearBlockId {
+  _builderResult.hasBlockId = NO;
+  _builderResult.blockId = 0;
+  return self;
+}
+- (BOOL) hasStartTime {
+  return _builderResult.hasStartTime;
+}
+- (uint32_t) startTime {
+  return _builderResult.startTime;
+}
+- (CMsgLeagueScheduleBlock_Builder*) setStartTime:(uint32_t) value {
+  _builderResult.hasStartTime = YES;
+  _builderResult.startTime = value;
+  return self;
+}
+- (CMsgLeagueScheduleBlock_Builder*) clearStartTime {
+  _builderResult.hasStartTime = NO;
+  _builderResult.startTime = 0;
+  return self;
+}
+- (BOOL) hasEndTime {
+  return _builderResult.hasEndTime;
+}
+- (uint32_t) endTime {
+  return _builderResult.endTime;
+}
+- (CMsgLeagueScheduleBlock_Builder*) setEndTime:(uint32_t) value {
+  _builderResult.hasEndTime = YES;
+  _builderResult.endTime = value;
+  return self;
+}
+- (CMsgLeagueScheduleBlock_Builder*) clearEndTime {
+  _builderResult.hasEndTime = NO;
+  _builderResult.endTime = 0;
+  return self;
+}
+- (BOOL) hasFinals {
+  return _builderResult.hasFinals;
+}
+- (BOOL) finals {
+  return _builderResult.finals;
+}
+- (CMsgLeagueScheduleBlock_Builder*) setFinals:(BOOL) value {
+  _builderResult.hasFinals = YES;
+  _builderResult.finals = value;
+  return self;
+}
+- (CMsgLeagueScheduleBlock_Builder*) clearFinals {
+  _builderResult.hasFinals = NO;
+  _builderResult.finals = NO;
+  return self;
+}
+- (BOOL) hasComment {
+  return _builderResult.hasComment;
+}
+- (NSString*) comment {
+  return _builderResult.comment;
+}
+- (CMsgLeagueScheduleBlock_Builder*) setComment:(NSString*) value {
+  _builderResult.hasComment = YES;
+  _builderResult.comment = value;
+  return self;
+}
+- (CMsgLeagueScheduleBlock_Builder*) clearComment {
+  _builderResult.hasComment = NO;
+  _builderResult.comment = @"";
+  return self;
+}
+@end
+
+@interface CMsgDOTALeague ()
+@property uint32_t leagueId;
+@property (retain) PBAppendableArray * scheduleArray;
+@end
+
+@implementation CMsgDOTALeague
+
+- (BOOL) hasLeagueId {
+  return !!hasLeagueId_;
+}
+- (void) setHasLeagueId:(BOOL) value_ {
+  hasLeagueId_ = !!value_;
+}
+@synthesize leagueId;
+@synthesize scheduleArray;
+@dynamic schedule;
+- (void) dealloc {
+  self.scheduleArray = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.leagueId = 0;
+  }
+  return self;
+}
+static CMsgDOTALeague* defaultCMsgDOTALeagueInstance = nil;
++ (void) initialize {
+  if (self == [CMsgDOTALeague class]) {
+    defaultCMsgDOTALeagueInstance = [[CMsgDOTALeague alloc] init];
+  }
+}
++ (CMsgDOTALeague*) defaultInstance {
+  return defaultCMsgDOTALeagueInstance;
+}
+- (CMsgDOTALeague*) defaultInstance {
+  return defaultCMsgDOTALeagueInstance;
+}
+- (PBArray *)schedule {
+  return scheduleArray;
+}
+- (CMsgLeagueScheduleBlock*)scheduleAtIndex:(NSUInteger)index {
+  return [scheduleArray objectAtIndex:index];
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasLeagueId) {
+    [output writeUInt32:1 value:self.leagueId];
+  }
+  for (CMsgLeagueScheduleBlock *element in self.scheduleArray) {
+    [output writeMessage:2 value:element];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasLeagueId) {
+    size_ += computeUInt32Size(1, self.leagueId);
+  }
+  for (CMsgLeagueScheduleBlock *element in self.scheduleArray) {
+    size_ += computeMessageSize(2, element);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgDOTALeague*) parseFromData:(NSData*) data {
+  return (CMsgDOTALeague*)[[[CMsgDOTALeague builder] mergeFromData:data] build];
+}
++ (CMsgDOTALeague*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeague*)[[[CMsgDOTALeague builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeague*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgDOTALeague*)[[[CMsgDOTALeague builder] mergeFromInputStream:input] build];
+}
++ (CMsgDOTALeague*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeague*)[[[CMsgDOTALeague builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeague*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgDOTALeague*)[[[CMsgDOTALeague builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgDOTALeague*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeague*)[[[CMsgDOTALeague builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeague_Builder*) builder {
+  return [[[CMsgDOTALeague_Builder alloc] init] autorelease];
+}
++ (CMsgDOTALeague_Builder*) builderWithPrototype:(CMsgDOTALeague*) prototype {
+  return [[CMsgDOTALeague builder] mergeFrom:prototype];
+}
+- (CMsgDOTALeague_Builder*) builder {
+  return [CMsgDOTALeague builder];
+}
+- (CMsgDOTALeague_Builder*) toBuilder {
+  return [CMsgDOTALeague builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasLeagueId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"leagueId", [NSNumber numberWithInt:self.leagueId]];
+  }
+  for (CMsgLeagueScheduleBlock* element in self.scheduleArray) {
+    [output appendFormat:@"%@%@ {\n", indent, @"schedule"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgDOTALeague class]]) {
+    return NO;
+  }
+  CMsgDOTALeague *otherMessage = other;
+  return
+      self.hasLeagueId == otherMessage.hasLeagueId &&
+      (!self.hasLeagueId || self.leagueId == otherMessage.leagueId) &&
+      [self.scheduleArray isEqualToArray:otherMessage.scheduleArray] &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasLeagueId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.leagueId] hash];
+  }
+  for (CMsgLeagueScheduleBlock* element in self.scheduleArray) {
+    hashCode = hashCode * 31 + [element hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgDOTALeague_Builder()
+@property (retain) CMsgDOTALeague* _builderResult;
+@end
+
+@implementation CMsgDOTALeague_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgDOTALeague alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgDOTALeague_Builder*) clear {
+  _builderResult = [[[CMsgDOTALeague alloc] init] autorelease];
+  return self;
+}
+- (CMsgDOTALeague_Builder*) clone {
+  return [CMsgDOTALeague builderWithPrototype:_builderResult];
+}
+- (CMsgDOTALeague*) defaultInstance {
+  return [CMsgDOTALeague defaultInstance];
+}
+- (CMsgDOTALeague*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgDOTALeague*) buildPartial {
+  CMsgDOTALeague* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgDOTALeague_Builder*) mergeFrom:(CMsgDOTALeague*) other {
+  if (other == [CMsgDOTALeague defaultInstance]) {
+    return self;
+  }
+  if (other.hasLeagueId) {
+    [self setLeagueId:other.leagueId];
+  }
+  if (other.scheduleArray.count > 0) {
+    if (_builderResult.scheduleArray == nil) {
+      _builderResult.scheduleArray = [[other.scheduleArray copyWithZone:[other.scheduleArray zone]] autorelease];
+    } else {
+      [_builderResult.scheduleArray appendArray:other.scheduleArray];
+    }
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgDOTALeague_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgDOTALeague_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setLeagueId:[input readUInt32]];
+        break;
+      }
+      case 18: {
+        CMsgLeagueScheduleBlock_Builder* subBuilder = [CMsgLeagueScheduleBlock builder];
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self addSchedule:[subBuilder buildPartial]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasLeagueId {
+  return _builderResult.hasLeagueId;
+}
+- (uint32_t) leagueId {
+  return _builderResult.leagueId;
+}
+- (CMsgDOTALeague_Builder*) setLeagueId:(uint32_t) value {
+  _builderResult.hasLeagueId = YES;
+  _builderResult.leagueId = value;
+  return self;
+}
+- (CMsgDOTALeague_Builder*) clearLeagueId {
+  _builderResult.hasLeagueId = NO;
+  _builderResult.leagueId = 0;
+  return self;
+}
+- (PBAppendableArray *)schedule {
+  return _builderResult.scheduleArray;
+}
+- (CMsgLeagueScheduleBlock*)scheduleAtIndex:(NSUInteger)index {
+  return [_builderResult scheduleAtIndex:index];
+}
+- (CMsgDOTALeague_Builder *)addSchedule:(CMsgLeagueScheduleBlock*)value {
+  if (_builderResult.scheduleArray == nil) {
+    _builderResult.scheduleArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  }
+  [_builderResult.scheduleArray addObject:value];
+  return self;
+}
+- (CMsgDOTALeague_Builder *)setScheduleArray:(NSArray *)array {
+  _builderResult.scheduleArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgDOTALeague_Builder *)setScheduleValues:(const CMsgLeagueScheduleBlock* *)values count:(NSUInteger)count {
+  _builderResult.scheduleArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgDOTALeague_Builder *)clearSchedule {
+  _builderResult.scheduleArray = nil;
+  return self;
+}
+@end
+
+@interface CMsgDOTALeagueScheduleRequest ()
+@property uint32_t leagueId;
+@end
+
+@implementation CMsgDOTALeagueScheduleRequest
+
+- (BOOL) hasLeagueId {
+  return !!hasLeagueId_;
+}
+- (void) setHasLeagueId:(BOOL) value_ {
+  hasLeagueId_ = !!value_;
+}
+@synthesize leagueId;
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.leagueId = 0;
+  }
+  return self;
+}
+static CMsgDOTALeagueScheduleRequest* defaultCMsgDOTALeagueScheduleRequestInstance = nil;
++ (void) initialize {
+  if (self == [CMsgDOTALeagueScheduleRequest class]) {
+    defaultCMsgDOTALeagueScheduleRequestInstance = [[CMsgDOTALeagueScheduleRequest alloc] init];
+  }
+}
++ (CMsgDOTALeagueScheduleRequest*) defaultInstance {
+  return defaultCMsgDOTALeagueScheduleRequestInstance;
+}
+- (CMsgDOTALeagueScheduleRequest*) defaultInstance {
+  return defaultCMsgDOTALeagueScheduleRequestInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasLeagueId) {
+    [output writeUInt32:1 value:self.leagueId];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasLeagueId) {
+    size_ += computeUInt32Size(1, self.leagueId);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgDOTALeagueScheduleRequest*) parseFromData:(NSData*) data {
+  return (CMsgDOTALeagueScheduleRequest*)[[[CMsgDOTALeagueScheduleRequest builder] mergeFromData:data] build];
+}
++ (CMsgDOTALeagueScheduleRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeagueScheduleRequest*)[[[CMsgDOTALeagueScheduleRequest builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeagueScheduleRequest*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgDOTALeagueScheduleRequest*)[[[CMsgDOTALeagueScheduleRequest builder] mergeFromInputStream:input] build];
+}
++ (CMsgDOTALeagueScheduleRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeagueScheduleRequest*)[[[CMsgDOTALeagueScheduleRequest builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeagueScheduleRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgDOTALeagueScheduleRequest*)[[[CMsgDOTALeagueScheduleRequest builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgDOTALeagueScheduleRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeagueScheduleRequest*)[[[CMsgDOTALeagueScheduleRequest builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeagueScheduleRequest_Builder*) builder {
+  return [[[CMsgDOTALeagueScheduleRequest_Builder alloc] init] autorelease];
+}
++ (CMsgDOTALeagueScheduleRequest_Builder*) builderWithPrototype:(CMsgDOTALeagueScheduleRequest*) prototype {
+  return [[CMsgDOTALeagueScheduleRequest builder] mergeFrom:prototype];
+}
+- (CMsgDOTALeagueScheduleRequest_Builder*) builder {
+  return [CMsgDOTALeagueScheduleRequest builder];
+}
+- (CMsgDOTALeagueScheduleRequest_Builder*) toBuilder {
+  return [CMsgDOTALeagueScheduleRequest builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasLeagueId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"leagueId", [NSNumber numberWithInt:self.leagueId]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgDOTALeagueScheduleRequest class]]) {
+    return NO;
+  }
+  CMsgDOTALeagueScheduleRequest *otherMessage = other;
+  return
+      self.hasLeagueId == otherMessage.hasLeagueId &&
+      (!self.hasLeagueId || self.leagueId == otherMessage.leagueId) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasLeagueId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.leagueId] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgDOTALeagueScheduleRequest_Builder()
+@property (retain) CMsgDOTALeagueScheduleRequest* _builderResult;
+@end
+
+@implementation CMsgDOTALeagueScheduleRequest_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgDOTALeagueScheduleRequest alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgDOTALeagueScheduleRequest_Builder*) clear {
+  _builderResult = [[[CMsgDOTALeagueScheduleRequest alloc] init] autorelease];
+  return self;
+}
+- (CMsgDOTALeagueScheduleRequest_Builder*) clone {
+  return [CMsgDOTALeagueScheduleRequest builderWithPrototype:_builderResult];
+}
+- (CMsgDOTALeagueScheduleRequest*) defaultInstance {
+  return [CMsgDOTALeagueScheduleRequest defaultInstance];
+}
+- (CMsgDOTALeagueScheduleRequest*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgDOTALeagueScheduleRequest*) buildPartial {
+  CMsgDOTALeagueScheduleRequest* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgDOTALeagueScheduleRequest_Builder*) mergeFrom:(CMsgDOTALeagueScheduleRequest*) other {
+  if (other == [CMsgDOTALeagueScheduleRequest defaultInstance]) {
+    return self;
+  }
+  if (other.hasLeagueId) {
+    [self setLeagueId:other.leagueId];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgDOTALeagueScheduleRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgDOTALeagueScheduleRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setLeagueId:[input readUInt32]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasLeagueId {
+  return _builderResult.hasLeagueId;
+}
+- (uint32_t) leagueId {
+  return _builderResult.leagueId;
+}
+- (CMsgDOTALeagueScheduleRequest_Builder*) setLeagueId:(uint32_t) value {
+  _builderResult.hasLeagueId = YES;
+  _builderResult.leagueId = value;
+  return self;
+}
+- (CMsgDOTALeagueScheduleRequest_Builder*) clearLeagueId {
+  _builderResult.hasLeagueId = NO;
+  _builderResult.leagueId = 0;
+  return self;
+}
+@end
+
+@interface CMsgDOTALeagueScheduleResponse ()
+@property (retain) CMsgDOTALeague* league;
+@property uint32_t eresult;
+@end
+
+@implementation CMsgDOTALeagueScheduleResponse
+
+- (BOOL) hasLeague {
+  return !!hasLeague_;
+}
+- (void) setHasLeague:(BOOL) value_ {
+  hasLeague_ = !!value_;
+}
+@synthesize league;
+- (BOOL) hasEresult {
+  return !!hasEresult_;
+}
+- (void) setHasEresult:(BOOL) value_ {
+  hasEresult_ = !!value_;
+}
+@synthesize eresult;
+- (void) dealloc {
+  self.league = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.league = [CMsgDOTALeague defaultInstance];
+    self.eresult = 2;
+  }
+  return self;
+}
+static CMsgDOTALeagueScheduleResponse* defaultCMsgDOTALeagueScheduleResponseInstance = nil;
++ (void) initialize {
+  if (self == [CMsgDOTALeagueScheduleResponse class]) {
+    defaultCMsgDOTALeagueScheduleResponseInstance = [[CMsgDOTALeagueScheduleResponse alloc] init];
+  }
+}
++ (CMsgDOTALeagueScheduleResponse*) defaultInstance {
+  return defaultCMsgDOTALeagueScheduleResponseInstance;
+}
+- (CMsgDOTALeagueScheduleResponse*) defaultInstance {
+  return defaultCMsgDOTALeagueScheduleResponseInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasLeague) {
+    [output writeMessage:1 value:self.league];
+  }
+  if (self.hasEresult) {
+    [output writeUInt32:2 value:self.eresult];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasLeague) {
+    size_ += computeMessageSize(1, self.league);
+  }
+  if (self.hasEresult) {
+    size_ += computeUInt32Size(2, self.eresult);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgDOTALeagueScheduleResponse*) parseFromData:(NSData*) data {
+  return (CMsgDOTALeagueScheduleResponse*)[[[CMsgDOTALeagueScheduleResponse builder] mergeFromData:data] build];
+}
++ (CMsgDOTALeagueScheduleResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeagueScheduleResponse*)[[[CMsgDOTALeagueScheduleResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeagueScheduleResponse*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgDOTALeagueScheduleResponse*)[[[CMsgDOTALeagueScheduleResponse builder] mergeFromInputStream:input] build];
+}
++ (CMsgDOTALeagueScheduleResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeagueScheduleResponse*)[[[CMsgDOTALeagueScheduleResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeagueScheduleResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgDOTALeagueScheduleResponse*)[[[CMsgDOTALeagueScheduleResponse builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgDOTALeagueScheduleResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeagueScheduleResponse*)[[[CMsgDOTALeagueScheduleResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeagueScheduleResponse_Builder*) builder {
+  return [[[CMsgDOTALeagueScheduleResponse_Builder alloc] init] autorelease];
+}
++ (CMsgDOTALeagueScheduleResponse_Builder*) builderWithPrototype:(CMsgDOTALeagueScheduleResponse*) prototype {
+  return [[CMsgDOTALeagueScheduleResponse builder] mergeFrom:prototype];
+}
+- (CMsgDOTALeagueScheduleResponse_Builder*) builder {
+  return [CMsgDOTALeagueScheduleResponse builder];
+}
+- (CMsgDOTALeagueScheduleResponse_Builder*) toBuilder {
+  return [CMsgDOTALeagueScheduleResponse builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasLeague) {
+    [output appendFormat:@"%@%@ {\n", indent, @"league"];
+    [self.league writeDescriptionTo:output
+                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  if (self.hasEresult) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"eresult", [NSNumber numberWithInt:self.eresult]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgDOTALeagueScheduleResponse class]]) {
+    return NO;
+  }
+  CMsgDOTALeagueScheduleResponse *otherMessage = other;
+  return
+      self.hasLeague == otherMessage.hasLeague &&
+      (!self.hasLeague || [self.league isEqual:otherMessage.league]) &&
+      self.hasEresult == otherMessage.hasEresult &&
+      (!self.hasEresult || self.eresult == otherMessage.eresult) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasLeague) {
+    hashCode = hashCode * 31 + [self.league hash];
+  }
+  if (self.hasEresult) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.eresult] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgDOTALeagueScheduleResponse_Builder()
+@property (retain) CMsgDOTALeagueScheduleResponse* _builderResult;
+@end
+
+@implementation CMsgDOTALeagueScheduleResponse_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgDOTALeagueScheduleResponse alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgDOTALeagueScheduleResponse_Builder*) clear {
+  _builderResult = [[[CMsgDOTALeagueScheduleResponse alloc] init] autorelease];
+  return self;
+}
+- (CMsgDOTALeagueScheduleResponse_Builder*) clone {
+  return [CMsgDOTALeagueScheduleResponse builderWithPrototype:_builderResult];
+}
+- (CMsgDOTALeagueScheduleResponse*) defaultInstance {
+  return [CMsgDOTALeagueScheduleResponse defaultInstance];
+}
+- (CMsgDOTALeagueScheduleResponse*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgDOTALeagueScheduleResponse*) buildPartial {
+  CMsgDOTALeagueScheduleResponse* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgDOTALeagueScheduleResponse_Builder*) mergeFrom:(CMsgDOTALeagueScheduleResponse*) other {
+  if (other == [CMsgDOTALeagueScheduleResponse defaultInstance]) {
+    return self;
+  }
+  if (other.hasLeague) {
+    [self mergeLeague:other.league];
+  }
+  if (other.hasEresult) {
+    [self setEresult:other.eresult];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgDOTALeagueScheduleResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgDOTALeagueScheduleResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 10: {
+        CMsgDOTALeague_Builder* subBuilder = [CMsgDOTALeague builder];
+        if (self.hasLeague) {
+          [subBuilder mergeFrom:self.league];
+        }
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self setLeague:[subBuilder buildPartial]];
+        break;
+      }
+      case 16: {
+        [self setEresult:[input readUInt32]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasLeague {
+  return _builderResult.hasLeague;
+}
+- (CMsgDOTALeague*) league {
+  return _builderResult.league;
+}
+- (CMsgDOTALeagueScheduleResponse_Builder*) setLeague:(CMsgDOTALeague*) value {
+  _builderResult.hasLeague = YES;
+  _builderResult.league = value;
+  return self;
+}
+- (CMsgDOTALeagueScheduleResponse_Builder*) setLeagueBuilder:(CMsgDOTALeague_Builder*) builderForValue {
+  return [self setLeague:[builderForValue build]];
+}
+- (CMsgDOTALeagueScheduleResponse_Builder*) mergeLeague:(CMsgDOTALeague*) value {
+  if (_builderResult.hasLeague &&
+      _builderResult.league != [CMsgDOTALeague defaultInstance]) {
+    _builderResult.league =
+      [[[CMsgDOTALeague builderWithPrototype:_builderResult.league] mergeFrom:value] buildPartial];
+  } else {
+    _builderResult.league = value;
+  }
+  _builderResult.hasLeague = YES;
+  return self;
+}
+- (CMsgDOTALeagueScheduleResponse_Builder*) clearLeague {
+  _builderResult.hasLeague = NO;
+  _builderResult.league = [CMsgDOTALeague defaultInstance];
+  return self;
+}
+- (BOOL) hasEresult {
+  return _builderResult.hasEresult;
+}
+- (uint32_t) eresult {
+  return _builderResult.eresult;
+}
+- (CMsgDOTALeagueScheduleResponse_Builder*) setEresult:(uint32_t) value {
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
+  return self;
+}
+- (CMsgDOTALeagueScheduleResponse_Builder*) clearEresult {
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
+  return self;
+}
+@end
+
+@interface CMsgDOTALeagueScheduleEdit ()
+@property uint32_t leagueId;
+@property (retain) CMsgLeagueScheduleBlock* schedule;
+@property BOOL deleteBlock;
+@end
+
+@implementation CMsgDOTALeagueScheduleEdit
+
+- (BOOL) hasLeagueId {
+  return !!hasLeagueId_;
+}
+- (void) setHasLeagueId:(BOOL) value_ {
+  hasLeagueId_ = !!value_;
+}
+@synthesize leagueId;
+- (BOOL) hasSchedule {
+  return !!hasSchedule_;
+}
+- (void) setHasSchedule:(BOOL) value_ {
+  hasSchedule_ = !!value_;
+}
+@synthesize schedule;
+- (BOOL) hasDeleteBlock {
+  return !!hasDeleteBlock_;
+}
+- (void) setHasDeleteBlock:(BOOL) value_ {
+  hasDeleteBlock_ = !!value_;
+}
+- (BOOL) deleteBlock {
+  return !!deleteBlock_;
+}
+- (void) setDeleteBlock:(BOOL) value_ {
+  deleteBlock_ = !!value_;
+}
+- (void) dealloc {
+  self.schedule = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.leagueId = 0;
+    self.schedule = [CMsgLeagueScheduleBlock defaultInstance];
+    self.deleteBlock = NO;
+  }
+  return self;
+}
+static CMsgDOTALeagueScheduleEdit* defaultCMsgDOTALeagueScheduleEditInstance = nil;
++ (void) initialize {
+  if (self == [CMsgDOTALeagueScheduleEdit class]) {
+    defaultCMsgDOTALeagueScheduleEditInstance = [[CMsgDOTALeagueScheduleEdit alloc] init];
+  }
+}
++ (CMsgDOTALeagueScheduleEdit*) defaultInstance {
+  return defaultCMsgDOTALeagueScheduleEditInstance;
+}
+- (CMsgDOTALeagueScheduleEdit*) defaultInstance {
+  return defaultCMsgDOTALeagueScheduleEditInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasLeagueId) {
+    [output writeUInt32:1 value:self.leagueId];
+  }
+  if (self.hasSchedule) {
+    [output writeMessage:2 value:self.schedule];
+  }
+  if (self.hasDeleteBlock) {
+    [output writeBool:3 value:self.deleteBlock];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasLeagueId) {
+    size_ += computeUInt32Size(1, self.leagueId);
+  }
+  if (self.hasSchedule) {
+    size_ += computeMessageSize(2, self.schedule);
+  }
+  if (self.hasDeleteBlock) {
+    size_ += computeBoolSize(3, self.deleteBlock);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgDOTALeagueScheduleEdit*) parseFromData:(NSData*) data {
+  return (CMsgDOTALeagueScheduleEdit*)[[[CMsgDOTALeagueScheduleEdit builder] mergeFromData:data] build];
+}
++ (CMsgDOTALeagueScheduleEdit*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeagueScheduleEdit*)[[[CMsgDOTALeagueScheduleEdit builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeagueScheduleEdit*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgDOTALeagueScheduleEdit*)[[[CMsgDOTALeagueScheduleEdit builder] mergeFromInputStream:input] build];
+}
++ (CMsgDOTALeagueScheduleEdit*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeagueScheduleEdit*)[[[CMsgDOTALeagueScheduleEdit builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeagueScheduleEdit*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgDOTALeagueScheduleEdit*)[[[CMsgDOTALeagueScheduleEdit builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgDOTALeagueScheduleEdit*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeagueScheduleEdit*)[[[CMsgDOTALeagueScheduleEdit builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeagueScheduleEdit_Builder*) builder {
+  return [[[CMsgDOTALeagueScheduleEdit_Builder alloc] init] autorelease];
+}
++ (CMsgDOTALeagueScheduleEdit_Builder*) builderWithPrototype:(CMsgDOTALeagueScheduleEdit*) prototype {
+  return [[CMsgDOTALeagueScheduleEdit builder] mergeFrom:prototype];
+}
+- (CMsgDOTALeagueScheduleEdit_Builder*) builder {
+  return [CMsgDOTALeagueScheduleEdit builder];
+}
+- (CMsgDOTALeagueScheduleEdit_Builder*) toBuilder {
+  return [CMsgDOTALeagueScheduleEdit builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasLeagueId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"leagueId", [NSNumber numberWithInt:self.leagueId]];
+  }
+  if (self.hasSchedule) {
+    [output appendFormat:@"%@%@ {\n", indent, @"schedule"];
+    [self.schedule writeDescriptionTo:output
+                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  if (self.hasDeleteBlock) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"deleteBlock", [NSNumber numberWithBool:self.deleteBlock]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgDOTALeagueScheduleEdit class]]) {
+    return NO;
+  }
+  CMsgDOTALeagueScheduleEdit *otherMessage = other;
+  return
+      self.hasLeagueId == otherMessage.hasLeagueId &&
+      (!self.hasLeagueId || self.leagueId == otherMessage.leagueId) &&
+      self.hasSchedule == otherMessage.hasSchedule &&
+      (!self.hasSchedule || [self.schedule isEqual:otherMessage.schedule]) &&
+      self.hasDeleteBlock == otherMessage.hasDeleteBlock &&
+      (!self.hasDeleteBlock || self.deleteBlock == otherMessage.deleteBlock) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasLeagueId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.leagueId] hash];
+  }
+  if (self.hasSchedule) {
+    hashCode = hashCode * 31 + [self.schedule hash];
+  }
+  if (self.hasDeleteBlock) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.deleteBlock] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgDOTALeagueScheduleEdit_Builder()
+@property (retain) CMsgDOTALeagueScheduleEdit* _builderResult;
+@end
+
+@implementation CMsgDOTALeagueScheduleEdit_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgDOTALeagueScheduleEdit alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgDOTALeagueScheduleEdit_Builder*) clear {
+  _builderResult = [[[CMsgDOTALeagueScheduleEdit alloc] init] autorelease];
+  return self;
+}
+- (CMsgDOTALeagueScheduleEdit_Builder*) clone {
+  return [CMsgDOTALeagueScheduleEdit builderWithPrototype:_builderResult];
+}
+- (CMsgDOTALeagueScheduleEdit*) defaultInstance {
+  return [CMsgDOTALeagueScheduleEdit defaultInstance];
+}
+- (CMsgDOTALeagueScheduleEdit*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgDOTALeagueScheduleEdit*) buildPartial {
+  CMsgDOTALeagueScheduleEdit* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgDOTALeagueScheduleEdit_Builder*) mergeFrom:(CMsgDOTALeagueScheduleEdit*) other {
+  if (other == [CMsgDOTALeagueScheduleEdit defaultInstance]) {
+    return self;
+  }
+  if (other.hasLeagueId) {
+    [self setLeagueId:other.leagueId];
+  }
+  if (other.hasSchedule) {
+    [self mergeSchedule:other.schedule];
+  }
+  if (other.hasDeleteBlock) {
+    [self setDeleteBlock:other.deleteBlock];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgDOTALeagueScheduleEdit_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgDOTALeagueScheduleEdit_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setLeagueId:[input readUInt32]];
+        break;
+      }
+      case 18: {
+        CMsgLeagueScheduleBlock_Builder* subBuilder = [CMsgLeagueScheduleBlock builder];
+        if (self.hasSchedule) {
+          [subBuilder mergeFrom:self.schedule];
+        }
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self setSchedule:[subBuilder buildPartial]];
+        break;
+      }
+      case 24: {
+        [self setDeleteBlock:[input readBool]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasLeagueId {
+  return _builderResult.hasLeagueId;
+}
+- (uint32_t) leagueId {
+  return _builderResult.leagueId;
+}
+- (CMsgDOTALeagueScheduleEdit_Builder*) setLeagueId:(uint32_t) value {
+  _builderResult.hasLeagueId = YES;
+  _builderResult.leagueId = value;
+  return self;
+}
+- (CMsgDOTALeagueScheduleEdit_Builder*) clearLeagueId {
+  _builderResult.hasLeagueId = NO;
+  _builderResult.leagueId = 0;
+  return self;
+}
+- (BOOL) hasSchedule {
+  return _builderResult.hasSchedule;
+}
+- (CMsgLeagueScheduleBlock*) schedule {
+  return _builderResult.schedule;
+}
+- (CMsgDOTALeagueScheduleEdit_Builder*) setSchedule:(CMsgLeagueScheduleBlock*) value {
+  _builderResult.hasSchedule = YES;
+  _builderResult.schedule = value;
+  return self;
+}
+- (CMsgDOTALeagueScheduleEdit_Builder*) setScheduleBuilder:(CMsgLeagueScheduleBlock_Builder*) builderForValue {
+  return [self setSchedule:[builderForValue build]];
+}
+- (CMsgDOTALeagueScheduleEdit_Builder*) mergeSchedule:(CMsgLeagueScheduleBlock*) value {
+  if (_builderResult.hasSchedule &&
+      _builderResult.schedule != [CMsgLeagueScheduleBlock defaultInstance]) {
+    _builderResult.schedule =
+      [[[CMsgLeagueScheduleBlock builderWithPrototype:_builderResult.schedule] mergeFrom:value] buildPartial];
+  } else {
+    _builderResult.schedule = value;
+  }
+  _builderResult.hasSchedule = YES;
+  return self;
+}
+- (CMsgDOTALeagueScheduleEdit_Builder*) clearSchedule {
+  _builderResult.hasSchedule = NO;
+  _builderResult.schedule = [CMsgLeagueScheduleBlock defaultInstance];
+  return self;
+}
+- (BOOL) hasDeleteBlock {
+  return _builderResult.hasDeleteBlock;
+}
+- (BOOL) deleteBlock {
+  return _builderResult.deleteBlock;
+}
+- (CMsgDOTALeagueScheduleEdit_Builder*) setDeleteBlock:(BOOL) value {
+  _builderResult.hasDeleteBlock = YES;
+  _builderResult.deleteBlock = value;
+  return self;
+}
+- (CMsgDOTALeagueScheduleEdit_Builder*) clearDeleteBlock {
+  _builderResult.hasDeleteBlock = NO;
+  _builderResult.deleteBlock = NO;
+  return self;
+}
+@end
+
+@interface CMsgDOTALeagueScheduleEditResponse ()
+@property (retain) CMsgDOTALeague* league;
+@property uint32_t eresult;
+@end
+
+@implementation CMsgDOTALeagueScheduleEditResponse
+
+- (BOOL) hasLeague {
+  return !!hasLeague_;
+}
+- (void) setHasLeague:(BOOL) value_ {
+  hasLeague_ = !!value_;
+}
+@synthesize league;
+- (BOOL) hasEresult {
+  return !!hasEresult_;
+}
+- (void) setHasEresult:(BOOL) value_ {
+  hasEresult_ = !!value_;
+}
+@synthesize eresult;
+- (void) dealloc {
+  self.league = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.league = [CMsgDOTALeague defaultInstance];
+    self.eresult = 2;
+  }
+  return self;
+}
+static CMsgDOTALeagueScheduleEditResponse* defaultCMsgDOTALeagueScheduleEditResponseInstance = nil;
++ (void) initialize {
+  if (self == [CMsgDOTALeagueScheduleEditResponse class]) {
+    defaultCMsgDOTALeagueScheduleEditResponseInstance = [[CMsgDOTALeagueScheduleEditResponse alloc] init];
+  }
+}
++ (CMsgDOTALeagueScheduleEditResponse*) defaultInstance {
+  return defaultCMsgDOTALeagueScheduleEditResponseInstance;
+}
+- (CMsgDOTALeagueScheduleEditResponse*) defaultInstance {
+  return defaultCMsgDOTALeagueScheduleEditResponseInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasLeague) {
+    [output writeMessage:1 value:self.league];
+  }
+  if (self.hasEresult) {
+    [output writeUInt32:2 value:self.eresult];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasLeague) {
+    size_ += computeMessageSize(1, self.league);
+  }
+  if (self.hasEresult) {
+    size_ += computeUInt32Size(2, self.eresult);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgDOTALeagueScheduleEditResponse*) parseFromData:(NSData*) data {
+  return (CMsgDOTALeagueScheduleEditResponse*)[[[CMsgDOTALeagueScheduleEditResponse builder] mergeFromData:data] build];
+}
++ (CMsgDOTALeagueScheduleEditResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeagueScheduleEditResponse*)[[[CMsgDOTALeagueScheduleEditResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeagueScheduleEditResponse*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgDOTALeagueScheduleEditResponse*)[[[CMsgDOTALeagueScheduleEditResponse builder] mergeFromInputStream:input] build];
+}
++ (CMsgDOTALeagueScheduleEditResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeagueScheduleEditResponse*)[[[CMsgDOTALeagueScheduleEditResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeagueScheduleEditResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgDOTALeagueScheduleEditResponse*)[[[CMsgDOTALeagueScheduleEditResponse builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgDOTALeagueScheduleEditResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeagueScheduleEditResponse*)[[[CMsgDOTALeagueScheduleEditResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeagueScheduleEditResponse_Builder*) builder {
+  return [[[CMsgDOTALeagueScheduleEditResponse_Builder alloc] init] autorelease];
+}
++ (CMsgDOTALeagueScheduleEditResponse_Builder*) builderWithPrototype:(CMsgDOTALeagueScheduleEditResponse*) prototype {
+  return [[CMsgDOTALeagueScheduleEditResponse builder] mergeFrom:prototype];
+}
+- (CMsgDOTALeagueScheduleEditResponse_Builder*) builder {
+  return [CMsgDOTALeagueScheduleEditResponse builder];
+}
+- (CMsgDOTALeagueScheduleEditResponse_Builder*) toBuilder {
+  return [CMsgDOTALeagueScheduleEditResponse builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasLeague) {
+    [output appendFormat:@"%@%@ {\n", indent, @"league"];
+    [self.league writeDescriptionTo:output
+                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  if (self.hasEresult) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"eresult", [NSNumber numberWithInt:self.eresult]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgDOTALeagueScheduleEditResponse class]]) {
+    return NO;
+  }
+  CMsgDOTALeagueScheduleEditResponse *otherMessage = other;
+  return
+      self.hasLeague == otherMessage.hasLeague &&
+      (!self.hasLeague || [self.league isEqual:otherMessage.league]) &&
+      self.hasEresult == otherMessage.hasEresult &&
+      (!self.hasEresult || self.eresult == otherMessage.eresult) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasLeague) {
+    hashCode = hashCode * 31 + [self.league hash];
+  }
+  if (self.hasEresult) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.eresult] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgDOTALeagueScheduleEditResponse_Builder()
+@property (retain) CMsgDOTALeagueScheduleEditResponse* _builderResult;
+@end
+
+@implementation CMsgDOTALeagueScheduleEditResponse_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgDOTALeagueScheduleEditResponse alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgDOTALeagueScheduleEditResponse_Builder*) clear {
+  _builderResult = [[[CMsgDOTALeagueScheduleEditResponse alloc] init] autorelease];
+  return self;
+}
+- (CMsgDOTALeagueScheduleEditResponse_Builder*) clone {
+  return [CMsgDOTALeagueScheduleEditResponse builderWithPrototype:_builderResult];
+}
+- (CMsgDOTALeagueScheduleEditResponse*) defaultInstance {
+  return [CMsgDOTALeagueScheduleEditResponse defaultInstance];
+}
+- (CMsgDOTALeagueScheduleEditResponse*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgDOTALeagueScheduleEditResponse*) buildPartial {
+  CMsgDOTALeagueScheduleEditResponse* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgDOTALeagueScheduleEditResponse_Builder*) mergeFrom:(CMsgDOTALeagueScheduleEditResponse*) other {
+  if (other == [CMsgDOTALeagueScheduleEditResponse defaultInstance]) {
+    return self;
+  }
+  if (other.hasLeague) {
+    [self mergeLeague:other.league];
+  }
+  if (other.hasEresult) {
+    [self setEresult:other.eresult];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgDOTALeagueScheduleEditResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgDOTALeagueScheduleEditResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 10: {
+        CMsgDOTALeague_Builder* subBuilder = [CMsgDOTALeague builder];
+        if (self.hasLeague) {
+          [subBuilder mergeFrom:self.league];
+        }
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self setLeague:[subBuilder buildPartial]];
+        break;
+      }
+      case 16: {
+        [self setEresult:[input readUInt32]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasLeague {
+  return _builderResult.hasLeague;
+}
+- (CMsgDOTALeague*) league {
+  return _builderResult.league;
+}
+- (CMsgDOTALeagueScheduleEditResponse_Builder*) setLeague:(CMsgDOTALeague*) value {
+  _builderResult.hasLeague = YES;
+  _builderResult.league = value;
+  return self;
+}
+- (CMsgDOTALeagueScheduleEditResponse_Builder*) setLeagueBuilder:(CMsgDOTALeague_Builder*) builderForValue {
+  return [self setLeague:[builderForValue build]];
+}
+- (CMsgDOTALeagueScheduleEditResponse_Builder*) mergeLeague:(CMsgDOTALeague*) value {
+  if (_builderResult.hasLeague &&
+      _builderResult.league != [CMsgDOTALeague defaultInstance]) {
+    _builderResult.league =
+      [[[CMsgDOTALeague builderWithPrototype:_builderResult.league] mergeFrom:value] buildPartial];
+  } else {
+    _builderResult.league = value;
+  }
+  _builderResult.hasLeague = YES;
+  return self;
+}
+- (CMsgDOTALeagueScheduleEditResponse_Builder*) clearLeague {
+  _builderResult.hasLeague = NO;
+  _builderResult.league = [CMsgDOTALeague defaultInstance];
+  return self;
+}
+- (BOOL) hasEresult {
+  return _builderResult.hasEresult;
+}
+- (uint32_t) eresult {
+  return _builderResult.eresult;
+}
+- (CMsgDOTALeagueScheduleEditResponse_Builder*) setEresult:(uint32_t) value {
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
+  return self;
+}
+- (CMsgDOTALeagueScheduleEditResponse_Builder*) clearEresult {
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
+  return self;
+}
+@end
+
+@interface CMsgDOTALeaguesInMonthRequest ()
+@property uint32_t month;
+@property uint32_t year;
+@end
+
+@implementation CMsgDOTALeaguesInMonthRequest
+
+- (BOOL) hasMonth {
+  return !!hasMonth_;
+}
+- (void) setHasMonth:(BOOL) value_ {
+  hasMonth_ = !!value_;
+}
+@synthesize month;
+- (BOOL) hasYear {
+  return !!hasYear_;
+}
+- (void) setHasYear:(BOOL) value_ {
+  hasYear_ = !!value_;
+}
+@synthesize year;
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.month = 0;
+    self.year = 0;
+  }
+  return self;
+}
+static CMsgDOTALeaguesInMonthRequest* defaultCMsgDOTALeaguesInMonthRequestInstance = nil;
++ (void) initialize {
+  if (self == [CMsgDOTALeaguesInMonthRequest class]) {
+    defaultCMsgDOTALeaguesInMonthRequestInstance = [[CMsgDOTALeaguesInMonthRequest alloc] init];
+  }
+}
++ (CMsgDOTALeaguesInMonthRequest*) defaultInstance {
+  return defaultCMsgDOTALeaguesInMonthRequestInstance;
+}
+- (CMsgDOTALeaguesInMonthRequest*) defaultInstance {
+  return defaultCMsgDOTALeaguesInMonthRequestInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasMonth) {
+    [output writeUInt32:1 value:self.month];
+  }
+  if (self.hasYear) {
+    [output writeUInt32:2 value:self.year];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasMonth) {
+    size_ += computeUInt32Size(1, self.month);
+  }
+  if (self.hasYear) {
+    size_ += computeUInt32Size(2, self.year);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgDOTALeaguesInMonthRequest*) parseFromData:(NSData*) data {
+  return (CMsgDOTALeaguesInMonthRequest*)[[[CMsgDOTALeaguesInMonthRequest builder] mergeFromData:data] build];
+}
++ (CMsgDOTALeaguesInMonthRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeaguesInMonthRequest*)[[[CMsgDOTALeaguesInMonthRequest builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeaguesInMonthRequest*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgDOTALeaguesInMonthRequest*)[[[CMsgDOTALeaguesInMonthRequest builder] mergeFromInputStream:input] build];
+}
++ (CMsgDOTALeaguesInMonthRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeaguesInMonthRequest*)[[[CMsgDOTALeaguesInMonthRequest builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeaguesInMonthRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgDOTALeaguesInMonthRequest*)[[[CMsgDOTALeaguesInMonthRequest builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgDOTALeaguesInMonthRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeaguesInMonthRequest*)[[[CMsgDOTALeaguesInMonthRequest builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeaguesInMonthRequest_Builder*) builder {
+  return [[[CMsgDOTALeaguesInMonthRequest_Builder alloc] init] autorelease];
+}
++ (CMsgDOTALeaguesInMonthRequest_Builder*) builderWithPrototype:(CMsgDOTALeaguesInMonthRequest*) prototype {
+  return [[CMsgDOTALeaguesInMonthRequest builder] mergeFrom:prototype];
+}
+- (CMsgDOTALeaguesInMonthRequest_Builder*) builder {
+  return [CMsgDOTALeaguesInMonthRequest builder];
+}
+- (CMsgDOTALeaguesInMonthRequest_Builder*) toBuilder {
+  return [CMsgDOTALeaguesInMonthRequest builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasMonth) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"month", [NSNumber numberWithInt:self.month]];
+  }
+  if (self.hasYear) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"year", [NSNumber numberWithInt:self.year]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgDOTALeaguesInMonthRequest class]]) {
+    return NO;
+  }
+  CMsgDOTALeaguesInMonthRequest *otherMessage = other;
+  return
+      self.hasMonth == otherMessage.hasMonth &&
+      (!self.hasMonth || self.month == otherMessage.month) &&
+      self.hasYear == otherMessage.hasYear &&
+      (!self.hasYear || self.year == otherMessage.year) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasMonth) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.month] hash];
+  }
+  if (self.hasYear) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.year] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgDOTALeaguesInMonthRequest_Builder()
+@property (retain) CMsgDOTALeaguesInMonthRequest* _builderResult;
+@end
+
+@implementation CMsgDOTALeaguesInMonthRequest_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgDOTALeaguesInMonthRequest alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgDOTALeaguesInMonthRequest_Builder*) clear {
+  _builderResult = [[[CMsgDOTALeaguesInMonthRequest alloc] init] autorelease];
+  return self;
+}
+- (CMsgDOTALeaguesInMonthRequest_Builder*) clone {
+  return [CMsgDOTALeaguesInMonthRequest builderWithPrototype:_builderResult];
+}
+- (CMsgDOTALeaguesInMonthRequest*) defaultInstance {
+  return [CMsgDOTALeaguesInMonthRequest defaultInstance];
+}
+- (CMsgDOTALeaguesInMonthRequest*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgDOTALeaguesInMonthRequest*) buildPartial {
+  CMsgDOTALeaguesInMonthRequest* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgDOTALeaguesInMonthRequest_Builder*) mergeFrom:(CMsgDOTALeaguesInMonthRequest*) other {
+  if (other == [CMsgDOTALeaguesInMonthRequest defaultInstance]) {
+    return self;
+  }
+  if (other.hasMonth) {
+    [self setMonth:other.month];
+  }
+  if (other.hasYear) {
+    [self setYear:other.year];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgDOTALeaguesInMonthRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgDOTALeaguesInMonthRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setMonth:[input readUInt32]];
+        break;
+      }
+      case 16: {
+        [self setYear:[input readUInt32]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasMonth {
+  return _builderResult.hasMonth;
+}
+- (uint32_t) month {
+  return _builderResult.month;
+}
+- (CMsgDOTALeaguesInMonthRequest_Builder*) setMonth:(uint32_t) value {
+  _builderResult.hasMonth = YES;
+  _builderResult.month = value;
+  return self;
+}
+- (CMsgDOTALeaguesInMonthRequest_Builder*) clearMonth {
+  _builderResult.hasMonth = NO;
+  _builderResult.month = 0;
+  return self;
+}
+- (BOOL) hasYear {
+  return _builderResult.hasYear;
+}
+- (uint32_t) year {
+  return _builderResult.year;
+}
+- (CMsgDOTALeaguesInMonthRequest_Builder*) setYear:(uint32_t) value {
+  _builderResult.hasYear = YES;
+  _builderResult.year = value;
+  return self;
+}
+- (CMsgDOTALeaguesInMonthRequest_Builder*) clearYear {
+  _builderResult.hasYear = NO;
+  _builderResult.year = 0;
+  return self;
+}
+@end
+
+@interface CMsgDOTALeaguesInMonthResponse ()
+@property uint32_t eresult;
+@property uint32_t month;
+@property uint32_t year;
+@property (retain) PBAppendableArray * leaguesArray;
+@end
+
+@implementation CMsgDOTALeaguesInMonthResponse
+
+- (BOOL) hasEresult {
+  return !!hasEresult_;
+}
+- (void) setHasEresult:(BOOL) value_ {
+  hasEresult_ = !!value_;
+}
+@synthesize eresult;
+- (BOOL) hasMonth {
+  return !!hasMonth_;
+}
+- (void) setHasMonth:(BOOL) value_ {
+  hasMonth_ = !!value_;
+}
+@synthesize month;
+- (BOOL) hasYear {
+  return !!hasYear_;
+}
+- (void) setHasYear:(BOOL) value_ {
+  hasYear_ = !!value_;
+}
+@synthesize year;
+@synthesize leaguesArray;
+@dynamic leagues;
+- (void) dealloc {
+  self.leaguesArray = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.eresult = 2;
+    self.month = 0;
+    self.year = 0;
+  }
+  return self;
+}
+static CMsgDOTALeaguesInMonthResponse* defaultCMsgDOTALeaguesInMonthResponseInstance = nil;
++ (void) initialize {
+  if (self == [CMsgDOTALeaguesInMonthResponse class]) {
+    defaultCMsgDOTALeaguesInMonthResponseInstance = [[CMsgDOTALeaguesInMonthResponse alloc] init];
+  }
+}
++ (CMsgDOTALeaguesInMonthResponse*) defaultInstance {
+  return defaultCMsgDOTALeaguesInMonthResponseInstance;
+}
+- (CMsgDOTALeaguesInMonthResponse*) defaultInstance {
+  return defaultCMsgDOTALeaguesInMonthResponseInstance;
+}
+- (PBArray *)leagues {
+  return leaguesArray;
+}
+- (CMsgDOTALeague*)leaguesAtIndex:(NSUInteger)index {
+  return [leaguesArray objectAtIndex:index];
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasEresult) {
+    [output writeUInt32:1 value:self.eresult];
+  }
+  if (self.hasMonth) {
+    [output writeUInt32:2 value:self.month];
+  }
+  if (self.hasYear) {
+    [output writeUInt32:3 value:self.year];
+  }
+  for (CMsgDOTALeague *element in self.leaguesArray) {
+    [output writeMessage:4 value:element];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasEresult) {
+    size_ += computeUInt32Size(1, self.eresult);
+  }
+  if (self.hasMonth) {
+    size_ += computeUInt32Size(2, self.month);
+  }
+  if (self.hasYear) {
+    size_ += computeUInt32Size(3, self.year);
+  }
+  for (CMsgDOTALeague *element in self.leaguesArray) {
+    size_ += computeMessageSize(4, element);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgDOTALeaguesInMonthResponse*) parseFromData:(NSData*) data {
+  return (CMsgDOTALeaguesInMonthResponse*)[[[CMsgDOTALeaguesInMonthResponse builder] mergeFromData:data] build];
+}
++ (CMsgDOTALeaguesInMonthResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeaguesInMonthResponse*)[[[CMsgDOTALeaguesInMonthResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeaguesInMonthResponse*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgDOTALeaguesInMonthResponse*)[[[CMsgDOTALeaguesInMonthResponse builder] mergeFromInputStream:input] build];
+}
++ (CMsgDOTALeaguesInMonthResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeaguesInMonthResponse*)[[[CMsgDOTALeaguesInMonthResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeaguesInMonthResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgDOTALeaguesInMonthResponse*)[[[CMsgDOTALeaguesInMonthResponse builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgDOTALeaguesInMonthResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTALeaguesInMonthResponse*)[[[CMsgDOTALeaguesInMonthResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTALeaguesInMonthResponse_Builder*) builder {
+  return [[[CMsgDOTALeaguesInMonthResponse_Builder alloc] init] autorelease];
+}
++ (CMsgDOTALeaguesInMonthResponse_Builder*) builderWithPrototype:(CMsgDOTALeaguesInMonthResponse*) prototype {
+  return [[CMsgDOTALeaguesInMonthResponse builder] mergeFrom:prototype];
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder*) builder {
+  return [CMsgDOTALeaguesInMonthResponse builder];
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder*) toBuilder {
+  return [CMsgDOTALeaguesInMonthResponse builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasEresult) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"eresult", [NSNumber numberWithInt:self.eresult]];
+  }
+  if (self.hasMonth) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"month", [NSNumber numberWithInt:self.month]];
+  }
+  if (self.hasYear) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"year", [NSNumber numberWithInt:self.year]];
+  }
+  for (CMsgDOTALeague* element in self.leaguesArray) {
+    [output appendFormat:@"%@%@ {\n", indent, @"leagues"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgDOTALeaguesInMonthResponse class]]) {
+    return NO;
+  }
+  CMsgDOTALeaguesInMonthResponse *otherMessage = other;
+  return
+      self.hasEresult == otherMessage.hasEresult &&
+      (!self.hasEresult || self.eresult == otherMessage.eresult) &&
+      self.hasMonth == otherMessage.hasMonth &&
+      (!self.hasMonth || self.month == otherMessage.month) &&
+      self.hasYear == otherMessage.hasYear &&
+      (!self.hasYear || self.year == otherMessage.year) &&
+      [self.leaguesArray isEqualToArray:otherMessage.leaguesArray] &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasEresult) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.eresult] hash];
+  }
+  if (self.hasMonth) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.month] hash];
+  }
+  if (self.hasYear) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.year] hash];
+  }
+  for (CMsgDOTALeague* element in self.leaguesArray) {
+    hashCode = hashCode * 31 + [element hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgDOTALeaguesInMonthResponse_Builder()
+@property (retain) CMsgDOTALeaguesInMonthResponse* _builderResult;
+@end
+
+@implementation CMsgDOTALeaguesInMonthResponse_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgDOTALeaguesInMonthResponse alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder*) clear {
+  _builderResult = [[[CMsgDOTALeaguesInMonthResponse alloc] init] autorelease];
+  return self;
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder*) clone {
+  return [CMsgDOTALeaguesInMonthResponse builderWithPrototype:_builderResult];
+}
+- (CMsgDOTALeaguesInMonthResponse*) defaultInstance {
+  return [CMsgDOTALeaguesInMonthResponse defaultInstance];
+}
+- (CMsgDOTALeaguesInMonthResponse*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgDOTALeaguesInMonthResponse*) buildPartial {
+  CMsgDOTALeaguesInMonthResponse* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder*) mergeFrom:(CMsgDOTALeaguesInMonthResponse*) other {
+  if (other == [CMsgDOTALeaguesInMonthResponse defaultInstance]) {
+    return self;
+  }
+  if (other.hasEresult) {
+    [self setEresult:other.eresult];
+  }
+  if (other.hasMonth) {
+    [self setMonth:other.month];
+  }
+  if (other.hasYear) {
+    [self setYear:other.year];
+  }
+  if (other.leaguesArray.count > 0) {
+    if (_builderResult.leaguesArray == nil) {
+      _builderResult.leaguesArray = [[other.leaguesArray copyWithZone:[other.leaguesArray zone]] autorelease];
+    } else {
+      [_builderResult.leaguesArray appendArray:other.leaguesArray];
+    }
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setEresult:[input readUInt32]];
+        break;
+      }
+      case 16: {
+        [self setMonth:[input readUInt32]];
+        break;
+      }
+      case 24: {
+        [self setYear:[input readUInt32]];
+        break;
+      }
+      case 34: {
+        CMsgDOTALeague_Builder* subBuilder = [CMsgDOTALeague builder];
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self addLeagues:[subBuilder buildPartial]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasEresult {
+  return _builderResult.hasEresult;
+}
+- (uint32_t) eresult {
+  return _builderResult.eresult;
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder*) setEresult:(uint32_t) value {
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
+  return self;
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder*) clearEresult {
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
+  return self;
+}
+- (BOOL) hasMonth {
+  return _builderResult.hasMonth;
+}
+- (uint32_t) month {
+  return _builderResult.month;
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder*) setMonth:(uint32_t) value {
+  _builderResult.hasMonth = YES;
+  _builderResult.month = value;
+  return self;
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder*) clearMonth {
+  _builderResult.hasMonth = NO;
+  _builderResult.month = 0;
+  return self;
+}
+- (BOOL) hasYear {
+  return _builderResult.hasYear;
+}
+- (uint32_t) year {
+  return _builderResult.year;
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder*) setYear:(uint32_t) value {
+  _builderResult.hasYear = YES;
+  _builderResult.year = value;
+  return self;
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder*) clearYear {
+  _builderResult.hasYear = NO;
+  _builderResult.year = 0;
+  return self;
+}
+- (PBAppendableArray *)leagues {
+  return _builderResult.leaguesArray;
+}
+- (CMsgDOTALeague*)leaguesAtIndex:(NSUInteger)index {
+  return [_builderResult leaguesAtIndex:index];
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder *)addLeagues:(CMsgDOTALeague*)value {
+  if (_builderResult.leaguesArray == nil) {
+    _builderResult.leaguesArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+  }
+  [_builderResult.leaguesArray addObject:value];
+  return self;
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder *)setLeaguesArray:(NSArray *)array {
+  _builderResult.leaguesArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder *)setLeaguesValues:(const CMsgDOTALeague* *)values count:(NSUInteger)count {
+  _builderResult.leaguesArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeObject];
+  return self;
+}
+- (CMsgDOTALeaguesInMonthResponse_Builder *)clearLeagues {
+  _builderResult.leaguesArray = nil;
+  return self;
+}
+@end
+
+@interface CMsgDOTAMatchmakingStatsRequest ()
+@end
+
+@implementation CMsgDOTAMatchmakingStatsRequest
+
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+  }
+  return self;
+}
+static CMsgDOTAMatchmakingStatsRequest* defaultCMsgDOTAMatchmakingStatsRequestInstance = nil;
++ (void) initialize {
+  if (self == [CMsgDOTAMatchmakingStatsRequest class]) {
+    defaultCMsgDOTAMatchmakingStatsRequestInstance = [[CMsgDOTAMatchmakingStatsRequest alloc] init];
+  }
+}
++ (CMsgDOTAMatchmakingStatsRequest*) defaultInstance {
+  return defaultCMsgDOTAMatchmakingStatsRequestInstance;
+}
+- (CMsgDOTAMatchmakingStatsRequest*) defaultInstance {
+  return defaultCMsgDOTAMatchmakingStatsRequestInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgDOTAMatchmakingStatsRequest*) parseFromData:(NSData*) data {
+  return (CMsgDOTAMatchmakingStatsRequest*)[[[CMsgDOTAMatchmakingStatsRequest builder] mergeFromData:data] build];
+}
++ (CMsgDOTAMatchmakingStatsRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTAMatchmakingStatsRequest*)[[[CMsgDOTAMatchmakingStatsRequest builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTAMatchmakingStatsRequest*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgDOTAMatchmakingStatsRequest*)[[[CMsgDOTAMatchmakingStatsRequest builder] mergeFromInputStream:input] build];
+}
++ (CMsgDOTAMatchmakingStatsRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTAMatchmakingStatsRequest*)[[[CMsgDOTAMatchmakingStatsRequest builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTAMatchmakingStatsRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgDOTAMatchmakingStatsRequest*)[[[CMsgDOTAMatchmakingStatsRequest builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgDOTAMatchmakingStatsRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTAMatchmakingStatsRequest*)[[[CMsgDOTAMatchmakingStatsRequest builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTAMatchmakingStatsRequest_Builder*) builder {
+  return [[[CMsgDOTAMatchmakingStatsRequest_Builder alloc] init] autorelease];
+}
++ (CMsgDOTAMatchmakingStatsRequest_Builder*) builderWithPrototype:(CMsgDOTAMatchmakingStatsRequest*) prototype {
+  return [[CMsgDOTAMatchmakingStatsRequest builder] mergeFrom:prototype];
+}
+- (CMsgDOTAMatchmakingStatsRequest_Builder*) builder {
+  return [CMsgDOTAMatchmakingStatsRequest builder];
+}
+- (CMsgDOTAMatchmakingStatsRequest_Builder*) toBuilder {
+  return [CMsgDOTAMatchmakingStatsRequest builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgDOTAMatchmakingStatsRequest class]]) {
+    return NO;
+  }
+  CMsgDOTAMatchmakingStatsRequest *otherMessage = other;
+  return
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgDOTAMatchmakingStatsRequest_Builder()
+@property (retain) CMsgDOTAMatchmakingStatsRequest* _builderResult;
+@end
+
+@implementation CMsgDOTAMatchmakingStatsRequest_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgDOTAMatchmakingStatsRequest alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgDOTAMatchmakingStatsRequest_Builder*) clear {
+  _builderResult = [[[CMsgDOTAMatchmakingStatsRequest alloc] init] autorelease];
+  return self;
+}
+- (CMsgDOTAMatchmakingStatsRequest_Builder*) clone {
+  return [CMsgDOTAMatchmakingStatsRequest builderWithPrototype:_builderResult];
+}
+- (CMsgDOTAMatchmakingStatsRequest*) defaultInstance {
+  return [CMsgDOTAMatchmakingStatsRequest defaultInstance];
+}
+- (CMsgDOTAMatchmakingStatsRequest*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgDOTAMatchmakingStatsRequest*) buildPartial {
+  CMsgDOTAMatchmakingStatsRequest* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgDOTAMatchmakingStatsRequest_Builder*) mergeFrom:(CMsgDOTAMatchmakingStatsRequest*) other {
+  if (other == [CMsgDOTAMatchmakingStatsRequest defaultInstance]) {
+    return self;
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgDOTAMatchmakingStatsRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgDOTAMatchmakingStatsRequest_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+    }
+  }
+}
+@end
+
+@interface CMsgDOTAMatchmakingStatsResponse ()
+@property (retain) PBAppendableArray * waitTimesByGroupArray;
+@property (retain) PBAppendableArray * searchingPlayersByGroupArray;
+@end
+
+@implementation CMsgDOTAMatchmakingStatsResponse
+
+@synthesize waitTimesByGroupArray;
+@dynamic waitTimesByGroup;
+@synthesize searchingPlayersByGroupArray;
+@dynamic searchingPlayersByGroup;
+- (void) dealloc {
+  self.waitTimesByGroupArray = nil;
+  self.searchingPlayersByGroupArray = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+  }
+  return self;
+}
+static CMsgDOTAMatchmakingStatsResponse* defaultCMsgDOTAMatchmakingStatsResponseInstance = nil;
++ (void) initialize {
+  if (self == [CMsgDOTAMatchmakingStatsResponse class]) {
+    defaultCMsgDOTAMatchmakingStatsResponseInstance = [[CMsgDOTAMatchmakingStatsResponse alloc] init];
+  }
+}
++ (CMsgDOTAMatchmakingStatsResponse*) defaultInstance {
+  return defaultCMsgDOTAMatchmakingStatsResponseInstance;
+}
+- (CMsgDOTAMatchmakingStatsResponse*) defaultInstance {
+  return defaultCMsgDOTAMatchmakingStatsResponseInstance;
+}
+- (PBArray *)waitTimesByGroup {
+  return waitTimesByGroupArray;
+}
+- (uint32_t)waitTimesByGroupAtIndex:(NSUInteger)index {
+  return [waitTimesByGroupArray uint32AtIndex:index];
+}
+- (PBArray *)searchingPlayersByGroup {
+  return searchingPlayersByGroupArray;
+}
+- (uint32_t)searchingPlayersByGroupAtIndex:(NSUInteger)index {
+  return [searchingPlayersByGroupArray uint32AtIndex:index];
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  const NSUInteger waitTimesByGroupArrayCount = self.waitTimesByGroupArray.count;
+  if (waitTimesByGroupArrayCount > 0) {
+    const uint32_t *values = (const uint32_t *)self.waitTimesByGroupArray.data;
+    for (NSUInteger i = 0; i < waitTimesByGroupArrayCount; ++i) {
+      [output writeUInt32:1 value:values[i]];
+    }
+  }
+  const NSUInteger searchingPlayersByGroupArrayCount = self.searchingPlayersByGroupArray.count;
+  if (searchingPlayersByGroupArrayCount > 0) {
+    const uint32_t *values = (const uint32_t *)self.searchingPlayersByGroupArray.data;
+    for (NSUInteger i = 0; i < searchingPlayersByGroupArrayCount; ++i) {
+      [output writeUInt32:2 value:values[i]];
+    }
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  {
+    int32_t dataSize = 0;
+    const NSUInteger count = self.waitTimesByGroupArray.count;
+    const uint32_t *values = (const uint32_t *)self.waitTimesByGroupArray.data;
+    for (NSUInteger i = 0; i < count; ++i) {
+      dataSize += computeUInt32SizeNoTag(values[i]);
+    }
+    size_ += dataSize;
+    size_ += 1 * count;
+  }
+  {
+    int32_t dataSize = 0;
+    const NSUInteger count = self.searchingPlayersByGroupArray.count;
+    const uint32_t *values = (const uint32_t *)self.searchingPlayersByGroupArray.data;
+    for (NSUInteger i = 0; i < count; ++i) {
+      dataSize += computeUInt32SizeNoTag(values[i]);
+    }
+    size_ += dataSize;
+    size_ += 1 * count;
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgDOTAMatchmakingStatsResponse*) parseFromData:(NSData*) data {
+  return (CMsgDOTAMatchmakingStatsResponse*)[[[CMsgDOTAMatchmakingStatsResponse builder] mergeFromData:data] build];
+}
++ (CMsgDOTAMatchmakingStatsResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTAMatchmakingStatsResponse*)[[[CMsgDOTAMatchmakingStatsResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTAMatchmakingStatsResponse*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgDOTAMatchmakingStatsResponse*)[[[CMsgDOTAMatchmakingStatsResponse builder] mergeFromInputStream:input] build];
+}
++ (CMsgDOTAMatchmakingStatsResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTAMatchmakingStatsResponse*)[[[CMsgDOTAMatchmakingStatsResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTAMatchmakingStatsResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgDOTAMatchmakingStatsResponse*)[[[CMsgDOTAMatchmakingStatsResponse builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgDOTAMatchmakingStatsResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTAMatchmakingStatsResponse*)[[[CMsgDOTAMatchmakingStatsResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTAMatchmakingStatsResponse_Builder*) builder {
+  return [[[CMsgDOTAMatchmakingStatsResponse_Builder alloc] init] autorelease];
+}
++ (CMsgDOTAMatchmakingStatsResponse_Builder*) builderWithPrototype:(CMsgDOTAMatchmakingStatsResponse*) prototype {
+  return [[CMsgDOTAMatchmakingStatsResponse builder] mergeFrom:prototype];
+}
+- (CMsgDOTAMatchmakingStatsResponse_Builder*) builder {
+  return [CMsgDOTAMatchmakingStatsResponse builder];
+}
+- (CMsgDOTAMatchmakingStatsResponse_Builder*) toBuilder {
+  return [CMsgDOTAMatchmakingStatsResponse builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  for (NSNumber* value in self.waitTimesByGroupArray) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"waitTimesByGroup", value];
+  }
+  for (NSNumber* value in self.searchingPlayersByGroupArray) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"searchingPlayersByGroup", value];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgDOTAMatchmakingStatsResponse class]]) {
+    return NO;
+  }
+  CMsgDOTAMatchmakingStatsResponse *otherMessage = other;
+  return
+      [self.waitTimesByGroupArray isEqualToArray:otherMessage.waitTimesByGroupArray] &&
+      [self.searchingPlayersByGroupArray isEqualToArray:otherMessage.searchingPlayersByGroupArray] &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  for (NSNumber* value in self.waitTimesByGroupArray) {
+    hashCode = hashCode * 31 + [value intValue];
+  }
+  for (NSNumber* value in self.searchingPlayersByGroupArray) {
+    hashCode = hashCode * 31 + [value intValue];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgDOTAMatchmakingStatsResponse_Builder()
+@property (retain) CMsgDOTAMatchmakingStatsResponse* _builderResult;
+@end
+
+@implementation CMsgDOTAMatchmakingStatsResponse_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgDOTAMatchmakingStatsResponse alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgDOTAMatchmakingStatsResponse_Builder*) clear {
+  _builderResult = [[[CMsgDOTAMatchmakingStatsResponse alloc] init] autorelease];
+  return self;
+}
+- (CMsgDOTAMatchmakingStatsResponse_Builder*) clone {
+  return [CMsgDOTAMatchmakingStatsResponse builderWithPrototype:_builderResult];
+}
+- (CMsgDOTAMatchmakingStatsResponse*) defaultInstance {
+  return [CMsgDOTAMatchmakingStatsResponse defaultInstance];
+}
+- (CMsgDOTAMatchmakingStatsResponse*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgDOTAMatchmakingStatsResponse*) buildPartial {
+  CMsgDOTAMatchmakingStatsResponse* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgDOTAMatchmakingStatsResponse_Builder*) mergeFrom:(CMsgDOTAMatchmakingStatsResponse*) other {
+  if (other == [CMsgDOTAMatchmakingStatsResponse defaultInstance]) {
+    return self;
+  }
+  if (other.waitTimesByGroupArray.count > 0) {
+    if (_builderResult.waitTimesByGroupArray == nil) {
+      _builderResult.waitTimesByGroupArray = [[other.waitTimesByGroupArray copyWithZone:[other.waitTimesByGroupArray zone]] autorelease];
+    } else {
+      [_builderResult.waitTimesByGroupArray appendArray:other.waitTimesByGroupArray];
+    }
+  }
+  if (other.searchingPlayersByGroupArray.count > 0) {
+    if (_builderResult.searchingPlayersByGroupArray == nil) {
+      _builderResult.searchingPlayersByGroupArray = [[other.searchingPlayersByGroupArray copyWithZone:[other.searchingPlayersByGroupArray zone]] autorelease];
+    } else {
+      [_builderResult.searchingPlayersByGroupArray appendArray:other.searchingPlayersByGroupArray];
+    }
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgDOTAMatchmakingStatsResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgDOTAMatchmakingStatsResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self addWaitTimesByGroup:[input readUInt32]];
+        break;
+      }
+      case 16: {
+        [self addSearchingPlayersByGroup:[input readUInt32]];
+        break;
+      }
+    }
+  }
+}
+- (PBAppendableArray *)waitTimesByGroup {
+  return _builderResult.waitTimesByGroupArray;
+}
+- (uint32_t)waitTimesByGroupAtIndex:(NSUInteger)index {
+  return [_builderResult waitTimesByGroupAtIndex:index];
+}
+- (CMsgDOTAMatchmakingStatsResponse_Builder *)addWaitTimesByGroup:(uint32_t)value {
+  if (_builderResult.waitTimesByGroupArray == nil) {
+    _builderResult.waitTimesByGroupArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  }
+  [_builderResult.waitTimesByGroupArray addUint32:value];
+  return self;
+}
+- (CMsgDOTAMatchmakingStatsResponse_Builder *)setWaitTimesByGroupArray:(NSArray *)array {
+  _builderResult.waitTimesByGroupArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  return self;
+}
+- (CMsgDOTAMatchmakingStatsResponse_Builder *)setWaitTimesByGroupValues:(const uint32_t *)values count:(NSUInteger)count {
+  _builderResult.waitTimesByGroupArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  return self;
+}
+- (CMsgDOTAMatchmakingStatsResponse_Builder *)clearWaitTimesByGroup {
+  _builderResult.waitTimesByGroupArray = nil;
+  return self;
+}
+- (PBAppendableArray *)searchingPlayersByGroup {
+  return _builderResult.searchingPlayersByGroupArray;
+}
+- (uint32_t)searchingPlayersByGroupAtIndex:(NSUInteger)index {
+  return [_builderResult searchingPlayersByGroupAtIndex:index];
+}
+- (CMsgDOTAMatchmakingStatsResponse_Builder *)addSearchingPlayersByGroup:(uint32_t)value {
+  if (_builderResult.searchingPlayersByGroupArray == nil) {
+    _builderResult.searchingPlayersByGroupArray = [PBAppendableArray arrayWithValueType:PBArrayValueTypeUInt32];
+  }
+  [_builderResult.searchingPlayersByGroupArray addUint32:value];
+  return self;
+}
+- (CMsgDOTAMatchmakingStatsResponse_Builder *)setSearchingPlayersByGroupArray:(NSArray *)array {
+  _builderResult.searchingPlayersByGroupArray = [PBAppendableArray arrayWithArray:array valueType:PBArrayValueTypeUInt32];
+  return self;
+}
+- (CMsgDOTAMatchmakingStatsResponse_Builder *)setSearchingPlayersByGroupValues:(const uint32_t *)values count:(NSUInteger)count {
+  _builderResult.searchingPlayersByGroupArray = [PBAppendableArray arrayWithValues:values count:count valueType:PBArrayValueTypeUInt32];
+  return self;
+}
+- (CMsgDOTAMatchmakingStatsResponse_Builder *)clearSearchingPlayersByGroup {
+  _builderResult.searchingPlayersByGroupArray = nil;
+  return self;
+}
+@end
+
+@interface CMsgDOTASetMatchHistoryAccess ()
+@property BOOL allow3RdPartyMatchHistory;
+@end
+
+@implementation CMsgDOTASetMatchHistoryAccess
+
+- (BOOL) hasAllow3RdPartyMatchHistory {
+  return !!hasAllow3RdPartyMatchHistory_;
+}
+- (void) setHasAllow3RdPartyMatchHistory:(BOOL) value_ {
+  hasAllow3RdPartyMatchHistory_ = !!value_;
+}
+- (BOOL) allow3RdPartyMatchHistory {
+  return !!allow3RdPartyMatchHistory_;
+}
+- (void) setAllow3RdPartyMatchHistory:(BOOL) value_ {
+  allow3RdPartyMatchHistory_ = !!value_;
+}
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.allow3RdPartyMatchHistory = NO;
+  }
+  return self;
+}
+static CMsgDOTASetMatchHistoryAccess* defaultCMsgDOTASetMatchHistoryAccessInstance = nil;
++ (void) initialize {
+  if (self == [CMsgDOTASetMatchHistoryAccess class]) {
+    defaultCMsgDOTASetMatchHistoryAccessInstance = [[CMsgDOTASetMatchHistoryAccess alloc] init];
+  }
+}
++ (CMsgDOTASetMatchHistoryAccess*) defaultInstance {
+  return defaultCMsgDOTASetMatchHistoryAccessInstance;
+}
+- (CMsgDOTASetMatchHistoryAccess*) defaultInstance {
+  return defaultCMsgDOTASetMatchHistoryAccessInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasAllow3RdPartyMatchHistory) {
+    [output writeBool:1 value:self.allow3RdPartyMatchHistory];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasAllow3RdPartyMatchHistory) {
+    size_ += computeBoolSize(1, self.allow3RdPartyMatchHistory);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgDOTASetMatchHistoryAccess*) parseFromData:(NSData*) data {
+  return (CMsgDOTASetMatchHistoryAccess*)[[[CMsgDOTASetMatchHistoryAccess builder] mergeFromData:data] build];
+}
++ (CMsgDOTASetMatchHistoryAccess*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTASetMatchHistoryAccess*)[[[CMsgDOTASetMatchHistoryAccess builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTASetMatchHistoryAccess*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgDOTASetMatchHistoryAccess*)[[[CMsgDOTASetMatchHistoryAccess builder] mergeFromInputStream:input] build];
+}
++ (CMsgDOTASetMatchHistoryAccess*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTASetMatchHistoryAccess*)[[[CMsgDOTASetMatchHistoryAccess builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTASetMatchHistoryAccess*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgDOTASetMatchHistoryAccess*)[[[CMsgDOTASetMatchHistoryAccess builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgDOTASetMatchHistoryAccess*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTASetMatchHistoryAccess*)[[[CMsgDOTASetMatchHistoryAccess builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTASetMatchHistoryAccess_Builder*) builder {
+  return [[[CMsgDOTASetMatchHistoryAccess_Builder alloc] init] autorelease];
+}
++ (CMsgDOTASetMatchHistoryAccess_Builder*) builderWithPrototype:(CMsgDOTASetMatchHistoryAccess*) prototype {
+  return [[CMsgDOTASetMatchHistoryAccess builder] mergeFrom:prototype];
+}
+- (CMsgDOTASetMatchHistoryAccess_Builder*) builder {
+  return [CMsgDOTASetMatchHistoryAccess builder];
+}
+- (CMsgDOTASetMatchHistoryAccess_Builder*) toBuilder {
+  return [CMsgDOTASetMatchHistoryAccess builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasAllow3RdPartyMatchHistory) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"allow3RdPartyMatchHistory", [NSNumber numberWithBool:self.allow3RdPartyMatchHistory]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgDOTASetMatchHistoryAccess class]]) {
+    return NO;
+  }
+  CMsgDOTASetMatchHistoryAccess *otherMessage = other;
+  return
+      self.hasAllow3RdPartyMatchHistory == otherMessage.hasAllow3RdPartyMatchHistory &&
+      (!self.hasAllow3RdPartyMatchHistory || self.allow3RdPartyMatchHistory == otherMessage.allow3RdPartyMatchHistory) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasAllow3RdPartyMatchHistory) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.allow3RdPartyMatchHistory] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgDOTASetMatchHistoryAccess_Builder()
+@property (retain) CMsgDOTASetMatchHistoryAccess* _builderResult;
+@end
+
+@implementation CMsgDOTASetMatchHistoryAccess_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgDOTASetMatchHistoryAccess alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgDOTASetMatchHistoryAccess_Builder*) clear {
+  _builderResult = [[[CMsgDOTASetMatchHistoryAccess alloc] init] autorelease];
+  return self;
+}
+- (CMsgDOTASetMatchHistoryAccess_Builder*) clone {
+  return [CMsgDOTASetMatchHistoryAccess builderWithPrototype:_builderResult];
+}
+- (CMsgDOTASetMatchHistoryAccess*) defaultInstance {
+  return [CMsgDOTASetMatchHistoryAccess defaultInstance];
+}
+- (CMsgDOTASetMatchHistoryAccess*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgDOTASetMatchHistoryAccess*) buildPartial {
+  CMsgDOTASetMatchHistoryAccess* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgDOTASetMatchHistoryAccess_Builder*) mergeFrom:(CMsgDOTASetMatchHistoryAccess*) other {
+  if (other == [CMsgDOTASetMatchHistoryAccess defaultInstance]) {
+    return self;
+  }
+  if (other.hasAllow3RdPartyMatchHistory) {
+    [self setAllow3RdPartyMatchHistory:other.allow3RdPartyMatchHistory];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgDOTASetMatchHistoryAccess_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgDOTASetMatchHistoryAccess_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setAllow3RdPartyMatchHistory:[input readBool]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasAllow3RdPartyMatchHistory {
+  return _builderResult.hasAllow3RdPartyMatchHistory;
+}
+- (BOOL) allow3RdPartyMatchHistory {
+  return _builderResult.allow3RdPartyMatchHistory;
+}
+- (CMsgDOTASetMatchHistoryAccess_Builder*) setAllow3RdPartyMatchHistory:(BOOL) value {
+  _builderResult.hasAllow3RdPartyMatchHistory = YES;
+  _builderResult.allow3RdPartyMatchHistory = value;
+  return self;
+}
+- (CMsgDOTASetMatchHistoryAccess_Builder*) clearAllow3RdPartyMatchHistory {
+  _builderResult.hasAllow3RdPartyMatchHistory = NO;
+  _builderResult.allow3RdPartyMatchHistory = NO;
+  return self;
+}
+@end
+
+@interface CMsgDOTASetMatchHistoryAccessResponse ()
+@property uint32_t eresult;
+@end
+
+@implementation CMsgDOTASetMatchHistoryAccessResponse
+
+- (BOOL) hasEresult {
+  return !!hasEresult_;
+}
+- (void) setHasEresult:(BOOL) value_ {
+  hasEresult_ = !!value_;
+}
+@synthesize eresult;
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.eresult = 2;
+  }
+  return self;
+}
+static CMsgDOTASetMatchHistoryAccessResponse* defaultCMsgDOTASetMatchHistoryAccessResponseInstance = nil;
++ (void) initialize {
+  if (self == [CMsgDOTASetMatchHistoryAccessResponse class]) {
+    defaultCMsgDOTASetMatchHistoryAccessResponseInstance = [[CMsgDOTASetMatchHistoryAccessResponse alloc] init];
+  }
+}
++ (CMsgDOTASetMatchHistoryAccessResponse*) defaultInstance {
+  return defaultCMsgDOTASetMatchHistoryAccessResponseInstance;
+}
+- (CMsgDOTASetMatchHistoryAccessResponse*) defaultInstance {
+  return defaultCMsgDOTASetMatchHistoryAccessResponseInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasEresult) {
+    [output writeUInt32:1 value:self.eresult];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasEresult) {
+    size_ += computeUInt32Size(1, self.eresult);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgDOTASetMatchHistoryAccessResponse*) parseFromData:(NSData*) data {
+  return (CMsgDOTASetMatchHistoryAccessResponse*)[[[CMsgDOTASetMatchHistoryAccessResponse builder] mergeFromData:data] build];
+}
++ (CMsgDOTASetMatchHistoryAccessResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTASetMatchHistoryAccessResponse*)[[[CMsgDOTASetMatchHistoryAccessResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTASetMatchHistoryAccessResponse*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgDOTASetMatchHistoryAccessResponse*)[[[CMsgDOTASetMatchHistoryAccessResponse builder] mergeFromInputStream:input] build];
+}
++ (CMsgDOTASetMatchHistoryAccessResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTASetMatchHistoryAccessResponse*)[[[CMsgDOTASetMatchHistoryAccessResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTASetMatchHistoryAccessResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgDOTASetMatchHistoryAccessResponse*)[[[CMsgDOTASetMatchHistoryAccessResponse builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgDOTASetMatchHistoryAccessResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTASetMatchHistoryAccessResponse*)[[[CMsgDOTASetMatchHistoryAccessResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTASetMatchHistoryAccessResponse_Builder*) builder {
+  return [[[CMsgDOTASetMatchHistoryAccessResponse_Builder alloc] init] autorelease];
+}
++ (CMsgDOTASetMatchHistoryAccessResponse_Builder*) builderWithPrototype:(CMsgDOTASetMatchHistoryAccessResponse*) prototype {
+  return [[CMsgDOTASetMatchHistoryAccessResponse builder] mergeFrom:prototype];
+}
+- (CMsgDOTASetMatchHistoryAccessResponse_Builder*) builder {
+  return [CMsgDOTASetMatchHistoryAccessResponse builder];
+}
+- (CMsgDOTASetMatchHistoryAccessResponse_Builder*) toBuilder {
+  return [CMsgDOTASetMatchHistoryAccessResponse builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasEresult) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"eresult", [NSNumber numberWithInt:self.eresult]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgDOTASetMatchHistoryAccessResponse class]]) {
+    return NO;
+  }
+  CMsgDOTASetMatchHistoryAccessResponse *otherMessage = other;
+  return
+      self.hasEresult == otherMessage.hasEresult &&
+      (!self.hasEresult || self.eresult == otherMessage.eresult) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasEresult) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.eresult] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgDOTASetMatchHistoryAccessResponse_Builder()
+@property (retain) CMsgDOTASetMatchHistoryAccessResponse* _builderResult;
+@end
+
+@implementation CMsgDOTASetMatchHistoryAccessResponse_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgDOTASetMatchHistoryAccessResponse alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgDOTASetMatchHistoryAccessResponse_Builder*) clear {
+  _builderResult = [[[CMsgDOTASetMatchHistoryAccessResponse alloc] init] autorelease];
+  return self;
+}
+- (CMsgDOTASetMatchHistoryAccessResponse_Builder*) clone {
+  return [CMsgDOTASetMatchHistoryAccessResponse builderWithPrototype:_builderResult];
+}
+- (CMsgDOTASetMatchHistoryAccessResponse*) defaultInstance {
+  return [CMsgDOTASetMatchHistoryAccessResponse defaultInstance];
+}
+- (CMsgDOTASetMatchHistoryAccessResponse*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgDOTASetMatchHistoryAccessResponse*) buildPartial {
+  CMsgDOTASetMatchHistoryAccessResponse* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgDOTASetMatchHistoryAccessResponse_Builder*) mergeFrom:(CMsgDOTASetMatchHistoryAccessResponse*) other {
+  if (other == [CMsgDOTASetMatchHistoryAccessResponse defaultInstance]) {
+    return self;
+  }
+  if (other.hasEresult) {
+    [self setEresult:other.eresult];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgDOTASetMatchHistoryAccessResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgDOTASetMatchHistoryAccessResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setEresult:[input readUInt32]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasEresult {
+  return _builderResult.hasEresult;
+}
+- (uint32_t) eresult {
+  return _builderResult.eresult;
+}
+- (CMsgDOTASetMatchHistoryAccessResponse_Builder*) setEresult:(uint32_t) value {
+  _builderResult.hasEresult = YES;
+  _builderResult.eresult = value;
+  return self;
+}
+- (CMsgDOTASetMatchHistoryAccessResponse_Builder*) clearEresult {
+  _builderResult.hasEresult = NO;
+  _builderResult.eresult = 2;
+  return self;
+}
+@end
+
+@interface CMsgDOTANotifyMatchHistoryAccessChange ()
+@property uint32_t accountid;
+@property BOOL allow3RdPartyMatchHistory;
+@end
+
+@implementation CMsgDOTANotifyMatchHistoryAccessChange
+
+- (BOOL) hasAccountid {
+  return !!hasAccountid_;
+}
+- (void) setHasAccountid:(BOOL) value_ {
+  hasAccountid_ = !!value_;
+}
+@synthesize accountid;
+- (BOOL) hasAllow3RdPartyMatchHistory {
+  return !!hasAllow3RdPartyMatchHistory_;
+}
+- (void) setHasAllow3RdPartyMatchHistory:(BOOL) value_ {
+  hasAllow3RdPartyMatchHistory_ = !!value_;
+}
+- (BOOL) allow3RdPartyMatchHistory {
+  return !!allow3RdPartyMatchHistory_;
+}
+- (void) setAllow3RdPartyMatchHistory:(BOOL) value_ {
+  allow3RdPartyMatchHistory_ = !!value_;
+}
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.accountid = 0;
+    self.allow3RdPartyMatchHistory = NO;
+  }
+  return self;
+}
+static CMsgDOTANotifyMatchHistoryAccessChange* defaultCMsgDOTANotifyMatchHistoryAccessChangeInstance = nil;
++ (void) initialize {
+  if (self == [CMsgDOTANotifyMatchHistoryAccessChange class]) {
+    defaultCMsgDOTANotifyMatchHistoryAccessChangeInstance = [[CMsgDOTANotifyMatchHistoryAccessChange alloc] init];
+  }
+}
++ (CMsgDOTANotifyMatchHistoryAccessChange*) defaultInstance {
+  return defaultCMsgDOTANotifyMatchHistoryAccessChangeInstance;
+}
+- (CMsgDOTANotifyMatchHistoryAccessChange*) defaultInstance {
+  return defaultCMsgDOTANotifyMatchHistoryAccessChangeInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasAccountid) {
+    [output writeUInt32:1 value:self.accountid];
+  }
+  if (self.hasAllow3RdPartyMatchHistory) {
+    [output writeBool:2 value:self.allow3RdPartyMatchHistory];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasAccountid) {
+    size_ += computeUInt32Size(1, self.accountid);
+  }
+  if (self.hasAllow3RdPartyMatchHistory) {
+    size_ += computeBoolSize(2, self.allow3RdPartyMatchHistory);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgDOTANotifyMatchHistoryAccessChange*) parseFromData:(NSData*) data {
+  return (CMsgDOTANotifyMatchHistoryAccessChange*)[[[CMsgDOTANotifyMatchHistoryAccessChange builder] mergeFromData:data] build];
+}
++ (CMsgDOTANotifyMatchHistoryAccessChange*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTANotifyMatchHistoryAccessChange*)[[[CMsgDOTANotifyMatchHistoryAccessChange builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTANotifyMatchHistoryAccessChange*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgDOTANotifyMatchHistoryAccessChange*)[[[CMsgDOTANotifyMatchHistoryAccessChange builder] mergeFromInputStream:input] build];
+}
++ (CMsgDOTANotifyMatchHistoryAccessChange*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTANotifyMatchHistoryAccessChange*)[[[CMsgDOTANotifyMatchHistoryAccessChange builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTANotifyMatchHistoryAccessChange*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgDOTANotifyMatchHistoryAccessChange*)[[[CMsgDOTANotifyMatchHistoryAccessChange builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgDOTANotifyMatchHistoryAccessChange*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgDOTANotifyMatchHistoryAccessChange*)[[[CMsgDOTANotifyMatchHistoryAccessChange builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgDOTANotifyMatchHistoryAccessChange_Builder*) builder {
+  return [[[CMsgDOTANotifyMatchHistoryAccessChange_Builder alloc] init] autorelease];
+}
++ (CMsgDOTANotifyMatchHistoryAccessChange_Builder*) builderWithPrototype:(CMsgDOTANotifyMatchHistoryAccessChange*) prototype {
+  return [[CMsgDOTANotifyMatchHistoryAccessChange builder] mergeFrom:prototype];
+}
+- (CMsgDOTANotifyMatchHistoryAccessChange_Builder*) builder {
+  return [CMsgDOTANotifyMatchHistoryAccessChange builder];
+}
+- (CMsgDOTANotifyMatchHistoryAccessChange_Builder*) toBuilder {
+  return [CMsgDOTANotifyMatchHistoryAccessChange builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasAccountid) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"accountid", [NSNumber numberWithInt:self.accountid]];
+  }
+  if (self.hasAllow3RdPartyMatchHistory) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"allow3RdPartyMatchHistory", [NSNumber numberWithBool:self.allow3RdPartyMatchHistory]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgDOTANotifyMatchHistoryAccessChange class]]) {
+    return NO;
+  }
+  CMsgDOTANotifyMatchHistoryAccessChange *otherMessage = other;
+  return
+      self.hasAccountid == otherMessage.hasAccountid &&
+      (!self.hasAccountid || self.accountid == otherMessage.accountid) &&
+      self.hasAllow3RdPartyMatchHistory == otherMessage.hasAllow3RdPartyMatchHistory &&
+      (!self.hasAllow3RdPartyMatchHistory || self.allow3RdPartyMatchHistory == otherMessage.allow3RdPartyMatchHistory) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasAccountid) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithInt:self.accountid] hash];
+  }
+  if (self.hasAllow3RdPartyMatchHistory) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.allow3RdPartyMatchHistory] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgDOTANotifyMatchHistoryAccessChange_Builder()
+@property (retain) CMsgDOTANotifyMatchHistoryAccessChange* _builderResult;
+@end
+
+@implementation CMsgDOTANotifyMatchHistoryAccessChange_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgDOTANotifyMatchHistoryAccessChange alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgDOTANotifyMatchHistoryAccessChange_Builder*) clear {
+  _builderResult = [[[CMsgDOTANotifyMatchHistoryAccessChange alloc] init] autorelease];
+  return self;
+}
+- (CMsgDOTANotifyMatchHistoryAccessChange_Builder*) clone {
+  return [CMsgDOTANotifyMatchHistoryAccessChange builderWithPrototype:_builderResult];
+}
+- (CMsgDOTANotifyMatchHistoryAccessChange*) defaultInstance {
+  return [CMsgDOTANotifyMatchHistoryAccessChange defaultInstance];
+}
+- (CMsgDOTANotifyMatchHistoryAccessChange*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgDOTANotifyMatchHistoryAccessChange*) buildPartial {
+  CMsgDOTANotifyMatchHistoryAccessChange* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgDOTANotifyMatchHistoryAccessChange_Builder*) mergeFrom:(CMsgDOTANotifyMatchHistoryAccessChange*) other {
+  if (other == [CMsgDOTANotifyMatchHistoryAccessChange defaultInstance]) {
+    return self;
+  }
+  if (other.hasAccountid) {
+    [self setAccountid:other.accountid];
+  }
+  if (other.hasAllow3RdPartyMatchHistory) {
+    [self setAllow3RdPartyMatchHistory:other.allow3RdPartyMatchHistory];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgDOTANotifyMatchHistoryAccessChange_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgDOTANotifyMatchHistoryAccessChange_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setAccountid:[input readUInt32]];
+        break;
+      }
+      case 16: {
+        [self setAllow3RdPartyMatchHistory:[input readBool]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasAccountid {
+  return _builderResult.hasAccountid;
+}
+- (uint32_t) accountid {
+  return _builderResult.accountid;
+}
+- (CMsgDOTANotifyMatchHistoryAccessChange_Builder*) setAccountid:(uint32_t) value {
+  _builderResult.hasAccountid = YES;
+  _builderResult.accountid = value;
+  return self;
+}
+- (CMsgDOTANotifyMatchHistoryAccessChange_Builder*) clearAccountid {
+  _builderResult.hasAccountid = NO;
+  _builderResult.accountid = 0;
+  return self;
+}
+- (BOOL) hasAllow3RdPartyMatchHistory {
+  return _builderResult.hasAllow3RdPartyMatchHistory;
+}
+- (BOOL) allow3RdPartyMatchHistory {
+  return _builderResult.allow3RdPartyMatchHistory;
+}
+- (CMsgDOTANotifyMatchHistoryAccessChange_Builder*) setAllow3RdPartyMatchHistory:(BOOL) value {
+  _builderResult.hasAllow3RdPartyMatchHistory = YES;
+  _builderResult.allow3RdPartyMatchHistory = value;
+  return self;
+}
+- (CMsgDOTANotifyMatchHistoryAccessChange_Builder*) clearAllow3RdPartyMatchHistory {
+  _builderResult.hasAllow3RdPartyMatchHistory = NO;
+  _builderResult.allow3RdPartyMatchHistory = NO;
+  return self;
+}
+@end
+
+@interface CMsgUpgradeLeagueItem ()
+@property uint64_t steamid;
+@property uint64_t itemId;
+@end
+
+@implementation CMsgUpgradeLeagueItem
+
+- (BOOL) hasSteamid {
+  return !!hasSteamid_;
+}
+- (void) setHasSteamid:(BOOL) value_ {
+  hasSteamid_ = !!value_;
+}
+@synthesize steamid;
+- (BOOL) hasItemId {
+  return !!hasItemId_;
+}
+- (void) setHasItemId:(BOOL) value_ {
+  hasItemId_ = !!value_;
+}
+@synthesize itemId;
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self.steamid = 0L;
+    self.itemId = 0L;
+  }
+  return self;
+}
+static CMsgUpgradeLeagueItem* defaultCMsgUpgradeLeagueItemInstance = nil;
++ (void) initialize {
+  if (self == [CMsgUpgradeLeagueItem class]) {
+    defaultCMsgUpgradeLeagueItemInstance = [[CMsgUpgradeLeagueItem alloc] init];
+  }
+}
++ (CMsgUpgradeLeagueItem*) defaultInstance {
+  return defaultCMsgUpgradeLeagueItemInstance;
+}
+- (CMsgUpgradeLeagueItem*) defaultInstance {
+  return defaultCMsgUpgradeLeagueItemInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasSteamid) {
+    [output writeFixed64:1 value:self.steamid];
+  }
+  if (self.hasItemId) {
+    [output writeUInt64:2 value:self.itemId];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasSteamid) {
+    size_ += computeFixed64Size(1, self.steamid);
+  }
+  if (self.hasItemId) {
+    size_ += computeUInt64Size(2, self.itemId);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgUpgradeLeagueItem*) parseFromData:(NSData*) data {
+  return (CMsgUpgradeLeagueItem*)[[[CMsgUpgradeLeagueItem builder] mergeFromData:data] build];
+}
++ (CMsgUpgradeLeagueItem*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgUpgradeLeagueItem*)[[[CMsgUpgradeLeagueItem builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgUpgradeLeagueItem*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgUpgradeLeagueItem*)[[[CMsgUpgradeLeagueItem builder] mergeFromInputStream:input] build];
+}
++ (CMsgUpgradeLeagueItem*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgUpgradeLeagueItem*)[[[CMsgUpgradeLeagueItem builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgUpgradeLeagueItem*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgUpgradeLeagueItem*)[[[CMsgUpgradeLeagueItem builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgUpgradeLeagueItem*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgUpgradeLeagueItem*)[[[CMsgUpgradeLeagueItem builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgUpgradeLeagueItem_Builder*) builder {
+  return [[[CMsgUpgradeLeagueItem_Builder alloc] init] autorelease];
+}
++ (CMsgUpgradeLeagueItem_Builder*) builderWithPrototype:(CMsgUpgradeLeagueItem*) prototype {
+  return [[CMsgUpgradeLeagueItem builder] mergeFrom:prototype];
+}
+- (CMsgUpgradeLeagueItem_Builder*) builder {
+  return [CMsgUpgradeLeagueItem builder];
+}
+- (CMsgUpgradeLeagueItem_Builder*) toBuilder {
+  return [CMsgUpgradeLeagueItem builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasSteamid) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"steamid", [NSNumber numberWithLongLong:self.steamid]];
+  }
+  if (self.hasItemId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"itemId", [NSNumber numberWithLongLong:self.itemId]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgUpgradeLeagueItem class]]) {
+    return NO;
+  }
+  CMsgUpgradeLeagueItem *otherMessage = other;
+  return
+      self.hasSteamid == otherMessage.hasSteamid &&
+      (!self.hasSteamid || self.steamid == otherMessage.steamid) &&
+      self.hasItemId == otherMessage.hasItemId &&
+      (!self.hasItemId || self.itemId == otherMessage.itemId) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  if (self.hasSteamid) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithLongLong:self.steamid] hash];
+  }
+  if (self.hasItemId) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithLongLong:self.itemId] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgUpgradeLeagueItem_Builder()
+@property (retain) CMsgUpgradeLeagueItem* _builderResult;
+@end
+
+@implementation CMsgUpgradeLeagueItem_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgUpgradeLeagueItem alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgUpgradeLeagueItem_Builder*) clear {
+  _builderResult = [[[CMsgUpgradeLeagueItem alloc] init] autorelease];
+  return self;
+}
+- (CMsgUpgradeLeagueItem_Builder*) clone {
+  return [CMsgUpgradeLeagueItem builderWithPrototype:_builderResult];
+}
+- (CMsgUpgradeLeagueItem*) defaultInstance {
+  return [CMsgUpgradeLeagueItem defaultInstance];
+}
+- (CMsgUpgradeLeagueItem*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgUpgradeLeagueItem*) buildPartial {
+  CMsgUpgradeLeagueItem* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgUpgradeLeagueItem_Builder*) mergeFrom:(CMsgUpgradeLeagueItem*) other {
+  if (other == [CMsgUpgradeLeagueItem defaultInstance]) {
+    return self;
+  }
+  if (other.hasSteamid) {
+    [self setSteamid:other.steamid];
+  }
+  if (other.hasItemId) {
+    [self setItemId:other.itemId];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgUpgradeLeagueItem_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgUpgradeLeagueItem_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 9: {
+        [self setSteamid:[input readFixed64]];
+        break;
+      }
+      case 16: {
+        [self setItemId:[input readUInt64]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasSteamid {
+  return _builderResult.hasSteamid;
+}
+- (uint64_t) steamid {
+  return _builderResult.steamid;
+}
+- (CMsgUpgradeLeagueItem_Builder*) setSteamid:(uint64_t) value {
+  _builderResult.hasSteamid = YES;
+  _builderResult.steamid = value;
+  return self;
+}
+- (CMsgUpgradeLeagueItem_Builder*) clearSteamid {
+  _builderResult.hasSteamid = NO;
+  _builderResult.steamid = 0L;
+  return self;
+}
+- (BOOL) hasItemId {
+  return _builderResult.hasItemId;
+}
+- (uint64_t) itemId {
+  return _builderResult.itemId;
+}
+- (CMsgUpgradeLeagueItem_Builder*) setItemId:(uint64_t) value {
+  _builderResult.hasItemId = YES;
+  _builderResult.itemId = value;
+  return self;
+}
+- (CMsgUpgradeLeagueItem_Builder*) clearItemId {
+  _builderResult.hasItemId = NO;
+  _builderResult.itemId = 0L;
+  return self;
+}
+@end
+
+@interface CMsgUpgradeLeagueItemResponse ()
+@end
+
+@implementation CMsgUpgradeLeagueItemResponse
+
+- (void) dealloc {
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+  }
+  return self;
+}
+static CMsgUpgradeLeagueItemResponse* defaultCMsgUpgradeLeagueItemResponseInstance = nil;
++ (void) initialize {
+  if (self == [CMsgUpgradeLeagueItemResponse class]) {
+    defaultCMsgUpgradeLeagueItemResponseInstance = [[CMsgUpgradeLeagueItemResponse alloc] init];
+  }
+}
++ (CMsgUpgradeLeagueItemResponse*) defaultInstance {
+  return defaultCMsgUpgradeLeagueItemResponseInstance;
+}
+- (CMsgUpgradeLeagueItemResponse*) defaultInstance {
+  return defaultCMsgUpgradeLeagueItemResponseInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (int32_t) serializedSize {
+  int32_t size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (CMsgUpgradeLeagueItemResponse*) parseFromData:(NSData*) data {
+  return (CMsgUpgradeLeagueItemResponse*)[[[CMsgUpgradeLeagueItemResponse builder] mergeFromData:data] build];
+}
++ (CMsgUpgradeLeagueItemResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgUpgradeLeagueItemResponse*)[[[CMsgUpgradeLeagueItemResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (CMsgUpgradeLeagueItemResponse*) parseFromInputStream:(NSInputStream*) input {
+  return (CMsgUpgradeLeagueItemResponse*)[[[CMsgUpgradeLeagueItemResponse builder] mergeFromInputStream:input] build];
+}
++ (CMsgUpgradeLeagueItemResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgUpgradeLeagueItemResponse*)[[[CMsgUpgradeLeagueItemResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgUpgradeLeagueItemResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (CMsgUpgradeLeagueItemResponse*)[[[CMsgUpgradeLeagueItemResponse builder] mergeFromCodedInputStream:input] build];
+}
++ (CMsgUpgradeLeagueItemResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (CMsgUpgradeLeagueItemResponse*)[[[CMsgUpgradeLeagueItemResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (CMsgUpgradeLeagueItemResponse_Builder*) builder {
+  return [[[CMsgUpgradeLeagueItemResponse_Builder alloc] init] autorelease];
+}
++ (CMsgUpgradeLeagueItemResponse_Builder*) builderWithPrototype:(CMsgUpgradeLeagueItemResponse*) prototype {
+  return [[CMsgUpgradeLeagueItemResponse builder] mergeFrom:prototype];
+}
+- (CMsgUpgradeLeagueItemResponse_Builder*) builder {
+  return [CMsgUpgradeLeagueItemResponse builder];
+}
+- (CMsgUpgradeLeagueItemResponse_Builder*) toBuilder {
+  return [CMsgUpgradeLeagueItemResponse builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[CMsgUpgradeLeagueItemResponse class]]) {
+    return NO;
+  }
+  CMsgUpgradeLeagueItemResponse *otherMessage = other;
+  return
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  NSUInteger hashCode = 7;
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface CMsgUpgradeLeagueItemResponse_Builder()
+@property (retain) CMsgUpgradeLeagueItemResponse* _builderResult;
+@end
+
+@implementation CMsgUpgradeLeagueItemResponse_Builder
+@synthesize _builderResult;
+- (void) dealloc {
+  self._builderResult = nil;
+  [super dealloc];
+}
+- (id) init {
+  if ((self = [super init])) {
+    self._builderResult = [[[CMsgUpgradeLeagueItemResponse alloc] init] autorelease];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return _builderResult;
+}
+- (CMsgUpgradeLeagueItemResponse_Builder*) clear {
+  _builderResult = [[[CMsgUpgradeLeagueItemResponse alloc] init] autorelease];
+  return self;
+}
+- (CMsgUpgradeLeagueItemResponse_Builder*) clone {
+  return [CMsgUpgradeLeagueItemResponse builderWithPrototype:_builderResult];
+}
+- (CMsgUpgradeLeagueItemResponse*) defaultInstance {
+  return [CMsgUpgradeLeagueItemResponse defaultInstance];
+}
+- (CMsgUpgradeLeagueItemResponse*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (CMsgUpgradeLeagueItemResponse*) buildPartial {
+  CMsgUpgradeLeagueItemResponse* returnMe = [[_builderResult retain] autorelease];
+  self._builderResult = nil;
+  return returnMe;
+}
+- (CMsgUpgradeLeagueItemResponse_Builder*) mergeFrom:(CMsgUpgradeLeagueItemResponse*) other {
+  if (other == [CMsgUpgradeLeagueItemResponse defaultInstance]) {
+    return self;
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (CMsgUpgradeLeagueItemResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (CMsgUpgradeLeagueItemResponse_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSet_Builder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    int32_t tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+    }
+  }
 }
 @end
 

@@ -98,6 +98,8 @@
 @class CMsgNotifyWatchdog_Builder;
 @class CMsgPackageLicense;
 @class CMsgPackageLicense_Builder;
+@class CMsgProtoBufHeader;
+@class CMsgProtoBufHeader_Builder;
 @class CMsgWebAPIKey;
 @class CMsgWebAPIKey_Builder;
 @class CMsgWebAPIRequest;
@@ -172,6 +174,118 @@ BOOL GCProtoBufMsgSrcIsValidValue(GCProtoBufMsgSrc value);
 + (id<PBExtensionField>) keyField;
 + (id<PBExtensionField>) msgpoolSoftLimit;
 + (id<PBExtensionField>) msgpoolHardLimit;
+@end
+
+@interface CMsgProtoBufHeader : PBGeneratedMessage {
+@private
+  BOOL hasClientSessionId_:1;
+  BOOL hasClientSteamId_:1;
+  BOOL hasJobIdSource_:1;
+  BOOL hasJobIdTarget_:1;
+  BOOL hasTargetJobName_:1;
+  BOOL hasSourceAppId_:1;
+  BOOL hasGcDirIndexSource_:1;
+  BOOL hasgc_msg_src_:1;
+  int32_t clientSessionId;
+  uint64_t clientSteamId;
+  uint64_t jobIdSource;
+  uint64_t jobIdTarget;
+  NSString* targetJobName;
+  uint32_t sourceAppId;
+  uint32_t gcDirIndexSource;
+  GCProtoBufMsgSrc gc_msg_src;
+}
+- (BOOL) hasClientSteamId;
+- (BOOL) hasClientSessionId;
+- (BOOL) hasSourceAppId;
+- (BOOL) hasJobIdSource;
+- (BOOL) hasJobIdTarget;
+- (BOOL) hasTargetJobName;
+- (BOOL) hasgc_msg_src;
+- (BOOL) hasGcDirIndexSource;
+@property (readonly) uint64_t clientSteamId;
+@property (readonly) int32_t clientSessionId;
+@property (readonly) uint32_t sourceAppId;
+@property (readonly) uint64_t jobIdSource;
+@property (readonly) uint64_t jobIdTarget;
+@property (readonly, retain) NSString* targetJobName;
+@property (readonly) GCProtoBufMsgSrc gc_msg_src;
+@property (readonly) uint32_t gcDirIndexSource;
+
++ (CMsgProtoBufHeader*) defaultInstance;
+- (CMsgProtoBufHeader*) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (CMsgProtoBufHeader_Builder*) builder;
++ (CMsgProtoBufHeader_Builder*) builder;
++ (CMsgProtoBufHeader_Builder*) builderWithPrototype:(CMsgProtoBufHeader*) prototype;
+- (CMsgProtoBufHeader_Builder*) toBuilder;
+
++ (CMsgProtoBufHeader*) parseFromData:(NSData*) data;
++ (CMsgProtoBufHeader*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgProtoBufHeader*) parseFromInputStream:(NSInputStream*) input;
++ (CMsgProtoBufHeader*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (CMsgProtoBufHeader*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (CMsgProtoBufHeader*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface CMsgProtoBufHeader_Builder : PBGeneratedMessage_Builder {
+@private
+  CMsgProtoBufHeader* _builderResult;
+}
+
+- (CMsgProtoBufHeader*) defaultInstance;
+
+- (CMsgProtoBufHeader_Builder*) clear;
+- (CMsgProtoBufHeader_Builder*) clone;
+
+- (CMsgProtoBufHeader*) build;
+- (CMsgProtoBufHeader*) buildPartial;
+
+- (CMsgProtoBufHeader_Builder*) mergeFrom:(CMsgProtoBufHeader*) other;
+- (CMsgProtoBufHeader_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (CMsgProtoBufHeader_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasClientSteamId;
+- (uint64_t) clientSteamId;
+- (CMsgProtoBufHeader_Builder*) setClientSteamId:(uint64_t) value;
+- (CMsgProtoBufHeader_Builder*) clearClientSteamId;
+
+- (BOOL) hasClientSessionId;
+- (int32_t) clientSessionId;
+- (CMsgProtoBufHeader_Builder*) setClientSessionId:(int32_t) value;
+- (CMsgProtoBufHeader_Builder*) clearClientSessionId;
+
+- (BOOL) hasSourceAppId;
+- (uint32_t) sourceAppId;
+- (CMsgProtoBufHeader_Builder*) setSourceAppId:(uint32_t) value;
+- (CMsgProtoBufHeader_Builder*) clearSourceAppId;
+
+- (BOOL) hasJobIdSource;
+- (uint64_t) jobIdSource;
+- (CMsgProtoBufHeader_Builder*) setJobIdSource:(uint64_t) value;
+- (CMsgProtoBufHeader_Builder*) clearJobIdSource;
+
+- (BOOL) hasJobIdTarget;
+- (uint64_t) jobIdTarget;
+- (CMsgProtoBufHeader_Builder*) setJobIdTarget:(uint64_t) value;
+- (CMsgProtoBufHeader_Builder*) clearJobIdTarget;
+
+- (BOOL) hasTargetJobName;
+- (NSString*) targetJobName;
+- (CMsgProtoBufHeader_Builder*) setTargetJobName:(NSString*) value;
+- (CMsgProtoBufHeader_Builder*) clearTargetJobName;
+
+- (BOOL) hasgc_msg_src;
+- (GCProtoBufMsgSrc) gc_msg_src;
+- (CMsgProtoBufHeader_Builder*) setgc_msg_src:(GCProtoBufMsgSrc) value;
+- (CMsgProtoBufHeader_Builder*) cleargc_msg_src;
+
+- (BOOL) hasGcDirIndexSource;
+- (uint32_t) gcDirIndexSource;
+- (CMsgProtoBufHeader_Builder*) setGcDirIndexSource:(uint32_t) value;
+- (CMsgProtoBufHeader_Builder*) clearGcDirIndexSource;
 @end
 
 @interface CMsgWebAPIKey : PBGeneratedMessage {
